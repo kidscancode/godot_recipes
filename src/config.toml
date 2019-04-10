@@ -5,9 +5,9 @@ title = "Godot Lessons by KidsCanCode"
 theme = "hugo-theme-learn"
 pygmentsStyle = "vim"
 pygmentsCodeFences = true
+googleAnalytics = "UA-39851424-1"
+disqusShortname = "kidscancode"
 
 [params]
-    googleAnalytics = "UA-39851424-1"
-    disqusShortname = "kidscancode"
     themeVariant = "green"
     disableInlineCopyToClipBoard = true
