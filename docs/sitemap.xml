@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/</loc>
+    <lastmod>2019-04-09T19:48:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/2d/</loc>
+    <lastmod>2019-04-09T20:23:45-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/math/x.0_transforms/</loc>
+    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/math/</loc>
+    <lastmod>2019-04-09T20:47:11-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/2d/tilemaps/tm1/</loc>
+    <lastmod>2019-04-09T20:56:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/2d/tilemaps/</loc>
+    <lastmod>2019-04-09T20:55:28-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/first-content/</loc>
+    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/</loc>
+    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
