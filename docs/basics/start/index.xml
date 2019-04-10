@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on Godot Lessons by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_lessons/basics/start/</link>
+    <description>Recent content in Getting Started on Godot Lessons by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate>
+    
+	<atom:link href="http://kidscancode.org/godot_lessons/basics/start/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is a Game Engine?</title>
+      <link>http://kidscancode.org/godot_lessons/basics/start/101_01/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/start/101_01/</guid>
+      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+    </item>
+    
+    <item>
+      <title>Finding your way around</title>
+      <link>http://kidscancode.org/godot_lessons/basics/start/101_02/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/start/101_02/</guid>
+      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+    </item>
+    
+  </channel>
+</rss>

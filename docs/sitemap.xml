@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/start/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_01/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/start/101_01/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/</loc>
     <lastmod>2019-04-09T19:48:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/start/101_02/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
   <url>
@@ -18,8 +38,33 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</loc>
+    <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_03/</loc>
+    <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_04/</loc>
+    <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/3d/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_05/</loc>
+    <lastmod>2019-03-09T05:22:12-07:00</lastmod>
   </url>
   
   <url>
@@ -28,28 +73,12 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/2d/tilemaps/tm1/</loc>
-    <lastmod>2019-04-09T20:56:31-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/2d/tilemaps/</loc>
-    <lastmod>2019-04-09T20:55:28-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/basics/first-content/</loc>
-    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
+    <loc>http://kidscancode.org/godot_lessons/</loc>
+    <lastmod>2019-04-09T22:57:31-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://kidscancode.org/godot_lessons/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/</loc>
-    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
     <priority>0</priority>
   </url>
   

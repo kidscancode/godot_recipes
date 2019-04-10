@@ -1,26 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Basics on Godot Lessons by KidsCanCode</title>
+    <title>Godot 101 on Godot Lessons by KidsCanCode</title>
     <link>http://kidscancode.org/godot_lessons/basics/</link>
-    <description>Recent content in Basics on Godot Lessons by KidsCanCode</description>
+    <description>Recent content in Godot 101 on Godot Lessons by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 19:48:00 -0700</lastBuildDate>
     
 	<atom:link href="http://kidscancode.org/godot_lessons/basics/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>First Content</title>
-      <link>http://kidscancode.org/godot_lessons/basics/first-content/</link>
-      <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_lessons/basics/first-content/</guid>
-      <description> Some stuff here A section in the basics.
-extends Node func _ready(): pass extends Node func _ready(): pass  A notice disclaimer
- </description>
-    </item>
     
   </channel>
 </rss>
