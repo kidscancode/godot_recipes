@@ -2,6 +2,8 @@
 <html lang="en" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.54.0" />
     <meta name="description" content="">
@@ -12,28 +14,38 @@
     <title>What is a Game Engine? :: Godot Lessons by KidsCanCode</title>
 
     
-    <link href="/godot_lessons/css/nucleus.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/fontawesome-all.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/hybrid.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/featherlight.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/auto-complete.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/theme.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/hugo-theme.css?1554881418" rel="stylesheet">
+    <link href="/godot_lessons/css/nucleus.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1554932810" rel="stylesheet">
     
-      <link href="/godot_lessons/css/theme-green.css?1554881418" rel="stylesheet">
+      <link href="/godot_lessons/css/theme-green.css?1554932810" rel="stylesheet">
     
 
-    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1554881418"></script>
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1554932810"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
       
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
     </style>
     
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
   </head>
   <body class="" data-url="/godot_lessons/basics/start/101_01/">
     <nav id="sidebar" class="">
@@ -53,14 +65,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1554881418"></script>
-<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1554881418"></script>
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1554932810"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1554932810"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
     
 </script>
-<script type="text/javascript" src="/godot_lessons/js/search.js?1554881418"></script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1554932810"></script>
 
     
   </div>
@@ -161,6 +173,30 @@
           
         
         </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/gdscript/" title="GDScript" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/gdscript/">
+          <i class='fas fa-scroll'></i> GDScript
+          
+      </a>
+      
       
     </li>
   
@@ -276,9 +312,9 @@
  
   
     
-      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="A Few Improvements" class="dd-item ">
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="Edge Detection &amp; Mouse Capture" class="dd-item ">
         <a href="/godot_lessons/basics/3d/101_3d_05/">
-        05. A Few Improvements
+        05. Edge Detection &amp; Mouse Capture
         
         </a>
     </li>
@@ -340,6 +376,28 @@
         ">
       <a href="/godot_lessons/3d/">
           <i class='fas fa-cube'></i> 3D
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/shaders/" title="Shaders" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/shaders/">
+          <i class='fas fa-draw-polygon'></i> Shaders
           
       </a>
       
@@ -455,11 +513,11 @@
           
             <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/basics/'>Godot 101</a> > <a href='/godot_lessons/basics/start/'>Getting Started</a> > What is a Game Engine?
           
-         
+        
           
-         
+        
           
-         
+        
           
         
                  
@@ -502,7 +560,24 @@ lighting.</p>
 	
 </footer>
 
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         
         </div> 
         
@@ -611,6 +686,22 @@ lighting.</p>
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -693,6 +784,22 @@ lighting.</p>
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
             
         
@@ -783,20 +890,20 @@ lighting.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_lessons/js/clipboard.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/jquery.sticky.js?1554881418"></script>
-    <script src="/godot_lessons/js/featherlight.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/highlight.pack.js?1554881418"></script>
+    <script src="/godot_lessons/js/clipboard.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1554932810"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1554932810"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1554881418"></script>
-    <script src="/godot_lessons/js/learn.js?1554881418"></script>
-    <script src="/godot_lessons/js/hugo-learn.js?1554881418"></script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1554932810"></script>
+    <script src="/godot_lessons/js/learn.js?1554932810"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1554932810"></script>
 
-    <link href="/godot_lessons/mermaid/mermaid.css?1554881418" type="text/css" rel="stylesheet" />
-    <script src="/godot_lessons/mermaid/mermaid.js?1554881418"></script>
+    <link href="/godot_lessons/mermaid/mermaid.css?1554932810" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1554932810"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -58,7 +58,17 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/gdscript/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/shaders/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   

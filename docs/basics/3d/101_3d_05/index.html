@@ -2,6 +2,8 @@
 <html lang="en" class="js csstransforms3d">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.54.0" />
     <meta name="description" content="">
@@ -9,31 +11,41 @@
 
     <link rel="icon" href="/godot_lessons/images/favicon.png" type="image/png">
 
-    <title>A Few Improvements :: Godot Lessons by KidsCanCode</title>
+    <title>Edge Detection &amp; Mouse Capture :: Godot Lessons by KidsCanCode</title>
 
     
-    <link href="/godot_lessons/css/nucleus.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/fontawesome-all.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/hybrid.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/featherlight.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/auto-complete.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/theme.css?1554881418" rel="stylesheet">
-    <link href="/godot_lessons/css/hugo-theme.css?1554881418" rel="stylesheet">
+    <link href="/godot_lessons/css/nucleus.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1554932810" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1554932810" rel="stylesheet">
     
-      <link href="/godot_lessons/css/theme-green.css?1554881418" rel="stylesheet">
+      <link href="/godot_lessons/css/theme-green.css?1554932810" rel="stylesheet">
     
 
-    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1554881418"></script>
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1554932810"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
           display:none !important;
       }
       
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
     </style>
     
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
   </head>
   <body class="" data-url="/godot_lessons/basics/3d/101_3d_05/">
     <nav id="sidebar" class="">
@@ -53,14 +65,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1554881418"></script>
-<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1554881418"></script>
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1554932810"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1554932810"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
     
 </script>
-<script type="text/javascript" src="/godot_lessons/js/search.js?1554881418"></script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1554932810"></script>
 
     
   </div>
@@ -161,6 +173,30 @@
           
         
         </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/gdscript/" title="GDScript" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/gdscript/">
+          <i class='fas fa-scroll'></i> GDScript
+          
+      </a>
+      
       
     </li>
   
@@ -276,9 +312,9 @@
  
   
     
-      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="A Few Improvements" class="dd-item active">
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="Edge Detection &amp; Mouse Capture" class="dd-item active">
         <a href="/godot_lessons/basics/3d/101_3d_05/">
-        05. A Few Improvements
+        05. Edge Detection &amp; Mouse Capture
         
         </a>
     </li>
@@ -340,6 +376,28 @@
         ">
       <a href="/godot_lessons/3d/">
           <i class='fas fa-cube'></i> 3D
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/shaders/" title="Shaders" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/shaders/">
+          <i class='fas fa-draw-polygon'></i> Shaders
           
       </a>
       
@@ -453,13 +511,13 @@
             
           
           
-            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/basics/'>Godot 101</a> > <a href='/godot_lessons/basics/3d/'>Intro to 3D</a> > A Few Improvements
+            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/basics/'>Godot 101</a> > <a href='/godot_lessons/basics/3d/'>Intro to 3D</a> > Edge Detection & Mouse Capture
           
-         
+        
           
-         
+        
           
-         
+        
           
         
                  
@@ -494,7 +552,7 @@
           
             <h1>
               
-              A Few Improvements
+              Edge Detection &amp; Mouse Capture
             </h1>
           
 
@@ -519,10 +577,8 @@ we won&rsquo;t be able to close the window or anything else - our mouse will be 
 We&rsquo;ll need a way to release the mouse again.</p>
 
 <p>First, to capture the mouse, add the following to the main scene:</p>
-
 <div class="highlight"><pre style="color:#ccc;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#cdcd00">func</span> _ready():
     <span style="color:#669;font-weight:bold">Input</span><span style="color:#39c">.</span>set_mouse_mode(<span style="color:#669;font-weight:bold">Input</span><span style="color:#39c">.</span>MOUSE_MODE_CAPTURED)</code></pre></div>
-
 <p>This takes care of the first part: the mouse will now be captured by our game
 window. Now we need it to be released when we press the &ldquo;Escape&rdquo; key. Let&rsquo;s
 put this in the main script as well:</p>
@@ -624,10 +680,10 @@ and the ray stops colliding, we do nothing. Otherwise, we move as normal:</p>
     <span style="color:#cdcd00">else</span>:
         velocity <span style="color:#39c">+=</span> <span style="color:#39c">-</span>transform<span style="color:#39c">.</span>basis<span style="color:#39c">.</span>z <span style="color:#39c">*</span> speed</code></pre></div>
 
-<blockquote>
-<p><strong>NOTE:</strong> You may be wondering why I wrote it this way. Keep reading, there&rsquo;s
+<div class="notices info" ><p>You may be wondering why I wrote it this way. Keep reading, there&rsquo;s
 a reason!</p>
-</blockquote>
+</div>
+
 
 <p>This works, but something feels off about the code. We have a conditional
 statement that does nothing. Surely we can simplify this. We can, with a little
@@ -677,17 +733,34 @@ RayCasts have a wide range of uses - we only touched on one here. The animation
 we added was very small, but a good start - we&rsquo;ll be using them for many things
 as we move forward.</p>
 
-<p>In the next part:</p>
+<p>In the next part: Using Constructed Solid Geometry (CSG).</p>
 
 <p>You can also find a video version of this lesson here:
-<iframe width="392" height="221" src="https://www.youtube.com/embed/d1XK5sFy1PM" frameborder="0" allowfullscreen></iframe></p>
+<iframe width="392" height="221" src="https://www.youtube.com/embed/bL_pOTaIQRE" frameborder="0" allowfullscreen></iframe></p>
 
 
 <footer class=" footline" >
 	
 </footer>
 
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = '';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         
         </div> 
         
@@ -786,6 +859,22 @@ as we move forward.</p>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -892,6 +981,22 @@ as we move forward.</p>
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -974,20 +1079,20 @@ as we move forward.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_lessons/js/clipboard.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/jquery.sticky.js?1554881418"></script>
-    <script src="/godot_lessons/js/featherlight.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1554881418"></script>
-    <script src="/godot_lessons/js/highlight.pack.js?1554881418"></script>
+    <script src="/godot_lessons/js/clipboard.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1554932810"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1554932810"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1554932810"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1554881418"></script>
-    <script src="/godot_lessons/js/learn.js?1554881418"></script>
-    <script src="/godot_lessons/js/hugo-learn.js?1554881418"></script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1554932810"></script>
+    <script src="/godot_lessons/js/learn.js?1554932810"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1554932810"></script>
 
-    <link href="/godot_lessons/mermaid/mermaid.css?1554881418" type="text/css" rel="stylesheet" />
-    <script src="/godot_lessons/mermaid/mermaid.js?1554881418"></script>
+    <link href="/godot_lessons/mermaid/mermaid.css?1554932810" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1554932810"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

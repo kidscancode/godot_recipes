@@ -11,7 +11,8 @@ Are you ready to learn game development?
 ### Overview
 
 On this site you'll find a gentle introduction to the Godot game engine, as
-well as a wide variety of gamedev tips and techniques.
+well as a wide variety of gamedev tips and techniques. Feel free to browse the
+categories in the sidebar and see what catches your interest.
 
 ### How to use this site
 
