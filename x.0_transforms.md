@@ -5,7 +5,7 @@
 In 2D space, we're using the familiar X-Y coordinate plane. Remember that in
 Godot, as in most computer graphics, the **Y** axis points downward:
 
-![alt](images/0_2d_coordinate_plane.png?v=4&s=200)
+![alt](images/0_2d_coordinate_plane.png)
 
 Consider this spaceship floating in space:
 
