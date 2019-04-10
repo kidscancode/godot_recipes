@@ -6,8 +6,6 @@ chapter = true
 pre = "<i class='fas fa-draw-polygon'></i> "
 +++
 
-### Chapter X
-
-# Some Chapter title
+# <i class='fas fa-draw-polygon'></i> Shaders
 
 Lorem Ipsum.

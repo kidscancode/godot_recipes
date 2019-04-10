@@ -6,8 +6,6 @@ chapter = true
 pre = "<i class='fas fa-rocket'></i> "
 +++
 
-
-
 # <i class='fas fa-rocket'></i> Gamedev Math
 
 Lorem Ipsum.
