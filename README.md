@@ -2,4 +2,4 @@
 
 Game development tutorials and examples using the Godot Engine.
 
-[Transforms](x.0_transforms.md)
+See [All lessons](http://kidscancode.org/godot_lessons/).

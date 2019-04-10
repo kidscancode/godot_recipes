@@ -1,0 +1,10 @@
+baseURL = "http://kidscancode.org/godot_lessons/"
+publishDir = "../docs"
+languageCode = "en-us"
+title = "Godot Lessons by KidsCanCode"
+theme = "hugo-theme-learn"
+pygmentsStyle = "vim"
+pygmentsCodeFences = true
+
+[params]
+    themeVariant = "green"
