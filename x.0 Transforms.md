@@ -5,11 +5,11 @@
 In 2D space, we're using the familiar X-Y coordinate plane. Remember that in
 Godot, as in most computer graphics, the **Y** axis points downward:
 
-**IMAGE: coord. plane**
+![alt](images/0_2d_coordinate_plane.png)
 
 Consider this spaceship floating in space:
 
-**IMAGE: ship (no rotation)**
+![alt](images/0_2d_rocket1.png)
 
 Currently, the ship is pointing in the same direction as the **X** axis. If we
 wanted it to move forward, we could just add to its **X** coordinate:
@@ -17,7 +17,7 @@ wanted it to move forward, we could just add to its **X** coordinate:
 
 But what happens when the ship is rotated?
 
-**IMAGE: ship (rotated)**
+![alt](images/0_2d_rocket2.png)
 
 How do we move the ship forward now? If you remember Trigonometry from school,
 you might be starting to think about angles, sin and cos and doing something
@@ -28,7 +28,7 @@ Let's look at the rotated ship again, but this time, let's also imagine that
 the ship has its own **X** and **Y** axes that it carries with it, completely
 independent of the global axes:
 
-**IMAGE: ship (rotated + axes)**
+![alt](images/0_2d_rocket3.png)
 
 This is known as the `basis` of the transform.
 
@@ -36,9 +36,9 @@ Now to move the ship forward, we can just move it along its own **X** axis and
 not even worry about angles and trig functions. To do this in Godot, we can use
 the `transform` property, which is available to all [Node2D]([https://link](https://docs.godotengine.org/en/latest/classes/class_node2d.html)) derived nodes.
 
-{{< highlight gdscript>}}
+```gdscript
     position += transform.x * 10
-{{< /highlight >}}
+```
 
 This code says "Add the transform's x vector multiplied by 10." Let's break down
 what that means. The `transform` contains `x` and `y` properties that represent
@@ -56,7 +56,7 @@ The other component of the Transform2D is the `origin`. Just as the basis
 represents the body's rotation, the origin represents the _translation_, or
 change in position.
 
-**IMAGE: Ship with origin vector**
+![alt](images/0_2d_rocket4.png)
 
 ### Operations on Transforms
 
@@ -95,20 +95,20 @@ Let's use the example of an object in the 2D plane and convert mouse clicks
 
 **IMAGE: ship w/grid**
 
-{{< highlight gdscript>}}
+```gdscript
 extends Sprite
 
 func _unhandled_input(event):
     if event is InputEventMouseButton and event.pressed:
         if event.button_index == BUTTON_LEFT:
             printt(event.position, transform.xform_inv(event.position))
-{{< /highlight >}
+```
 
 For convenience, Node2D includes helper functions for this:
 
-{{< highlight gdscript>}}
+```gdscript
     printt(event.position, to_local(event.position))
-{{< /highlight >}}
+```
 
 See the [Transform2D docs](https://docs.godotengine.org/en/latest/classes/class_transform2d.html) to see all of the available properties and methods.
 
@@ -135,9 +135,8 @@ Again, we can use the local axes to move an object forward. In Godot's 3D
 orientation (**Y-up**), this means that by default the body's **-Z** axis is
 the forward direction:
 
-{{< highlight gdscript>}}
+```gdscript
     translation += -transform.basis.z
-{{< /highlight >}}
+```
 
 > **NOTE:** Godot has default vector values defined, for example: `Vector3.FORWARD = Vector3(0, 0, -1)`.
-
