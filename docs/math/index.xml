@@ -13,10 +13,10 @@
     
     <item>
       <title>Transforms</title>
-      <link>http://kidscancode.org/godot_lessons/math/x.0_transforms/</link>
+      <link>http://kidscancode.org/godot_lessons/math/transforms/</link>
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/math/x.0_transforms/</guid>
+      <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
       <description>Now that you understand vectors, we can move on to the next important topic.
 2D Transforms In 2D space, we&amp;rsquo;re using the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics, the Y axis points downward:
 Consider this spaceship floating in space:

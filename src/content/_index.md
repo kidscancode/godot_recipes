@@ -6,9 +6,17 @@ draft: false
 
 # Godot Lessons
 
-Are you ready to learn game development?
+Are you ready to learn game development? Whether it's as a hobby or working
+towards your dream career, there's never been a better time to get started.
+Modern programming languages and tools have made it easier than ever to build
+high-quality games and distribute them to the world. One of these tools is
+the Godot game engine. For beginners, it offers a friendly way to learn gamedev
+techniques. For experienced developers, it's a powerful, customizable and
+_open_ tool for bringing your visions to life.
 
 ### Overview
+
+![alt](/godot_lessons/img/godot3_logo.png?width=250)
 
 On this site you'll find a gentle introduction to the Godot game engine, as
 well as a wide variety of gamedev tips and techniques. Feel free to browse the
@@ -18,9 +26,12 @@ categories in the sidebar and see what catches your interest.
 
 #### Beginners
 
-If you're new to game development, start with the [Basics section](/godot_lessons/basics/).
+If you're new to game development, start with the ["Godot 101: Basics" section](/godot_lessons/basics/).
 There you'll find an introduction to the Godot application, and a step-by-step
-guide to creating your first project.
+guide to creating your first project. There is a lot of material to absorb here.
+Don't feel discouraged if you feel you don't get it at first. Repetition is the
+key to learning complex topics; the more you work with Godot's features, the
+more familiar and _easy_ they will start to feel.
 
 {{% notice info %}}
 It's assumed that you have at least some general programming experience. If you're

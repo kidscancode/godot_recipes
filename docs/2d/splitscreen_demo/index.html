@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/godot_lessons/images/favicon.png" type="image/png">
+
+    <title>Splitscreen Demo (Using Viewports) :: Godot Lessons by KidsCanCode</title>
+
+    
+    <link href="/godot_lessons/css/nucleus.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1554960012" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1554960012" rel="stylesheet">
+    
+      <link href="/godot_lessons/css/theme-green.css?1554960012" rel="stylesheet">
+    
+
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1554960012"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
+  </head>
+  <body class="" data-url="/godot_lessons/2d/splitscreen_demo/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+<img src="/godot_lessons/images/kcc_logo_square.png" />
+
+
+    </div>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+        
+
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1554960012"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1554960012"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
+    
+</script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1554960012"></script>
+
+    
+
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/" title="Godot 101" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/">
+          <i class='fas fa-graduation-cap'></i> Godot 101
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/start/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/start/">
+          <i class='fas fa-feather-alt'></i> Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_01/" title="What is Godot?" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_01/">
+        01. What is Godot?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_02/" title="Finding your way around" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_02/">
+        02. Finding your way around
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_03/" title="Nodes: Godot&#39;s building blocks" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_03/">
+        03. Nodes: Godot&#39;s building blocks
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/gdscript/" title="GDScript" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/gdscript/">
+          <i class='fas fa-scroll'></i> GDScript
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/3d/" title="Intro to 3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/3d/">
+          <i class='fas fa-cube'></i> Intro to 3D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_01/" title="The 3D Editor" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_01/">
+        01. The 3D Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_02/" title="Importing 3D Objects" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_02/">
+        02. Importing 3D Objects
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_03/" title="Creating a 3D Character" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_03/">
+        03. Creating a 3D Character
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_04/" title="Using Areas" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_04/">
+        04. Using Areas
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="Edge Detection &amp; Mouse Capture" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_05/">
+        05. Edge Detection &amp; Mouse Capture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/2d/" title="2D" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_lessons/2d/">
+          <i class='fas fa-shapes'></i> 2D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/2d/splitscreen_demo/" title="Splitscreen Demo (Using Viewports)" class="dd-item active">
+        <a href="/godot_lessons/2d/splitscreen_demo/">
+        Splitscreen Demo (Using Viewports)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/3d/" title="3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/3d/">
+          <i class='fas fa-cube'></i> 3D
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/shaders/" title="Shaders" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/shaders/">
+          <i class='fas fa-draw-polygon'></i> Shaders
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/math/" title="Gamedev Math" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/math/">
+          <i class='fas fa-rocket'></i> Gamedev Math
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/math/transforms/" title="Transforms" class="dd-item ">
+        <a href="/godot_lessons/math/transforms/">
+        Transforms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+<p align="center">
+    <a href="https://github.com/kidscancode/godot_lessons"><i class="fab fa-github-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/c/KidsCanCodeOrg"><i class="fab fa-youtube-square fa-3x"></i></a>
+    <a href="http://twitter.com/KidsCanCode"><i class="fab fa-twitter-square fa-3x"></i></a>
+</p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/2d/'>2D</a> > Splitscreen Demo (Using Viewports)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#game-setup">Game setup</a></li>
+<li><a href="#viewports-cameras-and-worlds">Viewports, Cameras, and Worlds</a>
+<ul>
+<li><a href="#adding-the-world">Adding the World</a></li>
+<li><a href="#setting-up-the-cameras">Setting up the cameras</a></li>
+</ul></li>
+<li><a href="#camera-limits">Camera limits</a></li>
+</ul></li>
+<li><a href="#minimap">Minimap</a>
+<ul>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Splitscreen Demo (Using Viewports)
+            </h1>
+          
+
+        
+
+
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this demo, we&rsquo;ll consider a local multiplayer game - a topdown-style maze game with
+two players (one using arrow keys and the other using WASD controls). This is
+not a problem if our game world all fits on one screen, but if the map is large,
+we&rsquo;ll want to have a &ldquo;split screen&rdquo; view tracking the two players separately.</p>
+
+<p><img src="/godot_lessons/img/splitscreen2.gif" alt="alt" /></p>
+
+<p>We&rsquo;ll also look at a quick way to set up a minimap display.</p>
+
+<h3 id="game-setup">Game setup</h3>
+
+<p>We won&rsquo;t spend a lot of time on the setup of the game world. The two players
+are KinematicBody2D objects using no-frills 8-way movement.</p>
+
+<div class="notices note" ><p>If you need help setting up this part, see the following section in the official Godot docs: <a href="http://docs.godotengine.org/en/stable/tutorials/2d/2d_movement.html">2D Movement Overview</a>.</p>
+</div>
+
+
+<p>Each player has its input actions set up in the <em>Project Settings -&gt; Input Map</em>
+section: &ldquo;right_1&rdquo; to Right Arrow, &ldquo;right_2&rdquo; to D, etc. Note that by naming them
+this way, we can save time in the code by using:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> id <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+
+<span style="color:#ff79c6">func</span> get_input():
+    velocity <span style="color:#ff79c6">=</span> Vector2()
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#39;right_</span><span style="color:#f1fa8c">%s</span><span style="color:#f1fa8c">&#39;</span> <span style="color:#ff79c6">%</span> id):
+        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#6272a4"># etc.</span></code></pre></div>
+
+<p>This way both characters can use the same script for movement. Just assign the
+appropriate value to <code>id</code> for each player.</p>
+
+<p>The two players are added to a &ldquo;World&rdquo; scene containing a TileMap:</p>
+
+<p><img src="/godot_lessons/img/splitscreen_map.png" alt="alt" /></p>
+
+<p>If you like, you can download the starting project, with the world already set
+up, here:</p>
+
+<p><a href="/blog/img/splitscreen_start.zip">splitscreen_start.zip</a></p>
+
+<p>Note that the map is much larger than the game screen, but aside from that everything
+works as intended. Setting up your game &ldquo;world&rdquo; separately like this will make
+setting up the viewports much easier and more flexible.</p>
+
+<h3 id="viewports-cameras-and-worlds">Viewports, Cameras, and Worlds</h3>
+
+<p>We&rsquo;re going to start with a new scene that&rsquo;s going to contain our two viewports.
+Create a node to serve as the root. I like to use <code>Node</code> since it has no properties
+of its own - it&rsquo;s just there to contain the rest of the scene.</p>
+
+<p>By themselves, <code>Viewport</code> nodes don&rsquo;t have position information (they don&rsquo;t
+inherit from <code>Spatial</code> or <code>CanvasItem</code>). We&rsquo;re going to use <code>ViewportContainer</code>,
+a <code>Control</code> node, to hold each viewport. To keep them arranged side-by-side, we&rsquo;ll
+use an <code>HBoxContainer</code>.</p>
+
+<p>Set the HBoxContainer&rsquo;s <em>Alignment</em> to &ldquo;Center&rdquo; and to have a small
+gap between the two viewports, set <em>Custom Constants/Separation</em> to <code>5</code>. In the
+&ldquo;Layout&rdquo; menu, choose &ldquo;Full Rect&rdquo;.</p>
+
+<p>Now add two ViewportContainers as children, naming them with a <code>2</code> and <code>1</code> (to
+match the player they&rsquo;ll display). Set the <em>Size Flags</em> on both to &ldquo;Fill, Expand&rdquo;
+so that they will each expand to fill half of the screen. Also, check the <em>Stretch</em>
+property so that the Viewport will automatically be set to the size of the
+container.</p>
+
+<p>Inside each of these containers add a <code>Viewport</code>. Note that if you set the viewport&rsquo;s
+<em>Size</em> property, it will be reset by the container.</p>
+
+<p>In order for a Viewport to display anything, we&rsquo;ll need a <code>Camera2D</code> which will render
+onto the Viewport. Add one to each viewport. Don&rsquo;t forget to check the <em>Current</em>
+property to activate the camera. We can also set each camera&rsquo;s <em>Zoom</em> to <code>(0.75, 0.75)</code>
+to get a better view of the area around the player.</p>
+
+<p>Your node setup should look like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown"> ┖╴Main (Node)
+    ┖╴Viewports (HBoxContainer)
+       ┠╴ViewportContainer2
+       ┃  ┖╴Viewport2
+       ┃    ┖╴Camera2D
+       ┖╴ViewportContainer1
+          ┖╴Viewport1
+            ┖╴Camera2D</code></pre></div>
+
+<div class="notices note" ><p>Note that we&rsquo;ve put <code>ViewportContainer1</code> second in the HBoxContainer. This will
+place it on the right side since Player 1 uses the arrow keys.</p>
+</div>
+
+
+<h4 id="adding-the-world">Adding the World</h4>
+
+<p>When we run the scene we won&rsquo;t see anything because the viewports don&rsquo;t have any
+&ldquo;world&rdquo; to render. A viewport&rsquo;s <code>world</code> (for 3D) or <code>world_2d</code> property represent
+the source for the viewport&rsquo;s environment and determine what will be rendered by
+its camera. The world can be set in code, but for 2D it will also display any
+child 2D nodes we add to it.</p>
+
+<p>Let&rsquo;s instance the &ldquo;World&rdquo; scene as a child of <code>Viewport1</code>. Now when we play the scene
+we see the world inside the left viewport.</p>
+
+<p>We also need to add a world to <code>Viewport2</code>, but we want it to use the same one.
+We can handle this in code. Attach a script to <code>Main</code> and add the following:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
+
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> viewport1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Viewports<span style="color:#ff79c6">/</span>ViewportContainer1<span style="color:#ff79c6">/</span>Viewport1
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> viewport2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Viewports<span style="color:#ff79c6">/</span>ViewportContainer2<span style="color:#ff79c6">/</span>Viewport2
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> camera1 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Viewports<span style="color:#ff79c6">/</span>ViewportContainer1<span style="color:#ff79c6">/</span>Viewport1<span style="color:#ff79c6">/</span>Camera2D
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> camera2 <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Viewports<span style="color:#ff79c6">/</span>ViewportContainer2<span style="color:#ff79c6">/</span>Viewport2<span style="color:#ff79c6">/</span>Camera2D
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> world <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Viewports<span style="color:#ff79c6">/</span>ViewportContainer1<span style="color:#ff79c6">/</span>Viewport1<span style="color:#ff79c6">/</span>World
+
+<span style="color:#ff79c6">func</span> _ready():
+    viewport2<span style="color:#ff79c6">.</span>world_2d <span style="color:#ff79c6">=</span> viewport1<span style="color:#ff79c6">.</span>world_2d</code></pre></div>
+
+<p>The <code>onready</code> node references are for convenience - we&rsquo;ll be using them as we move
+forward. Remember that when you type &ldquo;<code>$</code>&rdquo; Godot will autosuggest node paths so you
+don&rsquo;t have to type them. You can also drag a node from the scene tree into the
+script editor and you&rsquo;ll get the node&rsquo;s path.</p>
+
+<p>When we run the scene now, we see the world rendered in both viewports. However,
+neither camera is moving so we only see a small part of the world.</p>
+
+<h4 id="setting-up-the-cameras">Setting up the cameras</h4>
+
+<p>Attach the following script to each camera:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Camera2D
+
+<span style="color:#ff79c6">var</span> target <span style="color:#ff79c6">=</span> null
+
+<span style="color:#ff79c6">func</span> _physics_process(delta):
+    <span style="color:#ff79c6">if</span> target:
+        position <span style="color:#ff79c6">=</span> target<span style="color:#ff79c6">.</span>position</code></pre></div>
+
+<p>Now we can assign a target to each camera and it will follow that node&rsquo;s position.
+We&rsquo;ll do that in the <code>Main</code> script:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
+    viewport2<span style="color:#ff79c6">.</span>world_2d <span style="color:#ff79c6">=</span> viewport1<span style="color:#ff79c6">.</span>world_2d
+    camera1<span style="color:#ff79c6">.</span>target <span style="color:#ff79c6">=</span> world<span style="color:#ff79c6">.</span>get_node(<span style="color:#f1fa8c">&#34;Player_1&#34;</span>)
+    camera2<span style="color:#ff79c6">.</span>target <span style="color:#ff79c6">=</span> world<span style="color:#ff79c6">.</span>get_node(<span style="color:#f1fa8c">&#34;Player_2&#34;</span>)</code></pre></div>
+
+<p>When we run the scene now, each player is centered in its viewport and our splitscreen
+setup works!</p>
+
+<div class="notices tip" ><p>I find it looks best if you disable the <em>Drag Margin</em> properties of the cameras.</p>
+</div>
+
+
+<h3 id="camera-limits">Camera limits</h3>
+
+<p>Next, let&rsquo;s add some limits to the player cameras so that they don&rsquo;t scroll outside
+the bounds of the map. Add this function to the main script and call it in <code>_ready()</code>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_camera_limits():
+    <span style="color:#ff79c6">var</span> map_limits <span style="color:#ff79c6">=</span> world<span style="color:#ff79c6">.</span>get_used_rect()
+    <span style="color:#ff79c6">var</span> map_cellsize <span style="color:#ff79c6">=</span> world<span style="color:#ff79c6">.</span>cell_size
+    <span style="color:#ff79c6">for</span> cam <span style="color:#ff79c6">in</span> [camera1, camera2]:
+        cam<span style="color:#ff79c6">.</span>limit_left <span style="color:#ff79c6">=</span> map_limits<span style="color:#ff79c6">.</span>position<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> map_cellsize<span style="color:#ff79c6">.</span>x
+        cam<span style="color:#ff79c6">.</span>limit_right <span style="color:#ff79c6">=</span> map_limits<span style="color:#ff79c6">.</span>end<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> map_cellsize<span style="color:#ff79c6">.</span>x
+        cam<span style="color:#ff79c6">.</span>limit_top <span style="color:#ff79c6">=</span> map_limits<span style="color:#ff79c6">.</span>position<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> map_cellsize<span style="color:#ff79c6">.</span>y
+        cam<span style="color:#ff79c6">.</span>limit_bottom <span style="color:#ff79c6">=</span> map_limits<span style="color:#ff79c6">.</span>end<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> map_cellsize<span style="color:#ff79c6">.</span>y</code></pre></div>
+
+<h2 id="minimap">Minimap</h2>
+
+<p>Let&rsquo;s add one more fun feature: a minimap showing a zoomed-out view of the entire
+map so the players can orient themselves.</p>
+
+<p>We&rsquo;ll need another ViewportContainer, this one a child of <code>Main</code>. This time, we
+<em>don&rsquo;t</em> want to use <em>Stretch</em>. Add a Viewport and set its <em>Size</em> to <code>(340, 200)</code>
+then add a Camera2D. We&rsquo;ll set the Camera2D&rsquo;s <em>Position</em> to <code>(512, 300)</code> to center
+it on the screen. We&rsquo;ll zoom out by setting <em>Zoom</em> to <code>(9, 9)</code>. Don&rsquo;t forget to
+click <em>Current</em> on this camera as well.</p>
+
+<p>In the <code>_ready()</code>, set the minimap to use the same world as the other two viewports:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">$</span>Minimap<span style="color:#ff79c6">/</span>Viewport<span style="color:#ff79c6">.</span>world_2d <span style="color:#ff79c6">=</span> viewport1<span style="color:#ff79c6">.</span>world_2d</code></pre></div>
+
+<p>Use the &ldquo;Layout&rdquo; menu to align the Minimap container at &ldquo;Center Bottom&rdquo;. Let&rsquo;s
+see what it looks like:</p>
+
+<p><img src="/godot_lessons/img/splitscreen_minimap1.png?width=400" alt="alt" /></p>
+
+<p>We need to get rid of that grey area around the edges. We could find the precise
+zoom level that matches our desired minimap size, but instead, we&rsquo;ll check the
+<em>Transparent Bg</em> on the Viewport. Now our non-map areas aren&rsquo;t visible and the
+minimap appears floating directly on top of the main viewports.</p>
+
+<p><img src="/godot_lessons/img/splitscreen_minimap2.png?width=400" alt="alt" /></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Viewports can be very powerful, but also confusing. One way of managing them is to
+try to keep them separate from the game logic and only use them as displays.</p>
+
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/godot_lessons/2d/" title="2D"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/godot_lessons/3d/" title="3D" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/godot_lessons/js/clipboard.min.js?1554960012"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1554960012"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1554960012"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1554960012"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1554960012"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1554960012"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1554960012"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1554960012"></script>
+    <script src="/godot_lessons/js/learn.js?1554960012"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1554960012"></script>
+
+    <link href="/godot_lessons/mermaid/mermaid.css?1554960012" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1554960012"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

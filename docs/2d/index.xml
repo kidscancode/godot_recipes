@@ -11,5 +11,15 @@
 	<atom:link href="http://kidscancode.org/godot_lessons/2d/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Splitscreen Demo (Using Viewports)</title>
+      <link>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</link>
+      <pubDate>Tue, 10 Jul 2018 08:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</guid>
+      <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
+We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>What is a Game Engine?</title>
+      <title>What is Godot?</title>
       <link>http://kidscancode.org/godot_lessons/basics/start/101_01/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/basics/start/101_01/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+      <description>Game Engines Game development is complex and involves a wide variety of knowledge and skills. In order to build a modern game, you need a lot of underlying technology before you can make the actual game itself. Imagine if you had to build your own computer and write your own operating system before you could even start programming. Game development would be a lot like that if you truly had to start from scratch and build everything you needed.</description>
     </item>
     
     <item>
@@ -26,7 +26,18 @@
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/basics/start/101_02/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+      <description>Project Manager The Project Manager is the first thing you&amp;rsquo;ll see when opening Godot.
+In this window you can see a list of your Godot projects. You can choose an existing project and click &amp;ldquo;Run&amp;rdquo; to play the game or click &amp;ldquo;Edit&amp;rdquo; to work on it in the Godot editor. Since you probably don&amp;rsquo;t have any projects yet, let&amp;rsquo;s start by clicking the &amp;ldquo;New Project&amp;rdquo; button.
+Here you can give the project a name and create a folder to store it in.</description>
+    </item>
+    
+    <item>
+      <title>Nodes: Godot&#39;s building blocks</title>
+      <link>http://kidscancode.org/godot_lessons/basics/start/101_03/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/start/101_03/</guid>
+      <description>Nodes are the basic building blocks for creating games in Godot. A node is an object that can represent some kind of specialized game function. A given type of node might display graphics, play an animation, or represent a 3D model of an object. The node also contains a collection of properties, allowing you to customize its behavior. Which nodes you add to your project will depend on what functionality you need.</description>
     </item>
     
   </channel>

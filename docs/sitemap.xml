@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</loc>
+    <lastmod>2018-07-10T08:12:12-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/start/101_02/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
@@ -33,13 +38,18 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/math/x.0_transforms/</loc>
+    <loc>http://kidscancode.org/godot_lessons/math/transforms/</loc>
     <lastmod>2019-04-09T19:49:14-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</loc>
     <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/start/101_03/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
   <url>

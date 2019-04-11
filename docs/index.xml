@@ -22,12 +22,22 @@ Are you ready? A word of warning: 3D development can be quite a bit more complex
     </item>
     
     <item>
-      <title>What is a Game Engine?</title>
+      <title>What is Godot?</title>
       <link>http://kidscancode.org/godot_lessons/basics/start/101_01/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/basics/start/101_01/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+      <description>Game Engines Game development is complex and involves a wide variety of knowledge and skills. In order to build a modern game, you need a lot of underlying technology before you can make the actual game itself. Imagine if you had to build your own computer and write your own operating system before you could even start programming. Game development would be a lot like that if you truly had to start from scratch and build everything you needed.</description>
+    </item>
+    
+    <item>
+      <title>Splitscreen Demo (Using Viewports)</title>
+      <link>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</link>
+      <pubDate>Tue, 10 Jul 2018 08:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</guid>
+      <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
+We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description>
     </item>
     
     <item>
@@ -36,15 +46,17 @@ Are you ready? A word of warning: 3D development can be quite a bit more complex
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/basics/start/101_02/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.</description>
+      <description>Project Manager The Project Manager is the first thing you&amp;rsquo;ll see when opening Godot.
+In this window you can see a list of your Godot projects. You can choose an existing project and click &amp;ldquo;Run&amp;rdquo; to play the game or click &amp;ldquo;Edit&amp;rdquo; to work on it in the Godot editor. Since you probably don&amp;rsquo;t have any projects yet, let&amp;rsquo;s start by clicking the &amp;ldquo;New Project&amp;rdquo; button.
+Here you can give the project a name and create a folder to store it in.</description>
     </item>
     
     <item>
       <title>Transforms</title>
-      <link>http://kidscancode.org/godot_lessons/math/x.0_transforms/</link>
+      <link>http://kidscancode.org/godot_lessons/math/transforms/</link>
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/math/x.0_transforms/</guid>
+      <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
       <description>Now that you understand vectors, we can move on to the next important topic.
 2D Transforms In 2D space, we&amp;rsquo;re using the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics, the Y axis points downward:
 Consider this spaceship floating in space:
@@ -59,6 +71,15 @@ Currently, the ship is pointing in the same direction as the X axis. If we wante
       <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</guid>
       <description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
 Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description>
+    </item>
+    
+    <item>
+      <title>Nodes: Godot&#39;s building blocks</title>
+      <link>http://kidscancode.org/godot_lessons/basics/start/101_03/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/start/101_03/</guid>
+      <description>Nodes are the basic building blocks for creating games in Godot. A node is an object that can represent some kind of specialized game function. A given type of node might display graphics, play an animation, or represent a 3D model of an object. The node also contains a collection of properties, allowing you to customize its behavior. Which nodes you add to your project will depend on what functionality you need.</description>
     </item>
     
     <item>
