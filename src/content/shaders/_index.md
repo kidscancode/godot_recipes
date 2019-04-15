@@ -8,4 +8,4 @@ pre = "<i class='fas fa-draw-polygon'></i> "
 
 # <i class='fas fa-draw-polygon'></i> Shaders
 
-Lorem Ipsum.
+Deep voodoo. Coming soon.

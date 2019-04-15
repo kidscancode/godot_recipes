@@ -6,8 +6,6 @@ chapter = true
 pre = "<i class='fas fa-cube'></i> "
 +++
 
-### Chapter X
+# <i class='fas fa-cube'></i> 3D
 
-# Some Chapter title
-
-Lorem Ipsum.
+Tips, tricks, and tutorials on the 3D side of game development.

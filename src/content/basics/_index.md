@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-graduation-cap'></i> "
 +++
 
-# Godot 101
+# <i class='fas fa-graduation-cap'></i> Godot 101
 
 ![alt](/godot_lessons/img/godot3_logo.png)
 

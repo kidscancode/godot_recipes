@@ -88,7 +88,7 @@ transform = transform.translated(Vector2(2, 0))
 If the _length_ of the basis vectors is not `1` (ie normalized), then the
 the transform also encodes scale.
 
-### Converting Between Local to Global Space
+### Converting Between Local and Global Space
 
 You can use the transform to convert coordinates from global to local by applying
 the transform. To apply a transform, use `xform()`:

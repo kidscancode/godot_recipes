@@ -4,7 +4,7 @@ date: 2019-04-09T22:57:31-07:00
 draft: false
 ---
 
-# Godot Lessons
+# Godot Tutorials
 
 Are you ready to learn game development? Whether it's as a hobby or working
 towards your dream career, there's never been a better time to get started.
