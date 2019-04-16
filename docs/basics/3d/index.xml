@@ -61,5 +61,15 @@ Areas Area nodes are used for detection and influence. They can detect when obje
 Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
     </item>
     
+    <item>
+      <title>Using CSG</title>
+      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</link>
+      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</guid>
+      <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
+What is CSG? CSG stands for Constructive Solid Geometry. It allows you to quickly combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
+    </item>
+    
   </channel>
 </rss>
