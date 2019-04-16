@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/godot_lessons/images/favicon.png" type="image/png">
+
+    <title>Circle Jump :: Godot Lessons by KidsCanCode</title>
+
+    
+    <link href="/godot_lessons/css/nucleus.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1555387034" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1555387034" rel="stylesheet">
+    
+      <link href="/godot_lessons/css/theme-green.css?1555387034" rel="stylesheet">
+    
+
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1555387034"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
+  </head>
+  <body class="" data-url="/godot_lessons/games/circle_jump/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+<img src="/godot_lessons/images/kcc_logo_square.png" />
+
+
+    </div>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+        
+
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1555387034"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1555387034"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
+    
+</script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1555387034"></script>
+
+    
+
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/" title="Godot 101" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/">
+          <i class='fas fa-graduation-cap'></i> Godot 101
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/start/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/start/">
+          <i class='fas fa-feather-alt'></i> Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_01/" title="What is Godot?" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_01/">
+        01. What is Godot?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_02/" title="Godot&#39;s Editor: Finding your way around" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_02/">
+        02. The Godot Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/start/101_03/" title="Nodes: Godot&#39;s building blocks" class="dd-item ">
+        <a href="/godot_lessons/basics/start/101_03/">
+        03. Nodes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/gdscript/" title="GDScript" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/gdscript/">
+          <i class='fas fa-scroll'></i> GDScript
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/basics/3d/" title="Intro to 3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/basics/3d/">
+          <i class='fas fa-cube'></i> Intro to 3D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_01/" title="The 3D Editor" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_01/">
+        01. The 3D Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_02/" title="Importing 3D Objects" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_02/">
+        02. Importing 3D Objects
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_03/" title="Creating a 3D Character" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_03/">
+        03. Creating a 3D Character
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_04/" title="Using Areas" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_04/">
+        04. Using Areas
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_05/" title="Edge Detection &amp; Mouse Capture" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_05/">
+        05. Edge Detection &amp; Mouse Capture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_06/" title="Using CSG" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_06/">
+        06. Using CSG
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/2d/" title="2D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/2d/">
+          <i class='fas fa-shapes'></i> 2D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/2d/splitscreen_demo/" title="Splitscreen Demo (Using Viewports)" class="dd-item ">
+        <a href="/godot_lessons/2d/splitscreen_demo/">
+        Splitscreen Demo (Using Viewports)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/3d/" title="3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/3d/">
+          <i class='fas fa-cube'></i> 3D
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/shaders/" title="Shaders" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/shaders/">
+          <i class='fas fa-draw-polygon'></i> Shaders
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/math/" title="Gamedev Math" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_lessons/math/">
+          <i class='fas fa-rocket'></i> Gamedev Math
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/math/transforms/" title="Transforms" class="dd-item ">
+        <a href="/godot_lessons/math/transforms/">
+        Transforms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/games/" title="Game Tutorials" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_lessons/games/">
+          <i class='fas fa-gamepad'></i> Game Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_lessons/games/circle_jump/" title="Circle Jump" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/godot_lessons/games/circle_jump/">
+          <i class='far fa-circle'></i> Circle Jump
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+<p align="center">
+    <a href="https://github.com/kidscancode/godot_lessons"><i class="fab fa-github-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/c/KidsCanCodeOrg"><i class="fab fa-youtube-square fa-3x"></i></a>
+    <a href="http://twitter.com/KidsCanCode"><i class="fab fa-twitter-square fa-3x"></i></a>
+</p>
+<p align="center"><i class="far fa-copyright"></i> 2019 KidsCanCode </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/games/'>Game Tutorials</a> > Circle Jump
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+
+	
+
+<h1 id="i-class-far-fa-circle-i-circle-jump"><i class="far fa-circle"></i> Circle Jump</h1>
+
+<h3 id="an-end-to-end-game-development-series">An end-to-end game development series.</h3>
+
+<p>In this series, we build a one-touch mobile game called &ldquo;Circle Jump&rdquo;.</p>
+
+<p><img src="/godot_lessons/img/jump.gif" alt="alt" /></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/godot_lessons/games/" title="Game Tutorials"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/godot_lessons/basics/" title="Godot 101" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/godot_lessons/js/clipboard.min.js?1555387034"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1555387034"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1555387034"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1555387034"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1555387034"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1555387034"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1555387034"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1555387034"></script>
+    <script src="/godot_lessons/js/learn.js?1555387034"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1555387034"></script>
+
+    <link href="/godot_lessons/mermaid/mermaid.css?1555387034" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1555387034"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

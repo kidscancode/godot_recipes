@@ -6,8 +6,6 @@ chapter = true
 pre = "<i class='fas fa-cube'></i> "
 +++
 
-### Chapter X
+# <i class='fas fa-cube'></i> Intro to 3D
 
-# Some Chapter title
-
-Lorem Ipsum.
+A gentle introduction to the 3D side of Godot development.

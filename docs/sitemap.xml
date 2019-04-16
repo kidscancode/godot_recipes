@@ -18,17 +18,23 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/</loc>
+    <lastmod>2019-04-09T19:48:00-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</loc>
     <lastmod>2018-07-10T08:12:12-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/basics/</loc>
+    <loc>http://kidscancode.org/godot_lessons/basics/start/101_02/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/basics/start/101_02/</loc>
-    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+    <loc>http://kidscancode.org/godot_lessons/2d/</loc>
+    <lastmod>2019-04-09T20:23:45-07:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +45,6 @@
   <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</loc>
     <lastmod>2019-03-09T05:22:12-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/2d/</loc>
-    <lastmod>2018-07-10T08:12:12-07:00</lastmod>
   </url>
   
   <url>
@@ -62,7 +63,27 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/games/circle_jump/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/basics/gdscript/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/shaders/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
@@ -77,24 +98,13 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/3d/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/basics/gdscript/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_lessons/shaders/</loc>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_lessons/math/</loc>
-    <lastmod>2019-04-09T19:49:14-07:00</lastmod>
+    <lastmod>2019-04-09T20:47:11-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://kidscancode.org/godot_lessons/games/</loc>
+    <lastmod>2019-04-09T20:47:11-07:00</lastmod>
   </url>
   
   <url>
