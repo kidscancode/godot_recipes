@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Project setup</title>
+      <link>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</guid>
+      <description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
+In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description>
+    </item>
+    
+    <item>
       <title>The 3D Editor</title>
       <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_01/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
@@ -57,10 +67,9 @@ Here you can give the project a name and create a folder to store it in.</descri
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
-      <description>Now that you understand vectors, we can move on to the next important topic.
-2D Transforms In 2D space, we&amp;rsquo;re using the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics, the Y axis points downward:
-Consider this spaceship floating in space:
-Currently, the ship is pointing in the same direction as the X axis. If we wanted it to move forward, we could just add to its X coordinate: position += Vector2(10, 0).</description>
+      <description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
+2D Transforms In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the Y axis points downward:
+To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>
     </item>
     
     <item>
@@ -120,6 +129,37 @@ Capturing the Mouse One issue with our mouse-based controls is that as you move 
       <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</guid>
       <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
 What is CSG? CSG stands for Constructive Solid Geometry. It allows you to quickly combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
+    </item>
+    
+    <item>
+      <title>Using KinematicBody2D</title>
+      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</link>
+      <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</guid>
+      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
+Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
+    </item>
+    
+    <item>
+      <title>Inheritance</title>
+      <link>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</link>
+      <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</guid>
+      <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
+We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
+Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
+    </item>
+    
+    <item>
+      <title>Using Rigid Bodies</title>
+      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</link>
+      <pubDate>Sat, 30 Dec 2017 08:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</guid>
+      <description>At the time of this writing, Godot 3.0 is nearing release, and many new users are trying it out. Recently I&amp;rsquo;ve seen a lot of confusion around physics and physics bodies, especially rigid bodies, which are Godot&amp;rsquo;s &amp;ldquo;true&amp;rdquo; physics nodes.
+In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.</description>
     </item>
     
   </channel>

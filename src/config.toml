@@ -9,5 +9,9 @@ googleAnalytics = "UA-39851424-1"
 disqusShortname = "kidscancode"
 
 [params]
+    disableNextPrev = true
     themeVariant = "green"
     disableInlineCopyToClipBoard = true
+
+[outputs]
+    home = [ "HTML", "RSS", "JSON"]

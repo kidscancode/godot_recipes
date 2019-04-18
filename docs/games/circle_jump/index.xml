@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Circle Jump on Godot Lessons by KidsCanCode</title>
+    <title>Mobile Game: Circle Jump on Godot Lessons by KidsCanCode</title>
     <link>http://kidscancode.org/godot_lessons/games/circle_jump/</link>
-    <description>Recent content in Circle Jump on Godot Lessons by KidsCanCode</description>
+    <description>Recent content in Mobile Game: Circle Jump on Godot Lessons by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate>
     
 	<atom:link href="http://kidscancode.org/godot_lessons/games/circle_jump/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project setup</title>
+      <link>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</guid>
+      <description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
+In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description>
+    </item>
     
   </channel>
 </rss>

@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/101_3d_01/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
@@ -68,17 +73,17 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_lessons/games/circle_jump/</loc>
-    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_lessons/basics/gdscript/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
   <url>
     <loc>http://kidscancode.org/godot_lessons/basics/3d/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/games/circle_jump/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
@@ -103,6 +108,11 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_lessons/recipes/</loc>
+    <lastmod>2019-04-09T20:47:11-07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_lessons/games/</loc>
     <lastmod>2019-04-09T20:47:11-07:00</lastmod>
   </url>
@@ -110,6 +120,21 @@
   <url>
     <loc>http://kidscancode.org/godot_lessons/</loc>
     <lastmod>2019-04-09T22:57:31-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</loc>
+    <lastmod>2018-02-13T03:12:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</loc>
+    <lastmod>2018-01-19T15:12:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</loc>
+    <lastmod>2017-12-30T08:12:12-07:00</lastmod>
   </url>
   
   <url>

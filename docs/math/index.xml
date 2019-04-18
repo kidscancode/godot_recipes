@@ -17,10 +17,9 @@
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
-      <description>Now that you understand vectors, we can move on to the next important topic.
-2D Transforms In 2D space, we&amp;rsquo;re using the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics, the Y axis points downward:
-Consider this spaceship floating in space:
-Currently, the ship is pointing in the same direction as the X axis. If we wanted it to move forward, we could just add to its X coordinate: position += Vector2(10, 0).</description>
+      <description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
+2D Transforms In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the Y axis points downward:
+To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>
     </item>
     
   </channel>

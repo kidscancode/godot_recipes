@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Music_Light-Puzzles.ogg-d4aff203c159758ecacc35152c4f6f33.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/Music_Light-Puzzles.ogg"
+dest_files=[ "res://.import/Music_Light-Puzzles.ogg-d4aff203c159758ecacc35152c4f6f33.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
