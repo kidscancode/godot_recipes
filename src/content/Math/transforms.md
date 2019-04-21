@@ -73,47 +73,26 @@ to the object's `position` vector.
 
 ![alt](/godot_lessons/img/0_2d_rocket4.png?width=250px)
 
-### Operations on Transforms
-
-#### Rotation
-
-A given transform can be rotated with the `rotated()` method:
-
-**IMAGE: Rotated transform (side-by-side)**
-
-#### Translation
-
-To move a transform, i.e. change its `origin` using global coordinates:
-
-```gdscript
-transform.origin += Vector2(2, 0)
-```
-
-Using local coordinates:
-
-```gdscript
-transform = transform.translated(Vector2(2, 0))
-```
-
-#### Scaling
-
-If the _length_ of the basis vectors is not `1` (ie normalized), then the
-the transform also encodes scale.
-
 ### Converting Between Local and Global Space
 
-You can convert coordinates from global to local by applying
+You can convert coordinates from local to global by applying
 the transform. To apply a transform, use `xform()`:
 
-**SNIPPET**
+```gdscript
+    var global_position = transform.xform(local_position)
+```
+For convenience, `Node2D` and `Spatial` include helper functions for this.
+Instead of using `transform.xform()`, you can call `to_global()`:
+
+```gdscript
+    var global_position = to_global(local_position)
+```
 
 To convert from global to local coordinates, you can use the opposite (inverse)
 of the transform with `xform_inv()`.
 
 Let's use the example of an object in the 2D plane and convert mouse clicks
 (global space) into coordinates relative to the object:
-
-**IMAGE: ship w/grid**
 
 ```gdscript
 extends Sprite
@@ -124,8 +103,8 @@ func _unhandled_input(event):
             printt(event.position, transform.xform_inv(event.position))
 ```
 
-For convenience, Node2D includes helper functions for this. Instead of using
-`transform.xform_inv()`, you can call `to_local()`:
+As with the previous operation, there are helper functions for this.
+Instead of using `transform.xform_inv()`, you can call `to_local()`:
 
 ```gdscript
     printt(event.position, to_local(event.position))

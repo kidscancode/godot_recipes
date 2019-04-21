@@ -124,11 +124,21 @@ Capturing the Mouse One issue with our mouse-based controls is that as you move 
     <item>
       <title>Using CSG</title>
       <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</link>
-      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</guid>
       <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
-What is CSG? CSG stands for Constructive Solid Geometry. It allows you to quickly combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
+What is CSG? CSG stands for Constructive Solid Geometry. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
+    </item>
+    
+    <item>
+      <title>First-person Character</title>
+      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_07/</guid>
+      <description>In this installment, we&amp;rsquo;ll look at how to make a first-person character. We&amp;rsquo;ll use the CSG-based level we designed in the previous part as a place to walk around and test our movement.
+Character Scene In an FPS or similar game, we want to give the player the illusion that they&amp;rsquo;re looking out of the character&amp;rsquo;s eyes. One nice aspect of this is that we don&amp;rsquo;t really need a model, at least to get started.</description>
     </item>
     
     <item>

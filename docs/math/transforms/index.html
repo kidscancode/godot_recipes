@@ -14,20 +14,20 @@
     <title>Transforms :: Godot Lessons by KidsCanCode</title>
 
     
-    <link href="/godot_lessons/css/nucleus.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/fontawesome-all.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/hybrid.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/featherlight.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/auto-complete.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/theme.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/hugo-theme.css?1555627485" rel="stylesheet">
+    <link href="/godot_lessons/css/nucleus.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1555868494" rel="stylesheet">
     
-      <link href="/godot_lessons/css/theme-green.css?1555627485" rel="stylesheet">
+      <link href="/godot_lessons/css/theme-green.css?1555868494" rel="stylesheet">
     
 
-    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1555627485"></script>
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1555868494"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1555627485"></script>
-<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1555627485"></script>
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1555868494"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1555868494"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
     
 </script>
-<script type="text/javascript" src="/godot_lessons/js/search.js?1555627485"></script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1555868494"></script>
 
     
 
@@ -359,6 +359,25 @@
       <li data-nav-id="/godot_lessons/basics/3d/101_3d_06/" title="Using CSG" class="dd-item ">
         <a href="/godot_lessons/basics/3d/101_3d_06/">
         06. Using CSG
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_07/" title="First-person Character" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_07/">
+        07. First-person Character
         
         </a>
     </li>
@@ -780,12 +799,6 @@
 <ul>
 <li><a href="#2d-transforms">2D Transforms</a>
 <ul>
-<li><a href="#operations-on-transforms">Operations on Transforms</a>
-<ul>
-<li><a href="#rotation">Rotation</a></li>
-<li><a href="#translation">Translation</a></li>
-<li><a href="#scaling">Scaling</a></li>
-</ul></li>
 <li><a href="#converting-between-local-and-global-space">Converting Between Local and Global Space</a></li>
 </ul></li>
 <li><a href="#3d-transforms">3D Transforms</a></li>
@@ -881,47 +894,27 @@ to the object&rsquo;s <code>position</code> vector.</p>
 
 <p><img src="/godot_lessons/img/0_2d_rocket4.png?width=250px" alt="alt" /></p>
 
-<h3 id="operations-on-transforms">Operations on Transforms</h3>
-
-<h4 id="rotation">Rotation</h4>
-
-<p>A given transform can be rotated with the <code>rotated()</code> method:</p>
-
-<p><strong>IMAGE: Rotated transform (side-by-side)</strong></p>
-
-<h4 id="translation">Translation</h4>
-
-<p>To move a transform, i.e. change its <code>origin</code> using global coordinates:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">transform<span style="color:#ff79c6">.</span>origin <span style="color:#ff79c6">+=</span> Vector2(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">0</span>)</code></pre></div>
-<p>Using local coordinates:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">transform <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>translated(Vector2(<span style="color:#bd93f9">2</span>, <span style="color:#bd93f9">0</span>))</code></pre></div>
-<h4 id="scaling">Scaling</h4>
-
-<p>If the <em>length</em> of the basis vectors is not <code>1</code> (ie normalized), then the
-the transform also encodes scale.</p>
-
 <h3 id="converting-between-local-and-global-space">Converting Between Local and Global Space</h3>
 
-<p>You can convert coordinates from global to local by applying
+<p>You can convert coordinates from local to global by applying
 the transform. To apply a transform, use <code>xform()</code>:</p>
-
-<p><strong>SNIPPET</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">var</span> global_position <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>xform(local_position)</code></pre></div>
+<p>For convenience, <code>Node2D</code> and <code>Spatial</code> include helper functions for this.
+Instead of using <code>transform.xform()</code>, you can call <code>to_global()</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">var</span> global_position <span style="color:#ff79c6">=</span> to_global(local_position)</code></pre></div>
 <p>To convert from global to local coordinates, you can use the opposite (inverse)
 of the transform with <code>xform_inv()</code>.</p>
 
 <p>Let&rsquo;s use the example of an object in the 2D plane and convert mouse clicks
 (global space) into coordinates relative to the object:</p>
-
-<p><strong>IMAGE: ship w/grid</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Sprite
 
 <span style="color:#ff79c6">func</span> _unhandled_input(event):
     <span style="color:#ff79c6">if</span> event is InputEventMouseButton <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>pressed:
         <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT:
             <span style="color:#8be9fd;font-style:italic">printt</span>(event<span style="color:#ff79c6">.</span>position, transform<span style="color:#ff79c6">.</span>xform_inv(event<span style="color:#ff79c6">.</span>position))</code></pre></div>
-<p>For convenience, Node2D includes helper functions for this. Instead of using
-<code>transform.xform_inv()</code>, you can call <code>to_local()</code>:</p>
+<p>As with the previous operation, there are helper functions for this.
+Instead of using <code>transform.xform_inv()</code>, you can call <code>to_local()</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#8be9fd;font-style:italic">printt</span>(event<span style="color:#ff79c6">.</span>position, to_local(event<span style="color:#ff79c6">.</span>position))</code></pre></div>
 <p>See the <a href="https://docs.godotengine.org/en/latest/classes/class_transform2d.html">Transform2D docs</a>
 for all of the available properties and methods.</p>
@@ -1115,6 +1108,22 @@ axis is the forward direction:</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1448,20 +1457,20 @@ axis is the forward direction:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_lessons/js/clipboard.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/jquery.sticky.js?1555627485"></script>
-    <script src="/godot_lessons/js/featherlight.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/highlight.pack.js?1555627485"></script>
+    <script src="/godot_lessons/js/clipboard.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1555868494"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1555868494"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1555627485"></script>
-    <script src="/godot_lessons/js/learn.js?1555627485"></script>
-    <script src="/godot_lessons/js/hugo-learn.js?1555627485"></script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1555868494"></script>
+    <script src="/godot_lessons/js/learn.js?1555868494"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1555868494"></script>
 
-    <link href="/godot_lessons/mermaid/mermaid.css?1555627485" type="text/css" rel="stylesheet" />
-    <script src="/godot_lessons/mermaid/mermaid.js?1555627485"></script>
+    <link href="/godot_lessons/mermaid/mermaid.css?1555868494" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1555868494"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

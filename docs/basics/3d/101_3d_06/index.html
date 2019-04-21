@@ -14,20 +14,20 @@
     <title>Using CSG :: Godot Lessons by KidsCanCode</title>
 
     
-    <link href="/godot_lessons/css/nucleus.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/fontawesome-all.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/hybrid.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/featherlight.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/auto-complete.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/theme.css?1555627485" rel="stylesheet">
-    <link href="/godot_lessons/css/hugo-theme.css?1555627485" rel="stylesheet">
+    <link href="/godot_lessons/css/nucleus.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/fontawesome-all.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/hybrid.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/featherlight.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/perfect-scrollbar.min.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/auto-complete.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/atom-one-dark-reasonable.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/theme.css?1555868494" rel="stylesheet">
+    <link href="/godot_lessons/css/hugo-theme.css?1555868494" rel="stylesheet">
     
-      <link href="/godot_lessons/css/theme-green.css?1555627485" rel="stylesheet">
+      <link href="/godot_lessons/css/theme-green.css?1555868494" rel="stylesheet">
     
 
-    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1555627485"></script>
+    <script src="/godot_lessons/js/jquery-3.3.1.min.js?1555868494"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -70,14 +70,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1555627485"></script>
-<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1555627485"></script>
+<script type="text/javascript" src="/godot_lessons/js/lunr.min.js?1555868494"></script>
+<script type="text/javascript" src="/godot_lessons/js/auto-complete.js?1555868494"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_lessons\/";
     
 </script>
-<script type="text/javascript" src="/godot_lessons/js/search.js?1555627485"></script>
+<script type="text/javascript" src="/godot_lessons/js/search.js?1555868494"></script>
 
     
 
@@ -359,6 +359,25 @@
       <li data-nav-id="/godot_lessons/basics/3d/101_3d_06/" title="Using CSG" class="dd-item active">
         <a href="/godot_lessons/basics/3d/101_3d_06/">
         06. Using CSG
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_07/" title="First-person Character" class="dd-item ">
+        <a href="/godot_lessons/basics/3d/101_3d_07/">
+        07. First-person Character
         
         </a>
     </li>
@@ -829,15 +848,12 @@ features, but you don&rsquo;t have any models handy? CSG to the rescue!</p>
 
 <h2 id="what-is-csg">What is CSG?</h2>
 
-<p>CSG stands for <strong>Constructive Solid Geometry</strong>. It allows you to quickly
-combine primitive shapes to build complex geometry. Shapes can be combined with
-boolean operations such as <em>Union</em>, <em>Intersection</em>, and <em>Subtraction</em>.</p>
+<p>CSG stands for <strong>Constructive Solid Geometry</strong>. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as <em>Union</em>, <em>Intersection</em>, and <em>Subtraction</em>.</p>
 
-<p>CSG is a great tool for quickly prototyping environments and game objects. Later
-in this tutorial, we&rsquo;ll use it to make a small FPS-style level with some ramps,
+<p>CSG is a great tool for prototyping environments and game objects. Later in this tutorial, we&rsquo;ll use it to make a small FPS-style level with some ramps,
 walls and platforms.</p>
 
-<p>However, before we do that, let&rsquo;s get introduced to how the CSG nodes work.</p>
+<p>Before we do that, let&rsquo;s get introduced to how the CSG nodes work.</p>
 
 <h2 id="csg-basics">CSG Basics</h2>
 
@@ -856,14 +872,11 @@ combined. The options are:</p>
 
 <ul>
 <li><strong>Union</strong> - The shapes will be merged, removing any &ldquo;inside&rdquo; geometry.</li>
-<li><strong>Intersection</strong> - Only the intersecting (overlapping) geometry is kept.</li>
+<li><strong>Intersection</strong> - Only the intersecting (overlapping) geometry will be kept.</li>
 <li><strong>Subtraction</strong> - The second shape is &ldquo;cut out&rdquo; of the first.</li>
 </ul>
 
-<p>CSG operations are performed on a shape by adding children. Add a child <code>CSGCylinder</code>
-to the <code>CSGBox</code>. Drag the top size handle (orange dot) to make it a bit taller.
-You can also increase the <em>Sides</em> property to make it look more circular (here
-it&rsquo;s set to <code>20</code>):</p>
+<p>CSG operations are performed on a shape by adding children. Add a child <code>CSGCylinder</code> to the <code>CSGBox</code>. Drag the top size handle (orange dot) to make it a bit taller. You can also increase the <em>Sides</em> property to make it look more circular (here it&rsquo;s set to <code>20</code>):</p>
 
 <p><img src="/godot_lessons/img/3d_06_03.png?width=200" alt="alt" /></p>
 
@@ -889,9 +902,7 @@ a <code>CSGCombiner</code> will be combined following the same rules as above.</
 <h2 id="building-a-room">Building a Room</h2>
 
 <p>Now we&rsquo;re going to make something useful: a large room with some obstacles and
-features that our previously created character can interact with, and that we
-can use in the upcoming tutorials. Make a new scene with a <code>Spatial</code> root that
-we can start working with.</p>
+features that our character can interact with, and that we can use in the upcoming tutorials. Make a new scene with a <code>Spatial</code> root that we can start working with.</p>
 
 <p>Start with a <code>CSGBox</code>, and set its <em>Width</em> and <em>Depth</em> to <code>20</code> and its <em>Height</em>
 to <code>5</code>. We need this to be a box that we go inside, so click the <em>Invert Faces</em>
@@ -927,7 +938,7 @@ height as the original room). Make the depth about half the size of the room.
 You can enable snapping here to make it easier to align.</p>
 
 <p>Add another <code>CSGBox</code> as a child and set it to &ldquo;Subtract&rdquo;. Size it to resemble
-a door. Alternatively, you can use a cylinder shape to get an arched portal.</p>
+a door. You can also use a cylinder shape to get an arched portal.</p>
 
 <p><img src="/godot_lessons/img/3d_06_07.png?width=300" alt="alt" /></p>
 
@@ -941,8 +952,7 @@ remove points. For a ramp, we want 3 points.</p>
 
 <p>After adding the <code>CSGPolygon</code>, you can click the <em>Polygon</em> property to adjust
 its number of points. After that, you can drag the three points to whatever
-location you like. Alternatively, to ensure everything lines up, you can type
-the coordinates into the Inspector:</p>
+location you like. To ensure everything lines up, you can type the coordinates into the Inspector:</p>
 
 <p><img src="/godot_lessons/img/3d_06_12.png?width=500" alt="alt" /></p>
 
@@ -964,18 +974,17 @@ seems pleasant to you. In the following examples, we&rsquo;ve picked a tan color
 
 <p><img src="/godot_lessons/img/3d_06_10.gif?width=250" alt="alt" /></p>
 
-<p>The area is quite featureless right now, but to make things more visually
+<p>The area is featureless right now, but to make things more visually
 interesting, you can add individual lights in each room (more about lighting
-in a later tutorial). Here&rsquo;s an example of adding some <code>OmniLight</code> and <code>SpotLight</code>
-nodes to the scene:</p>
+in a later tutorial). Here&rsquo;s an example of adding some <code>OmniLight</code> and <code>SpotLight</code> nodes to the scene:</p>
 
 <p><img src="/godot_lessons/img/3d_06_11.gif?width=250" alt="alt" /></p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
-<p>CSG is a powerful tool for quickly building objects directly in Godot without
+<p>CSG is a powerful tool for building objects directly in Godot without
 having to move to another modeling application such as Blender. It can be helpful
-if you quickly need to mock up a test level for your game, or for the final
+if you need to mock up a test level for your game, or for the final
 environment. Keep in mind that as the CSG tree becomes more complex, it can
 incur a performance penalty. Try to use CSGCombiner to separate your scene
 into separate CSG trees to minimize this.</p>
@@ -1253,6 +1262,25 @@ into separate CSG trees to minimize this.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1263,9 +1291,6 @@ into separate CSG trees to minimize this.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1487,20 +1512,20 @@ into separate CSG trees to minimize this.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_lessons/js/clipboard.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/jquery.sticky.js?1555627485"></script>
-    <script src="/godot_lessons/js/featherlight.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1555627485"></script>
-    <script src="/godot_lessons/js/highlight.pack.js?1555627485"></script>
+    <script src="/godot_lessons/js/clipboard.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/perfect-scrollbar.jquery.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/jquery.sticky.js?1555868494"></script>
+    <script src="/godot_lessons/js/featherlight.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/html5shiv-printshiv.min.js?1555868494"></script>
+    <script src="/godot_lessons/js/highlight.pack.js?1555868494"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1555627485"></script>
-    <script src="/godot_lessons/js/learn.js?1555627485"></script>
-    <script src="/godot_lessons/js/hugo-learn.js?1555627485"></script>
+    <script src="/godot_lessons/js/modernizr.custom-3.6.0.js?1555868494"></script>
+    <script src="/godot_lessons/js/learn.js?1555868494"></script>
+    <script src="/godot_lessons/js/hugo-learn.js?1555868494"></script>
 
-    <link href="/godot_lessons/mermaid/mermaid.css?1555627485" type="text/css" rel="stylesheet" />
-    <script src="/godot_lessons/mermaid/mermaid.js?1555627485"></script>
+    <link href="/godot_lessons/mermaid/mermaid.css?1555868494" type="text/css" rel="stylesheet" />
+    <script src="/godot_lessons/mermaid/mermaid.js?1555868494"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

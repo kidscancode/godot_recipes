@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_lessons/images/favicon.png" type="image/png">
 
-    <title>Creating a 3D Character :: Godot Lessons by KidsCanCode</title>
+    <title>First-person Character :: Godot Lessons by KidsCanCode</title>
 
     
     <link href="/godot_lessons/css/nucleus.css?1555868494" rel="stylesheet">
@@ -47,7 +47,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_lessons/basics/3d/101_3d_03/">
+  <body class="" data-url="/godot_lessons/basics/3d/101_3d_07/">
     <nav id="sidebar" class="">
 
 
@@ -299,7 +299,7 @@
  
   
     
-      <li data-nav-id="/godot_lessons/basics/3d/101_3d_03/" title="Creating a 3D Character" class="dd-item active">
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_03/" title="Creating a 3D Character" class="dd-item ">
         <a href="/godot_lessons/basics/3d/101_3d_03/">
         03. Creating a 3D Character
         
@@ -375,7 +375,7 @@
  
   
     
-      <li data-nav-id="/godot_lessons/basics/3d/101_3d_07/" title="First-person Character" class="dd-item ">
+      <li data-nav-id="/godot_lessons/basics/3d/101_3d_07/" title="First-person Character" class="dd-item active">
         <a href="/godot_lessons/basics/3d/101_3d_07/">
         07. First-person Character
         
@@ -784,7 +784,7 @@
             
           
           
-            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/basics/'>Godot 101</a> > <a href='/godot_lessons/basics/3d/'>Intro to 3D</a> > Creating a 3D Character
+            <a href='/godot_lessons/'>Home</a> > <a href='/godot_lessons/basics/'>Godot 101</a> > <a href='/godot_lessons/basics/3d/'>Intro to 3D</a> > First-person Character
           
         
           
@@ -803,13 +803,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#building-the-scene">Building the Scene</a></li>
-<li><a href="#adding-a-character">Adding a Character</a>
-<ul>
-<li><a href="#the-power-of-transforms">The Power of Transforms</a></li>
-<li><a href="#jumping">Jumping</a></li>
-</ul></li>
-<li><a href="#wrapping-up">Wrapping Up</a></li>
+<li><a href="#character-scene">Character Scene</a></li>
+<li><a href="#moving-around">Moving around</a></li>
+<li><a href="#adding-a-weapon">Adding a weapon</a></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -828,7 +825,7 @@
           
             <h1>
               
-              Creating a 3D Character
+              First-person Character
             </h1>
           
 
@@ -838,234 +835,107 @@
 
 
 
-<p>In the last part, we covered how
-to import 3D objects and how to arrange them in a scene. In this installment,
-we&rsquo;ll add more objects to the scene, including a user-controlled character.</p>
+<p>In this installment, we&rsquo;ll look at how to make a first-person character. We&rsquo;ll
+use the CSG-based level we designed in the previous part as a place to walk
+around and test our movement.</p>
 
-<h2 id="building-the-scene">Building the Scene</h2>
+<h2 id="character-scene">Character Scene</h2>
 
-<p>We&rsquo;re going to continue using the Kenney Platformer Kit we downloaded <a href="/blog/2019/03/godot_31_3d_part02/">last time</a>. Select all the &ldquo;block*.glb&rdquo; files and in the
-&ldquo;Import&rdquo; tab set their &ldquo;Root Type&rdquo; to <code>StaticBody</code> and click &ldquo;Reimport&rdquo;. Select
-&ldquo;blockLarge.glb&rdquo; and make a new inherited scene. Add a &ldquo;Convex Collision Sibling&rdquo;
-to the mesh using the menu as you did in the last tutorial. Rename the root node
-to &ldquo;BlockLarge&rdquo; and save the scene - I recommend making a separate folder for
-this, as soon you&rsquo;re going to have a bunch of scenes representing the
-differently shaped platform parts.</p>
+<p>In an FPS or similar game, we want to give the player the illusion that they&rsquo;re
+looking out of the character&rsquo;s eyes. One nice aspect of this is that we don&rsquo;t
+really need a model, at least to get started.</p>
 
-<p>You can download a starter project with all the block objects already configured
-and ready to use here: <strong>LINK</strong></p>
+<p>Start with a <code>KinematicBody</code>. To this we&rsquo;ll add two <code>CollisionShape</code> nodes (&ldquo;Body&rdquo; and &ldquo;Feet&rdquo;). We also want to have a <code>Camera</code>, but we need to be careful about how we handle rotation. The <em>character</em> should rotate in <strong>Y</strong>, but only the camera should rotate in <strong>X</strong> (for looking up and down). To make this work,
+add a <code>Spatial</code> node, which we&rsquo;ll call &ldquo;RotationPivot&rdquo;, and add the <code>Camera</code>
+to that.</p>
 
-<p>Open the scene from the last tutorial with the &ldquo;Ground&rdquo; plane and the crates.
-Delete the crates and add an instance of the large block. We want to be able
-to place these blocks so that they line up. To do this, select &ldquo;Configure Snap&rdquo;
-from the &ldquo;Transform&rdquo; menu at the top of the Viewport and set <em>Translate Snap</em>
-to <code>0.5</code>. Then click on the &ldquo;Snap Mode&rdquo; button (or press the <strong><code>Y</code></strong> key). Now
-duplicate the block a few times and drag them to arrange.</p>
+<p>The &ldquo;Body&rdquo; collision shape is going to represent the player&rsquo;s body. We can use
+a <code>CapsuleShape</code> (rotated <code>90</code> degrees around <strong>X</strong>). Set its <em>Radius</em> to <code>0.5</code>
+and <em>Height</em> to <code>1</code>.</p>
 
-<p><img src="/godot_lessons/img/g101_03_01.png" alt="alt" /></p>
+<p>One issue with using a <code>CapsuleShape</code> is that the bottom is rounded. This is good for moving over small bumps in a natural way, but it also means that when standing on the edge of a surface, the player will &ldquo;roll&rdquo; off in a strange way. We can prevent this by using a <code>BoxShape</code> for the &ldquo;Feet&rdquo; collision. Make its extents <code>(.4, .1, .4)</code> and place it so that its bottom is just above the bottom of the capsule. We&rsquo;ll still have the round bottom to move over things, but the
+box will keep us from sliding off ledges.</p>
 
-<p>If you like, go ahead and add scenes for some of the other platform blocks and
-arrange them into a pleasing level. Be creative!</p>
+<p>Move the <code>RotationPivot</code> up a bit, so that it&rsquo;s not pointing the camera out of
+the &ldquo;middle&rdquo; of the body.</p>
 
-<p><img src="/godot_lessons/img/g101_03_02.png" alt="alt" /></p>
+<p><img src="/godot_lessons/img/3d_07_01.png" alt="alt" /></p>
 
-<h2 id="adding-a-character">Adding a Character</h2>
+<h2 id="moving-around">Moving around</h2>
 
-<p>Now we&rsquo;re going to make a character so we can walk around on the platforms.
-Open a new scene and start with a <code>KinematicBody</code> named &ldquo;Character&rdquo;. This
-<code>PhysicsBody</code> node behaves very much like its 2D equivalent (you&rsquo;ve already
-done the 2D tutorials, right?). It has a <code>move_and_slide()</code> method that we&rsquo;ll
-use to perform the movement and collision detection. Gravity will be added
-manually each frame, accelerating in the <strong>-Y</strong> direction.</p>
-
-<p>Add a sphere-shaped <code>MeshInstance</code> and a matching <code>CollisionShape</code>. Remember,
-you can add a <code>SpatialMaterial</code> to the mesh and set its <em>Albedo</em> property to
-change the color.</p>
-
-<p>The sphere is nice, but it&rsquo;s going to be hard to tell what direction it&rsquo;s
-facing. Let&rsquo;s add another <code>MeshInstance</code>, this time with a <code>PrismMesh</code> shape.
-Set its <em>Size</em> to <code>(0.5, 0.5, 0.1)</code> and then its <strong>x</strong> rotation to <code>-90</code>
-degrees. Arrange it so it&rsquo;s pointing along the <em>negative</em> <strong>z</strong> axis. (You can
-tell which way is negative because the gizmo arrows point in the positive
-direction).</p>
-
-<p><img src="/godot_lessons/img/g101_03_03.png" alt="alt" /></p>
-
-<p>Let&rsquo;s also add a <code>Camera</code> to the scene, so it will follow the player around.
-Position the camera behind and above the character, angling it down a bit. Click
-the &ldquo;Preview&rdquo; button to check the camera&rsquo;s view.</p>
-
-<p>Before we add a script, open the &ldquo;Project Settings&rdquo; and add the following inputs
-on the &ldquo;Input Map&rdquo; tab:</p>
-
-<table>
-<thead>
-<tr>
-<th align="left">Input Action</th>
-<th align="left">Key</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="left">move_forward</td>
-<td align="left"><strong>W</strong></td>
-</tr>
-
-<tr>
-<td align="left">move_back</td>
-<td align="left"><strong>S</strong></td>
-</tr>
-
-<tr>
-<td align="left">strafe_right</td>
-<td align="left"><strong>D</strong></td>
-</tr>
-
-<tr>
-<td align="left">strafe_left</td>
-<td align="left"><strong>A</strong></td>
-</tr>
-
-<tr>
-<td align="left">jump</td>
-<td align="left"><strong>Space</strong></td>
-</tr>
-</tbody>
-</table>
-
-<p>Now let&rsquo;s add a script to the body.</p>
-
+<p>Much of the code for movement is the same as we used for the third-person character earlier in this series. We&rsquo;ll start with declaring our variables:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody
 
-<span style="color:#ff79c6">var</span> gravity <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">12</span>  <span style="color:#6272a4"># strength of gravity Vector3.DOWN * 12</span>
-<span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">4</span>  <span style="color:#6272a4"># movement speed</span>
-<span style="color:#ff79c6">var</span> jump_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">6</span>  <span style="color:#6272a4"># jump strength</span>
-<span style="color:#ff79c6">var</span> spin <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>  <span style="color:#6272a4"># rotation speed</span>
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> camera <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>RotationHelper<span style="color:#ff79c6">/</span>Camera
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> rotation_helper <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>RotationHelper
 
-<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector3()
-<span style="color:#ff79c6">var</span> jump <span style="color:#ff79c6">=</span> false
+<span style="color:#ff79c6">var</span> gravity <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">30</span>
+<span style="color:#ff79c6">var</span> max_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8</span>
+<span style="color:#ff79c6">var</span> mouse_sensitivity <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.002</span>  <span style="color:#6272a4"># radians/pixel</span>
 
-<span style="color:#ff79c6">func</span> get_input():
-    velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    velocity<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_forward&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">-=</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_back&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">+=</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_right&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+=</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_left&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">-=</span> speed
-
-<span style="color:#ff79c6">func</span> _physics_process(delta):
-    velocity <span style="color:#ff79c6">+=</span> gravity <span style="color:#ff79c6">*</span> delta
-    get_input(delta)
-    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity, Vector3<span style="color:#ff79c6">.</span>UP)</code></pre></div>
-
-<p>The code in <code>_physics_process()</code> is pretty straightforward: add gravity to
-accelerate in the positive <strong>Y</strong> direction (downward), call <code>get_input()</code> to
-check for input, and then use <code>move_and_slide()</code> to move in the direction
-of the velocity vector.</p>
-
-<p>In <code>get_input()</code> we check to see which key is pressed and then move in that
-direction. Run the program and test:</p>
-
-<p><img src="/godot_lessons/img/g101_03_04.gif" alt="alt" /></p>
-
-<p>This is all good, but we need to be able to rotate. Let&rsquo;s add a camera to the
-body and we&rsquo;ll use the mouse to rotate. Place the camera above and behind the
-character so you have a good view, then add the following code to the character&rsquo;s
-script:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
-    <span style="color:#ff79c6">if</span> event is InputEventMouseMotion:
-        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>:
-            rotate_y(<span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">lerp</span>(<span style="color:#bd93f9">0</span>, spin, event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x<span style="color:#ff79c6">/</span><span style="color:#bd93f9">10</span>))
-        <span style="color:#ff79c6">elif</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>:
-            rotate_y(<span style="color:#ff79c6">-</span><span style="color:#8be9fd;font-style:italic">lerp</span>(<span style="color:#bd93f9">0</span>, spin, event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x<span style="color:#ff79c6">/</span><span style="color:#bd93f9">10</span>)</code></pre></div>
-
-<p>This will convert any mouse motion in the x direction into a rotation around
-the <strong>y</strong> axis. We use <code>lerp()</code> to smooth it out based on how fast you move
-the mouse.</p>
-
-<p>Run the scene and confirm that moving the mouse rotates the character:</p>
-
-<p><img src="/godot_lessons/img/g101_03_05.gif" alt="alt" /></p>
-
-<p>However, there&rsquo;s a problem. No matter which way we&rsquo;re facing, pressing <strong>W</strong>
-moves us along the <strong>Z</strong> axis. Our movement is using global coordinates, but
-we need to move in the <em>object&rsquo;s</em> forward direction.</p>
-
-<h3 id="the-power-of-transforms">The Power of Transforms</h3>
-
-<p>This is where <em>transforms</em> come in. A transform is a mathematical <em>matrix</em> that
-contains the object&rsquo;s translation, rotation, and scale information all in one. In
-Godot it&rsquo;s stored in the <code>Transform</code> data type. The position information is
-called the <code>transform.origin</code> and the orientation information is in the
-<code>transform.basis</code>.</p>
-
-<p>Remember how the 3D gizmo can be set to &ldquo;Local Space Mode&rdquo;? When in this mode,
-the gizmo&rsquo;s <strong>X/Y/Z</strong> axes point along the <em>object&rsquo;s</em> axes. This is the <code>basis</code>
-of the transform. The basis contains three <code>Vector3</code> objects callsd <code>x</code>, <code>y</code>,
-and <code>z</code> that represent these directions. We can use this to ensure that pressing
-the <strong>W</strong> key will always move us in the object&rsquo;s forward direction.</p>
-
-<p><img src="/godot_lessons/img/g101_03_07.gif" alt="alt" /></p>
-
-<p>Change the <code>get_input()</code> function like so:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> get_input():
-    <span style="color:#ff79c6">var</span> vy <span style="color:#ff79c6">=</span> velocity<span style="color:#ff79c6">.</span>y
-    velocity <span style="color:#ff79c6">=</span> Vector3()
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_forward&#34;</span>):
-        velocity <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span>transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">*</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_back&#34;</span>):
-        velocity <span style="color:#ff79c6">+=</span> transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">*</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_right&#34;</span>):
-        velocity <span style="color:#ff79c6">+=</span> transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_left&#34;</span>):
-        velocity <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span>transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> speed
-    velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> vy</code></pre></div>
-
-<p>Now forward and back will always move along the objects&rsquo; <strong>Z</strong> axis, and the
-strafe keys along its <strong>X</strong>.</p>
-
-<p><img src="/godot_lessons/img/g101_03_06.gif" alt="alt" /></p>
-
-<h3 id="jumping">Jumping</h3>
-
-<p>Let&rsquo;s add one more movement to the player: jumping.</p>
-
-<p>Add these lines to the end of <code>get_input()</code>:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    jump <span style="color:#ff79c6">=</span> false
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_just_pressed(<span style="color:#f1fa8c">&#34;jump&#34;</span>):
-        jump <span style="color:#ff79c6">=</span> true</code></pre></div></p>
-
-<p>And add these to the end of <code>_physics_process()</code>:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">if</span> jump <span style="color:#ff79c6">and</span> is_on_floor():
-        velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> jump_speed</code></pre></div></p>
-
-<p><img src="/godot_lessons/img/g101_03_08.gif" alt="alt" /></p>
-
-<h2 id="wrapping-up">Wrapping Up</h2>
-
-<p>In this tutorial you learned how to build a more complex scene, and how to write
-movement code for a user-controlled character. You also learned about transforms,
-which are a very important concept in 3D - you&rsquo;re going to be using a lot in the
-future.</p>
-
-<p>In the next part, we&rsquo;ll add some more objects to our 3D world.</p>
-
-<p>You can also find a video version of this lesson here:</p>
-
-<p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/ickZ_Genr7A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector3()</code></pre></div>
+<div class="notices note" ><p>The value of <code>mouse_sensitivity</code> maps the movement of the mouse, which is in pixels, to rotation, in degrees. So for each pixel the mouse moves, we&rsquo;ll rotate by <code>0.002</code> radians (or about <code>0.1</code> degrees).</p>
 </div>
 
-<!--
-<iframe width="392" height="221" src="https://www.youtube.com/embed/ickZ_Genr7A" frameborder="0" allowfullscreen></iframe> --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> get_input():
+    <span style="color:#ff79c6">var</span> input_dir <span style="color:#ff79c6">=</span> Vector3()
+    <span style="color:#6272a4"># desired move in camera direction</span>
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_forward&#34;</span>):
+        input_dir <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span>camera<span style="color:#ff79c6">.</span>global_transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;move_back&#34;</span>):
+        input_dir <span style="color:#ff79c6">+=</span> camera<span style="color:#ff79c6">.</span>global_transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_left&#34;</span>):
+        input_dir <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span>camera<span style="color:#ff79c6">.</span>global_transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>x
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;strafe_right&#34;</span>):
+        input_dir <span style="color:#ff79c6">+=</span> camera<span style="color:#ff79c6">.</span>global_transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>x
+    input_dir <span style="color:#ff79c6">=</span> input_dir<span style="color:#ff79c6">.</span>normalized()
+    <span style="color:#ff79c6">return</span> input_dir</code></pre></div>
+<p>When detecting input, we want to move in the direction the <em>camera</em> is facing, which is not necessarily the current movement direction. Although we&rsquo;re not going to do it yet, this will allow us to implement friction and acceleration for a more natural movement feel.</p>
+
+<p>We add up the inputs and return the resulting direction vector.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventMouseMotion <span style="color:#ff79c6">and</span> Input<span style="color:#ff79c6">.</span>get_mouse_mode() <span style="color:#ff79c6">==</span> Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED:
+        rotation_helper<span style="color:#ff79c6">.</span>rotate_x(<span style="color:#ff79c6">-</span>event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> mouse_sensitivity)
+        rotate_y(<span style="color:#ff79c6">-</span>event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> mouse_sensitivity)
+        rotation_helper<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(rotation_helper<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.2</span>, <span style="color:#bd93f9">1.2</span>)</code></pre></div>
+<p>We also need to capture mouse movement for camera rotation. As discussed above, horizontal mouse movement rotates the entire body in <strong>Y</strong>, while vertical motion rotates the <em>helper</em> node in <strong>X</strong>.</p>
+
+<p>We also need to limit that vertical rotation to prevent the camera from flipping upside-down.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _physics_process(delta):
+    velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">+=</span> gravity <span style="color:#ff79c6">*</span> delta
+    <span style="color:#ff79c6">var</span> desired_velocity <span style="color:#ff79c6">=</span> get_input() <span style="color:#ff79c6">*</span> max_speed
+
+    velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> desired_velocity<span style="color:#ff79c6">.</span>x
+    velocity<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">=</span> desired_velocity<span style="color:#ff79c6">.</span>z
+    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity, Vector3<span style="color:#ff79c6">.</span>UP, true)</code></pre></div>
+<p>In <code>_physics_process()</code> we get the <code>desired_velocity</code>, the direction vector returned by <code>get_input()</code>, and multiply it by <code>max_speed</code> to set its length. We don&rsquo;t want to alter our <code>velocity.y</code> because that&rsquo;s set by gravity, so we only set the <code>x</code> and <code>z</code> components based on the input.</p>
+
+<p>We&rsquo;re also setting <code>true</code> for the <code>stop_on_slope</code> parameter of <code>move_and_slide()</code>. This keeps us from sliding down the ramp if we stand on it.</p>
+
+<p>Test your movement and ensure everything is working as expected.</p>
+
+<h2 id="adding-a-weapon">Adding a weapon</h2>
+
+<p>First person characters typically have some sort of item, or at least empty hands, visible in front of them. We&rsquo;re going to use the shotgun model from the following art pack:</p>
+
+<p><a href="https://kenney.nl/assets/weapon-pack">Kenney Weapon Pack</a></p>
+
+<p>Addd a <code>MeshInstance</code> to the <code>Pivot</code> node and use the <code>shotgun.obj</code> model from the art pack. You&rsquo;ll notice that the model is too small for our player&rsquo;s scale, so set <em>Scale</em> to <code>(8, 8, 8)</code>.</p>
+
+<p>We need to position the model so that it&rsquo;s projecting out &ldquo;through&rdquo; the camera. Aligning it can be difficult, so click the &ldquo;View&rdquo; menu and choose &ldquo;2 Viewports&rdquo;. In the bottom one, select the <code>Camera</code> and click &ldquo;Preview&rdquo;, and in the top you can move the gun until it looks right.</p>
+
+<p><img src="/godot_lessons/img/3d_07_02.png" alt="alt" /></p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>We now have a basic first-person character controller. This could make a good foundation for a wide variety of game types by adding features and behaviors, as we&rsquo;ll see in later lessons.</p>
+
+<p>You can also find a video version of this lesson here:
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/_55ktNdarxY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
 
 
 <h3>Comments</h3>
@@ -1271,26 +1141,6 @@ future.</p>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -1350,6 +1200,23 @@ future.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1360,6 +1227,9 @@ future.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
