@@ -155,10 +155,10 @@ Character Scene In an FPS or similar game, we want to give the player the illusi
     
     <item>
       <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</link>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
       <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</guid>
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
       <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
 Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
     </item>

@@ -18,7 +18,7 @@ GDScript uses a syntax that is very similar to Python's, but it's optimized and 
 
 Let's make our first script. Remember, any node can have a script attached to it. Right-click on the sprite node, and choose "Add Script". You can also click the button next to the search box:
 
-![alt](/godot_lessons/img/gds_01_attach.png?width=250)
+![alt](/godot_recipes/img/gds_01_attach.png?width=250)
 
 Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it.
 

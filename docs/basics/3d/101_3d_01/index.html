@@ -14,20 +14,20 @@
     <title>The 3D Editor :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555966972" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1555966972" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555966972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,13 +54,14 @@
 
   <div id="header-wrapper">
     <div id="header">
+      <div class="mylogo">Godot Recipes</div>
       
 
 <img src="/godot_recipes/images/kcc_logo_square.png" />
 
 
     </div>
-      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
         
 
     
@@ -70,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555966972"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555966972"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555966972"></script>
 
     
 
@@ -447,25 +448,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/2d/godot3_kinematic2d/">
-        Using KinematicBody2D
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -541,6 +523,25 @@
           
 
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -969,13 +970,13 @@ available in the 3D editor window, so we&rsquo;ll start there:</p>
 <p>When you first open a new project in Godot, you will see the 3D project view:</p>
 
 <!-- <figure>
-    <img src="/godot_lessons/img/3d_intro_01.png"/> <figcaption>
+    <img src="/godot_recipes/img/3d_intro_01.png"/> <figcaption>
             <h4>3D view</h4>
         </figcaption>
 </figure>
  -->
 
-<p><img src="/godot_lessons/img/3d_intro_01.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_01.png" alt="alt" /></p>
 
 <p>The first thing you should notice is the three colored lines in the center.
 These are the <strong>x</strong> (red), <strong>y</strong> (green), and <strong>z</strong> (blue) axes. The point where
@@ -1008,7 +1009,7 @@ WASD keys to fly around the scene while aiming with the mouse.</p>
 in the upper-left corner. Here, you can snap the camera to a particular
 orientation.</p>
 
-<p><img src="/godot_lessons/img/3d_intro_perspective.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_perspective.png" alt="alt" /></p>
 
 <h2 id="adding-3d-objects">Adding 3D Objects</h2>
 
@@ -1017,7 +1018,7 @@ which provides properties such as <code>position</code> and <code>rotation</code
 from <code>Spatial</code>. Add one to your scene and you&rsquo;ll see the following object
 appear at the origin:</p>
 
-<p><img src="/godot_lessons/img/3d_intro_gizmo.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_gizmo.png" alt="alt" /></p>
 
 <p>This object is not the node. It is something called a 3D <em>gizmo</em>. Gizmos are
 tools that allow you to move and rotate objects in space. The three rings
@@ -1031,7 +1032,7 @@ you find yourself getting lost.</p>
 <div class="notices tip" ><p>Sometimes you may feel the gizmos are getting in your way. You can
 click on the mode icons to restrict yourself to only one type of transformation:
 move, rotate, or scale:
-<img src="/godot_lessons/img/3d_intro_mode_buttons.png" alt="alt" /></p>
+<img src="/godot_recipes/img/3d_intro_mode_buttons.png" alt="alt" /></p>
 </div>
 
 
@@ -1042,7 +1043,7 @@ object, the gizmo&rsquo;s arrows still point along the axes. However, if you cli
 the &ldquo;Local Space Mode&rdquo; button, the gizmo will switch to moving the body in
 <em>local space</em>.</p>
 
-<p><img src="/godot_lessons/img/3d_intro_local_space.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_local_space.png" alt="alt" /></p>
 
 <p>Now when you rotate the object, the gizmo arrows point along the <em>object&rsquo;s</em>
 axes and not the world&rsquo;s. Switching back and forth between Local and World
@@ -1067,7 +1068,7 @@ a <em>mesh</em>. A mesh is a mathematical description of a shape. It consists of
 collection of points, called <em>vertices</em>. These vertices are connected by lines,
 called <em>edges</em>, and multiple edges (at least three) together make a <em>face</em>.</p>
 
-<p><img src="/godot_lessons/img/3d_intro_cube_labels.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_cube_labels.png" alt="alt" /></p>
 
 <p>For example, a cube is made up of 8 vertices, 12 edges, and 6 faces.</p>
 
@@ -1082,7 +1083,7 @@ simple meshes called <em>primitives</em>.</p>
 <p>Add a <code>MeshInstance</code> node as a child of the <code>Spatial</code> and in the Inspector,
 click its <em>Mesh</em> property:</p>
 
-<p><img src="/godot_lessons/img/3d_intro_primitives.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_primitives.png" alt="alt" /></p>
 
 <p>Here you can see the list of available primitives. They represent a handy
 collection of common useful shapes. Select &ldquo;New CubeMesh&rdquo; and you&rsquo;ll see a
@@ -1096,7 +1097,7 @@ We&rsquo;ll talk about lighting a little bit later.</p>
 won&rsquo;t see anything in the game viewport without adding a <code>Camera</code>. Add one and
 use the camera&rsquo;s gizmo to position it pointing towards the cube:</p>
 
-<p><img src="/godot_lessons/img/3d_intro_camera01.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_intro_camera01.png" alt="alt" /></p>
 
 <p>The pinkish-purple pyramid shape on the camera is called the <em>fustrum</em> and
 represents the camera&rsquo;s view. Notice the small triangular arrow which represents
@@ -1440,22 +1441,6 @@ and how to use more of Godot&rsquo;s 3D nodes.</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1503,6 +1488,22 @@ and how to use more of Godot&rsquo;s 3D nodes.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1700,20 +1701,20 @@ and how to use more of Godot&rsquo;s 3D nodes.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555966972"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555966972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
-    <script src="/godot_recipes/js/learn.js?1555964166"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555966972"></script>
+    <script src="/godot_recipes/js/learn.js?1555966972"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555966972"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1555966972" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555966972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

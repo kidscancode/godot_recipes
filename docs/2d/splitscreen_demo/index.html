@@ -14,20 +14,20 @@
     <title>Splitscreen Demo (Using Viewports) :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555966972" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1555966972" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555966972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,13 +54,14 @@
 
   <div id="header-wrapper">
     <div id="header">
+      <div class="mylogo">Godot Recipes</div>
       
 
 <img src="/godot_recipes/images/kcc_logo_square.png" />
 
 
     </div>
-      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
         
 
     
@@ -70,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555966972"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555966972"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555966972"></script>
 
     
 
@@ -447,25 +448,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/2d/godot3_kinematic2d/">
-        Using KinematicBody2D
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -541,6 +523,25 @@
           
 
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -941,7 +942,7 @@ two players (one using arrow keys and the other using WASD controls). This is
 not a problem if our game world all fits on one screen, but if the map is large,
 we&rsquo;ll want to have a &ldquo;split screen&rdquo; view tracking the two players separately.</p>
 
-<p><img src="/godot_lessons/img/splitscreen2.gif" alt="alt" /></p>
+<p><img src="/godot_recipes/img/splitscreen2.gif" alt="alt" /></p>
 
 <p>We&rsquo;ll also look at a quick way to set up a minimap display.</p>
 
@@ -971,7 +972,7 @@ appropriate value to <code>id</code> for each player.</p>
 
 <p>The two players are added to a &ldquo;World&rdquo; scene containing a TileMap:</p>
 
-<p><img src="/godot_lessons/img/splitscreen_map.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/splitscreen_map.png" alt="alt" /></p>
 
 <p>If you like, you can download the starting project, with the world already set
 up, here:</p>
@@ -1119,14 +1120,14 @@ click <em>Current</em> on this camera as well.</p>
 <p>Use the &ldquo;Layout&rdquo; menu to align the Minimap container at &ldquo;Center Bottom&rdquo;. Let&rsquo;s
 see what it looks like:</p>
 
-<p><img src="/godot_lessons/img/splitscreen_minimap1.png?width=400" alt="alt" /></p>
+<p><img src="/godot_recipes/img/splitscreen_minimap1.png?width=400" alt="alt" /></p>
 
 <p>We need to get rid of that grey area around the edges. We could find the precise
 zoom level that matches our desired minimap size, but instead, we&rsquo;ll check the
 <em>Transparent Bg</em> on the Viewport. Now our non-map areas aren&rsquo;t visible and the
 minimap appears floating directly on top of the main viewports.</p>
 
-<p><img src="/godot_lessons/img/splitscreen_minimap2.png?width=400" alt="alt" /></p>
+<p><img src="/godot_recipes/img/splitscreen_minimap2.png?width=400" alt="alt" /></p>
 
 <h3 id="conclusion">Conclusion</h3>
 
@@ -1444,25 +1445,6 @@ try to keep them separate from the game logic and only use them as displays.</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1470,6 +1452,9 @@ try to keep them separate from the game logic and only use them as displays.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1510,6 +1495,22 @@ try to keep them separate from the game logic and only use them as displays.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1707,20 +1708,20 @@ try to keep them separate from the game logic and only use them as displays.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555966972"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555966972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
-    <script src="/godot_recipes/js/learn.js?1555964166"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555966972"></script>
+    <script src="/godot_recipes/js/learn.js?1555966972"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555966972"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1555966972" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555966972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

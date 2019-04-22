@@ -14,20 +14,20 @@
     <title>Importing 3D Objects :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555966972" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1555966972" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555966972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,13 +54,14 @@
 
   <div id="header-wrapper">
     <div id="header">
+      <div class="mylogo">Godot Recipes</div>
       
 
 <img src="/godot_recipes/images/kcc_logo_square.png" />
 
 
     </div>
-      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
         
 
     
@@ -70,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555966972"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555966972"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555966972"></script>
 
     
 
@@ -447,25 +448,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/2d/godot3_kinematic2d/">
-        Using KinematicBody2D
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -541,6 +523,25 @@
           
 
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -951,7 +952,7 @@ download here: <a href="https://kenney.nl/assets/platformer-kit">https://kenney.
 <p>This kit has a wide selection of objects that we can use to practice our Godot
 3D skills. Here&rsquo;s a sample showing what the kit looks like:</p>
 
-<p><img src="/godot_lessons/img/kenney_3d_platform_sample.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/kenney_3d_platform_sample.png" alt="alt" /></p>
 
 <p>Once you&rsquo;ve downloaded the kit, you&rsquo;ll find that the objects inside are provided
 in a variety of different formats. Godot is able to use several of these, but
@@ -974,7 +975,7 @@ scans the folder and imports all of the objects. Let&rsquo;s click on one of the
 see what&rsquo;s going on. In the &ldquo;FileSystem&rdquo; tab, select the &ldquo;crate.glb&rdquo; and then
 click on the &ldquo;Import&rdquo; tab:</p>
 
-<p><img src="/godot_lessons/img/3d_02_01.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_01.png" alt="alt" /></p>
 
 <p>Here you can see the cube object will be imported as a scene, with its root type
 set to <code>Spatial</code> and named &ldquo;Scene Root&rdquo;. Let&rsquo;s change these: set the root type
@@ -985,7 +986,7 @@ scene. Here we have a classic game object: the crate. The root node of the scene
 is a <code>RigidBody</code> named &ldquo;Crate&rdquo; just as we wanted. However, there&rsquo;s one small
 problem: it seems Kenney exported this model with an offset:</p>
 
-<p><img src="/godot_lessons/img/3d_02_02.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_02.png" alt="alt" /></p>
 
 <p>It would much better if the crate were centered relative to the parent node, so
 that when the <code>RigidBody</code> rotates about its center, so will the mesh. To fix
@@ -997,7 +998,7 @@ node as a child of the <code>Crate</code>. In its <em>Shape</em> property, choos
 Use the three handles (they look like orange circles) to size the box to fit
 the mesh. You can also set the extents directly in the Inspector:</p>
 
-<p><img src="/godot_lessons/img/3d_02_03.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_03.png" alt="alt" /></p>
 
 <p>Note that since the crate is 0.5 units wide, the <em>Extents</em>, which represent the
 distance from the center, becomes 0.25 units.</p>
@@ -1026,7 +1027,7 @@ select the mesh and in the menu at the of the viewport, choose &ldquo;Create
 Convex Collision Sibling&rdquo;. This will automatically create a <code>CollisionShape</code>
 node as a sibling of the mesh and assign it a shape that matches the mesh.</p>
 
-<p><img src="/godot_lessons/img/3d_02_06.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_06.png" alt="alt" /></p>
 
 <p>Now instance a few crates in the scene and arrange them in a rough stack. Add
 a <code>Camera</code> and place it where it has a good view of the crates. Run the scene
@@ -1062,12 +1063,12 @@ add shadows, click <em>Enabled</em> in the &ldquo;Shadow&rdquo; section. There i
 &ldquo;DirectionalShadow&rdquo; section, which contains a number of advanced properties for
 fine-tuning the shadow appearance. For full details see <a href="https://docs.godotengine.org/en/latest/tutorials/3d/lights_and_shadows.html">this document</a>.</p>
 
-<p><img src="/godot_lessons/img/3d_02_05.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_05.png" alt="alt" /></p>
 
 <p>Note that it really doesn&rsquo;t matter where you place the node - only the
 direction of the light arrow matters.</p>
 
-<p><img src="/godot_lessons/img/3d_02_04.gif" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_02_04.gif" alt="alt" /></p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
@@ -1406,22 +1407,6 @@ a player-controlled character.</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1469,6 +1454,22 @@ a player-controlled character.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1666,20 +1667,20 @@ a player-controlled character.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555966972"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555966972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
-    <script src="/godot_recipes/js/learn.js?1555964166"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555966972"></script>
+    <script src="/godot_recipes/js/learn.js?1555966972"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555966972"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1555966972" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555966972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

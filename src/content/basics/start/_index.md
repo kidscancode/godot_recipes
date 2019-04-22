@@ -8,6 +8,6 @@ pre = "<i class='fas fa-feather-alt'></i> "
 
 ### Getting Started
 
-![alt](/godot_lessons/img/godot3_logo.png)
+![alt](/godot_recipes/img/godot3_logo.png)
 
 Have you downloaded Godot yet? You can get it here: [https://godotengine.org]([https://link](https://godotengine.org))

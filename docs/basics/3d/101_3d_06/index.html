@@ -14,20 +14,20 @@
     <title>Using CSG :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555966972" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1555966972" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555966972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,13 +54,14 @@
 
   <div id="header-wrapper">
     <div id="header">
+      <div class="mylogo">Godot Recipes</div>
       
 
 <img src="/godot_recipes/images/kcc_logo_square.png" />
 
 
     </div>
-      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
         
 
     
@@ -70,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555966972"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555966972"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555966972"></script>
 
     
 
@@ -447,25 +448,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/2d/godot3_kinematic2d/">
-        Using KinematicBody2D
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -541,6 +523,25 @@
           
 
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -955,12 +956,12 @@ walls and platforms.</p>
 <p>Create a new scene with a <code>Spatial</code> root, then add a child node and type &ldquo;CSG&rdquo;
 in the search box.</p>
 
-<p><img src="/godot_lessons/img/3d_06_01.png?width=400" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_01.png?width=400" alt="alt" /></p>
 
 <p>These are the available CSG shapes. Choose a <code>CSGBox</code> to start. You&rsquo;ll see a
 plain cube mesh with the following properties:</p>
 
-<p><img src="/godot_lessons/img/3d_06_02.png?width=200" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_02.png?width=200" alt="alt" /></p>
 
 <p>The <em>Operation</em> property is the one that determines how CSG shapes will be
 combined. The options are:</p>
@@ -973,21 +974,21 @@ combined. The options are:</p>
 
 <p>CSG operations are performed on a shape by adding children. Add a child <code>CSGCylinder</code> to the <code>CSGBox</code>. Drag the top size handle (orange dot) to make it a bit taller. You can also increase the <em>Sides</em> property to make it look more circular (here it&rsquo;s set to <code>20</code>):</p>
 
-<p><img src="/godot_lessons/img/3d_06_03.png?width=200" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_03.png?width=200" alt="alt" /></p>
 
 <p>By default, the shape&rsquo;s operation is set to &ldquo;Union&rdquo;. The cylinder shape is
 being &ldquo;added&rdquo; to the cube. Try changing it to &ldquo;Intersection&rdquo;:</p>
 
-<p><img src="/godot_lessons/img/3d_06_04.gif?width=200" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_04.gif?width=200" alt="alt" /></p>
 
 <p>And &ldquo;Subtraction&rdquo;:</p>
 
-<p><img src="/godot_lessons/img/3d_06_05.gif?width=200" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_05.gif?width=200" alt="alt" /></p>
 
 <p>Hopefully you&rsquo;re already seeing the possibilities of creating complex shapes
 through these 3 operations.</p>
 
-<p><img src="/godot_lessons/img/3d_06_06.png?width=300" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_06.png?width=300" alt="alt" /></p>
 
 <h3 id="csgcombiner">CSGCombiner</h3>
 
@@ -1035,7 +1036,7 @@ You can enable snapping here to make it easier to align.</p>
 <p>Add another <code>CSGBox</code> as a child and set it to &ldquo;Subtract&rdquo;. Size it to resemble
 a door. You can also use a cylinder shape to get an arched portal.</p>
 
-<p><img src="/godot_lessons/img/3d_06_07.png?width=300" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_07.png?width=300" alt="alt" /></p>
 
 <ul>
 <li>Ramp</li>
@@ -1049,12 +1050,12 @@ remove points. For a ramp, we want 3 points.</p>
 its number of points. After that, you can drag the three points to whatever
 location you like. To ensure everything lines up, you can type the coordinates into the Inspector:</p>
 
-<p><img src="/godot_lessons/img/3d_06_12.png?width=500" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_12.png?width=500" alt="alt" /></p>
 
 <p>In this picture, we&rsquo;ve created a ramp and added a couple of <code>CSGBox</code> shapes to
 make the ledge.</p>
 
-<p><img src="/godot_lessons/img/3d_06_08.png?width=300" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_08.png?width=300" alt="alt" /></p>
 
 <h3 id="putting-it-together">Putting it together</h3>
 
@@ -1063,17 +1064,17 @@ seems pleasant to you. In the following examples, we&rsquo;ve picked a tan color
 
 <p>Here&rsquo;s an example of a possible room setup:</p>
 
-<p><img src="/godot_lessons/img/3d_06_13.png?width=300" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_13.png?width=300" alt="alt" /></p>
 
 <p>Hit play and you should be able to walk around the rooms:</p>
 
-<p><img src="/godot_lessons/img/3d_06_10.gif?width=250" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_10.gif?width=250" alt="alt" /></p>
 
 <p>The area is featureless right now, but to make things more visually
 interesting, you can add individual lights in each room (more about lighting
 in a later tutorial). Here&rsquo;s an example of adding some <code>OmniLight</code> and <code>SpotLight</code> nodes to the scene:</p>
 
-<p><img src="/godot_lessons/img/3d_06_11.gif?width=250" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_06_11.gif?width=250" alt="alt" /></p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
@@ -1411,22 +1412,6 @@ into separate CSG trees to minimize this.</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1474,6 +1459,22 @@ into separate CSG trees to minimize this.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1671,20 +1672,20 @@ into separate CSG trees to minimize this.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555966972"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555966972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
-    <script src="/godot_recipes/js/learn.js?1555964166"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555966972"></script>
+    <script src="/godot_recipes/js/learn.js?1555966972"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555966972"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1555966972" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555966972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

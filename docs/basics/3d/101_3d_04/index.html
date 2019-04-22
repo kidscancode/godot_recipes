@@ -14,20 +14,20 @@
     <title>Using Areas :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555966972" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555966972" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1555966972" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555966972"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -54,13 +54,14 @@
 
   <div id="header-wrapper">
     <div id="header">
+      <div class="mylogo">Godot Recipes</div>
       
 
 <img src="/godot_recipes/images/kcc_logo_square.png" />
 
 
     </div>
-      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_recipes/img/become_a_patron_button.png"/></a>
         
 
     
@@ -70,14 +71,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555966972"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555966972"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555966972"></script>
 
     
 
@@ -447,25 +448,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/2d/godot3_kinematic2d/">
-        Using KinematicBody2D
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -541,6 +523,25 @@
           
 
         
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -958,7 +959,7 @@ what objects the areas can interact with. Open the Project Settings and find
 the &ldquo;Layer Names/3D Physics&rdquo; section. Name the first three layers &ldquo;environment&rdquo;,
 &ldquo;player&rdquo;, and &ldquo;pickups&rdquo;.</p>
 
-<p><img src="/godot_lessons/img/3d_04_01.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_01.png" alt="alt" /></p>
 
 <h3 id="coin">Coin</h3>
 
@@ -967,13 +968,13 @@ Kit (see <a href="/blog/2019/03/godot_31_3d_part03/">Part 03</a>). Right-click o
 node, choose &ldquo;Change Type&rdquo;, and pick <code>Area</code>. In the Inspector, set the collision
 mask and layer so that the coin is in &ldquo;pickups&rdquo; and scans &ldquo;player&rdquo;.</p>
 
-<p><img src="/godot_lessons/img/3d_04_02.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_02.png" alt="alt" /></p>
 
 <p>Now we need a collision shape, so add a <code>CollisionShape</code> node and choose a
 <code>CylinderShape</code> for it. If you rotate it 90 degrees around <strong>z</strong>, it will fit
 the coin shape pretty well.</p>
 
-<p><img src="/godot_lessons/img/3d_04_03.png" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_03.png" alt="alt" /></p>
 
 <p>Add a script to the Area and connect its <code>body_entered</code> signal, which we&rsquo;ll use
 to remove the coin:</p>
@@ -985,7 +986,7 @@ to remove the coin:</p>
 
 <p>Add a few coins to your scene and see if you can pick them up:</p>
 
-<p><img src="/godot_lessons/img/3d_04_04.gif" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_04.gif" alt="alt" /></p>
 
 <h3 id="bullets">Bullets</h3>
 
@@ -1034,7 +1035,7 @@ the following code to the character&rsquo;s script:</p>
         b<span style="color:#ff79c6">.</span>start(<span style="color:#ff79c6">$</span>Muzzle<span style="color:#ff79c6">.</span>global_transform)
         get_parent()<span style="color:#ff79c6">.</span>add_child(b)</code></pre></div>
 
-<p><img src="/godot_lessons/img/3d_04_05.gif" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_05.gif" alt="alt" /></p>
 
 <h3 id="spikes">Spikes</h3>
 
@@ -1073,7 +1074,7 @@ the beginning of <code>get_input()</code>:</p>
 
 <p>Add a spike instance to your level and try it out:</p>
 
-<p><img src="/godot_lessons/img/3d_04_06.gif" alt="alt" /></p>
+<p><img src="/godot_recipes/img/3d_04_06.gif" alt="alt" /></p>
 
 <h2 id="wrapping-up">Wrapping Up</h2>
 
@@ -1408,22 +1409,6 @@ the beginning of <code>get_input()</code>:</p>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1471,6 +1456,22 @@ the beginning of <code>get_input()</code>:</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1668,20 +1669,20 @@ the beginning of <code>get_input()</code>:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555966972"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555966972"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555966972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
-    <script src="/godot_recipes/js/learn.js?1555964166"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555966972"></script>
+    <script src="/godot_recipes/js/learn.js?1555966972"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555966972"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1555966972" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555966972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -25,7 +25,7 @@ not just with objects (scripts) but also with scenes.
 
 Here's a preview of what we're making:
 
-![alt](/godot_lessons/img/inh_preview.gif?width=350)
+![alt](/godot_recipes/img/inh_preview.gif?width=350)
 
 The green character is controlled by the player, and the other characters are NPCs,
 walking around the tile-based map semi-randomly.
@@ -81,7 +81,7 @@ down      | 6, 7, 8, 7
 right     | 3, 4, 5, 4
 up        | 0, 1, 2, 1
 
-![alt](/godot_lessons/img/inh_animation_frames.png)
+![alt](/godot_recipes/img/inh_animation_frames.png)
 
 ### Collision Detection
 
@@ -99,7 +99,7 @@ RayCastUp    | `(0, -32)`
 Make sure to set the _Enabled_ property on each one (RayCast2Ds are disabled by default).
 Your final node setup should look something like this:
 
-![alt](/godot_lessons/img/inh_scene_char.png)
+![alt](/godot_recipes/img/inh_scene_char.png)
 
 ### Character Script
 
@@ -177,7 +177,7 @@ Next, we need a new script for the player, so remove the attached one ("Characte
 attach a new one. In the "Attach Node Script" dialog, click the folder icon next to the _Inherits_ option
 and choose "Character.gd".
 
-![alt](/godot_lessons/img/inh_script.png?width=250)
+![alt](/godot_recipes/img/inh_script.png?width=250)
 
 Here's our player script (note that it `extends` the character script):
 
@@ -254,11 +254,11 @@ won't know anything about the map - they just know if they can move one tile or 
 you need to make sure the characters' starting positions are centered on a tile. This is easy to do if you turn
 on "Snap to Grid". Click the "Use Snap" button and then open the grid menu by clicking on the three dots next to it:
 
-![alt](/godot_lessons/img/inh_snap2.png)
+![alt](/godot_recipes/img/inh_snap2.png)
 
 Under "Configure Snap..." set the _Grid Step_ and _Grid Offset_:
 
-![alt](/godot_lessons/img/inh_snap.png)
+![alt](/godot_recipes/img/inh_snap.png)
 
 Now you can drag the instanced characters around and they'll always snap to the center of a tile.
 

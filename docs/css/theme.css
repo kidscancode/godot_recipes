@@ -1131,3 +1131,10 @@ pre .copy-to-clipboard:hover {
     text-align: left;
 }
 
+div.mylogo {
+  color: #fff;
+  font-size: 2.2em;
+  font-family: 'Ubuntu Bold', 'Arial', Helvetica, Arial, sans-serif;
+  /* padding: 5px; */
+  text-align: center;
+}

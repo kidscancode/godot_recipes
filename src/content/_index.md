@@ -18,7 +18,7 @@ _open_ tool for bringing your visions to life.
 
 ### Overview
 
-![alt](/godot_lessons/img/godot3_logo.png?width=250)
+![alt](/godot_recipes/img/godot3_logo.png?width=250)
 
 On this site you'll find a gentle introduction to the Godot game engine, as
 well as a wide variety of gamedev tips and techniques. Feel free to browse the
@@ -30,7 +30,7 @@ If you're new to Godot, start here: [What is Godot?](/godot_recipes/basics/start
 
 #### Beginners
 
-If you're new to game development, start with the ["Godot 101: Basics" section](/godot_lessons/basics/).
+If you're new to game development, start with the ["Godot 101: Basics" section](/godot_recipes/basics/).
 There you'll find an introduction to the Godot application, and a step-by-step
 guide to creating your first project. There is a lot of material to absorb here.
 Don't feel discouraged if you feel you don't get it at first. Repetition is the

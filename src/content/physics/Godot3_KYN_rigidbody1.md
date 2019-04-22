@@ -27,7 +27,7 @@ collisions, bouncing, rotating, etc.
 You can modify a RigidBody2D's behavior via properties such as "Mass", "Friction",
 or "Bounce", which can be set in the Inspector:
 
-![alt](/godot_lessons/img/rigidbody_properties.png)
+![alt](/godot_recipes/img/rigidbody_properties.png)
 
 The body's behavior is also affected by the world, via the _Project Settings -> Physics_
 properties, or by entering an <a href="http://docs.godotengine.org/en/latest/classes/class_area2d.html"><svg width="18" height="18" class="icon-icon_area_2d" target="_blank"><use xlink:href="/blog/img/symbol-defs.svg#icon-icon_area_2d"></svg> `Area2D`</a> that is overriding the global physics properties.
@@ -46,7 +46,7 @@ Start by making a RigidBody2D for the block and adding <a href="http://docs.godo
 <a href="http://docs.godotengine.org/en/latest/classes/class_collisionshape2D.html" target="_blank"><svg width="18" height="18" class="icon-icon_collision_shape_2d"><use xlink:href="/blog/img/symbol-defs.svg#icon-icon_collision_shape_2d"></svg>`CollisionShape2D`</a>
 children:
 
-![alt](/godot_lessons/img/rigidbody_block_scene.png)
+![alt](/godot_recipes/img/rigidbody_block_scene.png)
 
 Add a texture to the Sprite and a rectangular collision shape. **IMPORTANT**: Do _not_
 change the _Scale_ of the collision shape! In general this is a bad idea, and will
@@ -68,7 +68,7 @@ nodes with rectangular collision shapes to serve as your "ground" and walls.
 Instance a Block, and then duplicate it (`Ctrl-D` on Windows and `Cmd-D` on MacOS)
 so you can make a nice stack. Something like this:
 
-![alt](/godot_lessons/img/rigidbody_scene1.png)
+![alt](/godot_recipes/img/rigidbody_scene1.png)
 
 ### Projectile
 
@@ -80,7 +80,7 @@ To cause a rigid body to move, it must have some velocity. You can give the body
 an initial velocity using the `Linear -> Velocity` property. Try setting this
 to `(500, 0)`.
 
-![alt](/godot_lessons/img/rigidbody_vel.gif)
+![alt](/godot_recipes/img/rigidbody_vel.gif)
 
 You can also tinker with the ball's `Friction` and `Bounce` properties. Both of
 these properties can range from zero to one. I like a bounce of around `0.5`.
@@ -145,7 +145,7 @@ parameter. This lets you "hit" the body off center, if you wish. For instance,
 try setting it to `Vector2(25, 0)` and you'll add some spin to the ball when
 it's launched.
 
-![alt](/godot_lessons/img/rigidbody_impulse.gif)
+![alt](/godot_recipes/img/rigidbody_impulse.gif)
 
 ## Controlling Rigid Bodies
 
@@ -156,7 +156,7 @@ forward when the up arrow is pressed.
 
 Here's the image I'm using for my ship:
 
-![alt](/godot_lessons/img/ship_red.png)
+![alt](/godot_recipes/img/ship_red.png)
 
 I recommend you also go to [OpenGameArt](http://opengameart.org/) and search for
 a nice space background (but this is totally optional).
@@ -227,7 +227,7 @@ ship is facing. Then we use `set_applied_torque()` to cause the ship to rotate.
 
 Play the scene - you should be able to fly around freely.
 
-![alt](/godot_lessons/img/rigidbody_ship1.gif)
+![alt](/godot_recipes/img/rigidbody_ship1.gif)
 
 ## The Position Problem
 
@@ -297,7 +297,7 @@ func _integrate_forces(state):
 We grab the current transform, change it as necessary, and set it back as the new
 transform. The physics engine stays happy, and everything works as expected:
 
-![alt](/godot_lessons/img/rigidbody_ship2.gif)
+![alt](/godot_recipes/img/rigidbody_ship2.gif)
 
 ## Conclusion
 

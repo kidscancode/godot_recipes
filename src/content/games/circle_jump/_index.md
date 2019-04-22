@@ -13,4 +13,4 @@ pre = "<i class='far fa-circle'></i> "
 In this series, we build a one-touch mobile game called "Circle Jump". Here's
 a prototype image:
 
-![alt](/godot_lessons/img/jump.gif)
+![alt](/godot_recipes/img/jump.gif)
