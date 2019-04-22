@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gamedev Math on Godot Lessons by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_lessons/math/</link>
-    <description>Recent content in Gamedev Math on Godot Lessons by KidsCanCode</description>
+    <title>Gamedev Math on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/math/</link>
+    <description>Recent content in Gamedev Math on Godot Recipes by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 20:47:11 -0700</lastBuildDate>
     
-	<atom:link href="http://kidscancode.org/godot_lessons/math/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kidscancode.org/godot_recipes/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Transforms</title>
-      <link>http://kidscancode.org/godot_lessons/math/transforms/</link>
+      <link>http://kidscancode.org/godot_recipes/math/transforms/</link>
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
+      <guid>http://kidscancode.org/godot_recipes/math/transforms/</guid>
       <description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
 2D Transforms In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the Y axis points downward:
 To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>

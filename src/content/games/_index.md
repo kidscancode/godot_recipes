@@ -1,11 +1,11 @@
 +++
 title = "Game Tutorials"
 date = 2019-04-09T20:47:11-07:00
-weight = 7
+weight = 20
 chapter = true
-pre = "<i class='fas fa-gamepad'></i> "
+pre = "<i class='fas fa-chess-pawn'></i> "
 +++
 
-# <i class='fas fa-gamepad'></i> Games
+# <i class='fas fa-chess-pawn'></i> Games
 
-Coming soon.
+Demo games and tutorials.

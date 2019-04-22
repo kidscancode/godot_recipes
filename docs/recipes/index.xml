@@ -1,45 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Godot Recipes on Godot Lessons by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_lessons/recipes/</link>
-    <description>Recent content in Godot Recipes on Godot Lessons by KidsCanCode</description>
+    <title>Misc on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/recipes/</link>
+    <description>Recent content in Misc on Godot Recipes by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 20:47:11 -0700</lastBuildDate>
     
-	<atom:link href="http://kidscancode.org/godot_lessons/recipes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kidscancode.org/godot_recipes/recipes/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</link>
-      <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</guid>
-      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
-Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
-    </item>
     
     <item>
       <title>Inheritance</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</link>
+      <link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link>
       <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</guid>
+      <guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid>
       <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
 We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
 Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
-    </item>
-    
-    <item>
-      <title>Using Rigid Bodies</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</link>
-      <pubDate>Sat, 30 Dec 2017 08:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</guid>
-      <description>At the time of this writing, Godot 3.0 is nearing release, and many new users are trying it out. Recently I&amp;rsquo;ve seen a lot of confusion around physics and physics bodies, especially rigid bodies, which are Godot&amp;rsquo;s &amp;ldquo;true&amp;rdquo; physics nodes.
-In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.</description>
     </item>
     
   </channel>

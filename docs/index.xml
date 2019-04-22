@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Godot Lessons by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_lessons/</link>
-    <description>Recent content in Home on Godot Lessons by KidsCanCode</description>
+    <title>Home on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/</link>
+    <description>Recent content in Home on Godot Recipes by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 22:57:31 -0700</lastBuildDate>
     
-	<atom:link href="http://kidscancode.org/godot_lessons/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kidscancode.org/godot_recipes/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Project setup</title>
-      <link>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</link>
-      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_lessons/games/circle_jump/circle_jump_01/</guid>
-      <description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
-In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description>
-    </item>
     
     <item>
       <title>The 3D Editor</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_01/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_01/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_01/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_01/</guid>
       <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.
 Are you ready? A word of warning: 3D development can be quite a bit more complex than working in 2D. While many of the same principles apply - such as working with nodes, writing scripts, and handling logic/data - 3D brings with it a number of other considerations.</description>
     </item>
     
     <item>
       <title>What is Godot?</title>
-      <link>http://kidscancode.org/godot_lessons/basics/start/101_01/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/start/101_01/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/start/101_01/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/start/101_01/</guid>
       <description>Game Engines Game development is complex and involves a wide variety of knowledge and skills. In order to build a modern game, you need a lot of underlying technology before you can make the actual game itself. Imagine if you had to build your own computer and write your own operating system before you could even start programming. Game development would be a lot like that if you truly had to start from scratch and build everything you needed.</description>
     </item>
     
     <item>
       <title>Splitscreen Demo (Using Viewports)</title>
-      <link>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</link>
+      <link>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</link>
       <pubDate>Tue, 10 Jul 2018 08:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</guid>
+      <guid>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</guid>
       <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
 We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description>
     </item>
     
     <item>
+      <title>Project setup</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</guid>
+      <description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
+In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description>
+    </item>
+    
+    <item>
       <title>Godot&#39;s Editor: Finding your way around</title>
-      <link>http://kidscancode.org/godot_lessons/basics/start/101_02/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/start/101_02/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/start/101_02/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/start/101_02/</guid>
       <description>Project Manager The Project Manager is the first thing you&amp;rsquo;ll see when opening Godot.
 In this window you can see a list of your Godot projects. You can choose an existing project and click &amp;ldquo;Run&amp;rdquo; to play the game or click &amp;ldquo;Edit&amp;rdquo; to work on it in the Godot editor. Since you probably don&amp;rsquo;t have any projects yet, let&amp;rsquo;s start by clicking the &amp;ldquo;New Project&amp;rdquo; button.
 Here you can give the project a name and create a folder to store it in.</description>
@@ -63,10 +63,10 @@ Here you can give the project a name and create a folder to store it in.</descri
     
     <item>
       <title>Transforms</title>
-      <link>http://kidscancode.org/godot_lessons/math/transforms/</link>
+      <link>http://kidscancode.org/godot_recipes/math/transforms/</link>
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/math/transforms/</guid>
+      <guid>http://kidscancode.org/godot_recipes/math/transforms/</guid>
       <description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
 2D Transforms In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the Y axis points downward:
 To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>
@@ -74,89 +74,101 @@ To begin, let&amp;rsquo;s consider this spaceship floating in space:</descriptio
     
     <item>
       <title>Importing 3D Objects</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_02/</link>
       <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_02/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_02/</guid>
       <description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
 Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description>
     </item>
     
     <item>
+      <title>Spawning Circles</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</guid>
+      <description>In the previous part, we created the Jumper and Circle object that make up the bulk of the game. Now we need to add the progression: a continuous series of spawned circles as long as the player doesn&amp;rsquo;t miss.
+Expanding the Main scene Let&amp;rsquo;s add some more nodes to Main:
+ Position2D (&amp;ldquo;StartPosition&amp;rdquo;)
+This will mark the starting position for the game. Place it near the bottom-center of the screen.</description>
+    </item>
+    
+    <item>
       <title>Nodes: Godot&#39;s building blocks</title>
-      <link>http://kidscancode.org/godot_lessons/basics/start/101_03/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/start/101_03/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/start/101_03/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/start/101_03/</guid>
       <description>Nodes are the basic building blocks for creating games in Godot. A node is an object that can represent some kind of specialized game function. A given type of node might display graphics, play an animation, or represent a 3D model of an object. The node also contains a collection of properties, allowing you to customize its behavior. Which nodes you add to your project will depend on what functionality you need.</description>
     </item>
     
     <item>
       <title>Creating a 3D Character</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_03/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_03/</link>
       <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_03/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_03/</guid>
       <description>In the last part, we covered how to import 3D objects and how to arrange them in a scene. In this installment, we&amp;rsquo;ll add more objects to the scene, including a user-controlled character.
 Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer Kit we downloaded last time. Select all the &amp;ldquo;block*.glb&amp;rdquo; files and in the &amp;ldquo;Import&amp;rdquo; tab set their &amp;ldquo;Root Type&amp;rdquo; to StaticBody and click &amp;ldquo;Reimport&amp;rdquo;. Select &amp;ldquo;blockLarge.</description>
     </item>
     
     <item>
       <title>Using Areas</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_04/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_04/</link>
       <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_04/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_04/</guid>
       <description>In the last part, we learned about transforms, a very important concept in 3D that records an object&amp;rsquo;s local orientation in space, and used it to move our KinematicBody character. This time, we&amp;rsquo;re going to look at another type of 3D node: the Area.
 Areas Area nodes are used for detection and influence. They can detect when objects overlap, and when an object enters or exits a region. An Area can also be used to override physics properties, such as gravity or damping, in a region.</description>
     </item>
     
     <item>
       <title>Edge Detection &amp; Mouse Capture</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_05/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_05/</link>
       <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_05/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_05/</guid>
       <description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
 Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
     </item>
     
     <item>
       <title>Using CSG</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_06/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_06/</guid>
       <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
 What is CSG? CSG stands for Constructive Solid Geometry. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
     </item>
     
     <item>
       <title>First-person Character</title>
-      <link>http://kidscancode.org/godot_lessons/basics/3d/101_3d_07/</link>
+      <link>http://kidscancode.org/godot_recipes/basics/3d/101_3d_07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/basics/3d/101_3d_07/</guid>
+      <guid>http://kidscancode.org/godot_recipes/basics/3d/101_3d_07/</guid>
       <description>In this installment, we&amp;rsquo;ll look at how to make a first-person character. We&amp;rsquo;ll use the CSG-based level we designed in the previous part as a place to walk around and test our movement.
 Character Scene In an FPS or similar game, we want to give the player the illusion that they&amp;rsquo;re looking out of the character&amp;rsquo;s eyes. One nice aspect of this is that we don&amp;rsquo;t really need a model, at least to get started.</description>
     </item>
     
     <item>
       <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</link>
+      <link>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</link>
       <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kinematic2d/</guid>
+      <guid>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</guid>
       <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
 Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
     </item>
     
     <item>
       <title>Inheritance</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</link>
+      <link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link>
       <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_inheritance/</guid>
+      <guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid>
       <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
 We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
 Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
@@ -164,10 +176,10 @@ Introduction In object oriented programming (OOP), inheritance is a powerful too
     
     <item>
       <title>Using Rigid Bodies</title>
-      <link>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</link>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
       <pubDate>Sat, 30 Dec 2017 08:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/recipes/godot3_kyn_rigidbody1/</guid>
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
       <description>At the time of this writing, Godot 3.0 is nearing release, and many new users are trying it out. Recently I&amp;rsquo;ve seen a lot of confusion around physics and physics bodies, especially rigid bodies, which are Godot&amp;rsquo;s &amp;ldquo;true&amp;rdquo; physics nodes.
 In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.</description>
     </item>

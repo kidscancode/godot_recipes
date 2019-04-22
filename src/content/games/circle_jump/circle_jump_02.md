@@ -1,10 +1,9 @@
-+++
-title = "Spawning Circles"
-date = 2019-04-09T20:23:50-07:00
-weight = 2
-draft = true
-pre = "02. "
-+++
+---
+title: "Spawning Circles"
+weight: 2
+draft: false
+pre: "02. "
+---
 
 In the previous part, we created the `Jumper` and `Circle` object that make up
 the bulk of the game. Now we need to add the progression: a continuous series

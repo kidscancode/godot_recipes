@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2D on Godot Lessons by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_lessons/2d/</link>
-    <description>Recent content in 2D on Godot Lessons by KidsCanCode</description>
+    <title>2D on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/2d/</link>
+    <description>Recent content in 2D on Godot Recipes by KidsCanCode</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Apr 2019 20:23:45 -0700</lastBuildDate>
     
-	<atom:link href="http://kidscancode.org/godot_lessons/2d/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://kidscancode.org/godot_recipes/2d/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Splitscreen Demo (Using Viewports)</title>
-      <link>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</link>
+      <link>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</link>
       <pubDate>Tue, 10 Jul 2018 08:12:12 -0700</pubDate>
       
-      <guid>http://kidscancode.org/godot_lessons/2d/splitscreen_demo/</guid>
+      <guid>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</guid>
       <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
 We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description>
+    </item>
+    
+    <item>
+      <title>Using KinematicBody2D</title>
+      <link>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</link>
+      <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/godot3_kinematic2d/</guid>
+      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
+Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
     </item>
     
   </channel>

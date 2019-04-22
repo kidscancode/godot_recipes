@@ -1,17 +1,11 @@
 +++
-title = "Godot Recipes"
+title = "Misc"
 date = 2019-04-09T20:47:11-07:00
 weight = 6
 chapter = true
-pre = "<i class='fas fa-utensils'></i> "
+pre = "<i class='fas fa-box-open'></i> "
 +++
 
-# <i class='fas fa-utensils'></i> Godot Recipes
+# <i class="fas fa-box-open"></i> Misc
 
-Godot's nodes are your ingredients. What can you cook up?
-
-In this section:
-
-- How to use (many) of Godot's node objects
-- Node pros and cons
-- Recipes for common game objects/behaviors
+Other recipes that just don't fit in anywhere else.

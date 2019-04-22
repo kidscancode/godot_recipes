@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Gamedev lessons for Godot Engine.">
+    <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
+
+    <title>Spawning Circles :: Godot Recipes by KidsCanCode</title>
+
+    
+    <link href="/godot_recipes/css/nucleus.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1555964166" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1555964166" rel="stylesheet">
+    
+      <link href="/godot_recipes/css/theme-green.css?1555964166" rel="stylesheet">
+    
+
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1555964166"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+        :not(pre) > code + span.copy-to-clipboard {
+            display: none;
+        }
+      
+    </style>
+    
+<style type="text/css">
+    pre code {
+        white-space: pre;
+    }
+</style>
+
+  </head>
+  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_02/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      
+
+<img src="/godot_recipes/images/kcc_logo_square.png" />
+
+
+    </div>
+      <a href="https://www.patreon.com/kidscancode"><img src="/godot_lessons/img/become_a_patron_button.png"/></a>
+        
+
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1555964166"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1555964166"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
+    
+</script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1555964166"></script>
+
+    
+
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/basics/" title="Godot 101" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/basics/">
+          <i class='fas fa-graduation-cap'></i> Godot 101
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/basics/start/" title="Getting Started" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/basics/start/">
+          <i class='fas fa-feather-alt'></i> Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/start/101_01/" title="What is Godot?" class="dd-item ">
+        <a href="/godot_recipes/basics/start/101_01/">
+        01. What is Godot?
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/start/101_02/" title="Godot&#39;s Editor: Finding your way around" class="dd-item ">
+        <a href="/godot_recipes/basics/start/101_02/">
+        02. The Godot Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/start/101_03/" title="Nodes: Godot&#39;s building blocks" class="dd-item ">
+        <a href="/godot_recipes/basics/start/101_03/">
+        03. Nodes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/basics/gdscript/" title="GDScript" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/basics/gdscript/">
+          <i class='fas fa-scroll'></i> GDScript
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/basics/3d/" title="Intro to 3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/basics/3d/">
+          <i class='fas fa-cube'></i> Intro to 3D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_01/" title="The 3D Editor" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_01/">
+        01. The 3D Editor
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_02/" title="Importing 3D Objects" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_02/">
+        02. Importing 3D Objects
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_03/" title="Creating a 3D Character" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_03/">
+        03. Creating a 3D Character
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_04/" title="Using Areas" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_04/">
+        04. Using Areas
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_05/" title="Edge Detection &amp; Mouse Capture" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_05/">
+        05. Edge Detection &amp; Mouse Capture
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_06/" title="Using CSG" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_06/">
+        06. Using CSG
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/basics/3d/101_3d_07/" title="First-person Character" class="dd-item ">
+        <a href="/godot_recipes/basics/3d/101_3d_07/">
+        07. First-person Character
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/2d/">
+          <i class='fas fa-shapes'></i> 2D
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/2d/splitscreen_demo/" title="Splitscreen Demo (Using Viewports)" class="dd-item ">
+        <a href="/godot_recipes/2d/splitscreen_demo/">
+        Splitscreen Demo (Using Viewports)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/2d/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/2d/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/3d/" title="3D" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/3d/">
+          <i class='fas fa-cube'></i> 3D
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/input/" title="Input" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/input/">
+          <i class='fas fa-gamepad'></i> Input
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/physics/" title="Physics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/physics/">
+          <i class='fas fa-atom'></i> Physics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/physics/godot3_kyn_rigidbody1/" title="Using Rigid Bodies" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kyn_rigidbody1/">
+        Using Rigid Bodies
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/ui/" title="UI" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/ui/">
+          <i class='far fa-window-maximize'></i> UI
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/math/" title="Gamedev Math" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/math/">
+          <i class='fas fa-rocket'></i> Gamedev Math
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/math/transforms/" title="Transforms" class="dd-item ">
+        <a href="/godot_recipes/math/transforms/">
+        Transforms
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/recipes/" title="Misc" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/recipes/">
+          <i class='fas fa-box-open'></i> Misc
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/recipes/godot3_inheritance/" title="Inheritance" class="dd-item ">
+        <a href="/godot_recipes/recipes/godot3_inheritance/">
+        Inheritance
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/shaders/" title="Shaders" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/shaders/">
+          <i class='fas fa-draw-polygon'></i> Shaders
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/games/">
+          <i class='fas fa-chess-pawn'></i> Game Tutorials
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/godot_recipes/games/circle_jump/">
+          <i class='far fa-circle'></i> Mobile Game: Circle Jump
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_01/" title="Project setup" class="dd-item ">
+        <a href="/godot_recipes/games/circle_jump/circle_jump_01/">
+        01. Project setup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_02/" title="Spawning Circles" class="dd-item active">
+        <a href="/godot_recipes/games/circle_jump/circle_jump_02/">
+        02. Spawning Circles
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      
+<p align="center">
+    <a href="https://github.com/kidscancode/godot_lessons"><i class="fab fa-github-square fa-3x"></i></a>
+    <a href="https://www.youtube.com/c/KidsCanCodeOrg"><i class="fab fa-youtube-square fa-3x"></i></a>
+    <a href="http://twitter.com/KidsCanCode"><i class="fab fa-twitter-square fa-3x"></i></a>
+</p>
+<p align="center"><i class="far fa-copyright"></i> 2019 KidsCanCode </p>
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Spawning Circles
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#expanding-the-main-scene">Expanding the Main scene</a></li>
+<li><a href="#scripting-the-main-scene">Scripting the Main scene</a>
+<ul>
+<li><a href="#adjustments">Adjustments</a></li>
+</ul></li>
+<li><a href="#trail">Trail</a></li>
+<li><a href="#circle-animations">Circle animations</a>
+<ul>
+<li><a href="#implode-animation">&ldquo;Implode&rdquo; animation</a></li>
+<li><a href="#capture-animation">Capture animation</a>
+<ul>
+<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
+<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Spawning Circles
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>In the previous part, we created the <code>Jumper</code> and <code>Circle</code> object that make up
+the bulk of the game. Now we need to add the progression: a continuous series
+of spawned circles as long as the player doesn&rsquo;t miss.</p>
+
+<h2 id="expanding-the-main-scene">Expanding the Main scene</h2>
+
+<p>Let&rsquo;s add some more nodes to Main:</p>
+
+<ul>
+<li><p><strong>Position2D (&ldquo;StartPosition&rdquo;)</strong></p>
+
+<p>This will mark the starting position for the game. Place it near the
+bottom-center of the screen.</p></li>
+
+<li><p><strong>Camera2D</strong></p>
+
+<p>The camera will follow the player as it moves.</p>
+
+<p>Let&rsquo;s also configure the camera. Set its <em>Offset</em> to <code>(0, -200)</code> - this
+will ensure we can see more of the world ahead of us. Also set <em>Current</em> to &ldquo;On&rdquo;.</p></li>
+</ul>
+
+<h2 id="scripting-the-main-scene">Scripting the Main scene</h2>
+
+<p>Remove the jumper and circle instances we manually created. We&rsquo;ll add them in
+code moving forward.</p>
+
+<p>Add the following to <code>Jumper.gd</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">signal</span> captured</code></pre></div>
+<p>We&rsquo;ll emit this signal when the jumper hits a circle:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_area_entered(area):
+    target <span style="color:#ff79c6">=</span> area
+    velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
+    emit_signal(<span style="color:#f1fa8c">&#34;captured&#34;</span>, area)</code></pre></div>
+<p>And let&rsquo;s change the <code>init()</code> function on the circle to also accept a position:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> init(_position, _radius<span style="color:#ff79c6">=</span>radius):
+    position <span style="color:#ff79c6">=</span> _position</code></pre></div>
+<p>Now let&rsquo;s add a script to the <code>Main</code> scene:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
+
+<span style="color:#ff79c6">var</span> Circle <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Circle.tscn&#34;</span>)
+<span style="color:#ff79c6">var</span> Jumper <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Jumper.tscn&#34;</span>)
+
+<span style="color:#ff79c6">var</span> player</code></pre></div>
+<p>We need references to both objects so that we can instance them when needed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
+    <span style="color:#8be9fd;font-style:italic">randomize</span>()
+    new_game()</code></pre></div>
+<p>This is temporary - later we&rsquo;ll have a UI with a start button to call the
+new game function.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> new_game():
+    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
+    player <span style="color:#ff79c6">=</span> Jumper<span style="color:#ff79c6">.</span>instance()
+    player<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
+    add_child(player)
+    player<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;captured&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_Jumper_captured&#34;</span>)
+    spawn_circle(<span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position)</code></pre></div>
+<p>The <code>new_game()</code> function initializes the game - spawning a player and a
+circle at the start position, and setting the camera.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> spawn_circle(_position<span style="color:#ff79c6">=</span>null):
+    <span style="color:#ff79c6">var</span> c <span style="color:#ff79c6">=</span> Circle<span style="color:#ff79c6">.</span>instance()
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>_position:
+        <span style="color:#ff79c6">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">150</span>, <span style="color:#bd93f9">150</span>)
+        <span style="color:#ff79c6">var</span> y <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">500</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">400</span>)
+        c<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> player<span style="color:#ff79c6">.</span>target<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">+</span> Vector2(x, y)
+    add_child(c)
+    c<span style="color:#ff79c6">.</span>init(_position)</code></pre></div>
+<p>Here&rsquo;s our <code>spawn_circle()</code> function. If it&rsquo;s passed a position, it&rsquo;ll use it,
+otherwise we pick a random one some distance away from the current target. These
+are temporary numbers - once we&rsquo;ve got more of the gameplay up and running, we&rsquo;ll
+see how much they need to be adjusted.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
+    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
+    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
+<p>Finally, we need the function that processes the jumper&rsquo;s <code>captured</code> signal.
+We&rsquo;re going to move the camera to the new circle and spawn another. Note that
+because this function is called during physics processing, we&rsquo;ll get an error
+if we try and add to the scene tree. Using <code>call_deferred()</code> tells the engine
+to execute that function as soon as it&rsquo;s safe to do so.</p>
+
+<p>Try it out. You should be able to jump from circle to circle - how many did you
+get?</p>
+
+<p>One jarring thing is that the camera &ldquo;teleports&rdquo; when it moves to the next
+circle. We can improve this by enabling <em>Smoothing</em> on the camera. The
+<em>Smoothing/Speed</em> controls how quickly the camera interpolates to the new
+position. Try something between <code>5</code> and <code>10</code>.</p>
+
+<h3 id="adjustments">Adjustments</h3>
+
+<p>It&rsquo;s also jarring that when we hit a circle we don&rsquo;t start rotating at the
+place we hit. Add this to the jumper&rsquo;s <code>_on_Jumper_area_entered()</code> function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">target<span style="color:#ff79c6">.</span>get_node(<span style="color:#f1fa8c">&#34;Pivot&#34;</span>)<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">=</span> (position <span style="color:#ff79c6">-</span> target<span style="color:#ff79c6">.</span>position)<span style="color:#ff79c6">.</span>angle()</code></pre></div>
+<p>Let&rsquo;s also add this to the circle&rsquo;s <code>init()</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">rotation_speed <span style="color:#ff79c6">*=</span> <span style="color:#8be9fd;font-style:italic">pow</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, <span style="color:#8be9fd;font-style:italic">randi</span>() <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>)</code></pre></div>
+<p>This randomly flips the rotation speed to positive or negative, so
+we won&rsquo;t always orbit in the same direction.</p>
+
+<h2 id="trail">Trail</h2>
+
+<p>Add these nodes to the jumper:</p>
+
+<ul>
+<li><code>Node</code> (&ldquo;Trail&rdquo;)
+
+<ul>
+<li><code>Line2D</code> (&ldquo;Points&rdquo;)</li>
+</ul></li>
+</ul>
+
+<p>We&rsquo;re going to use this to make a trail that streams out behind the player.
+Later we&rsquo;ll make it more visually appealing, but for now, let&rsquo;s stick with a
+simple gradient. In the <em>Fill</em> add a new Gradient, and go from transparent
+to a color of your choosing:</p>
+
+<p><img src="/godot_lessons/img/cj_02_01.png?width=200" alt="alt" /></p>
+
+<p>Now in the jumper&rsquo;s script, let&rsquo;s add the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> trail <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Trail<span style="color:#ff79c6">/</span>Points
+
+<span style="color:#ff79c6">var</span> trail_length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">25</span></code></pre></div>
+<p>And then in the <code>_physics_process()</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> trail<span style="color:#ff79c6">.</span>points<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">&gt;</span> trail_length:
+    trail<span style="color:#ff79c6">.</span>remove_point(<span style="color:#bd93f9">0</span>)
+trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
+<p><strong>IMAGE/GIF</strong></p>
+
+<h2 id="circle-animations">Circle animations</h2>
+
+<p>Finally, we&rsquo;ll add some visuals to the circles. First, we&rsquo;ll add an effect when
+the player jumps off and the circle disappears. Then, we&rsquo;ll add a capture
+effect for when we hit a circle.</p>
+
+<p>Add an <code>AnimationPlayer</code> node to the Circle.</p>
+
+<h3 id="implode-animation">&ldquo;Implode&rdquo; animation</h3>
+
+<p>Add a new animation called &ldquo;implode&rdquo;. Set the length to 0.4 and keyframe two
+properties of the root <code>Area2D</code> node: <em>Scale</em> at <code>(1, 1)</code> and <em>Modulate</em> at
+its default (<code>(1, 1, 1, 1)</code>). Then move the scrubber all the way to the end
+and key the values <code>(0.1, 0.1)</code> and <code>(1, 1, 1, 0)</code> (that&rsquo;s the &ldquo;alpha&rdquo; value
+of the color).</p>
+
+<p><img src="/godot_lessons/img/cj_02_02.png" alt="alt" /></p>
+
+<h3 id="capture-animation">Capture animation</h3>
+
+<p>The capture animation is a little more complex. Duplicate the Sprite and call
+it <code>SpriteEffect</code>. Set its <em>Visible</em> property off. We&rsquo;re going to animate this
+second ring zooming in on the main circle.</p>
+
+<p><img src="/godot_lessons/img/cj_02_03.png" alt="alt" />
+<img src="/godot_lessons/img/cj_02_04.gif" alt="alt" /></p>
+
+<p>Here are the functions to add to the circle script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> capture():
+    <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;capture&#34;</span>)
+
+<span style="color:#ff79c6">func</span> implode():
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!$</span>AnimationPlayer<span style="color:#ff79c6">.</span>is_playing():
+        <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;implode&#34;</span>)
+    <span style="color:#8be9fd;font-style:italic">yield</span>(<span style="color:#ff79c6">$</span>AnimationPlayer, <span style="color:#f1fa8c">&#34;animation_finished&#34;</span>)
+    queue_free()</code></pre></div>
+<p>And then in <code>Jumper.gd</code>, our jump function becomes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> jump():
+    target<span style="color:#ff79c6">.</span>implode()
+    target <span style="color:#ff79c6">=</span> null
+    velocity <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> jump_speed</code></pre></div>
+<p>And in Main, our capture method calls the capture:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
+    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
+    object<span style="color:#ff79c6">.</span>capture()
+    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
+<p><strong>GIF</strong></p>
+
+<hr />
+
+<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
+
+<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
+
+<h4 id="do-you-prefer-video">Do you prefer video?</h4>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/wU6otgwaNQg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/godot_recipes/js/clipboard.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1555964166"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1555964166"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1555964166"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1555964166"></script>
+    <script src="/godot_recipes/js/learn.js?1555964166"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1555964166"></script>
+
+    <link href="/godot_recipes/mermaid/mermaid.css?1555964166" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1555964166"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

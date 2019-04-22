@@ -4,7 +4,9 @@ date: 2019-04-09T22:57:31-07:00
 draft: false
 ---
 
-# Godot Tutorials
+# <i class='fas fa-utensils'></i> Godot Recipes
+
+> Godot's nodes are your ingredients. What can you cook up?
 
 Are you ready to learn game development? Whether it's as a hobby or working
 towards your dream career, there's never been a better time to get started.
@@ -21,6 +23,8 @@ _open_ tool for bringing your visions to life.
 On this site you'll find a gentle introduction to the Godot game engine, as
 well as a wide variety of gamedev tips and techniques. Feel free to browse the
 categories in the sidebar and see what catches your interest.
+
+If you're new to Godot, start here: [What is Godot?](/godot_recipes/basics/start/101_01/).
 
 ### How to use this site
 

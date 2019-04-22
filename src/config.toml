@@ -1,7 +1,7 @@
-baseURL = "http://kidscancode.org/godot_lessons/"
+baseURL = "http://kidscancode.org/godot_recipes/"
 publishDir = "../docs"
 languageCode = "en-us"
-title = "Godot Lessons by KidsCanCode"
+title = "Godot Recipes by KidsCanCode"
 theme = "hugo-theme-learn-cb"
 pygmentsStyle = "dracula"
 pygmentsCodeFences = true

@@ -1,10 +1,9 @@
-+++
-title = "Project setup"
-date = 2019-04-09T20:23:50-07:00
-weight = 1
-draft = false
-pre = "01. "
-+++
+---
+title: "Project setup"
+weight: 1
+draft: false
+pre: "01. "
+---
 
 Where to start? Depending on the game, and how fleshed-out your idea is, the
 answer might be very different. In our case, I've cheated a little bit by making
