@@ -3,7 +3,7 @@ title = "Mobile Game: Circle Jump"
 date = 2019-04-09T20:23:50-07:00
 weight = 5
 chapter = true
-pre = "<i class='far fa-circle'></i> "
+pre = "<i class='far fa-circle fa-fw'></i> "
 +++
 
 # <i class="far fa-circle"></i> Circle Jump
