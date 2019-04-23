@@ -1,14 +1,16 @@
 +++
-title = "Godot 101"
+title = "Basics"
 date = 2019-04-09T19:48:00-07:00
-weight = 1
+weight = 2
 chapter = true
-pre = "<i class='fas fa-graduation-cap'></i> "
+pre = "<i class='fas fa-toolbox'></i> "
 +++
 
-# <i class='fas fa-graduation-cap'></i> Godot 101
+# <i class="fas fa-toolbox"></i> Basics
 
-![alt](/godot_recipes/img/godot3_logo.png)
+Basic Godot tips and tricks that apply to any project.
 
-Your introduction to the Godot game engine. If you've never used a game engine
-before, or if you’re just new to Godot, this is the place to start.
+#### In this section:
+
+- Setting up your project.
+- Importing assets (images, sounds, etc.).

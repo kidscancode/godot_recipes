@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intro to 3D on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/g101/3d/</link>
+    <description>Recent content in Intro to 3D on Godot Recipes by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate>
+    
+	<atom:link href="http://kidscancode.org/godot_recipes/g101/3d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The 3D Editor</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</link>
+      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</guid>
+      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.
+Are you ready? A word of warning: 3D development can be quite a bit more complex than working in 2D. While many of the same principles apply - such as working with nodes, writing scripts, and handling logic/data - 3D brings with it a number of other considerations.</description>
+    </item>
+    
+    <item>
+      <title>Importing 3D Objects</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</link>
+      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</guid>
+      <description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
+Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description>
+    </item>
+    
+    <item>
+      <title>Creating a 3D Character</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</link>
+      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</guid>
+      <description>In the last part, we covered how to import 3D objects and how to arrange them in a scene. In this installment, we&amp;rsquo;ll add more objects to the scene, including a user-controlled character.
+Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer Kit we downloaded last time. Select all the &amp;ldquo;block*.glb&amp;rdquo; files and in the &amp;ldquo;Import&amp;rdquo; tab set their &amp;ldquo;Root Type&amp;rdquo; to StaticBody and click &amp;ldquo;Reimport&amp;rdquo;. Select &amp;ldquo;blockLarge.</description>
+    </item>
+    
+    <item>
+      <title>Using Areas</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</link>
+      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</guid>
+      <description>In the last part, we learned about transforms, a very important concept in 3D that records an object&amp;rsquo;s local orientation in space, and used it to move our KinematicBody character. This time, we&amp;rsquo;re going to look at another type of 3D node: the Area.
+Areas Area nodes are used for detection and influence. They can detect when objects overlap, and when an object enters or exits a region. An Area can also be used to override physics properties, such as gravity or damping, in a region.</description>
+    </item>
+    
+    <item>
+      <title>Edge Detection &amp; Mouse Capture</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</link>
+      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</guid>
+      <description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
+Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
+    </item>
+    
+    <item>
+      <title>Using CSG</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</guid>
+      <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
+What is CSG? CSG stands for Constructive Solid Geometry. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
+    </item>
+    
+    <item>
+      <title>First-person Character</title>
+      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</guid>
+      <description>In this installment, we&amp;rsquo;ll look at how to make a first-person character. We&amp;rsquo;ll use the CSG-based level we designed in the previous part as a place to walk around and test our movement.
+Character Scene In an FPS or similar game, we want to give the player the illusion that they&amp;rsquo;re looking out of the character&amp;rsquo;s eyes. One nice aspect of this is that we don&amp;rsquo;t really need a model, at least to get started.</description>
+    </item>
+    
+  </channel>
+</rss>

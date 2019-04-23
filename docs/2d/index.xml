@@ -12,9 +12,22 @@
     
     
     <item>
-      <title>Splitscreen Demo (Using Viewports)</title>
+      <title>Screen wrap</title>
+      <link>http://kidscancode.org/godot_recipes/2d/screen_wrap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/screen_wrap/</guid>
+      <description>Problem You want to allow the player to &amp;ldquo;wrap around&amp;rdquo; the screen, teleporting from one side of the screen to the other. This is a common feature, especially in old-school 2D games (think Pac-man).
+Solution  Get your screen (viewport) size
+onready var screen_size = get_viewport_rect().size get_viewport_rect() is available to any CanvasItem derived node.
+ Compare your player&amp;rsquo;s position
+if position.x &amp;gt; screen_size.x: position.x = 0 if position.x &amp;lt; 0: position.</description>
+    </item>
+    
+    <item>
+      <title>Splitscreen multiplayer</title>
       <link>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</link>
-      <pubDate>Tue, 10 Jul 2018 08:12:12 -0700</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</guid>
       <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.

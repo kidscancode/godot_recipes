@@ -16,8 +16,6 @@ the Godot game engine. For beginners, it offers a friendly way to learn gamedev
 techniques. For experienced developers, it's a powerful, customizable and
 _open_ tool for bringing your visions to life.
 
-### Overview
-
 ![alt](/godot_recipes/img/godot3_logo.png?width=250)
 
 On this site you'll find a gentle introduction to the Godot game engine, as

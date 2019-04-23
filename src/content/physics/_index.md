@@ -1,7 +1,7 @@
 +++
 title = "Physics"
 date = 2019-04-09T20:47:11-07:00
-weight = 4
+weight = 6
 chapter = true
 pre = "<i class='fas fa-atom'></i> "
 +++
@@ -10,7 +10,7 @@ pre = "<i class='fas fa-atom'></i> "
 
 Learn how to use Godot's physics nodes.
 
-In this section:
+#### In this section:
 
 - When and how to use different physics nodes
 - Collision detection and response

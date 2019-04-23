@@ -1,7 +1,7 @@
 ---
 title: "Interpolation"
 weight: 1
-draft: true
+draft: false
 ---
 
 **Interpolation**, or its commonly-used abbreviation **lerp**, is a term that comes up often in game development. If you've never come across it before it can seem mysterious and highly-technical, but as you'll see in this tutorial, it's actually a straightforward concept with a wide variety of applications in game programming.
@@ -68,5 +68,5 @@ func _process(delta):
     if target:
         position = position.linear_interpolate(target, 0.1)
 ```
-
-link to Tween
+<!-- !LINK -->
+For more advanced applications of interpolation, see `Tween`.

@@ -1,4 +1,4 @@
-# Godot Lessons by KidsCanCode
+# Godot Recipes by KidsCanCode
 
 Game development tutorials and examples using the Godot Engine.
 

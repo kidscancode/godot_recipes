@@ -1,10 +1,8 @@
-+++
-date = "2018-07-10T08:12:12-07:00"
-draft = false
-title = "Splitscreen Demo (Using Viewports)"
-weight = 1
-+++
-
+---
+title: "Splitscreen multiplayer"
+weight: 1
+draft: false
+---
 ## Introduction
 
 In this demo, we'll consider a local multiplayer game - a topdown-style maze game with
@@ -49,6 +47,7 @@ The two players are added to a "World" scene containing a TileMap:
 If you like, you can download the starting project, with the world already set
 up, here:
 
+<!-- !LINK -->
 [splitscreen_start.zip](/blog/img/splitscreen_start.zip)
 
 Note that the map is much larger than the game screen, but aside from that everything
@@ -86,7 +85,7 @@ to get a better view of the area around the player.
 
 Your node setup should look like this:
 
-{{< highlight markdown>}}
+```markdown
  ┖╴Main (Node)
     ┖╴Viewports (HBoxContainer)
        ┠╴ViewportContainer2
@@ -95,7 +94,7 @@ Your node setup should look like this:
        ┖╴ViewportContainer1
           ┖╴Viewport1
             ┖╴Camera2D
-{{< /highlight >}}
+```
 
 {{% notice note %}}
 Note that we've put `ViewportContainer1` second in the HBoxContainer. This will

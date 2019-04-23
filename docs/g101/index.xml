@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Godot 101 on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/g101/</link>
+    <description>Recent content in Godot 101 on Godot Recipes by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 19:48:00 -0700</lastBuildDate>
+    
+	<atom:link href="http://kidscancode.org/godot_recipes/g101/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

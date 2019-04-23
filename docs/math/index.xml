@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Interpolation</title>
+      <link>http://kidscancode.org/godot_recipes/math/interpolation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/math/interpolation/</guid>
+      <description>Interpolation, or its commonly-used abbreviation lerp, is a term that comes up often in game development. If you&amp;rsquo;ve never come across it before it can seem mysterious and highly-technical, but as you&amp;rsquo;ll see in this tutorial, it&amp;rsquo;s actually a straightforward concept with a wide variety of applications in game programming.
+Numeric Interpolation The core formula for linear interpolation is this:
+func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represent the two values and t is the amount of interpolation, typically expressed as a value between 0 (which returns a), and 1 (which returns b).</description>
+    </item>
+    
+    <item>
       <title>Transforms</title>
       <link>http://kidscancode.org/godot_recipes/math/transforms/</link>
       <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
