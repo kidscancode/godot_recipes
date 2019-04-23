@@ -1,7 +1,7 @@
 ---
 title: "TileMap: detecting tiles"
 weight: 1
-draft: true
+draft: false
 ---
 
 ## Problem

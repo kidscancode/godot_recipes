@@ -75,6 +75,28 @@ We&amp;rsquo;ll also look at a quick way to set up a minimap display.</descripti
     </item>
     
     <item>
+      <title>TileMap: detecting tiles</title>
+      <link>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</guid>
+      <description>Problem You have a KinematicBody2D character colliding with a TileMap, and you want to know which tile it collided with.
+Solution When a KinematicBody2D collides, the collision data is returned in a KinematicCollision2D object. The TileMap acts as a single collider, so if you reference the collider property, it will be the TileMap node.
+You then need to find out which tile in the TileMap is at the collision location.</description>
+    </item>
+    
+    <item>
+      <title>Top-down character</title>
+      <link>http://kidscancode.org/godot_recipes/2d/topdown_movement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/topdown_movement/</guid>
+      <description>Problem You&amp;rsquo;re making a 2D top-down game, and you want to control a character&amp;rsquo;s movement.
+Solution For this solution, we&amp;rsquo;ll assume you have the following input actions defined:
+   Action Name Key(s)     &amp;quot;up&amp;quot; W,↑   &amp;quot;down&amp;quot; S,↓   &amp;quot;right&amp;quot; D,→   &amp;quot;left&amp;quot; A,←   &amp;quot;click&amp;quot; Mouse button 1    We will also assume you&amp;rsquo;re using a KinematicBody2D character.</description>
+    </item>
+    
+    <item>
       <title>Godot&#39;s Editor: Finding your way around</title>
       <link>http://kidscancode.org/godot_recipes/g101/start/101_02/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>

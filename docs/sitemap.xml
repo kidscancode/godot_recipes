@@ -39,6 +39,14 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/topdown_movement/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/g101/start/101_02/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
@@ -143,6 +151,11 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/export/</loc>
+    <lastmod>2019-04-09T19:48:00-07:00</lastmod>
   </url>
   
   <url>
