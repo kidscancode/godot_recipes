@@ -14,20 +14,20 @@
     <title>Inheritance :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1556051988" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1556051988" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1556173576" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1556051988" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1556173576" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1556051988"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1556173576"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1556051988"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1556051988"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1556173576"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1556173576"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1556051988"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1556173576"></script>
 
     
 
@@ -754,6 +754,25 @@
  
   
     
+      <li data-nav-id="/godot_recipes/physics/kinematic_friction/" title="Kinematic Friction" class="dd-item ">
+        <a href="/godot_recipes/physics/kinematic_friction/">
+        Kinematic Friction
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
         <a href="/godot_recipes/physics/godot3_kinematic2d/">
         Using KinematicBody2D
@@ -1054,37 +1073,27 @@
 
 
 
-<p>In this tutorial, we&rsquo;ll explore how inheritance works in Godot. You can use
-inheritance in Godot to reuse code and create powerful hierarchies of object and
-scenes in your game.</p>
+<p>In this tutorial, we&rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.</p>
 
-<p>We&rsquo;ll imagine we&rsquo;re making a classic top-down RPG and use Godot&rsquo;s inheritance
-capabilities to create two different kinds of characters in the game.</p>
+<p>We&rsquo;ll imagine we&rsquo;re making a classic top-down RPG and use Godot&rsquo;s inheritance capabilities to create two different kinds of characters in the game.</p>
 
 <h2 id="introduction">Introduction</h2>
 
-<p>In object oriented programming (OOP), <em>inheritance</em> is a powerful tool. Put briefly, you can
-define a class that <em>inherits</em> from another class. An object created using the first class will
-contain the methods and member variables of the &ldquo;master&rdquo; class as well as its own.</p>
+<p>In object oriented programming (OOP), <em>inheritance</em> is a powerful tool. Put briefly, you can define a class that <em>inherits</em> from another class. An object created using the first class will contain the methods and member variables of the &ldquo;master&rdquo; class as well as its own.</p>
 
-<p>Godot is strongly object-oriented, and offers the opportunity to use inheritance
-not just with objects (scripts) but also with scenes.</p>
+<p>Godot is strongly object-oriented, and offers the opportunity to use inheritance not just with objects (scripts) but also with scenes.</p>
 
 <p>Here&rsquo;s a preview of what we&rsquo;re making:</p>
 
 <p><img src="/godot_recipes/img/inh_preview.gif?width=350" alt="alt" /></p>
 
-<p>The green character is controlled by the player, and the other characters are NPCs,
-walking around the tile-based map semi-randomly.</p>
+<p>The green character is controlled by the player, and the other characters are NPCs, walking around the tile-based map semi-randomly.</p>
 
 <h2 id="project-setup">Project setup</h2>
 
-<p>In <em>Project Settings</em> create four new input actions called &ldquo;left&rdquo;, &ldquo;right&rdquo;, &ldquo;up&rdquo;, and &ldquo;down&rdquo; and assign
-each of them to the matching arrow key. We&rsquo;ll be using those names as dictionary keys, so make sure to
-note the spelling and capitalization.</p>
+<p>In <em>Project Settings</em> create four new input actions called &ldquo;left&rdquo;, &ldquo;right&rdquo;, &ldquo;up&rdquo;, and &ldquo;down&rdquo; and assign each of them to the matching arrow key. We&rsquo;ll be using those names as dictionary keys, so make sure to note the spelling and capitalization.</p>
 
-<p>Set the display <em>Width</em> and <em>Height</em> to <code>640</code> by <code>480</code> (we&rsquo;re using 32x32 tiles, so we don&rsquo;t need much
-screen space for this demo).</p>
+<p>Set the display <em>Width</em> and <em>Height</em> to <code>640</code> by <code>480</code> (we&rsquo;re using 32x32 tiles, so we don&rsquo;t need much screen space for this demo).</p>
 
 <p><a href="/blog/img/inheritance_art.zip">Download the art</a> (character spritesheets) and unzip it in the project folder.</p>
 
@@ -1099,9 +1108,7 @@ screen space for this demo).</p>
 <li>Collision detection with walls</li>
 </ul>
 
-<p>We&rsquo;ll start by creating a scene that will contain all of the above. Start with an
-<a href="http://docs.godotengine.org/en/latest/classes/class_area2d.html" target="_blank"><code>Area2D</code></a>
-and name it &ldquo;Character&rdquo;. Give it the following children:</p>
+<p>We&rsquo;ll start by creating a scene that will contain all of the above. Start with an <a href="http://docs.godotengine.org/en/latest/classes/class_area2d.html" target="_blank"><code>Area2D</code></a> and name it &ldquo;Character&rdquo;. Give it the following children:</p>
 
 <ul>
 <li><a href="http://docs.godotengine.org/en/latest/classes/class_sprite.html" target="_blank"><code>Sprite</code></a></li>
@@ -1110,21 +1117,17 @@ and name it &ldquo;Character&rdquo;. Give it the following children:</p>
 <li><a href="http://docs.godotengine.org/en/stable/classes/class_animationplayer.html" target="_blank"><code>AnimationPlayer</code></a></li>
 </ul>
 
-<p>We&rsquo;ll leave the <code>Sprite</code> without a texture for now, but in the Inspector set its <em>Vframes</em> and <em>Hframes</em> properties
-to <code>4</code> and <code>3</code> respectively.</p>
+<p>We&rsquo;ll leave the <code>Sprite</code> without a texture for now, but in the Inspector set its <em>Vframes</em> and <em>Hframes</em> properties to <code>4</code> and <code>3</code> respectively.</p>
 
 <p>Next, create a <code>RectangleShape2D</code> in the collision shape and set its <em>Extents</em> property in the Inspector to <code>(10, 18)</code>.</p>
 
 <blockquote>
-<p><strong>NOTE:</strong> Because all the characters are drawn to the same scale, we can be confident that the same sized collision
-shape will work for all characters. If this isn&rsquo;t the case with the art you&rsquo;re using, you can skip setting the collision
-shape here and configure it later for the inherited scenes.</p>
+<p><strong>NOTE:</strong> Because all the characters are drawn to the same scale, we can be confident that the same sized collision shape will work for all characters. If this isn&rsquo;t the case with the art you&rsquo;re using, you can skip setting the collision shape here and configure it later for the inherited scenes.</p>
 </blockquote>
 
 <h3 id="animations">Animations</h3>
 
-<p>Create four animations in the <code>AnimationPlayer</code> node. Name them to match the four directions we used in the input
-actions. For each animation, we&rsquo;re going to set the length to <code>0.8</code> and add a track for the <code>Sprite</code>&rsquo;s <em>Frame</em> property.
+<p>Create four animations in the <code>AnimationPlayer</code> node. Name them to match the four directions we used in the input actions. For each animation, we&rsquo;re going to set the length to <code>0.8</code> and add a track for the <code>Sprite</code>&rsquo;s <em>Frame</em> property.
 The pattern for each direction is listed below. See the screenshot for an example of the end result.</p>
 
 <table>
@@ -1162,9 +1165,7 @@ The pattern for each direction is listed below. See the screenshot for an exampl
 
 <h3 id="collision-detection">Collision Detection</h3>
 
-<p>Because the characters are moving on a grid, they will either move the full amount to the next tile or not at all.
-This means that before moving, the character needs to check if the move is possible. Add four <a href="http://docs.godotengine.org/en/latest/classes/class_raycast2d.html" target="_blank"><code>RayCast2D</code></a> nodes and
-set their names and <em>Cast To</em> properties as follows:</p>
+<p>Because the characters are moving on a grid, they will either move the full amount to the next tile or not at all. This means that before moving, the character needs to check if the move is possible. Add four <a href="http://docs.godotengine.org/en/latest/classes/class_raycast2d.html" target="_blank"><code>RayCast2D</code></a> nodes and set their names and <em>Cast To</em> properties as follows:</p>
 
 <table>
 <thead>
@@ -1197,8 +1198,7 @@ set their names and <em>Cast To</em> properties as follows:</p>
 </tbody>
 </table>
 
-<p>Make sure to set the <em>Enabled</em> property on each one (RayCast2Ds are disabled by default).
-Your final node setup should look something like this:</p>
+<p>Make sure to set the <em>Enabled</em> property on each one (RayCast2Ds are disabled by default). Your final node setup should look something like this:</p>
 
 <p><img src="/godot_recipes/img/inh_scene_char.png" alt="alt" /></p>
 
@@ -1223,9 +1223,7 @@ var raycasts <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&
                 <span style="color:#f1fa8c">&#39;down&#39;</span>: <span style="color:#f1fa8c">&#39;RayCastDown&#39;</span>}
  </code></pre></div>
 
-<p><code>can_move</code> is a flag that will track whether the character can move. It will be <code>false</code>
-while a movement is already underway. <code>facing</code> is the current direction of movement.
-Note that the <code>moves</code> and <code>raycasts</code> dictionaries&rsquo; keys match the input actions we created.</p>
+<p><code>can_move</code> is a flag that will track whether the character can move. It will be <code>false</code> while a movement is already underway. <code>facing</code> is the current direction of movement. Note that the <code>moves</code> and <code>raycasts</code> dictionaries&rsquo; keys match the input actions we created.</p>
 
 <p>Next is the code that will execute a movement from one square to another:</p>
 
@@ -1241,38 +1239,27 @@ Note that the <code>moves</code> and <code>raycasts</code> dictionaries&rsquo; k
     $MoveTween<span style="color:#ff79c6">.</span>start()
     <span style="color:#ff79c6">return</span> true</code></pre></div>
 
-<p>We pass a direction to <code>move()</code>. If the RayCast2D for that direction detects a collision, the move
-is canceled. Otherwise, we change <code>facing</code> to that direction, disable movement, and start playing
-the matching animation. To actually execute the movement, we use the <code>Tween</code> node to interpolate
-the <code>position</code> property from its current value to its current value plus a 32-pixel movement in
-the given direction. The duration is set to <code>0.8</code> which matches the animation length.</p>
+<p>We pass a direction to <code>move()</code>. If the RayCast2D for that direction detects a collision, the move is canceled. Otherwise, we change <code>facing</code> to that direction, disable movement, and start playing the matching animation. To actually execute the movement, we use the <code>Tween</code> node to interpolate the <code>position</code> property from its current value to its current value plus a 32-pixel movement in the given direction. The duration is set to <code>0.8</code> which matches the animation length.</p>
 
 <blockquote>
-<p><strong>Note:</strong> See the <a href="http://docs.godotengine.org/en/stable/classes/class_tween.html" target="_blank">Tween
-documentation</a> for details on how the <code>interpolate_property()</code> method works.</p>
+<p><strong>Note:</strong> See the <a href="http://docs.godotengine.org/en/stable/classes/class_tween.html" target="_blank">Tween documentation</a> for details on how the <code>interpolate_property()</code> method works.</p>
 </blockquote>
 
-<p>Finally, to enable movement again, we need to reset <code>can_move</code> when the movement has finished. Connect
-the <code>tween_completed</code> signal from <code>MoveTween</code> and add the following:</p>
+<p>Finally, to enable movement again, we need to reset <code>can_move</code> when the movement has finished. Connect the <code>tween_completed</code> signal from <code>MoveTween</code> and add the following:</p>
 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">func _on_MoveTween_tween_completed( <span style="color:#8be9fd;font-style:italic">object</span>, key ):
     can_move <span style="color:#ff79c6">=</span> true</code></pre></div>
 
 <h2 id="implementing-the-player">Implementing the Player</h2>
 
-<p>The player character needs to inherit all the properties we gave to <code>Character</code> as well as
-adding keyboard controlled movement.</p>
+<p>The player character needs to inherit all the properties we gave to <code>Character</code> as well as adding keyboard controlled movement.</p>
 
 <p>We&rsquo;ll start by making a new scene. However, instead of making a new empty scene,
-click on <em>Scene -&gt; New Inherited Scene</em> in the menu. Select the <code>Character.tscn</code>.
-Rename the root node from &ldquo;Character&rdquo; to &ldquo;Player&rdquo; and save the new scene.</p>
+click on <em>Scene -&gt; New Inherited Scene</em> in the menu. Select the <code>Character.tscn</code>. Rename the root node from &ldquo;Character&rdquo; to &ldquo;Player&rdquo; and save the new scene.</p>
 
-<p>All we need to do for the <code>Sprite</code> is set the texture, so choose a character you like from the &ldquo;res://art/rpgsprites1&rdquo;
-folder and drag it to the <em>Texture</em> property.</p>
+<p>All we need to do for the <code>Sprite</code> is set the texture, so choose a character you like from the &ldquo;res://art/rpgsprites1&rdquo; folder and drag it to the <em>Texture</em> property.</p>
 
-<p>Next, we need a new script for the player, so remove the attached one (&ldquo;Character.gd&rdquo;) and
-attach a new one. In the &ldquo;Attach Node Script&rdquo; dialog, click the folder icon next to the <em>Inherits</em> option
-and choose &ldquo;Character.gd&rdquo;.</p>
+<p>Next, we need a new script for the player, so remove the attached one (&ldquo;Character.gd&rdquo;) and attach a new one. In the &ldquo;Attach Node Script&rdquo; dialog, click the folder icon next to the <em>Inherits</em> option and choose &ldquo;Character.gd&rdquo;.</p>
 
 <p><img src="/godot_recipes/img/inh_script.png?width=250" alt="alt" /></p>
 
@@ -1284,16 +1271,13 @@ and choose &ldquo;Character.gd&rdquo;.</p>
         <span style="color:#ff79c6">for</span> dir <span style="color:#ff79c6">in</span> moves<span style="color:#ff79c6">.</span>keys():
             <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(dir):
                 move(dir)</code></pre></div>
-<p>Because we&rsquo;ve inherited all the behavior from &ldquo;Character.gd&rdquo;, we only need to worry about control. Here, we&rsquo;re
-using the <code>_process()</code> function to check the keystate each frame. However, only if <code>can_move</code> allows it do we
-actually check the keys and call <code>move()</code>.</p>
+<p>Because we&rsquo;ve inherited all the behavior from &ldquo;Character.gd&rdquo;, we only need to worry about control. Here, we&rsquo;re using the <code>_process()</code> function to check the keystate each frame. However, only if <code>can_move</code> allows it do we actually check the keys and call <code>move()</code>.</p>
 
 <p>Run the scene and try it out.</p>
 
 <h2 id="npc-characters">NPC characters</h2>
 
-<p>Hopefully you&rsquo;re seeing how inheritance works by now, but let&rsquo;s make another type of character: an NPC that
-will wander around the screen randomly. Make another scene inheriting from &ldquo;Character.tscn&rdquo; and name it NPC.</p>
+<p>Hopefully you&rsquo;re seeing how inheritance works by now, but let&rsquo;s make another type of character: an NPC that will wander around the screen randomly. Make another scene inheriting from &ldquo;Character.tscn&rdquo; and name it NPC.</p>
 
 <p>This time, leave the sprite&rsquo;s <em>Texture</em> blank and add a new script, again inheriting from &ldquo;Character.gd&rdquo;.</p>
 
@@ -1315,37 +1299,26 @@ func _process(delta):
         <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> move(facing) <span style="color:#ff79c6">or</span> randi() <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">10</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">5</span>:
             facing <span style="color:#ff79c6">=</span> moves<span style="color:#ff79c6">.</span>keys()[randi() <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">4</span>]</code></pre></div>
 
-<p>This time, we&rsquo;re using <code>_ready()</code> to select a random texture and assign it. We&rsquo;re also choosing a
-random starting direction.</p>
+<p>This time, we&rsquo;re using <code>_ready()</code> to select a random texture and assign it. We&rsquo;re also choosing a random starting direction.</p>
 
-<p>As with the player, we&rsquo;ll use <code>_process()</code> to trigger the movement, but this time we&rsquo;ll use the
-fact that the <code>move()</code> function returns <code>true</code> if it successfully executes (if the raycast detects
-an obstacle, it returns <code>false</code>). So if the NPC can&rsquo;t move, it will pick a new random direction.
-For variety, we also add a 50% chance that it will change direction anyway.</p>
+<p>As with the player, we&rsquo;ll use <code>_process()</code> to trigger the movement, but this time we&rsquo;ll use the fact that the <code>move()</code> function returns <code>true</code> if it successfully executes (if the raycast detects an obstacle, it returns <code>false</code>). So if the NPC can&rsquo;t move, it will pick a new random direction. For variety, we also add a 50% chance that it will change direction anyway.</p>
 
 <p>Run the scene and observe the NPC wandering randomly around the screen.</p>
 
 <h2 id="testing-collisions">Testing Collisions</h2>
 
-<p>Finally, to confirm that the collision detection is working, let&rsquo;s create a small scene for the
-characters to wander around in. We&rsquo;ll use a <a href="http://docs.godotengine.org/en/stable/classes/class_tilemap.html" target="_blank"><code>TileMap</code></a> to quickly draw our map.</p>
+<p>Finally, to confirm that the collision detection is working, let&rsquo;s create a small scene for the characters to wander around in. We&rsquo;ll use a <a href="http://docs.godotengine.org/en/stable/classes/class_tilemap.html" target="_blank"><code>TileMap</code></a> to quickly draw our map.</p>
 
 <blockquote>
 <p><strong>Note:</strong> See my <a href="https://youtu.be/LBK5GgMB988" target="_blank">Tilemap tutorial</a> for details on using
 TileMaps in Godot.</p>
 </blockquote>
 
-<p>There are two tiles (&ldquo;grass.png&rdquo; and &ldquo;stone.png&rdquo;) in the art folder. There is also a <a href="http://docs.godotengine.org/en/stable/classes/class_tileset.html" target="_blank"><code>TileSet</code></a> called
-&ldquo;tiles.tres&rdquo; to save you the step of making your own. In it, only the stone tile has a collision shape, so it
-will be our obstacle.</p>
+<p>There are two tiles (&ldquo;grass.png&rdquo; and &ldquo;stone.png&rdquo;) in the art folder. There is also a <a href="http://docs.godotengine.org/en/stable/classes/class_tileset.html" target="_blank"><code>TileSet</code></a> called &ldquo;tiles.tres&rdquo; to save you the step of making your own. In it, only the stone tile has a collision shape, so it will be our obstacle.</p>
 
-<p>Create a new &ldquo;Main&rdquo; scene (I usually like to use a plain <code>Node</code> as the root). Add a <code>TileMap</code> and drag &ldquo;tileset.tres&rdquo;
-into its <em>Tile Set</em> property. Also don&rsquo;t forget to change the <em>Size</em> to <code>(32, 32)</code>.</p>
+<p>Create a new &ldquo;Main&rdquo; scene (I usually like to use a plain <code>Node</code> as the root). Add a <code>TileMap</code> and drag &ldquo;tileset.tres&rdquo; into its <em>Tile Set</em> property. Also don&rsquo;t forget to change the <em>Size</em> to <code>(32, 32)</code>.</p>
 
-<p>Draw some walls as you like, and then add a <code>Player</code> instance and a few instances of <code>NPC</code>. Remember, the characters
-won&rsquo;t know anything about the map - they just know if they can move one tile or not. If you want them to line up properly,
-you need to make sure the characters&rsquo; starting positions are centered on a tile. This is easy to do if you turn
-on &ldquo;Snap to Grid&rdquo;. Click the &ldquo;Use Snap&rdquo; button and then open the grid menu by clicking on the three dots next to it:</p>
+<p>Draw some walls as you like, and then add a <code>Player</code> instance and a few instances of <code>NPC</code>. Remember, the characters won&rsquo;t know anything about the map - they just know if they can move one tile or not. If you want them to line up properly, you need to make sure the characters&rsquo; starting positions are centered on a tile. This is easy to do if you turn on &ldquo;Snap to Grid&rdquo;. Click the &ldquo;Use Snap&rdquo; button and then open the grid menu by clicking on the three dots next to it:</p>
 
 <p><img src="/godot_recipes/img/inh_snap2.png" alt="alt" /></p>
 
@@ -1357,14 +1330,9 @@ on &ldquo;Snap to Grid&rdquo;. Click the &ldquo;Use Snap&rdquo; button and then 
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>Imagine we had built this project without using inheritance. The Player and NPC would each have their own scene
-setup and individual scripts. If we decided to change how we wanted movement to work, we would have to change
-everything twice. If we added more character types (Monsters, Pets, etc.) the duplicated code would
-multiply and quickly become unmanageable. With the setup we created above, everything is in one place, and any
-change to the character automatically propagates to everything that extends it.</p>
+<p>Imagine we had built this project without using inheritance. The Player and NPC would each have their own scene setup and individual scripts. If we decided to change how we wanted movement to work, we would have to change everything twice. If we added more character types (Monsters, Pets, etc.) the duplicated code would multiply and quickly become unmanageable. With the setup we created above, everything is in one place, and any change to the character automatically propagates to everything that extends it.</p>
 
-<p>As you&rsquo;re working on your own projects, look for opportunities to consolidate code and use inheritance for
-your scenes and/or scripts. As your projects grow in size and complexity, it will quickly become a lifesaver.</p>
+<p>As you&rsquo;re working on your own projects, look for opportunities to consolidate code and use inheritance for your scenes and/or scripts. As your projects grow in size and complexity, it will quickly become a lifesaver.</p>
 
 
 <h3>Comments</h3>
@@ -1920,6 +1888,22 @@ your scenes and/or scripts. As your projects grow in size and complexity, it wil
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2036,20 +2020,20 @@ your scenes and/or scripts. As your projects grow in size and complexity, it wil
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1556051988"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1556051988"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1556051988"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1556051988"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1556051988"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1556051988"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1556051988"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1556173577"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1556173577"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1556173577"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1556173577"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1556173577"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1556173577"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1556173577"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1556051988"></script>
-    <script src="/godot_recipes/js/learn.js?1556051988"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1556051988"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1556173577"></script>
+    <script src="/godot_recipes/js/learn.js?1556173577"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1556173577"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1556051988" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1556051988"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1556173577" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1556173577"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

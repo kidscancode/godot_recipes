@@ -5,9 +5,7 @@ weight: 3
 draft: false
 ---
 
-Before reading this, make sure you have an understanding of vectors and how
-they're used in game development. If you don't, I recommend you read this
-introduction I wrote for the Godot documentation:
+Before reading this, make sure you have an understanding of vectors and how they're used in game development. If you don't, I recommend you read this introduction I wrote for the Godot documentation:
 [Vector Math](https://docs.godotengine.org/en/latest/tutorials/math/vector_math.html).
 
 ## 2D Transforms
@@ -26,9 +24,7 @@ But what happens when the ship rotates?
 
 ![alt](/godot_recipes/img/0_2d_rocket2.png?width=250px)
 
-How do we move the ship forward now? If you remember Trigonometry from school,
-you might be starting to think about angles, sin and cos and doing something like `position += Vector2(10 * cos(angle), 10 * sin(angle))`. While this would
-work, there's a much more convenient way: the _Transform_.
+How do we move the ship forward now? If you remember Trigonometry from school, you might be starting to think about angles, sin and cos and doing something like `position += Vector2(10 * cos(angle), 10 * sin(angle))`. While this would work, there's a much more convenient way: the _Transform_.
 
 Let's look at the rotated ship again, but this time, let's also imagine that the ship has its own **X** and **Y** axes that it carries with it, independent of the global axes:
 
@@ -48,8 +44,7 @@ This code says "Add the transform's x vector multiplied by 10." Let's break down
 The `transform` property of a node is _relative_ to its parent node. If you need to get the global value, it's available in `global_transform`.
 {{% /notice %}}
 
-In addition to the `basis`, the transform also contains a component called the
-`origin`. The basis represents the body's rotation, while the origin represents the _translation_, or change in position.
+In addition to the `basis`, the transform also contains a component called the `origin`. The basis represents the body's rotation, while the origin represents the _translation_, or change in position.
 
 In this picture, the blue vector is the `transform.origin`. It is equal to the object's `position` vector.
 

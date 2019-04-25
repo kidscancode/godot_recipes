@@ -160,6 +160,16 @@ Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer
     </item>
     
     <item>
+      <title>Kinematic Friction</title>
+      <link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</guid>
+      <description>Problem You want to add friction and acceleration to your kinematic character, giving it a smoother feel.
+Solution For most games, we&amp;rsquo;re not necessarily interested in a perfect physics simulation. We want action, responsiveness, and arcade feel. This is why you choose a kinematic body over a rigid one: so that you can control its behavior directly. However, some amount of physics is good - it means an object doesn&amp;rsquo;t instantly change direction or come to a stop.</description>
+    </item>
+    
+    <item>
       <title>Using Areas</title>
       <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</link>
       <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>

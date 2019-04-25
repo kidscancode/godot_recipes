@@ -10,7 +10,6 @@ pre = "<i class='far fa-circle fa-fw'></i> "
 
 ### An end-to-end game development series.
 
-In this series, we build a one-touch mobile game called "Circle Jump". Here's
-a prototype image:
+In this series, we build a one-touch mobile game called "Circle Jump". Here's a prototype image:
 
 ![alt](/godot_recipes/img/jump.gif)
