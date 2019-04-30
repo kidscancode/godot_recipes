@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Game Tutorials :: Godot Recipes by KidsCanCode</title>
+    <title>Capturing the Mouse :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1556601527" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/">
+  <body class="" data-url="/godot_recipes/input/mouse_capture/">
     <nav id="sidebar" class="">
 
 
@@ -565,7 +565,7 @@
   
     
     <li data-nav-id="/godot_recipes/input/" title="Input" class="dd-item
-        
+        parent
         
         
         ">
@@ -589,7 +589,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/input/mouse_capture/" title="Capturing the Mouse" class="dd-item ">
+      <li data-nav-id="/godot_recipes/input/mouse_capture/" title="Capturing the Mouse" class="dd-item active">
         <a href="/godot_recipes/input/mouse_capture/">
         Capturing the Mouse
         
@@ -892,8 +892,8 @@
   
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/games/">
@@ -1048,6 +1048,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1058,7 +1060,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Game Tutorials
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/input/'>Input</a> > Capturing the Mouse
+          
+        
           
         
           
@@ -1067,6 +1075,21 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1074,9 +1097,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Capturing the Mouse
+            </h1>
           
 
         
@@ -1084,22 +1110,65 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-chess-pawn-i-games"><i class='fas fa-chess-pawn'></i> Games</h1>
+<h2 id="problem">Problem</h2>
 
-<p>Demo games and tutorials.</p>
+<p>You want to hide the mouse cursor and keep the mouse from leaving the game window. This is common in many 3D games (and some 2D ones).</p>
 
+<h2 id="solution">Solution</h2>
 
+<p>You can set the mouse state using <code>Input.set_mouse_mode()</code>. There are four possible mouse modes:</p>
 
+<ul>
+<li><p><strong>MOUSE_MODE_VISIBLE</strong>: The mouse is visible and can move freely into and out of the window. This is the default state.</p></li>
 
+<li><p><strong>MOUSE_MODE_HIDDEN</strong>: The mouse cursor is invisible, but the mouse can still move outside the window.</p></li>
+
+<li><p><strong>MOUSE_MODE_CAPTURED</strong>: The mouse cursor is hidden and the mouse is unable to leave the game window.</p></li>
+
+<li><p><strong>MOUSE_MODE_CONFINED</strong>: The mouse is visible, but cannot leave the game window.</p></li>
+</ul>
+
+<p>&ldquo;Captured&rdquo; is the most commonly used option. You can set the mouse mode at runtime using:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
+    Input<span style="color:#ff79c6">.</span>set_mouse_mode(Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED)</code></pre></div>
+<p>When the mouse is captured, mouse input events will still be passed as normal. However, you will find there is a problem. If you want to close the game or switch to another window, you can&rsquo;t. For this reason, you will want to also include a way to &ldquo;release&rdquo; the mouse. For example, to release when the player pressed the Escape key:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _input(event):
+    <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;ui_cancel&#34;</span>):
+        Input<span style="color:#ff79c6">.</span>set_mouse_mode(Input<span style="color:#ff79c6">.</span>MOUSE_MODE_VISIBLE)</code></pre></div>
+<p>So that the game doesn&rsquo;t respond to mouse movement when you&rsquo;re in another window, you can test for the capture state in your character controller using:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>get_mouse_mode() <span style="color:#ff79c6">==</span> Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED:</code></pre></div>
+<p>Once the mouse is released, that leaves the need to re-capture it to continue playing. Assuming you have an event in the Input Map for a mouse click, you can do the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;click&#34;</span>):
+        <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>get_mouse_mode() <span style="color:#ff79c6">==</span> Input<span style="color:#ff79c6">.</span>MOUSE_MODE_VISIBLE:
+            Input<span style="color:#ff79c6">.</span>set_mouse_mode(Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED)</code></pre></div>
+<p>Since you may also be using a mouse click to shoot or perform some other action, it&rsquo;s probably a good idea to stop the event from propagating. Add this after setting the mouse mode:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">get_tree()<span style="color:#ff79c6">.</span>set_input_as_handled()</code></pre></div>
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1472,6 +1541,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1484,6 +1554,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1504,34 +1575,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1540,57 +1585,6 @@
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1640,6 +1634,86 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1696,7 +1770,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1711,9 +1784,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1813,3 +1883,4 @@
 
   </body>
 </html>
+

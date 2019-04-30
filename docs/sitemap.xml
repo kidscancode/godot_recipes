@@ -23,6 +23,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/input/mouse_capture/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/math/interpolation/</loc>
   </url>
   
@@ -97,6 +101,10 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</loc>
     <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</loc>
   </url>
   
   <url>

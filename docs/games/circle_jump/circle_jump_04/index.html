@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Game Tutorials :: Godot Recipes by KidsCanCode</title>
+    <title>Menus :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1556601527" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/">
+  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_04/">
     <nav id="sidebar" class="">
 
 
@@ -893,7 +893,7 @@
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
         parent
-        active
+        
         
         ">
       <a href="/godot_recipes/games/">
@@ -919,7 +919,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
-        
+        parent
         
         
         ">
@@ -981,7 +981,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_04/" title="Menus" class="dd-item ">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_04/" title="Menus" class="dd-item active">
         <a href="/godot_recipes/games/circle_jump/circle_jump_04/">
         04. Menus
         
@@ -1048,6 +1048,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1058,7 +1060,19 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Game Tutorials
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Menus
+          
+        
+          
+        
           
         
           
@@ -1067,6 +1081,27 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#menu-screens">Menu screens</a>
+<ul>
+<li>
+<ul>
+<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
+<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1074,9 +1109,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Menus
+            </h1>
           
 
         
@@ -1084,22 +1122,155 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-chess-pawn-i-games"><i class='fas fa-chess-pawn'></i> Games</h1>
+<p>Now that we&rsquo;ve got the basic gameplay, it&rsquo;s time to start working on the UI. We&rsquo;re going to need menu screens for the title, settings, and game over.</p>
 
-<p>Demo games and tutorials.</p>
+<h2 id="menu-screens">Menu screens</h2>
+
+<p>The three screens will share a common layout and some functionality, so we&rsquo;ll start with a base scene they can all inherit from. In the new scene, start with a <code>CanvasLayer</code> and name it <code>BaseScreen</code>. Save this scene in the &ldquo;UI&rdquo; folder.</p>
+
+<ul>
+<li><code>CanvasLayer</code> (&ldquo;BaseScreen&rdquo;)
+
+<ul>
+<li><code>MarginContainer</code></li>
+<li><code>VBoxContainer</code>
+
+<ul>
+<li><code>Label</code></li>
+<li><code>HBoxContainer</code> (&ldquo;Buttons&rdquo;)</li>
+</ul></li>
+<li><code>Tween</code></li>
+</ul></li>
+</ul>
+
+<p>The <code>MarginContainer</code> will ensure that none of our UI elements get too close to the edge of the screen. Set all four of its <em>Custom Constants</em> properties to <code>20</code>.</p>
+
+<p>Next is a <code>VBoxContainer</code> to organize the main elements. Set its <em>Custom Constants/Separation</em> to <code>150</code>.</p>
+
+<p>The <code>Label</code> node displays the screen&rsquo;s title. Put &ldquo;Title&rdquo; in its <em>Text</em> field and load the same font resource we used for the circles.</p>
+
+<p>Finally, add an <code>HBoxContainer</code> named &ldquo;Buttons&rdquo; which will hold the buttons we add to the screens. Set its <em>Separation</em> to <code>75</code>. Then duplicate the node so that we have another row of buttons.</p>
+
+<p>The screen should start offscreen, so set the <em>Offset</em> on the root node to <code>(500, 0)</code>. Then add a script to the scene:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> CanvasLayer
+
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> tween <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Tween
+
+<span style="color:#ff79c6">func</span> appear():
+    tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;offset:x&#34;</span>, <span style="color:#bd93f9">500</span>, <span style="color:#bd93f9">0</span>,
+                    <span style="color:#bd93f9">0.5</span>, Tween<span style="color:#ff79c6">.</span>TRANS_BACK, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    tween<span style="color:#ff79c6">.</span>start()
+
+<span style="color:#ff79c6">func</span> disappear():
+    tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;offset:x&#34;</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">500</span>,
+                    <span style="color:#bd93f9">0.4</span>, Tween<span style="color:#ff79c6">.</span>TRANS_BACK, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    tween<span style="color:#ff79c6">.</span>start()</code></pre></div>
+<p>This script sets up the animations we can call to make the screen appear and disappear.</p>
+
+<p>Now we can make our three inherited scenes. For each, name the root node, change the Label text, and add <code>TextureButton</code>s to the &ldquo;Buttons&rdquo; containers. Use the images from the assets folder for each button&rsquo;s <em>Normal</em> texture. Name each button for its function (&ldquo;Play&rdquo;, &ldquo;Settings&rdquo;, etc.) and add it to the group &ldquo;buttons&rdquo;.</p>
+
+<p>Here is what the three scenes should look like, using the indicated button names:</p>
+
+<p><img src="/godot_recipes/img/cj_04_01.png" alt="alt" /></p>
+
+<p>Make one more scene with a <code>Node</code> root named &ldquo;Screens&rdquo; and instance the three screens in it. Add the following script, which will handle scene transitions and state.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
+
+<span style="color:#ff79c6">signal</span> start_game
+
+<span style="color:#ff79c6">var</span> current_screen <span style="color:#ff79c6">=</span> null
+
+<span style="color:#ff79c6">func</span> _ready():
+    register_buttons()
+    change_screen(<span style="color:#ff79c6">$</span>TitleScreen)
+
+<span style="color:#ff79c6">func</span> register_buttons():
+    <span style="color:#ff79c6">var</span> buttons <span style="color:#ff79c6">=</span> get_tree()<span style="color:#ff79c6">.</span>get_nodes_in_group(<span style="color:#f1fa8c">&#34;buttons&#34;</span>)
+    <span style="color:#ff79c6">for</span> button <span style="color:#ff79c6">in</span> buttons:
+        button<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;pressed&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_button_pressed&#34;</span>, [button<span style="color:#ff79c6">.</span>name])
+
+<span style="color:#ff79c6">func</span> _on_button_pressed(name):
+    match name:
+        <span style="color:#f1fa8c">&#34;Home&#34;</span>:
+            change_screen(<span style="color:#ff79c6">$</span>TitleScreen)
+        <span style="color:#f1fa8c">&#34;Play&#34;</span>:
+            change_screen(null)
+            <span style="color:#8be9fd;font-style:italic">yield</span>(get_tree()<span style="color:#ff79c6">.</span>create_timer(<span style="color:#bd93f9">0.5</span>), <span style="color:#f1fa8c">&#34;timeout&#34;</span>)
+            emit_signal(<span style="color:#f1fa8c">&#34;start_game&#34;</span>)
+        <span style="color:#f1fa8c">&#34;Settings&#34;</span>:
+            change_screen(<span style="color:#ff79c6">$</span>SettingsScreen)
+
+<span style="color:#ff79c6">func</span> change_screen(new_screen):
+    <span style="color:#ff79c6">if</span> current_screen:
+        current_screen<span style="color:#ff79c6">.</span>disappear()
+        <span style="color:#8be9fd;font-style:italic">yield</span>(current_screen<span style="color:#ff79c6">.</span>tween, <span style="color:#f1fa8c">&#34;tween_completed&#34;</span>)
+    current_screen <span style="color:#ff79c6">=</span> new_screen
+    <span style="color:#ff79c6">if</span> new_screen:
+        current_screen<span style="color:#ff79c6">.</span>appear()
+        <span style="color:#8be9fd;font-style:italic">yield</span>(current_screen<span style="color:#ff79c6">.</span>tween, <span style="color:#f1fa8c">&#34;tween_completed&#34;</span>)
+
+<span style="color:#ff79c6">func</span> game_over():
+    change_screen(<span style="color:#ff79c6">$</span>GameOverScreen)</code></pre></div>
+<p>This script connects up all our buttons by linking the <code>pressed</code> signal and passing along the button&rsquo;s name as a parameter. This lets our <code>_on_button_pressed()</code> method decide what each button should do.</p>
+
+<p>The <code>change_screen()</code> method handles transition to the selected screen, including the <code>null</code> option for when we don&rsquo;t want to display a screen at all.</p>
+
+<p>Run it to test out the screen transitions:</p>
+
+<p><img src="/godot_recipes/img/cj_04_02.gif" alt="alt" /></p>
+
+<p>Instance this scene in Main, then connect its <code>start_game</code> signal to the <code>new_game()</code> function in main. Don&rsquo;t forget to remove <code>new_game()</code> from the <code>_ready()</code>. Try running the game and you should be able to start. The last part will be to connect up the game over condition.</p>
+
+<p>In the Jumper, add a signal called <code>died</code> and emit that signal in the visibility notifier&rsquo;s method.</p>
+
+<p>Add this to the <code>new_game()</code> function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">player<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;died&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_Jumper_died&#34;</span>)</code></pre></div>
+<p>Then add this new function, which will ensure all the circles are removed when the player dies.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_died():
+    get_tree()<span style="color:#ff79c6">.</span>call_group(<span style="color:#f1fa8c">&#34;circles&#34;</span>, <span style="color:#f1fa8c">&#34;implode&#34;</span>)
+    <span style="color:#ff79c6">$</span>Screens<span style="color:#ff79c6">.</span>game_over()</code></pre></div>
+<p>Our menu screens are basic and no-frills, but they&rsquo;re functional. In the next part, we&rsquo;ll continue the UI work with our score counter and other in-game displays.</p>
+
+<hr />
+
+<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
+
+<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
+
+<h4 id="do-you-prefer-video">Do you prefer video?</h4>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/tWWncIkfCWs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1712,8 +1883,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1727,6 +1896,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1759,6 +1931,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1813,3 +1986,4 @@
 
   </body>
 </html>
+

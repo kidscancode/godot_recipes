@@ -14,20 +14,20 @@
     <title>First-person Character :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1556173576" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1556173576" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1556601527" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1556601527" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1556173576" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1556601527" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1556173576"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1556601527"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1556173576"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1556173576"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1556601527"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1556601527"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1556173576"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1556601527"></script>
 
     
 
@@ -575,6 +575,35 @@
       </a>
       
       
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/input/mouse_capture/" title="Capturing the Mouse" class="dd-item ">
+        <a href="/godot_recipes/input/mouse_capture/">
+        Capturing the Mouse
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
     </li>
   
  
@@ -945,6 +974,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_04/" title="Menus" class="dd-item ">
+        <a href="/godot_recipes/games/circle_jump/circle_jump_04/">
+        04. Menus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -1071,29 +1119,20 @@
 
 
 
-<p>In this installment, we&rsquo;ll look at how to make a first-person character. We&rsquo;ll
-use the CSG-based level we designed in the previous part as a place to walk
-around and test our movement.</p>
+<p>In this installment, we&rsquo;ll look at how to make a first-person character. We&rsquo;ll use the CSG-based level we designed in the previous part as a place to walk   around and test our movement.</p>
 
 <h2 id="character-scene">Character Scene</h2>
 
 <p>In an FPS or similar game, we want to give the player the illusion that they&rsquo;re
-looking out of the character&rsquo;s eyes. One nice aspect of this is that we don&rsquo;t
-really need a model, at least to get started.</p>
+looking out of the character&rsquo;s eyes. One nice aspect of this is that we don&rsquo;t really need a model, at least to get started.</p>
 
-<p>Start with a <code>KinematicBody</code>. To this we&rsquo;ll add two <code>CollisionShape</code> nodes (&ldquo;Body&rdquo; and &ldquo;Feet&rdquo;). We also want to have a <code>Camera</code>, but we need to be careful about how we handle rotation. The <em>character</em> should rotate in <strong>Y</strong>, but only the camera should rotate in <strong>X</strong> (for looking up and down). To make this work,
-add a <code>Spatial</code> node, which we&rsquo;ll call &ldquo;RotationPivot&rdquo;, and add the <code>Camera</code>
-to that.</p>
+<p>Start with a <code>KinematicBody</code>. To this we&rsquo;ll add two <code>CollisionShape</code> nodes (&ldquo;Body&rdquo; and &ldquo;Feet&rdquo;). We also want to have a <code>Camera</code>, but we need to be careful about how we handle rotation. The <em>character</em> should rotate in <strong>Y</strong>, but only the camera should rotate in <strong>X</strong> (for looking up and down). To make this work, add a <code>Spatial</code> node, which we&rsquo;ll call &ldquo;Pivot&rdquo;, and add the <code>Camera</code> to that.</p>
 
-<p>The &ldquo;Body&rdquo; collision shape is going to represent the player&rsquo;s body. We can use
-a <code>CapsuleShape</code> (rotated <code>90</code> degrees around <strong>X</strong>). Set its <em>Radius</em> to <code>0.5</code>
-and <em>Height</em> to <code>1</code>.</p>
+<p>The &ldquo;Body&rdquo; collision shape is going to represent the player&rsquo;s body. We can use a <code>CapsuleShape</code> (rotated <code>90</code> degrees around <strong>X</strong>). Set its <em>Radius</em> to <code>0.5</code> and <em>Height</em> to <code>1</code>.</p>
 
-<p>One issue with using a <code>CapsuleShape</code> is that the bottom is rounded. This is good for moving over small bumps in a natural way, but it also means that when standing on the edge of a surface, the player will &ldquo;roll&rdquo; off in a strange way. We can prevent this by using a <code>BoxShape</code> for the &ldquo;Feet&rdquo; collision. Make its extents <code>(.4, .1, .4)</code> and place it so that its bottom is just above the bottom of the capsule. We&rsquo;ll still have the round bottom to move over things, but the
-box will keep us from sliding off ledges.</p>
+<p>One issue with using a <code>CapsuleShape</code> is that the bottom is rounded. This is good for moving over small bumps in a natural way, but it also means that when standing on the edge of a surface, the player will &ldquo;roll&rdquo; off in a strange way. We can prevent this by using a <code>BoxShape</code> for the &ldquo;Feet&rdquo; collision. Make its extents <code>(.4, .1, .4)</code> and place it so that its bottom is just above the bottom of the capsule. We&rsquo;ll still have the round bottom to move over things, but the box will keep us from sliding off ledges.</p>
 
-<p>Move the <code>RotationPivot</code> up a bit, so that it&rsquo;s not pointing the camera out of
-the &ldquo;middle&rdquo; of the body.</p>
+<p>Move the <code>Pivot</code> up a bit, so that it&rsquo;s not pointing the camera out of the &ldquo;middle&rdquo; of the body.</p>
 
 <p><img src="/godot_recipes/img/3d_07_01.png" alt="alt" /></p>
 
@@ -1101,9 +1140,6 @@ the &ldquo;middle&rdquo; of the body.</p>
 
 <p>Much of the code for movement is the same as we used for the third-person character earlier in this series. We&rsquo;ll start with declaring our variables:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody
-
-<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> camera <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>RotationHelper<span style="color:#ff79c6">/</span>Camera
-<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> rotation_helper <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>RotationHelper
 
 <span style="color:#ff79c6">var</span> gravity <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">30</span>
 <span style="color:#ff79c6">var</span> max_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">8</span>
@@ -1131,9 +1167,9 @@ the &ldquo;middle&rdquo; of the body.</p>
 <p>We add up the inputs and return the resulting direction vector.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
     <span style="color:#ff79c6">if</span> event is InputEventMouseMotion <span style="color:#ff79c6">and</span> Input<span style="color:#ff79c6">.</span>get_mouse_mode() <span style="color:#ff79c6">==</span> Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED:
-        rotation_helper<span style="color:#ff79c6">.</span>rotate_x(<span style="color:#ff79c6">-</span>event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> mouse_sensitivity)
         rotate_y(<span style="color:#ff79c6">-</span>event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> mouse_sensitivity)
-        rotation_helper<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(rotation_helper<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.2</span>, <span style="color:#bd93f9">1.2</span>)</code></pre></div>
+        <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotate_x(<span style="color:#ff79c6">-</span>event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> mouse_sensitivity)
+        <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(<span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.2</span>, <span style="color:#bd93f9">1.2</span>)</code></pre></div>
 <p>We also need to capture mouse movement for camera rotation. As discussed above, horizontal mouse movement rotates the entire body in <strong>Y</strong>, while vertical motion rotates the <em>helper</em> node in <strong>X</strong>.</p>
 
 <p>We also need to limit that vertical rotation to prevent the camera from flipping upside-down.</p>
@@ -1587,54 +1623,6 @@ the &ldquo;middle&rdquo; of the body.</p>
                     
 
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -1666,22 +1654,6 @@ the &ldquo;middle&rdquo; of the body.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -1731,6 +1703,86 @@ the &ldquo;middle&rdquo; of the body.</p>
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1809,6 +1861,22 @@ the &ldquo;middle&rdquo; of the body.</p>
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1863,20 +1931,20 @@ the &ldquo;middle&rdquo; of the body.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1556173576"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1556173576"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1556173576"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1556173576"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1556173576"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1556173576"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1556173576"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1556601527"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1556601527"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1556601527"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1556601527"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1556601527"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1556601527"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1556601527"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1556173576"></script>
-    <script src="/godot_recipes/js/learn.js?1556173576"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1556173576"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1556601527"></script>
+    <script src="/godot_recipes/js/learn.js?1556601527"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1556601527"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1556173576" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1556173576"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1556601527" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1556601527"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
