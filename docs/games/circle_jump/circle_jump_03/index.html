@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Mobile Game: Circle Jump :: Godot Recipes by KidsCanCode</title>
+    <title>Limited circles :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1556602250" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/circle_jump/">
+  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_03/">
     <nav id="sidebar" class="">
 
 
@@ -920,7 +920,7 @@
     
     <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
         parent
-        active
+        
         
         ">
       <a href="/godot_recipes/games/circle_jump/">
@@ -981,7 +981,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_03/" title="Limited circles" class="dd-item ">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_03/" title="Limited circles" class="dd-item active">
         <a href="/godot_recipes/games/circle_jump/circle_jump_03/">
         03. Limited circles
         
@@ -1067,6 +1067,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1081,7 +1083,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > Mobile Game: Circle Jump
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Limited circles
+          
+        
           
         
           
@@ -1092,6 +1100,27 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#circle-modes">Circle modes</a>
+<ul>
+<li><a href="#circle-effect">Circle effect</a>
+<ul>
+<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
+<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1099,9 +1128,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Limited circles
+            </h1>
           
 
         
@@ -1109,26 +1141,139 @@
 
 
 
-	
 
-<h1 id="i-class-far-fa-circle-i-circle-jump"><i class="far fa-circle"></i> Circle Jump</h1>
+<p>In the first two parts, we got the basic gameplay working. Now we&rsquo;re going to start adding some different modes to the circles.</p>
 
-<h3 id="an-end-to-end-game-development-series">An end-to-end game development series.</h3>
+<h2 id="circle-modes">Circle modes</h2>
 
-<p>In this series, we build a one-touch mobile game called &ldquo;Circle Jump&rdquo;. Here&rsquo;s a prototype image:</p>
+<p>Eventually, we&rsquo;ll have many different modes, but we&rsquo;re going to start with the &ldquo;limited&rdquo; mode: the circle only allows a given number of orbits before disappearing. First, let&rsquo;s add a <code>Label</code> node to show the number of remaining orbits. Type a number (<code>1</code>) in the text field so we can see how it looks.</p>
 
-<p><img src="/godot_recipes/img/jump.gif" alt="alt" /></p>
+<p>In the <em>Custom Fonts</em> section, add a new <code>DynamicFont</code>, load the <em>Font Data</em> from the assets folder, and set the <em>Size</em> to <code>64</code>. To align the label, in the &ldquo;Layout&rdquo; menu, choose &ldquo;Center&rdquo;.</p>
+
+<p>Add the following new variables at the top of the <code>Circle.gd</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">enum</span> MODES {STATIC, LIMITED}
+
+<span style="color:#ff79c6">var</span> mode <span style="color:#ff79c6">=</span> MODES<span style="color:#ff79c6">.</span>STATIC
+<span style="color:#ff79c6">var</span> num_orbits <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>  <span style="color:#6272a4"># Number of orbits until the circle disappears</span>
+<span style="color:#ff79c6">var</span> orbits_left <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>  <span style="color:#6272a4"># Number of orbits the jumper has completed</span>
+<span style="color:#ff79c6">var</span> orbit_start <span style="color:#ff79c6">=</span> null  <span style="color:#6272a4"># Where the orbits started</span></code></pre></div>
+<p>Next we need a way to set the mode:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_mode(_mode):
+    mode <span style="color:#ff79c6">=</span> _mode
+    match mode:
+        MODES<span style="color:#ff79c6">.</span>STATIC:
+            <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>hide()
+        MODES<span style="color:#ff79c6">.</span>LIMITED:
+            orbits_left <span style="color:#ff79c6">=</span> num_orbits
+            <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(orbits_left)
+            <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>show()</code></pre></div>
+<p>Right now we have these two modes defined, but later we&rsquo;ll be adding more.</p>
+
+<p>Let&rsquo;s also add to the <code>init()</code> method a way to pass a mode. The default should be <code>STATIC</code>, but we&rsquo;re going to use <code>LIMITED</code> now so we can test:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> init(_position, _radius<span style="color:#ff79c6">=</span>radius, _mode<span style="color:#ff79c6">=</span>MODES<span style="color:#ff79c6">.</span>LIMITED):
+    set_mode(_mode)</code></pre></div>
+<p>The jumper is setting the rotation position when it&rsquo;s captured. Remove the line from <code>Jumper.gd</code> and put it in the circle&rsquo;s <code>capture()</code> method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> capture(target):
+    jumper <span style="color:#ff79c6">=</span> target
+    <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;capture&#34;</span>)
+    <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">=</span> (jumper<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">-</span> position)<span style="color:#ff79c6">.</span>angle()
+    orbit_start <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation</code></pre></div>
+<p>Note that we&rsquo;re now sending a reference to the jumper, so add <code>var jumper = null</code> at the top, and in the <code>Main.gd</code> script update the call to read <code>object.capture(player)</code>.</p>
+
+<p>Now we can check to see if the jumper has gone full circle, and if so, decrement <code>orbits_left</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">+=</span> rotation_speed <span style="color:#ff79c6">*</span> delta
+    <span style="color:#ff79c6">if</span> mode <span style="color:#ff79c6">==</span> MODES<span style="color:#ff79c6">.</span>LIMITED <span style="color:#ff79c6">and</span> jumper:
+        check_orbits()
+
+<span style="color:#ff79c6">func</span> check_orbits():
+    <span style="color:#6272a4"># Check if the jumper completed a full circle</span>
+    <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">abs</span>(<span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">-</span> orbit_start) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">*</span> PI:
+        orbits_left <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
+        <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(orbits_left)
+        <span style="color:#ff79c6">if</span> orbits_left <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">0</span>:
+            jumper<span style="color:#ff79c6">.</span>die()
+            jumper <span style="color:#ff79c6">=</span> null
+            implode()
+        orbit_start <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation</code></pre></div>
+<p>In order for this to work, we need to add a <code>die()</code> method to the jumper:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> die():
+    target <span style="color:#ff79c6">=</span> null
+    queue_free()
+
+<span style="color:#ff79c6">func</span> _on_VisibilityNotifier2D_screen_exited():
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>target:
+        die()</code></pre></div>
+<p>We&rsquo;ve also connected the jumper&rsquo;s <code>VisibilityNotifier2D</code> signal so that we can remove the player when it exits the screen.</p>
+
+<p>If we try it out, everything looks good so far:</p>
+
+<p><img src="/godot_recipes/img/cj_03_01.gif" alt="alt" /></p>
+
+<h3 id="circle-effect">Circle effect</h3>
+
+<p>The last thing we&rsquo;ll do for this part is add a &ldquo;fill&rdquo; effect to the circle to show that the orbits are running out. To begin, we&rsquo;ll use some drawing code from the <a href="https://docs.godotengine.org/en/latest/tutorials/2d/custom_drawing_in_2d.html#arc-polygon-function">official docs</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> draw_circle_arc_poly(center, radius, angle_from, angle_to, color):
+    <span style="color:#ff79c6">var</span> nb_points <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">32</span>
+    <span style="color:#ff79c6">var</span> points_arc <span style="color:#ff79c6">=</span> PoolVector2Array()
+    points_arc<span style="color:#ff79c6">.</span>push_back(center)
+    <span style="color:#ff79c6">var</span> colors <span style="color:#ff79c6">=</span> PoolColorArray([color])
+
+    <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(nb_points <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>):
+        <span style="color:#ff79c6">var</span> angle_point <span style="color:#ff79c6">=</span> angle_from <span style="color:#ff79c6">+</span> i <span style="color:#ff79c6">*</span> (angle_to <span style="color:#ff79c6">-</span> angle_from) <span style="color:#ff79c6">/</span> nb_points <span style="color:#ff79c6">-</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>
+        points_arc<span style="color:#ff79c6">.</span>push_back(center <span style="color:#ff79c6">+</span> Vector2(<span style="color:#8be9fd;font-style:italic">cos</span>(angle_point), <span style="color:#8be9fd;font-style:italic">sin</span>(angle_point)) <span style="color:#ff79c6">*</span> radius)
+    draw_polygon(points_arc, colors)</code></pre></div>
+<p>We&rsquo;ll call this function in <code>_draw()</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _draw():
+    <span style="color:#ff79c6">if</span> jumper:
+        <span style="color:#ff79c6">var</span> r <span style="color:#ff79c6">=</span> ((radius <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">50</span>) <span style="color:#ff79c6">/</span> num_orbits) <span style="color:#ff79c6">*</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> num_orbits <span style="color:#ff79c6">-</span> orbits_left)
+        draw_circle_arc_poly(Vector2<span style="color:#ff79c6">.</span>ZERO, r, orbit_start <span style="color:#ff79c6">+</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>,
+                            <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">+</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>, Color(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>))</code></pre></div>
+<p>Lastly, add <code>update()</code> to the <code>_physics_process</code> so that it will be called after every call to <code>check_orbits()</code>.</p>
+
+<p><img src="/godot_recipes/img/cj_03_02.gif" alt="alt" /></p>
+
+<p>In the next part we&rsquo;ll start adding some UI.</p>
+
+<hr />
+
+<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
+
+<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
+
+<h4 id="do-you-prefer-video">Do you prefer video?</h4>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/I1noxf5LV4I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1790,6 +1935,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1805,6 +1951,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1859,3 +2008,4 @@
 
   </body>
 </html>
+
