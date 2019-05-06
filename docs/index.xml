@@ -54,6 +54,28 @@ func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represen
     </item>
     
     <item>
+      <title>Mouse Input</title>
+      <link>http://kidscancode.org/godot_recipes/input/mouse_input/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/mouse_input/</guid>
+      <description>Problem You want to detect mouse input.
+Solution InputEventMouse is the base class for mouse events. It contains position and global_position properties. Inheriting from it are two classes: InputEventMouseButton and InputEventMouseMotion.
+You can assign mouse button events in the InputMap, so you can use them with is_action_pressed().
+ InputEventMouseButton @GlobalScope.ButtonList contains a list of BUTTON_* constants for each possible button, which will be reported in the event’s button_index property. Note that the scrollwheel also counts as a button - two buttons, to be precise, with both BUTTON_WHEEL_UP and BUTTON_WHEEL_DOWN being separate events.</description>
+    </item>
+    
+    <item>
+      <title>Platform Character</title>
+      <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/platform_character/</guid>
+      <description>Problem You need to make a 2D platform-style character.
+Solution New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won&amp;rsquo;t be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we&amp;rsquo;ll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.</description>
+    </item>
+    
+    <item>
       <title>Project setup</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -209,6 +231,18 @@ Areas Area nodes are used for detection and influence. They can detect when obje
       <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</guid>
       <description>Now that we&amp;rsquo;ve got the basic gameplay, it&amp;rsquo;s time to start working on the UI. We&amp;rsquo;re going to need menu screens for the title, settings, and game over.
 Menu screens The three screens will share a common layout and some functionality, so we&amp;rsquo;ll start with a base scene they can all inherit from. In the new scene, start with a CanvasLayer and name it BaseScreen. Save this scene in the &amp;ldquo;UI&amp;rdquo; folder.</description>
+    </item>
+    
+    <item>
+      <title>Using Autotile</title>
+      <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/autotile_intro/</guid>
+      <description>Problem You are using a TileMap, and want to use autotiling to more quickly draw your levels.
+Solution For this demo, we&amp;rsquo;ll be using the following tileset:
+These tiles are from Kenney&amp;rsquo;s &amp;ldquo;Topdown Shooter&amp;rdquo; art pack, which you can find here:https://kenney.nl/assets/topdown-shooter
+ Creating a map from these tiles, if you were adding them one-by-one, would be a tedious process. You would be constantly changing between tiles to line up corners, intersections, and endpoints.</description>
     </item>
     
     <item>

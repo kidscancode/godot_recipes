@@ -23,5 +23,17 @@ Solution You can set the mouse state using Input.set_mouse_mode(). There are fou
  MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description>
     </item>
     
+    <item>
+      <title>Mouse Input</title>
+      <link>http://kidscancode.org/godot_recipes/input/mouse_input/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/mouse_input/</guid>
+      <description>Problem You want to detect mouse input.
+Solution InputEventMouse is the base class for mouse events. It contains position and global_position properties. Inheriting from it are two classes: InputEventMouseButton and InputEventMouseMotion.
+You can assign mouse button events in the InputMap, so you can use them with is_action_pressed().
+ InputEventMouseButton @GlobalScope.ButtonList contains a list of BUTTON_* constants for each possible button, which will be reported in the event’s button_index property. Note that the scrollwheel also counts as a button - two buttons, to be precise, with both BUTTON_WHEEL_UP and BUTTON_WHEEL_DOWN being separate events.</description>
+    </item>
+    
   </channel>
 </rss>

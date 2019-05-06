@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Platform Character</title>
+      <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/platform_character/</guid>
+      <description>Problem You need to make a 2D platform-style character.
+Solution New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won&amp;rsquo;t be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we&amp;rsquo;ll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.</description>
+    </item>
+    
+    <item>
       <title>Screen wrap</title>
       <link>http://kidscancode.org/godot_recipes/2d/screen_wrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -54,6 +64,18 @@ You then need to find out which tile in the TileMap is at the collision location
       <description>Problem You&amp;rsquo;re making a 2D top-down game, and you want to control a character&amp;rsquo;s movement.
 Solution For this solution, we&amp;rsquo;ll assume you have the following input actions defined:
    Action Name Key(s)     &amp;quot;up&amp;quot; W,↑   &amp;quot;down&amp;quot; S,↓   &amp;quot;right&amp;quot; D,→   &amp;quot;left&amp;quot; A,←   &amp;quot;click&amp;quot; Mouse button 1    We will also assume you&amp;rsquo;re using a KinematicBody2D character.</description>
+    </item>
+    
+    <item>
+      <title>Using Autotile</title>
+      <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/autotile_intro/</guid>
+      <description>Problem You are using a TileMap, and want to use autotiling to more quickly draw your levels.
+Solution For this demo, we&amp;rsquo;ll be using the following tileset:
+These tiles are from Kenney&amp;rsquo;s &amp;ldquo;Topdown Shooter&amp;rdquo; art pack, which you can find here:https://kenney.nl/assets/topdown-shooter
+ Creating a map from these tiles, if you were adding them one-by-one, would be a tedious process. You would be constantly changing between tiles to line up corners, intersections, and endpoints.</description>
     </item>
     
   </channel>

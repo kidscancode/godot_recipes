@@ -31,6 +31,14 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/input/mouse_input/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/platform_character/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</loc>
   </url>
   
@@ -109,6 +117,10 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/autotile_intro/</loc>
   </url>
   
   <url>
