@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Physics :: Godot Recipes by KidsCanCode</title>
+    <title>Entering/Exiting the screen :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1557250525" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/physics/">
+  <body class="" data-url="/godot_recipes/2d/enter_exit_screen/">
     <nav id="sidebar" class="">
 
 
@@ -435,7 +435,7 @@
   
     
     <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
-        
+        parent
         
         
         ">
@@ -459,7 +459,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/enter_exit_screen/" title="Entering/Exiting the screen" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/enter_exit_screen/" title="Entering/Exiting the screen" class="dd-item active">
         <a href="/godot_recipes/2d/enter_exit_screen/">
         Entering/Exiting the screen
         
@@ -835,8 +835,8 @@
   
     
     <li data-nav-id="/godot_recipes/physics/" title="Physics" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/physics/">
@@ -1143,6 +1143,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1153,7 +1155,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Physics
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Entering/Exiting the screen
+          
+        
           
         
           
@@ -1162,6 +1170,28 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li>
+<ul>
+<li><a href="#example-1">Example 1</a></li>
+<li><a href="#example-2">Example 2</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1169,9 +1199,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Entering/Exiting the screen
+            </h1>
           
 
         
@@ -1179,29 +1212,71 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-atom-i-physics"><i class="fas fa-atom"></i> Physics</h1>
+<h2 id="problem">Problem</h2>
 
-<p>Learn how to use Godot&rsquo;s physics nodes.</p>
+<p>You want to detect when an object enters or exits the screen.</p>
 
-<h4 id="in-this-section">In this section:</h4>
+<h2 id="solution">Solution</h2>
 
-<ul>
-<li>When and how to use different physics nodes</li>
-<li>Collision detection and response</li>
-</ul>
+<p>The engine provides a node for this: <code>VisibilityNotifier2D</code>. Attach this node to your object, and you&rsquo;ll be able to use its <code>screen_entered</code> and <code>screen_exited</code> signals.</p>
 
+<h4 id="example-1">Example 1</h4>
 
+<p>Consider a projectile that travels in a straight line after it&rsquo;s fired. If we continue firing, eventually we&rsquo;ll have a large number of objects for the engine to track, event though they&rsquo;re offscreen, which can cause lag.</p>
 
+<p>Here&rsquo;s the movement code for the projectile:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Area2D
 
+<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2(<span style="color:#bd93f9">500</span>, <span style="color:#bd93f9">0</span>)
+
+<span style="color:#ff79c6">func</span> _process(delta):
+    position <span style="color:#ff79c6">+=</span> velocity <span style="color:#ff79c6">*</span> delta</code></pre></div>
+<p>To have the projectile automatically deleted when it moves offscreen, add a <code>VisibilityNotifier2D</code> and connect its <code>screen_exited</code> signal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_VisibilityNotifier2D_screen_exited():
+    queue_free()</code></pre></div>
+<h4 id="example-2">Example 2</h4>
+
+<p>We have an enemy that performs some actions, such as moving along a path or playing an animation. On a large map with many enemies, only a few of them will be onscreen at the same time. We can disable the enemy&rsquo;s actions while it&rsquo;s offscreen using <code>VisibilityNotifier2D</code>.</p>
+
+<p>Partial code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> active <span style="color:#ff79c6">=</span> false
+
+<span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">if</span> active:
+        play_animation()
+        move()
+
+<span style="color:#ff79c6">func</span> _on_VisibilityNotifier2D_screen_entered():
+    active <span style="color:#ff79c6">=</span> true
+
+<span style="color:#ff79c6">func</span> _on_VisibilityNotifier2D_screen_exited():
+    active <span style="color:#ff79c6">=</span> false</code></pre></div>
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1478,6 +1553,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1490,6 +1566,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1549,86 +1645,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -1742,6 +1758,38 @@
                     
 
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -1766,7 +1814,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1780,8 +1827,37 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -1995,3 +2071,4 @@
 
   </body>
 </html>
+

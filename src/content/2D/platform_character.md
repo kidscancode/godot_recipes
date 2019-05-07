@@ -73,6 +73,8 @@ func get_input():
 
 Try changing the values for `friction` and `acceleration` to see how they affect the game's feel. An ice level, for example, could use very low values, making it harder to maneuver.
 
+![alt](/godot_recipes/img/platformer1.gif)
+
 ## Conclusion
 
 This code gives you a starting point for building your own platformer controller. For more advanced platforming features such as wall jumps, see the other recipes in this section.

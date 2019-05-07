@@ -43,6 +43,17 @@ Solution You can set the mouse state using Input.set_mouse_mode(). There are fou
     </item>
     
     <item>
+      <title>Entering/Exiting the screen</title>
+      <link>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</guid>
+      <description>Problem You want to detect when an object enters or exits the screen.
+Solution The engine provides a node for this: VisibilityNotifier2D. Attach this node to your object, and you&amp;rsquo;ll be able to use its screen_entered and screen_exited signals.
+Example 1 Consider a projectile that travels in a straight line after it&amp;rsquo;s fired. If we continue firing, eventually we&amp;rsquo;ll have a large number of objects for the engine to track, event though they&amp;rsquo;re offscreen, which can cause lag.</description>
+    </item>
+    
+    <item>
       <title>Interpolation</title>
       <link>http://kidscancode.org/godot_recipes/math/interpolation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
