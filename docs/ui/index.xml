@@ -11,5 +11,16 @@
 	<atom:link href="http://kidscancode.org/godot_recipes/ui/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Object Healthbars</title>
+      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
+      <description>Problem You want units in your game to have healthbars that follow them as they move.
+Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
+So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
+    </item>
+    
   </channel>
 </rss>

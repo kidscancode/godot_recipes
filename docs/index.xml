@@ -77,6 +77,17 @@ You can assign mouse button events in the InputMap, so you can use them with is_
     </item>
     
     <item>
+      <title>Object Healthbars</title>
+      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
+      <description>Problem You want units in your game to have healthbars that follow them as they move.
+Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
+So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
+    </item>
+    
+    <item>
       <title>Platform Character</title>
       <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -264,6 +275,29 @@ These tiles are from Kenney&amp;rsquo;s &amp;ldquo;Topdown Shooter&amp;rdquo; ar
       <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</guid>
       <description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
 Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
+    </item>
+    
+    <item>
+      <title>Score and HUD</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</guid>
+      <description>In the last part, we added UI in the form of menus to start and configure the game. We also need a UI to display in-game information such as score.
+HUD scene Add a new scene with a CanvasLayer root to be our HUD. Give it two children: a MarginContainer named &amp;ldquo;ScoreBox&amp;rdquo; and a `Label&amp;rdquo; named &amp;ldquo;Message&amp;rdquo;.
+Your scene tree should look like this:
+Set the layout of the ScoreBox to &amp;ldquo;Bottom Wide&amp;rdquo; and the Custom Constants all to 20.</description>
+    </item>
+    
+    <item>
+      <title>Sound and Colors</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</guid>
+      <description>Settings singleton First, we&amp;rsquo;ll add a new script by choosing File -&amp;gt; New Script in the script tab. Name the script settings.gd.
+In this script we&amp;rsquo;ll place the configuration settings for the game.
+var enable_sound = true var enable_music = true var circles_per_level = 5 Add the script as an autoload by opening &amp;ldquo;Project Settings&amp;rdquo; and selecting the &amp;ldquo;Autoloads&amp;rdquo; tab. Click the folder to load the script and then click &amp;ldquo;Add&amp;rdquo;.</description>
     </item>
     
     <item>

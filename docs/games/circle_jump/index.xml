@@ -53,5 +53,28 @@ Circle modes Eventually, we&amp;rsquo;ll have many different modes, but we&amp;r
 Menu screens The three screens will share a common layout and some functionality, so we&amp;rsquo;ll start with a base scene they can all inherit from. In the new scene, start with a CanvasLayer and name it BaseScreen. Save this scene in the &amp;ldquo;UI&amp;rdquo; folder.</description>
     </item>
     
+    <item>
+      <title>Score and HUD</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</guid>
+      <description>In the last part, we added UI in the form of menus to start and configure the game. We also need a UI to display in-game information such as score.
+HUD scene Add a new scene with a CanvasLayer root to be our HUD. Give it two children: a MarginContainer named &amp;ldquo;ScoreBox&amp;rdquo; and a `Label&amp;rdquo; named &amp;ldquo;Message&amp;rdquo;.
+Your scene tree should look like this:
+Set the layout of the ScoreBox to &amp;ldquo;Bottom Wide&amp;rdquo; and the Custom Constants all to 20.</description>
+    </item>
+    
+    <item>
+      <title>Sound and Colors</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</guid>
+      <description>Settings singleton First, we&amp;rsquo;ll add a new script by choosing File -&amp;gt; New Script in the script tab. Name the script settings.gd.
+In this script we&amp;rsquo;ll place the configuration settings for the game.
+var enable_sound = true var enable_music = true var circles_per_level = 5 Add the script as an autoload by opening &amp;ldquo;Project Settings&amp;rdquo; and selecting the &amp;ldquo;Autoloads&amp;rdquo; tab. Click the folder to load the script and then click &amp;ldquo;Add&amp;rdquo;.</description>
+    </item>
+    
   </channel>
 </rss>
