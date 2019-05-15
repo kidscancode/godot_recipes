@@ -20,7 +20,7 @@ enum MODES {STATIC, LIMITED}
 
 var mode = MODES.STATIC
 var num_orbits = 3  # Number of orbits until the circle disappears
-var orbits_left = 0  # Number of orbits the jumper has completed
+var current_orbits = 0  # Number of orbits the jumper has completed
 var orbit_start = null  # Where the orbits started
 ```
 
@@ -33,7 +33,7 @@ func set_mode(_mode):
         MODES.STATIC:
             $Label.hide()
         MODES.LIMITED:
-            orbits_left = num_orbits
+            current_orbits = num_orbits
             $Label.text = str(orbits_left)
             $Label.show()
 ```
@@ -59,7 +59,7 @@ func capture(target):
 
 Note that we're now sending a reference to the jumper, so add `var jumper = null` at the top, and in the `Main.gd` script update the call to read `object.capture(player)`.
 
-Now we can check to see if the jumper has gone full circle, and if so, decrement `orbits_left`:
+Now we can check to see if the jumper has gone full circle, and if so, decrement `current_orbits`:
 
 ```gdscript
 func _process(delta):
@@ -70,8 +70,8 @@ func _process(delta):
 func check_orbits():
     # Check if the jumper completed a full circle
     if abs($Pivot.rotation - orbit_start) > 2 * PI:
-        orbits_left -= 1
-        $Label.text = str(orbits_left)
+        current_orbits -= 1
+        $Label.text = str(current_orbits)
         if orbits_left <= 0:
             jumper.die()
             jumper = null
@@ -120,7 +120,7 @@ We'll call this function in `_draw()`:
 ```gdscript
 func _draw():
     if jumper:
-        var r = ((radius - 50) / num_orbits) * (1 + num_orbits - orbits_left)
+        var r = ((radius - 50) / num_orbits) * (1 + num_orbits - current_orbits)
         draw_circle_arc_poly(Vector2.ZERO, r, orbit_start + PI/2,
                             $Pivot.rotation + PI/2, Color(1, 0, 0))
 ```

@@ -14,20 +14,20 @@
     <title>Limited circles :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1557694022" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1557694022" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1557944802" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1557944802" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1557694022" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1557944802" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1557694022"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1557944802"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1557694022"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1557694022"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1557944802"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1557944802"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1557694022"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1557944802"></script>
 
     
 
@@ -478,9 +478,9 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/platform_character/" title="Platform Character" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/platform_character/" title="Platform character" class="dd-item ">
         <a href="/godot_recipes/2d/platform_character/">
-        Platform Character
+        Platform character
         
         </a>
     </li>
@@ -573,9 +573,9 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/autotile_intro/" title="Using Autotile" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/autotile_intro/" title="Using autotile" class="dd-item ">
         <a href="/godot_recipes/2d/autotile_intro/">
-        Using Autotile
+        Using autotile
         
         </a>
     </li>
@@ -668,6 +668,76 @@
       <li data-nav-id="/godot_recipes/input/mouse_input/" title="Mouse Input" class="dd-item ">
         <a href="/godot_recipes/input/mouse_input/">
         Mouse Input
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/godot_recipes/animation/" title="Animation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/godot_recipes/animation/">
+          <i class='fas fa-film fa-fw'></i> Animation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/animation/animation_state_machine/" title="Controlling animations" class="dd-item ">
+        <a href="/godot_recipes/animation/animation_state_machine/">
+        Controlling animations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/animation/spritesheet_animation/" title="Spritesheet animation" class="dd-item ">
+        <a href="/godot_recipes/animation/spritesheet_animation/">
+        Spritesheet animation
         
         </a>
     </li>
@@ -1298,7 +1368,7 @@
 
 <span style="color:#ff79c6">var</span> mode <span style="color:#ff79c6">=</span> MODES<span style="color:#ff79c6">.</span>STATIC
 <span style="color:#ff79c6">var</span> num_orbits <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span>  <span style="color:#6272a4"># Number of orbits until the circle disappears</span>
-<span style="color:#ff79c6">var</span> orbits_left <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>  <span style="color:#6272a4"># Number of orbits the jumper has completed</span>
+<span style="color:#ff79c6">var</span> current_orbits <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>  <span style="color:#6272a4"># Number of orbits the jumper has completed</span>
 <span style="color:#ff79c6">var</span> orbit_start <span style="color:#ff79c6">=</span> null  <span style="color:#6272a4"># Where the orbits started</span></code></pre></div>
 <p>Next we need a way to set the mode:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_mode(_mode):
@@ -1307,7 +1377,7 @@
         MODES<span style="color:#ff79c6">.</span>STATIC:
             <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>hide()
         MODES<span style="color:#ff79c6">.</span>LIMITED:
-            orbits_left <span style="color:#ff79c6">=</span> num_orbits
+            current_orbits <span style="color:#ff79c6">=</span> num_orbits
             <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(orbits_left)
             <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>show()</code></pre></div>
 <p>Right now we have these two modes defined, but later we&rsquo;ll be adding more.</p>
@@ -1323,7 +1393,7 @@
     orbit_start <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation</code></pre></div>
 <p>Note that we&rsquo;re now sending a reference to the jumper, so add <code>var jumper = null</code> at the top, and in the <code>Main.gd</code> script update the call to read <code>object.capture(player)</code>.</p>
 
-<p>Now we can check to see if the jumper has gone full circle, and if so, decrement <code>orbits_left</code>:</p>
+<p>Now we can check to see if the jumper has gone full circle, and if so, decrement <code>current_orbits</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _process(delta):
     <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">+=</span> rotation_speed <span style="color:#ff79c6">*</span> delta
     <span style="color:#ff79c6">if</span> mode <span style="color:#ff79c6">==</span> MODES<span style="color:#ff79c6">.</span>LIMITED <span style="color:#ff79c6">and</span> jumper:
@@ -1332,8 +1402,8 @@
 <span style="color:#ff79c6">func</span> check_orbits():
     <span style="color:#6272a4"># Check if the jumper completed a full circle</span>
     <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">abs</span>(<span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">-</span> orbit_start) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">*</span> PI:
-        orbits_left <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
-        <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(orbits_left)
+        current_orbits <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
+        <span style="color:#ff79c6">$</span>Label<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(current_orbits)
         <span style="color:#ff79c6">if</span> orbits_left <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">0</span>:
             jumper<span style="color:#ff79c6">.</span>die()
             jumper <span style="color:#ff79c6">=</span> null
@@ -1369,7 +1439,7 @@
 <p>We&rsquo;ll call this function in <code>_draw()</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _draw():
     <span style="color:#ff79c6">if</span> jumper:
-        <span style="color:#ff79c6">var</span> r <span style="color:#ff79c6">=</span> ((radius <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">50</span>) <span style="color:#ff79c6">/</span> num_orbits) <span style="color:#ff79c6">*</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> num_orbits <span style="color:#ff79c6">-</span> orbits_left)
+        <span style="color:#ff79c6">var</span> r <span style="color:#ff79c6">=</span> ((radius <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">50</span>) <span style="color:#ff79c6">/</span> num_orbits) <span style="color:#ff79c6">*</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> num_orbits <span style="color:#ff79c6">-</span> current_orbits)
         draw_circle_arc_poly(Vector2<span style="color:#ff79c6">.</span>ZERO, r, orbit_start <span style="color:#ff79c6">+</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>,
                             <span style="color:#ff79c6">$</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">+</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>, Color(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>))</code></pre></div>
 <p>Lastly, add <code>update()</code> to the <code>_physics_process</code> so that it will be called after every call to <code>check_orbits()</code>.</p>
@@ -1909,6 +1979,54 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2242,20 +2360,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1557694022"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1557694022"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1557694022"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1557694022"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1557694022"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1557694022"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1557694022"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1557944802"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1557944802"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1557944802"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1557944802"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1557944802"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1557944802"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1557944802"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1557694022"></script>
-    <script src="/godot_recipes/js/learn.js?1557694022"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1557694022"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1557944802"></script>
+    <script src="/godot_recipes/js/learn.js?1557944802"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1557944802"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1557694022" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1557694022"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1557944802" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1557944802"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

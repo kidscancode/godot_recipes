@@ -124,7 +124,15 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</loc>
   </url>
   
   <url>
@@ -134,6 +142,11 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/input/</loc>
     <lastmod>2019-04-09T20:47:11-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/animation/</loc>
+    <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
   
   <url>

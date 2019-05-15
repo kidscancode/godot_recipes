@@ -1,5 +1,5 @@
 ---
-title: "Platform Character"
+title: "Platform character"
 weight: 1
 draft: false
 ---
