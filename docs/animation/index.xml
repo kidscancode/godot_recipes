@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Controlling animations</title>
-      <link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid>
-      <description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
-Solution Use an AnimationTree to create an animation state machine. This will allow us to organize our animations and most importantly, control the transitions between them.
-Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description>
-    </item>
-    
-    <item>
       <title>Spritesheet animation</title>
       <link>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -32,6 +21,17 @@ Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo
 Solution Spritesheets are a common way for 2D animations to be distributed. In a spritesheet, all of the animation frames are packed into a single image.
 For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen. You can get this and lots of other great art athttps://elthen.itch.io/.
 Make sure the images in your spritesheet are laid out in a constant-sized grid.</description>
+    </item>
+    
+    <item>
+      <title>Controlling animation states</title>
+      <link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid>
+      <description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
+Solution Use an AnimationTree to create an animation state machine. This will allow us to organize our animations and most importantly, control the transitions between them.
+Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description>
     </item>
     
   </channel>

@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Platform character :: Godot Recipes by KidsCanCode</title>
+    <title>AI/Behavior :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1558071691" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/2d/platform_character/">
+  <body class="" data-url="/godot_recipes/ai/">
     <nav id="sidebar" class="">
 
 
@@ -435,7 +435,7 @@
   
     
     <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
-        parent
+        
         
         
         ">
@@ -478,7 +478,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/platform_character/" title="Platform character" class="dd-item active">
+      <li data-nav-id="/godot_recipes/2d/platform_character/" title="Platform character" class="dd-item ">
         <a href="/godot_recipes/2d/platform_character/">
         Platform character
         
@@ -1023,8 +1023,8 @@
   
     
     <li data-nav-id="/godot_recipes/ai/" title="AI/Behavior" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/godot_recipes/ai/">
@@ -1302,8 +1302,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1314,13 +1312,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Platform character
-          
-        
+            <a href='/godot_recipes/'>Home</a> > AI/Behavior
           
         
           
@@ -1329,25 +1321,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#problem">Problem</a></li>
-<li><a href="#solution">Solution</a>
-<ul>
-<li><a href="#friction-and-acceleration">Friction and acceleration</a></li>
-</ul></li>
-<li><a href="#conclusion">Conclusion</a></li>
-</ul></li>
-</ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1355,142 +1328,32 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
           
-            <h1>
-              
-              Platform character
-            </h1>
-          
 
         
 
 
 
 
-
-<h2 id="problem">Problem</h2>
-
-<p>You need to make a 2D platform-style character.</p>
-
-<h2 id="solution">Solution</h2>
-
-<p>New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won&rsquo;t be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we&rsquo;ll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.</p>
-
-<div class="notices tip" ><p>While it&rsquo;s possible to use <code>RigidBody2D</code> to make a platform character, we&rsquo;ll be focusing on <code>KinematicBody2D</code>. Kinematic bodies are well-suited for platformers, where you are less interested in realistic physics than in responsive, arcade feel.</p>
-</div>
-
-
-<p>Start with a <code>KinematicBody2D</code> node, and add a <code>Sprite</code> and <code>CollisionShape2D</code> to it.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
-
-<span style="color:#ff79c6">export</span> (int) <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1200</span>
-<span style="color:#ff79c6">export</span> (int) <span style="color:#ff79c6">var</span> jump_speed <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1800</span>
-<span style="color:#ff79c6">export</span> (int) <span style="color:#ff79c6">var</span> gravity <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">4000</span>
-
-<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
-
-<span style="color:#ff79c6">func</span> get_input():
-    velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;ui_right&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+=</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;ui_left&#34;</span>):
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">-=</span> speed
-
-<span style="color:#ff79c6">func</span> _physics_process(delta):
-    get_input()
-    velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">+=</span> gravity <span style="color:#ff79c6">*</span> delta
-    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity, Vector2<span style="color:#ff79c6">.</span>UP)
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_just_pressed(<span style="color:#f1fa8c">&#34;jump&#34;</span>):
-        <span style="color:#ff79c6">if</span> is_on_floor():
-            velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> jump_speed</code></pre></div>
-<p>Note that we&rsquo;re checking <code>is_on_floor()</code> <em>after</em> using <code>move_and_slide()</code>. The <code>move_and_slide()</code> function sets the value of this method, so it&rsquo;s important not to check it before, or you&rsquo;ll be getting the value from the previous frame.</p>
-
-<h3 id="friction-and-acceleration">Friction and acceleration</h3>
-
-<p>The above code is a great start, and you can use it as the foundation for a wide variety of platform controllers. One problem it has, though, is the instantaneous movement. For a more natural feel, it&rsquo;s better if the character has to accelerate up to its max speed and that it coasts to a stop when the input is released.</p>
-
-<p>One way to add this is by using linear interpolation (&ldquo;lerp&rdquo;). When moving, we will lerp between the current speed and the max speed, while stopping will lerp between the current speed and <code>0</code>. Adjusting the lerp amount will give us a variety of movement styles.</p>
-
-<div class="notices tip" ><p>For an overview of linear interpolation, see <a href="/godot_recipes/math/interpolation/">Gamedev Math: Interpolation</a>.</p>
-</div>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">export</span> (float, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">1.0</span>) <span style="color:#ff79c6">var</span> friction <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>
-<span style="color:#ff79c6">export</span> (float, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">1.0</span>) <span style="color:#ff79c6">var</span> acceleration <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.25</span>
-
-<span style="color:#ff79c6">func</span> get_input():
-    <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;walk_right&#34;</span>):
-        dir <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;walk_left&#34;</span>):
-        dir <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
-    <span style="color:#ff79c6">if</span> dir <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(velocity<span style="color:#ff79c6">.</span>x, dir <span style="color:#ff79c6">*</span> speed, acceleration)
-    <span style="color:#ff79c6">else</span>:
-        velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(velocity<span style="color:#ff79c6">.</span>x, <span style="color:#bd93f9">0</span>, friction)</code></pre></div>
-<p>Try changing the values for <code>friction</code> and <code>acceleration</code> to see how they affect the game&rsquo;s feel. An ice level, for example, could use very low values, making it harder to maneuver.</p>
-
-<p><img src="/godot_recipes/img/platformer1.gif" alt="alt" /></p>
-
-<h2 id="conclusion">Conclusion</h2>
-
-<p>This code gives you a starting point for building your own platformer controller. For more advanced platforming features such as wall jumps, see the other recipes in this section.</p>
-
-<p>Download an example project using this recipe:</p>
-
-<section class="attachments green">
-	<label>
-		<i class="fas fa-paperclip" aria-hidden="true"></i>
-		Attachments
-	</label>
 	
-		
-	
-	<div class="attachments-files">
-	
-		
-		
-			
-				<li>
-					<a href="/godot_recipes/2D/platform_character.files/platform_character.zip" >
-						platform_character.zip
-					</a>
-					(27 ko)
-				</li>
-			
-		
-	
-	<div>
-	
-</section>
+
+<h1 id="i-class-fas-fa-project-diagram-i-ai-behavior"><i class='fas fa-project-diagram'></i> AI/Behavior</h1>
+
+<p>Automated behavior and (sometimes) smarter entities.</p>
 
 
 
 
-<h3>Comments</h3>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-    (function () {
-        
-        
-        if (window.location.hostname == "localhost")
-            return;
-
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        var disqus_shortname = 'kidscancode';
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-        Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -1767,7 +1630,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1780,26 +1642,6 @@
             
             
                 
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1817,8 +1659,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2191,6 +2046,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2206,6 +2062,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2400,4 +2259,3 @@
 
   </body>
 </html>
-

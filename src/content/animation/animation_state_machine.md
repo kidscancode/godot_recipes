@@ -1,5 +1,5 @@
 ---
-title: "Controlling animations"
+title: "Controlling animation states"
 weight: 4
 draft: false
 ---
@@ -14,7 +14,7 @@ Use an `AnimationTree` to create an animation _state machine_. This will allow u
 
 ### Getting started
 
-For this demo, we'll be using the excellent "Adventurer" sprite by Elthen. You can get this and lots of other great art at[https://elthen.itch.io/](https://elthen.itch.io/).
+For this demo, we'll be using the excellent "Adventurer" sprite by Elthen. You can get this and lots of other great art at [https://elthen.itch.io/](https://elthen.itch.io/).
 
 ![alt](/godot_recipes/img/Adventurer Sprite Sheet v1.1.png)
 
