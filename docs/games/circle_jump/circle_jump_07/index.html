@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Basics :: Godot Recipes by KidsCanCode</title>
+    <title>Moving circles :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1558204677" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/basics/">
+  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_07/">
     <nav id="sidebar" class="">
 
 
@@ -413,8 +413,8 @@
   
     
     <li data-nav-id="/godot_recipes/basics/" title="Basics" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/basics/">
@@ -1089,7 +1089,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
-        
+        parent
         
         
         ">
@@ -1116,7 +1116,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
-        
+        parent
         
         
         ">
@@ -1254,7 +1254,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_07/" title="Moving circles" class="dd-item ">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_07/" title="Moving circles" class="dd-item active">
         <a href="/godot_recipes/games/circle_jump/circle_jump_07/">
         07. Moving circles
         
@@ -1321,6 +1321,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1331,7 +1333,19 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Basics
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Moving circles
+          
+        
+          
+        
           
         
           
@@ -1340,6 +1354,29 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#fixing-a-bug">Fixing a bug</a></li>
+<li><a href="#score-and-level">Score and level</a></li>
+<li><a href="#moving-circles">Moving circles</a>
+<ul>
+<li>
+<ul>
+<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
+<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1347,9 +1384,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Moving circles
+            </h1>
           
 
         
@@ -1357,29 +1397,118 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-toolbox-i-basics"><i class="fas fa-toolbox"></i> Basics</h1>
+<h2 id="fixing-a-bug">Fixing a bug</h2>
 
-<p>Basic Godot tips and tricks that apply to any project.</p>
+<p>Our first task is to fix a bug with our menu system. Pressing the &ldquo;Start&rdquo; button launches a new game, but as the screen is moving off, it can be pressed again. Try &ldquo;spamming&rdquo; the start button - disaster ensues!</p>
 
-<h4 id="in-this-section">In this section:</h4>
+<p>We can fix this by disabling the buttons while the screen transition is happening. Since we put all the buttons in a &ldquo;buttons&rdquo; group, we can easily do this with <code>call_group()</code>.</p>
 
-<ul>
-<li>Setting up your project.</li>
-<li>Importing assets (images, sounds, etc.).</li>
-</ul>
+<p>Here&rsquo;s the updated <code>BaseScreen.gd</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> CanvasLayer
+
+<span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> tween <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Tween
+
+<span style="color:#ff79c6">func</span> appear():
+    get_tree()<span style="color:#ff79c6">.</span>call_group(<span style="color:#f1fa8c">&#34;buttons&#34;</span>, <span style="color:#f1fa8c">&#34;set_disabled&#34;</span>, false)
+    tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;offset:x&#34;</span>, <span style="color:#bd93f9">500</span>, <span style="color:#bd93f9">0</span>,
+                        <span style="color:#bd93f9">0.5</span>, Tween<span style="color:#ff79c6">.</span>TRANS_BACK, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    tween<span style="color:#ff79c6">.</span>start()
+
+<span style="color:#ff79c6">func</span> disappear():
+    get_tree()<span style="color:#ff79c6">.</span>call_group(<span style="color:#f1fa8c">&#34;buttons&#34;</span>, <span style="color:#f1fa8c">&#34;set_disabled&#34;</span>, true)
+    tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;offset:x&#34;</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">500</span>,
+                        <span style="color:#bd93f9">0.5</span>, Tween<span style="color:#ff79c6">.</span>TRANS_BACK, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    tween<span style="color:#ff79c6">.</span>start()</code></pre></div>
+<h2 id="score-and-level">Score and level</h2>
+
+<p>As our score increases, we&rsquo;ll want the game&rsquo;s difficulty to increase as well. This means that when we get points, we&rsquo;ll need to check if we&rsquo;ve passed a certain threshold (<code>circles_per_level</code>). We may also have other things that give us points besides jumping on a circle. To make this easier to handle, we&rsquo;ll give our score variable a <code>setget</code> method in the main script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">setget</span> set_score
+<span style="color:#ff79c6">var</span> level <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span></code></pre></div>
+<p>And update the <code>new_game()</code> to use that method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> new_game():
+    self<span style="color:#ff79c6">.</span>score <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+    level <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span></code></pre></div>
+<p>Do the same with the score change in <code>_on_Jumper_captured()</code>, and we&rsquo;ll move the HUD update into our new <code>set_score()</code> method:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
+    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
+    object<span style="color:#ff79c6">.</span>capture(player)
+    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)
+    self<span style="color:#ff79c6">.</span>score <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+
+<span style="color:#ff79c6">func</span> set_score(value):
+    score <span style="color:#ff79c6">=</span> value
+    <span style="color:#ff79c6">$</span>HUD<span style="color:#ff79c6">.</span>update_score(score)
+    <span style="color:#ff79c6">if</span> score <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">and</span> score <span style="color:#ff79c6">%</span> settings<span style="color:#ff79c6">.</span>circles_per_level <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        level <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+        <span style="color:#ff79c6">$</span>HUD<span style="color:#ff79c6">.</span>show_message(<span style="color:#f1fa8c">&#34;Level </span><span style="color:#f1fa8c">%s</span><span style="color:#f1fa8c">&#34;</span> <span style="color:#ff79c6">%</span> <span style="color:#8be9fd;font-style:italic">str</span>(level))</code></pre></div>
+<p>Try the game and you should see a &ldquo;Level 2&rdquo; message on the screen when you reach five points.</p>
+
+<h2 id="moving-circles">Moving circles</h2>
+
+<p>Part of the level progression is going to be increased difficulty. One way we&rsquo;ll do that is by making some circles move. We already have multiple circle types (static and limited), but either of those should be capable of moving, so this won&rsquo;t be a new circle type. Instead, it will be a property that any circle can have.</p>
+
+<p>Open up the <code>Circle</code> scene and add a <code>Tween</code> node called &ldquo;MoveTween&rdquo;. Add this to the top of the circle script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> move_tween <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>MoveTween
+
+<span style="color:#ff79c6">var</span> move_range <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>  <span style="color:#6272a4"># Distance the circle moves.</span>
+<span style="color:#ff79c6">var</span> move_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.0</span>  <span style="color:#6272a4"># The circle&#39;s movement speed.</span></code></pre></div>
+<p>If <code>move_range</code> is <code>0</code>, we&rsquo;ll have a non-moving circle. We&rsquo;ll make the default <code>100</code> here so that we can test it out.</p>
+
+<p>To handle the movement, we&rsquo;ll start the <code>MoveTween</code>. When it ends, we&rsquo;ll start it again in the opposite direction, using the <code>tween_completed</code> signal.</p>
+
+<p>This is the code to start the movement. Connect the <code>tween_completed</code> signal to this function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_tween(object<span style="color:#ff79c6">=</span>null, key<span style="color:#ff79c6">=</span>null):
+    <span style="color:#ff79c6">if</span> move_range <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        <span style="color:#ff79c6">return</span>
+    move_range <span style="color:#ff79c6">*=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+    move_tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;position:x&#34;</span>,
+                position<span style="color:#ff79c6">.</span>x, position<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+</span> move_range,
+                move_speed, Tween<span style="color:#ff79c6">.</span>TRANS_QUAD, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    move_tween<span style="color:#ff79c6">.</span>start()</code></pre></div>
+<p>Finally, we&rsquo;ll add <code>set_tween()</code> to the end of the <code>init()</code> function and we can try it out.</p>
+
+<video controls src="/godot_recipes/img/cj_07_01.webm"></video>
+
+<hr />
+
+<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
+
+<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
+
+<h4 id="do-you-prefer-video">Do you prefer video?</h4>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/8SOw_IvB2gE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
 
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -1640,7 +1769,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1656,9 +1784,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2124,6 +2249,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2139,6 +2265,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2151,6 +2278,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2247,6 +2377,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2301,3 +2432,4 @@
 
   </body>
 </html>
+

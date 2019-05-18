@@ -43,7 +43,7 @@ func _ready():
 
 Exporting the `patrol_path` lets us assign the path node directly in the Inspector. Then, if it's assigned, we can get the points that make up the line in `_ready()`.
 
-Next, we can use the currently selected point in the path as our target for movement. If we get close enough to it, advance to the next point in the curve.
+Next, we can use the currently selected point in the path as our target for movement. If we get close enough to it, we advance to the next point in the curve, using `wrapi()` to loop around to the first point when we reach the end.
 
 ```gdscript
 func _physics_process():

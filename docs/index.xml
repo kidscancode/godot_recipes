@@ -344,6 +344,16 @@ Character Scene In an FPS or similar game, we want to give the player the illusi
     </item>
     
     <item>
+      <title>Moving circles</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</guid>
+      <description>Fixing a bug Our first task is to fix a bug with our menu system. Pressing the &amp;ldquo;Start&amp;rdquo; button launches a new game, but as the screen is moving off, it can be pressed again. Try &amp;ldquo;spamming&amp;rdquo; the start button - disaster ensues!
+We can fix this by disabling the buttons while the screen transition is happening. Since we put all the buttons in a &amp;ldquo;buttons&amp;rdquo; group, we can easily do this with call_group().</description>
+    </item>
+    
+    <item>
       <title>Using KinematicBody2D</title>
       <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
       <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
