@@ -186,6 +186,17 @@ Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such
     </item>
     
     <item>
+      <title>Path following</title>
+      <link>http://kidscancode.org/godot_recipes/ai/path_follow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ai/path_follow/</guid>
+      <description>Problem You want a character to follow a pre-defined path, such as a guard patrolling or an
+Solution There are many ways to approach this problem. In this solution, we&amp;rsquo;ll use Godot&amp;rsquo;s Path2D node (or Path for 3D) as a convenient way to draw paths in the editor.
+You can add the Path2D as a child of your main scene, your map, or another location that makes sense. Don&amp;rsquo;t make it a child of the patrolling entity, though - or the path will move along with the player!</description>
+    </item>
+    
+    <item>
       <title>Spawning Circles</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -245,6 +256,17 @@ Solution For most games, we&amp;rsquo;re not necessarily interested in a perfect
       <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_03/</guid>
       <description>In the first two parts, we got the basic gameplay working. Now we&amp;rsquo;re going to start adding some different modes to the circles.
 Circle modes Eventually, we&amp;rsquo;ll have many different modes, but we&amp;rsquo;re going to start with the &amp;ldquo;limited&amp;rdquo; mode: the circle only allows a given number of orbits before disappearing. First, let&amp;rsquo;s add a Label node to show the number of remaining orbits. Type a number (1) in the text field so we can see how it looks.</description>
+    </item>
+    
+    <item>
+      <title>Melee attacks</title>
+      <link>http://kidscancode.org/godot_recipes/animation/melee_attacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/animation/melee_attacks/</guid>
+      <description>Problem You want to implement a melee attack, such as a sword or punch.
+Solution For this example, we&amp;rsquo;ll assume we have already set up a character with one or more attack animations. To illustrate, we&amp;rsquo;ll use these two attacks:
+We can detect the sword hitting the target using an Area2D, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we&amp;rsquo;ll use the AnimationPlayer to control it.</description>
     </item>
     
     <item>

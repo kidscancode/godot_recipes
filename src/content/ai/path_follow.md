@@ -1,7 +1,7 @@
 ---
 title: "Path following"
 weight: 2
-draft: true
+draft: false
 ---
 
 ## Problem
