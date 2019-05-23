@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Game Tutorials :: Godot Recipes by KidsCanCode</title>
+    <title>Changing behaviors :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1558581136" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/">
+  <body class="" data-url="/godot_recipes/ai/changing_behaviors/">
     <nav id="sidebar" class="">
 
 
@@ -1042,7 +1042,7 @@
   
     
     <li data-nav-id="/godot_recipes/ai/" title="AI/Behavior" class="dd-item
-        
+        parent
         
         
         ">
@@ -1104,7 +1104,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/ai/changing_behaviors/" title="Changing behaviors" class="dd-item ">
+      <li data-nav-id="/godot_recipes/ai/changing_behaviors/" title="Changing behaviors" class="dd-item active">
         <a href="/godot_recipes/ai/changing_behaviors/">
         Changing behaviors
         
@@ -1175,8 +1175,8 @@
   
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/games/">
@@ -1407,6 +1407,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1417,7 +1419,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Game Tutorials
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/ai/'>AI/Behavior</a> > Changing behaviors
+          
+        
           
         
           
@@ -1426,6 +1434,25 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#expanding">Expanding</a></li>
+</ul></li>
+<li><a href="#related-recipes">Related recipes</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1433,9 +1460,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Changing behaviors
+            </h1>
           
 
         
@@ -1443,22 +1473,169 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-chess-pawn-i-games"><i class='fas fa-chess-pawn'></i> Games</h1>
+<h2 id="problem">Problem</h2>
 
-<p>Demo games and tutorials.</p>
+<p>You want your AI-controlled entity to switch between different behaviors.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>For this example, we&rsquo;ll assume an enemy with the following behaviors. See the individual recipes for how to make each behavior work.</p>
+
+<ul>
+<li><p><strong>Patrol</strong></p>
+
+<p>The &ldquo;Patrol&rdquo; state moves along a pre-defined path (or stands still if there&rsquo;s no path assigned). See <a href="http://kidscancode.org/godot_recipes/ai/path_follow/">Recipe: Path following</a> for details.</p></li>
+
+<li><p><strong>Chase</strong></p>
+
+<p>The &ldquo;Chase&rdquo; state moves the enemy towards the player. See <a href="http://kidscancode.org/godot_recipes/ai/chase/">Recipe: Chasing the player</a> for how to make this behavior.</p></li>
+
+<li><p><strong>Attack</strong></p>
+
+<p>In this state, the player is in range of a melee attack, so the enemy stops moving and executes its attack. See <a href="http://kidscancode.org/godot_recipes/animation/melee_attacks/">Recipe: Melee attacks</a> for how to make melee attacks.</p></li>
+</ul>
+
+<p>These behaviors are states - the enemy can only be in one of these states at a time, and certain events, such as the player getting near, will cause a transition to another state.</p>
+
+<p>To determine the state transitions, we have two <code>Area2D</code> nodes on the enemy: an outer one called &ldquo;DetectRadius&rdquo; and an inner called &ldquo;AttackRadius&rdquo;. The player entering or exiting these areas will trigger the related behavior.</p>
+
+<p><img src="/godot_recipes/img/behaviors_01.png" alt="alt" /></p>
+
+<p>We&rsquo;ve chosen a rectangular shape for <code>AttackRadius</code> in this example due to the shape of the enemy&rsquo;s attack. Any shape is fine as long as it&rsquo;s smaller than the <code>DetectRadius</code>.</p>
+
+<p>Connect the <code>body_entered</code> and <code>body_exited</code> signals of both these areas. If you&rsquo;re using collision layers (and you should be), set them so that they can only detect the player (or any other body you want to be chased/attacked).</p>
+
+<p>Now let&rsquo;s examine the enemy&rsquo;s script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
+
+<span style="color:#ff79c6">enum</span> states {PATROL, CHASE, ATTACK, DEAD}
+<span style="color:#ff79c6">var</span> state <span style="color:#ff79c6">=</span> states<span style="color:#ff79c6">.</span>PATROL</code></pre></div>
+<p>We start with an <code>enum</code> to give us a way to reference our states by name, and a variable to hold the current state.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#6272a4"># For setting animations.</span>
+<span style="color:#ff79c6">var</span> anim_state
+<span style="color:#ff79c6">var</span> run_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">25</span>
+<span style="color:#ff79c6">var</span> attacks <span style="color:#ff79c6">=</span> [<span style="color:#f1fa8c">&#34;attack1&#34;</span>, <span style="color:#f1fa8c">&#34;attack2&#34;</span>]
+
+<span style="color:#6272a4"># For path following.</span>
+<span style="color:#ff79c6">export</span> (NodePath) <span style="color:#ff79c6">var</span> patrol_path
+<span style="color:#ff79c6">var</span> patrol_points
+<span style="color:#ff79c6">var</span> patrol_index <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+
+<span style="color:#6272a4"># Target for chase mode.</span>
+<span style="color:#ff79c6">var</span> player <span style="color:#ff79c6">=</span> null
+
+<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2(run_speed, <span style="color:#bd93f9">0</span>)</code></pre></div>
+<p>The other variables needed for the individual behaviors and animations. See the referenced behavior links above for details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _physics_process(delta):
+    choose_action()
+    <span style="color:#6272a4"># Changing the x scale flips the sprite and its attack area.</span>
+    <span style="color:#ff79c6">if</span> velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>:
+        <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">.</span>scale<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">elif</span> velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">0</span>:
+        <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">.</span>scale<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+
+    <span style="color:#6272a4"># If we&#39;re moving, show the run animation.</span>
+    <span style="color:#ff79c6">if</span> velocity<span style="color:#ff79c6">.</span>length() <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>:
+        anim_state<span style="color:#ff79c6">.</span>travel(<span style="color:#f1fa8c">&#34;run&#34;</span>
+        )
+    <span style="color:#6272a4"># Show the idle animation when coming to a stop (but not attacking).</span>
+    <span style="color:#ff79c6">if</span> anim_state<span style="color:#ff79c6">.</span>get_current_node() <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#34;run&#34;</span> <span style="color:#ff79c6">and</span> velocity<span style="color:#ff79c6">.</span>length() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        anim_state<span style="color:#ff79c6">.</span>travel(<span style="color:#f1fa8c">&#34;idle&#34;</span>)
+
+    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity)</code></pre></div>
+<p>We&rsquo;ll handle movement as normal in <code>_physics_process()</code>, calling <code>choose_action()</code> (see below) to decide what the resulting movement will be.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> choose_action():
+    velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
+    <span style="color:#ff79c6">var</span> current <span style="color:#ff79c6">=</span> anim_state<span style="color:#ff79c6">.</span>get_current_node()
+    <span style="color:#6272a4"># If we&#39;re currently attacking, don&#39;t move or change state.</span>
+    <span style="color:#ff79c6">if</span> current <span style="color:#ff79c6">in</span> attacks:
+        <span style="color:#ff79c6">return</span>
+
+    <span style="color:#6272a4"># Depending on the current state, choose a movement target.</span>
+    <span style="color:#ff79c6">var</span> target
+    match state:
+        states<span style="color:#ff79c6">.</span>DEAD:
+            set_physics_process(false)
+
+        <span style="color:#6272a4"># Move along assigned path.</span>
+        states<span style="color:#ff79c6">.</span>PATROL:
+            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>patrol_path:
+                <span style="color:#ff79c6">return</span>
+            target <span style="color:#ff79c6">=</span> patrol_points[patrol_index]
+            <span style="color:#ff79c6">if</span> position<span style="color:#ff79c6">.</span>distance_to(target) <span style="color:#ff79c6">&lt;</span> <span style="color:#bd93f9">1</span>:
+                patrol_index <span style="color:#ff79c6">=</span> wrapi(patrol_index <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>, patrol_points<span style="color:#ff79c6">.</span>size())
+                target <span style="color:#ff79c6">=</span> patrol_points[patrol_index]
+            velocity <span style="color:#ff79c6">=</span> (target <span style="color:#ff79c6">-</span> position)<span style="color:#ff79c6">.</span>normalized() <span style="color:#ff79c6">*</span> run_speed
+
+        <span style="color:#6272a4"># Move towards player.</span>
+        states<span style="color:#ff79c6">.</span>CHASE:
+            target <span style="color:#ff79c6">=</span> player<span style="color:#ff79c6">.</span>position
+            velocity <span style="color:#ff79c6">=</span> (target <span style="color:#ff79c6">-</span> position)<span style="color:#ff79c6">.</span>normalized() <span style="color:#ff79c6">*</span> run_speed
+
+        <span style="color:#6272a4"># Make an attack.</span>
+        states<span style="color:#ff79c6">.</span>ATTACK:
+            target <span style="color:#ff79c6">=</span> player<span style="color:#ff79c6">.</span>position
+            <span style="color:#ff79c6">if</span> target<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&gt;</span> position<span style="color:#ff79c6">.</span>x:
+                <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">.</span>scale<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+            <span style="color:#ff79c6">elif</span> target<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">&lt;</span> position<span style="color:#ff79c6">.</span>x:
+                <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">.</span>scale<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+            anim_state<span style="color:#ff79c6">.</span>travel(<span style="color:#f1fa8c">&#34;attack&#34;</span>)</code></pre></div>
+<p>In <code>choose_action()</code> we determine the target and move toward it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_DetectRadius_body_entered(body):
+    state <span style="color:#ff79c6">=</span> states<span style="color:#ff79c6">.</span>CHASE
+    player <span style="color:#ff79c6">=</span> body
+
+<span style="color:#ff79c6">func</span> _on_DetectRadius_body_exited(body):
+    state <span style="color:#ff79c6">=</span> states<span style="color:#ff79c6">.</span>PATROL
+    player <span style="color:#ff79c6">=</span> null
+
+<span style="color:#ff79c6">func</span> _on_AttackRadius_body_entered(body):
+    state <span style="color:#ff79c6">=</span> states<span style="color:#ff79c6">.</span>ATTACK
+
+<span style="color:#ff79c6">func</span> _on_AttackRadius_body_exited(body):
+    state <span style="color:#ff79c6">=</span> states<span style="color:#ff79c6">.</span>CHASE</code></pre></div>
+<p>Finally, the functions connected to the area signals change the state accordingly.</p>
+
+<h3 id="expanding">Expanding</h3>
+
+<p>This example is intentionally kept as simplified as possible, while still demonstrating complete behaviors. In a larger project, there would likely be a greater number of behaviors, as well as more complex conditions for deciding which one to apply.</p>
+
+<h2 id="related-recipes">Related recipes</h2>
+
+<ul>
+<li><a href="http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement">Top-down character</a></li>
+<li><a href="http://kidscancode.org/godot_recipes/animation/spritesheet_animation/">Spritesheet animation</a></li>
+<li><a href="http://kidscancode.org/godot_recipes/animation/animation_state_machine/">Controlling animation states</a></li>
+<li><a href="http://kidscancode.org/godot_recipes/ai/path_follow/">Path following</a></li>
+<li><a href="http://kidscancode.org/godot_recipes/ai/chase/">Chasing the player</a></li>
+</ul>
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
 
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2167,6 +2344,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2180,56 +2358,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2269,6 +2399,60 @@
 
                     
                     
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -2278,9 +2462,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2444,3 +2625,4 @@
 
   </body>
 </html>
+
