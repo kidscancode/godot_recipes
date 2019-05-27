@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Using Areas :: Godot Recipes by KidsCanCode</title>
+    <title>RigidBody2D: Drag and Drop :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1558929715" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/g101/3d/101_3d_04/">
+  <body class="" data-url="/godot_recipes/physics/rigidbody_drag_drop/">
     <nav id="sidebar" class="">
 
 
@@ -97,7 +97,7 @@
   
     
     <li data-nav-id="/godot_recipes/g101/" title="Godot 101" class="dd-item
-        parent
+        
         
         
         ">
@@ -239,7 +239,7 @@
   
     
     <li data-nav-id="/godot_recipes/g101/3d/" title="Intro to 3D" class="dd-item
-        parent
+        
         
         
         ">
@@ -320,7 +320,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/g101/3d/101_3d_04/" title="Using Areas" class="dd-item active">
+      <li data-nav-id="/godot_recipes/g101/3d/101_3d_04/" title="Using Areas" class="dd-item ">
         <a href="/godot_recipes/g101/3d/101_3d_04/">
         04. Using Areas
         
@@ -953,7 +953,7 @@
   
     
     <li data-nav-id="/godot_recipes/physics/" title="Physics" class="dd-item
-        
+        parent
         
         
         ">
@@ -996,7 +996,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/physics/rigidbody_drag_drop/" title="RigidBody2D: Drag and Drop" class="dd-item ">
+      <li data-nav-id="/godot_recipes/physics/rigidbody_drag_drop/" title="RigidBody2D: Drag and Drop" class="dd-item active">
         <a href="/godot_recipes/physics/rigidbody_drag_drop/">
         RigidBody2D: Drag and Drop
         
@@ -1442,13 +1442,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/g101/'>Godot 101</a> > <a href='/godot_recipes/g101/3d/'>Intro to 3D</a> > Using Areas
-          
-        
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/physics/'>Physics</a> > RigidBody2D: Drag and Drop
           
         
           
@@ -1465,13 +1459,13 @@
 <ul>
 <li>
 <ul>
-<li><a href="#areas">Areas</a>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
 <ul>
-<li><a href="#coin">Coin</a></li>
-<li><a href="#bullets">Bullets</a></li>
-<li><a href="#spikes">Spikes</a></li>
+<li><a href="#body-setup">Body setup</a></li>
+<li><a href="#main-scene">Main scene</a></li>
 </ul></li>
-<li><a href="#wrapping-up">Wrapping Up</a></li>
+<li><a href="#related-recipes">Related recipes</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1490,7 +1484,7 @@
           
             <h1>
               
-              Using Areas
+              RigidBody2D: Drag and Drop
             </h1>
           
 
@@ -1500,162 +1494,79 @@
 
 
 
-<p>In the last part, we learned about
-transforms, a very important concept in 3D that records an object&rsquo;s local
-orientation in space, and used it to move our KinematicBody character. This time,
-we&rsquo;re going to look at another type of 3D node: the <code>Area</code>.</p>
+<h2 id="problem">Problem</h2>
 
-<h2 id="areas">Areas</h2>
+<p>You want to pick up and move rigid bodies with the mouse.</p>
 
-<p><code>Area</code> nodes are used for <em>detection</em> and <em>influence</em>. They can detect when
-objects overlap, and when an object enters or exits a region. An <code>Area</code> can
-also be used to override physics properties, such as gravity or damping, in
-a region.</p>
+<h2 id="solution">Solution</h2>
 
-<p>We&rsquo;re going to use <code>Area</code> to create three types of objects:</p>
+<p>Working with rigid bodies can be tricky. Godot&rsquo;s physics engine controls their movements, and interfering with that can often lead to unexpected results. The key is to make use of the body&rsquo;s <code>mode</code> property. This applies equally well in 2D or 3D.</p>
 
-<ul>
-<li>A coin the character can pick up</li>
-<li>A bullet the character can shoot</li>
-<li>Spikes that damage the character</li>
-</ul>
+<h3 id="body-setup">Body setup</h3>
 
-<p>To begin, let&rsquo;s set up some collision layers so that we can more easily control
-what objects the areas can interact with. Open the Project Settings and find
-the &ldquo;Layer Names/3D Physics&rdquo; section. Name the first three layers &ldquo;environment&rdquo;,
-&ldquo;player&rdquo;, and &ldquo;pickups&rdquo;.</p>
+<p>We&rsquo;ll start with our rigid body object, adding a <code>Sprite</code> and <code>CollisionShape2D</code>. You can also add a <code>PhysicsMaterial</code> if you want to set <em>Bounce</em> and <em>Friction</em> properties.</p>
 
-<p><img src="/godot_recipes/img/3d_04_01.png" alt="alt" /></p>
+<p>Place the body in a group called &ldquo;pickable&rdquo;. We&rsquo;ll use this to allow for multiple instances of the pickable object in the main scene. Attach a script and connect the body&rsquo;s <code>_input_event</code> signal.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> RigidBody2D
 
-<h3 id="coin">Coin</h3>
+<span style="color:#ff79c6">signal</span> clicked
 
-<p>Create a new inherited scene from the <code>CoinGold.glb</code> object in the Kenney Platformer
-Kit (see <a href="/blog/2019/03/godot_31_3d_part03/">Part 03</a>). Right-click on the root
-node, choose &ldquo;Change Type&rdquo;, and pick <code>Area</code>. In the Inspector, set the collision
-mask and layer so that the coin is in &ldquo;pickups&rdquo; and scans &ldquo;player&rdquo;.</p>
+<span style="color:#ff79c6">var</span> held <span style="color:#ff79c6">=</span> false
 
-<p><img src="/godot_recipes/img/3d_04_02.png" alt="alt" /></p>
+<span style="color:#ff79c6">func</span> _input_event(viewport, event, shape_idx):
+    <span style="color:#ff79c6">if</span> event is InputEventMouseButton:
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>pressed:
+            emit_signal(<span style="color:#f1fa8c">&#34;clicked&#34;</span>, self)</code></pre></div>
+<p>We&rsquo;ll emit a signal when a mouse click is detected. Since there can be many bodies, we&rsquo;ll let the main scene manage whether a body can be dragged or if there&rsquo;s already one in the <code>held</code> state.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _physics_process(delta):
+    <span style="color:#ff79c6">if</span> held:
+        global_transform<span style="color:#ff79c6">.</span>origin <span style="color:#ff79c6">=</span> get_global_mouse_position()</code></pre></div>
+<p>If the body is being dragged, we update its position to follow the mouse.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> pickup():
+    <span style="color:#ff79c6">if</span> held:
+        <span style="color:#ff79c6">return</span>
+    mode <span style="color:#ff79c6">=</span> RigidBody2D<span style="color:#ff79c6">.</span>MODE_STATIC
+    held <span style="color:#ff79c6">=</span> true
 
-<p>Now we need a collision shape, so add a <code>CollisionShape</code> node and choose a
-<code>CylinderShape</code> for it. If you rotate it 90 degrees around <strong>z</strong>, it will fit
-the coin shape pretty well.</p>
+<span style="color:#ff79c6">func</span> drop(impulse<span style="color:#ff79c6">=</span>Vector2<span style="color:#ff79c6">.</span>ZERO):
+    <span style="color:#ff79c6">if</span> held:
+        mode <span style="color:#ff79c6">=</span> RigidBody2D<span style="color:#ff79c6">.</span>MODE_RIGID
+        apply_central_impulse(impulse)
+        held <span style="color:#ff79c6">=</span> false</code></pre></div>
+<p>Finally, these are the two functions to call when the body is picked up and dropped. Changing the <code>mode</code> to <code>MODE_STATIC</code> removes the body from physics engine processing. Note that other objects can still collide with it. If you don&rsquo;t want that, you can disable the <code>collision_layer</code> and/or <code>collision_mask</code> here as well. Just remember to re-enable them when dropping.</p>
 
-<p><img src="/godot_recipes/img/3d_04_03.png" alt="alt" /></p>
+<p>In the <code>drop</code> function, when we change back to <code>MODE_RIGID</code>, the body will be <em>asleep</em>. A sleeping body can be awoken by applying an impulse to it (even a zero magnitude impulse is fine). However, by passing in an optional impulse value, we can &ldquo;throw&rdquo; the object on release.</p>
 
-<p>Add a script to the Area and connect its <code>body_entered</code> signal, which we&rsquo;ll use
-to remove the coin:</p>
+<h3 id="main-scene">Main scene</h3>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Area
+<p>Create a main scene with some static body obstacles or a <code>TileMap</code> and instance a few copies of the pickable body.</p>
 
-<span style="color:#ff79c6">func</span> _on_Coin_body_entered(body):
-    queue_free()</code></pre></div>
+<p>Here&rsquo;s the script for the main scene:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node2D
 
-<p>Add a few coins to your scene and see if you can pick them up:</p>
+<span style="color:#ff79c6">var</span> held_object <span style="color:#ff79c6">=</span> null
 
-<p><img src="/godot_recipes/img/3d_04_04.gif" alt="alt" /></p>
+<span style="color:#ff79c6">func</span> _ready():
+    <span style="color:#ff79c6">for</span> node <span style="color:#ff79c6">in</span> get_tree()<span style="color:#ff79c6">.</span>get_nodes_in_group(<span style="color:#f1fa8c">&#34;pickable&#34;</span>):
+        node<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;clicked&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_pickable_clicked&#34;</span>)
 
-<h3 id="bullets">Bullets</h3>
+<span style="color:#ff79c6">func</span> _on_pickable_clicked(object):
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>held_object:
+        held_object <span style="color:#ff79c6">=</span> object
+        held_object<span style="color:#ff79c6">.</span>pickup()</code></pre></div>
+<p>Here&rsquo;s where we connect up the signal from the rigid body instances. The connected function sets <code>held_object</code> so that we know something is currently being dragged, and calls the body&rsquo;s <code>pickup()</code> method.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventMouseButton <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT:
+        <span style="color:#ff79c6">if</span> held_object <span style="color:#ff79c6">and</span> <span style="color:#ff79c6">!</span>event<span style="color:#ff79c6">.</span>pressed:
+            held_object<span style="color:#ff79c6">.</span>drop(Input<span style="color:#ff79c6">.</span>get_last_mouse_speed())
+            held_object <span style="color:#ff79c6">=</span> null</code></pre></div>
+<p>Lastly, when the mouse is released during dragging, we can perform the reverse actions. Note the use of <code>get_last_mouse_speed()</code> - be careful with this! You may find yourself launching the rigid bodies at high speeds, especially if the bodies have low <code>mass</code> values. It&rsquo;s probably a good idea to <code>clamp()</code> this to a reasonable value. Experiment to find out what works for you.</p>
 
-<p>Make a new scene with an Area2D root, and name it &ldquo;Bullet&rdquo;. Add a <code>MeshInstance</code>,
-a <code>CollisionShape</code>, and a <code>Timer</code>. I&rsquo;m using a sphere shape for the mesh and
-collision, scaled to a radius of <code>0.2</code> so that it won&rsquo;t be too big compared
-with the character. The <code>Timer</code> is to give the bullet a time limit. Set its
-<em>One Shot</em> and <em>Autostart</em> properties both on.</p>
+<video controls src="/godot_recipes/img/rbody_drag.webm"></video>
 
-<p>Add a script and connect the <code>Timer</code>&rsquo;s <code>timeout</code> signal and the <code>Area</code>&rsquo;s
-<code>body_entered</code> signal. Then add the following:</p>
+<h2 id="related-recipes">Related recipes</h2>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Area
-
-<span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">15</span>
-<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector3()
-
-<span style="color:#ff79c6">func</span> start(xform):
-    transform <span style="color:#ff79c6">=</span> xform
-    velocity <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span>transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z <span style="color:#ff79c6">*</span> speed
-
-<span style="color:#ff79c6">func</span> _process(delta):
-    transform<span style="color:#ff79c6">.</span>origin <span style="color:#ff79c6">+=</span> velocity <span style="color:#ff79c6">*</span> delta
-
-<span style="color:#ff79c6">func</span> _on_Timer_timeout():
-    queue_free()
-
-<span style="color:#ff79c6">func</span> _on_Bullet_body_entered(body):
-    <span style="color:#ff79c6">if</span> body is StaticBody:
-        queue_free()</code></pre></div>
-
-<p>Since we want the bullet to start at a certain location and travel directly
-ahead of the player, we&rsquo;ll pass the player&rsquo;s transform to <code>start()</code> and use it
-to orient the bullet and make it move forward (remember in Godot&rsquo;s orientation,
-&ldquo;forward&rdquo; is along the negative <strong>z</strong> axis).</p>
-
-<p>Now we can go to the character scene and add a <code>Position3D</code> node, placing it
-at the tip of the character&rsquo;s &ldquo;arrow&rdquo; mesh. Name this node &ldquo;Muzzle&rdquo;. Next, add
-the following code to the character&rsquo;s script:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> Bullet <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://Bullet.tscn&#34;</span>)
-
-<span style="color:#ff79c6">func</span> _unhandled_input(event):
-    <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;shoot&#34;</span>):
-        <span style="color:#ff79c6">var</span> b <span style="color:#ff79c6">=</span> Bullet<span style="color:#ff79c6">.</span>instance()
-        b<span style="color:#ff79c6">.</span>start(<span style="color:#ff79c6">$</span>Muzzle<span style="color:#ff79c6">.</span>global_transform)
-        get_parent()<span style="color:#ff79c6">.</span>add_child(b)</code></pre></div>
-
-<p><img src="/godot_recipes/img/3d_04_05.gif" alt="alt" /></p>
-
-<h3 id="spikes">Spikes</h3>
-
-<p>Finally, we&rsquo;re going to add some danger to the environment. Make in instance
-of the <code>spikes.glb</code> object and make it an Area like we did with the coin.
-Add a script and connect the <code>body_entered</code> signal, but this time, we want
-the object to do something to the character:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Area
-
-<span style="color:#ff79c6">func</span> _on_Spikes_body_entered(body):
-    <span style="color:#ff79c6">if</span> body<span style="color:#ff79c6">.</span>has_method(<span style="color:#f1fa8c">&#34;take_damage&#34;</span>):
-        body<span style="color:#ff79c6">.</span>take_damage()</code></pre></div>
-
-<p>Now we need to define how the character reacts to taking &ldquo;damage&rdquo;. Since we
-haven&rsquo;t really built a health system, we&rsquo;re just going to &ldquo;bounce&rdquo; the
-character as if it got hurt. We need to add the following to the character
-script:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> can_move <span style="color:#ff79c6">=</span> true
-
-<span style="color:#ff79c6">func</span> take_damage():
-    velocity <span style="color:#ff79c6">*=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-    velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> jump_speed
-    can_move <span style="color:#ff79c6">=</span> false
-    <span style="color:#8be9fd;font-style:italic">yield</span>(get_tree()<span style="color:#ff79c6">.</span>create_timer(<span style="color:#bd93f9">1</span>), <span style="color:#f1fa8c">&#34;timeout&#34;</span>)
-    can_move <span style="color:#ff79c6">=</span> true</code></pre></div>
-
-<p>The purpose of this code is to disable input temporarily so the player will
-fly backwards from the spikes. If we just tried to set the velocity, it would
-immediately be overridden by the velocity set by the key inputs. So add this at
-the beginning of <code>get_input()</code>:</p>
-
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>can_move:
-        <span style="color:#ff79c6">return</span></code></pre></div>
-
-<p>Add a spike instance to your level and try it out:</p>
-
-<p><img src="/godot_recipes/img/3d_04_06.gif" alt="alt" /></p>
-
-<h2 id="wrapping-up">Wrapping Up</h2>
-
-<p>In this tutorial you learned how to use <code>Area</code> nodes to detect and react to 3D bodies.</p>
-
-<p>In the next part: a collection of small improvements.</p>
-
-<p>You can also find a video version of this lesson here:</p>
-
-<p>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/sJLIFVj4x7M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<!-- <iframe width="392" height="221" src="https://www.youtube.com/embed/sJLIFVj4x7M" frameborder="0" allowfullscreen></iframe> --></p>
+<p>-</p>
 
 
 <h3>Comments</h3>
@@ -1713,6 +1624,8 @@ the beginning of <code>get_input()</code>:</p>
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -1729,8 +1642,85 @@ the beginning of <code>get_input()</code>:</p>
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1788,9 +1778,6 @@ the beginning of <code>get_input()</code>:</p>
             
         
                     
-            
-        
-                    
                         
             
             
@@ -1811,91 +1798,6 @@ the beginning of <code>get_input()</code>:</p>
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -2335,6 +2237,7 @@ the beginning of <code>get_input()</code>:</p>
             
                 
                     
+                    
                 
                 
 
@@ -2347,6 +2250,9 @@ the beginning of <code>get_input()</code>:</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2364,6 +2270,7 @@ the beginning of <code>get_input()</code>:</p>
             
                 
                     
+                    
                 
                 
 
@@ -2379,6 +2286,9 @@ the beginning of <code>get_input()</code>:</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 

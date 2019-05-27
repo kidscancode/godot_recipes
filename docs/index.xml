@@ -326,6 +326,17 @@ Menu screens The three screens will share a common layout and some functionality
     </item>
     
     <item>
+      <title>RigidBody2D: Drag and Drop</title>
+      <link>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</guid>
+      <description>Problem You want to pick up and move rigid bodies with the mouse.
+Solution Working with rigid bodies can be tricky. Godot&amp;rsquo;s physics engine controls their movements, and interfering with that can often lead to unexpected results. The key is to make use of the body&amp;rsquo;s mode property. This applies equally well in 2D or 3D.
+Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and CollisionShape2D.</description>
+    </item>
+    
+    <item>
       <title>Using autotile</title>
       <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

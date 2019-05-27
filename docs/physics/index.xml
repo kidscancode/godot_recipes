@@ -22,6 +22,17 @@ Solution For most games, we&amp;rsquo;re not necessarily interested in a perfect
     </item>
     
     <item>
+      <title>RigidBody2D: Drag and Drop</title>
+      <link>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</guid>
+      <description>Problem You want to pick up and move rigid bodies with the mouse.
+Solution Working with rigid bodies can be tricky. Godot&amp;rsquo;s physics engine controls their movements, and interfering with that can often lead to unexpected results. The key is to make use of the body&amp;rsquo;s mode property. This applies equally well in 2D or 3D.
+Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and CollisionShape2D.</description>
+    </item>
+    
+    <item>
       <title>Using KinematicBody2D</title>
       <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
       <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
