@@ -6,7 +6,7 @@ draft: false
 
 ## Problem
 
-You want a character to follow a pre-defined path, such as a guard patrolling or an
+You want a character to follow a pre-defined path, such as a guard patrolling or a car following the road.
 
 ## Solution
 

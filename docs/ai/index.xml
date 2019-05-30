@@ -28,9 +28,9 @@ This makes the solution quite straightforward. Every frame, set the enemy&amp;rs
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://kidscancode.org/godot_recipes/ai/path_follow/</guid>
-      <description>Problem You want a character to follow a pre-defined path, such as a guard patrolling or an
+      <description>Problem You want a character to follow a pre-defined path, such as a guard patrolling or a car following the road.
 Solution There are many ways to approach this problem. In this solution, we&amp;rsquo;ll use Godot&amp;rsquo;s Path2D node (or Path for 3D) as a convenient way to draw paths in the editor.
-You can add the Path2D as a child of your main scene, your map, or another location that makes sense. Don&amp;rsquo;t make it a child of the patrolling entity, though - or the path will move along with the player!</description>
+You can add the Path2D as a child of your main scene, your map, or another location that makes sense.</description>
     </item>
     
     <item>
