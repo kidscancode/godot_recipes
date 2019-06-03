@@ -278,3 +278,7 @@ At this point, we have a large number of settings that control the car's behavio
 ## Related recipes
 
 - [Gamedev Math: Interpolation](http://kidscancode.org/godot_recipes/math/interpolation/)
+
+#### Like video?
+
+{{< youtube mJ1ZfGDTMCY >}}

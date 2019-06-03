@@ -250,6 +250,17 @@ Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer
     </item>
     
     <item>
+      <title>Car steering</title>
+      <link>http://kidscancode.org/godot_recipes/2d/car_steering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/car_steering/</guid>
+      <description>Problem You need to create a 2D top-down car controller.
+Solution When approaching this problem, beginners often wind up creating something that handles nothing like a real car. Some common mistakes you&amp;rsquo;ll find in amateur car games:
+ A car doesn&amp;rsquo;t rotate around its center. Put another way, a car&amp;rsquo;s rear wheels don&amp;rsquo;t slide side-to-side. (Unless it&amp;rsquo;s drifting, but we&amp;rsquo;ll talk about that later.) A car can only turn when it&amp;rsquo;s moving - it can&amp;rsquo;t spin in place.</description>
+    </item>
+    
+    <item>
       <title>Kinematic Friction</title>
       <link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
