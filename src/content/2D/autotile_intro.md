@@ -64,4 +64,6 @@ Switch back to the TileMap, and you should be able to start drawing. If somethin
 
 You can also add collision, navigation, or occlusion to your autotile set. If you download the example project below, you'll find a complete tileset with polygons defined on all the tiles.
 
-{{%attachments style="green" pattern=".*(zip|png)" /%}}
+{{% notice note %}}
+Download the project file here: [autotile_intro.zip](/godot_recipes/files/autotile_intro.zip)
+{{% /notice %}}
