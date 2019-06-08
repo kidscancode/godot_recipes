@@ -74,4 +74,6 @@ Here's an example of this system in use. You can download the example project fo
 
 <video controls src="/godot_recipes/img/tower_def_demo.webm"></video>
 
-{{%attachments style="green" pattern=".*(zip|png)" /%}}
+{{% notice note %}}
+Download the project file here: [tower_defense_demo.zip](/godot_recipes/files/tower_defense_demo.zip)
+{{% /notice %}}
