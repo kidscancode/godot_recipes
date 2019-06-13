@@ -199,6 +199,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</loc>
   </url>
   
@@ -246,6 +250,10 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/export/</loc>
     <lastmod>2019-04-09T19:48:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</loc>
   </url>
   
   <url>

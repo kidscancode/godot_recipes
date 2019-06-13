@@ -86,5 +86,15 @@ var enable_sound = true var enable_music = true var circles_per_level = 5 Add th
 We can fix this by disabling the buttons while the screen transition is happening. Since we put all the buttons in a &amp;ldquo;buttons&amp;rdquo; group, we can easily do this with call_group().</description>
     </item>
     
+    <item>
+      <title>Mobile ads</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</guid>
+      <description>About ads When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&amp;rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.
+Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&amp;rsquo;re not making a decision on the pros and cons in this tutorial - we&amp;rsquo;re here to show you how to put ads in your game if you want them.</description>
+    </item>
+    
   </channel>
 </rss>

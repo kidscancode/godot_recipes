@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Spawning Circles :: Godot Recipes by KidsCanCode</title>
+    <title>Mobile ads :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1560455844" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_02/">
+  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_11/">
     <nav id="sidebar" class="">
 
 
@@ -1302,7 +1302,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_02/" title="Spawning Circles" class="dd-item active">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_02/" title="Spawning Circles" class="dd-item ">
         <a href="/godot_recipes/games/circle_jump/circle_jump_02/">
         02. Spawning Circles
         
@@ -1416,7 +1416,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_11/" title="Mobile ads" class="dd-item ">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_11/" title="Mobile ads" class="dd-item active">
         <a href="/godot_recipes/games/circle_jump/circle_jump_11/">
         11. Mobile ads
         
@@ -1503,7 +1503,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Spawning Circles
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Mobile ads
           
         
           
@@ -1522,16 +1522,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#expanding-the-main-scene">Expanding the Main scene</a></li>
-<li><a href="#scripting-the-main-scene">Scripting the Main scene</a>
+<li><a href="#about-ads">About ads</a></li>
+<li><a href="#set-up-admob">Set up Admob</a></li>
+<li><a href="#using-godot-modules">Using Godot modules</a></li>
+<li><a href="#configuring-export">Configuring export</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#disabling-ads">Disabling ads</a>
 <ul>
-<li><a href="#adjustments">Adjustments</a></li>
-</ul></li>
-<li><a href="#trail">Trail</a></li>
-<li><a href="#circle-animations">Circle animations</a>
-<ul>
-<li><a href="#implode-animation">&ldquo;Implode&rdquo; animation</a></li>
-<li><a href="#capture-animation">Capture animation</a>
+<li>
 <ul>
 <li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
 <li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
@@ -1555,7 +1553,7 @@
           
             <h1>
               
-              Spawning Circles
+              Mobile ads
             </h1>
           
 
@@ -1565,151 +1563,127 @@
 
 
 
-<p>In the previous part, we created the <code>Jumper</code> and <code>Circle</code> object that make up
-the bulk of the game. Now we need to add the progression: a continuous series of spawned circles as long as the player doesn&rsquo;t miss.</p>
+<h2 id="about-ads">About ads</h2>
 
-<h2 id="expanding-the-main-scene">Expanding the Main scene</h2>
+<p>When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.</p>
 
-<p>Let&rsquo;s add some more nodes to Main:</p>
+<p>Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&rsquo;re not making a decision on the pros and cons in this tutorial - we&rsquo;re here to show you how to put ads in your game <em>if you want them</em>.</p>
 
-<ul>
-<li><p><strong>Position2D (&ldquo;StartPosition&rdquo;)</strong></p>
+<h2 id="set-up-admob">Set up Admob</h2>
 
-<p>This will mark the starting position for the game. Place it near the bottom-center of the screen.</p></li>
+<p>Head over to <a href="https://www.admob.com/">Admob</a> and create an account.</p>
 
-<li><p><strong>Camera2D</strong></p>
+<p>In the AdMob manager, create a new app - ours is titled &ldquo;Circle Jump&rdquo; - and specify the &ldquo;Android&rdquo; platform (we&rsquo;ll discuss iOS later).</p>
 
-<p>The camera will follow the player as it moves.</p>
+<p>In the &ldquo;Circle Jump&rdquo; app, you&rsquo;ll need to create three &ldquo;Ad Units&rdquo;. These are the types of ads that you can show in your game. For this tutorial, we&rsquo;ll need a &ldquo;Banner&rdquo; and an &ldquo;Interstitial&rdquo;. Each ad unit will have an &ldquo;Ad Unit ID&rdquo;, a long string of characters - we&rsquo;ll need that later in the game.</p>
 
-<p>Let&rsquo;s also configure the camera. Set its <em>Offset</em> to <code>(0, -200)</code> - this will ensure we can see more of the world ahead of us. Also set <em>Current</em> to &ldquo;On&rdquo;.</p></li>
-</ul>
+<p><img src="/godot_recipes/img/cj_11_01.png" alt="alt" /></p>
 
-<h2 id="scripting-the-main-scene">Scripting the Main scene</h2>
+<h2 id="using-godot-modules">Using Godot modules</h2>
 
-<p>Remove the jumper and circle instances we manually created. We&rsquo;ll add them in code moving forward.</p>
+<p>Godot doesn&rsquo;t include ad services by default, so it&rsquo;s necessary to use an engine module, or plugin, to add that functionality. You can find the module we&rsquo;ll be using here: <a href="https://github.com/kloder-games/godot-admob">godot-admob</a>.
+On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
 
-<p>Add the following to <code>Jumper.gd</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">signal</span> captured</code></pre></div>
-<p>We&rsquo;ll emit this signal when the jumper hits a circle:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_area_entered(area):
-    target <span style="color:#ff79c6">=</span> area
-    velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
-    emit_signal(<span style="color:#f1fa8c">&#34;captured&#34;</span>, area)</code></pre></div>
-<p>And let&rsquo;s change the <code>init()</code> function on the circle to also accept a position:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> init(_position, _radius<span style="color:#ff79c6">=</span>radius):
-    position <span style="color:#ff79c6">=</span> _position</code></pre></div>
-<p>Now let&rsquo;s add a script to the <code>Main</code> scene:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
+<p>To use a custom engine module, the engine has to be recompiled. In the case of mobile platforms, that means recompiling the export templates because the default ones we downloaded from Godot weren&rsquo;t compiled with this module.</p>
 
-<span style="color:#ff79c6">var</span> Circle <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Circle.tscn&#34;</span>)
-<span style="color:#ff79c6">var</span> Jumper <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Jumper.tscn&#34;</span>)
+<p>Compiling export templates is not difficult, but it does require setting up a build environment on your computer - downloading the required programs and libraries needed to build Godot. If you&rsquo;re new to this concept and interested in learning about it, see the <a href="https://docs.godotengine.org/en/latest/development/compiling/introduction_to_the_buildsystem.html">Compiling</a> section of the official docs.</p>
 
-<span style="color:#ff79c6">var</span> player</code></pre></div>
-<p>We need references to both objects so that we can instance them when needed.</p>
+<p>Fortunately, we won&rsquo;t need to compile custom export templates, because it&rsquo;s already been done for us. Head over to the <a href="https://github.com/Shin-NiL/godot-custom-mobile-template">godot-custom-mobile-templates</a> Github repo. Click on &ldquo;Releases&rdquo; and download the version of the export templates that matches your version of Godot.</p>
+
+<div class="notices warning" ><p>The export template version <strong>must</strong> match the Godot editor version. If you&rsquo;re using a custom-built editor, you will also have to build the templates from the same code branch.</p>
+</div>
+
+
+<p>Unzip the templates somewhere on your computer (don&rsquo;t put them in the Circle Jump project folder).</p>
+
+<h2 id="configuring-export">Configuring export</h2>
+
+<p>Back in the Godot editor, we need to make some changes to the export configuration. First, open <em>Project -&gt; Project Settings</em> and find the &ldquo;Android&rdquo; section. In the <em>Modules</em> property is where you list the module(s) you want to use in your code. The module name is listed on the <code>godot-admob</code> page: &ldquo;org/godotengine/godot/GodotAdMob&rdquo;. If you have more than one module, separate them with commas.</p>
+
+<p>In the _Project -&gt; Export_menu, we need to tell Godot to use the custom templates we downloaded. These are set in the &ldquo;Custom Package&rdquo; section. Click the folder icon and navigate to where you unzipped the templates. Make sure to add both the &ldquo;Debug&rdquo; and &ldquo;Release&rdquo; templates.</p>
+
+<p><img src="/godot_recipes/img/cj_11_02.png" alt="alt" /></p>
+
+<h2 id="code">Code</h2>
+
+<p>Now when we run the game (on Android), it will load that module. It&rsquo;s accessed via an engine singleton. Open <code>settings.gd</code> and add the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> admob <span style="color:#ff79c6">=</span> null
+<span style="color:#ff79c6">var</span> real_ads <span style="color:#ff79c6">=</span> false
+<span style="color:#ff79c6">var</span> banner_top <span style="color:#ff79c6">=</span> false
+<span style="color:#6272a4"># Fill these from your AdMob account:</span>
+<span style="color:#ff79c6">var</span> ad_banner_id <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+<span style="color:#ff79c6">var</span> ad_interstitial_id <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+<span style="color:#ff79c6">var</span> enable_ads <span style="color:#ff79c6">=</span> true</code></pre></div>
+<p>These are our settings variables for the module. <code>real_ads</code> set to <code>false</code> puts us in &ldquo;Test Ad&rdquo; mode. You shouldn&rsquo;t change this to <code>true</code> until you&rsquo;re ready to release your game. <code>banner_top</code> toggles whether the banner ad should be shown at the top or bottom of the screen.</p>
+
+<p><code>ad_banner_id</code> and <code>ad_interstitial_id</code> should be filled with <em>your</em> ad unit values from your AdMob account.</p>
+
+<p>We need to initialize the module:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
-    <span style="color:#8be9fd;font-style:italic">randomize</span>()
-    new_game()</code></pre></div>
-<p>This is temporary - later we&rsquo;ll have a UI with a start button to call the new game function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> new_game():
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
-    player <span style="color:#ff79c6">=</span> Jumper<span style="color:#ff79c6">.</span>instance()
-    player<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
-    add_child(player)
-    player<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;captured&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_Jumper_captured&#34;</span>)
-    spawn_circle(<span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position)</code></pre></div>
-<p>The <code>new_game()</code> function initializes the game - spawning a player and a circle at the start position, and setting the camera.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> spawn_circle(_position<span style="color:#ff79c6">=</span>null):
-    <span style="color:#ff79c6">var</span> c <span style="color:#ff79c6">=</span> Circle<span style="color:#ff79c6">.</span>instance()
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>_position:
-        <span style="color:#ff79c6">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">150</span>, <span style="color:#bd93f9">150</span>)
-        <span style="color:#ff79c6">var</span> y <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">500</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">400</span>)
-        c<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> player<span style="color:#ff79c6">.</span>target<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">+</span> Vector2(x, y)
-    add_child(c)
-    c<span style="color:#ff79c6">.</span>init(_position)</code></pre></div>
-<p>Here&rsquo;s our <code>spawn_circle()</code> function. If it&rsquo;s passed a position, it&rsquo;ll use it, otherwise we pick a random one some distance away from the current target. These are temporary numbers - once we&rsquo;ve got more of the gameplay up and running, we&rsquo;ll see how much they need to be adjusted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
-    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
-<p>Finally, we need the function that processes the jumper&rsquo;s <code>captured</code> signal. We&rsquo;re going to move the camera to the new circle and spawn another. Note that
-because this function is called during physics processing, we&rsquo;ll get an error if we try and add to the scene tree. Using <code>call_deferred()</code> tells the engine to execute that function as soon as it&rsquo;s safe to do so.</p>
+    <span style="color:#ff79c6">if</span> Engine<span style="color:#ff79c6">.</span>has_singleton(<span style="color:#f1fa8c">&#34;AdMob&#34;</span>):
+        admob <span style="color:#ff79c6">=</span> Engine<span style="color:#ff79c6">.</span>get_singleton(<span style="color:#f1fa8c">&#34;AdMob&#34;</span>)
+        admob<span style="color:#ff79c6">.</span>init(real_ads, get_instance_id())
+        admob<span style="color:#ff79c6">.</span>loadBanner(ad_banner_id, banner_top)
+        admob<span style="color:#ff79c6">.</span>loadInterstitial(ad_interstitial_id)</code></pre></div>
+<p>We first check that the module singleton exists. If it&rsquo;s found, we can initialize the module and load the ad units.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> show_ad_banner():
+    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
+        admob<span style="color:#ff79c6">.</span>showBanner()
 
-<p>Try it out. You should be able to jump from circle to circle - how many did you get?</p>
+<span style="color:#ff79c6">func</span> hide_ad_banner():
+    <span style="color:#ff79c6">if</span> admob:
+        admob<span style="color:#ff79c6">.</span>hideBanner()</code></pre></div>
+<p>Next, we have functions to let us show/hide the banner. We only want it showing in the menu screens, not during actual gameplay.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> show_ad_interstitial():
+    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
+        admob<span style="color:#ff79c6">.</span>showInterstitial()</code></pre></div>
+<p>We&rsquo;ll use this function to show the interstitial ad at the end of a game.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_interstitial_close():
+    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
+        show_ad_banner()</code></pre></div>
+<p>The module looks for this callback to run any code when the interstitial ad closes. Since we&rsquo;ll be at the end of a game and going back to the menu, we&rsquo;ll show the banner again.</p>
 
-<p>One jarring thing is that the camera &ldquo;teleports&rdquo; when it moves to the next circle. We can improve this by enabling <em>Smoothing</em> on the camera. The <em>Smoothing/Speed</em> controls how quickly the camera interpolates to the new position. Try something between <code>5</code> and <code>10</code>.</p>
-
-<h3 id="adjustments">Adjustments</h3>
-
-<p>It&rsquo;s also jarring that when we hit a circle we don&rsquo;t start rotating at the place we hit. Add this to the jumper&rsquo;s <code>_on_Jumper_area_entered()</code> function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">target<span style="color:#ff79c6">.</span>get_node(<span style="color:#f1fa8c">&#34;Pivot&#34;</span>)<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">=</span> (position <span style="color:#ff79c6">-</span> target<span style="color:#ff79c6">.</span>position)<span style="color:#ff79c6">.</span>angle()</code></pre></div>
-<p>Let&rsquo;s also add this to the circle&rsquo;s <code>init()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">rotation_speed <span style="color:#ff79c6">*=</span> <span style="color:#8be9fd;font-style:italic">pow</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, <span style="color:#8be9fd;font-style:italic">randi</span>() <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>)</code></pre></div>
-<p>This randomly flips the rotation speed to positive or negative, so we won&rsquo;t always orbit in the same direction.</p>
-
-<h2 id="trail">Trail</h2>
-
-<p>Add these nodes to the jumper:</p>
+<p>Now we need to call these functions from the game. Open <code>Main.gd</code> and add the following:</p>
 
 <ul>
-<li><code>Node</code> (&ldquo;Trail&rdquo;)
-
-<ul>
-<li><code>Line2D</code> (&ldquo;Points&rdquo;)</li>
-</ul></li>
+<li>In <code>new_game()</code>, add <code>settings.hide_ad_banner()</code>.</li>
+<li>At the end of <code>_on_Jumper_died()</code> add <code>settings.show_ad_interstitial()</code>.</li>
 </ul>
 
-<p>We&rsquo;re going to use this to make a trail that streams out behind the player. Later we&rsquo;ll make it more visually appealing, but for now, let&rsquo;s stick with a simple gradient. In the <em>Fill</em> add a new Gradient, and go from transparent to a color of your choosing:</p>
+<p>Run the game on your device, and you should see the test ad appear:</p>
 
-<p><img src="/godot_recipes/img/cj_02_01.png?width=200" alt="alt" /></p>
+<p><img src="/godot_recipes/img/cj_11_03.jpg" alt="alt" /></p>
 
-<p>Now in the jumper&rsquo;s script, let&rsquo;s add the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> trail <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Trail<span style="color:#ff79c6">/</span>Points
+<h2 id="disabling-ads">Disabling ads</h2>
 
-<span style="color:#ff79c6">var</span> trail_length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">25</span></code></pre></div>
-<p>And then in the <code>_physics_process()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> trail<span style="color:#ff79c6">.</span>points<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">&gt;</span> trail_length:
-    trail<span style="color:#ff79c6">.</span>remove_point(<span style="color:#bd93f9">0</span>)
-trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
-<p><strong>IMAGE/GIF</strong></p>
+<p>Many games allow ads to be disabled, whether via in-app purchases, reaching a certain level, etc. In our case, we&rsquo;ll add it as a button on the &ldquo;Settings&rdquo; screen.</p>
 
-<h2 id="circle-animations">Circle animations</h2>
+<p>First, we&rsquo;ll change the <code>enable_ads</code> to give it a setter function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> enable_ads <span style="color:#ff79c6">=</span> true <span style="color:#ff79c6">setget</span> set_enable_ads</code></pre></div>
+<p>And add the setter function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_enable_ads(value):
+    enable_ads <span style="color:#ff79c6">=</span> value
+    <span style="color:#ff79c6">if</span> enable_ads:
+        show_ad_banner()
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>enable_ads:
+        hide_ad_banner()</code></pre></div>
+<p>This will cause the banner add to appear/disappear instantly when pressing the button.</p>
 
-<p>Finally, we&rsquo;ll add some visuals to the circles. First, we&rsquo;ll add an effect when the player jumps off and the circle disappears. Then, we&rsquo;ll add a capture effect for when we hit a circle.</p>
+<p>To add the button, we&rsquo;ll need a third row of buttons. Open the <code>BaseScreen</code> scene and duplicate the first HBoxContainer.</p>
 
-<p>Add an <code>AnimationPlayer</code> node to the Circle.</p>
+<p>In the <code>SettingsScreen</code> scene add a <code>Button</code> called &ldquo;Ads&rdquo; to the middle row. Set its text to &ldquo;Disable Ads&rdquo;, its <em>Custom Font</em> (a size of 48 works well), and set its <em>Custom Styles</em> all to &ldquo;New StyleBoxEmpty&rdquo;. Don&rsquo;t forget to add the button to the &ldquo;buttons&rdquo; group.</p>
 
-<h3 id="implode-animation">&ldquo;Implode&rdquo; animation</h3>
+<p>In <code>Screens.gd</code>, add the following to the <code>match</code> statement that processes the buttons:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">match button<span style="color:#ff79c6">.</span>name:
+    <span style="color:#f1fa8c">&#34;Ads&#34;</span>:
+        settings<span style="color:#ff79c6">.</span>enable_ads <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!</span>settings<span style="color:#ff79c6">.</span>enable_ads
+        <span style="color:#ff79c6">if</span> settings<span style="color:#ff79c6">.</span>enable_ads:
+            button<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Disable Ads&#34;</span>
+        <span style="color:#ff79c6">else</span>:
+            button<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Enable Ads&#34;</span></code></pre></div>
+<p><img src="/godot_recipes/img/cj_11_04.png" alt="alt" /></p>
 
-<p>Add a new animation called &ldquo;implode&rdquo;. Set the length to 0.4 and keyframe two properties of the root <code>Area2D</code> node: <em>Scale</em> at <code>(1, 1)</code> and <em>Modulate</em> at its default (<code>(1, 1, 1, 1)</code>). Then move the scrubber all the way to the end and key the values <code>(0.1, 0.1)</code> and <code>(1, 1, 1, 0)</code> (that&rsquo;s the &ldquo;alpha&rdquo; value of the color).</p>
-
-<p><img src="/godot_recipes/img/cj_02_02.png" alt="alt" /></p>
-
-<h3 id="capture-animation">Capture animation</h3>
-
-<p>The capture animation is a little more complex. Duplicate the Sprite and call it <code>SpriteEffect</code>. Set its <em>Visible</em> property off. We&rsquo;re going to animate this second ring zooming in on the main circle.</p>
-
-<p><img src="/godot_recipes/img/cj_02_03.png" alt="alt" />
-<img src="/godot_recipes/img/cj_02_04.gif" alt="alt" /></p>
-
-<p>Here are the functions to add to the circle script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> capture():
-    <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;capture&#34;</span>)
-
-<span style="color:#ff79c6">func</span> implode():
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!$</span>AnimationPlayer<span style="color:#ff79c6">.</span>is_playing():
-        <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;implode&#34;</span>)
-    <span style="color:#8be9fd;font-style:italic">yield</span>(<span style="color:#ff79c6">$</span>AnimationPlayer, <span style="color:#f1fa8c">&#34;animation_finished&#34;</span>)
-    queue_free()</code></pre></div>
-<p>And then in <code>Jumper.gd</code>, our jump function becomes:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> jump():
-    target<span style="color:#ff79c6">.</span>implode()
-    target <span style="color:#ff79c6">=</span> null
-    velocity <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> jump_speed</code></pre></div>
-<p>And in Main, our capture method calls the capture:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
-    object<span style="color:#ff79c6">.</span>capture()
-    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
-<p><strong>GIF</strong></p>
+<p>Run the game on your device and verify that you can enable/disable ads.</p>
 
 <hr />
 
@@ -1721,7 +1695,7 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/wU6otgwaNQg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/8SOw_Tmw2OI6qclA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
@@ -2651,26 +2625,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
                 
                 
 
@@ -2750,6 +2704,23 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 

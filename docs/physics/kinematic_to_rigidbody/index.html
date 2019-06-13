@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Spawning Circles :: Godot Recipes by KidsCanCode</title>
+    <title>Kinematic to Rigid Body Interaction :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1560455844" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_02/">
+  <body class="" data-url="/godot_recipes/physics/kinematic_to_rigidbody/">
     <nav id="sidebar" class="">
 
 
@@ -972,7 +972,7 @@
   
     
     <li data-nav-id="/godot_recipes/physics/" title="Physics" class="dd-item
-        
+        parent
         
         
         ">
@@ -1034,7 +1034,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/physics/kinematic_to_rigidbody/" title="Kinematic to Rigid Body Interaction" class="dd-item ">
+      <li data-nav-id="/godot_recipes/physics/kinematic_to_rigidbody/" title="Kinematic to Rigid Body Interaction" class="dd-item active">
         <a href="/godot_recipes/physics/kinematic_to_rigidbody/">
         Kinematic to Rigid Body Interaction
         
@@ -1232,7 +1232,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
-        parent
+        
         
         
         ">
@@ -1259,7 +1259,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
-        parent
+        
         
         
         ">
@@ -1302,7 +1302,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_02/" title="Spawning Circles" class="dd-item active">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_02/" title="Spawning Circles" class="dd-item ">
         <a href="/godot_recipes/games/circle_jump/circle_jump_02/">
         02. Spawning Circles
         
@@ -1499,13 +1499,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Spawning Circles
-          
-        
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/physics/'>Physics</a> > Kinematic to Rigid Body Interaction
           
         
           
@@ -1522,21 +1516,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#expanding-the-main-scene">Expanding the Main scene</a></li>
-<li><a href="#scripting-the-main-scene">Scripting the Main scene</a>
-<ul>
-<li><a href="#adjustments">Adjustments</a></li>
-</ul></li>
-<li><a href="#trail">Trail</a></li>
-<li><a href="#circle-animations">Circle animations</a>
-<ul>
-<li><a href="#implode-animation">&ldquo;Implode&rdquo; animation</a></li>
-<li><a href="#capture-animation">Capture animation</a>
-<ul>
-<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
-<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
+<li><a href="#related-recipes">Related recipes</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1555,7 +1537,7 @@
           
             <h1>
               
-              Spawning Circles
+              Kinematic to Rigid Body Interaction
             </h1>
           
 
@@ -1565,165 +1547,62 @@
 
 
 
-<p>In the previous part, we created the <code>Jumper</code> and <code>Circle</code> object that make up
-the bulk of the game. Now we need to add the progression: a continuous series of spawned circles as long as the player doesn&rsquo;t miss.</p>
+<h2 id="problem">Problem</h2>
 
-<h2 id="expanding-the-main-scene">Expanding the Main scene</h2>
+<p>You want your kinematic character to interact with rigid bodies.</p>
 
-<p>Let&rsquo;s add some more nodes to Main:</p>
+<h2 id="solution">Solution</h2>
 
-<ul>
-<li><p><strong>Position2D (&ldquo;StartPosition&rdquo;)</strong></p>
-
-<p>This will mark the starting position for the game. Place it near the bottom-center of the screen.</p></li>
-
-<li><p><strong>Camera2D</strong></p>
-
-<p>The camera will follow the player as it moves.</p>
-
-<p>Let&rsquo;s also configure the camera. Set its <em>Offset</em> to <code>(0, -200)</code> - this will ensure we can see more of the world ahead of us. Also set <em>Current</em> to &ldquo;On&rdquo;.</p></li>
-</ul>
-
-<h2 id="scripting-the-main-scene">Scripting the Main scene</h2>
-
-<p>Remove the jumper and circle instances we manually created. We&rsquo;ll add them in code moving forward.</p>
-
-<p>Add the following to <code>Jumper.gd</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">signal</span> captured</code></pre></div>
-<p>We&rsquo;ll emit this signal when the jumper hits a circle:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_area_entered(area):
-    target <span style="color:#ff79c6">=</span> area
-    velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
-    emit_signal(<span style="color:#f1fa8c">&#34;captured&#34;</span>, area)</code></pre></div>
-<p>And let&rsquo;s change the <code>init()</code> function on the circle to also accept a position:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> init(_position, _radius<span style="color:#ff79c6">=</span>radius):
-    position <span style="color:#ff79c6">=</span> _position</code></pre></div>
-<p>Now let&rsquo;s add a script to the <code>Main</code> scene:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
-
-<span style="color:#ff79c6">var</span> Circle <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Circle.tscn&#34;</span>)
-<span style="color:#ff79c6">var</span> Jumper <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://objects/Jumper.tscn&#34;</span>)
-
-<span style="color:#ff79c6">var</span> player</code></pre></div>
-<p>We need references to both objects so that we can instance them when needed.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
-    <span style="color:#8be9fd;font-style:italic">randomize</span>()
-    new_game()</code></pre></div>
-<p>This is temporary - later we&rsquo;ll have a UI with a start button to call the new game function.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> new_game():
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
-    player <span style="color:#ff79c6">=</span> Jumper<span style="color:#ff79c6">.</span>instance()
-    player<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position
-    add_child(player)
-    player<span style="color:#ff79c6">.</span>connect(<span style="color:#f1fa8c">&#34;captured&#34;</span>, self, <span style="color:#f1fa8c">&#34;_on_Jumper_captured&#34;</span>)
-    spawn_circle(<span style="color:#ff79c6">$</span>StartPosition<span style="color:#ff79c6">.</span>position)</code></pre></div>
-<p>The <code>new_game()</code> function initializes the game - spawning a player and a circle at the start position, and setting the camera.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> spawn_circle(_position<span style="color:#ff79c6">=</span>null):
-    <span style="color:#ff79c6">var</span> c <span style="color:#ff79c6">=</span> Circle<span style="color:#ff79c6">.</span>instance()
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>_position:
-        <span style="color:#ff79c6">var</span> x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">150</span>, <span style="color:#bd93f9">150</span>)
-        <span style="color:#ff79c6">var</span> y <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">500</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">400</span>)
-        c<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> player<span style="color:#ff79c6">.</span>target<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">+</span> Vector2(x, y)
-    add_child(c)
-    c<span style="color:#ff79c6">.</span>init(_position)</code></pre></div>
-<p>Here&rsquo;s our <code>spawn_circle()</code> function. If it&rsquo;s passed a position, it&rsquo;ll use it, otherwise we pick a random one some distance away from the current target. These are temporary numbers - once we&rsquo;ve got more of the gameplay up and running, we&rsquo;ll see how much they need to be adjusted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
-    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
-<p>Finally, we need the function that processes the jumper&rsquo;s <code>captured</code> signal. We&rsquo;re going to move the camera to the new circle and spawn another. Note that
-because this function is called during physics processing, we&rsquo;ll get an error if we try and add to the scene tree. Using <code>call_deferred()</code> tells the engine to execute that function as soon as it&rsquo;s safe to do so.</p>
-
-<p>Try it out. You should be able to jump from circle to circle - how many did you get?</p>
-
-<p>One jarring thing is that the camera &ldquo;teleports&rdquo; when it moves to the next circle. We can improve this by enabling <em>Smoothing</em> on the camera. The <em>Smoothing/Speed</em> controls how quickly the camera interpolates to the new position. Try something between <code>5</code> and <code>10</code>.</p>
-
-<h3 id="adjustments">Adjustments</h3>
-
-<p>It&rsquo;s also jarring that when we hit a circle we don&rsquo;t start rotating at the place we hit. Add this to the jumper&rsquo;s <code>_on_Jumper_area_entered()</code> function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">target<span style="color:#ff79c6">.</span>get_node(<span style="color:#f1fa8c">&#34;Pivot&#34;</span>)<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">=</span> (position <span style="color:#ff79c6">-</span> target<span style="color:#ff79c6">.</span>position)<span style="color:#ff79c6">.</span>angle()</code></pre></div>
-<p>Let&rsquo;s also add this to the circle&rsquo;s <code>init()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">rotation_speed <span style="color:#ff79c6">*=</span> <span style="color:#8be9fd;font-style:italic">pow</span>(<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>, <span style="color:#8be9fd;font-style:italic">randi</span>() <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">2</span>)</code></pre></div>
-<p>This randomly flips the rotation speed to positive or negative, so we won&rsquo;t always orbit in the same direction.</p>
-
-<h2 id="trail">Trail</h2>
-
-<p>Add these nodes to the jumper:</p>
-
-<ul>
-<li><code>Node</code> (&ldquo;Trail&rdquo;)
-
-<ul>
-<li><code>Line2D</code> (&ldquo;Points&rdquo;)</li>
-</ul></li>
-</ul>
-
-<p>We&rsquo;re going to use this to make a trail that streams out behind the player. Later we&rsquo;ll make it more visually appealing, but for now, let&rsquo;s stick with a simple gradient. In the <em>Fill</em> add a new Gradient, and go from transparent to a color of your choosing:</p>
-
-<p><img src="/godot_recipes/img/cj_02_01.png?width=200" alt="alt" /></p>
-
-<p>Now in the jumper&rsquo;s script, let&rsquo;s add the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> trail <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Trail<span style="color:#ff79c6">/</span>Points
-
-<span style="color:#ff79c6">var</span> trail_length <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">25</span></code></pre></div>
-<p>And then in the <code>_physics_process()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> trail<span style="color:#ff79c6">.</span>points<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">&gt;</span> trail_length:
-    trail<span style="color:#ff79c6">.</span>remove_point(<span style="color:#bd93f9">0</span>)
-trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
-<p><strong>IMAGE/GIF</strong></p>
-
-<h2 id="circle-animations">Circle animations</h2>
-
-<p>Finally, we&rsquo;ll add some visuals to the circles. First, we&rsquo;ll add an effect when the player jumps off and the circle disappears. Then, we&rsquo;ll add a capture effect for when we hit a circle.</p>
-
-<p>Add an <code>AnimationPlayer</code> node to the Circle.</p>
-
-<h3 id="implode-animation">&ldquo;Implode&rdquo; animation</h3>
-
-<p>Add a new animation called &ldquo;implode&rdquo;. Set the length to 0.4 and keyframe two properties of the root <code>Area2D</code> node: <em>Scale</em> at <code>(1, 1)</code> and <em>Modulate</em> at its default (<code>(1, 1, 1, 1)</code>). Then move the scrubber all the way to the end and key the values <code>(0.1, 0.1)</code> and <code>(1, 1, 1, 0)</code> (that&rsquo;s the &ldquo;alpha&rdquo; value of the color).</p>
-
-<p><img src="/godot_recipes/img/cj_02_02.png" alt="alt" /></p>
-
-<h3 id="capture-animation">Capture animation</h3>
-
-<p>The capture animation is a little more complex. Duplicate the Sprite and call it <code>SpriteEffect</code>. Set its <em>Visible</em> property off. We&rsquo;re going to animate this second ring zooming in on the main circle.</p>
-
-<p><img src="/godot_recipes/img/cj_02_03.png" alt="alt" />
-<img src="/godot_recipes/img/cj_02_04.gif" alt="alt" /></p>
-
-<p>Here are the functions to add to the circle script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> capture():
-    <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;capture&#34;</span>)
-
-<span style="color:#ff79c6">func</span> implode():
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!$</span>AnimationPlayer<span style="color:#ff79c6">.</span>is_playing():
-        <span style="color:#ff79c6">$</span>AnimationPlayer<span style="color:#ff79c6">.</span>play(<span style="color:#f1fa8c">&#34;implode&#34;</span>)
-    <span style="color:#8be9fd;font-style:italic">yield</span>(<span style="color:#ff79c6">$</span>AnimationPlayer, <span style="color:#f1fa8c">&#34;animation_finished&#34;</span>)
-    queue_free()</code></pre></div>
-<p>And then in <code>Jumper.gd</code>, our jump function becomes:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> jump():
-    target<span style="color:#ff79c6">.</span>implode()
-    target <span style="color:#ff79c6">=</span> null
-    velocity <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> jump_speed</code></pre></div>
-<p>And in Main, our capture method calls the capture:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_Jumper_captured(object):
-    <span style="color:#ff79c6">$</span>Camera2D<span style="color:#ff79c6">.</span>position <span style="color:#ff79c6">=</span> object<span style="color:#ff79c6">.</span>position
-    object<span style="color:#ff79c6">.</span>capture()
-    call_deferred(<span style="color:#f1fa8c">&#34;spawn_circle&#34;</span>)</code></pre></div>
-<p><strong>GIF</strong></p>
-
-<hr />
-
-<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
-
-<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
-
-<h4 id="do-you-prefer-video">Do you prefer video?</h4>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/wU6otgwaNQg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+<div class="notices note" ><p>This recipe applies equally well in both 2D and 3D nodes.</p>
 </div>
 
+
+<p>By default, a kinematic body moved with <code>move_and_slide()</code> or <code>move_and_collide()</code> will push any rigid bodies it collides with. This interaction ignores the rigid body&rsquo;s physics properties due to the kinematic move function&rsquo;s <code>infinite_inertia</code> parameter.</p>
+
+<p><strong>gif of inf. inertia pushing</strong></p>
+
+<p>In some cases, this might be all you need. However, if you want to avoid &ldquo;glitches&rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&rsquo;ll need to add some code for the interactions.</p>
+
+<p>For this example, we&rsquo;ll use the 2D character described in the <a href="http://kidscancode.org/godot_recipes/ai/platform_character">Platform character</a> recipe.</p>
+
+<p>The most commonly used movement method for kinematic bodies is <code>move_and_slide()</code>. In the example code, the movement happens on this line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity, Vector2<span style="color:#ff79c6">.</span>UP)</code></pre></div>
+<p>This causes the body to move in the given direction and slide along obstacles when colliding, as well as using the <code>floor_normal</code> parameter to determine what surfaces should count as a &ldquo;floor&rdquo;. <code>move_and_slide()</code> also contains additional parameters:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">move_and_slide ( Vector2 linear_velocity,
+    Vector2 floor_normal=Vector2( 0, 0 ),
+    bool stop_on_slope=false, int max_slides=4,
+    float floor_max_angle=0.785398,
+    bool infinite_inertia=true )</code></pre></div>
+<p>It&rsquo;s that last one that needs to be changed. Since GDScript doesn&rsquo;t have named parameters, this means we have to pass all of them, but we can keep them at their default values:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity, Vector2<span style="color:#ff79c6">.</span>UP,
+                    false, <span style="color:#bd93f9">4</span>, PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">4</span>, false)</code></pre></div>
+<p>Now if you try to move, you&rsquo;ll see that the kinematic body just stops on collision. Now it can&rsquo;t push the rigid body at all.</p>
+
+<p><strong>gif of collision w/out inf inertia</strong></p>
+
+<p>To give the colliding body a &ldquo;push&rdquo; we&rsquo;ll need to apply an impulse. An impulse is an instantaneous &ldquo;kick&rdquo; - think a bat hitting a ball. This is as opposed to a force, which is a continuous &ldquo;push&rdquo; on an object.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#6272a4"># This represents the player&#39;s inertia.</span>
+<span style="color:#ff79c6">export</span> (int, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">200</span>) <span style="color:#ff79c6">var</span> push <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+
+    <span style="color:#ff79c6">for</span> index <span style="color:#ff79c6">in</span> get_slide_count():
+        <span style="color:#ff79c6">var</span> collision <span style="color:#ff79c6">=</span> get_slide_collision(index)
+            <span style="color:#ff79c6">if</span> collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>is_in_group(<span style="color:#f1fa8c">&#34;bodies&#34;</span>):
+                collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>apply_central_impulse(<span style="color:#ff79c6">-</span>collision<span style="color:#ff79c6">.</span>normal <span style="color:#ff79c6">*</span> push)</code></pre></div>
+<p>The collision normal points <em>out</em> of the rigid body, so we reverse it to point away from the character and apply the <code>push</code> factor.</p>
+
+<p>You can also scale the force of the impulse based on the character&rsquo;s speed:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>apply_central_impulse(<span style="color:#ff79c6">-</span>collision<span style="color:#ff79c6">.</span>normal <span style="color:#ff79c6">*</span> velocity<span style="color:#ff79c6">*</span>length() <span style="color:#ff79c6">*</span> push_factor)
+<span style="color:#6272a4"># Depending on your character&#39;s movement speed, adjust push_factor to</span>
+<span style="color:#6272a4"># something between 0 and 1.</span></code></pre></div>
+<div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/kinematic_vs_rigid.zip">kinematic_vs_rigid.zip</a></p>
+</div>
+
+
+<h2 id="related-recipes">Related recipes</h2>
+
+<ul>
+<li><a href="http://kidscancode.org/godot_recipes/ai/platform_character">Platform character</a></li>
+</ul>
 
 
 <h3>Comments</h3>
@@ -2410,6 +2289,110 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -2466,102 +2449,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -2602,7 +2489,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
                 
                     
-                    
                 
                 
 
@@ -2618,7 +2504,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
                 
                     
-                    
                 
                 
 
@@ -2631,9 +2516,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2651,7 +2533,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
                 
                     
-                    
                 
                 
 
@@ -2667,9 +2548,6 @@ trail<span style="color:#ff79c6">.</span>add_point(position)</code></pre></div>
             
             
                 
-                    
-                        
-                        
                     
                 
                 

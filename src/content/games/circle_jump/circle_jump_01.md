@@ -31,7 +31,9 @@ Next, in _Input Devices/Pointing_ enable "Emulate Touch From Mouse". This will l
 
 To keep things organized, we're going to make a folder to hold the game objects (`objects`) and one for UI (`gui`). The game assets (images, audio, etc.) will go in an `assets` folder. You can download the starting assets here:
 
-{{%attachments style="green" pattern=".*(zip|png)" /%}}
+{{% notice note %}}
+Download the project file here: [circle_jump_assets.zip](/godot_recipes/files/circle_jump_assets.zip)
+{{% /notice %}}
 
 Once we have the folders and the assets set up, we're ready to start coding!
 
