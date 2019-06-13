@@ -14,20 +14,20 @@
     <title>Kinematic to Rigid Body Interaction :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1560455844" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1560455844" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1560457838" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1560457838" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1560455844" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1560457838" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1560455844"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1560457838"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1560455844"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1560455844"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1560457838"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1560457838"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1560455844"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1560457838"></script>
 
     
 
@@ -1559,7 +1559,7 @@
 
 <p>By default, a kinematic body moved with <code>move_and_slide()</code> or <code>move_and_collide()</code> will push any rigid bodies it collides with. This interaction ignores the rigid body&rsquo;s physics properties due to the kinematic move function&rsquo;s <code>infinite_inertia</code> parameter.</p>
 
-<p><strong>gif of inf. inertia pushing</strong></p>
+<p><img src="/godot_recipes/img/inf_inertia1.gif" alt="alt" /></p>
 
 <p>In some cases, this might be all you need. However, if you want to avoid &ldquo;glitches&rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&rsquo;ll need to add some code for the interactions.</p>
 
@@ -1578,7 +1578,7 @@
                     false, <span style="color:#bd93f9">4</span>, PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">4</span>, false)</code></pre></div>
 <p>Now if you try to move, you&rsquo;ll see that the kinematic body just stops on collision. Now it can&rsquo;t push the rigid body at all.</p>
 
-<p><strong>gif of collision w/out inf inertia</strong></p>
+<p><img src="/godot_recipes/img/inf_inertia2.gif" alt="alt" /></p>
 
 <p>To give the colliding body a &ldquo;push&rdquo; we&rsquo;ll need to apply an impulse. An impulse is an instantaneous &ldquo;kick&rdquo; - think a bat hitting a ball. This is as opposed to a force, which is a continuous &ldquo;push&rdquo; on an object.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#6272a4"># This represents the player&#39;s inertia.</span>
@@ -1588,7 +1588,9 @@
         <span style="color:#ff79c6">var</span> collision <span style="color:#ff79c6">=</span> get_slide_collision(index)
             <span style="color:#ff79c6">if</span> collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>is_in_group(<span style="color:#f1fa8c">&#34;bodies&#34;</span>):
                 collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>apply_central_impulse(<span style="color:#ff79c6">-</span>collision<span style="color:#ff79c6">.</span>normal <span style="color:#ff79c6">*</span> push)</code></pre></div>
-<p>The collision normal points <em>out</em> of the rigid body, so we reverse it to point away from the character and apply the <code>push</code> factor.</p>
+<p>The collision normal points <em>out</em> of the rigid body, so we reverse it to point away from the character and apply the <code>push</code> factor. Now pushing works again, but it won&rsquo;t force the rigid bodies through walls:</p>
+
+<p><img src="/godot_recipes/img/inf_inertia3.gif" alt="alt" /></p>
 
 <p>You can also scale the force of the impulse based on the character&rsquo;s speed:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">collision<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>apply_central_impulse(<span style="color:#ff79c6">-</span>collision<span style="color:#ff79c6">.</span>normal <span style="color:#ff79c6">*</span> velocity<span style="color:#ff79c6">*</span>length() <span style="color:#ff79c6">*</span> push_factor)
@@ -2661,20 +2663,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1560455844"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1560455844"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1560455844"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1560455844"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1560455844"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1560455844"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1560455844"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1560457838"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1560457838"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1560457838"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1560457838"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1560457838"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1560457838"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1560457838"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1560455844"></script>
-    <script src="/godot_recipes/js/learn.js?1560455844"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1560455844"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1560457838"></script>
+    <script src="/godot_recipes/js/learn.js?1560457838"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1560457838"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1560455844" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1560455844"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1560457838" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1560457838"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

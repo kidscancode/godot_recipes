@@ -41,8 +41,7 @@ Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and
       <description>Problem You want your kinematic character to interact with rigid bodies.
 Solution This recipe applies equally well in both 2D and 3D nodes.
  By default, a kinematic body moved with move_and_slide() or move_and_collide() will push any rigid bodies it collides with. This interaction ignores the rigid body&amp;rsquo;s physics properties due to the kinematic move function&amp;rsquo;s infinite_inertia parameter.
-gif of inf. inertia pushing
-In some cases, this might be all you need.</description>
+In some cases, this might be all you need. However, if you want to avoid &amp;ldquo;glitches&amp;rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&amp;rsquo;ll need to add some code for the interactions.</description>
     </item>
     
     <item>
