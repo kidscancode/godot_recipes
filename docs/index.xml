@@ -456,6 +456,18 @@ Ads can be unpopular and whether to use them is a decision for the individual ga
     </item>
     
     <item>
+      <title>Saving settings</title>
+      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</guid>
+      <description>Saving settings We&amp;rsquo;ve added three toggle properties in the game - which works fine - but the settings aren&amp;rsquo;t preserved when we quit. We need to save those settings so the next time you run the game, they persist.
+First, we&amp;rsquo;ll define our settings file in res://settings.gd:
+var settings_file = &amp;#34;user://settings.save&amp;#34; Next, we&amp;rsquo;ll add saving/loading functions for the three game settings that we want to save.
+func save_settings(): var f = File.</description>
+    </item>
+    
+    <item>
       <title>Using KinematicBody2D</title>
       <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
       <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
