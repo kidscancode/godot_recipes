@@ -279,7 +279,7 @@ Download the project file here: [car_steering.zip](/godot_recipes/files/car_stee
 
 ## Related recipes
 
-- [Gamedev Math: Interpolation](http://kidscancode.org/godot_recipes/math/interpolation/)
+- [Gamedev Math: Interpolation](/godot_recipes/math/interpolation/)
 
 #### Like video?
 

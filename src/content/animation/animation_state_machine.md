@@ -120,5 +120,9 @@ Note that we're using `return` after traveling to the attack animations. This is
 
 ## Related recipes
 
-- [Spritesheet animation](http://kidscancode.org/godot_recipes/animation/spritesheet_animation/)
-- [Top-down character](http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
+- [Spritesheet animation](/godot_recipes/animation/spritesheet_animation/)
+- [Top-down character](/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
+
+#### Like video?
+
+{{< youtube 0bq2OIjHxk4 >}}

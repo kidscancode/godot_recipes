@@ -70,4 +70,4 @@ For more advanced behaviors, see the other recipes in this chapter.
 
 ## Related recipes
 
-- [Top-down character](http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
+- [Top-down character](/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)

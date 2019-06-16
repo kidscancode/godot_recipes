@@ -14,15 +14,15 @@ For this example, we'll assume an enemy with the following behaviors. See the in
 
 - **Patrol**
 
-    The "Patrol" state moves along a pre-defined path (or stands still if there's no path assigned). See [Recipe: Path following](http://kidscancode.org/godot_recipes/ai/path_follow/) for details.
+    The "Patrol" state moves along a pre-defined path (or stands still if there's no path assigned). See [Recipe: Path following](/godot_recipes/ai/path_follow/) for details.
 
 - **Chase**
 
-    The "Chase" state moves the enemy towards the player. See [Recipe: Chasing the player](http://kidscancode.org/godot_recipes/ai/chase/) for how to make this behavior.
+    The "Chase" state moves the enemy towards the player. See [Recipe: Chasing the player](/godot_recipes/ai/chase/) for how to make this behavior.
 
 - **Attack**
 
-    In this state, the player is in range of a melee attack, so the enemy stops moving and executes its attack. See [Recipe: Melee attacks](http://kidscancode.org/godot_recipes/animation/melee_attacks/) for how to make melee attacks.
+    In this state, the player is in range of a melee attack, so the enemy stops moving and executes its attack. See [Recipe: Melee attacks](/godot_recipes/animation/melee_attacks/) for how to make melee attacks.
 
 These behaviors are states - the enemy can only be in one of these states at a time, and certain events, such as the player getting near, will cause a transition to another state.
 
@@ -152,8 +152,8 @@ This example is intentionally kept as simplified as possible, while still demons
 
 ## Related recipes
 
-- [Top-down character](http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
-- [Spritesheet animation](http://kidscancode.org/godot_recipes/animation/spritesheet_animation/)
-- [Controlling animation states](http://kidscancode.org/godot_recipes/animation/animation_state_machine/)
-- [Path following](http://kidscancode.org/godot_recipes/ai/path_follow/)
-- [Chasing the player](http://kidscancode.org/godot_recipes/ai/chase/)
+- [Top-down character](/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
+- [Spritesheet animation](/godot_recipes/animation/spritesheet_animation/)
+- [Controlling animation states](/godot_recipes/animation/animation_state_machine/)
+- [Path following](/godot_recipes/ai/path_follow/)
+- [Chasing the player](/godot_recipes/ai/chase/)

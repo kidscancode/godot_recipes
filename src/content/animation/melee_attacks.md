@@ -50,3 +50,7 @@ When you have more than one attack animation, the size of the affected area may 
 
 - [Top-down character](http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement)
 - [Controlling animation states](http://kidscancode.org/godot_recipes/animation/animation_state_machine/)
+
+#### Like video?
+
+{{< youtube AaJopFFkmNo >}}
