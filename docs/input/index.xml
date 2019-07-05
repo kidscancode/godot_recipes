@@ -12,15 +12,14 @@
     
     
     <item>
-      <title>Capturing the Mouse</title>
-      <link>http://kidscancode.org/godot_recipes/input/mouse_capture/</link>
+      <title>Input Actions</title>
+      <link>http://kidscancode.org/godot_recipes/input/input_actions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://kidscancode.org/godot_recipes/input/mouse_capture/</guid>
-      <description>Problem You want to hide the mouse cursor and keep the mouse from leaving the game window. This is common in many 3D games (and some 2D ones).
-Solution You can set the mouse state using Input.set_mouse_mode(). There are four possible mouse modes:
- MOUSE_MODE_VISIBLE: The mouse is visible and can move freely into and out of the window. This is the default state.
- MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description>
+      <guid>http://kidscancode.org/godot_recipes/input/input_actions/</guid>
+      <description>Problem You want to understand Godot&amp;rsquo;s &amp;ldquo;input action&amp;rdquo; system.
+Solution Let&amp;rsquo;s say you&amp;rsquo;re making a top-down character and you write code using InputActionKey that uses the arrow keys for movement. You&amp;rsquo;ll quickly find that many players prefer to use &amp;ldquo;WASD&amp;rdquo; style controls. You can go back into your code and add the additional key checks, but this would result in duplicated/redundant code.
+Input actions can help to make your code more configurable.</description>
     </item>
     
     <item>
@@ -33,6 +32,18 @@ Solution You can set the mouse state using Input.set_mouse_mode(). There are fou
 Solution InputEventMouse is the base class for mouse events. It contains position and global_position properties. Inheriting from it are two classes: InputEventMouseButton and InputEventMouseMotion.
 You can assign mouse button events in the InputMap, so you can use them with is_action_pressed().
  InputEventMouseButton @GlobalScope.ButtonList contains a list of BUTTON_* constants for each possible button, which will be reported in the event’s button_index property. Note that the scrollwheel also counts as a button - two buttons, to be precise, with both BUTTON_WHEEL_UP and BUTTON_WHEEL_DOWN being separate events.</description>
+    </item>
+    
+    <item>
+      <title>Capturing the Mouse</title>
+      <link>http://kidscancode.org/godot_recipes/input/mouse_capture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/mouse_capture/</guid>
+      <description>Problem You want to hide the mouse cursor and keep the mouse from leaving the game window. This is common in many 3D games (and some 2D ones).
+Solution You can set the mouse state using Input.set_mouse_mode(). There are four possible mouse modes:
+ MOUSE_MODE_VISIBLE: The mouse is visible and can move freely into and out of the window. This is the default state.
+ MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description>
     </item>
     
   </channel>

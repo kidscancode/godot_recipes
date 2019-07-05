@@ -149,6 +149,22 @@ void vertex() {
 
 ![alt](/godot_recipes/img/shader_intro_07.gif)
 
+### Uniforms
+
+To pass a value to the shader, you need a variable declared with the _uniform_ keyword. Once you do this, the variable appears in the Inspector in much the same way an `export` variable. However, a uniform's value *can not* be changed in the shader!
+
+Uniform values are global to the shader and can be accessed from any function.
+
+### Hints
+
+You can also use optional *hints* to assist in setting the value in the Inspector.
+
+```glsl
+uniform float radius : hint_range(0, 1);
+```
+
+Hints are available for a variety of data types. See the [Shader Language Reference](https://docs.godotengine.org/en/latest/tutorials/shading/shading_reference/shading_language.html#uniforms) for a full list.
+
 ### Wrapping up
 
 This is just a tiny introduction to what's possible with shaders. See the rest of the recipes in this section for more examples you can use in your projects.

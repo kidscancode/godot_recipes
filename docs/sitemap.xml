@@ -27,10 +27,6 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_recipes/input/mouse_capture/</loc>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_recipes/ai/chase/</loc>
   </url>
   
@@ -40,10 +36,6 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/math/interpolation/</loc>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_recipes/input/mouse_input/</loc>
   </url>
   
   <url>
@@ -98,6 +90,18 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/input/input_actions/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/shaders/interacting/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/input/mouse_input/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/ai/path_follow/</loc>
   </url>
   
@@ -126,7 +130,15 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/input/mouse_capture/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/2d/car_steering/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/shaders/greyscale/</loc>
   </url>
   
   <url>
@@ -149,6 +161,10 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</loc>
     <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/shaders/blur/</loc>
   </url>
   
   <url>

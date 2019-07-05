@@ -1,6 +1,6 @@
 ---
 title: "Capturing the Mouse"
-weight: 1
+weight: 3
 draft: false
 ---
 

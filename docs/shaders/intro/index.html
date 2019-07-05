@@ -14,20 +14,20 @@
     <title>Shaders: intro :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1562086128" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1562086128" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1562358290" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1562358290" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1562086128" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1562358290" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1562086128"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1562358290"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1562086128"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1562086128"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1562358290"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1562358290"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1562086128"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1562358290"></script>
 
     
 
@@ -694,9 +694,9 @@
  
   
     
-      <li data-nav-id="/godot_recipes/input/mouse_capture/" title="Capturing the Mouse" class="dd-item ">
-        <a href="/godot_recipes/input/mouse_capture/">
-        Capturing the Mouse
+      <li data-nav-id="/godot_recipes/input/input_actions/" title="Input Actions" class="dd-item ">
+        <a href="/godot_recipes/input/input_actions/">
+        Input Actions
         
         </a>
     </li>
@@ -716,6 +716,25 @@
       <li data-nav-id="/godot_recipes/input/mouse_input/" title="Mouse Input" class="dd-item ">
         <a href="/godot_recipes/input/mouse_input/">
         Mouse Input
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/input/mouse_capture/" title="Capturing the Mouse" class="dd-item ">
+        <a href="/godot_recipes/input/mouse_capture/">
+        Capturing the Mouse
         
         </a>
     </li>
@@ -1253,6 +1272,63 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/shaders/interacting/" title="Interacting with Shaders" class="dd-item ">
+        <a href="/godot_recipes/shaders/interacting/">
+        Interacting with Shaders
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/shaders/greyscale/" title="Greyscale (monochrome) shader" class="dd-item ">
+        <a href="/godot_recipes/shaders/greyscale/">
+        Greyscale (monochrome) shader
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/shaders/blur/" title="Blur shader" class="dd-item ">
+        <a href="/godot_recipes/shaders/blur/">
+        Blur shader
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -1603,6 +1679,8 @@
 <li><a href="#varying-with-time">Varying with time</a></li>
 </ul></li>
 <li><a href="#vertex-shader">Vertex shader</a></li>
+<li><a href="#uniforms">Uniforms</a></li>
+<li><a href="#hints">Hints</a></li>
 <li><a href="#wrapping-up">Wrapping up</a></li>
 </ul></li>
 <li><a href="#related-recipes">Related Recipes</a></li>
@@ -1735,6 +1813,18 @@
     VERTEX.y <span style="color:#ff79c6">+=</span> sin(UV.x <span style="color:#ff79c6">*</span> TIME) <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10.0</span>;
 }</code></pre></div>
 <p><img src="/godot_recipes/img/shader_intro_07.gif" alt="alt" /></p>
+
+<h3 id="uniforms">Uniforms</h3>
+
+<p>To pass a value to the shader, you need a variable declared with the <em>uniform</em> keyword. Once you do this, the variable appears in the Inspector in much the same way an <code>export</code> variable. However, a uniform&rsquo;s value <em>can not</em> be changed in the shader!</p>
+
+<p>Uniform values are global to the shader and can be accessed from any function.</p>
+
+<h3 id="hints">Hints</h3>
+
+<p>You can also use optional <em>hints</em> to assist in setting the value in the Inspector.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-glsl" data-lang="glsl"><span style="color:#ff79c6">uniform</span> <span style="color:#ff79c6">float</span> radius <span style="color:#ff79c6">:</span> hint_range(<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">1</span>);</code></pre></div>
+<p>Hints are available for a variety of data types. See the <a href="https://docs.godotengine.org/en/latest/tutorials/shading/shading_reference/shading_language.html#uniforms">Shader Language Reference</a> for a full list.</p>
 
 <h3 id="wrapping-up">Wrapping up</h3>
 
@@ -2259,54 +2349,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -2354,22 +2396,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2483,19 +2509,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -2511,9 +2524,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -2595,6 +2605,102 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2629,6 +2735,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -2637,8 +2759,40 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -2844,20 +2998,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1562086128"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1562086128"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1562086128"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1562086128"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1562086128"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1562086128"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1562086128"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1562358290"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1562358290"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1562358290"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1562358290"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1562358290"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1562358290"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1562358290"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1562086128"></script>
-    <script src="/godot_recipes/js/learn.js?1562086128"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1562086128"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1562358290"></script>
+    <script src="/godot_recipes/js/learn.js?1562358290"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1562358290"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1562086128" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1562086128"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1562358290" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1562358290"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
