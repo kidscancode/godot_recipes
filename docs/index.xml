@@ -396,6 +396,17 @@ Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo
     </item>
     
     <item>
+      <title>Homing missile</title>
+      <link>http://kidscancode.org/godot_recipes/ai/homing_missile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ai/homing_missile/</guid>
+      <description>Problem You need a &amp;ldquo;homing missile&amp;rdquo; - a projectile that will seek a moving target.
+Solution For this example, we&amp;rsquo;ll use an Area2D node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, a PhysicsBody type node might be a better choice.
+The node setup and behavior of the missile is the same you would use for a &amp;ldquo;dumb&amp;rdquo; bullet.</description>
+    </item>
+    
+    <item>
       <title>Menus</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -436,6 +447,19 @@ These tiles are from Kenney&amp;rsquo;s &amp;ldquo;Topdown Shooter&amp;rdquo; ar
       <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</guid>
       <description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
 Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
+    </item>
+    
+    <item>
+      <title>Customizing the Mouse Cursor</title>
+      <link>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</guid>
+      <description>Problem You want to use a custom mouse cursor.
+Solution Setting the mouse cursor is done with Input.set_custom_mouse_cursor(). All you need is a texture to use. The texture must be no larger than 256x256 pixels in size.
+For example, to use the following image:
+And set its hotspot to the center:
+extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(64, 64)) The second parameter sets which system cursor to replace. See the Input docs for the full list.</description>
     </item>
     
     <item>

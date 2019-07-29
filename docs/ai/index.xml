@@ -47,5 +47,16 @@ The &amp;ldquo;Patrol&amp;rdquo; state moves along a pre-defined path (or stands
 The &amp;ldquo;Chase&amp;rdquo; state moves the enemy towards the player. See Recipe: Chasing the player for how to make this behavior.</description>
     </item>
     
+    <item>
+      <title>Homing missile</title>
+      <link>http://kidscancode.org/godot_recipes/ai/homing_missile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ai/homing_missile/</guid>
+      <description>Problem You need a &amp;ldquo;homing missile&amp;rdquo; - a projectile that will seek a moving target.
+Solution For this example, we&amp;rsquo;ll use an Area2D node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, a PhysicsBody type node might be a better choice.
+The node setup and behavior of the missile is the same you would use for a &amp;ldquo;dumb&amp;rdquo; bullet.</description>
+    </item>
+    
   </channel>
 </rss>

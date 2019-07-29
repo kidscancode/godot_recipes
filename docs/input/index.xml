@@ -46,5 +46,18 @@ Solution You can set the mouse state using Input.set_mouse_mode(). There are fou
  MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description>
     </item>
     
+    <item>
+      <title>Customizing the Mouse Cursor</title>
+      <link>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</guid>
+      <description>Problem You want to use a custom mouse cursor.
+Solution Setting the mouse cursor is done with Input.set_custom_mouse_cursor(). All you need is a texture to use. The texture must be no larger than 256x256 pixels in size.
+For example, to use the following image:
+And set its hotspot to the center:
+extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(64, 64)) The second parameter sets which system cursor to replace. See the Input docs for the full list.</description>
+    </item>
+    
   </channel>
 </rss>
