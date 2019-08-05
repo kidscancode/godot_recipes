@@ -5,7 +5,7 @@
     <meta name="description" content="Gamedev lessons for Godot Engine.">
     <meta name="keywords" content="gamedev, programming, game development, coding, gdscript, game design">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="generator" content="Hugo 0.56.3" />
     <meta name="description" content="">
 
 
@@ -14,20 +14,20 @@
     <title>Car steering :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1564440505" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1564440505" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1565047363" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1564440505" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1565047363" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1564440505"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1565047363"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1564440505"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1564440505"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1565047363"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1565047363"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1564440505"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1565047363"></script>
 
     
 
@@ -1063,6 +1063,25 @@
  
   
     
+      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
+        <a href="/godot_recipes/physics/godot3_kinematic2d/">
+        Using KinematicBody2D
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/godot_recipes/physics/kinematic_friction/" title="Kinematic Friction" class="dd-item ">
         <a href="/godot_recipes/physics/kinematic_friction/">
         Kinematic Friction
@@ -1104,25 +1123,6 @@
       <li data-nav-id="/godot_recipes/physics/kinematic_to_rigidbody/" title="Kinematic to Rigid Body Interaction" class="dd-item ">
         <a href="/godot_recipes/physics/kinematic_to_rigidbody/">
         Kinematic to Rigid Body Interaction
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/godot_recipes/physics/godot3_kinematic2d/" title="Using KinematicBody2D" class="dd-item ">
-        <a href="/godot_recipes/physics/godot3_kinematic2d/">
-        Using KinematicBody2D
         
         </a>
     </li>
@@ -1769,6 +1769,7 @@
 
 <p>There are many approaches to 2D car physics, mainly depending on how &ldquo;realistic&rdquo; you want to be. For this solution, we&rsquo;re going for an &ldquo;arcade&rdquo; level of realism, meaning we&rsquo;ll prioritize action over realism.</p>
 
+
 <div class="notices note" ><p>The method below is based on the algorithm found here: <a href="http://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html">http://engineeringdotnet.blogspot.com/2010/04/simple-2d-car-physics-in-games.html</a></p>
 </div>
 
@@ -1799,6 +1800,7 @@
 <span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
 <span style="color:#ff79c6">var</span> steer_angle</code></pre></div>
 <p>Set <code>wheelbase</code> to a value that works with your sprite.</p>
+
 
 <div class="notices note" ><p>Since we&rsquo;re using keyboard controls, turning is all-or-nothing. If you&rsquo;re using an analog joystick, you can instead vary this value based on the distance the stick moves.</p>
 </div>
@@ -1966,6 +1968,7 @@
 <p>At this point, we have a large number of settings that control the car&rsquo;s behavior. Adjusting them can drastically change how the car drives. To make experimenting with different values easier, download the project for this recipe below. When you run the game, you&rsquo;ll see a set of sliders you can use to change the car&rsquo;s behavior as you drive (press <code>&lt;Tab&gt;</code> to show/hide the slider panel).</p>
 
 <p><img src="/godot_recipes/img/car_sliders.png" alt="alt" /></p>
+
 
 <div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/car_steering.zip">car_steering.zip</a></p>
 </div>
@@ -3186,20 +3189,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1564440505"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1564440505"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1564440505"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1564440505"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1564440505"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1564440505"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1564440505"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1565047363"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1565047363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1564440505"></script>
-    <script src="/godot_recipes/js/learn.js?1564440505"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1564440505"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1565047363"></script>
+    <script src="/godot_recipes/js/learn.js?1565047363"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1565047363"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1564440505" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1564440505"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1565047363" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1565047363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

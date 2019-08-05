@@ -1,11 +1,8 @@
-+++
-Description = ""
-date = "2018-02-13T03:12:12-07:00"
-draft = false
-title = "Using KinematicBody2D"
-[author]
-	name = "Chris Bradfield"
-+++
+---
+title: "Using KinematicBody2D"
+weight: 1
+draft: false
+---
 
 Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we'll look at the `KinematicBody2D` node and show some examples of how it can be used.
 

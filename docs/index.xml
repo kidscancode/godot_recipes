@@ -174,6 +174,16 @@ Solution For this solution, we&amp;rsquo;ll assume you have the following input 
     </item>
     
     <item>
+      <title>Using KinematicBody2D</title>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
+      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
+Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
+    </item>
+    
+    <item>
       <title>Godot&#39;s Editor: Finding your way around</title>
       <link>http://kidscancode.org/godot_recipes/g101/start/101_02/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
@@ -547,16 +557,6 @@ Ads can be unpopular and whether to use them is a decision for the individual ga
 First, we&amp;rsquo;ll define our settings file in res://settings.gd:
 var settings_file = &amp;#34;user://settings.save&amp;#34; Next, we&amp;rsquo;ll add saving/loading functions for the three game settings that we want to save.
 func save_settings(): var f = File.</description>
-    </item>
-    
-    <item>
-      <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
-      <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
-      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
-Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
     </item>
     
     <item>

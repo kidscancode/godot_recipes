@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Using KinematicBody2D</title>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
+      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
+Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
+    </item>
+    
+    <item>
       <title>Kinematic Friction</title>
       <link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -42,16 +52,6 @@ Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and
 Solution This recipe applies equally well in both 2D and 3D nodes.
  By default, a kinematic body moved with move_and_slide() or move_and_collide() will push any rigid bodies it collides with. This interaction ignores the rigid body&amp;rsquo;s physics properties due to the kinematic move function&amp;rsquo;s infinite_inertia parameter.
 In some cases, this might be all you need. However, if you want to avoid &amp;ldquo;glitches&amp;rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&amp;rsquo;ll need to add some code for the interactions.</description>
-    </item>
-    
-    <item>
-      <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
-      <pubDate>Tue, 13 Feb 2018 03:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
-      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
-Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
     </item>
     
     <item>

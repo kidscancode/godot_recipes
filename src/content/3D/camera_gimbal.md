@@ -113,7 +113,7 @@ In your project, you'll probably also want to capture the mouse during gameplay.
 
 ### Camera zoom
 
-Camera zoom can is done by varying the `scale` of the gimbal system.
+Camera zoom works by varying the `scale` of the gimbal system.
 
 ```gdscript
 # zoom settings

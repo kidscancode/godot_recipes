@@ -75,6 +75,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/g101/start/101_02/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
@@ -300,11 +304,6 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/</loc>
     <lastmod>2019-04-09T22:57:31-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</loc>
-    <lastmod>2018-02-13T03:12:12-07:00</lastmod>
   </url>
   
   <url>

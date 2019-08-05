@@ -73,11 +73,14 @@ func get_input():
 
 ### Explanation
 
-We're using `friction` and `acceleration` as the amount to blend. In the case of acceleration, we want to find a value between the current speed and the maximum, `speed`. When decelerating, we're ramping the current speed down to `0`.
+We're using `friction` and `acceleration` as the amount to blend. For acceleration, we want to find a value between the current speed and the maximum, `speed`. When decelerating, we're ramping the current speed down to `0`.
 
 {{% notice tip %}}
 Using values of `1.0` would recreate the "instant" movement we started with.
 {{% /notice %}}
 
-
 ![alt](/godot_recipes/img/friction_platformer.gif)
+
+## Related Recipes
+
+- [Platform Character](/godot_recipes/2d/platform_character/)

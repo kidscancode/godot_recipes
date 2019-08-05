@@ -18,6 +18,8 @@ While it's possible to use `RigidBody2D` to make a platform character, we'll be 
 
 Start with a `KinematicBody2D` node, and add a `Sprite` and `CollisionShape2D` to it.
 
+Attach the following script to the root node of the character.
+
 ```gdscript
 extends KinematicBody2D
 
@@ -84,3 +86,7 @@ Download an example project using this recipe:
 {{% notice note %}}
 Download the project file here: [platform_character.zip](/godot_recipes/files/platform_character.zip)
 {{% /notice %}}
+
+## Related Recipes
+
+- [Input Intro](/godot_recipes/input/input_intro/)
