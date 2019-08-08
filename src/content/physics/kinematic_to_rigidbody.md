@@ -55,6 +55,9 @@ To give the colliding body a "push" we'll need to apply an impulse. An impulse i
 # This represents the player's inertia.
 export (int, 0, 200) var push = 100
 
+func _physics_process(delta):
+
+    # after calling move_and_slide()
     for index in get_slide_count():
         var collision = get_slide_collision(index)
             if collision.collider.is_in_group("bodies"):
@@ -80,3 +83,7 @@ Download the project file here: [kinematic_vs_rigid.zip](/godot_recipes/files/ki
 ## Related recipes
 
 - [Platform character](http://kidscancode.org/godot_recipes/ai/platform_character)
+
+#### Like video?
+
+{{< youtube C-Sn55e5wnk >}}

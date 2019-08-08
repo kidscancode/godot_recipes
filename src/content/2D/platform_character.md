@@ -45,13 +45,15 @@ func _physics_process(delta):
             velocity.y = jump_speed
 ```
 
+The values used for `speed`, `gravity`, and `jump_speed` depend greatly on the size of your player sprite. The player's texture in this example is `108x208` pixels. If your sprite is smaller, you'll want to use smaller values. We also want high values so that everything feels fast and responsive. A low gravity results in a floaty-feeling game while a high value means you're soon back on the ground and ready to jump again.
+
 Note that we're checking `is_on_floor()` *after* using `move_and_slide()`. The `move_and_slide()` function sets the value of this method, so it's important not to check it before, or you'll be getting the value from the previous frame.
 
 ### Friction and acceleration
 
-The above code is a great start, and you can use it as the foundation for a wide variety of platform controllers. One problem it has, though, is the instantaneous movement. For a more natural feel, it's better if the character has to accelerate up to its max speed and that it coasts to a stop when the input is released.
+The above code is a great start, and you can use it as the foundation for a wide variety of platform controllers. One problem it has, though, is the instantaneous movement. For a more natural feel, it's better if the character has to accelerate up to its max speed and that it coasts to a stop when there is no input.
 
-One way to add this is by using linear interpolation ("lerp"). When moving, we will lerp between the current speed and the max speed, while stopping will lerp between the current speed and `0`. Adjusting the lerp amount will give us a variety of movement styles.
+One way to add this behavior is to use linear interpolation ("lerp"). When moving, we will lerp between the current speed and the max speed and while stopping we'll lerp between the current speed and `0`. Adjusting the lerp amount will give us a variety of movement styles.
 
 {{% notice tip %}}
 For an overview of linear interpolation, see [Gamedev Math: Interpolation](/godot_recipes/math/interpolation/).
@@ -90,3 +92,4 @@ Download the project file here: [platform_character.zip](/godot_recipes/files/pl
 ## Related Recipes
 
 - [Input Intro](/godot_recipes/input/input_intro/)
+- [Kinematic Friction](/godot_recipes/physics/kinematic_friction/)

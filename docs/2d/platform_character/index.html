@@ -14,20 +14,20 @@
     <title>Platform character :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1565047363" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1565047363" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1565282711" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1565282711" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1565047363" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1565282711" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1565047363"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1565282711"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1565047363"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1565047363"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1565282711"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1565282711"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1565047363"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1565282711"></script>
 
     
 
@@ -1780,13 +1780,15 @@
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_just_pressed(<span style="color:#f1fa8c">&#34;jump&#34;</span>):
         <span style="color:#ff79c6">if</span> is_on_floor():
             velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> jump_speed</code></pre></div>
+<p>The values used for <code>speed</code>, <code>gravity</code>, and <code>jump_speed</code> depend greatly on the size of your player sprite. The player&rsquo;s texture in this example is <code>108x208</code> pixels. If your sprite is smaller, you&rsquo;ll want to use smaller values. We also want high values so that everything feels fast and responsive. A low gravity results in a floaty-feeling game while a high value means you&rsquo;re soon back on the ground and ready to jump again.</p>
+
 <p>Note that we&rsquo;re checking <code>is_on_floor()</code> <em>after</em> using <code>move_and_slide()</code>. The <code>move_and_slide()</code> function sets the value of this method, so it&rsquo;s important not to check it before, or you&rsquo;ll be getting the value from the previous frame.</p>
 
 <h3 id="friction-and-acceleration">Friction and acceleration</h3>
 
-<p>The above code is a great start, and you can use it as the foundation for a wide variety of platform controllers. One problem it has, though, is the instantaneous movement. For a more natural feel, it&rsquo;s better if the character has to accelerate up to its max speed and that it coasts to a stop when the input is released.</p>
+<p>The above code is a great start, and you can use it as the foundation for a wide variety of platform controllers. One problem it has, though, is the instantaneous movement. For a more natural feel, it&rsquo;s better if the character has to accelerate up to its max speed and that it coasts to a stop when there is no input.</p>
 
-<p>One way to add this is by using linear interpolation (&ldquo;lerp&rdquo;). When moving, we will lerp between the current speed and the max speed, while stopping will lerp between the current speed and <code>0</code>. Adjusting the lerp amount will give us a variety of movement styles.</p>
+<p>One way to add this behavior is to use linear interpolation (&ldquo;lerp&rdquo;). When moving, we will lerp between the current speed and the max speed and while stopping we&rsquo;ll lerp between the current speed and <code>0</code>. Adjusting the lerp amount will give us a variety of movement styles.</p>
 
 
 <div class="notices tip" ><p>For an overview of linear interpolation, see <a href="/godot_recipes/math/interpolation/">Gamedev Math: Interpolation</a>.</p>
@@ -1824,6 +1826,7 @@
 
 <ul>
 <li><a href="/godot_recipes/input/input_intro/">Input Intro</a></li>
+<li><a href="/godot_recipes/physics/kinematic_friction/">Kinematic Friction</a></li>
 </ul>
 
 
@@ -3027,20 +3030,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1565047363"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1565047363"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1565047363"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1565047363"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1565047363"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1565047363"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1565047363"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1565282711"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1565282711"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1565282711"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1565282711"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1565282711"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1565282711"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1565282711"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1565047363"></script>
-    <script src="/godot_recipes/js/learn.js?1565047363"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1565047363"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1565282711"></script>
+    <script src="/godot_recipes/js/learn.js?1565282711"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1565282711"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1565047363" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1565047363"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1565282711" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1565282711"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
