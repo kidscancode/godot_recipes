@@ -89,6 +89,20 @@ Solution When approaching this problem, beginners often wind up creating somethi
     </item>
     
     <item>
+      <title>TileMap: animated tiles</title>
+      <link>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</guid>
+      <description>Problem You&amp;rsquo;d like to use animated tiles in your TileMap.
+Solution The most straightforward way to approach this problem is to use the AnimatedTexture resource.
+Creating an AnimatedTexture For this example, we&amp;rsquo;ll use the following water tiles:
+Download these images: water.zip
+Unzip the images into your project folder. In the Inspector, click the &amp;ldquo;Create a new resource&amp;rdquo; button:
+Choose AnimatedTexture and set the Frames property to 5. For each frame, drag the corresponding image to its Texture property.</description>
+    </item>
+    
+    <item>
       <title>Using autotile</title>
       <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
