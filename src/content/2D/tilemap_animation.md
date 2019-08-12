@@ -1,6 +1,6 @@
 ---
 title: "TileMap: animated tiles"
-weight: 4
+weight: 5
 draft: false
 ---
 
@@ -51,4 +51,4 @@ You can download a complete project of this example: [animated_tiles.zip](/godot
 
 ## Related Recipes
 
-- [Using autotile](http://kidscancode.org/godot_recipes/autotile_intro)
+- [TileMap: using autotile](http://kidscancode.org/godot_recipes/autotile_intro)

@@ -1,5 +1,5 @@
 ---
-title: "Using autotile"
+title: "TileMap: using autotile"
 weight: 4
 draft: false
 ---

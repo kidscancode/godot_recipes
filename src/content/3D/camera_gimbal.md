@@ -22,7 +22,7 @@ The node setup should look like this:
         - Camera
 ```
 
-Set the _Transform/Translation_ of the `Camera` to `(0, 0, 10)`.
+Set the _Transform/Translation_ of the `Camera` to `(0, 0, 4)`.
 
 Here's how the gimbal works: the outer spatial node can only be rotated in **Y**, while the inner one rotates only in **X**. You can test this out by rotating them manually, but make sure you change to "Local Space Mode" first (that's the cube icon next to the lock in the menu bar - the keyboard shortcut to toggle is "T"). Remember to only move the _green_ ring of the outer node and only the _red_ ring of the inner one. Don't touch the camera node at all.
 

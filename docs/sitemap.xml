@@ -192,10 +192,6 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</loc>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_recipes/2d/autotile_intro/</loc>
   </url>
   
@@ -246,6 +242,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/math/</loc>
     <lastmod>2019-04-09T20:47:11-07:00</lastmod>
   </url>
@@ -284,6 +284,10 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/physics/joints_2d/</loc>
   </url>
   
   <url>
