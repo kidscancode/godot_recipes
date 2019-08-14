@@ -10,7 +10,7 @@ Many thanks to @TheDuriel on the [Godot Discord](https://discord.gg/zH7NUgz) for
 
 ## Problem
 
-Your project has started getting complex. You have multiple scenes, instances, and a _lot_ of nodes. You may find yourself writing code like any of the following:
+Your project has started getting complex. You have multiple scenes, instances, and a _lot_ of nodes. You've probably found yourself writing code like the following:
 
 ```gdscript
 get_node("../../SomeNode/SomeOtherNode")
@@ -33,6 +33,8 @@ We'll go into detailed examples later in this tutorial, but for now, here's the 
 If a node is calling a child, then `get_node()` is perfectly fine - it's going "down" the tree.
 
 If a node needs to communicate "up" the tree, it should use a signal.
+
+Keep this rule in mind
 
 ### Using `get_node()`
 

@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Transforms :: Godot Recipes by KidsCanCode</title>
+    <title>Grid-based movement :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1565763986" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/math/transforms/">
+  <body class="" data-url="/godot_recipes/2d/grid_movement/">
     <nav id="sidebar" class="">
 
 
@@ -435,7 +435,7 @@
   
     
     <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
-        
+        parent
         
         
         ">
@@ -573,7 +573,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/grid_movement/" title="Grid-based movement" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/grid_movement/" title="Grid-based movement" class="dd-item active">
         <a href="/godot_recipes/2d/grid_movement/">
         Grid-based movement
         
@@ -956,7 +956,7 @@
   
     
     <li data-nav-id="/godot_recipes/math/" title="Gamedev Math" class="dd-item
-        parent
+        
         
         
         ">
@@ -999,7 +999,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/math/transforms/" title="Transforms" class="dd-item active">
+      <li data-nav-id="/godot_recipes/math/transforms/" title="Transforms" class="dd-item ">
         <a href="/godot_recipes/math/transforms/">
         Transforms
         
@@ -1747,7 +1747,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/math/'>Gamedev Math</a> > Transforms
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Grid-based movement
           
         
           
@@ -1764,11 +1764,15 @@
 <ul>
 <li>
 <ul>
-<li><a href="#2d-transforms">2D Transforms</a>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
 <ul>
-<li><a href="#converting-between-local-and-global-space">Converting Between Local and Global Space</a></li>
+<li><a href="#character-setup">Character setup</a></li>
+<li><a href="#basic-movement">Basic movement</a></li>
+<li><a href="#collision">Collision</a></li>
+<li><a href="#animating-movement">Animating movement</a></li>
 </ul></li>
-<li><a href="#3d-transforms">3D Transforms</a></li>
+<li><a href="#related-recipes">Related Recipes</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -1787,7 +1791,7 @@
           
             <h1>
               
-              Transforms
+              Grid-based movement
             </h1>
           
 
@@ -1797,87 +1801,120 @@
 
 
 
-<p>Before reading this, make sure you have an understanding of vectors and how they&rsquo;re used in game development. If you don&rsquo;t, I recommend you read this introduction I wrote for the Godot documentation:
-<a href="https://docs.godotengine.org/en/latest/tutorials/math/vector_math.html">Vector Math</a>.</p>
+<h2 id="problem">Problem</h2>
 
-<h2 id="2d-transforms">2D Transforms</h2>
+<p>You need a 2D character that moves in a grid pattern.</p>
 
-<p>In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the <strong>Y</strong> axis points downward:</p>
+<h2 id="solution">Solution</h2>
 
-<p><img src="/godot_recipes/img/0_2d_coordinate_plane.png?width=250px" alt="alt" /></p>
+<p>Grid- or tile-based movement means the character&rsquo;s position is restricted. They can only stand on a particular tile - never between two tiles.</p>
 
-<p>To begin, let&rsquo;s consider this spaceship floating in space:</p>
+<h3 id="character-setup">Character setup</h3>
 
-<p><img src="/godot_recipes/img/0_2d_rocket1.png?width=250px" alt="alt" /></p>
+<p>Here are the nodes we&rsquo;ll use for the player:</p>
 
-<p>The ship is pointing in the same direction as the <strong>X</strong> axis. If we wanted it to move forward, we could add to its <strong>X</strong> coordinate and it would move to the left: <code>position += Vector2(10, 0)</code>.</p>
+<ul>
+<li><code>Area2D</code> (&ldquo;Player&rdquo;): Using an <code>Area2D</code> means we can detect overlap (for picking up objects or colliding with enemies).
 
-<p>But what happens when the ship rotates?</p>
+<ul>
+<li><code>Sprite</code>: You can use a sprite sheet here (we&rsquo;ll set up the animation below).</li>
+<li><code>CollisionShape2D</code>: Don&rsquo;t make the hitbox too big. Since the player will be standing on the center of a tile, overlaps will be from the center.</li>
+<li><code>RayCast2D</code>: For checking if movement is possible in the given direction.</li>
+<li><code>Tween</code>: For interpolating movement from tile to tile.</li>
+<li><code>AnimationPlayer</code>: For playing the character&rsquo;s walk animation(s).</li>
+</ul></li>
+</ul>
 
-<p><img src="/godot_recipes/img/0_2d_rocket2.png?width=250px" alt="alt" /></p>
+<p>Add some input actions to the Input Map. We&rsquo;ll use &ldquo;up&rdquo;, &ldquo;down&rdquo;, &ldquo;left&rdquo;, and &ldquo;right&rdquo; for this example.</p>
 
-<p>How do we move the ship forward now? If you remember Trigonometry from school, you might be starting to think about angles, sin and cos and doing something like <code>position += Vector2(10 * cos(angle), 10 * sin(angle))</code>. While this would work, there&rsquo;s a much more convenient way: the <em>Transform</em>.</p>
+<h3 id="basic-movement">Basic movement</h3>
 
-<p>Let&rsquo;s look at the rotated ship again, but this time, let&rsquo;s also imagine that the ship has its own <strong>X</strong> and <strong>Y</strong> axes that it carries with it, independent of the global axes:</p>
+<p>We&rsquo;ll start by setting up the tile-by-tile movement, without any animations
+or interpolation.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Area2D
 
-<p><img src="/godot_recipes/img/0_2d_rocket3.png?width=250px" alt="alt" /></p>
+<span style="color:#ff79c6">var</span> tile_size <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">64</span>
+<span style="color:#ff79c6">var</span> inputs <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;right&#34;</span>: Vector2<span style="color:#ff79c6">.</span>RIGHT,
+            <span style="color:#f1fa8c">&#34;left&#34;</span>: Vector2<span style="color:#ff79c6">.</span>LEFT,
+            <span style="color:#f1fa8c">&#34;up&#34;</span>: Vector2<span style="color:#ff79c6">.</span>UP,
+            <span style="color:#f1fa8c">&#34;down&#34;</span>: Vector2<span style="color:#ff79c6">.</span>DOWN}</code></pre></div>
+<p><code>tile_size</code> should be set to match the size of your tiles. In a larger project, this can be set by your main scene when instancing the player. We&rsquo;re using 64x64 tiles in the example below.</p>
 
-<p>These &ldquo;local&rdquo; axes are a part of the transform called the <code>basis</code>.</p>
+<p>The <code>inputs</code> dictionary maps the input action names to direction vectors. Make sure you have the names spelled the same here and in the Input Map (capitalization counts!).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
+    position <span style="color:#ff79c6">=</span> position<span style="color:#ff79c6">.</span>snapped(Vector2<span style="color:#ff79c6">.</span>ONE <span style="color:#ff79c6">*</span> tile_size)
+    position <span style="color:#ff79c6">+=</span> Vector2<span style="color:#ff79c6">.</span>ONE <span style="color:#ff79c6">*</span> tile_size<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span></code></pre></div>
+<p><code>snapped()</code> allows us to &ldquo;round&rdquo; the position to the nearest tile increment, and adding a half-tile amount makes sure the player is centered on the tile.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">for</span> dir <span style="color:#ff79c6">in</span> inputs<span style="color:#ff79c6">.</span>keys():
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(dir):
+            move(dir)
 
-<p>Knowing this, we can move the ship forward by moving it along its own <strong>X</strong> axis and we won&rsquo;t have to worry about angles and trig functions. To do this in Godot, we can use the <code>transform</code> property, which is available to all <a href="[https://link](https://docs.godotengine.org/en/latest/classes/class_node2d.html)">Node2D</a> derived nodes.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    position <span style="color:#ff79c6">+=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10</span></code></pre></div>
-<p>This code says &ldquo;Add the transform&rsquo;s x vector multiplied by 10.&rdquo; Let&rsquo;s break down what that means. The <code>transform</code> contains <code>x</code> and <code>y</code> properties that represent those local axes. They are <em>unit vectors</em>, which means their length is <code>1</code>. Another term for unit vector is <em>direction vector</em>. They tell us the direction the ship&rsquo;s <strong>x</strong> axis is pointing. We then multiply by <code>10</code> to scale it to a longer distance.</p>
+<span style="color:#ff79c6">func</span> move(dir):
+    position <span style="color:#ff79c6">+=</span> inputs[dir] <span style="color:#ff79c6">*</span> tile_size</code></pre></div>
+<p>Here&rsquo;s the actual movement code. When an input event occurs, we check the four directions to see which one matched, then pass it to <code>move()</code> to change the position.</p>
+
+<p><img src="/godot_recipes/img/grid_example1.gif" alt="alt" /></p>
+
+<h3 id="collision">Collision</h3>
+
+<p>Now we can add some obstacles. You can add <code>StaticBody2D</code>s to manually add some obstacles (enable snapping to make sure they&rsquo;re aligned with the grid) or use a TileMap, as in the example below.</p>
+
+<p>We&rsquo;ll use the <code>RayCast2D</code> to determine whether a move to the next tile is allowed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> ray <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>RayCast2D
+
+<span style="color:#ff79c6">func</span> move(dir):
+    ray<span style="color:#ff79c6">.</span>cast_to <span style="color:#ff79c6">=</span> inputs[dir] <span style="color:#ff79c6">*</span> tile_size
+    ray<span style="color:#ff79c6">.</span>force_raycast_update()
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>ray<span style="color:#ff79c6">.</span>is_colliding():
+        position <span style="color:#ff79c6">+=</span> inputs[dir] <span style="color:#ff79c6">*</span> tile_size</code></pre></div>
+<p>When changing a raycast&rsquo;s <code>cast_to</code> property, the physics engine won&rsquo;t recalculate its collisions until the next physics frame. <code>force_raycast_update()</code> lets you update the ray&rsquo;s state immediately. If it&rsquo;s not colliding, then we allow the move.</p>
+
+<p><img src="/godot_recipes/img/grid_example2.gif" alt="alt" /></p>
 
 
-<div class="notices tip" ><p>The <code>transform</code> property of a node is <em>relative</em> to its parent node. If you need to get the global value, it&rsquo;s available in <code>global_transform</code>.</p>
+<div class="notices note" ><p>Another common method is to use 4 separate raycasts, one for each direction.</p>
 </div>
 
 
-<p>In addition to the <code>basis</code>, the transform also contains a component called the <code>origin</code>. The basis represents the body&rsquo;s rotation, while the origin represents the <em>translation</em>, or change in position.</p>
+<h3 id="animating-movement">Animating movement</h3>
 
-<p>In this picture, the blue vector is the <code>transform.origin</code>. It is equal to the object&rsquo;s <code>position</code> vector.</p>
+<p>Lastly we can interpolate the position between tiles, giving a smooth feel to the movement. We&rsquo;ll use the <code>Tween</code> node to animate the <code>position</code> property.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">onready</span> <span style="color:#ff79c6">var</span> tween <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">$</span>Tween
 
-<p><img src="/godot_recipes/img/0_2d_rocket4.png?width=250px" alt="alt" /></p>
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3</span></code></pre></div>
+<p>Add a reference to the <code>Tween</code> node and a variable to set our movement speed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> tween<span style="color:#ff79c6">.</span>is_active():
+        <span style="color:#ff79c6">return</span>
+    <span style="color:#ff79c6">for</span> dir <span style="color:#ff79c6">in</span> inputs<span style="color:#ff79c6">.</span>keys():
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(dir):
+            move(dir)</code></pre></div>
+<p>We&rsquo;ll ignore any input while the tween is running.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> move(dir):
+    ray<span style="color:#ff79c6">.</span>cast_to <span style="color:#ff79c6">=</span> dir <span style="color:#ff79c6">*</span> tile_size
+    ray<span style="color:#ff79c6">.</span>force_raycast_update()
+    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>ray<span style="color:#ff79c6">.</span>is_colliding():
+<span style="color:#6272a4">#		position += dir * tile_size</span>
+        move_tween(dir)</code></pre></div>
+<p>Remove the direct <code>position</code> change and call a function to activate the tween:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> move_tween(dir):
+    tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;position&#34;</span>,
+        position, position <span style="color:#ff79c6">+</span> dir <span style="color:#ff79c6">*</span> tile_size,
+        <span style="color:#bd93f9">1.0</span><span style="color:#ff79c6">/</span>speed, Tween<span style="color:#ff79c6">.</span>TRANS_SINE, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
+    tween<span style="color:#ff79c6">.</span>start()</code></pre></div>
+<p><img src="/godot_recipes/img/grid_example3.gif" alt="alt" /></p>
 
-<h3 id="converting-between-local-and-global-space">Converting Between Local and Global Space</h3>
+<p>Experiment with different tween transitions for different movement effects.</p>
 
-<p>You can convert coordinates from local to global by applying the transform. To apply a transform, use <code>xform()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">var</span> global_position <span style="color:#ff79c6">=</span> transform<span style="color:#ff79c6">.</span>xform(local_position)</code></pre></div>
-<p>For convenience, <code>Node2D</code> and <code>Spatial</code> include helper functions for this. Instead of using <code>transform.xform()</code>, you can call <code>to_global()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">var</span> global_position <span style="color:#ff79c6">=</span> to_global(local_position)</code></pre></div>
-<p>To convert from global to local coordinates, you can use the opposite (inverse) of the transform with <code>xform_inv()</code>.</p>
+<p>You can download a complete project of this example: <a href="/godot_recipes/files/grid_based_movement.zip">grid_based_movement.zip</a></p>
 
-<p>Let&rsquo;s use the example of an object in the 2D plane and convert mouse clicks (global space) into coordinates relative to the object:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Sprite
+<h2 id="related-recipes">Related Recipes</h2>
 
-<span style="color:#ff79c6">func</span> _unhandled_input(event):
-    <span style="color:#ff79c6">if</span> event is InputEventMouseButton <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>pressed:
-        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT:
-            <span style="color:#8be9fd;font-style:italic">printt</span>(event<span style="color:#ff79c6">.</span>position, transform<span style="color:#ff79c6">.</span>xform_inv(event<span style="color:#ff79c6">.</span>position))</code></pre></div>
-<p>As with the previous operation, there are helper functions for this. Instead of using <code>transform.xform_inv()</code>, you can call <code>to_local()</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#8be9fd;font-style:italic">printt</span>(event<span style="color:#ff79c6">.</span>position, to_local(event<span style="color:#ff79c6">.</span>position))</code></pre></div>
-<p>See the <a href="https://docs.godotengine.org/en/latest/classes/class_transform2d.html">Transform2D docs</a> for a list of the available properties and methods.</p>
-
-<h2 id="3d-transforms">3D Transforms</h2>
-
-<p>In 3D space, the concept of transforms applies in thesame way as in 2D. In fact, it becomes even more necessary, as using angles in 3D can lead to a variety of problems, as we&rsquo;ll see in a bit.</p>
-
-<p>3D nodes inherit from the base node <a href="[https://link](https://docs.godotengine.org/en/latest/classes/class_spatial.html)">Spatial</a>, which contains the transform information. The 3D transform requires more information than the 2D version. Position is still held in the <code>origin</code> property, but rotation is in a property called <code>basis</code>, which contains three unit vectors representing the body&rsquo;s local <strong>X</strong>, <strong>Y</strong>, and <strong>Z</strong> axes.</p>
-
-<p><img src="/godot_recipes/img/3d_intro_gizmo.png" alt="alt" /></p>
-
-
-<div class="notices note" ><p>In the editor, you can see and manipulate the body&rsquo;s local orientation by clicking the &ldquo;Local Space Mode&rdquo; button.
-<img src="/godot_recipes/img/3d_intro_local_space.png" alt="alt" /></p>
-</div>
-
-
-<p>As in 2D, we can use the local axes to move an object forward. In Godot&rsquo;s 3D orientation (<strong>Y-up</strong>), this means that by default the body&rsquo;s <strong>-Z</strong> axis is the forward direction:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    translation <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span>transform<span style="color:#ff79c6">.</span>basis<span style="color:#ff79c6">.</span>z</code></pre></div>
-
-<div class="notices tip" ><p>Godot has default vector values defined, for example: <code>Vector3.FORWARD = Vector3(0, 0, -1)</code>. See <a href="https://docs.godotengine.org/en/latest/classes/class_vector2.html">Vector2</a> and <a href="https://docs.godotengine.org/en/latest/classes/class_vector3.html">Vector3</a> for details.</p>
-</div>
-
+<ul>
+<li><a href="/godot_recipes/input/input_actions/">Input Actions</a></li>
+<li><a href="/godot_recipes/math/interpolation/">Interpolation</a></li>
+</ul>
 
 
 <h3>Comments</h3>
@@ -2180,6 +2217,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2187,6 +2225,25 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -2273,21 +2330,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2304,6 +2346,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2564,7 +2609,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2577,9 +2621,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2596,7 +2637,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -2616,9 +2656,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 

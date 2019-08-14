@@ -78,6 +78,18 @@ Solution For this solution, we&amp;rsquo;ll assume you have the following input 
     </item>
     
     <item>
+      <title>Grid-based movement</title>
+      <link>http://kidscancode.org/godot_recipes/2d/grid_movement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/grid_movement/</guid>
+      <description>Problem You need a 2D character that moves in a grid pattern.
+Solution Grid- or tile-based movement means the character&amp;rsquo;s position is restricted. They can only stand on a particular tile - never between two tiles.
+Character setup Here are the nodes we&amp;rsquo;ll use for the player:
+ Area2D (&amp;ldquo;Player&amp;rdquo;): Using an Area2D means we can detect overlap (for picking up objects or colliding with enemies).  Sprite: You can use a sprite sheet here (we&amp;rsquo;ll set up the animation below).</description>
+    </item>
+    
+    <item>
       <title>Car steering</title>
       <link>http://kidscancode.org/godot_recipes/2d/car_steering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
