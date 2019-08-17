@@ -14,20 +14,20 @@
     <title>Camera Gimbal :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1565823795" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1565823795" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1566082496" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1566082496" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1565823795" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1566082496" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1565823795"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1566082496"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1565823795"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1565823795"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1566082496"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1566082496"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1565823795"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1566082496"></script>
 
     
 
@@ -1868,6 +1868,8 @@
 </tr>
 </tbody>
 </table>
+
+<p>Here&rsquo;s the initial script. Note that we&rsquo;re making sure to rotate each <code>Spatial</code> in its local space around the specific axis, as described above.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Spatial
 
 <span style="color:#ff79c6">var</span> rotation_speed <span style="color:#ff79c6">=</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>
@@ -1879,23 +1881,25 @@
         y_rotation <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_left&#34;</span>):
         y_rotation <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-    rotate_y(y_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
+    rotate_object_local(Vector3<span style="color:#ff79c6">.</span>UP, y_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
     <span style="color:#6272a4"># Rotate inner gimbal around local x axis</span>
     <span style="color:#ff79c6">var</span> x_rotation <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_up&#34;</span>):
         x_rotation <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_down&#34;</span>):
         x_rotation <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_x(x_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
+    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_object_local(Vector3<span style="color:#ff79c6">.</span>RIGHT, x_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
 
 <span style="color:#ff79c6">func</span> _process(delta):
     get_input_keyboard(delta)</code></pre></div>
 <p>Make a test scene with a <code>MeshInstance</code> and instance the CameraGimbal in it to test out the movement.</p>
 
-<p>You&rsquo;ll notice that holding the up/down control will cause the camera to rotate all the way around, eventually becoming upside-down. To prevent this, we can clamp the rotation to a limit of 90 degrees up or down.</p>
+<p>You&rsquo;ll notice that holding the up/down control will cause the camera to rotate all the way around, eventually becoming upside-down. To prevent this, we can clamp the rotation.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _process(delta):
     get_input_keyboard(delta)
-    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(<span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span>PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>, PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)</code></pre></div>
+    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(<span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.4</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.01</span>)</code></pre></div>
+<p>The <code>-1.4</code> value lets it go <em>almost</em> to 90 degrees up, while setting a very small value for the minimum keeps the camera from clipping into the ground. Feel free to experiment with other values.</p>
+
 <h3 id="mouse-control">Mouse control</h3>
 
 <p>We&rsquo;ll add a flag called <code>mouse_control</code> to enable easy toggling of mouse/keyboard controls.</p>
@@ -1909,18 +1913,23 @@
     <span style="color:#ff79c6">if</span> mouse_control <span style="color:#ff79c6">and</span> event is InputEventMouseMotion:
         <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
             <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">if</span> invert_x <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-            rotate_y(dir <span style="color:#ff79c6">*</span> mouse_sensitivity <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x)
+            rotate_object_local(Vector3<span style="color:#ff79c6">.</span>UP, dir <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> mouse_sensitivity)
         <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
             <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">if</span> invert_y <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-            <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_x(dir <span style="color:#ff79c6">*</span> mouse_sensitivity <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y)
+            <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_object_local(Vector3<span style="color:#ff79c6">.</span>RIGHT, dir <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">*</span> mouse_sensitivity)
 
 <span style="color:#ff79c6">func</span> _process(delta):
     <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>mouse_control:
         get_input_keyboard(delta)</code></pre></div>
 <p>This code works by converting horizontal mouse motion to <strong>Y</strong> rotation of the outer gimbal and vertical to <strong>X</strong> rotation for the inner gimbal. We&rsquo;ve also added <code>invert_x</code> and <code>invert_y</code> flags so that you can flip the motion in either axis - many players prefer one over the other, so it&rsquo;s best to allow for both options.</p>
 
-<p>Finally, in <code>_process()</code> we disable keyboard input when using mouse control.</p>
+<p>Also, in <code>_process()</code> we disable keyboard input when using mouse control.</p>
 
+<p>You may notice a problem with the up/down movement if you move the mouse too quickly. A large value for <code>event.relative.y</code> results in &ldquo;skipping&rdquo; to the opposite side of the clamped value. We can solve this by clamping the vertical mouse movement to a reasonable value. Change the above code for <code>y</code> to this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
+    <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">if</span> invert_y <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">var</span> y_rotation <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">30</span>, <span style="color:#bd93f9">30</span>)
+    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_object_local(Vector3<span style="color:#ff79c6">.</span>RIGHT, dir <span style="color:#ff79c6">*</span> y_rotation <span style="color:#ff79c6">*</span> mouse_sensitivity)</code></pre></div>
 
 <div class="notices note" ><p>In your project, you&rsquo;ll probably also want to capture the mouse during gameplay. See the linked recipe at the end of this document for details.</p>
 </div>
@@ -1969,19 +1978,21 @@
 <span style="color:#ff79c6">export</span> (float, <span style="color:#bd93f9">0.0</span>, <span style="color:#bd93f9">2.0</span>) <span style="color:#ff79c6">var</span> rotation_speed <span style="color:#ff79c6">=</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>
 
 <span style="color:#6272a4"># mouse properties</span>
-<span style="color:#ff79c6">export</span> (bool) <span style="color:#ff79c6">var</span> invert_y <span style="color:#ff79c6">=</span> false
-<span style="color:#ff79c6">export</span> (bool) <span style="color:#ff79c6">var</span> invert_x <span style="color:#ff79c6">=</span> false
 <span style="color:#ff79c6">export</span> (bool) <span style="color:#ff79c6">var</span> mouse_control <span style="color:#ff79c6">=</span> false
 <span style="color:#ff79c6">export</span> (float, <span style="color:#bd93f9">0.001</span>, <span style="color:#bd93f9">0.1</span>) <span style="color:#ff79c6">var</span> mouse_sensitivity <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.005</span>
+<span style="color:#ff79c6">export</span> (bool) <span style="color:#ff79c6">var</span> invert_y <span style="color:#ff79c6">=</span> false
+<span style="color:#ff79c6">export</span> (bool) <span style="color:#ff79c6">var</span> invert_x <span style="color:#ff79c6">=</span> false
 
 <span style="color:#6272a4"># zoom settings</span>
 <span style="color:#ff79c6">export</span> (float) <span style="color:#ff79c6">var</span> max_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">3.0</span>
-<span style="color:#ff79c6">export</span> (float) <span style="color:#ff79c6">var</span> min_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>
+<span style="color:#ff79c6">export</span> (float) <span style="color:#ff79c6">var</span> min_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.4</span>
 <span style="color:#ff79c6">export</span> (float, <span style="color:#bd93f9">0.05</span>, <span style="color:#bd93f9">1.0</span>) <span style="color:#ff79c6">var</span> zoom_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.09</span>
 
 <span style="color:#ff79c6">var</span> zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1.5</span>
 
 <span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>get_mouse_mode() <span style="color:#ff79c6">!=</span> Input<span style="color:#ff79c6">.</span>MOUSE_MODE_CAPTURED:
+        <span style="color:#ff79c6">return</span>
     <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_zoom_in&#34;</span>):
         zoom <span style="color:#ff79c6">-=</span> zoom_speed
     <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_zoom_out&#34;</span>):
@@ -1990,10 +2001,11 @@
     <span style="color:#ff79c6">if</span> mouse_control <span style="color:#ff79c6">and</span> event is InputEventMouseMotion:
         <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
             <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">if</span> invert_x <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-            rotate_y(dir <span style="color:#ff79c6">*</span> mouse_sensitivity <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x)
+            rotate_object_local(Vector3<span style="color:#ff79c6">.</span>UP, dir <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> mouse_sensitivity)
         <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">!=</span> <span style="color:#bd93f9">0</span>:
             <span style="color:#ff79c6">var</span> dir <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span> <span style="color:#ff79c6">if</span> invert_y <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-            <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_x(dir <span style="color:#ff79c6">*</span> mouse_sensitivity <span style="color:#ff79c6">*</span> event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y)
+            <span style="color:#ff79c6">var</span> y_rotation <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(event<span style="color:#ff79c6">.</span>relative<span style="color:#ff79c6">.</span>y, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">30</span>, <span style="color:#bd93f9">30</span>)
+            <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_object_local(Vector3<span style="color:#ff79c6">.</span>RIGHT, dir <span style="color:#ff79c6">*</span> y_rotation <span style="color:#ff79c6">*</span> mouse_sensitivity)
 
 <span style="color:#ff79c6">func</span> get_input_keyboard(delta):
     <span style="color:#6272a4"># Rotate outer gimbal around y axis</span>
@@ -2002,20 +2014,20 @@
         y_rotation <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_left&#34;</span>):
         y_rotation <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
-    rotate_y(y_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
+    rotate_object_local(Vector3<span style="color:#ff79c6">.</span>UP, y_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
     <span style="color:#6272a4"># Rotate inner gimbal around local x axis</span>
     <span style="color:#ff79c6">var</span> x_rotation <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_up&#34;</span>):
         x_rotation <span style="color:#ff79c6">+=</span> <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>
     <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;cam_down&#34;</span>):
         x_rotation <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
-    x_rotation <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span>x_rotation <span style="color:#ff79c6">if</span> invert <span style="color:#ff79c6">else</span> x_rotation
-    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_x(x_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
+    x_rotation <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">-</span>x_rotation <span style="color:#ff79c6">if</span> invert_y <span style="color:#ff79c6">else</span> x_rotation
+    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotate_object_local(Vector3<span style="color:#ff79c6">.</span>RIGHT, x_rotation <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta)
 
 <span style="color:#ff79c6">func</span> _process(delta):
     <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>mouse_control:
         get_input_keyboard(delta)
-    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(<span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span>PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>, PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>)
+    <span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(<span style="color:#ff79c6">$</span>InnerGimbal<span style="color:#ff79c6">.</span>rotation<span style="color:#ff79c6">.</span>x, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">1.4</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">0.01</span>)
     scale <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(scale, Vector3<span style="color:#ff79c6">.</span>ONE <span style="color:#ff79c6">*</span> zoom, zoom_speed)
     <span style="color:#ff79c6">if</span> target:
         global_transform<span style="color:#ff79c6">.</span>origin <span style="color:#ff79c6">=</span> get_node(target)<span style="color:#ff79c6">.</span>global_transform<span style="color:#ff79c6">.</span>origin</code></pre></div>
@@ -3272,20 +3284,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1565823795"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1565823795"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1565823795"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1565823795"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1565823795"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1565823795"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1565823795"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1566082496"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1566082496"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1566082496"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1566082496"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1566082496"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1566082496"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1566082496"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1565823795"></script>
-    <script src="/godot_recipes/js/learn.js?1565823795"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1565823795"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1566082496"></script>
+    <script src="/godot_recipes/js/learn.js?1566082496"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1566082496"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1565823795" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1565823795"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1566082496" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1566082496"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

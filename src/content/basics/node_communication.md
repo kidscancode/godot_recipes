@@ -20,7 +20,7 @@ get_tree().get_root().get_node("SomeNode/SomeOtherNode")
 
 If you do, you'll soon find that node references like this break easily. As soon as you change one thing about your scene tree, none of those references may be valid anymore.
 
-There is a better way.
+Communication between nodes and scenes doesn't have to be complicated. There is a better way.
 
 ## Solution
 
@@ -30,7 +30,7 @@ We'll go into detailed examples later in this tutorial, but for now, here's the 
 
 > Get down, signal up.
 
-If a node is calling a child, then `get_node()` is perfectly fine - it's going "down" the tree.
+If a node is calling a child (i.e. going "down" the tree), then `get_node()` is appropriate.
 
 If a node needs to communicate "up" the tree, it should use a signal.
 
@@ -42,7 +42,7 @@ Keep this rule in mind
 
 ### Using groups
 
-### Using owners
+### Using `owner`
 
 
 ## Related recipes
