@@ -11,5 +11,15 @@
 	<atom:link href="http://kidscancode.org/godot_recipes/basics/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Understanding &#39;delta&#39;</title>
+      <link>http://kidscancode.org/godot_recipes/basics/understanding_delta/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/basics/understanding_delta/</guid>
+      <description>Problem The delta or &amp;ldquo;delta time&amp;rdquo; parameter is a frequently-misunderstood concept in game development. In this tutorial, we&amp;rsquo;ll explain how it&amp;rsquo;s used, the importance of frame-rate independent movement, and practical examples of its use in Godot.
+Solution To illustrate the problem, let&amp;rsquo;s consider a Sprite node moving across the screen. If our screen is 600 pixels wide and we want the sprite to take 5 seconds to cross the screen, we can use the following calculation to find the necessary speed:</description>
+    </item>
+    
   </channel>
 </rss>
