@@ -482,6 +482,17 @@ Capturing the Mouse One issue with our mouse-based controls is that as you move 
     </item>
     
     <item>
+      <title>3D Unit Healthbars</title>
+      <link>http://kidscancode.org/godot_recipes/3d/healthbars/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/3d/healthbars/</guid>
+      <description>Problem You want a floating &amp;ldquo;healthbar&amp;rdquo; for your 3D game objects (mobs, characters, etc.).
+Solution For this solution, we&amp;rsquo;re going to re-use a 2D healthbar based on a TextureProgress node. It&amp;rsquo;s already set up with textures and code for updating the value and color. If you already have something similar, feel free to use it here. In the example, we&amp;rsquo;ll name this scene &amp;ldquo;Healthbar2D&amp;rdquo;.
+If you need some assets, here are the three images used in the bar:</description>
+    </item>
+    
+    <item>
       <title>Customizing the Mouse Cursor</title>
       <link>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
