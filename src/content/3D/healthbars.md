@@ -80,8 +80,6 @@ If the `Viewport` were not a child of the `Sprite3D`, we could set it as the spr
 ```gdscript
 extends Sprite3D
 
-onready var bar = $Viewport/HealthBar2D
-
 func _ready():
     texture = $Viewport.get_texture()
 ```
@@ -97,6 +95,8 @@ $HealthBar3D.update(health, max_health)
 Add the following to `HealthBar3D.gd`:
 
 ```gdscript
+onready var bar = $Viewport/HealthBar2D
+
 func update(value, full):
     bar.update_bar(value, full)
 ```
