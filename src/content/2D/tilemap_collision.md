@@ -38,3 +38,12 @@ You can also change the tile by setting it to a new `id`:
 ```gdscript
     collision.collider.set_cellv(tile_pos, new_id)
 ```
+
+## Related recipes
+
+- [TileMap: using autotile](http://kidscancode.org/godot_recipes/2d/autotile_intro/)
+- [TileMap: animated tiles](http://kidscancode.org/godot_recipes/2d/tilemap_animation/)
+
+#### Like video?
+
+{{< youtube OzgK__VowVs >}}

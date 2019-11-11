@@ -71,6 +71,8 @@ Add a `Viewport` as a child of the `Sprite3D`. In the Inspector set these proper
 - _Rendering/Usage_: **2D**
 - _Render Target/V Flip_: **On**
 
+We also need to set the size of the Viewport to match the size of the healthbar texture, which is `(200, 26)`.
+
 Instance the `HealthBar2D` as a child of the `Viewport`. Your scene should look like this:
 
 ![alt](/godot_recipes/img/3d_bars03.png)
@@ -127,4 +129,8 @@ You can use this technique to display any other `Control` nodes, such as `Label`
 
 ## Related Recipes
 
-- [Object Healthbars](/godot_recipes/ui/unit_healthbar/)
+- [Object Healthbars (2D)](/godot_recipes/ui/unit_healthbar/)
+
+#### Like video?
+
+{{< youtube 37hEX3Lrc0A >}}
