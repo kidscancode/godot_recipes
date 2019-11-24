@@ -9,3 +9,7 @@ pre = "<i class='fas fa-chess-pawn fa-fw'></i> "
 # <i class='fas fa-chess-pawn'></i> Games
 
 Demo games and tutorials.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

@@ -9,3 +9,7 @@ pre = "<i class='fas fa-box-open'></i> "
 # <i class="fas fa-box-open"></i> Misc
 
 Other recipes that just don't fit in anywhere else.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

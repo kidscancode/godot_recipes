@@ -518,6 +518,17 @@ In some cases, this might be all you need. However, if you want to avoid &amp;ld
     </item>
     
     <item>
+      <title>Moving Platforms</title>
+      <link>http://kidscancode.org/godot_recipes/2d/moving_platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/moving_platforms/</guid>
+      <description>Problem You need moving platforms in your 2D platformer.
+Solution There are several ways to approach this problem. In this recipe, we&amp;rsquo;ll use KinematicBody2Ds for our platforms and move them with AnimationPlayer. This allows for a variety of movement styles while minimizing the amount of code we need to write.
+Setting up We&amp;rsquo;ll start with a basic platformer setup using the Platform character recipe. We will need to make one small modification from that recipe: using move_and_slide_with_snap() for the movement.</description>
+    </item>
+    
+    <item>
       <title>Score and HUD</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

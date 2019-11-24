@@ -1,7 +1,7 @@
 ---
 title: "Moving Platforms"
 weight: 5
-draft: true
+draft: false
 ---
 
 ## Problem

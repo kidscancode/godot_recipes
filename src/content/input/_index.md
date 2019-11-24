@@ -9,3 +9,7 @@ pre = "<i class='fas fa-gamepad fa-fw'></i> "
 # <i class='fas fa-gamepad'></i> Input
 
 Handling input - from keyboard and mouse to game controllers and touchscreens.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

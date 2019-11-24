@@ -9,3 +9,7 @@ pre = "<i class='fas fa-cube fa-fw'></i> "
 # <i class='fas fa-cube'></i> 3D
 
 Tips, tricks, and tutorials on the 3D side of game development.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

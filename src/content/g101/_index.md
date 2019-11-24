@@ -12,3 +12,7 @@ pre = "<i class='fas fa-graduation-cap fa-fw'></i> "
 
 Your introduction to the Godot game engine. If you've never used a game engine
 before, or if you’re just new to Godot, this is the place to start.
+
+#### In this section:
+
+{{% children  sort="weight" depth="2" %}}

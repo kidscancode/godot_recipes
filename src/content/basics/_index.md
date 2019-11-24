@@ -12,5 +12,4 @@ Basic Godot tips and tricks that apply to any project.
 
 #### In this section:
 
-- Setting up your project.
-- Importing assets (images, sounds, etc.).
+{{% children  sort="weight" %}}

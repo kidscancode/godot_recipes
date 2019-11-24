@@ -11,3 +11,7 @@ pre = "<i class='fas fa-feather-alt fa-fw'></i> "
 ![alt](/godot_recipes/img/godot3_logo.png)
 
 Have you downloaded Godot yet? You can get it here: [https://godotengine.org]([https://link](https://godotengine.org))
+
+#### In this section:
+
+{{% children  sort="weight" %}}

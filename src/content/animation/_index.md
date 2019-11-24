@@ -9,3 +9,7 @@ pre = "<i class='fas fa-film fa-fw'></i> "
 # <i class='fas fa-film'></i> Animation
 
 Using Godot's animation system.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

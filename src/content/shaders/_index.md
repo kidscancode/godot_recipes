@@ -9,3 +9,7 @@ pre = "<i class='fas fa-draw-polygon fa-fw'></i> "
 # <i class='fas fa-draw-polygon'></i> Shaders
 
 Deep voodoo. Cool effects.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

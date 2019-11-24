@@ -12,8 +12,4 @@ Building user interfaces.
 
 #### In this section:
 
-- Displaying game data
-- HUDs and overlays
-- Game menus
-- Start/end screens
-- Interactive screens: inventory, maps, and more.
+{{% children  sort="weight" %}}

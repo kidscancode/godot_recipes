@@ -9,3 +9,7 @@ pre = "<i class='fas fa-project-diagram fa-fw'></i> "
 # <i class='fas fa-project-diagram'></i> AI/Behavior
 
 Automated behavior and (sometimes) smarter entities.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

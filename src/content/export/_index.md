@@ -12,6 +12,4 @@ Building and exporting your project for PC, web, or mobile.
 
 #### In this section:
 
-- Getting and using export templates.
-- Customizing export templates.
-- Platforms (Android, iOS, HTML, etc)
+{{% children  sort="weight" %}}

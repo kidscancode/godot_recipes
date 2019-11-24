@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Customizing the Mouse Cursor :: Godot Recipes by KidsCanCode</title>
+    <title>Moving Platforms :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1574629736" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/input/custom_mouse_cursor/">
+  <body class="" data-url="/godot_recipes/2d/moving_platforms/">
     <nav id="sidebar" class="">
 
 
@@ -464,7 +464,7 @@
   
     
     <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
-        
+        parent
         
         
         ">
@@ -659,7 +659,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/moving_platforms/" title="Moving Platforms" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/moving_platforms/" title="Moving Platforms" class="dd-item active">
         <a href="/godot_recipes/2d/moving_platforms/">
         Moving Platforms
         
@@ -775,7 +775,7 @@
   
     
     <li data-nav-id="/godot_recipes/input/" title="Input" class="dd-item
-        parent
+        
         
         
         ">
@@ -856,7 +856,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/input/custom_mouse_cursor/" title="Customizing the Mouse Cursor" class="dd-item active">
+      <li data-nav-id="/godot_recipes/input/custom_mouse_cursor/" title="Customizing the Mouse Cursor" class="dd-item ">
         <a href="/godot_recipes/input/custom_mouse_cursor/">
         Customizing the Mouse Cursor
         
@@ -1814,7 +1814,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/input/'>Input</a> > Customizing the Mouse Cursor
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Moving Platforms
           
         
           
@@ -1832,7 +1832,18 @@
 <li>
 <ul>
 <li><a href="#problem">Problem</a></li>
-<li><a href="#solution">Solution</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#setting-up">Setting up</a></li>
+<li><a href="#creating-the-platform">Creating the platform</a></li>
+</ul></li>
+<li><a href="#related-recipes">Related recipes</a>
+<ul>
+<li>
+<ul>
+<li><a href="#like-video">Like video?</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -1851,7 +1862,7 @@
           
             <h1>
               
-              Customizing the Mouse Cursor
+              Moving Platforms
             </h1>
           
 
@@ -1863,24 +1874,64 @@
 
 <h2 id="problem">Problem</h2>
 
-<p>You want to use a custom mouse cursor.</p>
+<p>You need moving platforms in your 2D platformer.</p>
 
 <h2 id="solution">Solution</h2>
 
-<p>Setting the mouse cursor is done with <code>Input.set_custom_mouse_cursor()</code>. All you need is a texture to use. The texture must be no larger than <code>256x256</code> pixels in size.</p>
+<p>There are several ways to approach this problem. In this recipe, we&rsquo;ll use <code>KinematicBody2D</code>s for our platforms and move them with <code>AnimationPlayer</code>. This allows for a variety of movement styles while minimizing the amount of code we need to write.</p>
 
-<p>For example, to use the following image:</p>
+<h3 id="setting-up">Setting up</h3>
 
-<p><img src="/godot_recipes/img/crosshair137.png" alt="alt" /></p>
+<p>We&rsquo;ll start with a basic platformer setup using the <a href="http://kidscancode.org/godot_recipes/ai/platform_character">Platform character</a> recipe. We will need to make one small modification from that recipe: using <code>move_and_slide_with_snap()</code> for the movement.</p>
 
-<p>And set its hotspot to the center:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node2D
+<p>Here is the updated code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _physics_process(delta):
+    get_input()
+    velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">+=</span> gravity <span style="color:#ff79c6">*</span> delta
+    <span style="color:#ff79c6">var</span> snap <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>DOWN <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">16</span> <span style="color:#ff79c6">if</span> is_on_floor() <span style="color:#ff79c6">else</span> Vector2<span style="color:#ff79c6">.</span>ZERO
+    velocity <span style="color:#ff79c6">=</span> move_and_slide_with_snap(velocity, snap, Vector2<span style="color:#ff79c6">.</span>UP)
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_just_pressed(<span style="color:#f1fa8c">&#34;jump&#34;</span>):
+        <span style="color:#ff79c6">if</span> is_on_floor():
+            velocity<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">=</span> jump_speed</code></pre></div>
+<p>With this code, we&rsquo;ll still get the same behavior with jumping and sliding, but the <code>snap</code> value will ensure that the character &ldquo;sticks&rdquo; to the platform even if it moves. See the <a href="https://docs.godotengine.org/en/3.1/classes/class_kinematicbody2d.html#class-kinematicbody2d-method-move-and-slide-with-snap">KinematicBody2D docs</a> for more information on how the <code>snap</code> parameter works.</p>
 
-<span style="color:#ff79c6">func</span> _ready():
-    Input<span style="color:#ff79c6">.</span>set_custom_mouse_cursor(cursor_image,
-            Input<span style="color:#ff79c6">.</span>CURSOR_ARROW,
-            Vector2(<span style="color:#bd93f9">64</span>, <span style="color:#bd93f9">64</span>))</code></pre></div>
-<p>The second parameter sets which system cursor to replace. See the <a href="https://docs.godotengine.org/en/latest/classes/class_input.html#enum-input-cursorshape">Input docs</a> for the full list.</p>
+<h3 id="creating-the-platform">Creating the platform</h3>
+
+<p>The platform scene contains the following nodes:</p>
+
+<p><img src="/godot_recipes/img/moving_plats_01.png" alt="alt" /></p>
+
+<p>The <code>Node2D</code> parent is there to act as the &ldquo;anchor&rdquo; or start point for the platform. We&rsquo;ll animate the platform&rsquo;s <code>position</code> relative to this parent node.</p>
+
+<p>Set up the Sprite&rsquo;s <em>Texture</em> and the collision shape appropriately. In the KinematicBody2D, set the <em>Sync to Physics</em> property &ldquo;On&rdquo;. Since we&rsquo;re not moving the body in code, this ensures that it&rsquo;s moved during the physics step. You&rsquo;ll also need to set the <em>Process Mode</em> property of the AnimationPlayer to &ldquo;Physics&rdquo;.</p>
+
+<p>To move the platform, create an animation in the <code>AnimationPlayer</code> that animates the body&rsquo;s <code>position</code> property. For example, here&rsquo;s one animating the platform horizontally in a 4 second loop:</p>
+
+<p><img src="/godot_recipes/img/moving_plats_02.gif" alt="alt" /></p>
+
+<p>You&rsquo;re done! Instance some platforms in your level/world and try them out:</p>
+
+<video controls src="/godot_recipes/img/moving_plats_03.webm"></video>
+
+
+<div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/moving_platforms.zip">moving_platforms.zip</a></p>
+</div>
+
+
+<h2 id="related-recipes">Related recipes</h2>
+
+<ul>
+<li><a href="http://kidscancode.org/godot_recipes/2d/platform_character">Platform character</a></li>
+</ul>
+
+<h4 id="like-video">Like video?</h4>
+
+<p><em>Coming soon</em>
+<!-- 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/C-Sn55e5wnk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+ --></p>
 
 
 <h3>Comments</h3>
@@ -2199,6 +2250,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2206,6 +2258,57 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -2308,21 +2411,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2340,37 +2428,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -2439,7 +2498,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2452,9 +2510,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2504,7 +2559,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2523,9 +2577,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 

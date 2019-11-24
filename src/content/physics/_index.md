@@ -12,5 +12,4 @@ Learn how to use Godot's physics nodes.
 
 #### In this section:
 
-- When and how to use different physics nodes
-- Collision detection and response
+{{% children  sort="weight" %}}

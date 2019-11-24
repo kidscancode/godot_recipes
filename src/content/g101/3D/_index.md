@@ -9,3 +9,7 @@ pre = "<i class='fas fa-cube fa-fw'></i> "
 # <i class='fas fa-cube'></i> Intro to 3D
 
 A gentle introduction to the 3D side of Godot development.
+
+#### In this section:
+
+{{% children  sort="weight" %}}

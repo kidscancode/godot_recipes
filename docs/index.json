@@ -4,7 +4,7 @@
 	"title": "Getting Started",
 	"tags": [],
 	"description": "",
-	"content": " Getting Started Have you downloaded Godot yet? You can get it here: https://godotengine.org\n"
+	"content": " Getting Started Have you downloaded Godot yet? You can get it here: https://godotengine.org\nIn this section:  What is Godot?   Godot\u0026#39;s Editor: Finding your way around   Nodes: Godot\u0026#39;s building blocks   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/",
@@ -25,7 +25,7 @@
 	"title": "Godot 101",
 	"tags": [],
 	"description": "",
-	"content": "  Godot 101 Your introduction to the Godot game engine. If you\u0026rsquo;ve never used a game engine before, or if you’re just new to Godot, this is the place to start.\n"
+	"content": "  Godot 101 Your introduction to the Godot game engine. If you\u0026rsquo;ve never used a game engine before, or if you’re just new to Godot, this is the place to start.\nIn this section:  Getting Started    What is Godot?   Godot\u0026#39;s Editor: Finding your way around   Nodes: Godot\u0026#39;s building blocks    GDScript     Intro to 3D    The 3D Editor   Importing 3D Objects   Creating a 3D Character   Using Areas   Edge Detection \u0026amp; Mouse Capture   Using CSG   First-person Character    "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/3d/camera_gimbal/",
@@ -137,7 +137,7 @@
 	"title": "Basics",
 	"tags": [],
 	"description": "",
-	"content": "  Basics Basic Godot tips and tricks that apply to any project.\nIn this section:  Setting up your project. Importing assets (images, sounds, etc.).  "
+	"content": "  Basics Basic Godot tips and tricks that apply to any project.\nIn this section:  Understanding \u0026#39;delta\u0026#39;   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/",
@@ -200,7 +200,7 @@
 	"title": "2D",
 	"tags": [],
 	"description": "",
-	"content": "  2D Tips, tricks, and tutorials on the 2D side of game development.\n"
+	"content": "  2D Tips, tricks, and tutorials on the 2D side of game development.\nIn this section:  Entering/Exiting the screen   Platform character   Screen wrap   Splitscreen multiplayer   TileMap: detecting tiles   Top-down character   Grid-based movement   Car steering   TileMap: using autotile   Moving Platforms   TileMap: animated tiles   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/math/transforms/",
@@ -270,7 +270,7 @@
 	"title": "3D",
 	"tags": [],
 	"description": "",
-	"content": "  3D Tips, tricks, and tutorials on the 3D side of game development.\n"
+	"content": "  3D Tips, tricks, and tutorials on the 3D side of game development.\nIn this section:  Camera Gimbal   3D Unit Healthbars   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/",
@@ -333,35 +333,35 @@
 	"title": "Input",
 	"tags": [],
 	"description": "",
-	"content": "  Input Handling input - from keyboard and mouse to game controllers and touchscreens.\n"
+	"content": "  Input Handling input - from keyboard and mouse to game controllers and touchscreens.\nIn this section:  Input Actions   Mouse Input   Capturing the Mouse   Customizing the Mouse Cursor   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/animation/",
 	"title": "Animation",
 	"tags": [],
 	"description": "",
-	"content": "  Animation Using Godot\u0026rsquo;s animation system.\n"
+	"content": "  Animation Using Godot\u0026rsquo;s animation system.\nIn this section:  Spritesheet animation   Melee attacks   Controlling animation states   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/gdscript/",
 	"title": "GDScript",
 	"tags": [],
 	"description": "",
-	"content": "  GDScript GDScript is Godot\u0026rsquo;s built-in scripting language. Its syntax is based on Python, so if you\u0026rsquo;re familiar with that language, you\u0026rsquo;ll feel right at home. In this chapter, we\u0026rsquo;ll introduce the language and get you up to speed with how it works.\n"
+	"content": "  GDScript GDScript is Godot\u0026rsquo;s built-in scripting language. Its syntax is based on Python, so if you\u0026rsquo;re familiar with that language, you\u0026rsquo;ll feel right at home. In this chapter, we\u0026rsquo;ll introduce the language and get you up to speed with how it works.\nIn this section:  "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/",
 	"title": "Intro to 3D",
 	"tags": [],
 	"description": "",
-	"content": "  Intro to 3D A gentle introduction to the 3D side of Godot development.\n"
+	"content": "  Intro to 3D A gentle introduction to the 3D side of Godot development.\nIn this section:  The 3D Editor   Importing 3D Objects   Creating a 3D Character   Using Areas   Edge Detection \u0026amp; Mouse Capture   Using CSG   First-person Character   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/ui/",
 	"title": "UI",
 	"tags": [],
 	"description": "",
-	"content": "  UI Building user interfaces.\nIn this section:  Displaying game data HUDs and overlays Game menus Start/end screens Interactive screens: inventory, maps, and more.  "
+	"content": "  UI Building user interfaces.\nIn this section:  Object Healthbars   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/",
@@ -399,6 +399,13 @@
 	"content": "  Circle Jump An end-to-end game development series. In this series, we build a one-touch mobile game called \u0026ldquo;Circle Jump\u0026rdquo;. Here\u0026rsquo;s what the game looks like:\nIn each part of the series, we\u0026rsquo;ll add features and fix bugs, explaining the process along the way.\nWhen complete, the game will be available on the following platforms:\n Android: coming soon iOS: coming soon Web: coming soon  You can also download it for the following desktop platforms:\n Windows: coming soon Linux: coming soon MacOS: coming soon  All source code for the game is available on GitHub.\n"
 },
 {
+	"uri": "http://kidscancode.org/godot_recipes/2d/moving_platforms/",
+	"title": "Moving Platforms",
+	"tags": [],
+	"description": "",
+	"content": " Problem You need moving platforms in your 2D platformer.\nSolution There are several ways to approach this problem. In this recipe, we\u0026rsquo;ll use KinematicBody2Ds for our platforms and move them with AnimationPlayer. This allows for a variety of movement styles while minimizing the amount of code we need to write.\nSetting up We\u0026rsquo;ll start with a basic platformer setup using the Platform character recipe. We will need to make one small modification from that recipe: using move_and_slide_with_snap() for the movement.\nHere is the updated code:\nfunc _physics_process(delta): get_input() velocity.y += gravity * delta var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP) if Input.is_action_just_pressed(\u0026#34;jump\u0026#34;): if is_on_floor(): velocity.y = jump_speed With this code, we\u0026rsquo;ll still get the same behavior with jumping and sliding, but the snap value will ensure that the character \u0026ldquo;sticks\u0026rdquo; to the platform even if it moves. See the KinematicBody2D docs for more information on how the snap parameter works.\nCreating the platform The platform scene contains the following nodes:\nThe Node2D parent is there to act as the \u0026ldquo;anchor\u0026rdquo; or start point for the platform. We\u0026rsquo;ll animate the platform\u0026rsquo;s position relative to this parent node.\nSet up the Sprite\u0026rsquo;s Texture and the collision shape appropriately. In the KinematicBody2D, set the Sync to Physics property \u0026ldquo;On\u0026rdquo;. Since we\u0026rsquo;re not moving the body in code, this ensures that it\u0026rsquo;s moved during the physics step. You\u0026rsquo;ll also need to set the Process Mode property of the AnimationPlayer to \u0026ldquo;Physics\u0026rdquo;.\nTo move the platform, create an animation in the AnimationPlayer that animates the body\u0026rsquo;s position property. For example, here\u0026rsquo;s one animating the platform horizontally in a 4 second loop:\nYou\u0026rsquo;re done! Instance some platforms in your level/world and try them out:\n Download the project file here: moving_platforms.zip\n Related recipes  Platform character  Like video? Coming soon   --\n"
+},
+{
 	"uri": "http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/",
 	"title": "Score and HUD",
 	"tags": [],
@@ -417,28 +424,28 @@
 	"title": "Gamedev Math",
 	"tags": [],
 	"description": "",
-	"content": "  Gamedev Math Math is a big part of game development. Some of it you may remember from school, or it may be something you\u0026rsquo;ve never encountered before. Here you\u0026rsquo;ll find guides to help you get up to speed and examples of how these concepts are applied to making games.\n"
+	"content": "  Gamedev Math Math is a big part of game development. Some of it you may remember from school, or it may be something you\u0026rsquo;ve never encountered before. Here you\u0026rsquo;ll find guides to help you get up to speed and examples of how these concepts are applied to making games.\nIn this section:  Interpolation   Transforms   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/recipes/",
 	"title": "Misc",
 	"tags": [],
 	"description": "",
-	"content": "  Misc Other recipes that just don\u0026rsquo;t fit in anywhere else.\n"
+	"content": "  Misc Other recipes that just don\u0026rsquo;t fit in anywhere else.\nIn this section:  Inheritance   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/physics/",
 	"title": "Physics",
 	"tags": [],
 	"description": "",
-	"content": "  Physics Learn how to use Godot\u0026rsquo;s physics nodes.\nIn this section:  When and how to use different physics nodes Collision detection and response  "
+	"content": "  Physics Learn how to use Godot\u0026rsquo;s physics nodes.\nIn this section:  Using KinematicBody2D   Kinematic Friction   RigidBody2D: Drag and Drop   Kinematic to Rigid Body Interaction   Using 2D Joints   Using Rigid Bodies   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/ai/",
 	"title": "AI/Behavior",
 	"tags": [],
 	"description": "",
-	"content": "  AI/Behavior Automated behavior and (sometimes) smarter entities.\n"
+	"content": "  AI/Behavior Automated behavior and (sometimes) smarter entities.\nIn this section:  Chasing the player   Path following   Changing behaviors   Homing missile   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/",
@@ -459,7 +466,7 @@
 	"title": "Shaders",
 	"tags": [],
 	"description": "",
-	"content": "  Shaders Deep voodoo. Cool effects.\n"
+	"content": "  Shaders Deep voodoo. Cool effects.\nIn this section:  Shaders: intro   Interacting with Shaders   Greyscale (monochrome) shader   Blur shader   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/",
@@ -487,7 +494,7 @@
 	"title": "Exporting",
 	"tags": [],
 	"description": "",
-	"content": "  Exporting Building and exporting your project for PC, web, or mobile.\nIn this section:  Getting and using export templates. Customizing export templates. Platforms (Android, iOS, HTML, etc)  "
+	"content": "  Exporting Building and exporting your project for PC, web, or mobile.\nIn this section:  "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/",
@@ -508,7 +515,7 @@
 	"title": "Game Tutorials",
 	"tags": [],
 	"description": "",
-	"content": "  Games Demo games and tutorials.\n"
+	"content": "  Games Demo games and tutorials.\nIn this section:  Mobile Game: Circle Jump   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/",
