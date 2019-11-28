@@ -39,10 +39,6 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</loc>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_recipes/2d/platform_character/</loc>
   </url>
   
@@ -159,6 +155,10 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/animation/melee_attacks/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/math/noise/</loc>
   </url>
   
   <url>
@@ -282,6 +282,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/2d/screen_shake/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</loc>
   </url>
   
@@ -309,6 +313,10 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/export/</loc>
     <lastmod>2019-04-09T19:48:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</loc>
   </url>
   
   <url>

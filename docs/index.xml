@@ -75,17 +75,6 @@ func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represen
     </item>
     
     <item>
-      <title>Object Healthbars</title>
-      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
-      <description>Problem You want units in your game to have healthbars that follow them as they move.
-Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
-So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
-    </item>
-    
-    <item>
       <title>Platform character</title>
       <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -371,6 +360,17 @@ We can detect the sword hitting the target using an Area2D, but we only want tha
     </item>
     
     <item>
+      <title>Noise</title>
+      <link>http://kidscancode.org/godot_recipes/math/noise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/math/noise/</guid>
+      <description>Problem You want to use Godot&amp;rsquo;s OpenSimplexNoise to generate noise, noise textures, and other effects.
+Solution Noise, or more specifically gradient noise is a method for generating more natural-looking &amp;ldquo;random&amp;rdquo; patterns. To do this, Godot provides the OpenSimplexNoise class.
+Probably the most well-known gradient noise algorithm is called Perlin noise. Because it and its successor, simplex noise, are protected by patents, Godot uses an algorithm called OpenSimplex to generate noise.</description>
+    </item>
+    
+    <item>
       <title>Understanding &#39;delta&#39;</title>
       <link>http://kidscancode.org/godot_recipes/basics/understanding_delta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -555,6 +555,17 @@ Choose AnimatedTexture and set the Frames property to 5. For each frame, drag th
     </item>
     
     <item>
+      <title>Screen Shake</title>
+      <link>http://kidscancode.org/godot_recipes/2d/screen_shake/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/screen_shake/</guid>
+      <description>Problem You want to create a &amp;ldquo;screen shake&amp;rdquo; effect.
+Solution The &amp;ldquo;screen shake&amp;rdquo; effect is a popular way to add a dynamic feel to your game. When used well, it adds a lot of appeal. When misused, players hate it. Keep this in mind when adding it to your game and use wisely.
+The effect is quite simple: when an event occurs - an explosion, a heavy object hitting an obstacle, etc.</description>
+    </item>
+    
+    <item>
       <title>Sound and Colors</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -605,6 +616,17 @@ We can fix this by disabling the buttons while the screen transition is happenin
 Solution Joint are used to constrain the movement of attached physics objects. For any joint node, you need to attach two bodies, which must extend from PhysicsObject2D.
 Properties These properties are common to all joint nodes:
  Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description>
+    </item>
+    
+    <item>
+      <title>Object Healthbars</title>
+      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
+      <description>Problem You want units in your game to have healthbars that follow them as they move.
+Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
+So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
     </item>
     
     <item>

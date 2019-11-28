@@ -33,5 +33,16 @@ func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represen
 To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>
     </item>
     
+    <item>
+      <title>Noise</title>
+      <link>http://kidscancode.org/godot_recipes/math/noise/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/math/noise/</guid>
+      <description>Problem You want to use Godot&amp;rsquo;s OpenSimplexNoise to generate noise, noise textures, and other effects.
+Solution Noise, or more specifically gradient noise is a method for generating more natural-looking &amp;ldquo;random&amp;rdquo; patterns. To do this, Godot provides the OpenSimplexNoise class.
+Probably the most well-known gradient noise algorithm is called Perlin noise. Because it and its successor, simplex noise, are protected by patents, Godot uses an algorithm called OpenSimplex to generate noise.</description>
+    </item>
+    
   </channel>
 </rss>
