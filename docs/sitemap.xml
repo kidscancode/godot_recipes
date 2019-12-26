@@ -39,6 +39,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/ui/labels/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/2d/platform_character/</loc>
   </url>
   
@@ -87,6 +91,10 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</loc>
     <lastmod>2019-03-09T05:22:12-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/ui/containers/</loc>
   </url>
   
   <url>

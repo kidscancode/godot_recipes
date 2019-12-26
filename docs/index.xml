@@ -75,6 +75,17 @@ func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represen
     </item>
     
     <item>
+      <title>Labels</title>
+      <link>http://kidscancode.org/godot_recipes/ui/labels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/labels/</guid>
+      <description>Problem You want to display some text on the screen.
+Solution Sooner or later you&amp;rsquo;re going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot&amp;rsquo;s Label node is the answer.
+Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description>
+    </item>
+    
+    <item>
       <title>Platform character</title>
       <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -191,6 +202,16 @@ Here you can give the project a name and create a folder to store it in.</descri
       <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</guid>
       <description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
 Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description>
+    </item>
+    
+    <item>
+      <title>Containers</title>
+      <link>http://kidscancode.org/godot_recipes/ui/containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/containers/</guid>
+      <description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
+Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description>
     </item>
     
     <item>

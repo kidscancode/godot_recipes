@@ -12,6 +12,27 @@
     
     
     <item>
+      <title>Labels</title>
+      <link>http://kidscancode.org/godot_recipes/ui/labels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/labels/</guid>
+      <description>Problem You want to display some text on the screen.
+Solution Sooner or later you&amp;rsquo;re going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot&amp;rsquo;s Label node is the answer.
+Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description>
+    </item>
+    
+    <item>
+      <title>Containers</title>
+      <link>http://kidscancode.org/godot_recipes/ui/containers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/containers/</guid>
+      <description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
+Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description>
+    </item>
+    
+    <item>
       <title>Object Healthbars</title>
       <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
