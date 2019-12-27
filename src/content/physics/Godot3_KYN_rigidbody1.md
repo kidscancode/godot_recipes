@@ -1,15 +1,12 @@
-+++
-Description = ""
-date = "2017-12-30T08:12:12-07:00"
-draft = false
-title = "Using Rigid Bodies"
-[author]
-    name = "Chris Bradfield"
-+++
+---
+title: "Using Rigid Bodies"
+weight: 1
+draft: false
+---
 
-At the time of this writing, Godot 3.0 is nearing release, and many new users are
-trying it out. Recently I've seen a lot of confusion around physics and physics
-bodies, especially rigid bodies, which are Godot's "true" physics nodes.
+{{% notice note %}}
+This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
+{{% /notice %}}
 
 In this tutorial, I'll explain when (and when not) to use rigid bodies, how they
 work, and demonstrate a few handy tricks to bend them to your will. The

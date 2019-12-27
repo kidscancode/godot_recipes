@@ -184,6 +184,17 @@ Introduction: Physics bodies In game development you often need to know when two
     </item>
     
     <item>
+      <title>Using Rigid Bodies</title>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
+      <description>This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
+ In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.
+Introduction  RigidBody2D is the physics body in Godot that provides simulated physics.</description>
+    </item>
+    
+    <item>
       <title>Godot&#39;s Editor: Finding your way around</title>
       <link>http://kidscancode.org/godot_recipes/g101/start/101_02/</link>
       <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
@@ -681,16 +692,6 @@ func save_settings(): var f = File.</description>
       <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
 We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
 Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
-    </item>
-    
-    <item>
-      <title>Using Rigid Bodies</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
-      <pubDate>Sat, 30 Dec 2017 08:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
-      <description>At the time of this writing, Godot 3.0 is nearing release, and many new users are trying it out. Recently I&amp;rsquo;ve seen a lot of confusion around physics and physics bodies, especially rigid bodies, which are Godot&amp;rsquo;s &amp;ldquo;true&amp;rdquo; physics nodes.
-In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.</description>
     </item>
     
   </channel>

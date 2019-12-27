@@ -22,6 +22,17 @@ Introduction: Physics bodies In game development you often need to know when two
     </item>
     
     <item>
+      <title>Using Rigid Bodies</title>
+      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
+      <description>This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
+ In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.
+Introduction  RigidBody2D is the physics body in Godot that provides simulated physics.</description>
+    </item>
+    
+    <item>
       <title>Kinematic Friction</title>
       <link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -64,16 +75,6 @@ In some cases, this might be all you need. However, if you want to avoid &amp;ld
 Solution Joint are used to constrain the movement of attached physics objects. For any joint node, you need to attach two bodies, which must extend from PhysicsObject2D.
 Properties These properties are common to all joint nodes:
  Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description>
-    </item>
-    
-    <item>
-      <title>Using Rigid Bodies</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
-      <pubDate>Sat, 30 Dec 2017 08:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
-      <description>At the time of this writing, Godot 3.0 is nearing release, and many new users are trying it out. Recently I&amp;rsquo;ve seen a lot of confusion around physics and physics bodies, especially rigid bodies, which are Godot&amp;rsquo;s &amp;ldquo;true&amp;rdquo; physics nodes.
-In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.</description>
     </item>
     
   </channel>

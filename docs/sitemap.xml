@@ -79,6 +79,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/g101/start/101_02/</loc>
     <lastmod>2019-04-09T20:23:50-07:00</lastmod>
   </url>
@@ -348,11 +352,6 @@
   <url>
     <loc>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</loc>
     <lastmod>2018-01-19T15:12:12-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</loc>
-    <lastmod>2017-12-30T08:12:12-07:00</lastmod>
   </url>
   
   <url>
