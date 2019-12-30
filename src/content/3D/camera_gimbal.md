@@ -231,8 +231,11 @@ func _process(delta):
         global_transform.origin = get_node(target).global_transform.origin
 ```
 
-
 ## Related recipes
 
 - [Capturing the Mouse](/godot_recipes/input/mouse_capture/)
 - [Intro to 3D](/godot_recipes/g101/3d/)
+
+#### Like video?
+
+{{< youtube 4NLrfxNt3ps >}}

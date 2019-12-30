@@ -629,6 +629,18 @@ Character Scene In an FPS or similar game, we want to give the player the illusi
     </item>
     
     <item>
+      <title>Mouse: Drag-select multiple units</title>
+      <link>http://kidscancode.org/godot_recipes/input/multi_unit_select/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/multi_unit_select/</guid>
+      <description>Problem You want to click-and-drag to select multiple units, RTS style.
+Solution Realtime strategy (RTS) games often require giving orders to many units at once. A typical style of selecting multiple units is to click-and-drag a box around them. Once the units are selected, clicking on the map commands them to move.
+Here&amp;rsquo;s an example of what we&amp;rsquo;re going for:
+Unit setup To test this out, we&amp;rsquo;ll need some basic RTS-style units.</description>
+    </item>
+    
+    <item>
       <title>Moving circles</title>
       <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

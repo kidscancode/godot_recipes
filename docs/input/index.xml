@@ -59,5 +59,17 @@ And set its hotspot to the center:
 extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(64, 64)) The second parameter sets which system cursor to replace. See the Input docs for the full list.</description>
     </item>
     
+    <item>
+      <title>Mouse: Drag-select multiple units</title>
+      <link>http://kidscancode.org/godot_recipes/input/multi_unit_select/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/multi_unit_select/</guid>
+      <description>Problem You want to click-and-drag to select multiple units, RTS style.
+Solution Realtime strategy (RTS) games often require giving orders to many units at once. A typical style of selecting multiple units is to click-and-drag a box around them. Once the units are selected, clicking on the map commands them to move.
+Here&amp;rsquo;s an example of what we&amp;rsquo;re going for:
+Unit setup To test this out, we&amp;rsquo;ll need some basic RTS-style units.</description>
+    </item>
+    
   </channel>
 </rss>

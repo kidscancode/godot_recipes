@@ -11,23 +11,23 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Godot 101 :: Godot Recipes by KidsCanCode</title>
+    <title>Mouse: Drag-select multiple units :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1577674853" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1577674853" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1577674854" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1577674854" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1577674853" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1577674854" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1577674853"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1577674854"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/g101/">
+  <body class="" data-url="/godot_recipes/input/multi_unit_select/">
     <nav id="sidebar" class="">
 
 
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1577674853"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1577674853"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1577674854"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1577674854"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1577674853"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1577674854"></script>
 
     
 
@@ -97,8 +97,8 @@
   
     
     <li data-nav-id="/godot_recipes/g101/" title="Godot 101" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/g101/">
@@ -794,7 +794,7 @@
   
     
     <li data-nav-id="/godot_recipes/input/" title="Input" class="dd-item
-        
+        parent
         
         
         ">
@@ -894,7 +894,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/input/multi_unit_select/" title="Mouse: Drag-select multiple units" class="dd-item ">
+      <li data-nav-id="/godot_recipes/input/multi_unit_select/" title="Mouse: Drag-select multiple units" class="dd-item active">
         <a href="/godot_recipes/input/multi_unit_select/">
         Mouse: Drag-select multiple units
         
@@ -1893,6 +1893,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1903,7 +1905,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Godot 101
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/input/'>Input</a> > Mouse: Drag-select multiple units
+          
+        
           
         
           
@@ -1912,6 +1920,30 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#unit-setup">Unit setup</a></li>
+<li><a href="#world-setup">World setup</a></li>
+<li><a href="#drawing-the-box">Drawing the box</a></li>
+<li><a href="#selecting-the-units">Selecting the units</a></li>
+<li><a href="#commanding-the-units">Commanding the units</a></li>
+</ul></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+<li><a href="#related-recipes">Related recipes</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1919,9 +1951,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Mouse: Drag-select multiple units
+            </h1>
           
 
         
@@ -1929,288 +1964,145 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-graduation-cap-i-godot-101"><i class='fas fa-graduation-cap'></i> Godot 101</h1>
+<h2 id="problem">Problem</h2>
 
-<p><img src="/godot_recipes/img/godot3_logo.png" alt="alt" /></p>
+<p>You want to click-and-drag to select multiple units, RTS style.</p>
 
-<p>Your introduction to the Godot game engine. If you&rsquo;ve never used a game engine
-before, or if you’re just new to Godot, this is the place to start.</p>
+<h2 id="solution">Solution</h2>
 
-<h4 id="in-this-section">In this section:</h4>
+<p>Realtime strategy (RTS) games often require giving orders to many units at once. A typical style of selecting multiple units is to click-and-drag a box around them. Once the units are selected, clicking on the map commands them to move.</p>
+
+<p>Here&rsquo;s an example of what we&rsquo;re going for:</p>
+
+<p><img src="/godot_recipes/img/multi_unit_01.gif" alt="alt" /></p>
+
+<h3 id="unit-setup">Unit setup</h3>
+
+<p>To test this out, we&rsquo;ll need some basic RTS-style units. They are set up to move towards a target and to avoid running into each other. We won&rsquo;t go into too much detail on them in this tutorial. The unit script is commented if you&rsquo;d like to use it as a base for creating your own RTS units.</p>
 
 
+<div class="notices note" ><p>You can download the starting project with the working units here:</p>
+</div>
 
 
+<h3 id="world-setup">World setup</h3>
+
+<p>Processing the unit selection will happen in the world. We&rsquo;ll start with a Node2D called &ldquo;World&rdquo; and add a few unit instances in it. Attach a script to the World node and add the following variables:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node2D
+
+<span style="color:#ff79c6">var</span> dragging <span style="color:#ff79c6">=</span> false  <span style="color:#6272a4"># Are we currently dragging?</span>
+<span style="color:#ff79c6">var</span> selected <span style="color:#ff79c6">=</span> []  <span style="color:#6272a4"># Array of selected units.</span>
+<span style="color:#ff79c6">var</span> drag_start <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO  <span style="color:#6272a4"># Location where drag began.</span>
+<span style="color:#ff79c6">var</span> select_rect <span style="color:#ff79c6">=</span> RectangleShape2D<span style="color:#ff79c6">.</span>new()  <span style="color:#6272a4"># Collision shape for drag box.</span></code></pre></div>
+<p>Note that once we&rsquo;ve drawn the box, we&rsquo;ll need a way to find what units are inside it. The <code>RectangleShape2D</code> will allow us to query the physics engine and see what we collided with.</p>
+
+<h3 id="drawing-the-box">Drawing the box</h3>
+
+<p>We&rsquo;ll be using the left mouse button for this. Clicking starts a drag and then letting go ends it. During dragging, we&rsquo;ll draw the rectangle for visibility.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventMouseButton <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT:
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>pressed:
+            <span style="color:#6272a4"># We only want to start a drag if there&#39;s no selection.</span>
+            <span style="color:#ff79c6">if</span> selected<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+                dragging <span style="color:#ff79c6">=</span> true
+                drag_start <span style="color:#ff79c6">=</span> event<span style="color:#ff79c6">.</span>position
+        <span style="color:#ff79c6">elif</span> dragging:
+            <span style="color:#6272a4"># Button released while dragging.</span>
+            dragging <span style="color:#ff79c6">=</span> false
+    <span style="color:#ff79c6">if</span> event is InputEventMouseMotion <span style="color:#ff79c6">and</span> dragging:
+        update()
+
+<span style="color:#ff79c6">func</span> _draw():
+    <span style="color:#ff79c6">if</span> dragging:
+        draw_rect(Rect2(drag_start, get_global_mouse_position() <span style="color:#ff79c6">-</span> drag_start),
+                Color(<span style="color:#ff79c6">.</span><span style="color:#bd93f9">5</span>, <span style="color:#ff79c6">.</span><span style="color:#bd93f9">5</span>, <span style="color:#ff79c6">.</span><span style="color:#bd93f9">5</span>), false)</code></pre></div>
+<h3 id="selecting-the-units">Selecting the units</h3>
+
+<p>Now that we&rsquo;ve got a selection box, we need to find the units that are inside it. When we release the button and the drag ends, we must query the physics space to find the units. Note that the units are <code>KinematicBody2D</code>, but <code>Area2D</code> or other bodies would work as well.</p>
+
+<p>We&rsquo;ll use <code>Physics2DDirectSpaceState.intersect_shape()</code> to find the units. This requires a shape (our rectangle) and a transform (our location). See <a href="https://docs.godotengine.org/en/3.1/classes/class_physics2ddirectspacestate.html">Godot docs</a> for details.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">elif</span> dragging:
+    dragging <span style="color:#ff79c6">=</span> false
+    update()
+    <span style="color:#ff79c6">var</span> drag_end <span style="color:#ff79c6">=</span> event<span style="color:#ff79c6">.</span>position
+    select_rect<span style="color:#ff79c6">.</span>extents <span style="color:#ff79c6">=</span> (drag_end <span style="color:#ff79c6">-</span> drag_start) <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span></code></pre></div>
+<p>We start by recording the location when we released the button, and use that to set the <code>RectangleShape2D</code>&rsquo;s <code>extents</code> (remember: <code>extents</code> are measured from the rectangle&rsquo;s <em>center</em>, so they&rsquo;re half the full width/height).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">var</span> space <span style="color:#ff79c6">=</span> get_world_2d()<span style="color:#ff79c6">.</span>direct_space_state
+    <span style="color:#ff79c6">var</span> query <span style="color:#ff79c6">=</span> Physics2DShapeQueryParameters<span style="color:#ff79c6">.</span>new()
+    query<span style="color:#ff79c6">.</span>set_shape(select_rect)
+    query<span style="color:#ff79c6">.</span>transform <span style="color:#ff79c6">=</span> Transform2D(<span style="color:#bd93f9">0</span>, (drag_end <span style="color:#ff79c6">+</span> drag_start) <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span>)
+    selected <span style="color:#ff79c6">=</span> space<span style="color:#ff79c6">.</span>intersect_shape(query)</code></pre></div>
+<p>Now we must get a reference to the physics state and set up our shape query using <code>Physics2DShapeQueryParameters</code>, assigning it our shape, and using the center of the dragged area as the origin for the query&rsquo;s transform. Our result after calling <code>intersect_shape()</code> is an array of dictionaries, which looks like this:</p>
+
+<pre><code>[{collider:[KinematicBody2D:1149], collider_id:1149, metadata:Null, rid:[RID], shape:0},
+{collider:[KinematicBody2D:1144], collider_id:1144, metadata:Null, rid:[RID], shape:0},
+{collider:[KinematicBody2D:1154], collider_id:1154, metadata:Null, rid:[RID], shape:0},
+{collider:[KinematicBody2D:1159], collider_id:1159, metadata:Null, rid:[RID], shape:0}]
+</code></pre>
+
+<p>Each of those <code>collider</code> items is a reference to a unit, so we can use this to notify them that they&rsquo;ve been selected, activating the outline shader:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">for</span> item <span style="color:#ff79c6">in</span> selected:
+        item<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>selected <span style="color:#ff79c6">=</span> true</code></pre></div>
+<p><img src="/godot_recipes/img/multi_unit_03.gif" alt="alt" /></p>
+
+<h3 id="commanding-the-units">Commanding the units</h3>
+
+<p>Finally, we can command the selected units to move by clicking somewhere on the screen:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventMouseButton <span style="color:#ff79c6">and</span> event<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">==</span> BUTTON_LEFT:
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>pressed:
+            <span style="color:#ff79c6">if</span> selected<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+                dragging <span style="color:#ff79c6">=</span> true
+                drag_start <span style="color:#ff79c6">=</span> event<span style="color:#ff79c6">.</span>position
+            <span style="color:#ff79c6">else</span>:
+                <span style="color:#ff79c6">for</span> item <span style="color:#ff79c6">in</span> selected:
+                    item<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>target <span style="color:#ff79c6">=</span> event<span style="color:#ff79c6">.</span>position
+                    item<span style="color:#ff79c6">.</span>collider<span style="color:#ff79c6">.</span>selected <span style="color:#ff79c6">=</span> false
+                selected <span style="color:#ff79c6">=</span> []</code></pre></div>
+<p>The <code>else</code> clause here triggers if we click the mouse when <code>selected</code> is greater than <code>0</code>. Each item&rsquo;s <code>target</code> is set, and we make sure to deselect the units so we can start again.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>This technique can be expanded to a wide range of RTS or other game styles. Download the full project below and use it as a base for your own game.</p>
 
 
+<div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/rts_movement.zip">rts_movement.zip</a></p>
+</div>
 
 
-<ul class="children children-li">
-	
+<h2 id="related-recipes">Related recipes</h2>
 
-	
-		
-			
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/" >Getting Started</a>
-</li>
-				
-
-				
-			
-			
-
-				
 <ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_01/" >What is Godot?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_02/" >Godot&#39;s Editor: Finding your way around</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_03/" >Nodes: Godot&#39;s building blocks</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/gdscript/" >GDScript</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/" >Intro to 3D</a>
-</li>
-				
-
-				
-			
-			
-
-				
-<ul>
-				
-
-				
-					
-				
-
-				
-
-				
-					
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_01/" >The 3D Editor</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_02/" >Importing 3D Objects</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_03/" >Creating a 3D Character</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_04/" >Using Areas</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_05/" >Edge Detection &amp; Mouse Capture</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_06/" >Using CSG</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/3d/101_3d_07/" >First-person Character</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-				
-
-				
-</ul>
-				
-			
-		
-	
-
-	
+<li><a href="/godot_recipes/input/mouse_input/">Mouse Input</a></li>
+<li><a href="/godot_recipes/input/input_intro/">Inputs: Introduction</a></li>
 </ul>
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
 
-
-
-
-
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2242,6 +2134,8 @@ before, or if you’re just new to Godot, this is the place to start.</p>
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2252,89 +2146,6 @@ before, or if you’re just new to Godot, this is the place to start.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2396,6 +2207,38 @@ before, or if you’re just new to Godot, this is the place to start.</p>
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -2461,6 +2304,54 @@ before, or if you’re just new to Godot, this is the place to start.</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2511,54 +2402,6 @@ before, or if you’re just new to Godot, this is the place to start.</p>
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2704,102 +2547,6 @@ before, or if you’re just new to Godot, this is the place to start.</p>
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -2855,6 +2602,158 @@ before, or if you’re just new to Godot, this is the place to start.</p>
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -3556,20 +3455,20 @@ before, or if you’re just new to Godot, this is the place to start.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1577674853"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1577674853"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1577674853"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1577674853"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1577674853"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1577674853"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1577674853"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1577674854"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1577674854"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1577674854"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1577674854"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1577674854"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1577674854"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1577674854"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1577674853"></script>
-    <script src="/godot_recipes/js/learn.js?1577674853"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1577674853"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1577674854"></script>
+    <script src="/godot_recipes/js/learn.js?1577674854"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1577674854"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1577674853" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1577674853"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1577674854" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1577674854"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3590,3 +3489,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+
