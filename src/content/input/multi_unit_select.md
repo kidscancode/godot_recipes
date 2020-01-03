@@ -2,6 +2,7 @@
 title: "Mouse: Drag-select multiple units"
 weight: 7
 draft: false
+
 ---
 
 ## Problem
@@ -137,3 +138,7 @@ Download the project file here: [rts_movement.zip](/godot_recipes/files/rts_move
 
 - [Mouse Input](/godot_recipes/input/mouse_input/)
 - [Inputs: Introduction](/godot_recipes/input/input_intro/)
+
+#### Like video?
+
+{{< youtube Lx2d5cgMj5U >}}
