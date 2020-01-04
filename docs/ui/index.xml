@@ -33,6 +33,18 @@ Solution For many developers, building a UI is their least favorite part. It&amp
     </item>
     
     <item>
+      <title>Heart Containers: 3 Ways</title>
+      <link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid>
+      <description>Problem You need to display a heart container bar (or other icon-based bar).
+Solution A common way of displaying the player&amp;rsquo;s health is via a series of icons (typically hearts) that disappear as the player takes damage.
+In this recipe, we&amp;rsquo;re going to explore three ways of displaying this information, which I&amp;rsquo;m labeling &amp;ldquo;simple&amp;rdquo;, &amp;ldquo;empty&amp;rdquo;, and &amp;ldquo;partial&amp;rdquo;:
+This image shows what the bar displays when the player has 3 health.</description>
+    </item>
+    
+    <item>
       <title>Object Healthbars</title>
       <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

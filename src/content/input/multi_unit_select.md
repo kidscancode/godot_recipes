@@ -19,11 +19,7 @@ Here's an example of what we're going for:
 
 ### Unit setup
 
-To test this out, we'll need some basic RTS-style units. They are set up to move towards a target and to avoid running into each other. We won't go into too much detail on them in this tutorial. The unit script is commented if you'd like to use it as a base for creating your own RTS units.
-
-{{% notice note %}}
-You can download the starting project with the working units here:
-{{% /notice %}}
+To test this out, we'll need some basic RTS-style units. They are set up to move towards a target and to avoid running into each other. We won't go into too much detail on them in this tutorial. The unit script is commented if you'd like to use it as a base for creating your own RTS units. See below for a link to download the project.
 
 ### World setup
 
