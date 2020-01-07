@@ -32,10 +32,10 @@ In this scenario, the player uses the four directional keys to move (including d
 extends KinematicBody2D
 
 var speed = 200  # speed in pixels/sec
-var velocity = Vector2()
+var velocity = Vector2.ZERO
 
 func get_input():
-    velocity = Vector2()
+    velocity = Vector2.ZERO
     if Input.is_action_pressed('right'):
         velocity.x += 1
     if Input.is_action_pressed('left'):
@@ -62,12 +62,12 @@ extends KinematicBody2D
 var speed = 200
 var rotation_speed = 1.5
 
-var velocity = Vector2()
+var velocity = Vector2.ZERO
 var rotation_dir = 0
 
 func get_input():
     rotation_dir = 0
-    velocity = Vector2()
+    velocity = Vector2.ZERO
     if Input.is_action_pressed('right'):
         rotation_dir += 1
     if Input.is_action_pressed('left'):
@@ -92,7 +92,7 @@ extends KinematicBody2D
 
 var speed = 200
 var target = null
-var velocity = Vector2()
+var velocity = Vector2.ZERO
 
 func _input(event):
     if event.is_action_pressed('click'):

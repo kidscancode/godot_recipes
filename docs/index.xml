@@ -538,6 +538,18 @@ extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.
     </item>
     
     <item>
+      <title>Heart Containers: 3 Ways</title>
+      <link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid>
+      <description>Problem You need to display a heart container bar (or other icon-based bar).
+Solution A common way of displaying the player&amp;rsquo;s health is via a series of icons (typically hearts) that disappear as the player takes damage.
+In this recipe, we&amp;rsquo;re going to explore three ways of displaying this information, which I&amp;rsquo;m labeling &amp;ldquo;simple&amp;rdquo;, &amp;ldquo;empty&amp;rdquo;, and &amp;ldquo;partial&amp;rdquo;:
+This image shows what the bar displays when the player has 3 health.</description>
+    </item>
+    
+    <item>
       <title>Kinematic to Rigid Body Interaction</title>
       <link>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -629,18 +641,6 @@ Character Scene In an FPS or similar game, we want to give the player the illusi
     </item>
     
     <item>
-      <title>Heart Containers: 3 Ways</title>
-      <link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid>
-      <description>Problem You need to display a heart container bar (or other icon-based bar).
-Solution A common way of displaying the player&amp;rsquo;s health is via a series of icons (typically hearts) that disappear as the player takes damage.
-In this recipe, we&amp;rsquo;re going to explore three ways of displaying this information, which I&amp;rsquo;m labeling &amp;ldquo;simple&amp;rdquo;, &amp;ldquo;empty&amp;rdquo;, and &amp;ldquo;partial&amp;rdquo;:
-This image shows what the bar displays when the player has 3 health.</description>
-    </item>
-    
-    <item>
       <title>Mouse: Drag-select multiple units</title>
       <link>http://kidscancode.org/godot_recipes/input/multi_unit_select/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -693,6 +693,18 @@ So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a
       <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</guid>
       <description>About ads When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&amp;rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.
 Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&amp;rsquo;re not making a decision on the pros and cons in this tutorial - we&amp;rsquo;re here to show you how to put ads in your game if you want them.</description>
+    </item>
+    
+    <item>
+      <title>Minimap/radar</title>
+      <link>http://kidscancode.org/godot_recipes/ui/minimap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid>
+      <description>Problem You want a radar-style minimap showing objects outside of the player&amp;rsquo;s view.
+Solution Here&amp;rsquo;s an example of what we are going for: 
+Project setup To illustrate this feature, we&amp;rsquo;ll start with a simplified top-down game using the Autotile recipe and a player based on the Top-down character recipe. See the linked recipes for details on how these parts work.
+The art in this project comes from kenney.nl, which you can download here: Topdown Shooter and Interface Pack.</description>
     </item>
     
     <item>

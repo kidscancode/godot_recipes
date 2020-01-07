@@ -55,5 +55,17 @@ Solution Displaying the bar can be done with a TextureProgress node. This is lik
 So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
     </item>
     
+    <item>
+      <title>Minimap/radar</title>
+      <link>http://kidscancode.org/godot_recipes/ui/minimap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid>
+      <description>Problem You want a radar-style minimap showing objects outside of the player&amp;rsquo;s view.
+Solution Here&amp;rsquo;s an example of what we are going for: 
+Project setup To illustrate this feature, we&amp;rsquo;ll start with a simplified top-down game using the Autotile recipe and a player based on the Top-down character recipe. See the linked recipes for details on how these parts work.
+The art in this project comes from kenney.nl, which you can download here: Topdown Shooter and Interface Pack.</description>
+    </item>
+    
   </channel>
 </rss>

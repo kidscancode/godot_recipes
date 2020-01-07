@@ -68,7 +68,7 @@ Here's the actual movement code. When an input event occurs, we check the four d
 
 ### Collision
 
-Now we can add some obstacles. You can add `StaticBody2D`s to manually add some obstacles (enable snapping to make sure they're aligned with the grid) or use a TileMap, as in the example below.
+Now we can add some obstacles. You can add `StaticBody2D`s to manually add some obstacles (enable snapping to make sure they're aligned with the grid) or use a TileMap (with collisions defined), as in the example below.
 
 We'll use the `RayCast2D` to determine whether a move to the next tile is allowed.
 

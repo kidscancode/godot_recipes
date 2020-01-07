@@ -254,6 +254,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</loc>
   </url>
   
@@ -315,10 +319,6 @@
   </url>
   
   <url>
-    <loc>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</loc>
-  </url>
-  
-  <url>
     <loc>http://kidscancode.org/godot_recipes/input/multi_unit_select/</loc>
   </url>
   
@@ -341,6 +341,10 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/ui/minimap/</loc>
   </url>
   
   <url>
