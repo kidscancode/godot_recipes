@@ -14,7 +14,7 @@ A shader is a special program that runs on the computer's GPU (graphics card). T
 
 The output of a shader program is the color of the set of pixels of the object. Shaders can be used in 2d (`canvas_item` shaders) and 3D (`spatial` shaders).
 
-The most difficult part for newcomers to understand about shaders is that they run in _parallel_. A shader runs simultaneously on _all* pixels. This allows for great speed, but also limits what information you have access to in the shader.
+The most difficult part for newcomers to understand about shaders is that they run in _parallel_. A shader runs simultaneously on *all* pixels. This allows for great speed, but also limits what information you have access to in the shader.
 
 To add a shader to an object, find its _Material_ property and select "New ShaderMaterial". Click the new material to open it, and select "New Shader". Click that, and you'll see a shader editor open at the bottom of the screen.
 

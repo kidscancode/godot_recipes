@@ -6,7 +6,7 @@ draft: false
 
 ## Problem
 
-You want a radar-style minimap showing objects outside of the player's view.
+You want a minimap or radar-style UI item showing the locations of objects outside of the player's view.
 
 ## Solution
 
@@ -270,9 +270,8 @@ Download the project file here: [minimap.zip](/godot_recipes/files/minimap.zip)
 
 - [UI: Containers](/godot_recipes/ui/containers/)
 - [TileMap: using autotile](/godot_recipes/2d/autotile_intro/)
-- [Top-down character](godot_recipes/2d/topdown_movement/)
+- [Top-down character](/godot_recipes/2d/topdown_movement/)
 
 #### Like video?
 
-*Coming Soon*
-<!-- {{< youtube 4NLrfxNt3ps >}} -->
+{{< youtube -R1rasEyuqY >}}
