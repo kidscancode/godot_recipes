@@ -1,7 +1,7 @@
 ---
 title: "Touchscreen Camera"
 weight: 12
-draft: true
+draft: false
 ---
 
 ## Problem

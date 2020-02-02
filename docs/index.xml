@@ -720,6 +720,19 @@ func save_settings(): var f = File.</description>
     </item>
     
     <item>
+      <title>Touchscreen Camera</title>
+      <link>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</guid>
+      <description>Problem You need a touch-controlled 2D camera for your mobile game.
+Solution In this recipe, we&amp;rsquo;ll create a generic 2D camera with multiple touch controls:
+ Drag to pan Pinch to zoom  Setup Our camera will extend the built-in node, so add a Camera2D to a new scene and name it &amp;ldquo;TouchCamera&amp;rdquo;. Save and attach a script.
+Here are the variables we&amp;rsquo;ll need:
+extends Camera2D export (NodePath) var target # Optional: export these properties for convenient editing.</description>
+    </item>
+    
+    <item>
       <title>Inheritance</title>
       <link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link>
       <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>

@@ -11,23 +11,23 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Getting Started :: Godot Recipes by KidsCanCode</title>
+    <title>Touchscreen Camera :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1580682889" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1580682889" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1580682891" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1580682891" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1580682889" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1580682891" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1580682889"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1580682891"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/g101/start/">
+  <body class="" data-url="/godot_recipes/2d/touchscreen_camera/">
     <nav id="sidebar" class="">
 
 
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1580682889"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1580682889"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1580682891"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1580682891"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1580682889"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1580682891"></script>
 
     
 
@@ -97,7 +97,7 @@
   
     
     <li data-nav-id="/godot_recipes/g101/" title="Godot 101" class="dd-item
-        parent
+        
         
         
         ">
@@ -124,8 +124,8 @@
   
     
     <li data-nav-id="/godot_recipes/g101/start/" title="Getting Started" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/g101/start/">
@@ -464,7 +464,7 @@
   
     
     <li data-nav-id="/godot_recipes/2d/" title="2D" class="dd-item
-        
+        parent
         
         
         ">
@@ -716,7 +716,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/touchscreen_camera/" title="Touchscreen Camera" class="dd-item ">
+      <li data-nav-id="/godot_recipes/2d/touchscreen_camera/" title="Touchscreen Camera" class="dd-item active">
         <a href="/godot_recipes/2d/touchscreen_camera/">
         Touchscreen Camera
         
@@ -1950,6 +1950,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -1964,7 +1966,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/g101/'>Godot 101</a> > Getting Started
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Touchscreen Camera
           
         
           
@@ -1975,6 +1977,34 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#pan">Pan</a></li>
+<li><a href="#zoom">Zoom</a></li>
+</ul></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+<li><a href="#related-recipes">Related recipes</a>
+<ul>
+<li>
+<ul>
+<li><a href="#like-video">Like video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -1982,9 +2012,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Touchscreen Camera
+            </h1>
           
 
         
@@ -1992,92 +2025,210 @@
 
 
 
-	
 
-<h3 id="getting-started">Getting Started</h3>
+<h2 id="problem">Problem</h2>
 
-<p><img src="/godot_recipes/img/godot3_logo.png" alt="alt" /></p>
+<p>You need a touch-controlled 2D camera for your mobile game.</p>
 
-<p>Have you downloaded Godot yet? You can get it here: <a href="[https://link](https://godotengine.org)">https://godotengine.org</a></p>
+<h2 id="solution">Solution</h2>
 
-<h4 id="in-this-section">In this section:</h4>
+<p>In this recipe, we&rsquo;ll create a generic 2D camera with multiple touch controls:</p>
 
-
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_01/" >What is Godot?</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_02/" >Godot&#39;s Editor: Finding your way around</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/g101/start/101_03/" >Nodes: Godot&#39;s building blocks</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
+<ul>
+<li>Drag to pan</li>
+<li>Pinch to zoom</li>
 </ul>
 
+<h3 id="setup">Setup</h3>
+
+<p>Our camera will extend the built-in node, so add a <code>Camera2D</code> to a new scene and name it &ldquo;TouchCamera&rdquo;. Save and attach a script.</p>
+
+<p>Here are the variables we&rsquo;ll need:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Camera2D
+
+<span style="color:#ff79c6">export</span> (NodePath) <span style="color:#ff79c6">var</span> target
+
+<span style="color:#6272a4"># Optional: export these properties for convenient editing.</span>
+<span style="color:#ff79c6">var</span> target_return_enabled <span style="color:#ff79c6">=</span> true
+<span style="color:#ff79c6">var</span> target_return_rate <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.02</span>
+<span style="color:#ff79c6">var</span> min_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>
+<span style="color:#ff79c6">var</span> max_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>
+<span style="color:#ff79c6">var</span> zoom_sensitivity <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>
+<span style="color:#ff79c6">var</span> zoom_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.05</span>
+
+<span style="color:#ff79c6">var</span> events <span style="color:#ff79c6">=</span> {}
+<span style="color:#ff79c6">var</span> last_drag_distance <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span></code></pre></div>
+<p>If a <code>target</code> is assigned, then the camera can follow and/or automatically return to it. The other properties that control how the camera works:</p>
+
+<ul>
+<li><code>target_return_enabled</code> - If this is <code>true</code>, the camera will automatically return to the target after dragging.</li>
+<li><code>target_return_rate</code> - Controls how fast the camera returns to its target.</li>
+<li><code>min_zoom</code> / <code>max_zoom</code> - Limits how far you can zoom in/out.</li>
+<li><code>zoom_sensitivity</code> - Sets how sensitive pinch-to-zoom will be - it&rsquo;s the number of pixels&rsquo; movement needed to &ldquo;start&rdquo; a zoom.</li>
+<li><code>zoom_speed</code> - Used to smooth the zooming.</li>
+</ul>
+
+<p>You can <code>export</code> these properties as well, if you&rsquo;d like to be able to adjust them in the Inspector.</p>
+
+<p>The other variables track the state of the camera. <code>events</code> is a dictionary that will hold the active touchscreen events, using the event&rsquo;s <code>index</code> as its key. <code>last_drag_distance</code> keeps track of the distance between the two drag events in a &ldquo;pinch&rdquo; gesture.</p>
+
+<p>In the <code>_process()</code> function, we&rsquo;ll move the camera towards the target (if target return is enabled and there&rsquo;s no touch event active).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">if</span> target <span style="color:#ff79c6">and</span> target_return_enabled <span style="color:#ff79c6">and</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        position <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(position, get_node(target)<span style="color:#ff79c6">.</span>position, target_return_rate)</code></pre></div>
+<p>This will allow us to pan the camera around and it will return to the player when we release the touch.</p>
+
+<p>Now we&rsquo;re ready to start adding the gestures, starting with &ldquo;pan&rdquo;.</p>
+
+<h3 id="pan">Pan</h3>
 
 
+<div class="notices note" ><p>You can test this gesture your computer by enabling &ldquo;Emulate Touch From Mouse&rdquo; in <em>Project Settings -&gt; Input Devices -&gt; Pointing</em>.</p>
+</div>
 
 
+<p>Just like mouse or keyboard events, touch events extend <code>InputEvent</code> and follow the same input priority. We&rsquo;ll use <code>_unhandled_input()</code> for processing so that other nodes, such as Control nodes, can process events first:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventScreenTouch:
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>pressed:
+            events[event<span style="color:#ff79c6">.</span>index] <span style="color:#ff79c6">=</span> event
+        <span style="color:#ff79c6">else</span>:
+            events<span style="color:#ff79c6">.</span>erase(event<span style="color:#ff79c6">.</span>index)</code></pre></div>
+<p>First we&rsquo;re checking for a touch event (<code>InputEventScreenTouch</code>). We add the event to the <code>events</code> dictionary. The event&rsquo;s <code>index</code> property is our dictionary&rsquo;s key. We also remove the event if it&rsquo;s not <code>pressed</code>, which means the touch has ended.</p>
+
+<p>Next, we need to handle a drag that comes after the touch:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">if</span> event is InputEventScreenDrag:
+        events[event<span style="color:#ff79c6">.</span>index] <span style="color:#ff79c6">=</span> event
+        <span style="color:#ff79c6">if</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+            position <span style="color:#ff79c6">+=</span> event<span style="color:#ff79c6">.</span>relative <span style="color:#ff79c6">*</span> zoom<span style="color:#ff79c6">.</span>x</code></pre></div>
+<p>If we get a drag event, we also add to the dictionary. Note that this will be <em>updating</em> the value - index <code>0</code> was already there from the first touch event, for example, and has now become a drag event.</p>
+
+<p>If there&rsquo;s only one event active, then this must be a one-finger drag, and we can adjust our camera&rsquo;s position accordingly. Note that we need to scale the movement based on the current <code>zoom</code>, or else our drag movement will be disproportionately large when zoomed in and small when zoomed out.</p>
+
+<p>Here&rsquo;s an example captured directly from a mobile device. The yellow circle indicates the touch location.</p>
+
+<video controls src="/godot_recipes/img/touch_camera_01.webm"></video>
+
+<h3 id="zoom">Zoom</h3>
 
 
+<div class="notices note" ><p>You won&rsquo;t be able to test this gesture on your computer because it requires 2 touch events, which the mouse can&rsquo;t emulate.</p>
+</div>
 
+
+<p>A &ldquo;pinch&rdquo; gesture will trigger the camera to zoom. This happens when we detect <em>two</em> drag events. If the drag events move toward each other, we&rsquo;ll zoom in; away from each other, we&rsquo;ll zoom out.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">if</span> event is InputEventScreenDrag:
+    events[event<span style="color:#ff79c6">.</span>index] <span style="color:#ff79c6">=</span> event
+    <span style="color:#ff79c6">if</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+        position <span style="color:#ff79c6">+=</span> event<span style="color:#ff79c6">.</span>relative <span style="color:#ff79c6">*</span> zoom<span style="color:#ff79c6">.</span>x
+
+    <span style="color:#ff79c6">elif</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>:
+        <span style="color:#ff79c6">var</span> drag_distance <span style="color:#ff79c6">=</span> events[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>position<span style="color:#ff79c6">.</span>distance_to(events[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">.</span>position)
+        <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">abs</span>(drag_distance <span style="color:#ff79c6">-</span> last_drag_distance) <span style="color:#ff79c6">&gt;</span> zoom_sensitivity:
+            <span style="color:#ff79c6">var</span> new_zoom <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> zoom_speed) <span style="color:#ff79c6">if</span> drag_distance <span style="color:#ff79c6">&lt;</span> last_drag_distance <span style="color:#ff79c6">else</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">-</span> zoom_speed)
+            new_zoom <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(zoom<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> new_zoom, min_zoom, max_zoom)
+            zoom <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ONE <span style="color:#ff79c6">*</span> new_zoom
+            last_drag_distance <span style="color:#ff79c6">=</span> drag_distance</code></pre></div>
+<p>Here we handle the case of <code>2</code> active drag events. <code>drag_distance</code> tells us how far apart they are, and we can compare it with <code>last_drag_distance</code> to see if it&rsquo;s larger or smaller. <code>zoom_speed</code> is a factor, so we&rsquo;ll be multiplying the zoom by <code>1.05</code> (for zooming in) and <code>0.95</code> (for zooming out). We can then clamp the resulting zoom so that it doesn&rsquo;t exceed our designated limits, and then assign the new <code>zoom</code> level. Finally, we update <code>last_drag_distance</code> for the next event.</p>
+
+<video controls src="/godot_recipes/img/touch_camera_02.webm"></video>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>You can use this camera as a basis for your own camera needs. Here are some suggestions you can try to make yourself:</p>
+
+<ul>
+<li>Use <code>lerp()</code> to smooth the zooming.</li>
+<li>Automatically return zoom to default level.</li>
+<li>Double-tap to reset.</li>
+<li>Add more gestures -three fingers, etc.</li>
+</ul>
+
+<p>For completeness, here&rsquo;s the full <code>TouchCamera.gd</code> script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Camera2D
+
+<span style="color:#ff79c6">export</span> (NodePath) <span style="color:#ff79c6">var</span> target
+
+<span style="color:#ff79c6">var</span> target_return_enabled <span style="color:#ff79c6">=</span> true
+<span style="color:#ff79c6">var</span> target_return_rate <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.02</span>
+<span style="color:#ff79c6">var</span> min_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.5</span>
+<span style="color:#ff79c6">var</span> max_zoom <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>
+<span style="color:#ff79c6">var</span> zoom_sensitivity <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>
+<span style="color:#ff79c6">var</span> zoom_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.05</span>
+
+<span style="color:#ff79c6">var</span> events <span style="color:#ff79c6">=</span> {}
+<span style="color:#ff79c6">var</span> last_drag_distance <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
+
+
+<span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">if</span> target <span style="color:#ff79c6">and</span> target_return_enabled <span style="color:#ff79c6">and</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>:
+        position <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(position, get_node(target)<span style="color:#ff79c6">.</span>position, target_return_rate)
+
+
+<span style="color:#ff79c6">func</span> _unhandled_input(event):
+    <span style="color:#ff79c6">if</span> event is InputEventScreenTouch:
+        <span style="color:#ff79c6">if</span> event<span style="color:#ff79c6">.</span>pressed:
+            events[event<span style="color:#ff79c6">.</span>index] <span style="color:#ff79c6">=</span> event
+        <span style="color:#ff79c6">else</span>:
+            events<span style="color:#ff79c6">.</span>erase(event<span style="color:#ff79c6">.</span>index)
+
+    <span style="color:#ff79c6">if</span> event is InputEventScreenDrag:
+        events[event<span style="color:#ff79c6">.</span>index] <span style="color:#ff79c6">=</span> event
+        <span style="color:#ff79c6">if</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">1</span>:
+            position <span style="color:#ff79c6">+=</span> event<span style="color:#ff79c6">.</span>relative <span style="color:#ff79c6">*</span> zoom<span style="color:#ff79c6">.</span>x
+        <span style="color:#ff79c6">elif</span> events<span style="color:#ff79c6">.</span>size() <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">2</span>:
+            <span style="color:#ff79c6">var</span> drag_distance <span style="color:#ff79c6">=</span> events[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">.</span>position<span style="color:#ff79c6">.</span>distance_to(events[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">.</span>position)
+            <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">abs</span>(drag_distance <span style="color:#ff79c6">-</span> last_drag_distance) <span style="color:#ff79c6">&gt;</span> zoom_sensitivity:
+                <span style="color:#ff79c6">var</span> new_zoom <span style="color:#ff79c6">=</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">+</span> zoom_speed) <span style="color:#ff79c6">if</span> drag_distance <span style="color:#ff79c6">&lt;</span> last_drag_distance <span style="color:#ff79c6">else</span> (<span style="color:#bd93f9">1</span> <span style="color:#ff79c6">-</span> zoom_speed)
+                new_zoom <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">clamp</span>(zoom<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> new_zoom, min_zoom, max_zoom)
+                zoom <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ONE <span style="color:#ff79c6">*</span> new_zoom
+                last_drag_distance <span style="color:#ff79c6">=</span> drag_distance</code></pre></div>
+
+<div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/2d_touch_camera.zip">2d_touch_camera.zip</a></p>
+</div>
+
+
+<h2 id="related-recipes">Related recipes</h2>
+
+<ul>
+<li><a href="/godot_recipes/input/input_actions/">Input: Input Actions</a></li>
+<li><a href="/godot_recipes/input/multi_unit_select/">Drag-select multiple units</a></li>
+</ul>
+
+<h4 id="like-video">Like video?</h4>
+
+<p><em>Coming Soon</em>
+<!-- 
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/-R1rasEyuqY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+ --></p>
+
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2109,6 +2260,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -2119,90 +2272,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2264,6 +2333,38 @@
                     
             
         
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
                     
                         
             
@@ -2329,57 +2430,6 @@
             
         
                     
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -2416,6 +2466,77 @@
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -2588,6 +2709,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -2595,6 +2729,29 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -3472,20 +3629,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1580682890"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1580682890"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1580682890"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1580682890"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1580682890"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1580682890"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1580682890"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1580682891"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1580682891"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1580682891"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1580682891"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1580682891"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1580682891"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1580682891"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1580682890"></script>
-    <script src="/godot_recipes/js/learn.js?1580682890"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1580682890"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1580682891"></script>
+    <script src="/godot_recipes/js/learn.js?1580682891"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1580682891"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1580682890" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1580682890"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1580682891" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1580682891"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3506,3 +3663,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+
