@@ -87,7 +87,7 @@ See the [Transform2D docs](https://docs.godotengine.org/en/latest/classes/class_
 
 ## 3D Transforms
 
-In 3D space, the concept of transforms applies in thesame way as in 2D. In fact, it becomes even more necessary, as using angles in 3D can lead to a variety of problems, as we'll see in a bit.
+In 3D space, the concept of transforms applies in the same way as in 2D. In fact, it becomes even more necessary, as using angles in 3D can lead to a variety of problems, as we'll see in a bit.
 
 3D nodes inherit from the base node [Spatial]([https://link](https://docs.godotengine.org/en/latest/classes/class_spatial.html)), which contains the transform information. The 3D transform requires more information than the 2D version. Position is still held in the `origin` property, but rotation is in a property called `basis`, which contains three unit vectors representing the body's local **X**, **Y**, and **Z** axes.
 
@@ -105,6 +105,6 @@ As in 2D, we can use the local axes to move an object forward. In Godot's 3D ori
 ```
 
 {{% notice tip %}}
-Godot has default vector values defined, for example: `Vector3.FORWARD = Vector3(0, 0, -1)`. See [Vector2](https://docs.godotengine.org/en/latest/classes/class_vector2.html) and [Vector3](https://docs.godotengine.org/en/latest/classes/class_vector3.html) for details.
+Godot has default vector values defined, for example: `Vector3.FORWARD == Vector3(0, 0, -1)`. See [Vector2](https://docs.godotengine.org/en/latest/classes/class_vector2.html) and [Vector3](https://docs.godotengine.org/en/latest/classes/class_vector3.html) for details.
 {{% /notice %}}
 

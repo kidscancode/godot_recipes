@@ -71,7 +71,7 @@ The collision normal points *out* of the rigid body, so we reverse it to point a
 You can also scale the force of the impulse based on the character's speed:
 
 ```gdscript
-collision.collider.apply_central_impulse(-collision.normal * velocity*length() * push_factor)
+collision.collider.apply_central_impulse(-collision.normal * velocity.length() * push_factor)
 # Depending on your character's movement speed, adjust push_factor to
 # something between 0 and 1.
 ```
