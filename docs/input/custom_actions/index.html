@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Tags :: Godot Recipes by KidsCanCode</title>
+    <title>Adding Input Actions in code :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1582502232" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/tags/">
+  <body class="" data-url="/godot_recipes/input/custom_actions/">
     <nav id="sidebar" class="">
 
 
@@ -813,7 +813,7 @@
   
     
     <li data-nav-id="/godot_recipes/input/" title="Input" class="dd-item
-        
+        parent
         
         
         ">
@@ -875,7 +875,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/input/custom_actions/" title="Adding Input Actions in code" class="dd-item ">
+      <li data-nav-id="/godot_recipes/input/custom_actions/" title="Adding Input Actions in code" class="dd-item active">
         <a href="/godot_recipes/input/custom_actions/">
         Adding Input Actions in code
         
@@ -1977,7 +1977,19 @@
                     
           
           
-            Tags
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/input/'>Input</a> > Adding Input Actions in code
+          
+        
+          
+        
           
         
                  
@@ -1986,7 +1998,25 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#practical-example">Practical Example</a></li>
+</ul></li>
+<li><a href="#related-recipes">Related recipes</a>
+<ul>
+<li>
+<ul>
+<li><a href="#like-video">Like video?</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -2002,7 +2032,7 @@
           
             <h1>
               
-              Tags
+              Adding Input Actions in code
             </h1>
           
 
@@ -2012,11 +2042,79 @@
 
 
 
+<h2 id="problem">Problem</h2>
+
+<p>You need to add actions to the InputMap at runtime.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Typically, you&rsquo;ll add actions to the InputMap via <em>Project Settings</em>, as shown in <a href="/godot_recipes/input/input_actions/">Recipe: Input Actions</a>. However, you may find yourself needing to add one or more actions directly in a script. The<a href="https://docs.godotengine.org/en/latest/classes/class_inputmap.html">InputMap singleton</a> has methods to help you do this.</p>
+
+<p>Here&rsquo;s an example that would add a new action called &ldquo;attack&rdquo; using the space key:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
+    InputMap<span style="color:#ff79c6">.</span>add_action(<span style="color:#f1fa8c">&#34;attack&#34;</span>)
+    <span style="color:#ff79c6">var</span> ev <span style="color:#ff79c6">=</span> InputEventKey<span style="color:#ff79c6">.</span>new()
+    ev<span style="color:#ff79c6">.</span>scancode <span style="color:#ff79c6">=</span> KEY_SPACE
+    InputMap<span style="color:#ff79c6">.</span>action_add_event(<span style="color:#f1fa8c">&#34;attack&#34;</span>, ev)</code></pre></div>
+<p>If you also wanted to add the left mouse button to the same action:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">ev <span style="color:#ff79c6">=</span> InputEventMouseButton<span style="color:#ff79c6">.</span>new()
+ev<span style="color:#ff79c6">.</span>button_index <span style="color:#ff79c6">=</span> BUTTON_LEFT
+InputMap<span style="color:#ff79c6">.</span>action_add_event(<span style="color:#f1fa8c">&#34;jump&#34;</span>, ev)</code></pre></div>
+
+<div class="notices note" ><p><code>InputMap.add_action()</code> will produce an error if the action already exists. You should check first with <code>InputMap.has_action()</code> before attempting to add a new action.</p>
+</div>
+
+
+<h3 id="practical-example">Practical Example</h3>
+
+<p>Let&rsquo;s say you&rsquo;ve made the platform character from <a href="/godot_recipes/2d/platform_character/">Recipe: Platform character</a> and you want to re-use it in another project. If you saved the scene, script, and assets in a single folder, you need only copy that folder to your new project. But you&rsquo;d still need to edit the Input Map in order for the inputs to work.</p>
+
+<p>Instead, you could add the following code to the player script and be sure that the necessary input actions will be added automatically:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> controls <span style="color:#ff79c6">=</span> {<span style="color:#f1fa8c">&#34;walk_right&#34;</span>: [KEY_RIGHT, KEY_D],
+                <span style="color:#f1fa8c">&#34;walk_left&#34;</span>: [KEY_LEFT, KEY_A],
+                <span style="color:#f1fa8c">&#34;jump&#34;</span>: [KEY_UP, KEY_W, KEY_SPACE]}
+
+<span style="color:#ff79c6">func</span> _ready():
+    add_inputs()
+
+<span style="color:#ff79c6">func</span> add_inputs():
+    <span style="color:#ff79c6">var</span> ev
+    <span style="color:#ff79c6">for</span> action <span style="color:#ff79c6">in</span> controls:
+        <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> InputMap<span style="color:#ff79c6">.</span>has_action(action):
+            InputMap<span style="color:#ff79c6">.</span>add_action(action)
+        <span style="color:#ff79c6">for</span> key <span style="color:#ff79c6">in</span> controls[action]:
+            ev <span style="color:#ff79c6">=</span> InputEventKey<span style="color:#ff79c6">.</span>new()
+            ev<span style="color:#ff79c6">.</span>scancode <span style="color:#ff79c6">=</span> key
+            InputMap<span style="color:#ff79c6">.</span>action_add_event(action, ev)</code></pre></div>
+<h2 id="related-recipes">Related recipes</h2>
 
 <ul>
-	
+<li><a href="/godot_recipes/input/input_actions/">Input Actions</a></li>
+<li><a href="/godot_recipes/2d/platform_character/">Platform Character</a></li>
 </ul>
 
+<h4 id="like-video">Like video?</h4>
+
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
@@ -2586,6 +2684,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2598,6 +2697,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2631,6 +2733,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2646,6 +2749,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3430,20 +3536,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1582502233"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1582502233"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1582502233"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1582502233"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1582502233"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1582502233"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1582502233"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1582502232"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1582502232"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1582502232"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1582502232"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1582502232"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1582502232"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1582502232"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1582502233"></script>
-    <script src="/godot_recipes/js/learn.js?1582502233"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1582502233"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1582502232"></script>
+    <script src="/godot_recipes/js/learn.js?1582502232"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1582502232"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1582502233" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1582502233"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1582502232" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1582502232"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3464,3 +3570,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

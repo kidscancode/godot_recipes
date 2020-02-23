@@ -327,6 +327,18 @@ Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer
     </item>
     
     <item>
+      <title>Adding Input Actions in code</title>
+      <link>http://kidscancode.org/godot_recipes/input/custom_actions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/input/custom_actions/</guid>
+      <description>Problem You need to add actions to the InputMap at runtime.
+Solution Typically, you&amp;rsquo;ll add actions to the InputMap via Project Settings, as shown in Recipe: Input Actions. However, you may find yourself needing to add one or more actions directly in a script. TheInputMap singleton has methods to help you do this.
+Here&amp;rsquo;s an example that would add a new action called &amp;ldquo;attack&amp;rdquo; using the space key:
+func _ready(): InputMap.</description>
+    </item>
+    
+    <item>
       <title>Capturing the Mouse</title>
       <link>http://kidscancode.org/godot_recipes/input/mouse_capture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
