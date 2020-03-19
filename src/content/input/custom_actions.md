@@ -64,5 +64,5 @@ func add_inputs():
 - [Input Actions](/godot_recipes/input/input_actions/)
 - [Platform Character](/godot_recipes/2d/platform_character/)
 
-#### Like video?
-
+<!-- #### Like video?
+ -->

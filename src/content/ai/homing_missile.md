@@ -153,6 +153,10 @@ func explode():
     queue_free()
 ```
 
+{{% notice note %}}
+Download the project file here: [homing_missiles.zip](/godot_recipes/files/homing_missiles.zip)
+{{% /notice %}}
+
 ## Related recipes
 
 - [Spritesheet animation](/godot_recipes/animation/spritesheet_animation/)

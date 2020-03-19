@@ -8,7 +8,7 @@ draft: true
 
 You want units to display damage as floating numbers when hit.
 
-**example gif**
+![alt](/godot_recipes/img/fct_demo.gif)
 
 ## Solution
 
@@ -104,13 +104,13 @@ In your game unit, you'd attach an instance of this node, and position it wherev
 $FCTManager.show_value(dmg, crit)
 ```
 
-## Wrapping up
+<!-- ## Wrapping up
 
 There are many opportunities for adapting and extending this recipe. You can add more visual effects or display additional combat information.
 
 {{% notice note %}}
 Download the project file here: [](/godot_recipes/files/.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 
