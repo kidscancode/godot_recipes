@@ -1,7 +1,7 @@
 ---
 title: "Floating combat text"
 weight: 12
-draft: true
+draft: false
 ---
 
 ## Problem
@@ -104,18 +104,22 @@ In your game unit, you'd attach an instance of this node, and position it wherev
 $FCTManager.show_value(dmg, crit)
 ```
 
-<!-- ## Wrapping up
+## Wrapping up
 
-There are many opportunities for adapting and extending this recipe. You can add more visual effects or display additional combat information.
+Optimization: in the case where you have a very large number of enemies/bullets, you may experience some performance impact from repeatedly spawning and freeing floating text. In this case, you can spawn a fixed number of text objects in the manager, and show/hide them rather than freeing them at the end of the animation.
 
 {{% notice note %}}
-Download the project file here: [](/godot_recipes/files/.zip)
-{{% /notice %}} -->
+Download the project file here: [floating_text.zip](/godot_recipes/files/floating_text.zip)
+{{% /notice %}}
+
+{{% notice note %}}
+Art in this demo by [Luis Zuno](https://www.patreon.com/ansimuz)
+{{% /notice %}}
 
 ## Related recipes
 
-- [UI: Containers](/godot_recipes/ui/containers/)
-- [Top-down character](/godot_recipes/2d/topdown_movement/)
+- [UI: Labels](/godot_recipes/ui/labels/)
+- [UI: Object Healthbars](/godot_recipes/ui/unit_healthbar/)
 
 #### Like video?
 

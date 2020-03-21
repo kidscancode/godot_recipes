@@ -708,6 +708,30 @@ Ads can be unpopular and whether to use them is a decision for the individual ga
     </item>
     
     <item>
+      <title>Click to move</title>
+      <link>http://kidscancode.org/godot_recipes/3d/click_to_move/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/3d/click_to_move/</guid>
+      <description>Problem You want to move a 3D object to a clicked position.
+Solution We&amp;rsquo;ll start with a flat plane for our world. Our actor will move on this plane.
+The actor for this demo is a triangular prism mesh:
+Here is the code for the movement. If given a target, the object will turn and move toward it.
+extends KinematicBody export var speed = 5 export var gravity = -5 var target = null var velocity = Vector3.</description>
+    </item>
+    
+    <item>
+      <title>Floating combat text</title>
+      <link>http://kidscancode.org/godot_recipes/ui/floating_text/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/ui/floating_text/</guid>
+      <description>Problem You want units to display damage as floating numbers when hit.
+Solution There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a Sprite node to display and move it.
+However, for this recipe, we&amp;rsquo;ll use a Label node (named &amp;ldquo;FCT&amp;rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &amp;ldquo;miss&amp;rdquo;.</description>
+    </item>
+    
+    <item>
       <title>Minimap/radar</title>
       <link>http://kidscancode.org/godot_recipes/ui/minimap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

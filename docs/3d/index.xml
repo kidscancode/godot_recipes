@@ -33,5 +33,18 @@ Solution For this solution, we&amp;rsquo;re going to re-use a 2D healthbar based
 If you need some assets, here are the three images used in the bar:</description>
     </item>
     
+    <item>
+      <title>Click to move</title>
+      <link>http://kidscancode.org/godot_recipes/3d/click_to_move/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/3d/click_to_move/</guid>
+      <description>Problem You want to move a 3D object to a clicked position.
+Solution We&amp;rsquo;ll start with a flat plane for our world. Our actor will move on this plane.
+The actor for this demo is a triangular prism mesh:
+Here is the code for the movement. If given a target, the object will turn and move toward it.
+extends KinematicBody export var speed = 5 export var gravity = -5 var target = null var velocity = Vector3.</description>
+    </item>
+    
   </channel>
 </rss>

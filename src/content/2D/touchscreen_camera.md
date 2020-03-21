@@ -185,8 +185,6 @@ Download the project file here: [2d_touch_camera.zip](/godot_recipes/files/2d_to
 - [Input: Input Actions](/godot_recipes/input/input_actions/)
 - [Drag-select multiple units](/godot_recipes/input/multi_unit_select/)
 
-
 #### Like video?
 
-*Coming Soon*
-<!-- {{< youtube -R1rasEyuqY >}} -->
+{{< youtube -jRMhJSwd-Xw >}}
