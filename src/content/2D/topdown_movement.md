@@ -103,6 +103,6 @@ func _physics_process(delta):
         look_at(target)
         velocity = transform.x * speed
         # stop moving if we get close to the target
-        if position.distance_to(target) > 5 > 5:
+        if position.distance_to(target) > 5:
             velocity = move_and_slide(velocity)
 ```

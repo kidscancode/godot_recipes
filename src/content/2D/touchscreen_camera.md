@@ -176,6 +176,7 @@ func _unhandled_input(event):
                 zoom = Vector2.ONE * new_zoom
                 last_drag_distance = drag_distance
 ```
+
 {{% notice note %}}
 Download the project file here: [2d_touch_camera.zip](/godot_recipes/files/2d_touch_camera.zip)
 {{% /notice %}}
