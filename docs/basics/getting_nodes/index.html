@@ -11,23 +11,23 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Shaders :: Godot Recipes by KidsCanCode</title>
+    <title>Understanding node paths :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1586308770" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1586308770" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1586308769" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1586308769" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1586308770" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1586308769" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1586308770"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1586308769"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/shaders/">
+  <body class="" data-url="/godot_recipes/basics/getting_nodes/">
     <nav id="sidebar" class="">
 
 
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1586308770"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1586308770"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1586308769"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1586308769"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1586308770"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1586308769"></script>
 
     
 
@@ -413,7 +413,7 @@
   
     
     <li data-nav-id="/godot_recipes/basics/" title="Basics" class="dd-item
-        
+        parent
         
         
         ">
@@ -437,7 +437,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/basics/getting_nodes/" title="Understanding node paths" class="dd-item ">
+      <li data-nav-id="/godot_recipes/basics/getting_nodes/" title="Understanding node paths" class="dd-item active">
         <a href="/godot_recipes/basics/getting_nodes/">
         Understanding node paths
         
@@ -1645,8 +1645,8 @@
   
     
     <li data-nav-id="/godot_recipes/shaders/" title="Shaders" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/shaders/">
@@ -2045,6 +2045,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -2055,7 +2057,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Shaders
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/basics/'>Basics</a> > Understanding node paths
+          
+        
           
         
           
@@ -2064,6 +2072,27 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#understanding-node-paths">Understanding node paths</a></li>
+<li><a href="#relative-vs-absolute-paths">Relative vs absolute paths</a></li>
+<li><a href="#a-warning">A warning</a></li>
+</ul></li>
+<li><a href="#wrapping-up">Wrapping up</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -2071,9 +2100,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Understanding node paths
+            </h1>
           
 
         
@@ -2081,103 +2113,118 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-draw-polygon-i-shaders"><i class='fas fa-draw-polygon'></i> Shaders</h1>
+<h2 id="problem">Problem</h2>
 
-<p>Deep voodoo. Cool effects.</p>
+<p>It&rsquo;s probably the most common error seen in the Godot help channels: an invalid node reference. Most often, it results in the following error:</p>
 
-<h4 id="in-this-section">In this section:</h4>
+<blockquote>
+<p>Invalid get index &lsquo;position&rsquo; (on base: &lsquo;null instance&rsquo;).</p>
+</blockquote>
 
+<h2 id="solution">Solution</h2>
 
+<p>It&rsquo;s that last part, the &ldquo;null instance&rdquo;, that&rsquo;s the source of this problem, and the main source of confusion for Godot beginners.</p>
 
+<p>The way to avoid this problem is to understand the concept of <em>node paths</em>.</p>
 
+<h3 id="understanding-node-paths">Understanding node paths</h3>
 
+<p>The scene tree is made of nodes, which are connected together in parent-child relationships. A node path is the path it takes to get from one node to another by moving through this tree.</p>
 
+<p>As an example, let&rsquo;s take a simple &ldquo;Player&rdquo; scene:</p>
 
+<p><img src="/godot_recipes/img/node_paths_01.png" alt="alt" /></p>
 
-<ul class="children children-li">
-	
+<p>The script for this scene is on the <code>Player</code> node. If the script needs to call <code>play()</code> on the <code>AnimatedSprite</code> node, it needs a reference to that node:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">get_node(<span style="color:#f1fa8c">&#34;AnimatedSprite&#34;</span>)<span style="color:#ff79c6">.</span>play()</code></pre></div>
+<p>The argument of the <code>get_node()</code> function is a string representing the <em>path</em> to the desired node. In this case, it&rsquo;s a child of the node the script is on. If the path you give it is invalid, you&rsquo;ll get the dreaded <code>null instance</code> error (as well as &ldquo;Node not found&rdquo;).</p>
 
-	
-		
-	
+<p>Getting a node reference with <code>get_node()</code> is such a common situation that GDScript has a shortcut for it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">$</span>AnimatedSprite<span style="color:#ff79c6">.</span>play()</code></pre></div>
 
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/intro/" >Shaders: intro</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/interacting/" >Interacting with Shaders</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/greyscale/" >Greyscale (monochrome) shader</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/blur/" >Blur shader</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
+<div class="notices info" ><p><code>get_node()</code> returns a <em>reference</em> to the desired node.</p>
+</div>
 
 
+<p>Let&rsquo;s look at a more complex scene tree:</p>
+
+<p><img src="/godot_recipes/img/node_paths_02.png" alt="alt" /></p>
+
+<p>If the script on <code>Main</code> needs to access <code>ScoreLabel</code> it can do so with this path:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">get_node(<span style="color:#f1fa8c">&#34;HUD/ScoreLabel&#34;</span>)<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;0&#34;</span>
+<span style="color:#6272a4"># or using the shortcut:</span>
+<span style="color:#ff79c6">$</span>HUD<span style="color:#ff79c6">/</span>ScoreLabel<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;0&#34;</span></code></pre></div>
+
+<div class="notices tip" ><p>When using <code>$</code> notation, the Godot editor will autocomplete paths for you. You can also right-click on a node in the Scene tab and choose &ldquo;Copy Node Path&rdquo;.</p>
+</div>
 
 
+<p>What if the node you want to access is higher in the tree? You can use <code>get_parent()</code> or <code>&quot;..&quot;</code> to reference the parent node. In the above example tree, to get the <code>Player</code> node from the <code>ScoreLabel</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">get_node(<span style="color:#f1fa8c">&#34;../../Player&#34;</span>)</code></pre></div>
+<p>Let&rsquo;s break that down. The path <code>&quot;../../Player&quot;</code> means &ldquo;get the node that&rsquo;s up one level (<code>HUD</code>), then one more level (<code>Main</code>), then its child <code>Player</code>&rdquo;.</p>
 
 
+<div class="notices tip" ><p>Does this seem familiar? Node paths work exactly like directory paths in your operating system. The <code>/</code> character indicates the parent-child relationship, and <code>..</code> means &ldquo;up one level&rdquo;.</p>
+</div>
 
 
+<h3 id="relative-vs-absolute-paths">Relative vs absolute paths</h3>
+
+<p>The above examples all use <em>relative</em> paths - meaning they start at the current node and follow the path to the destination. Node paths can also be absolute, starting from the root node of the scene.</p>
+
+<p>For example, the absolute path to the player node is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">get_node(<span style="color:#f1fa8c">&#34;/root/Main/Player&#34;</span>)</code></pre></div>
+<p><code>/root</code>, which can also be accessed with <code>get_tree().root</code> is <em>not</em> the root node of your scene. It&rsquo;s the Viewport node that is always present by default in the SceneTree.</p>
+
+<h3 id="a-warning">A warning</h3>
+
+<p>While the above examples work just fine, there are some things you should be aware of that may cause problems later. Imagine the following situation: the <code>Player</code> node has a <code>health</code> property, which you want to display in a <code>HealthBar</code> node somewhere in your UI. You might write something like this in the player&rsquo;s script:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> take_damage(amount):
+    health <span style="color:#ff79c6">-=</span> amount
+    get_node(<span style="color:#f1fa8c">&#34;../Main/UI/HealthBar&#34;</span>)<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">str</span>(health)</code></pre></div>
+<p>While this may work fine at first, it is <em>brittle</em>, meaning it can break easily. There are two main problems with this kind of arrangement:</p>
+
+<ol>
+<li>You can&rsquo;t test the player scene independently. If you run the player scene by itself or in a test scene that doesn&rsquo;t have a UI, the <code>get_node()</code> line will cause a crash.</li>
+<li>You can&rsquo;t change your UI. If you decide to rearrange or redesign your UI, the path will no longer be valid and you have to change it.</li>
+</ol>
+
+<p>For this reason, you should try to avoid using node paths that go <em>up</em> the scene tree. In the above situation, if the player instead emitted a signal when the health changed, the UI could listen for that signal to update itself. You could then rearrange and separate nodes without fear of breaking your game.</p>
+
+<h2 id="wrapping-up">Wrapping up</h2>
+
+<p>Once you understand how to use node paths, you&rsquo;ll see how easy it is to reference any node you need. And put a stop to seeing those <code>null instance</code> error messages.</p>
+
+<!-- ## Related Recipes
+
+- [Using KinematicBody2D](/godot_recipes/physics/godot3_kinematic2d/) -->
+
+
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
+
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -2438,6 +2485,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2450,6 +2498,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -2467,6 +2516,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -2493,54 +2545,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -2653,134 +2657,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -3054,22 +2930,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -3165,22 +3025,6 @@
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -3342,6 +3186,22 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
@@ -3366,6 +3226,117 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -3380,8 +3351,85 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -3654,20 +3702,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1586308770"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1586308770"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1586308770"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1586308770"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1586308770"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1586308770"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1586308770"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1586308769"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1586308769"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1586308769"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1586308769"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1586308769"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1586308769"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1586308769"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1586308770"></script>
-    <script src="/godot_recipes/js/learn.js?1586308770"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1586308770"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1586308769"></script>
+    <script src="/godot_recipes/js/learn.js?1586308769"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1586308769"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1586308770" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1586308770"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1586308769" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1586308769"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3688,3 +3736,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

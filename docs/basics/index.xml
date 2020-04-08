@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Understanding node paths</title>
+      <link>http://kidscancode.org/godot_recipes/basics/getting_nodes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/basics/getting_nodes/</guid>
+      <description>Problem It&amp;rsquo;s probably the most common error seen in the Godot help channels: an invalid node reference. Most often, it results in the following error:
+ Invalid get index &amp;lsquo;position&amp;rsquo; (on base: &amp;lsquo;null instance&amp;rsquo;).
+ Solution It&amp;rsquo;s that last part, the &amp;ldquo;null instance&amp;rdquo;, that&amp;rsquo;s the source of this problem, and the main source of confusion for Godot beginners.
+The way to avoid this problem is to understand the concept of node paths.</description>
+    </item>
+    
+    <item>
       <title>Understanding &#39;delta&#39;</title>
       <link>http://kidscancode.org/godot_recipes/basics/understanding_delta/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

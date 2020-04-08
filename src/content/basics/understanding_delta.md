@@ -46,7 +46,7 @@ Maybe. The trouble begins if there is something else occupying the computer's ti
 
 ![alt](/godot_recipes/img/delta_02.gif)
 
-Even small frame rate fluctuations will result in inconsistent movement speed. If this were a bullet or other fast-moving object, we really don't want it slowing down like this. We need the movement to be _frame rate independent_.
+Even small frame rate fluctuations will result in inconsistent movement speed. If this were a bullet or other fast-moving object, we wouldn't want it slowing down like this. We need the movement to be _frame rate independent_.
 
 ### Fixing the frame rate problem
 
