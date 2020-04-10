@@ -44,5 +44,17 @@ Solution Godot&amp;rsquo;s file I/O (input/output) system is based around the Fi
 var file = File.new() file.open(&amp;#34;user://myfile.name&amp;#34;, File.READ) User data should only be stored in the user:// path. While res:// can be used when running from the editor, when your project is exported, the res:// path becomes read-only.</description>
     </item>
     
+    <item>
+      <title>Circular movement</title>
+      <link>http://kidscancode.org/godot_recipes/basics/rotation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/basics/rotation/</guid>
+      <description>Problem You want an object to &amp;ldquo;orbit&amp;rdquo; (move in a circle) around another object.
+Solution This is a common beginner question, and often comes after a bunch of messy experimenting with trig functions. The answer is much simpler:
+Place the orbiting sprite in a child node of the main sprite (we&amp;rsquo;re calling it &amp;ldquo;Pivot&amp;rdquo;). Give it an offset and rotate the Pivot.
+extends Node2D export var rotation_speed = PI func _process(delta): $Sprite/Pivot.</description>
+    </item>
+    
   </channel>
 </rss>

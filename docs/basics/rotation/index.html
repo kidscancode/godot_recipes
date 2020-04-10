@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Mobile ads :: Godot Recipes by KidsCanCode</title>
+    <title>Circular movement :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1586558410" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/games/circle_jump/circle_jump_11/">
+  <body class="" data-url="/godot_recipes/basics/rotation/">
     <nav id="sidebar" class="">
 
 
@@ -413,7 +413,7 @@
   
     
     <li data-nav-id="/godot_recipes/basics/" title="Basics" class="dd-item
-        
+        parent
         
         
         ">
@@ -494,7 +494,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/basics/rotation/" title="Circular movement" class="dd-item ">
+      <li data-nav-id="/godot_recipes/basics/rotation/" title="Circular movement" class="dd-item active">
         <a href="/godot_recipes/basics/rotation/">
         Circular movement
         
@@ -1813,7 +1813,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/" title="Game Tutorials" class="dd-item
-        parent
+        
         
         
         ">
@@ -1840,7 +1840,7 @@
   
     
     <li data-nav-id="/godot_recipes/games/circle_jump/" title="Mobile Game: Circle Jump" class="dd-item
-        parent
+        
         
         
         ">
@@ -1997,7 +1997,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_11/" title="Mobile ads" class="dd-item active">
+      <li data-nav-id="/godot_recipes/games/circle_jump/circle_jump_11/" title="Mobile ads" class="dd-item ">
         <a href="/godot_recipes/games/circle_jump/circle_jump_11/">
         11. Mobile ads
         
@@ -2099,13 +2099,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/games/'>Game Tutorials</a> > <a href='/godot_recipes/games/circle_jump/'>Mobile Game: Circle Jump</a> > Mobile ads
-          
-        
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/basics/'>Basics</a> > Circular movement
           
         
           
@@ -2122,19 +2116,8 @@
 <ul>
 <li>
 <ul>
-<li><a href="#about-ads">About ads</a></li>
-<li><a href="#set-up-admob">Set up Admob</a></li>
-<li><a href="#using-godot-modules">Using Godot modules</a></li>
-<li><a href="#configuring-export">Configuring export</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#disabling-ads">Disabling ads</a>
-<ul>
-<li>
-<ul>
-<li><a href="#follow-this-project-on-github">Follow this project on Github:</a></li>
-<li><a href="#do-you-prefer-video">Do you prefer video?</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -2153,7 +2136,7 @@
           
             <h1>
               
-              Mobile ads
+              Circular movement
             </h1>
           
 
@@ -2163,142 +2146,35 @@
 
 
 
-<h2 id="about-ads">About ads</h2>
+<h2 id="problem">Problem</h2>
 
-<p>When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.</p>
+<p>You want an object to &ldquo;orbit&rdquo; (move in a circle) around another object.</p>
 
-<p>Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&rsquo;re not making a decision on the pros and cons in this tutorial - we&rsquo;re here to show you how to put ads in your game <em>if you want them</em>.</p>
+<h2 id="solution">Solution</h2>
 
-<h2 id="set-up-admob">Set up Admob</h2>
+<p>This is a common beginner question, and often comes after a bunch of messy experimenting with trig functions. The answer is much simpler:</p>
 
-<p>Head over to <a href="https://www.admob.com/">Admob</a> and create an account.</p>
+<p><img src="/godot_recipes/img/circle_motion_01.png" alt="alt" /></p>
 
-<p>In the AdMob manager, create a new app - ours is titled &ldquo;Circle Jump&rdquo; - and specify the &ldquo;Android&rdquo; platform (we&rsquo;ll discuss iOS later).</p>
+<p>Place the orbiting sprite in a child node of the main sprite (we&rsquo;re calling it &ldquo;Pivot&rdquo;). Give it an offset and rotate the <code>Pivot</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node2D
 
-<p>In the &ldquo;Circle Jump&rdquo; app, you&rsquo;ll need to create three &ldquo;Ad Units&rdquo;. These are the types of ads that you can show in your game. For this tutorial, we&rsquo;ll need a &ldquo;Banner&rdquo; and an &ldquo;Interstitial&rdquo;. Each ad unit will have an &ldquo;Ad Unit ID&rdquo;, a long string of characters - we&rsquo;ll need that later in the game.</p>
-
-<p><img src="/godot_recipes/img/cj_11_01.png" alt="alt" /></p>
-
-<h2 id="using-godot-modules">Using Godot modules</h2>
-
-<p>Godot doesn&rsquo;t include ad services by default, so it&rsquo;s necessary to use an engine module, or plugin, to add that functionality. You can find the module we&rsquo;ll be using here: <a href="https://github.com/kloder-games/godot-admob">godot-admob</a>.
-On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
-
-<p>To use a custom engine module, the engine has to be recompiled. In the case of mobile platforms, that means recompiling the export templates because the default ones we downloaded from Godot weren&rsquo;t compiled with this module.</p>
-
-<p>Compiling export templates is not difficult, but it does require setting up a build environment on your computer - downloading the required programs and libraries needed to build Godot. If you&rsquo;re new to this concept and interested in learning about it, see the <a href="https://docs.godotengine.org/en/latest/development/compiling/introduction_to_the_buildsystem.html">Compiling</a> section of the official docs.</p>
-
-<p>Fortunately, we won&rsquo;t need to compile custom export templates, because it&rsquo;s already been done for us. Head over to the <a href="https://github.com/Shin-NiL/godot-custom-mobile-template">godot-custom-mobile-templates</a> Github repo. Click on &ldquo;Releases&rdquo; and download the version of the export templates that matches your version of Godot.</p>
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> rotation_speed <span style="color:#ff79c6">=</span> PI
 
 
-<div class="notices warning" ><p>The export template version <strong>must</strong> match the Godot editor version. If you&rsquo;re using a custom-built editor, you will also have to build the templates from the same code branch.</p>
-</div>
+<span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">/</span>Pivot<span style="color:#ff79c6">.</span>rotation <span style="color:#ff79c6">+=</span> rotation_speed <span style="color:#ff79c6">*</span> delta</code></pre></div>
+<p><img src="/godot_recipes/img/circle_motion_02.gif" alt="alt" /></p>
+
+<p>This works just as well in 3D, too:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Spatial
+
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> rotation_speed <span style="color:#ff79c6">=</span> PI
 
 
-<p>Unzip the templates somewhere on your computer (don&rsquo;t put them in the Circle Jump project folder).</p>
-
-<h2 id="configuring-export">Configuring export</h2>
-
-<p>Back in the Godot editor, we need to make some changes to the export configuration. First, open <em>Project -&gt; Project Settings</em> and find the &ldquo;Android&rdquo; section. In the <em>Modules</em> property is where you list the module(s) you want to use in your code. The module name is listed on the <code>godot-admob</code> page: &ldquo;org/godotengine/godot/GodotAdMob&rdquo;. If you have more than one module, separate them with commas.</p>
-
-<p>In the _Project -&gt; Export_menu, we need to tell Godot to use the custom templates we downloaded. These are set in the &ldquo;Custom Package&rdquo; section. Click the folder icon and navigate to where you unzipped the templates. Make sure to add both the &ldquo;Debug&rdquo; and &ldquo;Release&rdquo; templates.</p>
-
-<p><img src="/godot_recipes/img/cj_11_02.png" alt="alt" /></p>
-
-<h2 id="code">Code</h2>
-
-<p>Now when we run the game (on Android), it will load that module. It&rsquo;s accessed via an engine singleton. Open <code>settings.gd</code> and add the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> admob <span style="color:#ff79c6">=</span> null
-<span style="color:#ff79c6">var</span> real_ads <span style="color:#ff79c6">=</span> false
-<span style="color:#ff79c6">var</span> banner_top <span style="color:#ff79c6">=</span> false
-<span style="color:#6272a4"># Fill these from your AdMob account:</span>
-<span style="color:#ff79c6">var</span> ad_banner_id <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-<span style="color:#ff79c6">var</span> ad_interstitial_id <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
-<span style="color:#ff79c6">var</span> enable_ads <span style="color:#ff79c6">=</span> true</code></pre></div>
-<p>These are our settings variables for the module. <code>real_ads</code> set to <code>false</code> puts us in &ldquo;Test Ad&rdquo; mode. You shouldn&rsquo;t change this to <code>true</code> until you&rsquo;re ready to release your game. <code>banner_top</code> toggles whether the banner ad should be shown at the top or bottom of the screen.</p>
-
-<p><code>ad_banner_id</code> and <code>ad_interstitial_id</code> should be filled with <em>your</em> ad unit values from your AdMob account.</p>
-
-<p>We need to initialize the module:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _ready():
-    <span style="color:#ff79c6">if</span> Engine<span style="color:#ff79c6">.</span>has_singleton(<span style="color:#f1fa8c">&#34;AdMob&#34;</span>):
-        admob <span style="color:#ff79c6">=</span> Engine<span style="color:#ff79c6">.</span>get_singleton(<span style="color:#f1fa8c">&#34;AdMob&#34;</span>)
-        admob<span style="color:#ff79c6">.</span>init(real_ads, get_instance_id())
-        admob<span style="color:#ff79c6">.</span>loadBanner(ad_banner_id, banner_top)
-        admob<span style="color:#ff79c6">.</span>loadInterstitial(ad_interstitial_id)</code></pre></div>
-<p>We first check that the module singleton exists. If it&rsquo;s found, we can initialize the module and load the ad units.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> show_ad_banner():
-    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
-        admob<span style="color:#ff79c6">.</span>showBanner()
-
-<span style="color:#ff79c6">func</span> hide_ad_banner():
-    <span style="color:#ff79c6">if</span> admob:
-        admob<span style="color:#ff79c6">.</span>hideBanner()</code></pre></div>
-<p>Next, we have functions to let us show/hide the banner. We only want it showing in the menu screens, not during actual gameplay.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> show_ad_interstitial():
-    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
-        admob<span style="color:#ff79c6">.</span>showInterstitial()</code></pre></div>
-<p>We&rsquo;ll use this function to show the interstitial ad at the end of a game.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> _on_interstitial_close():
-    <span style="color:#ff79c6">if</span> admob <span style="color:#ff79c6">and</span> enable_ads:
-        show_ad_banner()</code></pre></div>
-<p>The module looks for this callback to run any code when the interstitial ad closes. Since we&rsquo;ll be at the end of a game and going back to the menu, we&rsquo;ll show the banner again.</p>
-
-<p>Now we need to call these functions from the game. Open <code>Main.gd</code> and add the following:</p>
-
-<ul>
-<li>In <code>new_game()</code>, add <code>settings.hide_ad_banner()</code>.</li>
-<li>At the end of <code>_on_Jumper_died()</code> add <code>settings.show_ad_interstitial()</code>.</li>
-</ul>
-
-<p>Run the game on your device, and you should see the test ad appear:</p>
-
-<p><img src="/godot_recipes/img/cj_11_03.jpg" alt="alt" /></p>
-
-<h2 id="disabling-ads">Disabling ads</h2>
-
-<p>Many games allow ads to be disabled, whether via in-app purchases, reaching a certain level, etc. In our case, we&rsquo;ll add it as a button on the &ldquo;Settings&rdquo; screen.</p>
-
-<p>First, we&rsquo;ll change the <code>enable_ads</code> to give it a setter function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> enable_ads <span style="color:#ff79c6">=</span> true <span style="color:#ff79c6">setget</span> set_enable_ads</code></pre></div>
-<p>And add the setter function:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> set_enable_ads(value):
-    enable_ads <span style="color:#ff79c6">=</span> value
-    <span style="color:#ff79c6">if</span> enable_ads:
-        show_ad_banner()
-    <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">!</span>enable_ads:
-        hide_ad_banner()</code></pre></div>
-<p>This will cause the banner add to appear/disappear instantly when pressing the button.</p>
-
-<p>To add the button, we&rsquo;ll need a third row of buttons. Open the <code>BaseScreen</code> scene and duplicate the first HBoxContainer.</p>
-
-<p>In the <code>SettingsScreen</code> scene add a <code>Button</code> called &ldquo;Ads&rdquo; to the middle row. Set its text to &ldquo;Disable Ads&rdquo;, its <em>Custom Font</em> (a size of 48 works well), and set its <em>Custom Styles</em> all to &ldquo;New StyleBoxEmpty&rdquo;. Don&rsquo;t forget to add the button to the &ldquo;buttons&rdquo; group.</p>
-
-<p>In <code>Screens.gd</code>, add the following to the <code>match</code> statement that processes the buttons:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">match button<span style="color:#ff79c6">.</span>name:
-    <span style="color:#f1fa8c">&#34;Ads&#34;</span>:
-        settings<span style="color:#ff79c6">.</span>enable_ads <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">!</span>settings<span style="color:#ff79c6">.</span>enable_ads
-        <span style="color:#ff79c6">if</span> settings<span style="color:#ff79c6">.</span>enable_ads:
-            button<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Disable Ads&#34;</span>
-        <span style="color:#ff79c6">else</span>:
-            button<span style="color:#ff79c6">.</span>text <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;Enable Ads&#34;</span></code></pre></div>
-<p><img src="/godot_recipes/img/cj_11_04.png" alt="alt" /></p>
-
-<p>Run the game on your device and verify that you can enable/disable ads.</p>
-
-<hr />
-
-<h4 id="follow-this-project-on-github">Follow this project on Github:</h4>
-
-<p><a href="https://github.com/kidscancode/circle_jump">https://github.com/kidscancode/circle_jump</a></p>
-
-<h4 id="do-you-prefer-video">Do you prefer video?</h4>
-
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/8SOw_Tmw2OI6qclA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
+<span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">$</span>MeshInstance<span style="color:#ff79c6">/</span>Pivot<span style="color:#ff79c6">.</span>rotate_y(rotation_speed <span style="color:#ff79c6">*</span> delta)</code></pre></div>
+<p><img src="/godot_recipes/img/circle_motion_03.gif" alt="alt" /></p>
 
 
 <h3>Comments</h3>
@@ -2585,6 +2461,7 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
                 
                     
+                    
                 
                 
 
@@ -2597,6 +2474,9 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2646,6 +2526,7 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
                 
                     
+                    
                 
                 
 
@@ -2664,6 +2545,9 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3641,7 +3525,6 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
                 
                     
-                    
                 
                 
 
@@ -3656,7 +3539,6 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
-                    
                     
                 
                 
@@ -3670,9 +3552,6 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -3785,7 +3664,6 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
-                    
                     
                 
                 
@@ -3802,9 +3680,6 @@ On that page, you&rsquo;ll see a list of the methods provided by the plugin.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 

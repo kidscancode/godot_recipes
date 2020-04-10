@@ -144,7 +144,7 @@
 	"title": "Basics",
 	"tags": [],
 	"description": "",
-	"content": "  Basics Basic Godot tips and tricks that apply to any project.\nIn this section:  Understanding node paths   Understanding \u0026#39;delta\u0026#39;   Saving/loading data   "
+	"content": "  Basics Basic Godot tips and tricks that apply to any project.\nIn this section:  Understanding node paths   Understanding \u0026#39;delta\u0026#39;   Saving/loading data   Circular movement   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/",
@@ -502,6 +502,13 @@
 	"tags": [],
 	"description": "",
 	"content": "  AI/Behavior Automated behavior and (sometimes) smarter entities.\nIn this section:  Chasing the player   Path following   Changing behaviors   Homing missile   "
+},
+{
+	"uri": "http://kidscancode.org/godot_recipes/basics/rotation/",
+	"title": "Circular movement",
+	"tags": [],
+	"description": "",
+	"content": " Problem You want an object to \u0026ldquo;orbit\u0026rdquo; (move in a circle) around another object.\nSolution This is a common beginner question, and often comes after a bunch of messy experimenting with trig functions. The answer is much simpler:\nPlace the orbiting sprite in a child node of the main sprite (we\u0026rsquo;re calling it \u0026ldquo;Pivot\u0026rdquo;). Give it an offset and rotate the Pivot.\nextends Node2D export var rotation_speed = PI func _process(delta): $Sprite/Pivot.rotation += rotation_speed * delta This works just as well in 3D, too:\nextends Spatial export var rotation_speed = PI func _process(delta): $MeshInstance/Pivot.rotate_y(rotation_speed * delta) "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/2d/screen_shake/",
