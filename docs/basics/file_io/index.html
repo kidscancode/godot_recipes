@@ -11,23 +11,23 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Floating combat text :: Godot Recipes by KidsCanCode</title>
+    <title>Saving/loading data :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1586556806" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1586556806" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1586556805" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1586556805" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1586556806" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1586556805" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1586556806"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1586556805"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/ui/floating_text/">
+  <body class="" data-url="/godot_recipes/basics/file_io/">
     <nav id="sidebar" class="">
 
 
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1586556806"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1586556806"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1586556805"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1586556805"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1586556806"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1586556805"></script>
 
     
 
@@ -413,7 +413,7 @@
   
     
     <li data-nav-id="/godot_recipes/basics/" title="Basics" class="dd-item
-        
+        parent
         
         
         ">
@@ -475,7 +475,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/basics/file_io/" title="Saving/loading data" class="dd-item ">
+      <li data-nav-id="/godot_recipes/basics/file_io/" title="Saving/loading data" class="dd-item active">
         <a href="/godot_recipes/basics/file_io/">
         Saving/loading data
         
@@ -1105,7 +1105,7 @@
   
     
     <li data-nav-id="/godot_recipes/ui/" title="UI" class="dd-item
-        parent
+        
         
         
         ">
@@ -1224,7 +1224,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/ui/floating_text/" title="Floating combat text" class="dd-item active">
+      <li data-nav-id="/godot_recipes/ui/floating_text/" title="Floating combat text" class="dd-item ">
         <a href="/godot_recipes/ui/floating_text/">
         Floating combat text
         
@@ -2080,7 +2080,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/ui/'>UI</a> > Floating combat text
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/basics/'>Basics</a> > Saving/loading data
           
         
           
@@ -2100,15 +2100,10 @@
 <li><a href="#problem">Problem</a></li>
 <li><a href="#solution">Solution</a>
 <ul>
-<li><a href="#floating-text-manager">Floating text manager</a></li>
-</ul></li>
+<li><a href="#storing-data">Storing data</a></li>
+<li><a href="#saving-objects">Saving objects</a></li>
+<li><a href="#what-about-json">What about JSON?</a></li>
 <li><a href="#wrapping-up">Wrapping up</a></li>
-<li><a href="#related-recipes">Related recipes</a>
-<ul>
-<li>
-<ul>
-<li><a href="#like-video">Like video?</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2128,7 +2123,7 @@
           
             <h1>
               
-              Floating combat text
+              Saving/loading data
             </h1>
           
 
@@ -2140,100 +2135,103 @@
 
 <h2 id="problem">Problem</h2>
 
-<p>You want units to display damage as floating numbers when hit.</p>
-
-<p><img src="/godot_recipes/img/fct_demo.gif" alt="alt" /></p>
+<p>You need to save and load local data between game sessions.</p>
 
 <h2 id="solution">Solution</h2>
 
-<p>There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a <code>Sprite</code> node to display and move it.</p>
+<p>Godot&rsquo;s file I/O (input/output) system is based around the <code>File</code> object. You open a file by creating a new <code>File</code> object and calling <code>open()</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> file <span style="color:#ff79c6">=</span> File<span style="color:#ff79c6">.</span>new()
+file<span style="color:#ff79c6">.</span>open(<span style="color:#f1fa8c">&#34;user://myfile.name&#34;</span>, File<span style="color:#ff79c6">.</span>READ)</code></pre></div>
 
-<p>However, for this recipe, we&rsquo;ll use a <code>Label</code> node (named &ldquo;FCT&rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &ldquo;miss&rdquo;.</p>
-
-<p>Start with a <code>Label</code> node and add a <code>Tween</code> child. We&rsquo;ll use the <code>Tween</code> to animate the movement and the fade-out effect.</p>
-
-<p>Set the Label&rsquo;s <em>Custom Fonts/Font</em> property using your favorite font. In this example, we&rsquo;re using &ldquo;Xolonium.ttf&rdquo; with a font size of <code>28</code> and a black outline of <code>1</code> pixel. In the menu select &ldquo;Layout-&gt;Center&rdquo;, and also set <em>Align</em> and <em>Valign</em> to &ldquo;Center&rdquo;.</p>
-
-<p>Add a script to the Label.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Label
-
-<span style="color:#ff79c6">func</span> show_value(value, travel, duration, spread, crit<span style="color:#ff79c6">=</span>false):</code></pre></div>
-<p>When we spawn the floating text, we&rsquo;ll call this function to set the parameters:</p>
-
-<ul>
-<li><code>value</code> - the number (or string) to display</li>
-<li><code>travel</code> - a <code>Vector2</code> representing the direction of travel</li>
-<li><code>duration</code> - how long the text will last</li>
-<li><code>spread</code> - movement will be randomly spread across this arc</li>
-<li><code>crit</code> - if <code>true</code>, indicates the damage was a &ldquo;critical&rdquo; hit</li>
-</ul>
-
-<p>Here&rsquo;s what the function does:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    text <span style="color:#ff79c6">=</span> value
-    <span style="color:#ff79c6">var</span> movement <span style="color:#ff79c6">=</span> travel<span style="color:#ff79c6">.</span>rotated(<span style="color:#8be9fd;font-style:italic">rand_range</span>(<span style="color:#ff79c6">-</span>spread<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>, spread<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>))
-    rect_pivot_offset <span style="color:#ff79c6">=</span> rect_size <span style="color:#ff79c6">/</span> <span style="color:#bd93f9">2</span></code></pre></div>
-<p>First, assign the value and randomize the movement based on the given spread (+/-90 degrees, for example). Since we may also be animating the scale, we set the <code>rect_pivot_offset</code> to the center of the control so that it will scale from the center.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">$</span>Tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;rect_position&#34;</span>,
-            rect_position, rect_position <span style="color:#ff79c6">+</span> movement,
-            duration, Tween<span style="color:#ff79c6">.</span>TRANS_LINEAR, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)
-    <span style="color:#ff79c6">$</span>Tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;modulate:a&#34;</span>,
-            <span style="color:#bd93f9">1.0</span>, <span style="color:#bd93f9">0.0</span>, duration,
-            Tween<span style="color:#ff79c6">.</span>TRANS_LINEAR, Tween<span style="color:#ff79c6">.</span>EASE_IN_OUT)</code></pre></div>
-<p>Next, we have two properties to interpolate: <code>rect_position</code> for the movement and <code>modulate.a</code> for the visibility.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">if</span> crit:
-        modulate <span style="color:#ff79c6">=</span> Color(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>)
-        <span style="color:#ff79c6">$</span>Tween<span style="color:#ff79c6">.</span>interpolate_property(self, <span style="color:#f1fa8c">&#34;rect_scale&#34;</span>,
-            rect_scale<span style="color:#ff79c6">*</span><span style="color:#bd93f9">2</span>, rect_scale,
-            <span style="color:#bd93f9">0.4</span>, Tween<span style="color:#ff79c6">.</span>TRANS_BACK, Tween<span style="color:#ff79c6">.</span>EASE_IN)</code></pre></div>
-<p>If the hit is a critical, we&rsquo;ll also change the color and animate the scale for a bigger effect. Note, I&rsquo;ve hardcoded this to be red, but you should probably make this a configurable value.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript">    <span style="color:#ff79c6">$</span>Tween<span style="color:#ff79c6">.</span>start()
-    <span style="color:#8be9fd;font-style:italic">yield</span>(<span style="color:#ff79c6">$</span>Tween, <span style="color:#f1fa8c">&#34;tween_all_completed&#34;</span>)
-    queue_free()</code></pre></div>
-<p>Finally, we start the Tween and wait for it to finish, then remove the Label.</p>
-
-<h3 id="floating-text-manager">Floating text manager</h3>
-
-<p>Next we&rsquo;ll crate a small node to manage placing and spawning the floating text. This node will be attached to the game entities that you want to display floating text effects.</p>
-
-<p>This is a <code>Node2D</code> named &ldquo;FCTManager&rdquo;. It contains the following script:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node2D
-
-<span style="color:#ff79c6">var</span> FCT <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">preload</span>(<span style="color:#f1fa8c">&#34;res://FCT.tscn&#34;</span>)
-
-<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> travel <span style="color:#ff79c6">=</span> Vector2(<span style="color:#bd93f9">0</span>, <span style="color:#ff79c6">-</span><span style="color:#bd93f9">80</span>)
-<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> duration <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">2</span>
-<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> spread <span style="color:#ff79c6">=</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">2</span>
-
-<span style="color:#ff79c6">func</span> show_value(value, crit<span style="color:#ff79c6">=</span>false):
-    <span style="color:#ff79c6">var</span> fct <span style="color:#ff79c6">=</span> FCT<span style="color:#ff79c6">.</span>instance()
-    add_child(fct)
-    fct<span style="color:#ff79c6">.</span>show_value(<span style="color:#8be9fd;font-style:italic">str</span>(value), travel, duration, spread, crit)</code></pre></div>
-<p>Here you can expose the settings to the Inspector for convenient changes. The <code>show_value()</code> method here spawns the floating labels and sets their properties.</p>
-
-<p>In your game unit, you&rsquo;d attach an instance of this node, and position it wherever you want the text to appear. Then add something like the following to the unit&rsquo;s <code>take_damage()</code> method:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">$</span>FCTManager<span style="color:#ff79c6">.</span>show_value(dmg, crit)</code></pre></div>
-<h2 id="wrapping-up">Wrapping up</h2>
-
-<p>Optimization: in the case where you have a very large number of enemies/bullets, you may experience some performance impact from repeatedly spawning and freeing floating text. In this case, you can spawn a fixed number of text objects in the manager, and show/hide them rather than freeing them at the end of the animation.</p>
-
-
-<div class="notices note" ><p>Download the project file here: <a href="/godot_recipes/files/floating_text.zip">floating_text.zip</a></p>
+<div class="notices warning" ><p>User data should only be stored in the <code>user://</code> path. While <code>res://</code> can be used when running from the editor, when your project is exported, the <code>res://</code> path becomes read-only.</p>
 </div>
 
 
+<p>The second argument after the file path is the &ldquo;Mode Flag&rdquo;, which can be one of the following:</p>
 
-<div class="notices note" ><p>Art in this demo by <a href="https://www.patreon.com/ansimuz">Luis Zuno</a></p>
+<ul>
+<li>File.READ - Open for reading.</li>
+<li>File.WRITE - Open for writing. Creates the file if it doesn&rsquo;t exist and truncates if it does.</li>
+<li>File.READ_WRITE - Open for reading and writing. Doesn&rsquo;t truncate the file.</li>
+<li>File.WRITE_READ - Open for reading/writing. Creates the file if it doesn&rsquo;t exist and truncates if it does.</li>
+</ul>
+
+<h3 id="storing-data">Storing data</h3>
+
+<p>You can save data using its specific data type (<code>store_float()</code>, <code>store_string()</code>, etc.), or using the generic <code>store_var()</code>, which will use Godot&rsquo;s built-in serialization to encode your data, including complex data like objects (more on this later).</p>
+
+<p>Let&rsquo;s start with a small example: saving the player&rsquo;s high score. We can write a function that we can call whenever the score needs to be saved:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> score_file <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;user://score.save&#34;</span>
+
+<span style="color:#ff79c6">func</span> save_score():
+    <span style="color:#ff79c6">var</span> file <span style="color:#ff79c6">=</span> File<span style="color:#ff79c6">.</span>new()
+    file<span style="color:#ff79c6">.</span>open(score_file, File<span style="color:#ff79c6">.</span>WRITE)
+    file<span style="color:#ff79c6">.</span>store_var(highscore)
+    file<span style="color:#ff79c6">.</span>close()</code></pre></div>
+
+<div class="notices tip" ><p>Don&rsquo;t forget to <code>close()</code> the file when you&rsquo;re finished accessing it.</p>
 </div>
 
 
-<h2 id="related-recipes">Related recipes</h2>
+<p>We&rsquo;re saving our score, but we need to be able to load it when the game starts:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">func</span> load_score():
+    <span style="color:#ff79c6">var</span> file <span style="color:#ff79c6">=</span> File<span style="color:#ff79c6">.</span>new()
+    <span style="color:#ff79c6">if</span> file<span style="color:#ff79c6">.</span>file_exists(score_file):
+        file<span style="color:#ff79c6">.</span>open(score_file, File<span style="color:#ff79c6">.</span>READ)
+        highscore <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>get_var()
+        file<span style="color:#ff79c6">.</span>close()
+    <span style="color:#ff79c6">else</span>:
+        highscore <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span></code></pre></div>
+<p>Don&rsquo;t forget to check for the file&rsquo;s existence before attempting to read from it - it may not be there! If that&rsquo;s the case, you can use a default value.</p>
 
-<ul>
-<li><a href="/godot_recipes/ui/labels/">UI: Labels</a></li>
-<li><a href="/godot_recipes/ui/unit_healthbar/">UI: Object Healthbars</a></li>
-</ul>
+<h3 id="saving-objects">Saving objects</h3>
 
-<h4 id="like-video">Like video?</h4>
+<p>You can save more than just basic data types. Using <code>store_var()</code>&rsquo;s <code>full_objects</code> parameter you can save any object, including custom ones. For example, let&rsquo;s say you have a custom object defined:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> Node
+class_name CustomObject
+
+<span style="color:#ff79c6">var</span> a <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">10</span>
+
+<span style="color:#ff79c6">func</span> say_hello():
+    <span style="color:#8be9fd;font-style:italic">print</span>(<span style="color:#f1fa8c">&#34;hello&#34;</span>)</code></pre></div>
+<p>And then your save/load code would look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> score_file <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;user://score.save&#34;</span>
+<span style="color:#ff79c6">var</span> c <span style="color:#ff79c6">=</span> CustomObject<span style="color:#ff79c6">.</span>new()
+
+<span style="color:#ff79c6">func</span> save_to_file():
+    <span style="color:#ff79c6">var</span> file <span style="color:#ff79c6">=</span> File<span style="color:#ff79c6">.</span>new()
+    file<span style="color:#ff79c6">.</span>open(score_file, File<span style="color:#ff79c6">.</span>WRITE)
+    file<span style="color:#ff79c6">.</span>store_var(c, true)
+    file<span style="color:#ff79c6">.</span>close()
+
+
+<span style="color:#ff79c6">func</span> load_from_file():
+    <span style="color:#ff79c6">var</span> file <span style="color:#ff79c6">=</span> File<span style="color:#ff79c6">.</span>new()
+    <span style="color:#ff79c6">if</span> file<span style="color:#ff79c6">.</span>file_exists(score_file):
+        file<span style="color:#ff79c6">.</span>open(score_file, File<span style="color:#ff79c6">.</span>READ)
+        c <span style="color:#ff79c6">=</span> file<span style="color:#ff79c6">.</span>get_var(true)
+        file<span style="color:#ff79c6">.</span>close()</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">var</span> c
+
+<span style="color:#ff79c6">func</span> _ready():
+    load_from_file()
+    c<span style="color:#ff79c6">.</span>say_hello()</code></pre></div>
+<h3 id="what-about-json">What about JSON?</h3>
+
+<p>I see it very often (and some readers may be asking it already): &ldquo;What if I want to use JSON to save my data?&rdquo; This is my response:</p>
+
+<blockquote>
+<p>Don&rsquo;t use JSON for your save files!</p>
+</blockquote>
+
+<p>While Godot has <a href="https://docs.godotengine.org/en/latest/classes/class_json.html">JSON support</a>, saving game data is not what JSON is for. JSON is a data <em>interchange</em> format - its purpose is to allow systems using different data formats and/or languages to exchange data between each other.</p>
+
+<p>This means JSON has limitations that are negatives for you when it comes to saving your game data. JSON doesn&rsquo;t support many data types (no int vs. float, for example) so you have to do a lot of converting and validating to try and save/load your data. It&rsquo;s cumbersome and time consuming.</p>
+
+<p>Don&rsquo;t waste your time. Using Godot&rsquo;s built-in serialization, you can store native Godot objects - Nodes, Resources, even Scenes - without any effort, which means less code and fewer errors.</p>
+
+<h3 id="wrapping-up">Wrapping up</h3>
+
+<p>This article just scratches the surface of what you can do with the <code>File</code> object. For the full list of available <code>File</code> methods, see the <a href="https://docs.godotengine.org/en/latest/classes/class_file.html">File documentation</a>.</p>
 
 
 <h3>Comments</h3>
@@ -2520,6 +2518,478 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -2692,478 +3162,6 @@
             
             
                 
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -3756,20 +3754,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1586556806"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1586556806"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1586556806"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1586556806"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1586556806"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1586556806"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1586556806"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1586556805"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1586556805"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1586556805"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1586556805"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1586556805"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1586556805"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1586556805"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1586556806"></script>
-    <script src="/godot_recipes/js/learn.js?1586556806"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1586556806"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1586556805"></script>
+    <script src="/godot_recipes/js/learn.js?1586556805"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1586556805"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1586556806" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1586556806"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1586556805" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1586556805"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

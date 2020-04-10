@@ -516,6 +516,17 @@ Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and
     </item>
     
     <item>
+      <title>Saving/loading data</title>
+      <link>http://kidscancode.org/godot_recipes/basics/file_io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/basics/file_io/</guid>
+      <description>Problem You need to save and load local data between game sessions.
+Solution Godot&amp;rsquo;s file I/O (input/output) system is based around the File object. You open a file by creating a new File object and calling open().
+var file = File.new() file.open(&amp;#34;user://myfile.name&amp;#34;, File.READ) User data should only be stored in the user:// path. While res:// can be used when running from the editor, when your project is exported, the res:// path becomes read-only.</description>
+    </item>
+    
+    <item>
       <title>TileMap: using autotile</title>
       <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
