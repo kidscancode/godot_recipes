@@ -501,7 +501,7 @@
 	"title": "Physics",
 	"tags": [],
 	"description": "",
-	"content": "  Physics Learn how to use Godot\u0026rsquo;s physics nodes.\nIn this section:  Using KinematicBody2D   Using Rigid Bodies   Kinematic Friction   RigidBody2D: Drag and Drop   Kinematic to Rigid Body Interaction   Using 2D Joints   "
+	"content": "  Physics Learn how to use Godot\u0026rsquo;s physics nodes.\nIn this section:  Using KinematicBody2D   Using Rigid Bodies   Kinematic Friction   RigidBody2D: Drag and Drop   Kinematic to Rigid Body Interaction   Using 2D Joints   Conveyor Belt   "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/ai/",
@@ -579,6 +579,13 @@
 	"tags": [],
 	"description": "",
 	"content": "  Exporting Building and exporting your project for PC, web, or mobile.\nIn this section:  "
+},
+{
+	"uri": "http://kidscancode.org/godot_recipes/physics/conveyor_belt/",
+	"title": "Conveyor Belt",
+	"tags": [],
+	"description": "",
+	"content": " Problem You want to make a conveyor belt object that will move bodies (kinematic or rigid).\nSolution You can make a conveyor belt object using nothing but a StaticBody2D by using its constant_linear_velocity property.\nSee below for how to address this in 3D.\n Here\u0026rsquo;s an example, using nothing but a StaticBody2D and a RigidBody2D. No code was added. The static body\u0026rsquo;s Constant Linear Velocity is set to (200, 0).\nAnimating the belt There are many ways to present the apperance of your conveyor belt, depending on your art assets. For this demo project, I have only a TileMap which is using this single 88x88 tile:\nAdd a Sprite to your static body, and in its Texture choose \u0026ldquo;New AtlasTexture\u0026rdquo;:\nDrop the tile texture in its Texture property and set the Region to (0, 0, 880, 88):\nChoosing 880 gives us a conveyor belt that\u0026rsquo;s exactly 10 tiles wide. You can use any width you need.\nIf your image doesn\u0026rsquo;t repeat or looks wrong, reimport it with the Repeat flag set to \u0026ldquo;Enabled\u0026rdquo;.\n Try adjusting the x of the Region property. You\u0026rsquo;ll see the tiles shift. This is what we need to animate the belt. You can do this with an AnimationPlayer or in code. We\u0026rsquo;ll do the latter for this example:\nextends StaticBody2D export var speed = 100 func _ready(): constant_linear_velocity.x = speed func _process(delta): $Sprite.texture.region.position.x -= speed * delta This code ensures that our belt moves at the desired speed, and that the animation matches the physics effect. Note that the directions are opposite: increasing the x of the region shifts the image to the left.\nThis works perfectly well with kinematic bodies, too. Here\u0026rsquo;s the same conveyor belt object added to our Platform character recipe:\n3D At the time of this writing, constant_linear_velocity does not work in 3D using StaticBody.\nHowever, you can use this technique if you change from \u0026ldquo;Bullet\u0026rdquo; to the \u0026ldquo;GodotPhysics\u0026rdquo; engine in your Project Settings:\nRelated recipes  Platform character Using KinematicBody2D Moving Platforms  "
 },
 {
 	"uri": "http://kidscancode.org/godot_recipes/ui/unit_healthbar/",

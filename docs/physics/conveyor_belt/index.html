@@ -11,7 +11,7 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Shaders :: Godot Recipes by KidsCanCode</title>
+    <title>Conveyor Belt :: Godot Recipes by KidsCanCode</title>
 
     
     <link href="/godot_recipes/css/nucleus.css?1587883154" rel="stylesheet">
@@ -48,7 +48,7 @@
 </style>
 
   </head>
-  <body class="" data-url="/godot_recipes/shaders/">
+  <body class="" data-url="/godot_recipes/physics/conveyor_belt/">
     <nav id="sidebar" class="">
 
 
@@ -1448,7 +1448,7 @@
   
     
     <li data-nav-id="/godot_recipes/physics/" title="Physics" class="dd-item
-        
+        parent
         
         
         ">
@@ -1586,7 +1586,7 @@
  
   
     
-      <li data-nav-id="/godot_recipes/physics/conveyor_belt/" title="Conveyor Belt" class="dd-item ">
+      <li data-nav-id="/godot_recipes/physics/conveyor_belt/" title="Conveyor Belt" class="dd-item active">
         <a href="/godot_recipes/physics/conveyor_belt/">
         Conveyor Belt
         
@@ -1721,8 +1721,8 @@
   
     
     <li data-nav-id="/godot_recipes/shaders/" title="Shaders" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/godot_recipes/shaders/">
@@ -2121,6 +2121,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -2131,7 +2133,13 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > Shaders
+            
+            
+          
+          
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/physics/'>Physics</a> > Conveyor Belt
+          
+        
           
         
           
@@ -2140,6 +2148,26 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#problem">Problem</a></li>
+<li><a href="#solution">Solution</a>
+<ul>
+<li><a href="#animating-the-belt">Animating the belt</a></li>
+<li><a href="#3d">3D</a></li>
+</ul></li>
+<li><a href="#related-recipes">Related recipes</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -2147,9 +2175,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Conveyor Belt
+            </h1>
           
 
         
@@ -2157,103 +2188,108 @@
 
 
 
-	
 
-<h1 id="i-class-fas-fa-draw-polygon-i-shaders"><i class='fas fa-draw-polygon'></i> Shaders</h1>
+<h2 id="problem">Problem</h2>
 
-<p>Deep voodoo. Cool effects.</p>
+<p>You want to make a conveyor belt object that will move bodies (kinematic or rigid).</p>
 
-<h4 id="in-this-section">In this section:</h4>
+<h2 id="solution">Solution</h2>
 
-
-
+<p>You can make a conveyor belt object using nothing but a <code>StaticBody2D</code> by using its <code>constant_linear_velocity</code> property.</p>
 
 
+<div class="notices note" ><p>See <a href="#3d">below</a> for how to address this in 3D.</p>
+</div>
 
 
+<p>Here&rsquo;s an example, using nothing but a <code>StaticBody2D</code> and a <code>RigidBody2D</code>. No code was added. The static body&rsquo;s <em>Constant Linear Velocity</em> is set to <code>(200, 0)</code>.</p>
 
-<ul class="children children-li">
-	
+<p><img src="/godot_recipes/img/conveyor_02.gif" alt="alt" /></p>
 
-	
-		
-	
+<h3 id="animating-the-belt">Animating the belt</h3>
 
-	
+<p>There are many ways to present the <em>apperance</em> of your conveyor belt, depending on your art assets. For this demo project, I have only a TileMap which is using this single 88x88 tile:</p>
 
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/intro/" >Shaders: intro</a>
-</li>
-				
+<p><img src="/godot_recipes/img/tileGreen_03.png" alt="alt" /></p>
 
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/interacting/" >Interacting with Shaders</a>
-</li>
-				
+<p>Add a <code>Sprite</code> to your static body, and in its <em>Texture</em> choose &ldquo;New AtlasTexture&rdquo;:</p>
 
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/greyscale/" >Greyscale (monochrome) shader</a>
-</li>
-				
+<p><img src="/godot_recipes/img/conveyor_04.png" alt="alt" /></p>
 
-				
-			
-			
-		
-	
-		
-			
-				
-<li>
-<a href="/godot_recipes/shaders/blur/" >Blur shader</a>
-</li>
-				
+<p>Drop the tile texture in its <em>Texture</em> property and set the <em>Region</em> to <code>(0, 0, 880, 88)</code>:</p>
 
-				
-			
-			
-		
-	
+<p><img src="/godot_recipes/img/conveyor_05.png" alt="alt" /></p>
 
-	
+<p>Choosing <code>880</code> gives us a conveyor belt that&rsquo;s exactly 10 tiles wide. You can use any width you need.</p>
+
+<p><img src="/godot_recipes/img/conveyor_06.png" alt="alt" /></p>
+
+
+<div class="notices tip" ><p>If your image doesn&rsquo;t repeat or looks wrong, reimport it with the <em>Repeat</em> flag set to &ldquo;Enabled&rdquo;.</p>
+</div>
+
+
+<p>Try adjusting the <code>x</code> of the <em>Region</em> property. You&rsquo;ll see the tiles shift. This is what we need to animate the belt. You can do this with an AnimationPlayer or in code. We&rsquo;ll do the latter for this example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> StaticBody2D
+
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">100</span>
+
+<span style="color:#ff79c6">func</span> _ready():
+    constant_linear_velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> speed
+
+<span style="color:#ff79c6">func</span> _process(delta):
+    <span style="color:#ff79c6">$</span>Sprite<span style="color:#ff79c6">.</span>texture<span style="color:#ff79c6">.</span>region<span style="color:#ff79c6">.</span>position<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">-=</span> speed <span style="color:#ff79c6">*</span> delta</code></pre></div>
+<p>This code ensures that our belt moves at the desired speed, and that the animation matches the physics effect. Note that the directions are opposite: increasing the <code>x</code> of the region shifts the image to the <em>left</em>.</p>
+
+<p><img src="/godot_recipes/img/conveyor_01.gif" alt="alt" /></p>
+
+<p>This works perfectly well with kinematic bodies, too. Here&rsquo;s the same conveyor belt object added to our <a href="http://kidscancode.org/godot_recipes/2d/platform_character">Platform character</a> recipe:</p>
+
+<p><img src="/godot_recipes/img/conveyor_07.gif" alt="alt" /></p>
+
+<h3 id="3d">3D</h3>
+
+<p>At the time of this writing, <code>constant_linear_velocity</code> does not work in 3D using <code>StaticBody</code>.</p>
+
+<p>However, you can use this technique if you change from &ldquo;Bullet&rdquo; to the &ldquo;GodotPhysics&rdquo; engine in your Project Settings:</p>
+
+<p><img src="/godot_recipes/img/conveyor_03.png" alt="alt" /></p>
+
+<p><img src="/godot_recipes/img/conveyor_3d.gif" alt="alt" /></p>
+
+<h2 id="related-recipes">Related recipes</h2>
+
+<ul>
+<li><a href="http://kidscancode.org/godot_recipes/2d/platform_character">Platform character</a></li>
+<li><a href="/godot_recipes/physics/godot3_kinematic2d/">Using KinematicBody2D</a></li>
+<li><a href="/godot_recipes/2d/moving_platforms/">Moving Platforms</a></li>
 </ul>
 
 
+<h3>Comments</h3>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+    (function () {
+        
+        
+        if (window.location.hostname == "localhost")
+            return;
 
-
-
-
-
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'kidscancode';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 <footer class=" footline" >
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -3298,6 +3334,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3310,6 +3347,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3407,6 +3447,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3426,18 +3467,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -3446,9 +3477,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -3498,6 +3526,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -3506,7 +3550,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -3519,9 +3562,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -3828,3 +3868,4 @@ if (!doNotTrack) {
 
   </body>
 </html>
+

@@ -1,7 +1,7 @@
 ---
 title: "Conveyor Belt"
 weight: 9
-draft: true
+draft: false
 ---
 
 ## Problem
