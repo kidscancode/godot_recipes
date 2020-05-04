@@ -212,6 +212,10 @@
   </url>
   
   <url>
+    <loc>http://kidscancode.org/godot_recipes/3d/kinematic_body/</loc>
+  </url>
+  
+  <url>
     <loc>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</loc>
   </url>
   
@@ -389,6 +393,10 @@
   
   <url>
     <loc>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</loc>
+  </url>
+  
+  <url>
+    <loc>http://kidscancode.org/godot_recipes/3d/3d_align_surface/</loc>
   </url>
   
   <url>

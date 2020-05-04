@@ -18,7 +18,7 @@ While it's possible to use `RigidBody2D` to make a platform character, we'll be 
 
 Start with a `KinematicBody2D` node, and add a `Sprite` and `CollisionShape2D` to it.
 
-Attach the following script to the root node of the character.
+Attach the following script to the root node of the character. Note that we're using input actions we've defined in the InputMap: `"walk_right"`, `"walk_left"`, and `"jump"`. See [InputActions](/godot_recipes/input/input_actions/).
 
 ```gdscript
 extends KinematicBody2D
@@ -31,9 +31,9 @@ var velocity = Vector2.ZERO
 
 func get_input():
     velocity.x = 0
-    if Input.is_action_pressed("ui_right"):
+    if Input.is_action_pressed("walk_right"):
         velocity.x += speed
-    if Input.is_action_pressed("ui_left"):
+    if Input.is_action_pressed("walk_left"):
         velocity.x -= speed
 
 func _physics_process(delta):

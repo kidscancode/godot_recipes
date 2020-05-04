@@ -14,20 +14,20 @@
     <title>Platform character :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1587883153" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1587883153" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1588633293" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1588633293" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1587883153" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1588633293" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1587883153"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1588633293"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1587883153"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1587883153"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1588633293"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1588633293"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1587883153"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1588633293"></script>
 
     
 
@@ -862,6 +862,25 @@
  
   
     
+      <li data-nav-id="/godot_recipes/3d/kinematic_body/" title="KinematicBody: Movement" class="dd-item ">
+        <a href="/godot_recipes/3d/kinematic_body/">
+        KinematicBody: Movement
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/godot_recipes/3d/healthbars/" title="3D Unit Healthbars" class="dd-item ">
         <a href="/godot_recipes/3d/healthbars/">
         3D Unit Healthbars
@@ -884,6 +903,25 @@
       <li data-nav-id="/godot_recipes/3d/click_to_move/" title="Click to move" class="dd-item ">
         <a href="/godot_recipes/3d/click_to_move/">
         Click to move
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/godot_recipes/3d/3d_align_surface/" title="KinematicBody: align with surface" class="dd-item ">
+        <a href="/godot_recipes/3d/3d_align_surface/">
+        KinematicBody: align with surface
         
         </a>
     </li>
@@ -2204,7 +2242,7 @@
 
 <p>Start with a <code>KinematicBody2D</code> node, and add a <code>Sprite</code> and <code>CollisionShape2D</code> to it.</p>
 
-<p>Attach the following script to the root node of the character.</p>
+<p>Attach the following script to the root node of the character. Note that we&rsquo;re using input actions we&rsquo;ve defined in the InputMap: <code>&quot;walk_right&quot;</code>, <code>&quot;walk_left&quot;</code>, and <code>&quot;jump&quot;</code>. See <a href="/godot_recipes/input/input_actions/">InputActions</a>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
 
 <span style="color:#ff79c6">export</span> (int) <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1200</span>
@@ -2215,9 +2253,9 @@
 
 <span style="color:#ff79c6">func</span> get_input():
     velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0</span>
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;ui_right&#34;</span>):
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;walk_right&#34;</span>):
         velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+=</span> speed
-    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;ui_left&#34;</span>):
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;walk_left&#34;</span>):
         velocity<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">-=</span> speed
 
 <span style="color:#ff79c6">func</span> _physics_process(delta):
@@ -2896,6 +2934,38 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -3845,20 +3915,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1587883153"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1587883153"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1587883153"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1587883153"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1587883153"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1587883153"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1587883153"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1588633293"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1588633293"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1588633293"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1588633293"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1588633293"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1588633293"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1588633293"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1587883153"></script>
-    <script src="/godot_recipes/js/learn.js?1587883153"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1587883153"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1588633293"></script>
+    <script src="/godot_recipes/js/learn.js?1588633293"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1588633293"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1587883153" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1587883153"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1588633293" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1588633293"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

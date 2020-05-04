@@ -45,11 +45,11 @@ It's that last one that needs to be changed. Since GDScript doesn't have named p
                     false, 4, PI/4, false)
 ```
 
-Now if you try to move, you'll see that the kinematic body just stops on collision. Now it can't push the rigid body at all.
+Now if you try to move, you'll see that the kinematic body just stops on collision. It can't push the rigid body at all.
 
 ![alt](/godot_recipes/img/inf_inertia2.gif)
 
-To give the colliding body a "push" we'll need to apply an impulse. An impulse is an instantaneous "kick" - think a bat hitting a ball. This is as opposed to a force, which is a continuous "push" on an object.
+To give the colliding body a "push" we'll need to apply an impulse. An impulse is an instantaneous "kick" - think of a bat hitting a ball. This is as opposed to a force, which is a continuous "push" on an object.
 
 ```gdscript
 # This represents the player's inertia.
@@ -75,6 +75,8 @@ collision.collider.apply_central_impulse(-collision.normal * velocity.length() *
 # Depending on your character's movement speed, adjust push_factor to
 # something between 0 and 1.
 ```
+
+Experiment to find the settings that work for your particular game.
 
 {{% notice note %}}
 Download the project file here: [kinematic_vs_rigid.zip](/godot_recipes/files/kinematic_vs_rigid.zip)
