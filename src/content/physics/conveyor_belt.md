@@ -22,7 +22,7 @@ Here's an example, using nothing but a `StaticBody2D` and a `RigidBody2D`. No co
 
 ### Animating the belt
 
-There are many ways to present the *apperance* of your conveyor belt, depending on your art assets. For this demo project, I have only a TileMap which is using this single 88x88 tile:
+There are many ways to present the *appearance* of your conveyor belt, depending on your art assets. For this demo project, I have only a TileMap which is using this single 88x88 tile:
 
 ![alt](/godot_recipes/img/tileGreen_03.png)
 

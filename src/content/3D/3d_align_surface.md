@@ -18,7 +18,7 @@ As you can see, the movement still works with the terrain, but the tank seems to
 
 <video controls src="/godot_recipes/img/3d_kinematic_04.webm"></video>
 
-Instead, we need to rotate the tank so that its treads are aligned with the ground, even as the ground changes. To do that, we need to know which way is up.
+Instead, we need to rotate the tank so that its treads are aligned with the ground, even as the slope changes. To do that, we need to know which way is up.
 
 ### Surface normals
 
