@@ -502,7 +502,7 @@ The node setup and behavior of the missile is the same you would use for a &amp;
       <guid>http://kidscancode.org/godot_recipes/3d/kinematic_body/</guid>
       <description>Problem You need a player-controlled 3D kinematic body.
 Solution For this recipe, we&amp;rsquo;ll be using this adorable tank model:
-You can grab this model on Itch.io:https://gtibo.itch.io/mini-tank or use any other model you&amp;rsquo;d like. We won&amp;rsquo;t be doing anything that&amp;rsquo;s tank-specific here.
+You can grab this model on Itch.io: https://gtibo.itch.io/mini-tank or use any other model you&amp;rsquo;d like. We won&amp;rsquo;t be doing anything that&amp;rsquo;s tank-specific here.
 We can add the model to the scene, but we&amp;rsquo;ll need a couple of additional nodes:
 For the collision shape, we&amp;rsquo;re just going to use a BoxShape aligned and sized with the tank&amp;rsquo;s treads.</description>
     </item>

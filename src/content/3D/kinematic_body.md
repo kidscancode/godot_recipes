@@ -14,7 +14,7 @@ For this recipe, we'll be using this adorable tank model:
 
 ![alt](/godot_recipes/img/3d_kinematic_01.png)
 
-You can grab this model on Itch.io:[https://gtibo.itch.io/mini-tank](https://gtibo.itch.io/mini-tank) or use any other model you'd like. We won't be doing anything that's tank-specific here.
+You can grab this model on Itch.io: [https://gtibo.itch.io/mini-tank](https://gtibo.itch.io/mini-tank) or use any other model you'd like. We won't be doing anything that's tank-specific here.
 
 We can add the model to the scene, but we'll need a couple of additional nodes:
 
@@ -41,7 +41,7 @@ extends KinematicBody
 
 export var gravity = Vector3.DOWN * 10
 export var speed = 4
-export var rot_speed = PI/4
+export var rot_speed = 0.85
 
 var velocity = Vector3.ZERO
 ```
@@ -49,7 +49,7 @@ var velocity = Vector3.ZERO
 `speed` is the tank's movement speed (forward and back), while `rot_speed` defines how fast it can turn.
 
 {{% notice tip %}}
-`export`ing your properties makes it easy to adjust them in the Inspector.
+Declaring properties with `export` makes it easy to adjust them in the Inspector.
 {{% /notice %}}
 
 Using the `KinematicBody.move_and_slide()` method makes our movement code quite simple:
@@ -107,3 +107,4 @@ Download the project file here: [floating_text.zip](/godot_recipes/files/floatin
 
 #### Like video?
 
+{{< youtube rOA8i_clm1Y >}}

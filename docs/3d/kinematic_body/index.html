@@ -14,20 +14,20 @@
     <title>KinematicBody: Movement :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1588695356" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1588695356" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1588866287" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1588866287" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1588695356" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1588866287" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1588695356"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1588866287"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1588695356"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1588695356"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1588866287"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1588866287"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1588695356"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1588866287"></script>
 
     
 
@@ -2240,7 +2240,7 @@
 
 <p><img src="/godot_recipes/img/3d_kinematic_01.png" alt="alt" /></p>
 
-<p>You can grab this model on Itch.io:<a href="https://gtibo.itch.io/mini-tank">https://gtibo.itch.io/mini-tank</a> or use any other model you&rsquo;d like. We won&rsquo;t be doing anything that&rsquo;s tank-specific here.</p>
+<p>You can grab this model on Itch.io: <a href="https://gtibo.itch.io/mini-tank">https://gtibo.itch.io/mini-tank</a> or use any other model you&rsquo;d like. We won&rsquo;t be doing anything that&rsquo;s tank-specific here.</p>
 
 <p>We can add the model to the scene, but we&rsquo;ll need a couple of additional nodes:</p>
 
@@ -2289,13 +2289,13 @@ on the &ldquo;Input Map&rdquo; tab:</p>
 
 <span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> gravity <span style="color:#ff79c6">=</span> Vector3<span style="color:#ff79c6">.</span>DOWN <span style="color:#ff79c6">*</span> <span style="color:#bd93f9">10</span>
 <span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">4</span>
-<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> rot_speed <span style="color:#ff79c6">=</span> PI<span style="color:#ff79c6">/</span><span style="color:#bd93f9">4</span>
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> rot_speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.85</span>
 
 <span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector3<span style="color:#ff79c6">.</span>ZERO</code></pre></div>
 <p><code>speed</code> is the tank&rsquo;s movement speed (forward and back), while <code>rot_speed</code> defines how fast it can turn.</p>
 
 
-<div class="notices tip" ><p><code>export</code>ing your properties makes it easy to adjust them in the Inspector.</p>
+<div class="notices tip" ><p>Declaring properties with <code>export</code> makes it easy to adjust them in the Inspector.</p>
 </div>
 
 
@@ -2349,6 +2349,12 @@ on the &ldquo;Input Map&rdquo; tab:</p>
 </ul>
 
 <h4 id="like-video">Like video?</h4>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/rOA8i_clm1Y" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 
 
 <h3>Comments</h3>
@@ -3951,20 +3957,20 @@ on the &ldquo;Input Map&rdquo; tab:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1588695356"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1588695356"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1588695356"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1588695356"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1588695356"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1588695356"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1588695356"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1588866287"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1588866287"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1588866287"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1588866287"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1588866287"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1588866287"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1588866287"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1588695356"></script>
-    <script src="/godot_recipes/js/learn.js?1588695356"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1588695356"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1588866287"></script>
+    <script src="/godot_recipes/js/learn.js?1588866287"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1588866287"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1588695356" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1588695356"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1588866287" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1588866287"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
