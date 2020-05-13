@@ -11,23 +11,23 @@
 
     <link rel="icon" href="/godot_recipes/images/favicon.png" type="image/png">
 
-    <title>Top-down character :: Godot Recipes by KidsCanCode</title>
+    <title>Top-down movement :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1589340761" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1589403839" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1589403839" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1589340761" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1589403839" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1589403839"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1589340761"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1589340761"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1589403839"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1589403839"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1589340761"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1589403839"></script>
 
     
 
@@ -640,9 +640,9 @@
  
   
     
-      <li data-nav-id="/godot_recipes/2d/topdown_movement/" title="Top-down character" class="dd-item active">
+      <li data-nav-id="/godot_recipes/2d/topdown_movement/" title="Top-down movement" class="dd-item active">
         <a href="/godot_recipes/2d/topdown_movement/">
-        Top-down character
+        Top-down movement
         
         </a>
     </li>
@@ -2175,7 +2175,7 @@
             
           
           
-            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Top-down character
+            <a href='/godot_recipes/'>Home</a> > <a href='/godot_recipes/2d/'>2D</a> > Top-down movement
           
         
           
@@ -2199,6 +2199,7 @@
 <li><a href="#option-2-rotate-and-move">Option 2: Rotate and move</a></li>
 <li><a href="#option-3-aim-with-mouse">Option 3: Aim with mouse</a></li>
 <li><a href="#option-4-click-and-move">Option 4: Click and move</a></li>
+<li><a href="#option-5-adding-friction">Option 5: Adding friction</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2218,7 +2219,7 @@
           
             <h1>
               
-              Top-down character
+              Top-down movement
             </h1>
           
 
@@ -2367,6 +2368,40 @@
         <span style="color:#6272a4"># stop moving if we get close to the target</span>
         <span style="color:#ff79c6">if</span> position<span style="color:#ff79c6">.</span>distance_to(target) <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">5</span>:
             velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity)</code></pre></div>
+<h3 id="option-5-adding-friction">Option 5: Adding friction</h3>
+
+<p>All of the movement methods above move and change direction instantly - there&rsquo;s no acceleration or friction. What if we want to ramp our velocity up from or down to zero? Let&rsquo;s add some code to <em>interpolate</em> or &ldquo;lerp&rdquo; the velocity after getting the input.</p>
+
+<p>We&rsquo;ll use the code from <a href="#option-1-8-way-movement">Option 1: 8-way movement</a> movement.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
+
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">200</span>
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> friction <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.01</span>
+<span style="color:#ff79c6">export</span> <span style="color:#ff79c6">var</span> acceleration <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">0.1</span>
+
+<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2()
+
+<span style="color:#ff79c6">func</span> get_input():
+    <span style="color:#ff79c6">var</span> input <span style="color:#ff79c6">=</span> Vector2()
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#39;right&#39;</span>):
+        input<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#39;left&#39;</span>):
+        input<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#39;down&#39;</span>):
+        input<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">+=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#39;up&#39;</span>):
+        input<span style="color:#ff79c6">.</span>y <span style="color:#ff79c6">-=</span> <span style="color:#bd93f9">1</span>
+    <span style="color:#ff79c6">return</span> input
+
+<span style="color:#ff79c6">func</span> _physics_process(delta):
+    <span style="color:#ff79c6">var</span> direction <span style="color:#ff79c6">=</span> get_input()
+    <span style="color:#ff79c6">if</span> direction<span style="color:#ff79c6">.</span>length() <span style="color:#ff79c6">&gt;</span> <span style="color:#bd93f9">0</span>:
+        velocity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(velocity, direction<span style="color:#ff79c6">.</span>normalized() <span style="color:#ff79c6">*</span> speed, acceleration)
+    <span style="color:#ff79c6">else</span>:
+        velocity <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">lerp</span>(velocity, Vector2<span style="color:#ff79c6">.</span>ZERO, friction)
+    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity)</code></pre></div>
+<p>Now our input isn&rsquo;t applied directly to the <code>velocity</code> but rather used to &ldquo;push&rdquo; the velocity towards the input direction. If there&rsquo;s no input, we ramp down towards zero.</p>
+
 
 <h3>Comments</h3>
 <div id="disqus_thread"></div>
@@ -3968,20 +4003,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1589340761"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1589340761"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1589340761"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1589340761"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1589340761"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1589340761"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1589340761"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1589403839"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1589403839"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1589403839"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1589403839"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1589403839"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1589403839"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1589403839"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1589340761"></script>
-    <script src="/godot_recipes/js/learn.js?1589340761"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1589340761"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1589403839"></script>
+    <script src="/godot_recipes/js/learn.js?1589403839"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1589403839"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1589340761" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1589340761"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1589403839" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1589403839"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
