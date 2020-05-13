@@ -14,20 +14,20 @@
     <title>Top-down character :: Godot Recipes by KidsCanCode</title>
 
     
-    <link href="/godot_recipes/css/nucleus.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/fontawesome-all.min.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/hybrid.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/featherlight.min.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/auto-complete.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/theme.css?1588866286" rel="stylesheet">
-    <link href="/godot_recipes/css/hugo-theme.css?1588866286" rel="stylesheet">
+    <link href="/godot_recipes/css/nucleus.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/fontawesome-all.min.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/hybrid.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/featherlight.min.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/perfect-scrollbar.min.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/auto-complete.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/atom-one-dark-reasonable.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/theme.css?1589340761" rel="stylesheet">
+    <link href="/godot_recipes/css/hugo-theme.css?1589340761" rel="stylesheet">
     
-      <link href="/godot_recipes/css/theme-green.css?1588866286" rel="stylesheet">
+      <link href="/godot_recipes/css/theme-green.css?1589340761" rel="stylesheet">
     
 
-    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1588866286"></script>
+    <script src="/godot_recipes/js/jquery-3.3.1.min.js?1589340761"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -72,14 +72,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1588866286"></script>
-<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1588866286"></script>
+<script type="text/javascript" src="/godot_recipes/js/lunr.min.js?1589340761"></script>
+<script type="text/javascript" src="/godot_recipes/js/auto-complete.js?1589340761"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/kidscancode.org\/godot_recipes\/";
     
 </script>
-<script type="text/javascript" src="/godot_recipes/js/search.js?1588866286"></script>
+<script type="text/javascript" src="/godot_recipes/js/search.js?1589340761"></script>
 
     
 
@@ -2197,7 +2197,8 @@
 <ul>
 <li><a href="#option-1-8-way-movement">Option 1: 8-way movement</a></li>
 <li><a href="#option-2-rotate-and-move">Option 2: Rotate and move</a></li>
-<li><a href="#option-3-click-and-move">Option 3: Click and move</a></li>
+<li><a href="#option-3-aim-with-mouse">Option 3: Aim with mouse</a></li>
+<li><a href="#option-4-click-and-move">Option 4: Click and move</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2326,7 +2327,27 @@
     get_input()
     rotation <span style="color:#ff79c6">+=</span> rotation_dir <span style="color:#ff79c6">*</span> rotation_speed <span style="color:#ff79c6">*</span> delta
     velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity)</code></pre></div>
-<h3 id="option-3-click-and-move">Option 3: Click and move</h3>
+<h3 id="option-3-aim-with-mouse">Option 3: Aim with mouse</h3>
+
+<p>Similar to option 2, but this time the character rotation is controlled with the mouse (ie the character always points towards the mouse). Forward/back movement is done with the keys as before.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
+
+<span style="color:#ff79c6">var</span> speed <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">200</span>
+
+<span style="color:#ff79c6">var</span> velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
+
+<span style="color:#ff79c6">func</span> get_input():
+    velocity <span style="color:#ff79c6">=</span> Vector2<span style="color:#ff79c6">.</span>ZERO
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;forward&#34;</span>):
+        velocity <span style="color:#ff79c6">+=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> speed
+    <span style="color:#ff79c6">if</span> Input<span style="color:#ff79c6">.</span>is_action_pressed(<span style="color:#f1fa8c">&#34;back&#34;</span>):
+        velocity <span style="color:#ff79c6">-=</span> transform<span style="color:#ff79c6">.</span>x <span style="color:#ff79c6">*</span> speed
+
+<span style="color:#ff79c6">func</span> _physics_process(delta):
+    look_at(get_global_mouse_position())
+    get_input()
+    velocity <span style="color:#ff79c6">=</span> move_and_slide(velocity)</code></pre></div>
+<h3 id="option-4-click-and-move">Option 4: Click and move</h3>
 
 <p>In this option, the character moves to the clicked location.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#ff79c6">extends</span> KinematicBody2D
@@ -3947,20 +3968,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/godot_recipes/js/clipboard.min.js?1588866287"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1588866287"></script>
-    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1588866287"></script>
-    <script src="/godot_recipes/js/jquery.sticky.js?1588866287"></script>
-    <script src="/godot_recipes/js/featherlight.min.js?1588866287"></script>
-    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1588866287"></script>
-    <script src="/godot_recipes/js/highlight.pack.js?1588866287"></script>
+    <script src="/godot_recipes/js/clipboard.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/perfect-scrollbar.jquery.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/jquery.sticky.js?1589340761"></script>
+    <script src="/godot_recipes/js/featherlight.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/html5shiv-printshiv.min.js?1589340761"></script>
+    <script src="/godot_recipes/js/highlight.pack.js?1589340761"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1588866287"></script>
-    <script src="/godot_recipes/js/learn.js?1588866287"></script>
-    <script src="/godot_recipes/js/hugo-learn.js?1588866287"></script>
+    <script src="/godot_recipes/js/modernizr.custom-3.6.0.js?1589340761"></script>
+    <script src="/godot_recipes/js/learn.js?1589340761"></script>
+    <script src="/godot_recipes/js/hugo-learn.js?1589340761"></script>
 
-    <link href="/godot_recipes/mermaid/mermaid.css?1588866287" type="text/css" rel="stylesheet" />
-    <script src="/godot_recipes/mermaid/mermaid.js?1588866287"></script>
+    <link href="/godot_recipes/mermaid/mermaid.css?1589340761" type="text/css" rel="stylesheet" />
+    <script src="/godot_recipes/mermaid/mermaid.js?1589340761"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

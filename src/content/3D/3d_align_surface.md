@@ -107,4 +107,6 @@ Feel free to experiment with the interpolation amount. We found `0.2` to work we
 - [Math: Interpolation](/godot_recipes/math/interpolation/)
 - [Math: Transforms](/godot_recipes/math/transforms/)
 
-<!-- #### Like video? -->
+#### Like video?
+
+{{< youtube 7axJJYont6Y >}}

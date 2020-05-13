@@ -82,8 +82,31 @@ func _physics_process(delta):
     rotation += rotation_dir * rotation_speed * delta
     velocity = move_and_slide(velocity)
 ```
+### Option 3: Aim with mouse
 
-### Option 3: Click and move
+Similar to option 2, but this time the character rotation is controlled with the mouse (ie the character always points towards the mouse). Forward/back movement is done with the keys as before.
+
+```gdscript
+extends KinematicBody2D
+
+var speed = 200
+
+var velocity = Vector2.ZERO
+
+func get_input():
+    velocity = Vector2.ZERO
+    if Input.is_action_pressed("forward"):
+        velocity += transform.x * speed
+    if Input.is_action_pressed("back"):
+        velocity -= transform.x * speed
+
+func _physics_process(delta):
+    look_at(get_global_mouse_position())
+    get_input()
+    velocity = move_and_slide(velocity)
+```
+
+### Option 4: Click and move
 
 In this option, the character moves to the clicked location.
 
