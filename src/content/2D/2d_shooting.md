@@ -1,7 +1,7 @@
 ---
 title: "Shooting projectiles"
 weight: 5
-draft: true
+draft: false
 ---
 
 ## Problem
@@ -11,6 +11,22 @@ You want to shoot projectiles from your player/mob/etc..
 ## Solution
 
 ### Setting up the bullet
+
+First, we'll set up a "bullet" object that we can instance. Here are the node's we'll use:
+
+```markdown
+- Area2D ("Bullet")
+    - Sprite
+    - CollisionShape2D
+```
+
+For the `Sprite`'s texture, you can use any image you like. Here's an example one:
+
+![alt](/godot_recipes/img/laserRed01.png)
+
+Set up the nodes and configure the sprite and collision shape. If your texture is oriented pointing up, like the one above, make sure to rotate the `Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent’s “forward” direction.
+
+Add a script and connect the `Area2D`'s `body_entered` signal.
 
 ```gdscript
 extends Area2D
@@ -26,21 +42,27 @@ func _on_Bullet_body_entered(body):
     queue_free()
 ```
 
+For this example, we'll remove the bullet if it hits anything at all. We'll also delete anything tagged in the "mobs" group that it hits.
+
 ### Shooting
 
-First we need to set up a spawn location for the bullets. Add a `Position2D` and place it where you want the bullets to spawn. Here's an example, placed at the barrel of the gun. I've named it "Muzzle".
+We need to set up a spawn location for the bullets. Add a `Position2D` and place it where you want the bullets to spawn. Here's an example, placed at the barrel of the gun. I've named it "Muzzle".
 
 ![alt](/godot_recipes/img/2d_shoot_01.gif)
 
-Notice that as the  player rotates, the Muzzle's `transform` remains oriented the same way relative to the gun. This will be very convenient when spawning the bullets, as they can use the transform to get the proper position *and* direction. Just set the new bullet's `transform` equal to the muzzle's.
+Notice that as the  player rotates, the Muzzle's `transform` remains oriented the same way relative to the gun. This will be very convenient when spawning the bullets, as they can use the transform to get the proper position *and* direction. We just set the new bullet's `transform` equal to the muzzle's.
 
-We'll add a variable to hold the bullet scene for instancing:
+{{% notice tip %}}
+This will work for any character type, not just the "rotate-and-move" style shown here. Just attach the `Position2D` where you want the bullets to spawn.
+{{% /notice %}}
+
+In the character's script we add a variable to hold the bullet scene for instancing:
 
 ```gdscript
 export (PackedScene) var Bullet
 ```
 
-And check `Input` for our defined input action:
+And check for our defined input action:
 
 ```gdscript
     if Input.is_action_just_pressed("shoot"):
@@ -75,6 +97,7 @@ func shoot():
 
 - [Top-down character](/godot_recipes/2d/topdown_movement/)
 - [Gamedev Math: transforms](/godot_recipes/math/transforms/)
+- [AI: Homing missiles](/godot_recipes/ai/homing_missile/)
 
 <!-- #### Like video?
 

@@ -1,878 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Home on Godot Recipes by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_recipes/</link>
-    <description>Recent content in Home on Godot Recipes by KidsCanCode</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2019 22:57:31 -0700</lastBuildDate>
-    
-	<atom:link href="http://kidscancode.org/godot_recipes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>The 3D Editor</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</link>
-      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.
-Are you ready? A word of warning: 3D development can be quite a bit more complex than working in 2D. While many of the same principles apply - such as working with nodes, writing scripts, and handling logic/data - 3D brings with it a number of other considerations.</description>
-    </item>
-    
-    <item>
-      <title>What is Godot?</title>
-      <link>http://kidscancode.org/godot_recipes/g101/start/101_01/</link>
-      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/start/101_01/</guid>
-      <description>Game Engines Game development is complex and involves a wide variety of knowledge and skills. In order to build a modern game, you need a lot of underlying technology before you can make the actual game itself. Imagine if you had to build your own computer and write your own operating system before you could even start programming. Game development would be a lot like that if you truly had to start from scratch and build everything you needed.</description>
-    </item>
-    
-    <item>
-      <title>Camera Gimbal</title>
-      <link>http://kidscancode.org/godot_recipes/3d/camera_gimbal/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/3d/camera_gimbal/</guid>
-      <description>Problem You need a camera controller, using mouse or keyboard, that remains level while rotating and following a target.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Godot Recipes by KidsCanCode</title><link>http://kidscancode.org/godot_recipes/</link><description>Recent content in Home on Godot Recipes by KidsCanCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2019 22:57:31 -0700</lastBuildDate><atom:link href="http://kidscancode.org/godot_recipes/index.xml" rel="self" type="application/rss+xml"/><item><title>The 3D Editor</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</link><pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_01/</guid><description>In this tutorial, we&amp;rsquo;ll look at how to start working in 3D in Godot. You&amp;rsquo;ll learn how to navigate in the 3D editor, how to create and manipulate 3D objects, and how to work with some of Godot&amp;rsquo;s essential 3D nodes, such as cameras and lighting.
+Are you ready? A word of warning: 3D development can be quite a bit more complex than working in 2D. While many of the same principles apply - such as working with nodes, writing scripts, and handling logic/data - 3D brings with it a number of other considerations.</description></item><item><title>What is Godot?</title><link>http://kidscancode.org/godot_recipes/g101/start/101_01/</link><pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/start/101_01/</guid><description>Game Engines Game development is complex and involves a wide variety of knowledge and skills. In order to build a modern game, you need a lot of underlying technology before you can make the actual game itself. Imagine if you had to build your own computer and write your own operating system before you could even start programming. Game development would be a lot like that if you truly had to start from scratch and build everything you needed.</description></item><item><title>Camera Gimbal</title><link>http://kidscancode.org/godot_recipes/3d/camera_gimbal/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/3d/camera_gimbal/</guid><description>Problem You need a camera controller, using mouse or keyboard, that remains level while rotating and following a target.
 Solution Try this: take a Camera node and rotate it a small amount around X (the red ring on the gizmo), then a small amount around Z (the blue ring). Now reverse the X rotation and click the &amp;ldquo;Preview&amp;rdquo; button. Observe how the camera is now tilted.
-The solution to this problem is to place the camera on a gimbal - a device designed to keep an object level during movement.</description>
-    </item>
-    
-    <item>
-      <title>Chasing the player</title>
-      <link>http://kidscancode.org/godot_recipes/ai/chase/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ai/chase/</guid>
-      <description>Problem You want an enemy to chase the player.
+The solution to this problem is to place the camera on a gimbal - a device designed to keep an object level during movement.</description></item><item><title>Chasing the player</title><link>http://kidscancode.org/godot_recipes/ai/chase/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ai/chase/</guid><description>Problem You want an enemy to chase the player.
 Solution The first step in getting an enemy to chase the player is to determine what direction the enemy needs to move. To get the vector pointing from A to B, you subtract: B - A. Normalize the result and you have a direction vector.
-This makes the solution quite straightforward. Every frame, set the enemy&amp;rsquo;s velocity to point in the direction of the player.</description>
-    </item>
-    
-    <item>
-      <title>Entering/Exiting the screen</title>
-      <link>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</guid>
-      <description>Problem You want to detect when an object enters or exits the screen.
+This makes the solution quite straightforward. Every frame, set the enemy&amp;rsquo;s velocity to point in the direction of the player.</description></item><item><title>Entering/Exiting the screen</title><link>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/enter_exit_screen/</guid><description>Problem You want to detect when an object enters or exits the screen.
 Solution The engine provides a node for this: VisibilityNotifier2D. Attach this node to your object, and you&amp;rsquo;ll be able to use its screen_entered and screen_exited signals.
-Example 1 Consider a projectile that travels in a straight line after it&amp;rsquo;s fired. If we continue firing, eventually we&amp;rsquo;ll have a large number of objects for the engine to track, event though they&amp;rsquo;re offscreen, which can cause lag.</description>
-    </item>
-    
-    <item>
-      <title>Interpolation</title>
-      <link>http://kidscancode.org/godot_recipes/math/interpolation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/math/interpolation/</guid>
-      <description>Linear Interpolation, or its commonly-used abbreviation lerp, is a term that comes up often in game development. If you&amp;rsquo;ve never come across it before it can seem mysterious and highly-technical, but as you&amp;rsquo;ll see in this tutorial, it&amp;rsquo;s actually a straightforward concept with a wide variety of applications in game programming.
+Example 1 Consider a projectile that travels in a straight line after it&amp;rsquo;s fired. If we continue firing, eventually we&amp;rsquo;ll have a large number of objects for the engine to track, event though they&amp;rsquo;re offscreen, which can cause lag.</description></item><item><title>Interpolation</title><link>http://kidscancode.org/godot_recipes/math/interpolation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/math/interpolation/</guid><description>Linear Interpolation, or its commonly-used abbreviation lerp, is a term that comes up often in game development. If you&amp;rsquo;ve never come across it before it can seem mysterious and highly-technical, but as you&amp;rsquo;ll see in this tutorial, it&amp;rsquo;s actually a straightforward concept with a wide variety of applications in game programming.
 Numeric Interpolation The core formula for linear interpolation is this:
-func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represent the two values and t is the amount of interpolation, typically expressed as a value between 0 (which returns a), and 1 (which returns b).</description>
-    </item>
-    
-    <item>
-      <title>Labels</title>
-      <link>http://kidscancode.org/godot_recipes/ui/labels/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/labels/</guid>
-      <description>Problem You want to display some text on the screen.
+func lerp(a, b, t): return (1 - t) * a + t * b In this formula, a and b represent the two values and t is the amount of interpolation, typically expressed as a value between 0 (which returns a), and 1 (which returns b).</description></item><item><title>Labels</title><link>http://kidscancode.org/godot_recipes/ui/labels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/labels/</guid><description>Problem You want to display some text on the screen.
 Solution Sooner or later you&amp;rsquo;re going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot&amp;rsquo;s Label node is the answer.
-Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description>
-    </item>
-    
-    <item>
-      <title>Platform character</title>
-      <link>http://kidscancode.org/godot_recipes/2d/platform_character/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/platform_character/</guid>
-      <description>Problem You need to make a 2D platform-style character.
-Solution New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won&amp;rsquo;t be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we&amp;rsquo;ll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.</description>
-    </item>
-    
-    <item>
-      <title>Project setup</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</guid>
-      <description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
-In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description>
-    </item>
-    
-    <item>
-      <title>Screen wrap</title>
-      <link>http://kidscancode.org/godot_recipes/2d/screen_wrap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/screen_wrap/</guid>
-      <description>Problem You want to allow the player to &amp;ldquo;wrap around&amp;rdquo; the screen, teleporting from one side of the screen to the other. This is a common feature, especially in old-school 2D games (think Pac-man).
-Solution  Get your screen (viewport) size
+Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description></item><item><title>Platform character</title><link>http://kidscancode.org/godot_recipes/2d/platform_character/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/platform_character/</guid><description>Problem You need to make a 2D platform-style character.
+Solution New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won&amp;rsquo;t be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we&amp;rsquo;ll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.</description></item><item><title>Project setup</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_01/</guid><description>Where to start? Depending on the game, and how fleshed-out your idea is, the answer might be very different. In our case, I&amp;rsquo;ve cheated a little bit by making a prototype of the game already and working out a few of the ideas ahead of time. Still, it diverged a bit from my initial idea, and so might this series - time will tell.
+In a bigger project, you might start with design document, which could be as simple as a page of notes or as complex as a 500-page treatise laying out every detail of your game&amp;rsquo;s world, plot, and mechanics.</description></item><item><title>Screen wrap</title><link>http://kidscancode.org/godot_recipes/2d/screen_wrap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/screen_wrap/</guid><description>Problem You want to allow the player to &amp;ldquo;wrap around&amp;rdquo; the screen, teleporting from one side of the screen to the other. This is a common feature, especially in old-school 2D games (think Pac-man).
+Solution Get your screen (viewport) size
 onready var screen_size = get_viewport_rect().size get_viewport_rect() is available to any CanvasItem derived node.
- Compare your player&amp;rsquo;s position
-if position.x &amp;gt; screen_size.x: position.x = 0 if position.x &amp;lt; 0: position.</description>
-    </item>
-    
-    <item>
-      <title>Shaders: intro</title>
-      <link>http://kidscancode.org/godot_recipes/shaders/intro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/shaders/intro/</guid>
-      <description>Problem You want to get started coding shaders.
+Compare your player&amp;rsquo;s position
+if position.x &amp;gt; screen_size.x: position.x = 0 if position.x &amp;lt; 0: position.</description></item><item><title>Shaders: intro</title><link>http://kidscancode.org/godot_recipes/shaders/intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/shaders/intro/</guid><description>Problem You want to get started coding shaders.
 Solution A shader is a special program that runs on the computer&amp;rsquo;s GPU (graphics card). The GPU is optimized to perform certain types of math very efficiently. Shader code can be attached to objects to affect how they&amp;rsquo;re rendered on the screen.
-The output of a shader program is the color of the set of pixels of the object. Shaders can be used in 2d (canvas_item shaders) and 3D (spatial shaders).</description>
-    </item>
-    
-    <item>
-      <title>Splitscreen multiplayer</title>
-      <link>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</guid>
-      <description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
-We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description>
-    </item>
-    
-    <item>
-      <title>Spritesheet animation</title>
-      <link>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</guid>
-      <description>Problem You want to use a spritesheet containing 2D animations.
+The output of a shader program is the color of the set of pixels of the object. Shaders can be used in 2d (canvas_item shaders) and 3D (spatial shaders).</description></item><item><title>Splitscreen multiplayer</title><link>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/splitscreen_demo/</guid><description>Introduction In this demo, we&amp;rsquo;ll consider a local multiplayer game - a topdown-style maze game with two players (one using arrow keys and the other using WASD controls). This is not a problem if our game world all fits on one screen, but if the map is large, we&amp;rsquo;ll want to have a &amp;ldquo;split screen&amp;rdquo; view tracking the two players separately.
+We&amp;rsquo;ll also look at a quick way to set up a minimap display.</description></item><item><title>Spritesheet animation</title><link>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</guid><description>Problem You want to use a spritesheet containing 2D animations.
 Solution Spritesheets are a common way for 2D animations to be distributed. In a spritesheet, all of the animation frames are packed into a single image.
 For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen. You can get this and lots of other great art athttps://elthen.itch.io/.
-Make sure the images in your spritesheet are laid out in a constant-sized grid.</description>
-    </item>
-    
-    <item>
-      <title>TileMap: detecting tiles</title>
-      <link>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</guid>
-      <description>Problem You have a KinematicBody2D character colliding with a TileMap, and you want to know which tile it collided with.
+Make sure the images in your spritesheet are laid out in a constant-sized grid.</description></item><item><title>TileMap: detecting tiles</title><link>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/tilemap_collision/</guid><description>Problem You have a KinematicBody2D character colliding with a TileMap, and you want to know which tile it collided with.
 Solution When a KinematicBody2D collides, the collision data is returned in a KinematicCollision2D object. The TileMap acts as a single collider, so if you reference the collider property, it will be the TileMap node.
-You then need to find out which tile in the TileMap is at the collision location.</description>
-    </item>
-    
-    <item>
-      <title>Top-down movement</title>
-      <link>http://kidscancode.org/godot_recipes/2d/topdown_movement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/topdown_movement/</guid>
-      <description>Problem You&amp;rsquo;re making a 2D top-down game, and you want to control a character&amp;rsquo;s movement.
+You then need to find out which tile in the TileMap is at the collision location.</description></item><item><title>Top-down movement</title><link>http://kidscancode.org/godot_recipes/2d/topdown_movement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/topdown_movement/</guid><description>Problem You&amp;rsquo;re making a 2D top-down game, and you want to control a character&amp;rsquo;s movement.
 Solution For this solution, we&amp;rsquo;ll assume you have the following input actions defined:
-   Action Name Key(s)     &amp;quot;up&amp;quot; W,↑   &amp;quot;down&amp;quot; S,↓   &amp;quot;right&amp;quot; D,→   &amp;quot;left&amp;quot; A,←   &amp;quot;click&amp;quot; Mouse button 1    We will also assume you&amp;rsquo;re using a KinematicBody2D character.</description>
-    </item>
-    
-    <item>
-      <title>Using KinematicBody2D</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid>
-      <description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
-Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description>
-    </item>
-    
-    <item>
-      <title>Using Rigid Bodies</title>
-      <link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid>
-      <description>This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
- In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.
-Introduction  RigidBody2D is the physics body in Godot that provides simulated physics.</description>
-    </item>
-    
-    <item>
-      <title>Godot&#39;s Editor: Finding your way around</title>
-      <link>http://kidscancode.org/godot_recipes/g101/start/101_02/</link>
-      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/start/101_02/</guid>
-      <description>Project Manager The Project Manager is the first thing you&amp;rsquo;ll see when opening Godot.
+Action Name Key(s) &amp;quot;up&amp;quot; W,↑ &amp;quot;down&amp;quot; S,↓ &amp;quot;right&amp;quot; D,→ &amp;quot;left&amp;quot; A,← &amp;quot;click&amp;quot; Mouse button 1 We will also assume you&amp;rsquo;re using a KinematicBody2D character.</description></item><item><title>Using KinematicBody2D</title><link>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/godot3_kinematic2d/</guid><description>Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we&amp;rsquo;ll look at the KinematicBody2D node and show some examples of how it can be used.
+Introduction: Physics bodies In game development you often need to know when two objects in the game space intersect or come into contact.</description></item><item><title>Using Rigid Bodies</title><link>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/godot3_kyn_rigidbody1/</guid><description>This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
+In this tutorial, I&amp;rsquo;ll explain when (and when not) to use rigid bodies, how they work, and demonstrate a few handy tricks to bend them to your will. The examples will use RigidBody2D, but the lessons apply equally to 3D.
+Introduction RigidBody2D is the physics body in Godot that provides simulated physics.</description></item><item><title>Godot&#39;s Editor: Finding your way around</title><link>http://kidscancode.org/godot_recipes/g101/start/101_02/</link><pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/start/101_02/</guid><description>Project Manager The Project Manager is the first thing you&amp;rsquo;ll see when opening Godot.
 In this window you can see a list of your Godot projects. You can choose an existing project and click &amp;ldquo;Run&amp;rdquo; to play the game or click &amp;ldquo;Edit&amp;rdquo; to work on it in the Godot editor. Since you probably don&amp;rsquo;t have any projects yet, let&amp;rsquo;s start by clicking the &amp;ldquo;New Project&amp;rdquo; button.
-Here you can give the project a name and create a folder to store it in.</description>
-    </item>
-    
-    <item>
-      <title>Importing 3D Objects</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</link>
-      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</guid>
-      <description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
-Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description>
-    </item>
-    
-    <item>
-      <title>Containers</title>
-      <link>http://kidscancode.org/godot_recipes/ui/containers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/containers/</guid>
-      <description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
-Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description>
-    </item>
-    
-    <item>
-      <title>Grid-based movement</title>
-      <link>http://kidscancode.org/godot_recipes/2d/grid_movement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/grid_movement/</guid>
-      <description>Problem You need a 2D character that moves in a grid pattern.
+Here you can give the project a name and create a folder to store it in.</description></item><item><title>Importing 3D Objects</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</link><pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_02/</guid><description>In the last part, we started a 3D project and looked at how to navigate and create 3D objects. In this part, you&amp;rsquo;ll learn how to import existing 3D objects that you&amp;rsquo;ve made or downloaded and how to use more of Godot&amp;rsquo;s 3D nodes.
+Importing 3D Objects If you&amp;rsquo;re familiar with 3D modeling software such as Blender, you can make your own models to use in your game. If not, there are many sources where you can download objects or even collections of objects for particular game types.</description></item><item><title>Containers</title><link>http://kidscancode.org/godot_recipes/ui/containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/containers/</guid><description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
+Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description></item><item><title>Grid-based movement</title><link>http://kidscancode.org/godot_recipes/2d/grid_movement/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/grid_movement/</guid><description>Problem You need a 2D character that moves in a grid pattern.
 Solution Grid- or tile-based movement means the character&amp;rsquo;s position is restricted. They can only stand on a particular tile - never between two tiles.
 Character setup Here are the nodes we&amp;rsquo;ll use for the player:
- Area2D (&amp;ldquo;Player&amp;rdquo;): Using an Area2D means we can detect overlap (for picking up objects or colliding with enemies).  Sprite: You can use a sprite sheet here (we&amp;rsquo;ll set up the animation below).</description>
-    </item>
-    
-    <item>
-      <title>Input Actions</title>
-      <link>http://kidscancode.org/godot_recipes/input/input_actions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/input_actions/</guid>
-      <description>Problem You want to understand Godot&amp;rsquo;s &amp;ldquo;input action&amp;rdquo; system.
+Area2D (&amp;ldquo;Player&amp;rdquo;): Using an Area2D means we can detect overlap (for picking up objects or colliding with enemies). Sprite: You can use a sprite sheet here (we&amp;rsquo;ll set up the animation below).</description></item><item><title>Input Actions</title><link>http://kidscancode.org/godot_recipes/input/input_actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/input_actions/</guid><description>Problem You want to understand Godot&amp;rsquo;s &amp;ldquo;input action&amp;rdquo; system.
 Solution Let&amp;rsquo;s say you&amp;rsquo;re making a top-down character and you write code using InputActionKey that uses the arrow keys for movement. You&amp;rsquo;ll quickly find that many players prefer to use &amp;ldquo;WASD&amp;rdquo; style controls. You can go back into your code and add the additional key checks, but this would result in duplicated/redundant code.
-Input actions can help to make your code more configurable.</description>
-    </item>
-    
-    <item>
-      <title>Interacting with Shaders</title>
-      <link>http://kidscancode.org/godot_recipes/shaders/interacting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/shaders/interacting/</guid>
-      <description> Problem You want to interact with a Godot shader from GDScript.
+Input actions can help to make your code more configurable.</description></item><item><title>Interacting with Shaders</title><link>http://kidscancode.org/godot_recipes/shaders/interacting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/shaders/interacting/</guid><description> Problem You want to interact with a Godot shader from GDScript.
 Solution To access the uniform&amp;rsquo;s value from GDScript, you can use set_shader_param() on the object&amp;rsquo;s material property. If the attached material is a ShaderMaterial, then you can access it like so:
 node.material.get_shader_param(&amp;#34;param_name&amp;#34;, value) You can also change the value with set_shader_param().
 For an example of this, see the Blur Shader recipe.
-Related Recipes  Shaders: Intro  </description>
-    </item>
-    
-    <item>
-      <title>Mouse Input</title>
-      <link>http://kidscancode.org/godot_recipes/input/mouse_input/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/mouse_input/</guid>
-      <description>Problem You want to detect mouse input.
+Related Recipes Shaders: Intro</description></item><item><title>Mouse Input</title><link>http://kidscancode.org/godot_recipes/input/mouse_input/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/mouse_input/</guid><description>Problem You want to detect mouse input.
 Solution InputEventMouse is the base class for mouse events. It contains position and global_position properties. Inheriting from it are two classes: InputEventMouseButton and InputEventMouseMotion.
 You can assign mouse button events in the InputMap, so you can use them with is_action_pressed().
- InputEventMouseButton @GlobalScope.ButtonList contains a list of BUTTON_* constants for each possible button, which will be reported in the event’s button_index property. Note that the scrollwheel also counts as a button - two buttons, to be precise, with both BUTTON_WHEEL_UP and BUTTON_WHEEL_DOWN being separate events.</description>
-    </item>
-    
-    <item>
-      <title>Path following</title>
-      <link>http://kidscancode.org/godot_recipes/ai/path_follow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ai/path_follow/</guid>
-      <description>Problem You want a character to follow a pre-defined path, such as a guard patrolling or a car following the road.
+InputEventMouseButton @GlobalScope.ButtonList contains a list of BUTTON_* constants for each possible button, which will be reported in the event’s button_index property. Note that the scrollwheel also counts as a button - two buttons, to be precise, with both BUTTON_WHEEL_UP and BUTTON_WHEEL_DOWN being separate events.</description></item><item><title>Path following</title><link>http://kidscancode.org/godot_recipes/ai/path_follow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ai/path_follow/</guid><description>Problem You want a character to follow a pre-defined path, such as a guard patrolling or a car following the road.
 Solution There are many ways to approach this problem. In this solution, we&amp;rsquo;ll use Godot&amp;rsquo;s Path2D node (or Path for 3D) as a convenient way to draw paths in the editor.
-You can add the Path2D as a child of your main scene, your map, or another location that makes sense.</description>
-    </item>
-    
-    <item>
-      <title>Spawning Circles</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</guid>
-      <description>In the previous part, we created the Jumper and Circle object that make up the bulk of the game. Now we need to add the progression: a continuous series of spawned circles as long as the player doesn&amp;rsquo;t miss.
+You can add the Path2D as a child of your main scene, your map, or another location that makes sense.</description></item><item><title>Spawning Circles</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_02/</guid><description>In the previous part, we created the Jumper and Circle object that make up the bulk of the game. Now we need to add the progression: a continuous series of spawned circles as long as the player doesn&amp;rsquo;t miss.
 Expanding the Main scene Let&amp;rsquo;s add some more nodes to Main:
- Position2D (&amp;ldquo;StartPosition&amp;rdquo;)
-This will mark the starting position for the game. Place it near the bottom-center of the screen.</description>
-    </item>
-    
-    <item>
-      <title>Understanding node paths</title>
-      <link>http://kidscancode.org/godot_recipes/basics/getting_nodes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/basics/getting_nodes/</guid>
-      <description>Problem It&amp;rsquo;s probably the most common error seen in the Godot help channels: an invalid node reference. Most often, it results in the following error:
- Invalid get index &amp;lsquo;position&amp;rsquo; (on base: &amp;lsquo;null instance&amp;rsquo;).
- Solution It&amp;rsquo;s that last part, the &amp;ldquo;null instance&amp;rdquo;, that&amp;rsquo;s the source of this problem, and the main source of confusion for Godot beginners.
-The way to avoid this problem is to understand the concept of node paths.</description>
-    </item>
-    
-    <item>
-      <title>Nodes: Godot&#39;s building blocks</title>
-      <link>http://kidscancode.org/godot_recipes/g101/start/101_03/</link>
-      <pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/start/101_03/</guid>
-      <description>Nodes are the basic building blocks for creating games in Godot. A node is an object that can represent some kind of specialized game function. A given type of node might display graphics, play an animation, or represent a 3D model of an object. The node also contains a collection of properties, allowing you to customize its behavior. Which nodes you add to your project will depend on what functionality you need.</description>
-    </item>
-    
-    <item>
-      <title>Transforms</title>
-      <link>http://kidscancode.org/godot_recipes/math/transforms/</link>
-      <pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/math/transforms/</guid>
-      <description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
+Position2D (&amp;ldquo;StartPosition&amp;rdquo;)
+This will mark the starting position for the game. Place it near the bottom-center of the screen.</description></item><item><title>Understanding node paths</title><link>http://kidscancode.org/godot_recipes/basics/getting_nodes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/basics/getting_nodes/</guid><description>Problem It&amp;rsquo;s probably the most common error seen in the Godot help channels: an invalid node reference. Most often, it results in the following error:
+Invalid get index &amp;lsquo;position&amp;rsquo; (on base: &amp;lsquo;null instance&amp;rsquo;).
+Solution It&amp;rsquo;s that last part, the &amp;ldquo;null instance&amp;rdquo;, that&amp;rsquo;s the source of this problem, and the main source of confusion for Godot beginners.
+The way to avoid this problem is to understand the concept of node paths.</description></item><item><title>Nodes: Godot&#39;s building blocks</title><link>http://kidscancode.org/godot_recipes/g101/start/101_03/</link><pubDate>Tue, 09 Apr 2019 20:23:50 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/start/101_03/</guid><description>Nodes are the basic building blocks for creating games in Godot. A node is an object that can represent some kind of specialized game function. A given type of node might display graphics, play an animation, or represent a 3D model of an object. The node also contains a collection of properties, allowing you to customize its behavior. Which nodes you add to your project will depend on what functionality you need.</description></item><item><title>Transforms</title><link>http://kidscancode.org/godot_recipes/math/transforms/</link><pubDate>Tue, 09 Apr 2019 19:49:14 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/math/transforms/</guid><description>Before reading this, make sure you have an understanding of vectors and how they&amp;rsquo;re used in game development. If you don&amp;rsquo;t, I recommend you read this introduction I wrote for the Godot documentation: Vector Math.
 2D Transforms In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the Y axis points downward:
-To begin, let&amp;rsquo;s consider this spaceship floating in space:</description>
-    </item>
-    
-    <item>
-      <title>Creating a 3D Character</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</link>
-      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</guid>
-      <description>In the last part, we covered how to import 3D objects and how to arrange them in a scene. In this installment, we&amp;rsquo;ll add more objects to the scene, including a user-controlled character.
-Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer Kit we downloaded last time. Select all the &amp;ldquo;block*.glb&amp;rdquo; files and in the &amp;ldquo;Import&amp;rdquo; tab set their &amp;ldquo;Root Type&amp;rdquo; to StaticBody and click &amp;ldquo;Reimport&amp;rdquo;. Select &amp;ldquo;blockLarge.</description>
-    </item>
-    
-    <item>
-      <title>Adding Input Actions in code</title>
-      <link>http://kidscancode.org/godot_recipes/input/custom_actions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/custom_actions/</guid>
-      <description>Problem You need to add actions to the InputMap at runtime.
+To begin, let&amp;rsquo;s consider this spaceship floating in space:</description></item><item><title>Creating a 3D Character</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</link><pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_03/</guid><description>In the last part, we covered how to import 3D objects and how to arrange them in a scene. In this installment, we&amp;rsquo;ll add more objects to the scene, including a user-controlled character.
+Building the Scene We&amp;rsquo;re going to continue using the Kenney Platformer Kit we downloaded last time. Select all the &amp;ldquo;block*.glb&amp;rdquo; files and in the &amp;ldquo;Import&amp;rdquo; tab set their &amp;ldquo;Root Type&amp;rdquo; to StaticBody and click &amp;ldquo;Reimport&amp;rdquo;. Select &amp;ldquo;blockLarge.</description></item><item><title>Adding Input Actions in code</title><link>http://kidscancode.org/godot_recipes/input/custom_actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/custom_actions/</guid><description>Problem You need to add actions to the InputMap at runtime.
 Solution Typically, you&amp;rsquo;ll add actions to the InputMap via Project Settings, as shown in Recipe: Input Actions. However, you may find yourself needing to add one or more actions directly in a script. TheInputMap singleton has methods to help you do this.
 Here&amp;rsquo;s an example that would add a new action called &amp;ldquo;attack&amp;rdquo; using the space key:
-func _ready(): InputMap.</description>
-    </item>
-    
-    <item>
-      <title>Capturing the Mouse</title>
-      <link>http://kidscancode.org/godot_recipes/input/mouse_capture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/mouse_capture/</guid>
-      <description>Problem You want to hide the mouse cursor and keep the mouse from leaving the game window. This is common in many 3D games (and some 2D ones).
+func _ready(): InputMap.</description></item><item><title>Capturing the Mouse</title><link>http://kidscancode.org/godot_recipes/input/mouse_capture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/mouse_capture/</guid><description>Problem You want to hide the mouse cursor and keep the mouse from leaving the game window. This is common in many 3D games (and some 2D ones).
 Solution You can set the mouse state using Input.set_mouse_mode(). There are four possible mouse modes:
- MOUSE_MODE_VISIBLE: The mouse is visible and can move freely into and out of the window. This is the default state.
- MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description>
-    </item>
-    
-    <item>
-      <title>Car steering</title>
-      <link>http://kidscancode.org/godot_recipes/2d/car_steering/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/car_steering/</guid>
-      <description>Problem You need to create a 2D top-down car controller.
+MOUSE_MODE_VISIBLE: The mouse is visible and can move freely into and out of the window. This is the default state.
+MOUSE_MODE_HIDDEN: The mouse cursor is invisible, but the mouse can still move outside the window.</description></item><item><title>Car steering</title><link>http://kidscancode.org/godot_recipes/2d/car_steering/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/car_steering/</guid><description>Problem You need to create a 2D top-down car controller.
 Solution When approaching this problem, beginners often wind up creating something that handles nothing like a real car. Some common mistakes you&amp;rsquo;ll find in amateur car games:
- A car doesn&amp;rsquo;t rotate around its center. Put another way, a car&amp;rsquo;s rear wheels don&amp;rsquo;t slide side-to-side. (Unless it&amp;rsquo;s drifting, but we&amp;rsquo;ll talk about that later.) A car can only turn when it&amp;rsquo;s moving - it can&amp;rsquo;t spin in place.</description>
-    </item>
-    
-    <item>
-      <title>Greyscale (monochrome) shader</title>
-      <link>http://kidscancode.org/godot_recipes/shaders/greyscale/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/shaders/greyscale/</guid>
-      <description>Problem You want a shader to convert an image to greyscale.
+A car doesn&amp;rsquo;t rotate around its center. Put another way, a car&amp;rsquo;s rear wheels don&amp;rsquo;t slide side-to-side. (Unless it&amp;rsquo;s drifting, but we&amp;rsquo;ll talk about that later.) A car can only turn when it&amp;rsquo;s moving - it can&amp;rsquo;t spin in place.</description></item><item><title>Greyscale (monochrome) shader</title><link>http://kidscancode.org/godot_recipes/shaders/greyscale/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/shaders/greyscale/</guid><description>Problem You want a shader to convert an image to greyscale.
 Solution Let&amp;rsquo;s start with a canvas_item (2D) shader. To convert to greyscale but also preserve pixel contrast, we need to average the pixel&amp;rsquo;s color value. Add the color channels together and divide by 3:
-shader_type canvas_item; void fragment() { COLOR = texture(TEXTURE, UV); float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0; COLOR.rgb = vec3(avg); } You can apply this to the whole screen by adding a ColorRect (placed in a CanvasLayer to ignore camera movement) and scaling it to cover the screen.</description>
-    </item>
-    
-    <item>
-      <title>Kinematic Friction</title>
-      <link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</guid>
-      <description>Problem You want to add friction and acceleration to your kinematic character, giving it a smoother feel.
-Solution For most games, we&amp;rsquo;re not necessarily interested in a perfect physics simulation. We want action, responsiveness, and arcade feel. This is why you choose a kinematic body over a rigid one: so that you can control its behavior directly. However, some amount of physics is good - it means an object doesn&amp;rsquo;t instantly change direction or come to a stop.</description>
-    </item>
-    
-    <item>
-      <title>Limited circles</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_03/</guid>
-      <description>In the first two parts, we got the basic gameplay working. Now we&amp;rsquo;re going to start adding some different modes to the circles.
-Circle modes Eventually, we&amp;rsquo;ll have many different modes, but we&amp;rsquo;re going to start with the &amp;ldquo;limited&amp;rdquo; mode: the circle only allows a given number of orbits before disappearing. First, let&amp;rsquo;s add a Label node to show the number of remaining orbits. Type a number (1) in the text field so we can see how it looks.</description>
-    </item>
-    
-    <item>
-      <title>Melee attacks</title>
-      <link>http://kidscancode.org/godot_recipes/animation/melee_attacks/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/animation/melee_attacks/</guid>
-      <description>Problem You want to implement a melee attack, such as a sword or punch.
+shader_type canvas_item; void fragment() { COLOR = texture(TEXTURE, UV); float avg = (COLOR.r + COLOR.g + COLOR.b) / 3.0; COLOR.rgb = vec3(avg); } You can apply this to the whole screen by adding a ColorRect (placed in a CanvasLayer to ignore camera movement) and scaling it to cover the screen.</description></item><item><title>Kinematic Friction</title><link>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/kinematic_friction/</guid><description>Problem You want to add friction and acceleration to your kinematic character, giving it a smoother feel.
+Solution For most games, we&amp;rsquo;re not necessarily interested in a perfect physics simulation. We want action, responsiveness, and arcade feel. This is why you choose a kinematic body over a rigid one: so that you can control its behavior directly. However, some amount of physics is good - it means an object doesn&amp;rsquo;t instantly change direction or come to a stop.</description></item><item><title>Limited circles</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_03/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_03/</guid><description>In the first two parts, we got the basic gameplay working. Now we&amp;rsquo;re going to start adding some different modes to the circles.
+Circle modes Eventually, we&amp;rsquo;ll have many different modes, but we&amp;rsquo;re going to start with the &amp;ldquo;limited&amp;rdquo; mode: the circle only allows a given number of orbits before disappearing. First, let&amp;rsquo;s add a Label node to show the number of remaining orbits. Type a number (1) in the text field so we can see how it looks.</description></item><item><title>Melee attacks</title><link>http://kidscancode.org/godot_recipes/animation/melee_attacks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/melee_attacks/</guid><description>Problem You want to implement a melee attack, such as a sword or punch.
 Solution For this example, we&amp;rsquo;ll assume we have already set up a character with one or more attack animations. To illustrate, we&amp;rsquo;ll use these two attacks:
-We can detect the sword hitting the target using an Area2D, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we&amp;rsquo;ll use the AnimationPlayer to control it.</description>
-    </item>
-    
-    <item>
-      <title>Noise</title>
-      <link>http://kidscancode.org/godot_recipes/math/noise/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/math/noise/</guid>
-      <description>Problem You want to use Godot&amp;rsquo;s OpenSimplexNoise to generate noise, noise textures, and other effects.
+We can detect the sword hitting the target using an Area2D, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we&amp;rsquo;ll use the AnimationPlayer to control it.</description></item><item><title>Noise</title><link>http://kidscancode.org/godot_recipes/math/noise/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/math/noise/</guid><description>Problem You want to use Godot&amp;rsquo;s OpenSimplexNoise to generate noise, noise textures, and other effects.
 Solution Noise, or more specifically gradient noise is a method for generating more natural-looking &amp;ldquo;random&amp;rdquo; patterns. To do this, Godot provides the OpenSimplexNoise class.
-Probably the most well-known gradient noise algorithm is called Perlin noise. Because it and its successor, simplex noise, are protected by patents, Godot uses an algorithm called OpenSimplex to generate noise.</description>
-    </item>
-    
-    <item>
-      <title>Understanding &#39;delta&#39;</title>
-      <link>http://kidscancode.org/godot_recipes/basics/understanding_delta/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/basics/understanding_delta/</guid>
-      <description>Problem The delta or &amp;ldquo;delta time&amp;rdquo; parameter is a frequently-misunderstood concept in game development. In this tutorial, we&amp;rsquo;ll explain how it&amp;rsquo;s used, the importance of frame-rate independent movement, and practical examples of its use in Godot.
-Solution To illustrate the problem, let&amp;rsquo;s consider a Sprite node moving across the screen. If our screen is 600 pixels wide and we want the sprite to take 5 seconds to cross the screen, we can use the following calculation to find the necessary speed:</description>
-    </item>
-    
-    <item>
-      <title>Using Areas</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</link>
-      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</guid>
-      <description>In the last part, we learned about transforms, a very important concept in 3D that records an object&amp;rsquo;s local orientation in space, and used it to move our KinematicBody character. This time, we&amp;rsquo;re going to look at another type of 3D node: the Area.
-Areas Area nodes are used for detection and influence. They can detect when objects overlap, and when an object enters or exits a region. An Area can also be used to override physics properties, such as gravity or damping, in a region.</description>
-    </item>
-    
-    <item>
-      <title>Blur shader</title>
-      <link>http://kidscancode.org/godot_recipes/shaders/blur/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/shaders/blur/</guid>
-      <description>Problem You want a shader to blur an object or the screen.
+Probably the most well-known gradient noise algorithm is called Perlin noise. Because it and its successor, simplex noise, are protected by patents, Godot uses an algorithm called OpenSimplex to generate noise.</description></item><item><title>Understanding &#39;delta&#39;</title><link>http://kidscancode.org/godot_recipes/basics/understanding_delta/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/basics/understanding_delta/</guid><description>Problem The delta or &amp;ldquo;delta time&amp;rdquo; parameter is a frequently-misunderstood concept in game development. In this tutorial, we&amp;rsquo;ll explain how it&amp;rsquo;s used, the importance of frame-rate independent movement, and practical examples of its use in Godot.
+Solution To illustrate the problem, let&amp;rsquo;s consider a Sprite node moving across the screen. If our screen is 600 pixels wide and we want the sprite to take 5 seconds to cross the screen, we can use the following calculation to find the necessary speed:</description></item><item><title>Using Areas</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</link><pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_04/</guid><description>In the last part, we learned about transforms, a very important concept in 3D that records an object&amp;rsquo;s local orientation in space, and used it to move our KinematicBody character. This time, we&amp;rsquo;re going to look at another type of 3D node: the Area.
+Areas Area nodes are used for detection and influence. They can detect when objects overlap, and when an object enters or exits a region. An Area can also be used to override physics properties, such as gravity or damping, in a region.</description></item><item><title>Blur shader</title><link>http://kidscancode.org/godot_recipes/shaders/blur/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/shaders/blur/</guid><description>Problem You want a shader to blur an object or the screen.
 Solution shader_type canvas_item; uniform float blur_amount : hint_range(0, 5); void fragment() { COLOR = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur_amount); } For example, to gradually blur the entire screen, such as for a scene transition effect:
 You can also animate the blurring:
-extends Node # Add a ColorRect or other Control set to fill the screen # Place it lower in the tree and/or place in CanvasLayer # so it&amp;#39;s on top of the rest of the scene.</description>
-    </item>
-    
-    <item>
-      <title>Changing behaviors</title>
-      <link>http://kidscancode.org/godot_recipes/ai/changing_behaviors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ai/changing_behaviors/</guid>
-      <description>Problem You want your AI-controlled entity to switch between different behaviors.
+extends Node # Add a ColorRect or other Control set to fill the screen # Place it lower in the tree and/or place in CanvasLayer # so it&amp;#39;s on top of the rest of the scene.</description></item><item><title>Changing behaviors</title><link>http://kidscancode.org/godot_recipes/ai/changing_behaviors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ai/changing_behaviors/</guid><description>Problem You want your AI-controlled entity to switch between different behaviors.
 Solution For this example, we&amp;rsquo;ll assume an enemy with the following behaviors. See the individual recipes for how to make each behavior work.
- Patrol
+Patrol
 The &amp;ldquo;Patrol&amp;rdquo; state moves along a pre-defined path (or stands still if there&amp;rsquo;s no path assigned). See Recipe: Path following for details.
- Chase
-The &amp;ldquo;Chase&amp;rdquo; state moves the enemy towards the player. See Recipe: Chasing the player for how to make this behavior.</description>
-    </item>
-    
-    <item>
-      <title>Controlling animation states</title>
-      <link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid>
-      <description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
+Chase
+The &amp;ldquo;Chase&amp;rdquo; state moves the enemy towards the player. See Recipe: Chasing the player for how to make this behavior.</description></item><item><title>Controlling animation states</title><link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid><description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
 Solution Use an AnimationTree to create an animation state machine. This will allow us to organize our animations and most importantly, control the transitions between them.
-Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description>
-    </item>
-    
-    <item>
-      <title>Homing missile</title>
-      <link>http://kidscancode.org/godot_recipes/ai/homing_missile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ai/homing_missile/</guid>
-      <description>Problem You need a &amp;ldquo;homing missile&amp;rdquo; - a projectile that will seek a moving target.
+Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description></item><item><title>Homing missile</title><link>http://kidscancode.org/godot_recipes/ai/homing_missile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ai/homing_missile/</guid><description>Problem You need a &amp;ldquo;homing missile&amp;rdquo; - a projectile that will seek a moving target.
 Solution For this example, we&amp;rsquo;ll use an Area2D node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, a PhysicsBody type node might be a better choice.
-The node setup and behavior of the missile is the same you would use for a &amp;ldquo;dumb&amp;rdquo; bullet.</description>
-    </item>
-    
-    <item>
-      <title>KinematicBody: Movement</title>
-      <link>http://kidscancode.org/godot_recipes/3d/kinematic_body/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/3d/kinematic_body/</guid>
-      <description>Problem You need a player-controlled 3D kinematic body.
+The node setup and behavior of the missile is the same you would use for a &amp;ldquo;dumb&amp;rdquo; bullet.</description></item><item><title>KinematicBody: Movement</title><link>http://kidscancode.org/godot_recipes/3d/kinematic_body/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/3d/kinematic_body/</guid><description>Problem You need a player-controlled 3D kinematic body.
 Solution For this recipe, we&amp;rsquo;ll be using this adorable tank model:
 You can grab this model on Itch.io: https://gtibo.itch.io/mini-tank or use any other model you&amp;rsquo;d like. We won&amp;rsquo;t be doing anything that&amp;rsquo;s tank-specific here.
 We can add the model to the scene, but we&amp;rsquo;ll need a couple of additional nodes:
-For the collision shape, we&amp;rsquo;re just going to use a BoxShape aligned and sized with the tank&amp;rsquo;s treads.</description>
-    </item>
-    
-    <item>
-      <title>Menus</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</guid>
-      <description>Now that we&amp;rsquo;ve got the basic gameplay, it&amp;rsquo;s time to start working on the UI. We&amp;rsquo;re going to need menu screens for the title, settings, and game over.
-Menu screens The three screens will share a common layout and some functionality, so we&amp;rsquo;ll start with a base scene they can all inherit from. In the new scene, start with a CanvasLayer and name it BaseScreen. Save this scene in the &amp;ldquo;UI&amp;rdquo; folder.</description>
-    </item>
-    
-    <item>
-      <title>RigidBody2D: Drag and Drop</title>
-      <link>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</guid>
-      <description>Problem You want to pick up and move rigid bodies with the mouse.
+For the collision shape, we&amp;rsquo;re just going to use a BoxShape aligned and sized with the tank&amp;rsquo;s treads.</description></item><item><title>Menus</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_04/</guid><description>Now that we&amp;rsquo;ve got the basic gameplay, it&amp;rsquo;s time to start working on the UI. We&amp;rsquo;re going to need menu screens for the title, settings, and game over.
+Menu screens The three screens will share a common layout and some functionality, so we&amp;rsquo;ll start with a base scene they can all inherit from. In the new scene, start with a CanvasLayer and name it BaseScreen. Save this scene in the &amp;ldquo;UI&amp;rdquo; folder.</description></item><item><title>RigidBody2D: Drag and Drop</title><link>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/rigidbody_drag_drop/</guid><description>Problem You want to pick up and move rigid bodies with the mouse.
 Solution Working with rigid bodies can be tricky. Godot&amp;rsquo;s physics engine controls their movements, and interfering with that can often lead to unexpected results. The key is to make use of the body&amp;rsquo;s mode property. This applies equally well in 2D or 3D.
-Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and CollisionShape2D.</description>
-    </item>
-    
-    <item>
-      <title>Saving/loading data</title>
-      <link>http://kidscancode.org/godot_recipes/basics/file_io/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/basics/file_io/</guid>
-      <description>Problem You need to save and load local data between game sessions.
+Body setup We&amp;rsquo;ll start with our rigid body object, adding a Sprite and CollisionShape2D.</description></item><item><title>Saving/loading data</title><link>http://kidscancode.org/godot_recipes/basics/file_io/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/basics/file_io/</guid><description>Problem You need to save and load local data between game sessions.
 Solution Godot&amp;rsquo;s file I/O (input/output) system is based around the File object. You open a file by creating a new File object and calling open().
-var file = File.new() file.open(&amp;#34;user://myfile.name&amp;#34;, File.READ) User data should only be stored in the user:// path. While res:// can be used when running from the editor, when your project is exported, the res:// path becomes read-only.</description>
-    </item>
-    
-    <item>
-      <title>TileMap: using autotile</title>
-      <link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/autotile_intro/</guid>
-      <description>Problem You are using a TileMap, and want to use autotiling to more quickly draw your levels.
+var file = File.new() file.open(&amp;#34;user://myfile.name&amp;#34;, File.READ) User data should only be stored in the user:// path. While res:// can be used when running from the editor, when your project is exported, the res:// path becomes read-only.</description></item><item><title>TileMap: using autotile</title><link>http://kidscancode.org/godot_recipes/2d/autotile_intro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/autotile_intro/</guid><description>Problem You are using a TileMap, and want to use autotiling to more quickly draw your levels.
 Solution For this demo, we&amp;rsquo;ll be using the following tileset:
 These tiles are from Kenney&amp;rsquo;s &amp;ldquo;Topdown Shooter&amp;rdquo; art pack, which you can find here:https://kenney.nl/assets/topdown-shooter
- Creating a map from these tiles, if you were adding them one-by-one, would be a tedious process. You would be constantly changing between tiles to line up corners, intersections, and endpoints.</description>
-    </item>
-    
-    <item>
-      <title>Edge Detection &amp; Mouse Capture</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</link>
-      <pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</guid>
-      <description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
-Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description>
-    </item>
-    
-    <item>
-      <title>3D Unit Healthbars</title>
-      <link>http://kidscancode.org/godot_recipes/3d/healthbars/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/3d/healthbars/</guid>
-      <description>Problem You want a floating &amp;ldquo;healthbar&amp;rdquo; for your 3D game objects (mobs, characters, etc.).
+Creating a map from these tiles, if you were adding them one-by-one, would be a tedious process. You would be constantly changing between tiles to line up corners, intersections, and endpoints.</description></item><item><title>Edge Detection &amp; Mouse Capture</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</link><pubDate>Sat, 09 Mar 2019 05:22:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_05/</guid><description>In the last part, we learned how to use Area nodes to detect contact between objects, making coin, bullet, and spike objects for our character to interact with. In this part, we&amp;rsquo;ll look at a few small improvements: capturing the mouse, animating the coins, and detecting edges so our character doesn&amp;rsquo;t fall.
+Capturing the Mouse One issue with our mouse-based controls is that as you move the mouse from side to side, it eventually moves out of the game window and hits the edge of your screen.</description></item><item><title>3D Unit Healthbars</title><link>http://kidscancode.org/godot_recipes/3d/healthbars/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/3d/healthbars/</guid><description>Problem You want a floating &amp;ldquo;healthbar&amp;rdquo; for your 3D game objects (mobs, characters, etc.).
 Solution For this solution, we&amp;rsquo;re going to re-use a 2D healthbar based on a TextureProgress node. It&amp;rsquo;s already set up with textures and code for updating the value and color. If you already have something similar, feel free to use it here. In the example, we&amp;rsquo;ll name this scene &amp;ldquo;Healthbar2D&amp;rdquo;.
-If you need some assets, here are the three images used in the bar:</description>
-    </item>
-    
-    <item>
-      <title>Cooldown Button</title>
-      <link>http://kidscancode.org/godot_recipes/ui/cooldown_button/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/cooldown_button/</guid>
-      <description>Problem You want to make RPG-style ability buttons, including a cooldown effect.
+If you need some assets, here are the three images used in the bar:</description></item><item><title>Cooldown Button</title><link>http://kidscancode.org/godot_recipes/ui/cooldown_button/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/cooldown_button/</guid><description>Problem You want to make RPG-style ability buttons, including a cooldown effect.
 Solution If you need art for your buttons, you can find a wide variety of well-designed buttons at Game-icons.net. We&amp;rsquo;ll be using a few from there for this recipe.
 Node setup The scene for our ability button will need the following nodes:
-┖╴TextureButton (&amp;#34;AbilityButton&amp;#34;) ┠╴TextureProgress (&amp;#34;Sweep&amp;#34;) ┠╴Timer ┖╴MarginContainer (&amp;#34;Counter&amp;#34;) ┖╴Label (&amp;#34;Value&amp;#34;) Drop your chosen icon into the Texture property of the AbilityButton.</description>
-    </item>
-    
-    <item>
-      <title>Customizing the Mouse Cursor</title>
-      <link>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</guid>
-      <description>Problem You want to use a custom mouse cursor.
+┖╴TextureButton (&amp;#34;AbilityButton&amp;#34;) ┠╴TextureProgress (&amp;#34;Sweep&amp;#34;) ┠╴Timer ┖╴MarginContainer (&amp;#34;Counter&amp;#34;) ┖╴Label (&amp;#34;Value&amp;#34;) Drop your chosen icon into the Texture property of the AbilityButton.</description></item><item><title>Customizing the Mouse Cursor</title><link>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</guid><description>Problem You want to use a custom mouse cursor.
 Solution Setting the mouse cursor is done with Input.set_custom_mouse_cursor(). All you need is a texture to use. The texture must be no larger than 256x256 pixels in size.
 For example, to use the following image:
 And set its hotspot to the center:
-extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(64, 64)) The second parameter sets which system cursor to replace. See the Input docs for the full list.</description>
-    </item>
-    
-    <item>
-      <title>Heart Containers: 3 Ways</title>
-      <link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid>
-      <description>Problem You need to display a heart container bar (or other icon-based bar).
+extends Node2D func _ready(): Input.set_custom_mouse_cursor(cursor_image, Input.CURSOR_ARROW, Vector2(64, 64)) The second parameter sets which system cursor to replace. See the Input docs for the full list.</description></item><item><title>Heart Containers: 3 Ways</title><link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid><description>Problem You need to display a heart container bar (or other icon-based bar).
 Solution A common way of displaying the player&amp;rsquo;s health is via a series of icons (typically hearts) that disappear as the player takes damage.
 In this recipe, we&amp;rsquo;re going to explore three ways of displaying this information, which I&amp;rsquo;m labeling &amp;ldquo;simple&amp;rdquo;, &amp;ldquo;empty&amp;rdquo;, and &amp;ldquo;partial&amp;rdquo;:
-This image shows what the bar displays when the player has 3 health.</description>
-    </item>
-    
-    <item>
-      <title>Kinematic to Rigid Body Interaction</title>
-      <link>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</guid>
-      <description>Problem You want your kinematic character to interact with rigid bodies.
+This image shows what the bar displays when the player has 3 health.</description></item><item><title>Kinematic to Rigid Body Interaction</title><link>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/kinematic_to_rigidbody/</guid><description>Problem You want your kinematic character to interact with rigid bodies.
 Solution This recipe applies equally well in both 2D and 3D nodes.
- By default, a kinematic body moved with move_and_slide() or move_and_collide() will push any rigid bodies it collides with. This interaction ignores the rigid body&amp;rsquo;s physics properties due to the kinematic move function&amp;rsquo;s infinite_inertia parameter.
-In some cases, this might be all you need. However, if you want to avoid &amp;ldquo;glitches&amp;rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&amp;rsquo;ll need to add some code for the interactions.</description>
-    </item>
-    
-    <item>
-      <title>KinematicBody2D: align with surface</title>
-      <link>http://kidscancode.org/godot_recipes/2d/2d_align_surface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/2d_align_surface/</guid>
-      <description>Problem You need your kinematic body to align with the surface it&amp;rsquo;s standing on.
+By default, a kinematic body moved with move_and_slide() or move_and_collide() will push any rigid bodies it collides with. This interaction ignores the rigid body&amp;rsquo;s physics properties due to the kinematic move function&amp;rsquo;s infinite_inertia parameter.
+In some cases, this might be all you need. However, if you want to avoid &amp;ldquo;glitches&amp;rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&amp;rsquo;ll need to add some code for the interactions.</description></item><item><title>KinematicBody2D: align with surface</title><link>http://kidscancode.org/godot_recipes/2d/2d_align_surface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/2d_align_surface/</guid><description>Problem You need your kinematic body to align with the surface it&amp;rsquo;s standing on.
 Solution As of Godot 3.2, there is a bug preventing KinematicBody2D&amp;rsquo;s stop_on_slope parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See GitHub for details and other suggestions regarding this issue.
- We&amp;rsquo;ll start with a basic kinematic platform character. See the Platform character recipe for details.</description>
-    </item>
-    
-    <item>
-      <title>Moving Platforms</title>
-      <link>http://kidscancode.org/godot_recipes/2d/moving_platforms/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/moving_platforms/</guid>
-      <description>Problem You need moving platforms in your 2D platformer.
+We&amp;rsquo;ll start with a basic kinematic platform character. See the Platform character recipe for details.</description></item><item><title>Moving Platforms</title><link>http://kidscancode.org/godot_recipes/2d/moving_platforms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/moving_platforms/</guid><description>Problem You need moving platforms in your 2D platformer.
 Solution There are several ways to approach this problem. In this recipe, we&amp;rsquo;ll use KinematicBody2Ds for our platforms and move them with AnimationPlayer. This allows for a variety of movement styles while minimizing the amount of code we need to write.
-Setting up We&amp;rsquo;ll start with a basic platformer setup using the Platform character recipe. We will need to make one small modification from that recipe: using move_and_slide_with_snap() for the movement.</description>
-    </item>
-    
-    <item>
-      <title>Score and HUD</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</guid>
-      <description>In the last part, we added UI in the form of menus to start and configure the game. We also need a UI to display in-game information such as score.
+Setting up We&amp;rsquo;ll start with a basic platformer setup using the Platform character recipe. We will need to make one small modification from that recipe: using move_and_slide_with_snap() for the movement.</description></item><item><title>Score and HUD</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</guid><description>In the last part, we added UI in the form of menus to start and configure the game. We also need a UI to display in-game information such as score.
 HUD scene Add a new scene with a CanvasLayer root to be our HUD. Give it two children: a MarginContainer named &amp;ldquo;ScoreBox&amp;rdquo; and a `Label&amp;rdquo; named &amp;ldquo;Message&amp;rdquo;.
 Your scene tree should look like this:
-Set the layout of the ScoreBox to &amp;ldquo;Bottom Wide&amp;rdquo; and the Custom Constants all to 20.</description>
-    </item>
-    
-    <item>
-      <title>TileMap: animated tiles</title>
-      <link>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</guid>
-      <description>Problem You&amp;rsquo;d like to use animated tiles in your TileMap.
+Set the layout of the ScoreBox to &amp;ldquo;Bottom Wide&amp;rdquo; and the Custom Constants all to 20.</description></item><item><title>Shooting projectiles</title><link>http://kidscancode.org/godot_recipes/2d/2d_shooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/2d_shooting/</guid><description>Problem You want to shoot projectiles from your player/mob/etc..
+Solution Setting up the bullet First, we&amp;rsquo;ll set up a &amp;ldquo;bullet&amp;rdquo; object that we can instance. Here are the node&amp;rsquo;s we&amp;rsquo;ll use:
+- Area2D (&amp;#34;Bullet&amp;#34;) - Sprite - CollisionShape2D For the Sprite&amp;rsquo;s texture, you can use any image you like. Here&amp;rsquo;s an example one:
+Set up the nodes and configure the sprite and collision shape. If your texture is oriented pointing up, like the one above, make sure to rotate the Sprite node by 90° so that it&amp;rsquo;s pointing to the right, ensuring it matches the parent’s “forward” direction.</description></item><item><title>TileMap: animated tiles</title><link>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/tilemap_animation/</guid><description>Problem You&amp;rsquo;d like to use animated tiles in your TileMap.
 Solution The most straightforward way to approach this problem is to use the AnimatedTexture resource.
 Creating an AnimatedTexture For this example, we&amp;rsquo;ll use the following water tiles:
 Download these images: water.zip
 Unzip the images into your project folder. In the Inspector, click the &amp;ldquo;Create a new resource&amp;rdquo; button:
-Choose AnimatedTexture and set the Frames property to 5. For each frame, drag the corresponding image to its Texture property.</description>
-    </item>
-    
-    <item>
-      <title>Circular movement</title>
-      <link>http://kidscancode.org/godot_recipes/basics/rotation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/basics/rotation/</guid>
-      <description>Problem You want an object to &amp;ldquo;orbit&amp;rdquo; (move in a circle) around another object.
+Choose AnimatedTexture and set the Frames property to 5. For each frame, drag the corresponding image to its Texture property.</description></item><item><title>Circular movement</title><link>http://kidscancode.org/godot_recipes/basics/rotation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/basics/rotation/</guid><description>Problem You want an object to &amp;ldquo;orbit&amp;rdquo; (move in a circle) around another object.
 Solution This is a common beginner question, and often comes after a bunch of messy experimenting with trig functions. The answer is much simpler:
 Place the orbiting sprite in a child node of the main sprite (we&amp;rsquo;re calling it &amp;ldquo;Pivot&amp;rdquo;). Give it an offset and rotate the Pivot.
-extends Node2D export var rotation_speed = PI func _process(delta): $Sprite/Pivot.</description>
-    </item>
-    
-    <item>
-      <title>Screen Shake</title>
-      <link>http://kidscancode.org/godot_recipes/2d/screen_shake/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/screen_shake/</guid>
-      <description>Problem You want to create a &amp;ldquo;screen shake&amp;rdquo; effect.
+extends Node2D export var rotation_speed = PI func _process(delta): $Sprite/Pivot.</description></item><item><title>Screen Shake</title><link>http://kidscancode.org/godot_recipes/2d/screen_shake/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/screen_shake/</guid><description>Problem You want to create a &amp;ldquo;screen shake&amp;rdquo; effect.
 Solution The &amp;ldquo;screen shake&amp;rdquo; effect is a popular way to add a dynamic feel to your game. When used well, it adds a lot of appeal. When misused, players hate it. Keep this in mind when adding it to your game and use wisely.
-The effect is quite simple: when an event occurs - an explosion, a heavy object hitting an obstacle, etc.</description>
-    </item>
-    
-    <item>
-      <title>Sound and Colors</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</guid>
-      <description>Settings singleton First, we&amp;rsquo;ll add a new script by choosing File -&amp;gt; New Script in the script tab. Name the script settings.gd.
+The effect is quite simple: when an event occurs - an explosion, a heavy object hitting an obstacle, etc.</description></item><item><title>Sound and Colors</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</guid><description>Settings singleton First, we&amp;rsquo;ll add a new script by choosing File -&amp;gt; New Script in the script tab. Name the script settings.gd.
 In this script we&amp;rsquo;ll place the configuration settings for the game.
-var enable_sound = true var enable_music = true var circles_per_level = 5 Add the script as an autoload by opening &amp;ldquo;Project Settings&amp;rdquo; and selecting the &amp;ldquo;Autoloads&amp;rdquo; tab. Click the folder to load the script and then click &amp;ldquo;Add&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Using CSG</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</guid>
-      <description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
-What is CSG? CSG stands for Constructive Solid Geometry. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description>
-    </item>
-    
-    <item>
-      <title>First-person Character</title>
-      <link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</guid>
-      <description>In this installment, we&amp;rsquo;ll look at how to make a first-person character. We&amp;rsquo;ll use the CSG-based level we designed in the previous part as a place to walk around and test our movement.
-Character Scene In an FPS or similar game, we want to give the player the illusion that they&amp;rsquo;re looking out of the character&amp;rsquo;s eyes. One nice aspect of this is that we don&amp;rsquo;t really need a model, at least to get started.</description>
-    </item>
-    
-    <item>
-      <title>Mouse: Drag-select multiple units</title>
-      <link>http://kidscancode.org/godot_recipes/input/multi_unit_select/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/input/multi_unit_select/</guid>
-      <description>Problem You want to click-and-drag to select multiple units, RTS style.
+var enable_sound = true var enable_music = true var circles_per_level = 5 Add the script as an autoload by opening &amp;ldquo;Project Settings&amp;rdquo; and selecting the &amp;ldquo;Autoloads&amp;rdquo; tab. Click the folder to load the script and then click &amp;ldquo;Add&amp;rdquo;.</description></item><item><title>Using CSG</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_06/</guid><description>Earlier, we saw how to design a 3D environment using imported models. But what if you want to make something like a room, with walls, doors, ramps, and other features, but you don&amp;rsquo;t have any models handy? CSG to the rescue!
+What is CSG? CSG stands for Constructive Solid Geometry. It allows you to combine primitive shapes to build complex geometry. Shapes can be combined with boolean operations such as Union, Intersection, and Subtraction.</description></item><item><title>First-person Character</title><link>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/g101/3d/101_3d_07/</guid><description>In this installment, we&amp;rsquo;ll look at how to make a first-person character. We&amp;rsquo;ll use the CSG-based level we designed in the previous part as a place to walk around and test our movement.
+Character Scene In an FPS or similar game, we want to give the player the illusion that they&amp;rsquo;re looking out of the character&amp;rsquo;s eyes. One nice aspect of this is that we don&amp;rsquo;t really need a model, at least to get started.</description></item><item><title>Mouse: Drag-select multiple units</title><link>http://kidscancode.org/godot_recipes/input/multi_unit_select/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/input/multi_unit_select/</guid><description>Problem You want to click-and-drag to select multiple units, RTS style.
 Solution Realtime strategy (RTS) games often require giving orders to many units at once. A typical style of selecting multiple units is to click-and-drag a box around them. Once the units are selected, clicking on the map commands them to move.
 Here&amp;rsquo;s an example of what we&amp;rsquo;re going for:
-Unit setup To test this out, we&amp;rsquo;ll need some basic RTS-style units.</description>
-    </item>
-    
-    <item>
-      <title>Moving circles</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</guid>
-      <description>Fixing a bug Our first task is to fix a bug with our menu system. Pressing the &amp;ldquo;Start&amp;rdquo; button launches a new game, but as the screen is moving off, it can be pressed again. Try &amp;ldquo;spamming&amp;rdquo; the start button - disaster ensues!
-We can fix this by disabling the buttons while the screen transition is happening. Since we put all the buttons in a &amp;ldquo;buttons&amp;rdquo; group, we can easily do this with call_group().</description>
-    </item>
-    
-    <item>
-      <title>Using 2D Joints</title>
-      <link>http://kidscancode.org/godot_recipes/physics/joints_2d/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/joints_2d/</guid>
-      <description>Problem You&amp;rsquo;d like to understand Godot&amp;rsquo;s Joint2D nodes.
+Unit setup To test this out, we&amp;rsquo;ll need some basic RTS-style units.</description></item><item><title>Moving circles</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_07/</guid><description>Fixing a bug Our first task is to fix a bug with our menu system. Pressing the &amp;ldquo;Start&amp;rdquo; button launches a new game, but as the screen is moving off, it can be pressed again. Try &amp;ldquo;spamming&amp;rdquo; the start button - disaster ensues!
+We can fix this by disabling the buttons while the screen transition is happening. Since we put all the buttons in a &amp;ldquo;buttons&amp;rdquo; group, we can easily do this with call_group().</description></item><item><title>Using 2D Joints</title><link>http://kidscancode.org/godot_recipes/physics/joints_2d/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/joints_2d/</guid><description>Problem You&amp;rsquo;d like to understand Godot&amp;rsquo;s Joint2D nodes.
 Solution Joint are used to constrain the movement of attached physics objects. For any joint node, you need to attach two bodies, which must extend from PhysicsObject2D.
 Properties These properties are common to all joint nodes:
- Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description>
-    </item>
-    
-    <item>
-      <title>Conveyor Belt</title>
-      <link>http://kidscancode.org/godot_recipes/physics/conveyor_belt/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/physics/conveyor_belt/</guid>
-      <description>Problem You want to make a conveyor belt object that will move bodies (kinematic or rigid).
+Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description></item><item><title>Conveyor Belt</title><link>http://kidscancode.org/godot_recipes/physics/conveyor_belt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/physics/conveyor_belt/</guid><description>Problem You want to make a conveyor belt object that will move bodies (kinematic or rigid).
 Solution You can make a conveyor belt object using nothing but a StaticBody2D by using its constant_linear_velocity property.
 See below for how to address this in 3D.
- Here&amp;rsquo;s an example, using nothing but a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).</description>
-    </item>
-    
-    <item>
-      <title>Object Healthbars</title>
-      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
-      <description>Problem You want units in your game to have healthbars that follow them as they move.
+Here&amp;rsquo;s an example, using nothing but a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).</description></item><item><title>Object Healthbars</title><link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid><description>Problem You want units in your game to have healthbars that follow them as they move.
 Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
-So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
-    </item>
-    
-    <item>
-      <title>Mobile ads</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</guid>
-      <description>About ads When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&amp;rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.
-Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&amp;rsquo;re not making a decision on the pros and cons in this tutorial - we&amp;rsquo;re here to show you how to put ads in your game if you want them.</description>
-    </item>
-    
-    <item>
-      <title>Click to move</title>
-      <link>http://kidscancode.org/godot_recipes/3d/click_to_move/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/3d/click_to_move/</guid>
-      <description>Problem You want to move a 3D object to a clicked position.
+So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description></item><item><title>Mobile ads</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_11/</guid><description>About ads When building a free-to-play mobile game, you have two choices when it comes to monetization: in-app purchases and advertisement. In this part, we&amp;rsquo;ll look at how to integrate a mobile ad platform (Admob) into your game.
+Ads can be unpopular and whether to use them is a decision for the individual game developer to make. We&amp;rsquo;re not making a decision on the pros and cons in this tutorial - we&amp;rsquo;re here to show you how to put ads in your game if you want them.</description></item><item><title>Click to move</title><link>http://kidscancode.org/godot_recipes/3d/click_to_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/3d/click_to_move/</guid><description>Problem You want to move a 3D object to a clicked position.
 Solution We&amp;rsquo;ll start with a flat plane for our world. Our actor will move on this plane.
 The actor for this demo is a triangular prism mesh:
 Here is the code for the movement. If given a target, the object will turn and move toward it.
-extends KinematicBody export var speed = 5 export var gravity = -5 var target = null var velocity = Vector3.</description>
-    </item>
-    
-    <item>
-      <title>Floating combat text</title>
-      <link>http://kidscancode.org/godot_recipes/ui/floating_text/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/floating_text/</guid>
-      <description>Problem You want units to display damage as floating numbers when hit.
+extends KinematicBody export var speed = 5 export var gravity = -5 var target = null var velocity = Vector3.</description></item><item><title>Floating combat text</title><link>http://kidscancode.org/godot_recipes/ui/floating_text/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/floating_text/</guid><description>Problem You want units to display damage as floating numbers when hit.
 Solution There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a Sprite node to display and move it.
-However, for this recipe, we&amp;rsquo;ll use a Label node (named &amp;ldquo;FCT&amp;rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &amp;ldquo;miss&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Minimap/radar</title>
-      <link>http://kidscancode.org/godot_recipes/ui/minimap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid>
-      <description>Problem You want a minimap or radar-style UI item showing the locations of objects outside of the player&amp;rsquo;s view.
-Solution Here&amp;rsquo;s an example of what we are going for: 
+However, for this recipe, we&amp;rsquo;ll use a Label node (named &amp;ldquo;FCT&amp;rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &amp;ldquo;miss&amp;rdquo;.</description></item><item><title>Minimap/radar</title><link>http://kidscancode.org/godot_recipes/ui/minimap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid><description>Problem You want a minimap or radar-style UI item showing the locations of objects outside of the player&amp;rsquo;s view.
+Solution Here&amp;rsquo;s an example of what we are going for:
 Project setup To illustrate this feature, we&amp;rsquo;ll start with a simplified top-down game using the Autotile recipe and a player based on the Top-down character recipe. See the linked recipes for details on how these parts work.
-The art in this project comes from kenney.</description>
-    </item>
-    
-    <item>
-      <title>Saving settings</title>
-      <link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</guid>
-      <description>Saving settings We&amp;rsquo;ve added three toggle properties in the game - which works fine - but the settings aren&amp;rsquo;t preserved when we quit. We need to save those settings so the next time you run the game, they persist.
+The art in this project comes from kenney.</description></item><item><title>Saving settings</title><link>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_12/</guid><description>Saving settings We&amp;rsquo;ve added three toggle properties in the game - which works fine - but the settings aren&amp;rsquo;t preserved when we quit. We need to save those settings so the next time you run the game, they persist.
 First, we&amp;rsquo;ll define our settings file in res://settings.gd:
 var settings_file = &amp;#34;user://settings.save&amp;#34; Next, we&amp;rsquo;ll add saving/loading functions for the three game settings that we want to save.
-func save_settings(): var f = File.</description>
-    </item>
-    
-    <item>
-      <title>Touchscreen Camera</title>
-      <link>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</guid>
-      <description>Problem You need a touch-controlled 2D camera for your mobile game.
+func save_settings(): var f = File.</description></item><item><title>Touchscreen Camera</title><link>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/touchscreen_camera/</guid><description>Problem You need a touch-controlled 2D camera for your mobile game.
 Solution In this recipe, we&amp;rsquo;ll create a generic 2D camera with multiple touch controls:
- Drag to pan Pinch to zoom  Setup Our camera will extend the built-in node, so add a Camera2D to a new scene and name it &amp;ldquo;TouchCamera&amp;rdquo;. Save and attach a script.
+Drag to pan Pinch to zoom Setup Our camera will extend the built-in node, so add a Camera2D to a new scene and name it &amp;ldquo;TouchCamera&amp;rdquo;. Save and attach a script.
 Here are the variables we&amp;rsquo;ll need:
-extends Camera2D export (NodePath) var target # Optional: export these properties for convenient editing.</description>
-    </item>
-    
-    <item>
-      <title>KinematicBody: align with surface</title>
-      <link>http://kidscancode.org/godot_recipes/3d/3d_align_surface/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/3d/3d_align_surface/</guid>
-      <description>Problem You need your kinematic body to align with the surface or terrain.
+extends Camera2D export (NodePath) var target # Optional: export these properties for convenient editing.</description></item><item><title>KinematicBody: align with surface</title><link>http://kidscancode.org/godot_recipes/3d/3d_align_surface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/3d/3d_align_surface/</guid><description>Problem You need your kinematic body to align with the surface or terrain.
 Solution This recipe builds on the basic KinematicBody controller described in the KinematicBody: Movement recipe, so read that one first.
 First, we&amp;rsquo;ve added some terrain to the scene. You can download the terrain from here: https://fertile-soil-productions.itch.io/modular-terrain-pack. This is low-poly terrain, but you can use or make any terrain you like for this technique.
-As you can see, the movement still works with the terrain, but the tank seems to &amp;ldquo;float&amp;rdquo; above the slopes because it doesn&amp;rsquo;t change its orientation.</description>
-    </item>
-    
-    <item>
-      <title>Inheritance</title>
-      <link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link>
-      <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid>
-      <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
+As you can see, the movement still works with the terrain, but the tank seems to &amp;ldquo;float&amp;rdquo; above the slopes because it doesn&amp;rsquo;t change its orientation.</description></item><item><title>Inheritance</title><link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link><pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid><description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
 We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
-Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
-    </item>
-    
-  </channel>
-</rss>
+Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description></item></channel></rss>

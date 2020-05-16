@@ -1,94 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>UI on Godot Recipes by KidsCanCode</title>
-    <link>http://kidscancode.org/godot_recipes/ui/</link>
-    <description>Recent content in UI on Godot Recipes by KidsCanCode</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate>
-    
-	<atom:link href="http://kidscancode.org/godot_recipes/ui/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Labels</title>
-      <link>http://kidscancode.org/godot_recipes/ui/labels/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/labels/</guid>
-      <description>Problem You want to display some text on the screen.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>UI on Godot Recipes by KidsCanCode</title><link>http://kidscancode.org/godot_recipes/ui/</link><description>Recent content in UI on Godot Recipes by KidsCanCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate><atom:link href="http://kidscancode.org/godot_recipes/ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Labels</title><link>http://kidscancode.org/godot_recipes/ui/labels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/labels/</guid><description>Problem You want to display some text on the screen.
 Solution Sooner or later you&amp;rsquo;re going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot&amp;rsquo;s Label node is the answer.
-Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description>
-    </item>
-    
-    <item>
-      <title>Containers</title>
-      <link>http://kidscancode.org/godot_recipes/ui/containers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/containers/</guid>
-      <description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
-Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description>
-    </item>
-    
-    <item>
-      <title>Cooldown Button</title>
-      <link>http://kidscancode.org/godot_recipes/ui/cooldown_button/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/cooldown_button/</guid>
-      <description>Problem You want to make RPG-style ability buttons, including a cooldown effect.
+Working with fonts Before you can start, you&amp;rsquo;re going to need a font. We&amp;rsquo;ll go into the full details of Godot&amp;rsquo;s font support in a separate recipe, but for our purposes, let&amp;rsquo;s assume you have a TTF or OTF font file.</description></item><item><title>Containers</title><link>http://kidscancode.org/godot_recipes/ui/containers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/containers/</guid><description>Problem Your UI has problem(s): it&amp;rsquo;s become overcomplicated, it doesn&amp;rsquo;t resize well, and/or you can&amp;rsquo;t keep track of how everything fits together.
+Solution For many developers, building a UI is their least favorite part. It&amp;rsquo;s very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you&amp;rsquo;ll find that they take away a lot of that pain.</description></item><item><title>Cooldown Button</title><link>http://kidscancode.org/godot_recipes/ui/cooldown_button/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/cooldown_button/</guid><description>Problem You want to make RPG-style ability buttons, including a cooldown effect.
 Solution If you need art for your buttons, you can find a wide variety of well-designed buttons at Game-icons.net. We&amp;rsquo;ll be using a few from there for this recipe.
 Node setup The scene for our ability button will need the following nodes:
-┖╴TextureButton (&amp;#34;AbilityButton&amp;#34;) ┠╴TextureProgress (&amp;#34;Sweep&amp;#34;) ┠╴Timer ┖╴MarginContainer (&amp;#34;Counter&amp;#34;) ┖╴Label (&amp;#34;Value&amp;#34;) Drop your chosen icon into the Texture property of the AbilityButton.</description>
-    </item>
-    
-    <item>
-      <title>Heart Containers: 3 Ways</title>
-      <link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid>
-      <description>Problem You need to display a heart container bar (or other icon-based bar).
+┖╴TextureButton (&amp;#34;AbilityButton&amp;#34;) ┠╴TextureProgress (&amp;#34;Sweep&amp;#34;) ┠╴Timer ┖╴MarginContainer (&amp;#34;Counter&amp;#34;) ┖╴Label (&amp;#34;Value&amp;#34;) Drop your chosen icon into the Texture property of the AbilityButton.</description></item><item><title>Heart Containers: 3 Ways</title><link>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/heart_containers_3/</guid><description>Problem You need to display a heart container bar (or other icon-based bar).
 Solution A common way of displaying the player&amp;rsquo;s health is via a series of icons (typically hearts) that disappear as the player takes damage.
 In this recipe, we&amp;rsquo;re going to explore three ways of displaying this information, which I&amp;rsquo;m labeling &amp;ldquo;simple&amp;rdquo;, &amp;ldquo;empty&amp;rdquo;, and &amp;ldquo;partial&amp;rdquo;:
-This image shows what the bar displays when the player has 3 health.</description>
-    </item>
-    
-    <item>
-      <title>Object Healthbars</title>
-      <link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid>
-      <description>Problem You want units in your game to have healthbars that follow them as they move.
+This image shows what the bar displays when the player has 3 health.</description></item><item><title>Object Healthbars</title><link>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/unit_healthbar/</guid><description>Problem You want units in your game to have healthbars that follow them as they move.
 Solution Displaying the bar can be done with a TextureProgress node. This is like the ProgressBar node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We&amp;rsquo;ll use three colored bars for this:
-So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description>
-    </item>
-    
-    <item>
-      <title>Floating combat text</title>
-      <link>http://kidscancode.org/godot_recipes/ui/floating_text/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/floating_text/</guid>
-      <description>Problem You want units to display damage as floating numbers when hit.
+So that this bar can be added to any unit in the game, we&amp;rsquo;ll make it a separate scene.</description></item><item><title>Floating combat text</title><link>http://kidscancode.org/godot_recipes/ui/floating_text/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/floating_text/</guid><description>Problem You want units to display damage as floating numbers when hit.
 Solution There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a Sprite node to display and move it.
-However, for this recipe, we&amp;rsquo;ll use a Label node (named &amp;ldquo;FCT&amp;rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &amp;ldquo;miss&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Minimap/radar</title>
-      <link>http://kidscancode.org/godot_recipes/ui/minimap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid>
-      <description>Problem You want a minimap or radar-style UI item showing the locations of objects outside of the player&amp;rsquo;s view.
-Solution Here&amp;rsquo;s an example of what we are going for: 
+However, for this recipe, we&amp;rsquo;ll use a Label node (named &amp;ldquo;FCT&amp;rdquo;). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as &amp;ldquo;miss&amp;rdquo;.</description></item><item><title>Minimap/radar</title><link>http://kidscancode.org/godot_recipes/ui/minimap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/ui/minimap/</guid><description>Problem You want a minimap or radar-style UI item showing the locations of objects outside of the player&amp;rsquo;s view.
+Solution Here&amp;rsquo;s an example of what we are going for:
 Project setup To illustrate this feature, we&amp;rsquo;ll start with a simplified top-down game using the Autotile recipe and a player based on the Top-down character recipe. See the linked recipes for details on how these parts work.
-The art in this project comes from kenney.</description>
-    </item>
-    
-  </channel>
-</rss>
+The art in this project comes from kenney.</description></item></channel></rss>
