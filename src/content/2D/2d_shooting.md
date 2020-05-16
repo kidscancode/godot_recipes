@@ -93,6 +93,10 @@ func shoot():
 
 ![alt](/godot_recipes/img/2d_shoot_03.gif)
 
+{{% notice note %}}
+Download the project file here: [2d_shooting.zip](/godot_recipes/files/2d_shooting.zip)
+{{% /notice %}}
+
 ## Related recipes
 
 - [Top-down character](/godot_recipes/2d/topdown_movement/)
