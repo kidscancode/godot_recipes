@@ -216,4 +216,3 @@ minimap appears floating directly on top of the main viewports.
 
 Viewports can be very powerful, but also confusing. One way of managing them is to
 try to keep them separate from the game logic and only use them as displays.
-

@@ -37,9 +37,3 @@ Utilisez le shortcode *children* pour lister les pages filles de la page et tous
 	{{%/* children style="div" depth="999" */%}}
 
 {{% children style="div" depth="999" %}}
-
-
-
-
-
-

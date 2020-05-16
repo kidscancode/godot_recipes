@@ -25,4 +25,3 @@ Et un grand merci à [@vjeantet](https://github.com/vjeantet) pour son travail s
 
 * [Netlify](https://www.netlify.com) - Déploiement continue et hébergement de cette documentation
 * [Hugo](https://gohugo.io/)
-

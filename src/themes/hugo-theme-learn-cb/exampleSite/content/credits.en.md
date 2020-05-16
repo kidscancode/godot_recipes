@@ -25,4 +25,3 @@ And a special thanks to [@vjeantet](https://github.com/vjeantet) for his work on
 
 * [Netlify](https://www.netlify.com) - Continuous deployement and hosting of this documentation
 * [Hugo](https://gohugo.io/)
-

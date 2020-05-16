@@ -7,7 +7,6 @@ draft: true
 ## Problem
 
 
-
 ## Solution
 
 

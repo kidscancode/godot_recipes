@@ -58,4 +58,3 @@ func _physics_process():
 ```
 
 ## Related recipes
-

@@ -122,4 +122,3 @@ Art in this demo by [Luis Zuno](https://www.patreon.com/ansimuz)
 - [UI: Object Healthbars](/godot_recipes/ui/unit_healthbar/)
 
 #### Like video?
-

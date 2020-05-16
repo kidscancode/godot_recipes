@@ -301,4 +301,3 @@ transform. The physics engine stays happy, and everything works as expected:
 When used properly, rigid bodies are a powerful tool in your Godot toolkit. Many
 users get in trouble, however, when they use them for the wrong purposes, or
 fail to understand exactly how they work.
-

@@ -107,4 +107,3 @@ As in 2D, we can use the local axes to move an object forward. In Godot's 3D ori
 {{% notice tip %}}
 Godot has default vector values defined, for example: `Vector3.FORWARD == Vector3(0, 0, -1)`. See [Vector2](https://docs.godotengine.org/en/latest/classes/class_vector2.html) and [Vector3](https://docs.godotengine.org/en/latest/classes/class_vector3.html) for details.
 {{% /notice %}}
-

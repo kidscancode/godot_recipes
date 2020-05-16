@@ -9,4 +9,3 @@ draft: true
 You want to learn how Godot's input system works.
 
 ## Solution
-

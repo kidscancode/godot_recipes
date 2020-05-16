@@ -11,7 +11,6 @@ You want to smoothly rotate a 3D object
 ## Solution
 
 
-
 ## Wrapping up
 
 
@@ -25,4 +24,3 @@ Download the project file here: [floating_text.zip](/godot_recipes/files/floatin
 - [UI: Object Healthbars](/godot_recipes/ui/unit_healthbar/)
 
 #### Like video?
-

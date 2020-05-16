@@ -21,4 +21,3 @@
 
 [context.branch-deploy.environment]
   HUGO_ENABLEGITINFO = "true"
-
