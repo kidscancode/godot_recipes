@@ -12,7 +12,7 @@ You want to shoot projectiles from your player/mob/etc..
 
 ### Setting up the bullet
 
-First, we'll set up a "bullet" object that we can instance. Here are the node's we'll use:
+First, we'll set up a "bullet" object that we can instance. Here are the nodes we'll use:
 
 ```markdown
 - Area2D ("Bullet")
