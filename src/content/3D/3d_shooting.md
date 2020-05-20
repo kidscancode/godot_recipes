@@ -1,7 +1,7 @@
 ---
 title: "Shooting projectiles"
 weight: 5
-draft: true
+draft: false
 ---
 
 ## Problem
@@ -10,7 +10,7 @@ You want to shoot projectiles from your player/mob/etc..
 
 ## Solution
 
-For this example, we'll use the "Mini Tank" that we set up in LINK
+For this example, we'll use the "Mini Tank" that we set up in [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/).
 
 ### Setting up the bullet
 
@@ -30,10 +30,10 @@ For your mesh, you can use one of Godot's built-in primitive shapes, or somethin
 If you'd like to use the bullet model pictured here, you can grab it from [Kenney's "Weapon Pack"](https://kenney.nl/assets/weapon-pack).
 {{% /notice %}}
 
-Add your mesh and a collision shape to match.
+Add your mesh to the `MeshInstance` and a scale a collision shape to match.
 
 {{% notice warning %}}
-Remember to align your mesh with the forward direction (**-Z**) of the `Area` node, or your bullet will look like it's flying sideways!
+Remember to align your `MeshInstance` with the forward direction (**-Z**) of the `Area` node, or your bullet won't look like it's flying the right way!
 {{% /notice %}}
 
 Add a script and connect the `Area`'s `body_entered` signal.
@@ -60,11 +60,19 @@ func _on_Shell_body_entered(body):
     queue_free()
 ```
 
-We're using a custom gravity vector, `g` so that we can customize how the shell flies from the tank's cannon, giving it a nice arc effect. If you'd rather your projectiles move in a straight line, you can remove the line that applies it in `_physics_process()`.
+We're using a custom gravity vector, `g` so that we can control how the shell flies from the tank's cannon, giving it a nice arc effect. If you'd rather your projectiles move in a straight line, you can remove the line that applies it in `_physics_process()`.
 
 Using `look_at()` each frame turns the bullet to point in its direction of travel.
 
-We'll also emit an `exploded` signal, which you can connect up to implement explosion effects (but that's for another recipe).
+We'll also emit an `exploded` signal, which you can connect up to implement explosion and/or damage effects (but that's for another recipe).
+
+### Shooting
+
+Now in the tank (or whatever object you have doing the shooting), add a `Position3D` child at the point where you want the bullets to appear. In the case of our tank, we're placing it at the end of the cannon barrel:
+
+![alt](/godot_recipes/img/3d_shoot_02.png)
+
+Now we can add the code to the tank's script. First a way to add the bullet scene we're going to instance:
 
 ```gdscript
 export (PackedScene) var Bullet
@@ -79,3 +87,20 @@ if Input.is_action_just_pressed("shoot"):
     b.transform = $Cannon/Muzzle.global_transform
     b.velocity = -b.transform.basis.z * b.muzzle_velocity
 ```
+
+That's it - run your scene and try it out:
+
+<video controls src="/godot_recipes/img/3d_shoot_03.webm"></video>
+
+{{% notice note %}}
+Download the project file here: [3d_shooting.zip](/godot_recipes/files/3d_shooting.zip)
+{{% /notice %}}
+
+## Related recipes
+
+- [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/)
+- [Godot 101: Intro to 3D](/godot_recipes/g101/3d/)
+
+<!-- #### Like video?
+
+{{< youtube 7axJJYont6Y >}} -->
