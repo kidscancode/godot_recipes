@@ -1,8 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Animation on Godot Recipes by KidsCanCode</title><link>http://kidscancode.org/godot_recipes/animation/</link><description>Recent content in Animation on Godot Recipes by KidsCanCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate><atom:link href="http://kidscancode.org/godot_recipes/animation/index.xml" rel="self" type="application/rss+xml"/><item><title>Spritesheet animation</title><link>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</guid><description>Problem You want to use a spritesheet containing 2D animations.
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Animation on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/animation/</link>
+    <description>Recent content in Animation on Godot Recipes by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 20:23:50 -0700</lastBuildDate>
+    
+	<atom:link href="http://kidscancode.org/godot_recipes/animation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spritesheet animation</title>
+      <link>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/animation/spritesheet_animation/</guid>
+      <description>Problem You want to use a spritesheet containing 2D animations.
 Solution Spritesheets are a common way for 2D animations to be distributed. In a spritesheet, all of the animation frames are packed into a single image.
 For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen. You can get this and lots of other great art athttps://elthen.itch.io/.
-Make sure the images in your spritesheet are laid out in a constant-sized grid.</description></item><item><title>Melee attacks</title><link>http://kidscancode.org/godot_recipes/animation/melee_attacks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/melee_attacks/</guid><description>Problem You want to implement a melee attack, such as a sword or punch.
+Make sure the images in your spritesheet are laid out in a constant-sized grid.</description>
+    </item>
+    
+    <item>
+      <title>Melee attacks</title>
+      <link>http://kidscancode.org/godot_recipes/animation/melee_attacks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/animation/melee_attacks/</guid>
+      <description>Problem You want to implement a melee attack, such as a sword or punch.
 Solution For this example, we&amp;rsquo;ll assume we have already set up a character with one or more attack animations. To illustrate, we&amp;rsquo;ll use these two attacks:
-We can detect the sword hitting the target using an Area2D, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we&amp;rsquo;ll use the AnimationPlayer to control it.</description></item><item><title>Controlling animation states</title><link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid><description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
+We can detect the sword hitting the target using an Area2D, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we&amp;rsquo;ll use the AnimationPlayer to control it.</description>
+    </item>
+    
+    <item>
+      <title>Controlling animation states</title>
+      <link>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid>
+      <description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
 Solution Use an AnimationTree to create an animation state machine. This will allow us to organize our animations and most importantly, control the transitions between them.
-Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description></item></channel></rss>
+Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description>
+    </item>
+    
+  </channel>
+</rss>

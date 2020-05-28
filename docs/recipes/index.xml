@@ -1,3 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Misc on Godot Recipes by KidsCanCode</title><link>http://kidscancode.org/godot_recipes/recipes/</link><description>Recent content in Misc on Godot Recipes by KidsCanCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 09 Apr 2019 20:47:11 -0700</lastBuildDate><atom:link href="http://kidscancode.org/godot_recipes/recipes/index.xml" rel="self" type="application/rss+xml"/><item><title>Inheritance</title><link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link><pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate><guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid><description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/recipes/</link>
+    <description>Recent content in Misc on Godot Recipes by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Apr 2019 20:47:11 -0700</lastBuildDate>
+    
+	<atom:link href="http://kidscancode.org/godot_recipes/recipes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Inheritance</title>
+      <link>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</link>
+      <pubDate>Fri, 19 Jan 2018 15:12:12 -0700</pubDate>
+      
+      <guid>http://kidscancode.org/godot_recipes/recipes/godot3_inheritance/</guid>
+      <description>In this tutorial, we&amp;rsquo;ll explore how inheritance works in Godot. You can use inheritance in Godot to reuse code and create powerful hierarchies of object and scenes in your game.
 We&amp;rsquo;ll imagine we&amp;rsquo;re making a classic top-down RPG and use Godot&amp;rsquo;s inheritance capabilities to create two different kinds of characters in the game.
-Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description></item></channel></rss>
+Introduction In object oriented programming (OOP), inheritance is a powerful tool. Put briefly, you can define a class that inherits from another class.</description>
+    </item>
+    
+  </channel>
+</rss>

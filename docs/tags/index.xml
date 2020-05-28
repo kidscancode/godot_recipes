@@ -1,1 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Godot Recipes by KidsCanCode</title><link>http://kidscancode.org/godot_recipes/tags/</link><description>Recent content in Tags on Godot Recipes by KidsCanCode</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://kidscancode.org/godot_recipes/tags/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Godot Recipes by KidsCanCode</title>
+    <link>http://kidscancode.org/godot_recipes/tags/</link>
+    <description>Recent content in Tags on Godot Recipes by KidsCanCode</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="http://kidscancode.org/godot_recipes/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>
