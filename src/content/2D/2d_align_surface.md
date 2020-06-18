@@ -87,6 +87,25 @@ This technique allows for a wide range of possible platformer-style movement sch
 
 <video controls src="/godot_recipes/img/2d_align_06.webm"></video>
 
+Here's the full script:
+
+```gdscript
+func _physics_process(delta):
+    get_input()
+    velocity.y += gravity * delta
+    snap = transform.y * 128 if !is_jumping else Vector2.ZERO
+    velocity = move_and_slide_with_snap(velocity.rotated(rotation),
+                    snap, -transform.y, true, 4, PI/3)
+    velocity = velocity.rotated(-rotation)
+
+    if is_on_floor():
+        rotation = get_floor_normal().angle() + PI/2
+        is_jumping = false
+        if Input.is_action_just_pressed("ui_up"):
+            is_jumping = true
+            velocity.y = jump_speed
+```
+
 ## Related recipes
 
 - [Platform character](http://kidscancode.org/godot_recipes/2d/platform_character)

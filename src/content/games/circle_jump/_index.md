@@ -16,16 +16,14 @@ In this series, we build a one-touch mobile game called "Circle Jump". Here's wh
 
 In each part of the series, we'll add features and fix bugs, explaining the process along the way.
 
-When complete, the game will be available on the following platforms:
+The game is be available on the following platforms:
 
-* Android: _coming soon_
+* Android: [Google Play Store](https://play.google.com/store/apps/details?id=org.kidscancode.circlejump)
 * iOS: _coming soon_
-* Web: _coming soon_
+* Web: [Game of the Month](https://gotm.io/kidscancode/circlejump/)
 
-You can also download it for the following desktop platforms:
+You can also download it for desktop platforms from Itch.io:
 
-* Windows: _coming soon_
-* Linux: _coming soon_
-* MacOS: _coming soon_
+<iframe frameborder="0" src="https://itch.io/embed/655889" width="552" height="167"><a href="https://kidscancode.itch.io/circle-jump">Circle Jump by kidscancode</a></iframe>
 
 All source code for the game is available on [GitHub](https://github.com/kidscancode/circle_jump).
