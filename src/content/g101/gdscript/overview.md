@@ -6,15 +6,11 @@ draft = true
 pre = "01. "
 +++
 
-We've talked about how Godot uses nodes and scenes to create the structure of a game, and looked at some of the types of nodes you can use, such as the Sprite node I have here. But all this isn't effective if you can't make the nodes move or interact with the player or each other.
-
-Put another way, we need to define the "rules" of our game. In developer terms: the "game logic". The way we do that is through scripting.
-
-GDScript is Godot's builtin language for scripting and interacting with nodes. The [GDScript documentation](https://docs.godotengine.org/en/latest/getting_started/scripting/gdscript/gdscript_basics.html) on the Godot website is good, and I highly recommend taking the time to read through it.
+GDScript is Godot's built-in language for scripting and interacting with nodes. The [GDScript documentation](https://docs.godotengine.org/en/latest/getting_started/scripting/gdscript/gdscript_basics.html) on the Godot website is a great place to get an overview of the language, and I highly recommend taking the time to read through it.
 
 Writing scripts and attaching them to nodes is how you build behavior and game mechanics into your game. For example, if you want a sprite to move across the screen, you'll add a script that tells it how fast, in what direction, and so on.
 
-GDScript uses a syntax that is based on Python's, but it's optimized and integrated into the Godot engine, which makes it easy to get started with. You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them.
+GDScript uses a syntax that is based on Python's, but it's optimized and integrated into the Godot engine. You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them.
 
 Let's make our first script. Remember, any node can have a script attached to it. Right-click on the sprite node, and choose "Add Script". You can also click the button next to the search box:
 
