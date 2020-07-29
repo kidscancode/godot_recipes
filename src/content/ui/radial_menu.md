@@ -112,6 +112,10 @@ Here's the end result:
 
 ![alt](/godot_recipes/img/ui_radial_menu_02.gif)
 
+{{% notice note %}}
+Download the project file here: [ui_radial_menu.zip](/godot_recipes/files/ui_radial_menu.zip)
+{{% /notice %}}
+
 ## Related recipes
 
 - [UI: Cooldown Button](/godot_recipes/ui/cooldown_button/)
