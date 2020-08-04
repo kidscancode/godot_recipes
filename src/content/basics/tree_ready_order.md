@@ -1,5 +1,5 @@
 ---
-title: "Understanding Tree Order"
+title: "Understanding tree order"
 weight: 1
 draft: false
 ---
