@@ -18,3 +18,6 @@ disqusShortname = "kidscancode"
 
 [markup.goldmark.renderer]
     unsafe = true
+
+[minify]
+  minifyOutput = true

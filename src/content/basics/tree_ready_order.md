@@ -99,3 +99,7 @@ Parent nodes should manage their children, **not** vice-versa.
 This means any code in the parent must be able to fully access any data in its children. For that reason, `_ready()` must be processed in *reverse* tree order.
 
 Remember this when trying to access other nodes in `_ready()`. If you need to go up the tree to a parent (or grandparent), you should probably run that code in the parent rather than the child.
+
+## Related recipes
+
+[Understanding node paths](/godot_recipes/basics/getting_nodes/)
