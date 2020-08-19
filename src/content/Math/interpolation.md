@@ -15,7 +15,7 @@ func lerp(a, b, t):
     return (1 - t) * a + t * b
 ```
 
-In this formula, `a` and `b` represent the two values and `t` is the amount of interpolation, typically expressed as a value between `0` (which returns `a`), and `1` (which returns `b`). The function finds a value the given amountFor example:
+In this formula, `a` and `b` represent the two values and `t` is the amount of interpolation, typically expressed as a value between `0` (which returns `a`), and `1` (which returns `b`). The function finds a value the given amount between the two. For example:
 
 ```gdscript
 x = lerp(0, 1, 0.75)  # x is 0.75
