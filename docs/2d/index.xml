@@ -47,4 +47,10 @@ Drag to pan Pinch to zoom Setup Our camera will extend the built-in node, so add
 Here are the variables we&amp;rsquo;ll need:
 extends Camera2D
 export (NodePath) var target
-# Optional: export these properties for convenient editing.</description></item></channel></rss>
+# Optional: export these properties for convenient editing.</description></item><item><title>Draw trajectory</title><link>http://kidscancode.org/godot_recipes/2d/2d_draw_trajectory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/2d_draw_trajectory/</guid><description>Problem You want to draw the trajectory of a ballistic shot, like from a tank.
+Solution Setup For this example, we&amp;rsquo;re using the &amp;ldquo;Ballistic Bullet&amp;rdquo; from this recipe:
+Ballistic bullet and a tank set up like so, with a Position2D designating the &amp;ldquo;muzzle&amp;rdquo; where the bullet will be spawned:
+In the tank&amp;rsquo;s script, we instance the bullet like so:
+func _unhandled_input(event):
+if event.is_action_released(&amp;#34;shoot&amp;#34;) and can_shoot:
+var b = Bullet.</description></item></channel></rss>
