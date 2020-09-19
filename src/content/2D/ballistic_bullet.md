@@ -65,3 +65,4 @@ Here's an example in action:
 ## Related recipes
 
 - [2D shooting recipe](/godot_recipes/2d/2d_shooting/)
+- [2D: Draw trajectory](/godot_recipes/2d/2d_draw_trajectory/)
