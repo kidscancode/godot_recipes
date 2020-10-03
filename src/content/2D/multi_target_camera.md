@@ -162,3 +162,6 @@ Download the project file here: [multitarget_camera2d.zip](/godot_recipes/files/
 - [Touchscreen Camera](/godot_recipes/2d/touchscreen_camera/)
 - [Splitscreen multiplayer](/godot_recipes/2d/splitscreen_demo/)
 
+#### Like video?
+
+{{< youtube W7WsL3qaPqg >}}
