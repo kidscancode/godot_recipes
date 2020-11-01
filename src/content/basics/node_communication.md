@@ -102,7 +102,7 @@ Here's our example setup:
 
 Note that the UI is an instanced scene, we're just showing the contained nodes. This is where you often see things like `get_node("../UI/VBoxContainer/HBoxContainer/Label).text = str(health)`, which is what we want to avoid.
 
-Instead the player emits a `health_changed` signal whenever it adds/loses health. We need to send that signal to the UI's `update_health()` function, which handles setting the `Label` value. The only code we need in the `Player` script is:
+Instead the player emits a `health_changed` signal whenever it adds/loses health. We need to send that signal to the UI's `update_health()` function, which handles setting the `Label` value. In the `Player` script we use this code whenever the player's health is changed:
 
 ```gdscript
 emit_signal("health_changed", health)

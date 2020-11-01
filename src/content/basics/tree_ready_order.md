@@ -28,16 +28,16 @@ func _init():
     print("TestRoot init")
 
 func _enter_tree():
-    print("autoload enter tree")
+    print(name + " enter tree")
 
 func _ready():
-    print("autoload ready")
+    print(name + " ready")
 
 # This ensures we only print *once* in process().
 var test = true
 func _process(delta):
     if test:
-        print(name + "process")
+        print(name + " process")
     test = false
 ```
 
