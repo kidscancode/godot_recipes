@@ -16,9 +16,11 @@ For this solution, we're going to re-use a 2D healthbar based on a `TextureProgr
 
 If you need some assets, here are the three images used in the bar:
 
-![alt](/godot_recipes/img/barHorizontal_green_mid 200.png)
-![alt](/godot_recipes/img/barHorizontal_yellow_mid 200.png)
-![alt](/godot_recipes/img/barHorizontal_red_mid 200.png)
+![alt](/godot_recipes/img/barHorizontal_green_mid%20200.png)
+
+![alt](/godot_recipes/img/barHorizontal_yellow_mid%20200.png)
+
+![alt](/godot_recipes/img/barHorizontal_red_mid%20200.png)
 
 {{% notice note %}}
 Re-using existing objects can save you a lot of time. Don't re-invent the wheel everytime you need a healthbar, camera, or other common object.
