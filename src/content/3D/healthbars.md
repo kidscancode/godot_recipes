@@ -49,11 +49,7 @@ You can display a 2D image in 3D using a `Sprite3D`. Add one to a new scene and 
 
 The `Sprite3D` acts like any other 3D object - as we pan the camera around, our perspective on it changes. However, we want the healthbar to always "face" toward the camera so that we can see it.
 
-In the Inspector, under _GeometryInstance/Material Override_, add a new `SpatialMaterial`. Set the following properties in the `SpatialMaterial`:
-
-- _Flags/Transparent_: **On**
-- _Flags/Unshaded_: **On**
-- _Parameters/Billboard Mode_: **Enabled**
+In the Inspector, under _Flags_, set _Billboard_ to "Enabled".
 
 Now try moving the camera to confirm that the texture is always facing you.
 

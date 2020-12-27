@@ -3,7 +3,7 @@ title: "Mobile Game: Circle Jump"
 weight: 5
 chapter: true
 draft: false
-pre: "<i class='far fa-circle fa-fw'></i> "
+pre: "<i class='far fa-circle fa-fw'></i>&nbsp"
 ---
 
 # <i class="far fa-circle"></i> Circle Jump

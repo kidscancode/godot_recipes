@@ -3,7 +3,7 @@ title = "Input"
 date = 2019-04-09T20:47:11-07:00
 weight = 5
 chapter = true
-pre = "<i class='fas fa-gamepad fa-fw'></i> "
+pre = "<i class='fas fa-gamepad fa-fw'></i>&nbsp"
 +++
 
 # <i class='fas fa-gamepad'></i> Input

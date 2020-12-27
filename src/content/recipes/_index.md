@@ -3,7 +3,7 @@ title = "Misc"
 date = 2019-04-09T20:47:11-07:00
 weight = 6
 chapter = true
-pre = "<i class='fas fa-box-open'></i> "
+pre = "<i class='fas fa-box-open'></i>&nbsp"
 +++
 
 # <i class="fas fa-box-open"></i> Misc

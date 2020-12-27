@@ -3,7 +3,7 @@ title = "Godot 101"
 date = 2019-04-09T19:48:00-07:00
 weight = 1
 chapter = true
-pre = "<i class='fas fa-graduation-cap fa-fw'></i> "
+pre = "<i class='fas fa-graduation-cap fa-fw'></i>&nbsp"
 +++
 
 # <i class='fas fa-graduation-cap'></i> Godot 101
