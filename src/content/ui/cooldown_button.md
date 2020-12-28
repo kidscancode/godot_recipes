@@ -74,7 +74,7 @@ func _process(delta):
 
 In `_process()` we use the `time_left` on the timer to set the label's `text` and the sweep's `value`.
 
-```
+```gdscript
 func _on_AbilityButton_pressed():
     disabled = true
     set_process(true)

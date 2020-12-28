@@ -191,7 +191,7 @@ That's the bare-bones car controller. Feel free to use this as a starter for you
 * Slopes and ramps
 
 {{% notice note %}}
-Download the project file here: [3d_car_tutorial_01.zip](/godot_recipes/files/3d_car_tutorial_01.zip)
+Download the project file here: [https://github.com/kidscancode/3d_car_tutorial/releases](https://github.com/kidscancode/3d_car_tutorial/releases)
 {{% /notice %}}
 
 ## Related recipes
