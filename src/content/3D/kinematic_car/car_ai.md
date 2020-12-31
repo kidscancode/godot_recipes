@@ -1,12 +1,12 @@
 ---
 title: "3D Kinematic Car: AI Steering"
-weight: 4
+weight: 5
 draft: true
 ---
 
 ## Problem
 
-You're looking to make a 3D driving or racing game and don't know where to start.
+
 
 ## Solution
 
