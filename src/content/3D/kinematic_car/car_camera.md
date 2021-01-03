@@ -45,7 +45,7 @@ We want to be able to have a few different chase camera positions. One close and
 Move and orient each `Position3D` in a different location of your choosing. The position's **-Z** axis should point at the car.
 
 {{% notice tip %}}
-You may find it helpful to temporarily attach a `Camera2D` to the position and use its "Preview" mode to help aim the `Position3D` so that it's pointing directly where you want (you can remove the camera once you're done).
+You may find it helpful to temporarily attach a `Camera` to the position and use its "Preview" mode to help aim the `Position3D` so that it's pointing directly where you want (you can remove the camera once you're done).
 ![alt](/godot_recipes/img/3d_car_09.png)
 {{% /notice %}}
 

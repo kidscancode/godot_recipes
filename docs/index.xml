@@ -250,7 +250,7 @@ Drag to pan Pinch to zoom Setup Our camera will extend the built-in node, so add
 Here are the variables we&amp;rsquo;ll need:
 extends Camera2D
 export (NodePath) var target
-# Optional: export these properties for convenient editing.</description></item><item><title>Vectors: Using dot and cross product</title><link>http://kidscancode.org/godot_recipes/math/dot_cross_product/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/math/dot_cross_product/</guid><description>Problem You&amp;rsquo;d like to understand what is meant by dot product and cross product.
+# Optional: export these properties for convenient editing.</description></item><item><title>Vectors: Using Dot and Cross Product</title><link>http://kidscancode.org/godot_recipes/math/dot_cross_product/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/math/dot_cross_product/</guid><description>Problem You&amp;rsquo;d like to understand what is meant by dot product and cross product.
 Solution In this recipe we&amp;rsquo;ll introduce the concept of vector dot product and cross product and how they might be used.
 Dot product Dot product is an operation on two vectors that returns a scalar. It is often visualized as the projection of vector A onto vector B:
 This is the formula for calculating the dot product:</description></item><item><title>Draw trajectory</title><link>http://kidscancode.org/godot_recipes/2d/2d_draw_trajectory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://kidscancode.org/godot_recipes/2d/2d_draw_trajectory/</guid><description>Problem You want to draw the trajectory of a ballistic shot, like from a tank.

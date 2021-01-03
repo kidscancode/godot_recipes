@@ -1,5 +1,5 @@
 ---
-title: "Vectors: Using dot and cross product"
+title: "Vectors: Using Dot and Cross Product"
 weight: 12
 draft: false
 ---
@@ -28,7 +28,7 @@ This is very useful when both vectors are normalized (i.e. their magnitudes are 
 
 ![alt](/godot_recipes/img/dot_cross_03.png)
 
-Showing that the dot product is directly related to the angle between the two vectors. Since `cos(0) == 1` and `cos(180) == -1`, the result of the dot product can tell you how closely aligned two vectors are:
+This shows that the dot product is directly related to the angle between the two vectors. Since `cos(0) == 1` and `cos(180) == -1`, the result of the dot product can tell you how closely aligned two vectors are:
 
 ![alt](/godot_recipes/img/dot_cross_05.png)
 
