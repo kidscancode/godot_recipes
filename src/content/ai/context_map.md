@@ -174,6 +174,12 @@ func choose_direction():
 
 ### Example in Practice
 
+Let's try it out in action! Here, we've created a track using a Path2D and some collision polygons.
+
+![alt](/godot_recipes/img/ai_context_11.png)
+
+In the script for this scene, we have a `get_path_direction()` function. Given a position, this function finds the closest point on the path and puts the `PathFollow2D` there in order to find the forward direction.
+
 ```gdscript
 func get_path_direction(pos):
     var offset = path.curve.get_closest_offset(pos)
@@ -181,9 +187,13 @@ func get_path_direction(pos):
     return path_follow.transform.x
 ```
 
+We've randomized the speeds of the agents do get some variety. Notice how the fast one finds ways to dodge around the slow ones.
+
 ![alt](/godot_recipes/img/ai_context_10.gif)
 
 ### Wrapping up
+
+This method is very flexible and can be extended to produce a wide variety of complex-looking behaviors. It
 
 Here are some additional suggestions for adaptations/improvements:
 
@@ -201,3 +211,4 @@ Rather than a danger item canceling the interest, it could *add* to the interest
 
 #### Like video?
 
+{{< youtube dzqtF_CmX-I >}}
