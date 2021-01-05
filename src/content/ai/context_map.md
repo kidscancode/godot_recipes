@@ -1,7 +1,7 @@
 ---
 title: "Context-based steering"
 weight: 10
-draft: true
+draft: false
 ---
 
 ## Problem
