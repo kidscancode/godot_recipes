@@ -2,6 +2,7 @@
 title: "Greyscale (monochrome) shader"
 weight: 3
 draft: false
+ghcommentid: 78
 ---
 
 ## Problem

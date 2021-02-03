@@ -2,7 +2,7 @@
 title: "Mouse: Drag-select multiple units"
 weight: 7
 draft: false
-
+ghcommentid: 51
 ---
 
 ## Problem

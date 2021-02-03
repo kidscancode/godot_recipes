@@ -2,6 +2,7 @@
 title: "3D Kinematic Car: Chase Camera"
 weight: 3
 draft: false
+ghcommentid: 43
 ---
 
 ## Problem

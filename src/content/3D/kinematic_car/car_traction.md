@@ -2,6 +2,7 @@
 title: "3D Kinematic Car: Traction/Drifting"
 weight: 2
 draft: false
+ghcommentid: 42
 ---
 
 ## Problem

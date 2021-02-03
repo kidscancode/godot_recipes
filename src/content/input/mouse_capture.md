@@ -2,6 +2,7 @@
 title: "Capturing the Mouse"
 weight: 3
 draft: false
+ghcommentid: 49
 ---
 
 ## Problem

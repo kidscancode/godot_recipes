@@ -2,6 +2,7 @@
 title: "Minimap/radar"
 weight: 12
 draft: false
+ghcommentid: 62
 ---
 
 ## Problem

@@ -2,6 +2,7 @@
 title: "Adding Input Actions in code"
 weight: 3
 draft: false
+ghcommentid: 48
 ---
 
 ## Problem

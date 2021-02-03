@@ -2,6 +2,7 @@
 title: "3D Kinematic Car: AI Steering"
 weight: 5
 draft: true
+ghcommentid: 45
 ---
 
 ## Problem

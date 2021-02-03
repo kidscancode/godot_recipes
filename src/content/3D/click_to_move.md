@@ -2,6 +2,7 @@
 title: "Click to move"
 weight: 12
 draft: false
+ghcommentid: 38
 ---
 
 ## Problem

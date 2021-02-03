@@ -2,6 +2,7 @@
 title: "Homing missile"
 weight: 4
 draft: false
+ghcommentid: 74
 ---
 
 ## Problem

@@ -2,6 +2,7 @@
 title: "Drawing Vectors in 3D"
 weight: 10
 draft: false
+ghcommentid: 37
 ---
 
 ## Problem

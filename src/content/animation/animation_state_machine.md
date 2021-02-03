@@ -2,6 +2,7 @@
 title: "Controlling animation states"
 weight: 4
 draft: false
+ghcommentid: 54
 ---
 
 ## Problem

@@ -2,6 +2,7 @@
 title: "Floating combat text"
 weight: 12
 draft: false
+ghcommentid: 61
 ---
 
 ## Problem

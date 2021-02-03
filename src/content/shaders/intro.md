@@ -2,6 +2,7 @@
 title: "Shaders: intro"
 weight: 1
 draft: false
+ghcommentid: 76
 ---
 
 ## Problem

@@ -3,6 +3,7 @@ title: "Transforms"
 date: 2019-04-09T19:49:14-07:00
 weight: 3
 draft: false
+ghcommentid: 65
 ---
 
 Before reading this, make sure you have an understanding of vectors and how they're used in game development. If you don't, I recommend you read this introduction I wrote for the Godot documentation:

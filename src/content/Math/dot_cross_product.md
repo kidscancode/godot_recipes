@@ -2,6 +2,7 @@
 title: "Vectors: Using Dot and Cross Product"
 weight: 12
 draft: false
+ghcommentid: 67
 ---
 
 ## Problem

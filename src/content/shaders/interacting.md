@@ -2,6 +2,7 @@
 title: "Interacting with Shaders"
 weight: 2
 draft: false
+ghcommentid: 77
 ---
 
 ## Problem

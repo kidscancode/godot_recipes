@@ -2,6 +2,7 @@
 title: "Displaying debug data"
 weight: 10
 draft: false
+ghcommentid: 59
 ---
 
 ## Problem

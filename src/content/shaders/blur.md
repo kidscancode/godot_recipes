@@ -2,6 +2,7 @@
 title: "Blur shader"
 weight: 4
 draft: false
+ghcommentid: 79
 ---
 
 ## Problem

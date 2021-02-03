@@ -2,6 +2,7 @@
 title: "Noise"
 weight: 3
 draft: false
+ghcommentid: 66
 ---
 
 ## Problem

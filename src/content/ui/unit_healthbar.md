@@ -2,6 +2,7 @@
 title: "Object Healthbars"
 weight: 10
 draft: false
+ghcommentid: 60
 ---
 
 ## Problem

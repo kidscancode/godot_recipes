@@ -2,6 +2,7 @@
 title: "Smooth rotation"
 weight: 12
 draft: false
+ghcommentid: 39
 ---
 
 ## Problem
