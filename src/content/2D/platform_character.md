@@ -2,6 +2,7 @@
 title: "Platform character"
 weight: 1
 draft: false
+ghcommentid: 16
 ---
 
 ## Problem

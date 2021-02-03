@@ -2,6 +2,7 @@
 title: "Camera Gimbal"
 weight: 1
 draft: false
+ghcommentid: 33
 ---
 
 ## Problem

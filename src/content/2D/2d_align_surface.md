@@ -2,6 +2,7 @@
 title: "KinematicBody2D: align with surface"
 weight: 5
 draft: false
+ghcommentid: 24
 ---
 
 ## Problem

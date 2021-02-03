@@ -2,6 +2,7 @@
 title: "Understanding tree order"
 weight: 1
 draft: false
+ghcommentid: 9
 ---
 
 ## Problem
@@ -102,4 +103,4 @@ Remember this when trying to access other nodes in `_ready()`. If you need to go
 
 ## Related recipes
 
-[Understanding node paths](/godot_recipes/basics/getting_nodes/)
+- [Understanding node paths](/godot_recipes/basics/getting_nodes/)

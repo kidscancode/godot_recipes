@@ -2,6 +2,7 @@
 title: "Multitarget Camera"
 weight: 11
 draft: false
+ghcommentid: 29
 ---
 
 ## Problem

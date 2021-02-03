@@ -2,6 +2,7 @@
 title: "Node communication (the right way)"
 weight: 2
 draft: false
+ghcommentid: 10
 ---
 
 {{% notice info %}}
@@ -186,5 +187,5 @@ No matter where you place the buttons in the tree - if you add more containers, 
 
 ## Related recipes
 
-[Understanding tree order](/godot_recipes/basics/tree_ready_order/)
-[Understanding node paths](/godot_recipes/basics/getting_nodes/)
+- [Understanding tree order](/godot_recipes/basics/tree_ready_order/)
+- [Understanding node paths](/godot_recipes/basics/getting_nodes/)

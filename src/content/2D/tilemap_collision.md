@@ -2,6 +2,7 @@
 title: "TileMap: detecting tiles"
 weight: 1
 draft: false
+ghcommentid: 19
 ---
 
 ## Problem

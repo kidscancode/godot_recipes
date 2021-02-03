@@ -2,6 +2,7 @@
 title: "Entering/Exiting the screen"
 weight: 1
 draft: false
+ghcommentid: 15
 ---
 
 ## Problem

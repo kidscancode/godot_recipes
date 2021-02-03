@@ -1,16 +1,16 @@
         {{ if .Params.chapter }}
             </div> <!-- end chapter-->
         {{ end }}
-        </div> 
-        {{ partial "custom-comments.html" . }}
+        </div>
+        <!-- {{ partial "custom-comments.html" . }} -->
       </div>
 
     <div id="navigation">
         <!-- Next prev page -->
         {{ $currentNode := . }}
-        
+
         {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
-        
+
         {{ define "menu-nextprev" }}
             {{$currentNode := .currentnode }}
             {{ if ne .menu.Params.hidden true}}
@@ -52,7 +52,7 @@
     </div>
 
     </section>
-    
+
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>

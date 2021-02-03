@@ -2,6 +2,7 @@
 title: "Ballistic bullet"
 weight: 12
 draft: false
+ghcommentid: 30
 ---
 
 ## Problem

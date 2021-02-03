@@ -2,6 +2,7 @@
 title: "TileMap: animated tiles"
 weight: 5
 draft: false
+ghcommentid: 27
 ---
 
 ## Problem

@@ -2,6 +2,7 @@
 title: "KinematicBody: Movement"
 weight: 4
 draft: false
+ghcommentid: 34
 ---
 
 ## Problem

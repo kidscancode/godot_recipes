@@ -2,6 +2,7 @@
 title: "Touchscreen Camera"
 weight: 12
 draft: false
+ghcommentid: 31
 ---
 
 ## Problem

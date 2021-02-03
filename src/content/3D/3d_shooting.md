@@ -2,6 +2,7 @@
 title: "Shooting projectiles"
 weight: 5
 draft: false
+ghcommentid: 36
 ---
 
 ## Problem

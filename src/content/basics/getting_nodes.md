@@ -2,6 +2,7 @@
 title: "Understanding node paths"
 weight: 2
 draft: false
+ghcommentid: 11
 ---
 
 ## Problem

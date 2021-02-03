@@ -2,6 +2,7 @@
 title: "Understanding 'delta'"
 weight: 3
 draft: false
+ghcommentid: 12
 ---
 
 ## Problem

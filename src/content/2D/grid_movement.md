@@ -2,6 +2,7 @@
 title: "Grid-based movement"
 weight: 2
 draft: false
+ghcommentid: 21
 ---
 
 ## Problem

@@ -2,6 +2,7 @@
 title: "Draw trajectory"
 weight: 13
 draft: false
+ghcommentid: 32
 ---
 
 ## Problem
