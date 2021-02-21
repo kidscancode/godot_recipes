@@ -15,7 +15,7 @@ Spritesheets are a common way for 2D animations to be distributed. In a spritesh
 
 For this demo, we'll be using the excellent "Adventurer" sprite by Elthen. You can get this and lots of other great art at[https://elthen.itch.io/](https://elthen.itch.io/).
 
-![alt](/godot_recipes/img/Adventurer Sprite Sheet v1.1.png)
+![alt](/godot_recipes/img/adventurer_sprite_sheet_v1.1.png)
 
 {{% notice warning %}}
 Make sure the images in your spritesheet are laid out in a constant-sized grid. This will enable Godot to automatically slice them. If they're packed irregularly, you will not be able to use the following technique.
