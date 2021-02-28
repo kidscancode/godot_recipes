@@ -7,6 +7,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Quick Arcade-style Car](/godot_recipes/3d/3d_sphere_car/)
 * [AI: Context-based Steering](/godot_recipes/ai/context_map)
 * [3D Kinematic Car: Base](/godot_recipes/3d/kinematic_car/car_base/)
 * [3D: Smooth rotation](/godot_recipes/3d/rotate_interpolate/)

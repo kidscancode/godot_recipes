@@ -9,7 +9,7 @@ pre = "<i class='fas fa-car'></i>&nbsp"
 
 # <i class='fas fa-car'></i> &nbsp 3D Car
 
-Making a 3D car.
+Making a 3D car using `KinematicBody`.
 
 #### In this section:
 

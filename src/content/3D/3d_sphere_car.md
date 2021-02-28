@@ -1,8 +1,8 @@
 ---
 title: "Quick Arcade-style Car"
-weight: 5
-draft: true
-ghcommentid:
+weight: 12
+draft: false
+ghcommentid: 82
 ---
 
 ## Problem
@@ -175,7 +175,7 @@ You should try playing again at this point. You'll be able to control the car an
 
 ### Final touches
 
-#### Align with slopes
+#### 1. Align with slopes
 
 If you've tried driving on a slope, you've seen that the car mesh doesn't tilt at all, it always remains level. That looks unnatural, so let's use the process described in [KinematicBody: Align with Surface](/godot_recipes/3d/3d_align_surface/) to fix that.
 
@@ -197,7 +197,7 @@ func align_with_y(xform, new_y):
     return xform
 ```
 
-#### Turn the wheels
+#### 2. Turn the wheels
 
 It looks nice if the front wheels turn when you steer. Add some references to the front wheel meshes at the top of the script:
 
@@ -216,7 +216,7 @@ And right after getting input, add the following:
 
 ![alt](/godot_recipes/img/3d_sphere_car_05.gif)
 
-#### Tilt the body
+#### 3. Tilt the body
 
 This one adds a *ton* of visual appeal. We're going to tilt the car's body based on the speed of the turn. Add a variable at the top of the script:
 
@@ -234,14 +234,30 @@ var t = -rotate_input * ball.linear_velocity.length() / body_tilt
 body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 ```
 
-Look at the difference:
+Observe the difference:
 
 ![alt](/godot_recipes/img/3d_sphere_car_06.gif)
 
+#### 4. Smoke
+
+Finally, the skid looks much better with a little smoke coming from the tires. Here's an example using a `Particles` node and sphere shapes:
+
+<video width="500" controls src="/godot_recipes/img/3d_sphere_car_07.webm"></video>
+
+## Wrapping up
+
 
 {{% notice note %}}
-Download the project file here: [https://github.com/kidscancode/3d_car_tutorial/releases](https://github.com/kidscancode/3d_car_tutorial/releases)
+Download the project file here: TBD
 {{% /notice %}}
+
+### Credits
+>
+> The demo project seen here uses the following open-source/creative commons assets:
+> - Cars: [Kenney Car Kit](https://kenney.nl/assets/car-kit) by Kenney
+> - Track: [Modular Racekart Track](https://fertile-soil-productions.itch.io/modular-racekart-track-hilly-terrain-theme) by Keith at Fertile Soil Productions
+> - Outline shader: [Godot Post Process Outlines](https://github.com/jocamar/Godot-Post-Process-Outlines) by jocamar
+
 
 ## Related recipes
 
