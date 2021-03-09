@@ -5,8 +5,7 @@
 	"uri": "{{ $page.Permalink }}",
 	"title": "{{ htmlEscape $page.Title}}",
 	"tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}],
-	"description": "{{ htmlEscape .Description}}",
-	"content": {{$page.Plain | jsonify}}
+	"description": "{{ htmlEscape .Description}}"
 }
 {{- end -}}
 {{- end -}}]

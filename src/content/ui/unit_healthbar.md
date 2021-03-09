@@ -9,7 +9,7 @@ ghcommentid: 60
 
 You want units in your game to have healthbars that follow them as they move.
 
-![alt](/godot_recipes/img/unit_healthbar_preview.png    )
+![alt](/godot_recipes/img/unit_healthbar_preview.png)
 
 ## Solution
 
