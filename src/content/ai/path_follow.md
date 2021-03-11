@@ -36,6 +36,7 @@ var move_speed = 100
 export (NodePath) var patrol_path
 var patrol_points
 var patrol_index = 0
+var velocity = Vector2.ZERO
 
 func _ready():
     if patrol_path:
