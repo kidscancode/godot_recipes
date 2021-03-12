@@ -1,16 +1,34 @@
-+++
-title = "Overview"
-date = 2019-04-09T20:23:50-07:00
-weight = 1
-draft = true
-pre = "01. "
-+++
+---
+title: "GDScript: Getting started"
+weight: 1
+draft: true
+ghcommentid:
+---
+
+## Overview
+
+Writing scripts and attaching them to nodes and other objects is how you build behavior and game mechanics into your game. For example, a `Sprite` node automatically displays an image, but to move it across the screen, you'll add a script that tells it how fast, in what direction, and so on.
+
+You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them.
 
 GDScript is Godot's built-in language for scripting and interacting with nodes. The [GDScript documentation](https://docs.godotengine.org/en/latest/getting_started/scripting/gdscript/gdscript_basics.html) on the Godot website is a great place to get an overview of the language, and I highly recommend taking the time to read through it.
 
-Writing scripts and attaching them to nodes is how you build behavior and game mechanics into your game. For example, if you want a sprite to move across the screen, you'll add a script that tells it how fast, in what direction, and so on.
+**Is GDScript Python?**
 
-GDScript uses a syntax that is based on Python's, but it's optimized and integrated into the Godot engine. You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them.
+You'll often read comments to the effect that "GDScript is based on Python". That's somewhat misleading; GDScript uses a syntax that's modeled on Python's, but it's a distinct language that's optimized for and integrated into the Godot engine. That said, if you already know some Python, you'll find GDScript feels very familiar.
+
+{{% notice warning %}}
+Many tutorials (and Godot in general) assume that you have at least *some* programming experience already. If you've never coded before, you'll likely find learning Godot to be a challenge. Learning a game engine is a large task
+on its own; learning to code at the same time means you've taken on a lot. If
+you find yourself struggling with the code in this section, you may find that working through an introductory Python lesson will help you grasp the basics.
+{{% /notice %}}
+
+## Structure of a script
+
+The first line of any GDScript file must be `extends <Class>` where `<Class>` is some existing
+
+
+## Creating a script
 
 Let's make our first script. Remember, any node can have a script attached to it. Right-click on the sprite node, and choose "Add Script". You can also click the button next to the search box:
 
