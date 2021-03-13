@@ -1,16 +1,19 @@
 ---
 title: "Using Custom Resources"
 weight: 10
-draft: true
-ghcommentid:
+draft: false
+ghcommentid: 85
 ---
 
 ## Problem
 
-
+You're looking for a way to handle data and/or create flexible data objects in your game.
 
 ## Solution
 
+Godot's `Resource` class is a powerful tool for storing and working with data. Many of the most common objects you work with in Godot extend the [Resource](https://docs.godotengine.org/en/stable/classes/class_resource.html#class-resource) type: animations, collision shapes, images, etc. Resources not only contain data, but can also manipulate that data (if you're familiar with the concept of *scriptable objects* in Unity, the concept is similar).
+
+In addition to all of Godot's built-in `Resource` types, you can create your own custom resources to handle your own game data. This has the benefit of abstracting and encapsulating data - creating something that can be used by any other object in your game.
 
 ### Example: Player health
 
@@ -167,7 +170,7 @@ Here's an example of it in action:
 ![alt](/godot_recipes/img/custom_resource_04.gif)
 
 {{% notice note %}}
-Download the project file here: []()
+Download the project file here: [custom_resources.zip](/godot_recipes/files/custom_resources.zip)
 {{% /notice %}}
 
 ## Related recipes
