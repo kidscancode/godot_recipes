@@ -83,7 +83,7 @@ We then need functions to add/remove properties from the display:
 func add_property(object, property, display):
     var label = Label.new()
     label.set("custom_fonts/font", load("res://debug/roboto_16.tres"))
-    $Column.add_child(l)
+    $VBoxContainer.add_child(label)
     props.append(Property.new(object, property, label, display))
 
 func remove_property(object, property):
