@@ -248,7 +248,7 @@ Finally, the skid looks much better with a little smoke coming from the tires. H
 
 
 {{% notice note %}}
-Download the project file here: TBD
+Download the project file here: [https://github.com/kidscancode/3d_car_sphere](https://github.com/kidscancode/3d_car_sphere)
 {{% /notice %}}
 
 ### Credits

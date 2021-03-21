@@ -4,7 +4,7 @@ weight: 1
 draft: true
 ghcommentid:
 ---
-
+stick2=me
 ## Overview
 
 Writing scripts and attaching them to nodes and other objects is how you build behavior and game mechanics into your game. For example, a `Sprite` node automatically displays an image, but to move it across the screen, you'll add a script that tells it how fast, in what direction, and so on.
