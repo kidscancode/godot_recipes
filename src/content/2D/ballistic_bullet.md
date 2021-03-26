@@ -11,9 +11,9 @@ You want a 2D bullet that travels in an arc, or ballistic curve.
 
 ## Solution
 
-One approach to this problem would be to use a `RigidBody2D` - with its built-in physics, gravity would automatically pull it back to earth after firing it.
+One approach to this problem would be to use a {{< gd-icon RigidBody2D >}}`RigidBody2D` - with its built-in physics, gravity would automatically pull it back to earth after firing it.
 
-However, as mentioned in the [2D shooting recipe](/godot_recipes/2d/2d_shooting/), `Area2D` is a great choice for simple bullets and other projectiles - when you don't need collisions, bouncing, or other physics reactions. Ballistic motion is easy enough to calculate that we won't need the help of the physics engine.
+However, as mentioned in the [2D shooting recipe](/godot_recipes/2d/2d_shooting/), {{< gd-icon Area2D >}}`Area2D` is a great choice for simple bullets and other projectiles - when you don't need collisions, bouncing, or other physics reactions. Ballistic motion is easy enough to calculate that we won't need the help of the physics engine.
 
 ### Setting up the bullet
 
@@ -23,7 +23,7 @@ However, as mentioned in the [2D shooting recipe](/godot_recipes/2d/2d_shooting/
     - CollisionShape2D
 ```
 
-We can use `Area2D`'s `gravity` property. Set it to `150` for the initial test.
+We can use {{< gd-icon Area2D >}}`Area2D`'s `gravity` property. Set it to `150` for the initial test.
 
 ```gdscript
 extends Area2D

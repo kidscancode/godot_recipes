@@ -27,7 +27,7 @@ For this example, we'll assume an enemy with the following behaviors. See the in
 
 These behaviors are states - the enemy can only be in one of these states at a time, and certain events, such as the player getting near, will cause a transition to another state.
 
-To determine the state transitions, we have two `Area2D` nodes on the enemy: an outer one called "DetectRadius" and an inner called "AttackRadius". The player entering or exiting these areas will trigger the related behavior.
+To determine the state transitions, we have two {{< gd-icon Area2D >}}`Area2D` nodes on the enemy: an outer one called "DetectRadius" and an inner called "AttackRadius". The player entering or exiting these areas will trigger the related behavior.
 
 ![alt](/godot_recipes/img/behaviors_01.png)
 

@@ -13,31 +13,31 @@ Your UI has problem(s): it's become overcomplicated, it doesn't resize well, and
 
 For many developers, building a UI is their least favorite part. It's very easy for a complex UI to spiral out of control and become impossibly painful to fix or modify. Godot provides some great tools for building UI - and if you take the time to learn to use them, you'll find that they take away a lot of that pain.
 
-The solution is the `Container`. Containers provide a lot of power in building your UI's layout.
+The solution is the {{< gd-icon Container >}}`Container`. Containers provide a lot of power in building your UI's layout.
 
-When a `Control` node is added to a `Container`, the container takes over all the control's positioning information. You can no longer set the size, position, or other layout properties of the container's children.
+When a {{< gd-icon Control >}}`Control` node is added to a `Container`, the container takes over all the control's positioning information. You can no longer set the size, position, or other layout properties of the container's children.
 
 This is the key thing to remember about containers:
 
 {{% notice warning %}}
-A `Container` node *automatically* arranges its children. You *cannot* directly control the position of a child UI node.
+A {{< gd-icon Container >}}`Container` node *automatically* arranges its children. You *cannot* directly control the position of a child UI node.
 {{% /notice %}}
 
 Let's look at some of the most commonly used containers:
 
-* CenterContainer
+* {{< gd-icon CenterContainer >}} `CenterContainer`
 
     This container places keeps its children centered.
 
-* MarginContainer
+* {{< gd-icon MarginContainer >}}`MarginContainer`
 
     This container maintains a margin, preventing children from getting too close to the edges of the container. Margin values can be set in the "Custom Constants" section of the properties.
 
-* VBox/HboxContainer
+* {{< gd-icon VBoxContainer >}}`VBoxContainer`/ {{< gd-icon HBoxContainer >}}`HboxContainer`
 
     These containers keep their contents aligned vertically or horizontally, respectively. In the "Custom Constants" section you can also set a *Separation* property to increase spacing between elements.
 
-* GridContainer
+* {{< gd-icon GridContainer >}}`GridContainer`
 
     This container arranges its children in a grid pattern.
 
@@ -77,7 +77,7 @@ Try adjusting the "Size Flags" properties of the different buttons and see how i
 
 ### Nesting Containers
 
-For more complex UI setups, you'll need to use containers holding other containers. Each item in a GridContainer, for example, may itself be a VBoxContainer, with all of it inside a MarginContainer.
+For more complex UI setups, you'll need to use containers holding other containers. Each item in a {{< gd-icon GridContainer >}}`GridContainer`, for example, may itself be a {{< gd-icon VBoxContainer >}}`VBoxContainer`, with all of it inside a {{< gd-icon MarginContainer >}}`MarginContainer`.
 
 All these containers inside containers can cause your scene tree to become quite large and hard to manage, especially if you have a lot of repeated elements, such as buttons and labels. It's recommended that you break your UI into pieces and save each part as a separate scene that you can instance in the larger scene.
 

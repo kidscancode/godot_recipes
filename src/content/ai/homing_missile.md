@@ -11,26 +11,26 @@ You need a "homing missile" - a projectile that will seek a moving target.
 
 ## Solution
 
-For this example, we'll use an `Area2D` node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, a `PhysicsBody` type node might be a better choice.
+For this example, we'll use an {{< gd-icon Area2D >}}`Area2D` node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, one of the `PhysicsBody` type node might be a better choice.
 
 The node setup and behavior of the missile is the same you would use for a "dumb" bullet. If you're creating many bullet types, you can use inheritance to base all your projectiles on the same core setup.
 
 The nodes we'll use:
 
-```markdown
-- Area2D ("Missile")
-    - Sprite
-    - CollisionShape2D
-    - Timer ("Lifetime")
+```
+{{< gd-icon Area2D >}} Area2D: Missile
+    {{< gd-icon Sprite2D >}} Sprite
+    {{< gd-icon CollisionShape2D >}} CollisionShape2D
+    {{< gd-icon Timer >}} Timer: Lifetime
 ```
 
 For the texture, you can use any image you like. Here's an example one:
 
 ![alt](/godot_recipes/img/missile.png)
 
-Set up the nodes and configure the sprite's texture and the collision shape. Make sure to rotate the `Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent's "forward" direction.
+Set up the nodes and configure the sprite's texture and the collision shape. Make sure to rotate the {{< gd-icon Sprite2D >}}`Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent's "forward" direction.
 
-Add a script and connect the `Area2D`'s `body_entered` signal and the `Timer`'s `timeout` signal.
+Add a script and connect the {{< gd-icon Area2d >}}`Area2D`'s `body_entered` signal and the {{< gd-icon Timer >}}`Timer`'s `timeout` signal.
 
 Here's the starting script:
 

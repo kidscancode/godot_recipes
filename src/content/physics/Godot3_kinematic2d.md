@@ -13,33 +13,31 @@ In game development you often need to know when two objects in the game space in
 
 Godot offers three kinds of physics bodies, grouped under the <a href="http://docs.godotengine.org/en/latest/classes/class_physicsbody2d.html" target="_blank">`PhysicsBody2D`</a> type:
 
-- `StaticBody2D`
+- {{< gd-icon StaticBody2D >}}`StaticBody2D`
 
 A static body is one that is not moved by the physics engine. It participates in collision detection, but does not move in response to the collision. This type of body is most often used for objects that are part of the environment or that do not need to have any dynamic behavior.
 
-- `RigidBody2D`
+- {{< gd-icon RigidBody2D >}}`RigidBody2D`
 
-This is the node that implements simulated 2D physics. You do not control a `RigidBody2D` directly, but instead you apply forces to it (gravity, impulses, etc.) and the physics engine calculates the resulting movement. See [Godot 3.0: Rigid Bodies](/blog/2017/12/godot3_kyn_rigidbody1/) for more information.
+This is the node that implements simulated 2D physics. You do not control a rigid body directly, but instead you apply forces to it (gravity, impulses, etc.) and the physics engine calculates the resulting movement. See [Godot 3.0: Rigid Bodies](/blog/2017/12/godot3_kyn_rigidbody1/) for more information.
 
-- `KinematicBody2D`
+- {{< gd-icon KinematicBody2D >}}`KinematicBody2D`
 
 A body that provides collision detection, but no physics. All movement must be implemented in code.
 
 ## Collision shapes
 
-A physics body can hold any number of `Shape2D` objects as children. These shapes are used to define the object's collision bounds and to detect contact with other objects.
+A physics body can hold any number of {{< gd-icon CollisionShape2D >}}`CollisionShape2D` objects as children. These shapes are used to define the object's collision bounds and to detect contact with other objects.
 
 > **Note:** In order to detect collisions, at least one `Shape2D` must be assigned to the object.
 
-The most common way to assign a shape is by adding a `CollisionShape2D` or `CollisionPolygon2D` as a child of the object. These nodes allow you to draw the shape directly in the editor workspace.
+The most common way to assign a shape is by adding a {{< gd-icon CollisionShape2D >}}`CollisionShape2D` or {{< gd-icon CollisionPolygon2D >}}`CollisionPolygon2D` as a child of the object. These nodes allow you to draw the shape directly in the editor workspace.
 
-> **Note:** Be careful to never scale your collision shapes in the editor. The `Scale` property in the Inspector should remain at `(1, 1)`. When changing the size of the collision shape, you should always use the shape's handles, _not_ the `Node2D` scale handles. Changing the scale can result in unexpected collision behavior.
-
-!player_coll_shape.png
+> **Note:** Be careful to never scale your collision shapes in the editor. The `Scale` property in the Inspector should remain at `(1, 1)`. When changing the size of the collision shape, you should always use the shape's handles.
 
 ### Collision Layers and Masks
 
-One of the most powerful but frequently misunderstood collision features in Godot is the collision layer system. This system allows you to build up very complex interactions between a variety of objects. The key concepts are _layers_ and _masks_. Each CollisionObject2D has 32 different physics layers it can interact with.
+One of the most powerful but frequently misunderstood collision features in Godot is the collision layer system. This system allows you to build up very complex interactions between a variety of objects. The key concepts are _layers_ and _masks_. Each collision object has 32 different physics layers it can interact with.
 
 Let's look at each of the properties in turn:
 
@@ -71,13 +69,13 @@ In this scenario, the `Player` node would detect collisions with both `Enemy` an
 
 ## Kinematic Bodies
 
-`KinematicBody2D` is for implementing bodies that are to be controlled via code. They detect collisions with other bodies when moving, but are not affected by engine physics properties like gravity or friction. While this means that you have to write some code to create their behavior, it also means you have more precise control over how they move and react.
+{{< gd-icon KinematicBody2D >}}`KinematicBody2D` is for implementing bodies that are to be controlled via code. They detect collisions with other bodies when moving, but are not affected by engine physics properties like gravity or friction. While this means that you have to write some code to create their behavior, it also means you have more precise control over how they move and react.
 
-> **Note:** A `KinematicBody2D` can be affected by gravity and other forces, but you must calculate the movement in code. The physics engine will not move a `KinematicBody2D`.
+> **Note:** A {{< gd-icon KinematicBody2D >}}`KinematicBody2D` can be affected by gravity and other forces, but you must calculate the movement in code. The physics engine will not move a {{< gd-icon KinematicBody2D >}}`KinematicBody2D`.
 
 ### Movement and collision
 
-When moving a `KinematicBody2D`, you should not set its `position` directly. Instead, you use the `move_and_collide()` or `move_and_slide()` methods. These methods move the body along a given vector and will instantly stop if a collision is detected with another body. After a KinematicBody2D has collided, any _collision response_ must be coded manually.
+When moving a {{< gd-icon KinematicBody2D >}}`KinematicBody2D`, you should not set its `position` directly. Instead, you use the `move_and_collide()` or `move_and_slide()` methods. These methods move the body along a given vector and will instantly stop if a collision is detected with another body. After a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` has collided, any _collision response_ must be coded manually.
 
 > **Note:** Kinematic body movement should only be done in the `_physics_process()` callback.
 
@@ -87,7 +85,7 @@ This method takes one parameter: a `Vector2` indicating the body's relative move
 
 ##### KinematicCollision2D
 
-When a KinematicBody2D detects a collision, Godot provides a <a href="http://docs.godotengine.org/en/latest/classes/class_kinematiccollision2d.html" target="_blank">`KinematicCollision2D`</a> object. This object contains data about the collision and the colliding object. Using this data you can calculate your collision response.
+When a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` detects a collision, Godot provides a <a href="http://docs.godotengine.org/en/latest/classes/class_kinematiccollision2d.html" target="_blank">`KinematicCollision2D`</a> object. This object contains data about the collision and the colliding object. Using this data you can calculate your collision response.
 
 #### move_and_slide
 
@@ -144,9 +142,9 @@ below.
 
 If you've downloaded the sample project, this example is in the "BasicMovement.tscn" scene.
 
-For this example, Add a `KinematicBody2D` with two children: a `Sprite` and a `CollisionShape2D`. As with many demos, we'll use the Godot "icon.png" as the Sprite's texture (drag it from the Filesystem dock to the "Texture" property of the `Sprite`). In the `CollisionShape2D`'s "Shape" property, select "New RectangleShape2D" and size the rectangle to fit over the sprite image.
+For this example, Add a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` with two children: a {{< gd-icon Sprite2D >}}`Sprite` and a {{< gd-icon CollisionShape2D >}}`CollisionShape2D`. As with many demos, we'll use the Godot "icon.png" as the {{< gd-icon Sprite2D >}}`Sprite`'s texture (drag it from the Filesystem dock to the "Texture" property of the `Sprite`). In the {{< gd-icon CollisionShape2D >}}`CollisionShape2D`'s "Shape" property, select "New RectangleShape2D" and size the rectangle to fit over the sprite image.
 
-Attach a script to the KinematicBody2D and add the following code:
+Attach a script to the {{< gd-icon KinematicBody2D >}}`KinematicBody2D` and add the following code:
 
 {{< highlight python >}}
 extends KinematicBody2D
@@ -174,11 +172,11 @@ func _physics_process(delta):
 
 Run this scene and you'll see that `move_and_collide()` works as expected, moving
 the body along the velocity vector. Now let's see what happens when you add
-some obstacles. Add a StaticBody2D with a rectangular collision shape. For visibility,
-you can use a sprite, a Polygon2D, or just turn on "Visible Collision Shapes" from
+some obstacles. Add a {{< gd-icon StaticBody2D >}}`StaticBody2D` with a rectangular collision shape. For visibility,
+you can use a sprite, a {{< gd-icon Polygon2D >}}`Polygon2D`, or just turn on "Visible Collision Shapes" from
 the "Debug" menu.
 
-Run the scene again and try moving into the obstacle. You'll see that the `KinematicBody2D`
+Run the scene again and try moving into the obstacle. You'll see that the {{< gd-icon KinematicBody2D >}}`KinematicBody2D`
 can't penetrate the obstacle. However, try moving into the obstacle at an angle and
 you'll find that the obstacle acts like glue - it feels like the body gets stuck.
 
@@ -371,7 +369,7 @@ for example.
 
 ## Conclusion
 
-This introduction only scratches the surface of what's possible with KinematicBody2D.
+This introduction only scratches the surface of what's possible with {{< gd-icon KinematicBody2D >}}`KinematicBody2D`.
 As with all Godot nodes, <a href="http://docs.godotengine.org/en/latest/classes/class_kinematicbody2d.html" target="_blank">
 the API documentation</a> is your friend, so reference it frequently until you're
 comfortable with the class methods.

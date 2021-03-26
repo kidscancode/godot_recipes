@@ -11,19 +11,19 @@ You need a camera controller, using mouse or keyboard, that remains level while 
 
 ## Solution
 
-Try this: take a Camera node and rotate it a small amount around **X** (the red ring on the gizmo), then a small amount around **Z** (the blue ring). Now reverse the **X** rotation and click the "Preview" button. Observe how the camera is now tilted.
+Try this: take a {{< gd-icon Camera3D >}}`Camera` node and rotate it a small amount around **X** (the red ring on the gizmo), then a small amount around **Z** (the blue ring). Now reverse the **X** rotation and click the "Preview" button. Observe how the camera is now tilted.
 
-The solution to this problem is to place the camera on a _gimbal_ - a device designed to keep an object level during movement. We can create a gimbal using two `Spatial` nodes, which will control the camera's left/right and up/down rotation respectively.
+The solution to this problem is to place the camera on a _gimbal_ - a device designed to keep an object level during movement. We can create a gimbal using two {{< gd-icon Node3D >}}`Spatial` nodes, which will control the camera's left/right and up/down rotation respectively.
 
 The node setup should look like this:
 
-```markdown
-- CameraGimbal (Spatial)
-    - InnerGimbal (Spatial)
-        - Camera
+```
+{{< gd-icon Node3D >}} Spatial: CameraGimbal
+    {{< gd-icon Node3D >}} Spatial: InnerGimbal
+        {{< gd-icon Camera3D >}} Camera
 ```
 
-Set the _Transform/Translation_ of the `Camera` to `(0, 0, 4)`.
+Set the _Transform/Translation_ of the {{< gd-icon Camera3D >}}`Camera` to `(0, 0, 4)`.
 
 Here's how the gimbal works: the outer spatial node can only be rotated in **Y**, while the inner one rotates only in **X**. You can test this out by rotating them manually, but make sure you change to "Local Space Mode" first (that's the cube icon next to the lock in the menu bar - the keyboard shortcut to toggle is "T"). Remember to only move the _green_ ring of the outer node and only the _red_ ring of the inner one. Don't touch the camera node at all.
 
@@ -44,7 +44,7 @@ We'll start with the keyboard controls, then add an option to use the mouse as w
 `"cam_zoom_in"` | Wheel Up
 `"cam_zoom_out"` | Wheel Down
 
-Here's the initial script. Note that we're making sure to rotate each `Spatial` in its local space around the specific axis, as described above.
+Here's the initial script. Note that we're making sure to rotate each {{< gd-icon Node3D >}}`Spatial` in its local space around the specific axis, as described above.
 
 ```gdscript
 extends Spatial
@@ -71,7 +71,7 @@ func _process(delta):
     get_input_keyboard(delta)
 ```
 
-Make a test scene with a `MeshInstance` and instance the CameraGimbal in it to test out the movement.
+Make a test scene with a {{< gd-icon MeshInstance3D >}}`MeshInstance` and instance the CameraGimbal in it to test out the movement.
 
 You'll notice that holding the up/down control will cause the camera to rotate all the way around, eventually becoming upside-down. To prevent this, we can clamp the rotation.
 

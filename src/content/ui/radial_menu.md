@@ -21,11 +21,11 @@ Here's the node setup:
 
 
 
-We're using a `TextureButton` as our root node. This is the button you'll click to open/close the menu.
+We're using a {{< gd-icon TextureButton >}}`TextureButton` as our root node. This is the button you'll click to open/close the menu.
 
-The "Buttons" `Control` node is the container where you'll place any number of items that you want. For this example, we're using some buttons from our [Cooldown Button](/godot_recipes/ui/cooldown_button/) recipe.
+The "Buttons" {{< gd-icon Control >}}`Control` node is the container where you'll place any number of items that you want. For this example, we're using some buttons from our [Cooldown Button](/godot_recipes/ui/cooldown_button/) recipe.
 
-Finally, we have a `Tween` to handle animating the menu opening/closing.
+Finally, we have a {{< gd-icon Tween >}}`Tween` to handle animating the menu opening/closing.
 
 Now, let's look at the script for the button:
 

@@ -29,9 +29,9 @@ The heart images I'm using are 53x45. You can get them here:
 
 [Kenney.nl: Platformer Art Deluxe](https://kenney.nl/assets/platformer-art-deluxe)
 
-Ideally, your heart bar will be easy to drop into your overall HUD/UI. It therefore makes sense to make it a separate scene. We'll start with an `HBoxContainer` which will keep things aligned. Set the *Custom Constants/Separation* to `5`.
+Ideally, your heart bar will be easy to drop into your overall HUD/UI. It therefore makes sense to make it a separate scene. We'll start with an {{< gd-icon HBoxContainer >}}`HBoxContainer` which will keep things aligned. Set the *Custom Constants/Separation* to `5`.
 
-Add a `TextureRect` child. Drag your heart texture into the *Texture* property and set the *Stretch Mode* to "Keep". Name the node "1" and then press "Ctrl-D" to duplicate the node for as many hearts as you need (5 in this example). Your node setup should look like this:
+Add a {{< gd-icon TextureRect >}}`TextureRect` child. Drag your heart texture into the *Texture* property and set the *Stretch Mode* to "Keep". Name the node "1" and then press "Ctrl-D" to duplicate the node for as many hearts as you need (5 in this example). Your node setup should look like this:
 
 ![alt](/godot_recipes/img/heart_bar_03.png)
 
@@ -68,7 +68,7 @@ Calling `update_health()` on the bar will cause it to display the passed value, 
 We're not going to do any bounds checking on the value input. There are many ways you may have health implemented in your game, and so that's left to you.
 {{% /notice %}}
 
-First, the `update_simple()` method. Here, we loop through the heart containers and set the visibility of each `TextureRect`:
+First, the `update_simple()` method. Here, we loop through the heart containers and set the visibility of each {{< gd-icon TextureRect >}}`TextureRect`:
 
 ```gdscript
 func update_simple(value):

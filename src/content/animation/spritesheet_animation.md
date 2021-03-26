@@ -23,16 +23,18 @@ Make sure the images in your spritesheet are laid out in a constant-sized grid. 
 
 ### Node setup
 
-This animation technique uses a `Sprite` node to display the texture, and then we animate the changing frames with `AnimationPlayer`. This can work with any 2D node, but for this demo, we'll use a `KinematicBody2D`.
+This animation technique uses a {{< gd-icon Sprite2D >}}`Sprite` node to display the texture, and then we animate the changing frames with {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. This can work with any 2D node, but for this demo, we'll use a {{< gd-icon KinematicBody2D >}}`KinematicBody2D`.
 
 Add the following nodes to your scene:
 
-- KinematicBody2D ("Player")
-  - Sprite
-  - CollisionShape2D
-  - AnimationPlayer
+```
+{{< gd-icon KinematicBody2D >}}KinematicBody2D: Player
+  {{< gd-icon Sprite2D >}} Sprite
+  {{< gd-icon CollisionShape2D >}} CollisionShape2D
+  {{< gd-icon AnimationPlayer >}} AnimationPlayer
+```
 
-Drag the spritesheet texture into the _Texture_ property of the `Sprite`. You'll see the entire spritesheet displayed in the viewport. To slice it up into individual frames, expand the "Animation" section in the Inspector and set the _Hframes_ to `13` and _Vframes_ to `8`. _Hframes_ and _Vframes_ are the number of horizontal and vertical frames in your spritesheet.
+Drag the spritesheet texture into the _Texture_ property of the {{< gd-icon Sprite >}}`Sprite`. You'll see the entire spritesheet displayed in the viewport. To slice it up into individual frames, expand the "Animation" section in the Inspector and set the _Hframes_ to `13` and _Vframes_ to `8`. _Hframes_ and _Vframes_ are the number of horizontal and vertical frames in your spritesheet.
 
 ![alt](/godot_recipes/img/sprite_animation_01.png)
 
@@ -40,10 +42,10 @@ Try changing the _Frame_ property to see the image change. This is the property 
 
 ### Adding animations
 
-Select the `AnimationPlayer` and click the “Animation” button followed by “New"
+Select the {{< gd-icon AnimationPlayer >}}`AnimationPlayer` and click the “Animation” button followed by “New"
 . Name the new animation “idle”. Set the animation length to `2` and click the “Loop” button so that our animation will repeat (see below).
 
-With the scrubber at time `0`, select the `Sprite` node. Set its _Animation/Frame_ to `0`, then click the key icon next to the value.
+With the scrubber at time `0`, select the {{< gd-icon Sprite2D >}}`Sprite` node. Set its _Animation/Frame_ to `0`, then click the key icon next to the value.
 
 ![alt](/godot_recipes/img/sprite_animation_02.png)
 

@@ -15,7 +15,7 @@ Your [Kinematic Car](/godot_recipes/3d/kinematic_car/car_base/) climbs slopes, b
 
 Kinematic bodies don't automatically rotate on collision. When the wheels aren't both touching the ground, as in the image above, we'll need to align the car manually.
 
-To begin, we need to detect when the wheel isn't on the ground. Add two `RayCast` nodes to the car and align them with the front and rear wheels like so:
+To begin, we need to detect when the wheel isn't on the ground. Add two {{< gd-icon RayCast3D >}}`RayCast` nodes to the car and align them with the front and rear wheels like so:
 
 ![alt](/godot_recipes/img/3d_car_11.png)
 

@@ -15,19 +15,19 @@ You want to shoot projectiles from your player/mob/etc..
 
 First, we'll set up a "bullet" object that we can instance. Here are the nodes we'll use:
 
-```markdown
-- Area2D ("Bullet")
-    - Sprite
-    - CollisionShape2D
+```
+{{< gd-icon Area2D >}} Area2D: Bullet
+    {{< gd-icon Sprite2D >}} Sprite
+    {{< gd-icon CollisionShape2D >}} CollisionShape2D
 ```
 
-For the `Sprite`'s texture, you can use any image you like. Here's an example one:
+For the {{< gd-icon Sprite2D >}}`Sprite`'s texture, you can use any image you like. Here's an example one:
 
 ![alt](/godot_recipes/img/laserRed01.png)
 
-Set up the nodes and configure the sprite and collision shape. If your texture is oriented pointing up, like the one above, make sure to rotate the `Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent’s “forward” direction.
+Set up the nodes and configure the sprite and collision shape. If your texture is oriented pointing up, like the one above, make sure to rotate the {{< gd-icon Sprite2D >}}`Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent’s “forward” direction.
 
-Add a script and connect the `Area2D`'s `body_entered` signal.
+Add a script and connect the {{< gd-icon Area2D >}}`Area2D`'s `body_entered` signal.
 
 ```gdscript
 extends Area2D
@@ -47,14 +47,14 @@ For this example, we'll remove the bullet if it hits anything at all. We'll also
 
 ### Shooting
 
-We need to set up a spawn location for the bullets. Add a `Position2D` and place it where you want the bullets to spawn. Here's an example, placed at the barrel of the gun. I've named it "Muzzle".
+We need to set up a spawn location for the bullets. Add a {{< gd-icon Position2D >}}`Position2D` and place it where you want the bullets to spawn. Here's an example, placed at the barrel of the gun. I've named it "Muzzle".
 
 ![alt](/godot_recipes/img/2d_shoot_01.gif)
 
 Notice that as the  player rotates, the Muzzle's `transform` remains oriented the same way relative to the gun. This will be very convenient when spawning the bullets, as they can use the transform to get the proper position *and* direction. We just set the new bullet's `transform` equal to the muzzle's.
 
 {{% notice tip %}}
-This will work for any character type, not just the "rotate-and-move" style shown here. Just attach the `Position2D` where you want the bullets to spawn.
+This will work for any character type, not just the "rotate-and-move" style shown here. Just attach the {{< gd-icon Position2D >}}`Position2D` where you want the bullets to spawn.
 {{% /notice %}}
 
 In the character's script we add a variable to hold the bullet scene for instancing:

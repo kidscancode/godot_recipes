@@ -13,4 +13,5 @@ Properties These properties are common to all joint nodes:
 Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description></item><item><title>Conveyor Belt</title><link>https://kidscancode.org/godot_recipes/physics/conveyor_belt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/physics/conveyor_belt/</guid><description>Problem You want to make a conveyor belt object that will move bodies (kinematic or rigid).
 Solution You can make a conveyor belt object using nothing but a StaticBody2D by using its constant_linear_velocity property.
 See below for how to address this in 3D.
-Here&amp;rsquo;s an example, using nothing but a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).</description></item></channel></rss>
+Here&amp;rsquo;s an example, using a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).
+Animating the belt There are many ways to present the appearance of your conveyor belt, depending on your art assets.</description></item></channel></rss>

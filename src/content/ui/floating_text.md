@@ -13,15 +13,15 @@ You want units to display damage as floating numbers when hit.
 
 ## Solution
 
-There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a `Sprite` node to display and move it.
+There are many ways to approach this problem. For example, you could use a bitmap font and build an image for each number out of its digits, then use a {{< gd-icon Sprite2D >}}`Sprite` node to display and move it.
 
-However, for this recipe, we'll use a `Label` node (named "FCT"). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as "miss".
+However, for this recipe, we'll use a {{< gd-icon Label >}}`Label` node (named "FCT"). This will give us the flexibility to change the font, as well as making it easy to display the number as a string - or even other messages such as "miss".
 
-Start with a `Label` node and add a `Tween` child. We'll use the `Tween` to animate the movement and the fade-out effect.
+Start with a {{< gd-icon Label >}}`Label` node and add a {{< gd-icon Tween >}}`Tween` child. We'll use the {{< gd-icon Tween >}}`Tween` to animate the movement and the fade-out effect.
 
-Set the Label's _Custom Fonts/Font_ property using your favorite font. In this example, we're using "Xolonium.ttf" with a font size of `28` and a black outline of `1` pixel. In the menu select "Layout->Center", and also set _Align_ and _Valign_ to "Center".
+Set the label's _Custom Fonts/Font_ property using your favorite font. In this example, we're using "Xolonium.ttf" with a font size of `28` and a black outline of `1` pixel. In the menu select "Layout->Center", and also set _Align_ and _Valign_ to "Center".
 
-Add a script to the Label.
+Add a script to the label.
 
 ```gdscript
 extends Label
@@ -74,13 +74,13 @@ If the hit is a critical, we'll also change the color and animate the scale for 
     queue_free()
 ```
 
-Finally, we start the Tween and wait for it to finish, then remove the Label.
+Finally, we start the {{< gd-icon Tween >}}`Tween` and wait for it to finish, then remove the Label.
 
 ### Floating text manager
 
 Next we'll crate a small node to manage placing and spawning the floating text. This node will be attached to the game entities that you want to display floating text effects.
 
-This is a `Node2D` named "FCTManager". It contains the following script:
+This is a {{< gd-icon Node2D >}}`Node2D` named "FCTManager". It contains the following script:
 
 ```gdscript
 extends Node2D

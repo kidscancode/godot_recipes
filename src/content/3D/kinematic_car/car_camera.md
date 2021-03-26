@@ -17,7 +17,7 @@ Godot has a built-in `InterpolatedCamera` node that does most of what's describe
 
 ### Setting up the camera
 
-Add a new scene with a `Camera`. Name it `ChaseCamera`, save it, and add a script.
+Add a new scene with a {{< gd-icon Camera3D >}}`Camera`. Name it `ChaseCamera`, save it, and add a script.
 
 The `ChaseCamera` will have a `target` - the thing it's following. We're also going to include the ability to change that target.
 
@@ -41,12 +41,12 @@ The only parameter to set here is the `lerp_speed`, which controls how quickly t
 
 ### Setting up the target(s)
 
-We want to be able to have a few different chase camera positions. One close and one far, for example, or perhaps one looking straight down. Add a `Spatial` to the car and name it `CameraPositions`. Add a few `Position3D`s to this - as many as you would like.
+We want to be able to have a few different chase camera positions. One close and one far, for example, or perhaps one looking straight down. Add a {{< gd-icon Node3D >}}`Spatial` to the car and name it `CameraPositions`. Add a few {{< gd-icon Position3D >}}`Position3D`s to this - as many as you would like.
 
-Move and orient each `Position3D` in a different location of your choosing. The position's **-Z** axis should point at the car.
+Move and orient each {{< gd-icon Position3D >}}`Position3D` in a different location of your choosing. The position's **-Z** axis should point at the car.
 
 {{% notice tip %}}
-You may find it helpful to temporarily attach a `Camera` to the position and use its "Preview" mode to help aim the `Position3D` so that it's pointing directly where you want (you can remove the camera once you're done).
+You may find it helpful to temporarily attach a {{< gd-icon Camera3D >}}`Camera` to the position and use its "Preview" mode to help aim the {{< gd-icon Position3D >}}`Position3D` so that it's pointing directly where you want (you can remove the camera once you're done).
 ![alt](/godot_recipes/img/3d_car_09.png)
 {{% /notice %}}
 

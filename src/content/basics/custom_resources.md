@@ -123,10 +123,10 @@ Now you can set the desired `max_value` and save the new resource as a `.tres` f
 
 Once the resource has been created and saved, we're ready to use it. Once again, in this scenario we have the following objects:
 
-* Player - a `KinematicBody2D`
-* UI - contains a `ProgressTexture` to display health
-* Heal zone - an `Area2D` that heals anything that stands in it
-* Spikes - `TileMap` tiles that cause damage if touched
+* Player - a {{< gd-icon KinematicBody2D >}}`KinematicBody2D`
+* UI - contains a {{< gd-icon TextureProgressBar >}}`ProgressTexture` to display health
+* Heal zone - an {{< gd-icon Area2D >}}`Area2D` that heals anything that stands in it
+* Spikes - {{< gd-icon TileMap >}}`TileMap` tiles that cause damage if touched
 
 We won't include all of the code for the game, just the parts that pertain to the health resource.
 

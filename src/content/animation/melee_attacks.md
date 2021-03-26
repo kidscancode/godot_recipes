@@ -17,9 +17,9 @@ For this example, we'll assume we have already set up a character with one or mo
 
 ![alt](/godot_recipes/img/attack1.png)
 
-We can detect the sword hitting the target using an `Area2D`, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we'll use the AnimationPlayer to control it.
+We can detect the sword hitting the target using an {{< gd-icon Area2D >}}`Area2D`, but we only want that area to be active during the swing. In order for this activation to be in sync with the animation, we'll use the AnimationPlayer to control it.
 
-Add an `Area2D` and `CollisionShape2D` to the scene. We'll use a rectangle shape for the hitbox and size it so that it covers the sword during the swing frame.
+Add an {{< gd-icon Area2D >}}`Area2D` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D` to the scene. We'll use a rectangle shape for the hitbox and size it so that it covers the sword during the swing frame.
 
 ![alt](/godot_recipes/img/melee_attack_01.png)
 
@@ -27,7 +27,7 @@ Move the animation to the first frame and check the _Disabled_ property of the a
 
 ![alt](/godot_recipes/img/melee_attack_02.gif)
 
-Now connect this new area's `area_entered` signal (or, depending on how your game is set up, `body_entered`). For the purposes of this demo, let's assume that any body that can take damage has an `Area2D` defined and placed in a group called "hurtbox".
+Now connect this new area's `area_entered` signal (or, depending on how your game is set up, `body_entered`). For the purposes of this demo, let's assume that any body that can take damage has an {{< gd-icon Area2D >}}`Area2D` defined and placed in a group called "hurtbox".
 
 ```gdscript
 func _on_SwordHit_area_entered(area):

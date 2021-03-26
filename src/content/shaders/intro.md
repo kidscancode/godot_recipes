@@ -19,19 +19,19 @@ The most difficult part for newcomers to understand about shaders is that they r
 
 To add a shader to an object, find its _Material_ property and select "New ShaderMaterial". Click the new material to open it, and select "New Shader". Click that, and you'll see a shader editor open at the bottom of the screen.
 
-The first line of the shader must specify its type. If the node it's attached to is a CanvasItem:
+The first line of the shader must specify its type. If the node it's attached to is a 2D node:
 
 ```glsl
 shader_type canvas_item;
 ```
 
-Or for a Spatial node:
+Or for a 3D node:
 
 ```glsl
 shader_type spatial;
 ```
 
-For these first examples, let's stick to 2D. Add a Sprite node and add shader following the steps above. You can use the Godot icon for its texture.
+For these first examples, let's stick to 2D. Add a {{< gd-icon Sprite2D >}}`Sprite` node and add shader following the steps above. You can use the Godot icon for its texture.
 
 There are two basic types of shader we'll discuss here: _vertex_ and _fragment_.
 

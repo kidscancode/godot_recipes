@@ -17,10 +17,10 @@ For this example, we'll use the "Mini Tank" that we set up in [KinematicBody: Mo
 
 First, we'll set up a "bullet" object that we can instance. Here are the nodes we'll use:
 
-```markdown
-- Area ("Bullet")
-    - MeshInstance
-    - CollisionShape
+```
+{{< gd-icon Area3D >}} Area: Bullet
+    {{< gd-icon MeshInstance3D >}} MeshInstance
+    {{< gd-icon CollisionShape3D >}} CollisionShape
 ```
 
 For your mesh, you can use one of Godot's built-in primitive shapes, or something like this:
@@ -31,13 +31,13 @@ For your mesh, you can use one of Godot's built-in primitive shapes, or somethin
 If you'd like to use the bullet model pictured here, you can grab it from [Kenney's "Weapon Pack"](https://kenney.nl/assets/weapon-pack).
 {{% /notice %}}
 
-Add your mesh to the `MeshInstance` and a scale a collision shape to match.
+Add your mesh to the {{< gd-icon MeshInstance3D >}}`MeshInstance` and a scale a collision shape to match.
 
 {{% notice warning %}}
-Remember to align your `MeshInstance` with the forward direction (**-Z**) of the `Area` node, or your bullet won't look like it's flying the right way!
+Remember to align your {{< gd-icon MeshInstance3D >}}`MeshInstance` with the forward direction (**-Z**) of the `Area` node, or your bullet won't look like it's flying the right way!
 {{% /notice %}}
 
-Add a script and connect the `Area`'s `body_entered` signal.
+Add a script and connect the {{< gd-icon Area3D >}}`Area`'s `body_entered` signal.
 
 ```gdscript
 extends Area
@@ -69,7 +69,7 @@ We'll also emit an `exploded` signal, which you can connect up to implement expl
 
 ### Shooting
 
-Now in the tank (or whatever object you have doing the shooting), add a `Position3D` child at the point where you want the bullets to appear. In the case of our tank, we're placing it at the end of the cannon barrel:
+Now in the tank (or whatever object you have doing the shooting), add a {{< gd-icon Position3D >}}`Position3D` child at the point where you want the bullets to appear. In the case of our tank, we're placing it at the end of the cannon barrel:
 
 ![alt](/godot_recipes/img/3d_shoot_02.png)
 

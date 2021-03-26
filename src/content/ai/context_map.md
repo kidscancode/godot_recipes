@@ -19,7 +19,7 @@ In this example, we're going to use a method called "Context Behavior", which ai
 
 * [James Keats: AI Context Behaviors](https://jameskeats.com/portfolio/contextbhvr.html)
 
-For this demo, we'll use a generic "Agent" object. In your game, this might be a car driving around a track, a monster patrolling a dungeon, or some other kind of game entity. Our agent will use a `KinematicBody2D`, but remember, you can use this technique with any kind of object - the algorithm is about the entity choosing a direction to move, how it moves is entirely separate.
+For this demo, we'll use a generic "Agent" object. In your game, this might be a car driving around a track, a monster patrolling a dungeon, or some other kind of game entity. Our agent will use a {{< gd-icon KinematicBody2D >}}`KinematicBody2D`, but remember, you can use this technique with any kind of object - the algorithm is about the entity choosing a direction to move, how it moves is entirely separate.
 
 ### The Algorithm
 
@@ -175,7 +175,7 @@ func choose_direction():
 
 ### Example in Practice
 
-Let's try it out in action! Here, we've created a track using a Path2D and some collision polygons.
+Let's try it out in action! Here, we've created a track using a {{< gd-icon Path2D >}}`Path2D` and some collision polygons.
 
 ![alt](/godot_recipes/img/ai_context_11.png)
 

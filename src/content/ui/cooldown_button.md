@@ -19,12 +19,12 @@ If you need art for your buttons, you can find a wide variety of well-designed b
 
 The scene for our ability button will need the following nodes:
 
-```text
-┖╴TextureButton ("AbilityButton")
-   ┠╴TextureProgress ("Sweep")
-   ┠╴Timer
-   ┖╴MarginContainer ("Counter")
-      ┖╴Label ("Value")
+```
+AbilityButton: {{< gd-icon TextureButton >}} TextureButton
+   Sweep: {{< gd-icon TextureProgressBar >}} TextureProgress
+   {{< gd-icon Timer >}} Timer
+   Counter: {{< gd-icon MarginContainer >}} MarginContainer
+      Value: {{< gd-icon Label >}} Label
 ```
 
 Drop your chosen icon into the _Texture_ property of the `AbilityButton`.
@@ -35,7 +35,7 @@ We also want our cooldown "radial wipe" to darken the button, so set the _Modula
 
 ![alt](/godot_recipes/img/cooldown_02.png)
 
-The `Timer` node should be set to "One Shot".
+The {{< gd-icon Timer >}}`Timer` node should be set to "One Shot".
 
 `Counter` is a container to hold and align the text. Set its _Layout_ to "Bottom Wide", and in its _Custom Constants_, both _Margin Right_ and _Margin Left_ to `5`.
 
@@ -63,7 +63,7 @@ func _ready():
 
 We start by exporting a `cooldown` variable for the length of our ability's cooldown. Then, in the `_ready()` method, we can set the `Timer` to use that value. Then we hide the label, because we only want to display it during the countdown.
 
-Next, we need a texture to assign to the `TextureProgress` display. In this case, we'll copy the texture from the button - you could also use a different texture if you like.
+Next, we need a texture to assign to the {{< gd-icon TextureProgressBar >}}`TextureProgress` display. In this case, we'll copy the texture from the button - you could also use a different texture if you like.
 
 Finally, we make sure the sweep's value is at `0`, and set the node's processing to `false`. We'll do the animation in `_process()` so we don't need it running when we're not in cooldown mode.
 
@@ -94,7 +94,7 @@ func _on_Timer_timeout():
     set_process(false)
 ```
 
-And everything is reset when the timer runs out. Put several buttons in an `HBoxContainer` and you've got an action bar:
+And everything is reset when the timer runs out. Put several buttons in an {{< gd-icon HBoxContainer >}}`HBoxContainer` and you've got an action bar:
 
 ![alt](/godot_recipes/img/cooldown_03.gif)
 

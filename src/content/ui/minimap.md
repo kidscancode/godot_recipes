@@ -32,13 +32,13 @@ The `CanvasLayer` node is there to hold our UI, including the minimap/radar we'r
 
 The first step will be to create the layout for the minimap. In order to work with whatever other UI elements exist in the game, it must resize smoothly, and integrate well with a container-based layout.
 
-Add a `MarginContainer` first. Set its *Custom Constants* all to `5`. This control will hold the rest of the nodes and ensure it doesn't bleed over into any other elements. Name it "MiniMap" and save the scene.
+Add a {{< gd-icon MarginContainer >}}`MarginContainer` first. Set its *Custom Constants* all to `5`. This control will hold the rest of the nodes and ensure it doesn't bleed over into any other elements. Name it "MiniMap" and save the scene.
 
-Next, add a `NinePatchRect` node. This node is similar to a `TextureRect` but handles resizing differently by not stretching the corners/edges. Drop the `panel_woodDetail_blank.png` image from the asset folder into the *Texture* property. This is a `128x128` image and if we scale the root MarginContainer, the image becomes stretched and ugly:
+Next, add a {{< gd-icon NinePatchRect >}}`NinePatchRect` node. This node is similar to a `TextureRect` but handles resizing differently by not stretching the corners/edges. Drop the `panel_woodDetail_blank.png` image from the asset folder into the *Texture* property. This is a `128x128` image and if we scale the root {{< gd-icon MarginContainer >}}`MarginContainer`, the image becomes stretched and ugly:
 
 ![alt](/godot_recipes/img/minimap_02.gif)
 
-Using the `NinePatchRects`'s properties, we can ensure that the frame remains the same size when stretched. You can define these properties graphically in the "TextureRegion" panel, but it's sometimes easier to enter the values directly. Set all four properties in the *Patch Margin* section to `64` and change the node's name to "Frame".
+Using the {{< gd-icon NinePatchRect >}}`NinePatchRects`'s properties, we can ensure that the frame remains the same size when stretched. You can define these properties graphically in the "TextureRegion" panel, but it's sometimes easier to enter the values directly. Set all four properties in the *Patch Margin* section to `64` and change the node's name to "Frame".
 
 Now observe what happens when we change the size:
 
@@ -50,7 +50,7 @@ Next, we'd like to fill in the inner part of the frame with the grid pattern `pa
 
 However, we need it to tile automatically no matter what size we make the frame. Also, since this grid area is where our minimap markers will appear, we don't want the grid extending past the edges of the frame.
 
-As a child of the `MiniMap` (and a sibling of the `Frame`), add another `MarginContainer`. Set all four margin properties in *Custom Constants* to `20`. As a child of this node, add a `TextureRect` and assign its *Texture* to the above image. Set its *Stretch Mode* to "Tile". Name this node "Grid".
+As a child of the `MiniMap` (and a sibling of the `Frame`), add another {{< gd-icon MarginContainer >}}`MarginContainer`. Set all four margin properties in *Custom Constants* to `20`. As a child of this node, add a {{< gd-icon TextureRect >}}`TextureRect` and assign its *Texture* to the above image. Set its *Stretch Mode* to "Tile". Name this node "Grid".
 
 Try changing the size of your root node to see the effect:
 
@@ -64,7 +64,7 @@ At this point, your scene tree should look like the following:
 
 ### Map Markers
 
-As a child of `Grid`, add a `Sprite` node named "PlayerMarker" and give it the `minimapIcon_arrowA.png` texture. Note the sprite's *Transform/Position* property: `(0, 0)`, which places it exactly in the top-left corner of the `Grid`:
+As a child of `Grid`, add a {{< gd-icon Sprite2D >}}`Sprite` node named "PlayerMarker" and give it the `minimapIcon_arrowA.png` texture. Note the sprite's *Transform/Position* property: `(0, 0)`, which places it exactly in the top-left corner of the `Grid`:
 
 ![alt](/godot_recipes/img/minimap_05.png)
 
@@ -74,7 +74,7 @@ If our `Grid` size is currently `(150, 150)` (you can check this in its *Rect/Si
 
 Don't worry, we'll automate this later.
 
-Add two more `Sprite` nodes: "MobMarker" and "AlertMarker", using the `minimapIcon_jewelRed.png` and `minimapIcon_exclamationYellow.png` textures.
+Add two more {{< gd-icon Sprite2D >}}`Sprite` nodes: "MobMarker" and "AlertMarker", using the `minimapIcon_jewelRed.png` and `minimapIcon_exclamationYellow.png` textures.
 
 ![alt](/godot_recipes/img/minimap_08.png)
 

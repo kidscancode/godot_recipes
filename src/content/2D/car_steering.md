@@ -29,14 +29,14 @@ The recipe below is broken into 5 parts, each adding a different feature to the 
 
 Here's the car scene setup:
 
-```markdown
-- KinematicBody2D
-    - Sprite
-    - CollisionShape2D
-    - Camera2D
+```
+{{< gd-icon KinematicBody2D >}} KinematicBody2D
+    {{< gd-icon Sprite2D >}} Sprite
+    {{< gd-icon CollisionShape2D >}} CollisionShape2D
+    {{< gd-icon Camera2D >}} Camera2D
 ```
 
-Add whatever sprite texture you like. For this demo, we'll use art from [Kenney's Racing Pack](https://kenney.nl/assets/racing-pack). `CapsuleShape2D` is a good choice for the collision, so that the car won't have sharp corners to get caught on obstacles.
+Add whatever sprite texture you like. For this demo, we'll use art from [Kenney's Racing Pack](https://kenney.nl/assets/racing-pack). {{< gd-icon CapsuleShape2D >}}`CapsuleShape2D` is a good choice for the collision, so that the car won't have sharp corners to get caught on obstacles.
 
 We'll also use four input actions: "steer_right", "steer_left", "accelerate", and "brake".
 

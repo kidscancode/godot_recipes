@@ -26,7 +26,7 @@ velocity = position.direction_to(player.position) * speed
 ```
 
 
-However, this would allow the enemy to chase the player from any distance, even if it's far away. To fix this, we can add an `Area2D` to the enemy, and only chase the player when it's inside this "detect radius".
+However, this would allow the enemy to chase the player from any distance, even if it's far away. To fix this, we can add an {{< gd-icon Area2D >}}`Area2D` to the enemy, and only chase the player when it's inside this "detect radius".
 
 ![alt](/godot_recipes/img/chase_01.png)
 
@@ -52,7 +52,7 @@ func _on_DetectRadius_body_exited(body):
     player = null
 ```
 
-We've connected the `body_entered` and `body_exited` signals from the `Area2D` so that the enemy knows whether it's in range or not.
+We've connected the `body_entered` and `body_exited` signals from the {{< gd-icon Area2D >}}`Area2D` so that the enemy knows whether it's in range or not.
 
 {{% notice note %}}
 The above assumes that the player is the only body that will enter/exit, which is usually done by setting the appropriate collision layers/masks.

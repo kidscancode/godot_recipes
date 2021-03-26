@@ -11,7 +11,7 @@ A common situation: you have a large number of animations, and it's becoming dif
 
 ## Solution
 
-Use an `AnimationTree` to create an animation _state machine_. This will allow us to organize our animations and most importantly, control the transitions between them.
+Use an {{< gd-icon AnimationTree >}}`AnimationTree` to create an animation _state machine_. This will allow us to organize our animations and most importantly, control the transitions between them.
 
 ### Getting started
 
@@ -19,17 +19,17 @@ For this demo, we'll be using the excellent "Adventurer" sprite by Elthen. You c
 
 ![alt](/godot_recipes/img/Adventurer Sprite Sheet v1.1.png)
 
-We'll also assume you've already set up the character's animations using `AnimationPlayer`. Using the above spritesheet, we have the following animations: "idle", "run", "attack1", "attack2", "hurt", and "die".
+We'll also assume you've already set up the character's animations using {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. Using the above spritesheet, we have the following animations: "idle", "run", "attack1", "attack2", "hurt", and "die".
 
 ### AnimationTree
 
-Add an `AnimationTree` node to the scene. In its _Tree Root_ property, choose "New AnimationNodeStateMachine".
+Add an {{< gd-icon AnimationTree >}}`AnimationTree` node to the scene. In its _Tree Root_ property, choose "New AnimationNodeStateMachine".
 
 ![alt](/godot_recipes/img/animation_tree_01.png)
 
-An `AnimationTree` is a node that controls animations created in `AnimationPlayer`. To let it access the existing animations, click "Assign" in the _Anim Player_ property and select your animation node.
+An {{< gd-icon AnimationTree >}}`AnimationTree` is a node that controls animations created in {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. To let it access the existing animations, click "Assign" in the _Anim Player_ property and select your animation node.
 
-Now we can begin to set up our state machine in the `AnimationTree` panel:
+Now we can begin to set up our state machine in the {{< gd-icon AnimationTree >}}`AnimationTree` panel:
 
 ![alt](/godot_recipes/img/animation_tree_02.png)
 

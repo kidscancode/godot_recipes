@@ -10,13 +10,13 @@ You want to make a conveyor belt object that will move bodies (kinematic or rigi
 
 ## Solution
 
-You can make a conveyor belt object using nothing but a `StaticBody2D` by using its `constant_linear_velocity` property.
+You can make a conveyor belt object using nothing but a {{< gd-icon StaticBody2D >}}`StaticBody2D` by using its `constant_linear_velocity` property.
 
 {{% notice note %}}
 See [below](#3d) for how to address this in 3D.
 {{% /notice %}}
 
-Here's an example, using nothing but a `StaticBody2D` and a `RigidBody2D`. No code was added. The static body's *Constant Linear Velocity* is set to `(200, 0)`.
+Here's an example, using a {{< gd-icon StaticBody2D >}}`StaticBody2D` and a {{< gd-icon RigidBody2D >}}`RigidBody2D`. No code was added. The static body's *Constant Linear Velocity* is set to `(200, 0)`.
 
 ![alt](/godot_recipes/img/conveyor_02.gif)
 
@@ -26,7 +26,7 @@ There are many ways to present the *appearance* of your conveyor belt, depending
 
 ![alt](/godot_recipes/img/tileGreen_03.png)
 
-Add a `Sprite` to your static body, and in its *Texture* choose "New AtlasTexture":
+Add a {{< gd-icon Sprite2D >}}`Sprite` to your static body, and in its *Texture* choose "New AtlasTexture":
 
 ![alt](/godot_recipes/img/conveyor_04.png)
 
@@ -42,7 +42,7 @@ Choosing `880` gives us a conveyor belt that's exactly 10 tiles wide. You can us
 If your image doesn't repeat or looks wrong, reimport it with the *Repeat* flag set to "Enabled".
 {{% /notice %}}
 
-Try adjusting the `x` of the *Region* property. You'll see the tiles shift. This is what we need to animate the belt. You can do this with an AnimationPlayer or in code. We'll do the latter for this example:
+Try adjusting the `x` of the *Region* property. You'll see the tiles shift. This is what we need to animate the belt. You can do this with an {{< gd-icon AnimationPlayer >}}`AnimationPlayer` or in code. We'll do the latter for this example:
 
 ```gdscript
 extends StaticBody2D
@@ -66,7 +66,7 @@ This works perfectly well with kinematic bodies, too. Here's the same conveyor b
 
 ### 3D
 
-At the time of this writing, `constant_linear_velocity` does not work in 3D using `StaticBody`.
+At the time of this writing, `constant_linear_velocity` does not work in 3D using {{< gd-icon StaticBody3D >}}`StaticBody`.
 
 However, you can use this technique if you change from "Bullet" to the "GodotPhysics" engine in your Project Settings:
 

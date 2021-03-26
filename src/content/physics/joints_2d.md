@@ -21,9 +21,9 @@ These properties are common to all joint nodes:
 - _Bias_: The rate at which the joint pulls the two bodies back together if they move apart. Defaults to `0`.
 - _Disable Collisions_: Allows the connected bodies to ignore collisions between them. Defaults to `true`.
 
-There are three types of Joint2D. In all of the following examples, there is one `RigidBody2D` connected via a joint to a `StaticBody2D`. "Visible Collision Shapes" is enabled in the screen images below so you can see a representation of the joint.
+There are three types of {{< gd-icon Joint2D >}}`Joint2D`. In all of the following examples, there is one {{< gd-icon RigidBody2D >}}`RigidBody2D` connected via a joint to a {{< gd-icon StaticBody2D >}}`StaticBody2D`. "Visible Collision Shapes" is enabled in the screen images below so you can see a representation of the joint.
 
-### PinJoint2D
+### {{< gd-icon PinJoint2D >}} PinJoint2D
 
 The "pin" joint attaches the two bodies at a single point, allowing them to freely rotate.
 
@@ -33,7 +33,7 @@ The pin joint's _Softness_ property gives some "springiness" to the connection. 
 
 ![alt](/godot_recipes/img/pinjoint_example2.gif)
 
-### DampedSpringJoint2D
+### {{< gd-icon DampedSpringJoint2D >}} DampedSpringJoint2D
 
 This joint connects the two bodies with a spring-like force.
 
@@ -46,7 +46,7 @@ The spring's behavior can be adjusted with these properties:
 - _Stiffness_: The spring's "stretchiness", i.e. how much it resists forces pulling against it.
 - _Damping_: How quickly the spring stops "bouncing".
 
-### GrooveJoint2D
+### {{< gd-icon GrooveJoint2D >}} GrooveJoint2D
 
 This joint constrains the attached bodies to move linearly.
 

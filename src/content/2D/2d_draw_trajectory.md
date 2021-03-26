@@ -17,7 +17,7 @@ For this example, we're using the "Ballistic Bullet" from this recipe:
 
 * [Ballistic bullet](/godot_recipes/2d/ballistic_bullet/)
 
-and a tank set up like so, with a `Position2D` designating the "muzzle" where the bullet will be spawned:
+and a tank set up like so, with a {{< gd-icon Position2D >}}`Position2D` designating the "muzzle" where the bullet will be spawned:
 
 ![alt](/godot_recipes/img/tank_01.png)
 
@@ -42,7 +42,7 @@ Here's our starting setup in action:
 
 ### Line setup
 
-In the main scene, which contains the tank and the ground, we've added a `Line2D`. This is what we'll use to draw the trajectory.
+In the main scene, which contains the tank and the ground, we've added a {{< gd-icon Line2D >}}`Line2D`. This is what we'll use to draw the trajectory.
 
 To improve the line's appearance, we've set the **Width** to `15` and all of the **Capping** options to "Round". We've also added a `Gradient` in the **Fill** section:
 

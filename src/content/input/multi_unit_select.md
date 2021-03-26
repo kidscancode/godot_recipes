@@ -23,7 +23,7 @@ To test this out, we'll need some basic RTS-style units. They are set up to move
 
 ### World setup
 
-Processing the unit selection will happen in the world. We'll start with a Node2D called "World" and add a few unit instances in it. Attach a script to the World node and add the following variables:
+Processing the unit selection will happen in the world. We'll start with a {{< gd-icon Node2D >}}`Node2D` called "World" and add a few unit instances in it. Attach a script to the World node and add the following variables:
 
 ```gdscript
 extends Node2D
@@ -62,7 +62,7 @@ func _draw():
 
 ### Selecting the units
 
-Now that we've got a selection box, we need to find the units that are inside it. When we release the button and the drag ends, we must query the physics space to find the units. Note that the units are `KinematicBody2D`, but `Area2D` or other bodies would work as well.
+Now that we've got a selection box, we need to find the units that are inside it. When we release the button and the drag ends, we must query the physics space to find the units. Note that the units are {{< gd-icon KinematicBody2D >}}`KinematicBody2D`, but {{< gd-icon Area2D >}}`Area2D` or other bodies would work as well.
 
 We'll use `Physics2DDirectSpaceState.intersect_shape()` to find the units. This requires a shape (our rectangle) and a transform (our location). See [Godot docs](https://docs.godotengine.org/en/3.1/classes/class_physics2ddirectspacestate.html) for details.
 

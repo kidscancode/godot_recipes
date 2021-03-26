@@ -14,10 +14,10 @@ You need to make a 2D platform-style character.
 New developers are often surprised at how complex a platform character can be to program. Godot provides some built-in tools to assist, but there are as many solutions as there are games. In this tutorial, we won't be going in-depth with features like double-jumps, crouching, wall-jumps, or animation. Here we'll discuss the fundamentals of platformer movement. See the rest of the recipes for other solutions.
 
 {{% notice tip %}}
-While it's possible to use `RigidBody2D` to make a platform character, we'll be focusing on `KinematicBody2D`. Kinematic bodies are well-suited for platformers, where you are less interested in realistic physics than in responsive, arcade feel.
+While it's possible to use {{< gd-icon RigidBody2D >}}`RigidBody2D` to make a platform character, we'll be focusing on {{< gd-icon KinematicBody2D >}}`KinematicBody2D`. Kinematic bodies are well-suited for platformers, where you are less interested in realistic physics than in responsive, arcade feel.
 {{% /notice %}}
 
-Start with a `KinematicBody2D` node, and add a `Sprite` and `CollisionShape2D` to it.
+Start with a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` node, and add a {{< gd-icon Sprite2D >}}`Sprite` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D` to it.
 
 Attach the following script to the root node of the character. Note that we're using input actions we've defined in the InputMap: `"walk_right"`, `"walk_left"`, and `"jump"`. See [InputActions](/godot_recipes/input/input_actions/).
 

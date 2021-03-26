@@ -23,7 +23,7 @@ We need our camera to do 3 things:
 1. Keep the camera's position centered at the midpoint of the targets.
 1. Adjust the camera's zoom to keep all targets on screen.
 
-Create a new scene with a `Camera2D` and attach a script. We'll add this camera to our game once we're done.
+Create a new scene with a {{< gd-icon Camera2D >}}`Camera2D` and attach a script. We'll add this camera to our game once we're done.
 
 Let's break down how the script works.
 

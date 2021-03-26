@@ -36,7 +36,7 @@ Click the "Save" button to save the resource. Give it a name such as `water_anim
 
 ### Using AnimatedTexture in a TileMap
 
-Now that the `AnimatedTexture` is saved, it can be used in a `TileSet`. Open a new or existing `TileMap` and select its _Tile Set_ property. Click the button to add a new texture to the `TileSet`:
+Now that the `AnimatedTexture` is saved, it can be used in a `TileSet`. Open a new or existing {{< gd-icon TileMap >}}`TileMap` and select its _Tile Set_ property. Click the button to add a new texture to the `TileSet`:
 
 ![alt](/godot_recipes/img/anim_tile_add.png)
 

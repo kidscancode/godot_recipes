@@ -18,7 +18,7 @@ We'll also look at a quick way to set up a minimap display.
 ### Game setup
 
 We won't spend a lot of time on the setup of the game world. The two players
-are KinematicBody2D objects using no-frills 8-way movement.
+are {{< gd-icon KinematicBody2D >}}`KinematicBody2D` objects using no-frills 8-way movement.
 
 {{% notice note %}}
 If you need help setting up this part, see the following section in the official Godot docs: [2D Movement Overview](http://docs.godotengine.org/en/stable/tutorials/2d/2d_movement.html).
@@ -41,7 +41,7 @@ func get_input():
 This way both characters can use the same script for movement. Just assign the
 appropriate value to `id` for each player.
 
-The two players are added to a "World" scene containing a TileMap:
+The two players are added to a "World" scene containing a {{< gd-icon TileMap >}}`TileMap`:
 
 ![alt](/godot_recipes/img/splitscreen_map.png)
 
@@ -61,26 +61,26 @@ We're going to start with a new scene that's going to contain our two viewports.
 Create a node to serve as the root. I like to use `Node` since it has no properties
 of its own - it's just there to contain the rest of the scene.
 
-By themselves, `Viewport` nodes don't have position information (they don't
-inherit from `Spatial` or `CanvasItem`). We're going to use `ViewportContainer`,
-a `Control` node, to hold each viewport. To keep them arranged side-by-side, we'll
-use an `HBoxContainer`.
+By themselves, {{< gd-icon Viewport >}}`Viewport` nodes don't have position information (they don't
+inherit from {{< gd-icon Node3D >}}`Spatial` or {{< gd-icon Node2D >}}`Node2D`). We're going to use {{< gd-icon SubViewportContainer >}}`ViewportContainer`,
+a {{< gd-icon Control >}}`Control` node, to hold each viewport. To keep them arranged side-by-side, we'll
+use an {{< gd-icon HBoxContainer >}}`HBoxContainer`.
 
-Set the HBoxContainer's _Alignment_ to "Center" and to have a small
+Set the {{< gd-icon HBoxContainer >}}`HBoxContainer`'s _Alignment_ to "Center" and to have a small
 gap between the two viewports, set _Custom Constants/Separation_ to `5`. In the
 "Layout" menu, choose "Full Rect".
 
-Now add two ViewportContainers as children, naming them with a `2` and `1` (to
+Now add two {{< gd-icon SubViewportContainer >}}`ViewportContainer`s as children, naming them with a `2` and `1` (to
 match the player they'll display). Set the _Size Flags_ on both to "Fill, Expand"
 so that they will each expand to fill half of the screen. Also, check the _Stretch_
-property so that the Viewport will automatically be set to the size of the
+property so that the {{< gd-icon Viewport >}}`Viewport` will automatically be set to the size of the
 container.
 
-Inside each of these containers add a `Viewport`. Note that if you set the viewport's
+Inside each of these containers add a {{< gd-icon Viewport >}}`Viewport`. Note that if you set the viewport's
 _Size_ property, it will be reset by the container.
 
-In order for a Viewport to display anything, we'll need a `Camera2D` which will render
-onto the Viewport. Add one to each viewport. Don't forget to check the _Current_
+In order for a {{< gd-icon Viewport >}}`Viewport` to display anything, we'll need a {{< gd-icon Camera2D >}}`Camera2D` which will render
+onto the {{< gd-icon Viewport >}}`Viewport`. Add one to each viewport. Don't forget to check the _Current_
 property to activate the camera. We can also set each camera's _Zoom_ to `(0.75, 0.75)`
 to get a better view of the area around the player.
 
@@ -98,7 +98,7 @@ Your node setup should look like this:
 ```
 
 {{% notice note %}}
-Note that we've put `ViewportContainer1` second in the HBoxContainer. This will
+Note that we've put `ViewportContainer1` second in the {{< gd-icon HBoxContainer >}}`HBoxContainer`. This will
 place it on the right side since Player 1 uses the arrow keys.
 {{% /notice %}}
 
@@ -189,9 +189,9 @@ func set_camera_limits():
 Let's add one more fun feature: a minimap showing a zoomed-out view of the entire
 map so the players can orient themselves.
 
-We'll need another ViewportContainer, this one a child of `Main`. This time, we
-*don't* want to use _Stretch_. Add a Viewport and set its _Size_ to `(340, 200)`
-then add a Camera2D. We'll set the Camera2D's _Position_ to `(512, 300)` to center
+We'll need another {{< gd-icon ViewportContainer >}}`ViewportContainer`, this one a child of `Main`. This time, we
+*don't* want to use _Stretch_. Add a {{< gd-icon Viewport >}}`Viewport` and set its _Size_ to `(340, 200)`
+then add a {{< gd-icon Camera2D >}}`Camera2D`. We'll set the {{< gd-icon Viewport >}}`Camera2D`'s _Position_ to `(512, 300)` to center
 it on the screen. We'll zoom out by setting _Zoom_ to `(9, 9)`. Don't forget to
 click _Current_ on this camera as well.
 
@@ -208,7 +208,7 @@ see what it looks like:
 
 We need to get rid of that grey area around the edges. We could find the precise
 zoom level that matches our desired minimap size, but instead, we'll check the
-_Transparent Bg_ on the Viewport. Now our non-map areas aren't visible and the
+_Transparent Bg_ on the {{< gd-icon Viewport >}}`Viewport`. Now our non-map areas aren't visible and the
 minimap appears floating directly on top of the main viewports.
 
 ![alt](/godot_recipes/img/splitscreen_minimap2.png?width=400)

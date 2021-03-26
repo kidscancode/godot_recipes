@@ -12,7 +12,7 @@ You need your kinematic body to align with the surface it's standing on.
 ## Solution
 
 {{% notice warning %}}
-As of Godot 3.2, there is a bug preventing KinematicBody2D's `stop_on_slope` parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See [GitHub](https://github.com/godotengine/godot/issues) for details and other suggestions regarding this issue.
+As of Godot 3.2, there is a bug preventing {{< gd-icon KinematicBody2D >}} `KinematicBody2D`'s `stop_on_slope` parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See [GitHub](https://github.com/godotengine/godot/issues) for details and other suggestions regarding this issue.
 {{% /notice %}}
 
 We'll start with a basic kinematic platform character. See the [Platform character](/godot_recipes/2d/platform_character/) recipe for details.

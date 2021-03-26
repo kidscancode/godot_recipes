@@ -11,7 +11,7 @@ You need your kinematic body to align with the surface or terrain.
 
 ## Solution
 
-This recipe builds on the basic `KinematicBody` controller described in the [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/) recipe, so read that one first.
+This recipe builds on the basic {{< gd-icon KinematicBody3D >}}`KinematicBody` controller described in the [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/) recipe, so read that one first.
 
 First, we've added some terrain to the scene. You can download the terrain from here: [https://fertile-soil-productions.itch.io/modular-terrain-pack](https://fertile-soil-productions.itch.io/modular-terrain-pack). This is low-poly terrain, but you can use or make any terrain you like for this technique.
 
@@ -23,7 +23,7 @@ Instead, we need to rotate the tank so that its treads are aligned with the grou
 
 ### Surface normals
 
-A *surface normal* is a unit vector ("normal vector" and "unit vector" mean the same thing) perpendicular to a surface. It shows which way the surface is facing. In the case of a Mesh, every surface has a normal pointing outward.
+A *surface normal* is a unit vector ("normal vector" and "unit vector" mean the same thing) perpendicular to a surface. It shows which way the surface is facing. In the case of a mesh, every surface has a normal pointing outward.
 
 ![alt](/godot_recipes/img/3d_kinematic_05.png)
 
@@ -67,7 +67,7 @@ This doesn't work quite as expected:
 
 The problem is that the tank's collision shape could be colliding with more than one of the terrain's faces. Also, `move_and_slide()` can result in more than one collision in a single frame. This leads to the jittering. We need to choose one face and stick with it.
 
-Add a `RayCast` child to the tank and set its *Cast To* to `(0, -2, 0)`. Don't forget to check the *Enabled* property.
+Add a {{< gd-icon RayCast3D >}}`RayCast` child to the tank and set its *Cast To* to `(0, -2, 0)`. Don't forget to check the *Enabled* property.
 
 Since this raycast is pointing down from the exact center of the tank, we'll align with the individual surface that it collides with - the one directly beneath the tank.
 

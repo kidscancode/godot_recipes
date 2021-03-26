@@ -11,7 +11,7 @@ You want to display some text on the screen.
 
 ## Solution
 
-Sooner or later you're going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot's `Label` node is the answer.
+Sooner or later you're going to need to display some text on your screen. Examples include a title, countdown timer, score counter, and many others. For the majority of these, Godot's {{< gd-icon Label >}}`Label` node is the answer.
 
 ### Working with fonts
 
@@ -23,7 +23,7 @@ For this example, we'll use "Roboto" - a popular free font, which you can find o
 
 ### Adding a Label
 
-Add a new `Label` node to your scene. In the Inspector, you'll see the node's properties, most of which are self-explanatory (hover them with the mouse to see a description):
+Add a new {{< gd-icon Label >}}`Label` node to your scene. In the Inspector, you'll see the node's properties, most of which are self-explanatory (hover them with the mouse to see a description):
 
 ![alt](/godot_recipes/img/ui_label_properties.png)
 
@@ -51,7 +51,7 @@ You can adjust the label's font color in the *Custom Colors* section. Here you c
 
 If all you need in your scene is static text, then you're done. However, if you need to update the label dynamically, you can do so in code by using the `text` property.
 
-For example, if we had a `Timer` node in our scene, we could do the following:
+For example, if we had a {{< gd-icon Timer >}}`Timer` node in our scene, we could do the following:
 
 ```gdscript
 extends Control

@@ -23,7 +23,7 @@ To summarize, the camera will have a `trauma` property, measuring how much the c
 
 ### Trauma
 
-We'll start by implementing the camera. Make a new scene with a `Camera2D` node, name it `ShakeCamera2D`, and attach a script.
+We'll start by implementing the camera. Make a new scene with a {{< gd-icon Camera2D >}}`Camera2D` node, name it `ShakeCamera2D`, and attach a script.
 
 First, define the parameters that control the shake behavior:
 

@@ -17,12 +17,12 @@ Grid- or tile-based movement means the character's position is restricted. They 
 
 Here are the nodes we'll use for the player:
 
-- `Area2D` ("Player"): Using an `Area2D` means we can detect overlap (for picking up objects or colliding with enemies).
-  - `Sprite`: You can use a sprite sheet here (we'll set up the animation below).
-  - `CollisionShape2D`: Don't make the hitbox too big. Since the player will be standing on the center of a tile, overlaps will be from the center.
-  - `RayCast2D`: For checking if movement is possible in the given direction.
-  - `Tween`: For interpolating movement from tile to tile.
-  - `AnimationPlayer`: For playing the character's walk animation(s).
+- {{< gd-icon Area2D >}}`Area2D` ("Player"): Using an {{< gd-icon Area2D >}}`Area2D` means we can detect overlap (for picking up objects or colliding with enemies).
+  - {{< gd-icon Sprite2D >}}`Sprite`: You can use a sprite sheet here (we'll set up the animation below).
+  - {{< gd-icon CollisionShape2D >}}`CollisionShape2D`: Don't make the hitbox too big. Since the player will be standing on the center of a tile, overlaps will be from the center.
+  - {{< gd-icon RayCast2D >}}`RayCast2D`: For checking if movement is possible in the given direction.
+  - {{< gd-icon Tween >}}`Tween`: For interpolating movement from tile to tile.
+  - {{< gd-icon AnimationPlayer >}}`AnimationPlayer`: For playing the character's walk animation(s).
 
 Add some input actions to the Input Map. We'll use "up", "down", "left", and "right" for this example.
 
@@ -69,9 +69,9 @@ Here's the actual movement code. When an input event occurs, we check the four d
 
 ### Collision
 
-Now we can add some obstacles. You can add `StaticBody2D`s to manually add some obstacles (enable snapping to make sure they're aligned with the grid) or use a TileMap (with collisions defined), as in the example below.
+Now we can add some obstacles. You can add {{< gd-icon StaticBody2D >}}`StaticBody2D`s to manually add some obstacles (enable snapping to make sure they're aligned with the grid) or use a TileMap (with collisions defined), as in the example below.
 
-We'll use the `RayCast2D` to determine whether a move to the next tile is allowed.
+We'll use the {{< gd-icon RayCast2D >}}`RayCast2D` to determine whether a move to the next tile is allowed.
 
 ```gdscript
 onready var ray = $RayCast2D
@@ -101,7 +101,7 @@ onready var tween = $Tween
 export var speed = 3
 ```
 
-Add a reference to the `Tween` node and a variable to set our movement speed.
+Add a reference to the {{< gd-icon Tween >}}`Tween` node and a variable to set our movement speed.
 
 ```gdscript
 func _unhandled_input(event):

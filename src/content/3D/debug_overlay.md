@@ -11,17 +11,17 @@ You'd like visual debug information in your 3D game: a way to see vectors repres
 
 ## Solution
 
-Debug drawing in 2D is quite convenient. `CanvasItem` provides a range of primitive drawing methods to use in the `_draw()` callback. In 3D, things are not quite so simple. One solution is to use `ImmediateGeometry` to manually create meshes, but this is very cumbersome and inconvenient for quick debugging.
+Debug drawing in 2D is quite convenient. {{< gd-icon CanvasItem2D >}}`CanvasItem` provides a range of primitive drawing methods to use in the `_draw()` callback. In 3D, things are not quite so simple. One solution is to use `ImmediateGeometry` to manually create meshes, but this is very cumbersome and inconvenient for quick debugging.
 
-A better solution is to stick with the `CanvasItem` draw methods. To do so, we need to project the positions in 3D space onto the 2D viewport. Fortunately, `Camera` can do this for us using its `unproject_position()` method.
+A better solution is to stick with the `CanvasItem` draw methods. To do so, we need to project the positions in 3D space onto the 2D viewport. Fortunately, {{< gd-icon Camera3D >}}`Camera` can do this for us using its `unproject_position()` method.
 
 ### Setting up
 
-For the display layer, add a `CanvasLayer` containing a `Control` to your 3D scene and add a script to the `Control`.
+For the display layer, add a {{< gd-icon CanvasLayer >}}`CanvasLayer` containing a {{< gd-icon Control >}}`Control` to your 3D scene and add a script to the `Control`.
 
 ![alt](/godot_recipes/img/3d_debug_03.png)
 
-As an example, let's assume this drawing control has a reference to the player node, and we want to draw the node's `velocity` vector. We also have a reference to the Camera node. More about how we'll add those references later.
+As an example, let's assume this drawing control has a reference to the player node, and we want to draw the node's `velocity` vector. We also have a reference to the {{< gd-icon Camera3D >}}`Camera` node. More about how we'll add those references later.
 
 ```gdscript
 var player
@@ -75,7 +75,7 @@ func _input(event):
 I've included the code to add an input action to toggle visibility. This makes it convenient to drop this into any project without needing to edit the Input Map. We can now reference the drawing layer with `DebugOverlay.draw`.
 
 {{% notice note %}}
-You can add other debug layers here too. For example, one that displays properties as text. See **LINK**.
+You can add other debug layers here too. For example, one that displays properties as text.
 {{% /notice %}}
 
 We'll start by defining a custom object to hold all the information for the debug value we want to display.

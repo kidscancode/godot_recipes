@@ -18,7 +18,7 @@ In this recipe, we'll create a generic 2D camera with multiple touch controls:
 
 ### Setup
 
-Our camera will extend the built-in node, so add a `Camera2D` to a new scene and name it "TouchCamera". Save and attach a script.
+Our camera will extend the built-in node, so add a {{< gd-icon Camera2D >}}`Camera2D` to a new scene and name it "TouchCamera". Save and attach a script.
 
 Here are the variables we'll need:
 
@@ -69,7 +69,7 @@ Now we're ready to start adding the gestures, starting with "pan".
 You can test this gesture your computer by enabling "Emulate Touch From Mouse" in *Project Settings -> Input Devices -> Pointing*.
 {{% /notice %}}
 
-Just like mouse or keyboard events, touch events extend `InputEvent` and follow the same input priority. We'll use `_unhandled_input()` for processing so that other nodes, such as Control nodes, can process events first:
+Just like mouse or keyboard events, touch events extend `InputEvent` and follow the same input priority. We'll use `_unhandled_input()` for processing so that other nodes, such as {{< gd-icon Control >}}`Control` nodes, can process events first:
 
 ```gdscript
 func _unhandled_input(event):

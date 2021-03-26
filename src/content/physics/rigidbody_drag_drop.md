@@ -14,7 +14,7 @@ Working with rigid bodies can be tricky. Godot's physics engine controls their m
 
 ### Body setup
 
-We'll start with our rigid body object, adding a `Sprite` and `CollisionShape2D`. You can also add a `PhysicsMaterial` if you want to set _Bounce_ and _Friction_ properties.
+We'll start with our rigid body object, adding a {{< gd-icon Sprite2D >}}`Sprite` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D`. You can also add a `PhysicsMaterial` if you want to set _Bounce_ and _Friction_ properties.
 
 Place the body in a group called "pickable". We'll use this to allow for multiple instances of the pickable object in the main scene. Attach a script and connect the body's `_input_event` signal.
 
@@ -61,7 +61,7 @@ In the `drop` function, when we change back to `MODE_RIGID`, the body will be _a
 
 ### Main scene
 
-Create a main scene with some static body obstacles or a `TileMap` and instance a few copies of the pickable body.
+Create a main scene with some static body obstacles or a {{< gd-icon TileMap >}}`TileMap` and instance a few copies of the pickable body.
 
 Here's the script for the main scene:
 

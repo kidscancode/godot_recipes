@@ -7,13 +7,13 @@ ghcommentid: 19
 
 ## Problem
 
-You have a `KinematicBody2D` character colliding with a `TileMap`, and you want to know which tile it collided with.
+You have a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` character colliding with a {{< gd-icon TileMap >}}`TileMap`, and you want to know which tile it collided with.
 
 ## Solution
 
-When a `KinematicBody2D` collides, the collision data is returned in a `KinematicCollision2D` object. The `TileMap` acts as a single collider, so if you reference the `collider` property, it will be the `TileMap` node.
+When a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` collides, the collision data is returned in a `KinematicCollision2D` object. The {{< gd-icon TileMap >}}`TileMap` acts as a single collider, so if you reference the `collider` property, it will be the {{< gd-icon TileMap >}}`TileMap` node.
 
-You then need to find out which tile in the `TileMap` is at the collision location.
+You then need to find out which tile in the {{< gd-icon TileMap >}}`TileMap` is at the collision location.
 
 Assume you've obtained a `KinematicCollision2D` object stored in the variable `collision`:
 
@@ -28,7 +28,7 @@ if collision.collider is TileMap:
     var tile_id = collision.collider.get_cellv(tile_pos)
 ```
 
-Once you have the `tile_id`, you can get the tile properties from the `TileSet` resource, found in the `TileMap`'s `tile_set` property. For example, to get the name of the tile:
+Once you have the `tile_id`, you can get the tile properties from the `TileSet` resource, found in the {{< gd-icon TileMap >}}`TileMap`'s `tile_set` property. For example, to get the name of the tile:
 
 ```gdscript
     var tile_name = collision.collider.tile_set.tile_get_name(tile_id)

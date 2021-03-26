@@ -120,7 +120,7 @@ Chase
 The &amp;ldquo;Chase&amp;rdquo; state moves the enemy towards the player.</description></item><item><title>Controlling animation states</title><link>https://kidscancode.org/godot_recipes/animation/animation_state_machine/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/animation/animation_state_machine/</guid><description>Problem A common situation: you have a large number of animations, and it&amp;rsquo;s becoming difficult to manage transitions between them. Your code has become full of if statements, and every time you change something, it all breaks.
 Solution Use an AnimationTree to create an animation state machine. This will allow us to organize our animations and most importantly, control the transitions between them.
 Getting started For this demo, we&amp;rsquo;ll be using the excellent &amp;ldquo;Adventurer&amp;rdquo; sprite by Elthen.</description></item><item><title>Homing missile</title><link>https://kidscancode.org/godot_recipes/ai/homing_missile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/ai/homing_missile/</guid><description>Problem You need a &amp;ldquo;homing missile&amp;rdquo; - a projectile that will seek a moving target.
-Solution For this example, we&amp;rsquo;ll use an Area2D node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, a PhysicsBody type node might be a better choice.
+Solution For this example, we&amp;rsquo;ll use an Area2D node for the projectile. Areas are typically good choices for bullets because we need to detect when they contact something. If you also need a bullet that bounces/ricochets, one of the PhysicsBody type node might be a better choice.
 The node setup and behavior of the missile is the same you would use for a &amp;ldquo;dumb&amp;rdquo; bullet.</description></item><item><title>KinematicBody: Movement</title><link>https://kidscancode.org/godot_recipes/3d/kinematic_body/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/3d/kinematic_body/</guid><description>Problem You need a player-controlled 3D kinematic body.
 Solution For this recipe, we&amp;rsquo;ll be using this adorable tank model:
 You can grab this model on Itch.io: https://gtibo.itch.io/mini-tank or use any other model you&amp;rsquo;d like. We won&amp;rsquo;t be doing anything that&amp;rsquo;s tank-specific here.
@@ -141,11 +141,11 @@ Solution For this solution, we&amp;rsquo;re going to re-use a 2D healthbar based
 If you need some assets, here are the three images used in the bar:</description></item><item><title>Cooldown Button</title><link>https://kidscancode.org/godot_recipes/ui/cooldown_button/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/ui/cooldown_button/</guid><description>Problem You want to make RPG-style ability buttons, including a cooldown effect.
 Solution If you need art for your buttons, you can find a wide variety of well-designed buttons at Game-icons.net. We&amp;rsquo;ll be using a few from there for this recipe.
 Node setup The scene for our ability button will need the following nodes:
-┖╴TextureButton (&amp;#34;AbilityButton&amp;#34;)
-┠╴TextureProgress (&amp;#34;Sweep&amp;#34;)
-┠╴Timer
-┖╴MarginContainer (&amp;#34;Counter&amp;#34;)
-┖╴Label (&amp;#34;Value&amp;#34;)
+AbilityButton: TextureButton
+Sweep: TextureProgress
+Timer
+Counter: MarginContainer
+Value: Label
 Drop your chosen icon into the Texture property of the AbilityButton.</description></item><item><title>Customizing the Mouse Cursor</title><link>https://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/input/custom_mouse_cursor/</guid><description>Problem You want to use a custom mouse cursor.
 Solution Setting the mouse cursor is done with Input.set_custom_mouse_cursor(). All you need is a texture to use. The texture must be no larger than 256x256 pixels in size.
 For example, to use the following image:
@@ -162,7 +162,7 @@ This image shows what the bar displays when the player has 3 health.</descriptio
 Solution This recipe applies equally well in both 2D and 3D nodes.
 By default, a kinematic body moved with move_and_slide() or move_and_collide() will push any rigid bodies it collides with. This interaction ignores the rigid body&amp;rsquo;s physics properties due to the kinematic move function&amp;rsquo;s infinite_inertia parameter.
 In some cases, this might be all you need. However, if you want to avoid &amp;ldquo;glitches&amp;rdquo; such as body overlap, tunneling, and other unrealistic behavior, you&amp;rsquo;ll need to add some code for the interactions.</description></item><item><title>KinematicBody2D: align with surface</title><link>https://kidscancode.org/godot_recipes/2d/2d_align_surface/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/2d_align_surface/</guid><description>Problem You need your kinematic body to align with the surface it&amp;rsquo;s standing on.
-Solution As of Godot 3.2, there is a bug preventing KinematicBody2D&amp;rsquo;s stop_on_slope parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See GitHub for details and other suggestions regarding this issue.
+Solution As of Godot 3.2, there is a bug preventing KinematicBody2D's stop_on_slope parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See GitHub for details and other suggestions regarding this issue.
 We&amp;rsquo;ll start with a basic kinematic platform character. See the Platform character recipe for details.</description></item><item><title>Moving Platforms</title><link>https://kidscancode.org/godot_recipes/2d/moving_platforms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/moving_platforms/</guid><description>Problem You need moving platforms in your 2D platformer.
 Solution There are several ways to approach this problem. In this recipe, we&amp;rsquo;ll use KinematicBody2Ds for our platforms and move them with AnimationPlayer. This allows for a variety of movement styles while minimizing the amount of code we need to write.
 Setting up We&amp;rsquo;ll start with a basic platformer setup using the Platform character recipe. We will need to make one small modification from that recipe: using move_and_slide_with_snap() for the movement.</description></item><item><title>Score and HUD</title><link>https://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_05/</guid><description>In the last part, we added UI in the form of menus to start and configure the game. We also need a UI to display in-game information such as score.
@@ -170,16 +170,16 @@ HUD scene Add a new scene with a CanvasLayer root to be our HUD. Give it two chi
 Your scene tree should look like this:
 Set the layout of the ScoreBox to &amp;ldquo;Bottom Wide&amp;rdquo; and the Custom Constants all to 20.</description></item><item><title>Shooting projectiles</title><link>https://kidscancode.org/godot_recipes/2d/2d_shooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/2d_shooting/</guid><description>Problem You want to shoot projectiles from your player/mob/etc..
 Solution Setting up the bullet First, we&amp;rsquo;ll set up a &amp;ldquo;bullet&amp;rdquo; object that we can instance. Here are the nodes we&amp;rsquo;ll use:
-- Area2D (&amp;#34;Bullet&amp;#34;)
-- Sprite
-- CollisionShape2D
+Area2D: Bullet
+Sprite
+CollisionShape2D
 For the Sprite's texture, you can use any image you like. Here&amp;rsquo;s an example one:
 Set up the nodes and configure the sprite and collision shape. If your texture is oriented pointing up, like the one above, make sure to rotate the Sprite node by 90° so that it&amp;rsquo;s pointing to the right, ensuring it matches the parent’s “forward” direction.</description></item><item><title>Shooting projectiles</title><link>https://kidscancode.org/godot_recipes/3d/3d_shooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/3d/3d_shooting/</guid><description>Problem You want to shoot projectiles from your player/mob/etc..
 Solution For this example, we&amp;rsquo;ll use the &amp;ldquo;Mini Tank&amp;rdquo; that we set up in KinematicBody: Movement.
 Setting up the bullet First, we&amp;rsquo;ll set up a &amp;ldquo;bullet&amp;rdquo; object that we can instance. Here are the nodes we&amp;rsquo;ll use:
-- Area (&amp;#34;Bullet&amp;#34;)
-- MeshInstance
-- CollisionShape
+Area: Bullet
+MeshInstance
+CollisionShape
 For your mesh, you can use one of Godot&amp;rsquo;s built-in primitive shapes, or something like this:
 If you&amp;rsquo;d like to use the bullet model pictured here, you can grab it from Kenney&amp;rsquo;s &amp;ldquo;Weapon Pack&amp;rdquo;.</description></item><item><title>TileMap: animated tiles</title><link>https://kidscancode.org/godot_recipes/2d/tilemap_animation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/tilemap_animation/</guid><description>Problem You&amp;rsquo;d like to use animated tiles in your TileMap.
 Solution The most straightforward way to approach this problem is to use the AnimatedTexture resource.
@@ -211,7 +211,8 @@ Properties These properties are common to all joint nodes:
 Node A and Node B: The assigned physics bodies. Bias: The rate at which the joint pulls the two bodies back together if they move apart.</description></item><item><title>Conveyor Belt</title><link>https://kidscancode.org/godot_recipes/physics/conveyor_belt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/physics/conveyor_belt/</guid><description>Problem You want to make a conveyor belt object that will move bodies (kinematic or rigid).
 Solution You can make a conveyor belt object using nothing but a StaticBody2D by using its constant_linear_velocity property.
 See below for how to address this in 3D.
-Here&amp;rsquo;s an example, using nothing but a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).</description></item><item><title>Context-based steering</title><link>https://kidscancode.org/godot_recipes/ai/context_map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/ai/context_map/</guid><description>Problem You need an AI-controlled object in your game that can follow a path, avoid obstacles, and make other decisions about how to move around the world.
+Here&amp;rsquo;s an example, using a StaticBody2D and a RigidBody2D. No code was added. The static body&amp;rsquo;s Constant Linear Velocity is set to (200, 0).
+Animating the belt There are many ways to present the appearance of your conveyor belt, depending on your art assets.</description></item><item><title>Context-based steering</title><link>https://kidscancode.org/godot_recipes/ai/context_map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/ai/context_map/</guid><description>Problem You need an AI-controlled object in your game that can follow a path, avoid obstacles, and make other decisions about how to move around the world.
 Solution &amp;ldquo;Steering behavior&amp;rdquo; is the blanket term for a variety of algorithms that you can use to solve this problem. Which one you choose will depend on your game, the type of world the object lives in, and what type of &amp;ldquo;intelligence&amp;rdquo; you want it to have.</description></item><item><title>Displaying debug data</title><link>https://kidscancode.org/godot_recipes/ui/debug_overlay/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/ui/debug_overlay/</guid><description>Problem You need an easy way to display debug data on-screen.
 Solution We&amp;rsquo;ll create an overlay that any node can register a property with, and that property will be displayed in an appropriate format.
 Here&amp;rsquo;s an example of what we&amp;rsquo;re going for:

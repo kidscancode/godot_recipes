@@ -21,7 +21,7 @@ For this solution, we'll assume you have the following input actions defined:
 `"left"` | A,←
 `"click"` | Mouse button 1
 
-We will also assume you're using a `KinematicBody2D` character.
+We will also assume you're using a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` character.
 
 We can solve this problem in many ways, depending on what type of behavior you're looking for.
 

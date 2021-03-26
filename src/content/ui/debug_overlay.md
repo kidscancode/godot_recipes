@@ -17,7 +17,7 @@ Here's an example of what we're going for:
 
 ![alt](/godot_recipes/img/debug_stats_01.png)
 
-Start by adding a `MarginContainer` named `DebugStats` with a `VBoxContainer` child. Set the margins to a comfortable value (I usually use `20`).
+Start by adding a {{< gd-icon MarginContainer >}}`MarginContainer` named `DebugStats` with a {{< gd-icon VBoxContainer >}}`VBoxContainer` child. Set the margins to a comfortable value (I usually use `20`).
 
 Let's take a look at the code:
 
@@ -67,7 +67,7 @@ We begin with a custom class to encapsulate the data for the object and property
 
 * `object` - This is a reference to the object we're tracking.
 * `property` - This is in the form of a `NodePath`, meaning we can track something like `"position"`, but also `"position:x"`.
-* `label_ref` - Each property is linked to a `Label` node, this is a reference to the label so that we can set its `text`.
+* `label_ref` - Each property is linked to a {{< gd-icon Label >}}`Label` node, this is a reference to the label so that we can set its `text`.
 * `display` - This is an optional setting to configure how the value should be displayed (see below).
 
 In the `set_label()` method we build up a string to display in the label's `text` property. We include the object's name and which property we're showing, plus the value modified by the `display` option.

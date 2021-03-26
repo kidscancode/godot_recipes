@@ -20,7 +20,7 @@ If you're interested in the background behind Euler angles and the problems they
 We can avoid using 3D Euler angles in Godot by using the object's `Transform` property. This property represents the body's position *and* orientation in space. It uses a mathematical construct called a _matrix_ to do this, but you don't really need to understand the underlying math in order to make use of it.
 
 ### `look_at()`
-Let's say we have a 3D object such as a missile or arrow and you want it to point at its target. Wecan do this using the `Spatial` method `look_at()`:
+Let's say we have a 3D object such as a missile or arrow and you want it to point at its target. Wecan do this using the {{< gd-icon Node3D >}}`Spatial` method `look_at()`:
 
 ```gdscript
 func _process(delta):

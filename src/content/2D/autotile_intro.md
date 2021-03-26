@@ -7,7 +7,7 @@ ghcommentid: 23
 
 ## Problem
 
-You are using a TileMap, and want to use autotiling to more quickly draw your levels.
+You are using a {{< gd-icon TileMap >}} TileMap, and want to use autotiling to more quickly draw your levels.
 
 ## Solution
 
@@ -43,7 +43,7 @@ In a 3x3 grid there are 512 possible combinations (2^9). We can discard most of 
 
 ### Making the TileSet
 
-In your TileMap's _Tile Set_ property, select "New TileSet" and click on it to open. You'll see the TileSet editor panel open:
+In your {{< gd-icon TileMap >}}`TileMap`'s _Tile Set_ property, select "New TileSet" and click on it to open. You'll see the TileSet editor panel open:
 
 ![alt](/godot_recipes/img/autotile_frame.png)
 

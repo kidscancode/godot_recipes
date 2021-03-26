@@ -13,17 +13,17 @@ You want units in your game to have healthbars that follow them as they move.
 
 ## Solution
 
-Displaying the bar can be done with a `TextureProgress` node. This is like the `ProgressBar` node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We'll use three colored bars for this:
+Displaying the bar can be done with a {{< gd-icon TextureProgressBar >}}`TextureProgress` node. This is like the {{< gd-icon ProgressBar >}}`ProgressBar` node, but allows the use of textures for the bar itself. The length of the bar will indicate the health value, but we can also change the texture color. We'll use three colored bars for this:
 
 ![alt](/godot_recipes/img/barHorizontal_green.png)
 ![alt](/godot_recipes/img/barHorizontal_yellow.png)
 ![alt](/godot_recipes/img/barHorizontal_red.png)
 
-So that this bar can be added to any unit in the game, we'll make it a separate scene. Start with a `Node2D` and a `TextureProgress` child. Add a script to the root node.
+So that this bar can be added to any unit in the game, we'll make it a separate scene. Start with a {{< gd-icon Node2D >}}`Node2D` and a {{< gd-icon TextureProgressBar >}}`TextureProgress` child. Add a script to the root node.
 
 ![alt](/godot_recipes/img/unit_healthbar_nodes.png)
 
-Drag the green bar into the `TextureProgress` _Textures/Progress_ property and set its _Value_ to `100`. Drag the bar until it's centered and above the origin.
+Drag the green bar into the _Textures/Progress_ property and set its _Value_ to `100`. Drag the bar until it's centered and above the origin.
 
 ![alt](/godot_recipes/img/unit_healthbar_layout.png)
 

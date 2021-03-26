@@ -21,9 +21,9 @@ We can add the model to the scene, but we'll need a couple of additional nodes:
 
 ![alt](/godot_recipes/img/3d_kinematic_02.png)
 
-For the collision shape, we're just going to use a BoxShape aligned and sized with the tank's treads. `CamPos` is a `Position3D` we'll use to place our following camera. It's placed behind and above the tank, angled down.
+For the collision shape, we're just going to use a `BoxShape` aligned and sized with the tank's treads. `CamPos` is a {{< gd-icon Position3D >}}`Position3D` we'll use to place our following camera. It's placed behind and above the tank, angled down.
 
-We've also rotated the individual MeshInstance nodes `180` degrees around the **Y** axis. This is because they were modeled facing towards **+Z**, but **-Z** is the forward direction in Godot, and we don't want our tank to look like it's backwards.
+We've also rotated the individual {{< gd-icon MeshInstance3D >}}`MeshInstance` nodes `180` degrees around the **Y** axis. This is because they were modeled facing towards **+Z**, but **-Z** is the forward direction in Godot, and we don't want our tank to look like it's backwards.
 
 Before we add a script, open the "Project Settings" and add the following inputs
 on the "Input Map" tab:
@@ -89,7 +89,7 @@ Let's examine this more closely. Player input should affect horizontal movement:
 
 For the forward and back movement, we're using `transform.basis.z` so that we'll move in our body's *local* forward direction.
 
-Here's the tank in action. We've made a test scene with a `StaticBody` plane for the ground and an `InterpolatedCamera` with its *Target* set to the tank's `CamPos`.
+Here's the tank in action. We've made a test scene with a {{< gd-icon StaticBody3D >}}`StaticBody` plane for the ground and an {{< gd-icon Camera3D >}}`InterpolatedCamera` with its *Target* set to the tank's `CamPos`.
 
 <video controls src="/godot_recipes/img/3d_kinematic_03.webm"></video>
 

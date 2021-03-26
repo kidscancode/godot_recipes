@@ -11,7 +11,7 @@ You need moving platforms in your 2D platformer.
 
 ## Solution
 
-There are several ways to approach this problem. In this recipe, we'll use `KinematicBody2D`s for our platforms and move them with `AnimationPlayer`. This allows for a variety of movement styles while minimizing the amount of code we need to write.
+There are several ways to approach this problem. In this recipe, we'll use {{< gd-icon KinematicBody2D >}}`KinematicBody2D`s for our platforms and move them with {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. This allows for a variety of movement styles while minimizing the amount of code we need to write.
 
 ### Setting up
 
@@ -40,9 +40,9 @@ The platform scene contains the following nodes:
 
 The `Node2D` parent is there to act as the "anchor" or start point for the platform. We'll animate the platform's `position` relative to this parent node.
 
-Set up the Sprite's *Texture* and the collision shape appropriately. In the KinematicBody2D, set the *Sync to Physics* property "On". Since we're not moving the body in code, this ensures that it's moved during the physics step. You'll also need to set the *Process Mode* property of the AnimationPlayer to "Physics".
+Set up the {{< gd-icon Sprite2D >}}`Sprite`'s *Texture* and the collision shape appropriately. In the {{< gd-icon KinematicBody2D >}}`KinematicBody2D`, set the *Sync to Physics* property "On". Since we're not moving the body in code, this ensures that it's moved during the physics step. You'll also need to set the *Process Mode* property of the {{< gd-icon AnimationPlayer >}}`AnimationPlayer` to "Physics".
 
-To move the platform, create an animation in the `AnimationPlayer` that animates the body's `position` property. For example, here's one animating the platform horizontally in a 4 second loop:
+To move the platform, create an animation in the {{< gd-icon AnimationPlayer >}}`AnimationPlayer` that animates the body's `position` property. For example, here's one animating the platform horizontally in a 4 second loop:
 
 ![alt](/godot_recipes/img/moving_plats_02.gif)
 

@@ -11,7 +11,7 @@ You want to detect when an object enters or exits the screen.
 
 ## Solution
 
-The engine provides a node for this: `VisibilityNotifier2D`. Attach this node to your object, and you'll be able to use its `screen_entered` and `screen_exited` signals.
+The engine provides a node for this: {{< gd-icon VisibilityNotifier2D >}}`VisibilityNotifier2D`. Attach this node to your object, and you'll be able to use its `screen_entered` and `screen_exited` signals.
 
 #### Example 1
 
@@ -28,7 +28,7 @@ func _process(delta):
     position += velocity * delta
 ```
 
-To have the projectile automatically deleted when it moves offscreen, add a `VisibilityNotifier2D` and connect its `screen_exited` signal.
+To have the projectile automatically deleted when it moves offscreen, add a {{< gd-icon VisibilityNotifier2D >}}`VisibilityNotifier2D` and connect its `screen_exited` signal.
 
 ```gdscript
 func _on_VisibilityNotifier2D_screen_exited():
@@ -37,7 +37,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 #### Example 2
 
-We have an enemy that performs some actions, such as moving along a path or playing an animation. On a large map with many enemies, only a few of them will be onscreen at the same time. We can disable the enemy's actions while it's offscreen using `VisibilityNotifier2D`.
+We have an enemy that performs some actions, such as moving along a path or playing an animation. On a large map with many enemies, only a few of them will be onscreen at the same time. We can disable the enemy's actions while it's offscreen using {{< gd-icon VisibilityNotifier2D >}}`VisibilityNotifier2D`.
 
 Partial code:
 
