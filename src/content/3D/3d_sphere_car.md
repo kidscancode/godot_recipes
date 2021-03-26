@@ -13,9 +13,9 @@ You want to make an arcade-style car game, so you're looking for simplicity over
 
 ## Solution
 
-There are a lot of ways to make a driving game. Different games need different levels of realism. If you're trying to make a light, arcade-style car, you don't need all of the features that Godot's `VehicleBody` node provides, such as supension, independently modeled wheels, etc.
+There are a lot of ways to make a driving game. Different games need different levels of realism. If you're trying to make a light, arcade-style car, you don't need all of the features that Godot's {{< gd-icon VehicleBody3D >}}`VehicleBody` node provides, such as supension, independently modeled wheels, etc.
 
-Instead, we're going to use a single `RigidBody` sphere to handle the driving physics. The sphere will be invisible, and the car mesh will be placed at the sphere's location, making it look like it's the car that's driving.
+Instead, we're going to use a single {{< gd-icon RigidBody3D >}}`RigidBody` sphere to handle the driving physics. The sphere will be invisible, and the car mesh will be placed at the sphere's location, making it look like it's the car that's driving.
 
 As you can see in the preview clip above, the result looks remarkably good (and feels great to play!). Read on, and you'll see that the amount of code required is also surprisingly small.
 
@@ -32,15 +32,15 @@ You can use keyboard input, game controller, or both. However, we recommend goin
 
 ### Node setup
 
-In order to make this work, the car is split into two separate nodes: a `RigidBody` sphere for the physics, and a `MeshInstance` to display the car body.
+In order to make this work, the car is split into two separate nodes: a {{< gd-icon RigidBody3D >}}`RigidBody` sphere for the physics, and a {{< gd-icon MeshInstance3D >}}`MeshInstance` to display the car body. Here's the scene layout:
 
 ```
-- Car (Spatial)
-    - CarMesh (Imported model)
-    - Ball (RigidBody)
+Car: {{< gd-icon Node3D >}} Spatial
+    CarMesh (Imported model)
+    Ball: {{< gd-icon RigidBody3D >}} RigidBody
 ```
 
-Here's how these nodes will interact: pressing "accelerate" will apply a force on the `Ball` in the direction the `CarMesh` is facing, while the turning inputs will rotate the `CarMesh`.
+Here's how these nodes will interact: pressing "accelerate" will apply a force on the {{< gd-icon RigidBody3D >}}`Ball` in the direction the {{< gd-icon MeshInstance3D >}}`CarMesh` is facing, while the turning inputs will rotate the {{< gd-icon MeshInstance3D >}}`CarMesh`.
 
 #### CarMesh
 
@@ -63,7 +63,7 @@ Note that the wheels & body are separate meshes. This will make it easy to add s
 
 #### Ball
 
-Add a sphere `CollisionShape` to the RigidBody. We're using a radius of `1` here, but you'll want to experiment with the size of the ball to get different driving behavior.
+Add a sphere {{< gd-icon CollisionShape3D >}}`CollisionShape` to the rigid body. We're using a radius of `1` here, but you'll want to experiment with the size of the ball to get different driving behavior.
 
 Here's how to adjust the settings on the body:
 
@@ -75,7 +75,7 @@ For the demo, we've also added a mesh for debugging purposes. You don't need thi
 
 #### RayCast
 
-Finally, add a `RayCast` node as a child of the `CarMesh`. Set its _Cast To_ to `(0, -1, 0)`. As always, don't forget to check the _Enabled_ box.
+Finally, add a {{< gd-icon RayCast3D >}}`RayCast` node as a child of the {{< gd-icon MeshInstance3D >}}`CarMesh`. Set its _Cast To_ to `(0, -1, 0)`. As always, don't forget to check the _Enabled_ box.
 
 ![alt](/godot_recipes/img/3d_sphere_car_03.png)
 
@@ -117,7 +117,7 @@ var rotate_input = 0
 
 You can `export` these if you'd like to adjust them from the Inspector.
 
-We don't want the `RayCast` to collide with the ball, so we can add an exception in `_ready()`.
+We don't want the {{< gd-icon RayCast3D >}}`RayCast` to collide with the ball, so we can add an exception in `_ready()`.
 
 ```gdscript
 func _ready():
@@ -240,7 +240,7 @@ Observe the difference:
 
 #### 4. Smoke
 
-Finally, the skid looks much better with a little smoke coming from the tires. Here's an example using a `Particles` node and sphere shapes:
+Finally, the skid looks much better with a little smoke coming from the tires. Here's an example using a {{< gd-icon GPUParticles3D >}}`Particles` node and sphere shapes:
 
 <video width="500" controls src="/godot_recipes/img/3d_sphere_car_07.webm"></video>
 
@@ -266,4 +266,4 @@ Download the project file here: [https://github.com/kidscancode/3d_car_sphere](h
 
 #### Like video?
 
-<!-- {{< youtube WhwSKyGjQq0 >}} -->
+{{< youtube LqLchhxMldM >}}

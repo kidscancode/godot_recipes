@@ -4,7 +4,7 @@ weight: 1
 draft: true
 ghcommentid:
 ---
-stick2=me
+
 ## Overview
 
 Writing scripts and attaching them to nodes and other objects is how you build behavior and game mechanics into your game. For example, a `Sprite` node automatically displays an image, but to move it across the screen, you'll add a script that tells it how fast, in what direction, and so on.
@@ -66,8 +66,6 @@ Go ahead and delete the comments and let's talk about this next piece.
 Now we see a function called `_ready()`. In GDScript you define a function with the keyword "func". The `_ready()` function is a special one that Godot looks for and runs whenever a node is added to the tree, for example when we hit "Play".
 
 Let's say that when the game starts, we want to make sure the Sprite goes to a particular location. In the Inspector, we want to set the _Position_ property. Notice that it's in the section called "Node2D" - that means this is a property that *any* Node2D type node will have, not just Sprites.
-
-**img here**
 
 How do we set the property in code? One way to find the name of the property is by hovering over it in the Inspector.
 
