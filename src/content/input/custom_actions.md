@@ -11,7 +11,7 @@ You need to add actions to the InputMap at runtime.
 
 ## Solution
 
-Typically, you'll add actions to the InputMap via _Project Settings_, as shown in [Recipe: Input Actions](/godot_recipes/input/input_actions/). However, you may find yourself needing to add one or more actions directly in a script. The[InputMap singleton](https://docs.godotengine.org/en/latest/classes/class_inputmap.html) has methods to help you do this.
+Typically, you'll add actions to the InputMap via _Project Settings_, as shown in [Recipe: Input Actions](/godot_recipes/input/input_actions/). However, you may find yourself needing to add one or more actions directly in a script. The [InputMap singleton](https://docs.godotengine.org/en/latest/classes/class_inputmap.html) has methods to help you do this.
 
 Here's an example that would add a new action called "attack" using the space key:
 

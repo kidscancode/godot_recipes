@@ -7,6 +7,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Interpolated Camera](/godot_recipes/3d/interpolated_camera/)
 * [Custom Resources](/godot_recipes/basics/custom_resources/)
 * [Quick Arcade-style Car](/godot_recipes/3d/3d_sphere_car/)
 * [AI: Context-based Steering](/godot_recipes/ai/context_map)
@@ -18,4 +19,3 @@ Here you can find the most recently added recipes:
 * [UI: Displaying debug data](/godot_recipes/ui/debug_overlay/)
 * [3D: KinematicBody: Align with surface](/godot_recipes/3d/3d_align_surface/)
 * [UI: Radial popup menu](/godot_recipes/ui/radial_menu/)
-* [UI: Cooldown button](/godot_recipes/ui/cooldown_button/)
