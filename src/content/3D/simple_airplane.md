@@ -18,7 +18,7 @@ This recipe is *not* an accurate flight simulator. We are not simulating aerodyn
 
 ### Node setup
 
-We're going to use a {{< gd-icon KinematicBody3D >}}`KinematicBody` for this. Since we won't be simulating actual flight physics (lift, drag, etc.), we don't need {{< gd-icon RigidBody >}}`RigidBody` in this case.
+We're going to use a {{< gd-icon KinematicBody3D >}}`KinematicBody` for this. Since we won't be simulating actual flight physics (lift, drag, etc.), we don't need {{< gd-icon RigidBody3D >}}`RigidBody` in this case.
 
 Here's our model setup:
 
