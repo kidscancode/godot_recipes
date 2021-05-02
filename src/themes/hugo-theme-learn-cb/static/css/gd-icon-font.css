@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'godot_icons';
-  src:  url('/godot_recipes/fonts/godot_icons.eot?62ob8u');
-  src:  url('/godot_recipes/fonts/godot_icons.eot?62ob8u#iefix') format('embedded-opentype'),
-    url('/godot_recipes/fonts/godot_icons.ttf?62ob8u') format('truetype'),
-    url('/godot_recipes/fonts/godot_icons.woff?62ob8u') format('woff'),
-    url('/godot_recipes/fonts/godot_icons.svg?62ob8u#godot_icons') format('svg');
+  src:  url('/godot_recipes/fonts/godot_icons.eot?hozrpl');
+  src:  url('/godot_recipes/fonts/godot_icons.eot?hozrpl#iefix') format('embedded-opentype'),
+    url('/godot_recipes/fonts/godot_icons.ttf?hozrpl') format('truetype'),
+    url('/godot_recipes/fonts/godot_icons.woff?hozrpl') format('woff'),
+    url('/godot_recipes/fonts/godot_icons.svg?hozrpl#godot_icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,68 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.gd-PathFollow3D:before {
+  content: "\ea17";
+  color: #fc9c9c;
+}
+.gd-PathFollow2D:before {
+  content: "\ea18";
+  color: #a5b7f3;
+}
+.gd-DampedSpringJoint2D1 .path1:before {
+  content: "\e9f5";
+  color: rgb(112, 140, 234);
+  opacity: 0.9766;
+}
+.gd-DampedSpringJoint2D1 .path2:before {
+  content: "\e9f6";
+  margin-left: -1em;
+  color: rgb(165, 183, 243);
+  opacity: 0.9766;
+}
+.gd-Curve3D:before {
+  content: "\e9f7";
+  color: #e0e0e0;
+}
+.gd-Curve2D:before {
+  content: "\e9f8";
+  color: #e0e0e0;
+}
+.gd-CanvasItem:before {
+  content: "\e9f9";
+  color: #e0e0e0;
+}
+.gd-CanvasLayer:before {
+  content: "\ea12";
+  color: #e0e0e0;
+}
+.gd-ColorRect1 .path1:before {
+  content: "\ea13";
+  color: rgb(165, 239, 172);
+}
+.gd-ColorRect1 .path2:before {
+  content: "\ea14";
+  margin-left: -1em;
+  color: rgb(112, 191, 255);
+}
+.gd-ColorRect1 .path3:before {
+  content: "\ea15";
+  margin-left: -1em;
+  color: rgb(255, 112, 112);
+}
+.gd-ColorRect1 .path4:before {
+  content: "\ea16";
+  margin-left: -1em;
+  color: rgb(122, 255, 112);
+}
+.gd-Path2D:before {
+  content: "\e94e";
+  color: #a5b7f3;
+}
+.gd-Path3D:before {
+  content: "\e9c7";
+  color: #fc9c9c;
+}
 .gd-YSort:before {
   content: "\e900";
   color: #a5b7f3;

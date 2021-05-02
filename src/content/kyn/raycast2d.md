@@ -10,7 +10,7 @@ ghcommentid: 87
 
 ### Node properties
 
-Let's add a {{< gd-icon RayCast2D >}}`RayCast2D` node and take a look at the Inspector:
+Add a {{< gd-icon RayCast2D >}}`RayCast2D` node and take a look at the Inspector:
 
 ![alt](/godot_recipes/img/kyn_raycast2d_01.png)
 
@@ -94,3 +94,13 @@ func _physics_process(delta):
 Here's what it looks like in action:
 
 ![alt](/godot_recipes/img/kyn_raycast2d_04.gif)
+
+<!-- ## Related recipes
+
+- [Interpolated Camera](/godot_recipes/3d/interpolated_camera/)
+- [Inputs: Introduction](/godot_recipes/input/input_intro/)
+- [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/) -->
+
+<!-- #### Like video?
+
+{{< youtube Lx2d5cgMj5U >}} -->

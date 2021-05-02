@@ -1,15 +1,15 @@
 ---
 title: "GDScript: Getting started"
 weight: 1
-draft: true
-ghcommentid:
+draft: false
+ghcommentid: 90
 ---
 
 ## Overview
 
 Writing scripts and attaching them to nodes and other objects is how you build behavior and game mechanics into your game. For example, a `Sprite` node automatically displays an image, but to move it across the screen, you'll add a script that tells it how fast, in what direction, and so on.
 
-You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them.
+You can think of it as the coding version of using the Inspector - GDScript knows all about Godot nodes and how to access them, plus it allows you to change them dynamically.
 
 GDScript is Godot's built-in language for scripting and interacting with nodes. The [GDScript documentation](https://docs.godotengine.org/en/latest/getting_started/scripting/gdscript/gdscript_basics.html) on the Godot website is a great place to get an overview of the language, and I highly recommend taking the time to read through it.
 
@@ -27,7 +27,7 @@ you find yourself struggling with the code in this section, you may find that wo
 
 The first line of any GDScript file must be `extends <Class>`, where `<Class>` is some existing built-in or user-defined class. For example, if you're attaching a script to a `KinematicBody2D` node, then your script would start with `extends KinematicBody2D`. This states that your script is taking all the functionality of the built-in `KinematicBody2D` object and *extending* it with additional functionality created by you.
 
-In the rest of the script, you can define any number of variables ("class properties") and functions ("class methods").
+In the rest of the script, you can define any number of variables (aka "class properties") and functions (aka "class methods").
 
 ## Creating a script
 
@@ -37,7 +37,7 @@ Open the editor and add a `Sprite` node to empty scene. Right-click on the new n
 
 ![alt](/godot_recipes/img/gds_01_attach.png?width=250)
 
-Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it.
+Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it (so unless you've changed anything this script will likely be called "Sprite.gd").
 
 Now the script editor window opens up, and this is your new, empty sprite script. Godot has automatically included some lines of code, as well as some comments describing what they do.
 

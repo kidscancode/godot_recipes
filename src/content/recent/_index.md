@@ -7,6 +7,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Add "Know Your Nodes" section](/godot_recipes/kyn/)
 * [Simplified Airplane Controller](/godot_recipes/3d/simple_airplane/)
 * [Interpolated Camera](/godot_recipes/3d/interpolated_camera/)
 * [Custom Resources](/godot_recipes/basics/custom_resources/)
@@ -16,6 +17,3 @@ Here you can find the most recently added recipes:
 * [3D: Smooth rotation](/godot_recipes/3d/rotate_interpolate/)
 * [2D: Multitarget camera](/godot_recipes/2d/multi_target_camera/)
 * [2D: Draw trajectory](/godot_recipes/2d/2d_draw_trajectory/)
-* [2D: Ballistic bullet](/godot_recipes/2d/ballistic_bullet/)
-* [UI: Displaying debug data](/godot_recipes/ui/debug_overlay/)
-* [3D: KinematicBody: Align with surface](/godot_recipes/3d/3d_align_surface/)
