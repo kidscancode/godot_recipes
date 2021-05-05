@@ -1,6 +1,6 @@
 ---
 title: "Path2D & PathFollow2D"
-draft: true
+draft: false
 ghcommentid:
 ---
 
