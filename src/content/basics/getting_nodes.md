@@ -7,7 +7,7 @@ ghcommentid: 11
 
 ## Problem
 
-It's probably the most common error seen in the Godot help channels: an invalid node reference. Most often, it results in the following error:
+It's probably the most common problem seen in the Godot help channels: an invalid node reference. Most often, it appears as the following error message:
 
 > Invalid get index 'position' (on base: 'null instance').
 

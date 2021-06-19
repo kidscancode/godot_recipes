@@ -294,6 +294,6 @@ Download the project file here: [airplane_test.zip](/godot_recipes/files/airplan
 - [Inputs: Introduction](/godot_recipes/input/input_intro/)
 - [KinematicBody: Movement](/godot_recipes/3d/kinematic_body/)
 
-<!-- #### Like video?
+#### Like video?
 
-{{< youtube Lx2d5cgMj5U >}} -->
+{{< youtube RsrwmAme_WA >}}

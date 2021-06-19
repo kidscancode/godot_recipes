@@ -1,10 +1,10 @@
 ---
 title: "Path2D & PathFollow2D"
 draft: false
-ghcommentid:
+ghcommentid: 94
 ---
 
-## {{< gd-icon Path2D >}}`Path2D & PathFollow2D`
+## {{< gd-icon Path2D >}}`Path2D & {{< gd-icon PathFollow2D >}} PathFollow2D`
 
 A *path* is a sequence of points in 2D space, defined by a {{< gd-icon Curve2D >}}`Curve2D` resource. The {{< gd-icon Path2D >}}`Path2D` is a node that allows you to position a path in 2D space, and do create a new path in the editor.
 
@@ -16,7 +16,7 @@ The data of the path is held in this Resource object. It contains the mathematic
 
 * `add_point()` / `remove_point()` / `clear_points()`
 
-If you need to manipulate the paths points in code, these functions will help you.
+If you need to manipulate the path's points in code, these functions will help you.
 
 * `get_closest_point()`
 

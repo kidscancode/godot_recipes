@@ -7,6 +7,9 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Know Your Nodes: YSort](/godot_recipes/kyn/ysort/)
+* [Know Your Nodes: RayCast2D](/godot_recipes/kyn/raycast2d/)
+* [Know Your Nodes: Path2D & PathFollow2D](/godot_recipes/kyn/path2d/)
 * [Add "Know Your Nodes" section](/godot_recipes/kyn/)
 * [Simplified Airplane Controller](/godot_recipes/3d/simple_airplane/)
 * [Interpolated Camera](/godot_recipes/3d/interpolated_camera/)
@@ -15,5 +18,3 @@ Here you can find the most recently added recipes:
 * [AI: Context-based Steering](/godot_recipes/ai/context_map)
 * [3D Kinematic Car: Base](/godot_recipes/3d/kinematic_car/car_base/)
 * [3D: Smooth rotation](/godot_recipes/3d/rotate_interpolate/)
-* [2D: Multitarget camera](/godot_recipes/2d/multi_target_camera/)
-* [2D: Draw trajectory](/godot_recipes/2d/2d_draw_trajectory/)

@@ -16,13 +16,14 @@ There are as many solutions to this problem as there are game projects. A lot wi
 
 Often, beginners will organize their projects like this:
 
-```markdown
+![alt](/godot_recipes/img/organize_01.png)
+<!-- ```markdown
 - res://
     - scenes
     - scripts
     - images
     - ...
-```
+``` -->
 
 **Don't do this!** Putting all your `.gd` files in the same folder may seem like it's organized, but as your project grows, it will become difficult to find what you're looking for in a folder full of scripts.
 
@@ -30,6 +31,9 @@ Often, beginners will organize their projects like this:
 
 One common solution is to divide your project files into a hierarchy folders based on their game function. Your folders might look something like this:
 
+![alt](/godot_recipes/img/organize_02.png)
+
+<!--
 ```markdown
 - res://
     - assets
@@ -43,9 +47,9 @@ One common solution is to divide your project files into a hierarchy folders bas
         - maps
     - UI
     - ...
-```
+``` -->
 
-In this system, you place any files that share a common purpose in the same location. In a large project, this can be vital, as the number of files can grow too large to manage otherwise.
+In this system, you place any files that share a common purpose, such as scenes and scripts, in the same location. In a large project, this can be vital, as the number of files can grow too large to manage otherwise.
 
 ### Planning for reusability
 
