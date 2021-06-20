@@ -88,12 +88,12 @@ Next, we need to handle a drag that comes after the touch:
     if event is InputEventScreenDrag:
         events[event.index] = event
         if events.size() == 1:
-            position += event.relative * zoom.x
+            position += event.relative.rotated(rotation) * zoom.x
 ```
 
 If we get a drag event, we also add to the dictionary. Note that this will be *updating* the value - index `0` was already there from the first touch event, for example, and has now become a drag event.
 
-If there's only one event active, then this must be a one-finger drag, and we can adjust our camera's position accordingly. Note that we need to scale the movement based on the current `zoom`, or else our drag movement will be disproportionately large when zoomed in and small when zoomed out.
+If there's only one event active, then this must be a one-finger drag, and we can adjust our camera's position accordingly. Note that we need to scale the movement based on the current `zoom`, or else our drag movement will be disproportionately large when zoomed in and small when zoomed out. Similarly, if the camera is rotated, that rotation should be applied to the relative value as well so that the drag moves the camera in the correct direction.
 
 Here's an example captured directly from a mobile device. The yellow circle indicates the touch location.
 
@@ -111,7 +111,7 @@ A "pinch" gesture will trigger the camera to zoom. This happens when we detect *
 if event is InputEventScreenDrag:
     events[event.index] = event
     if events.size() == 1:
-        position += event.relative * zoom.x
+        position += event.relative.rotated(rotation) * zoom.x
 
     elif events.size() == 2:
         var drag_distance = events[0].position.distance_to(events[1].position)
@@ -168,7 +168,7 @@ func _unhandled_input(event):
     if event is InputEventScreenDrag:
         events[event.index] = event
         if events.size() == 1:
-            position += event.relative * zoom.x
+            position += event.relative.rotated(rotation) * zoom.x
         elif events.size() == 2:
             var drag_distance = events[0].position.distance_to(events[1].position)
             if abs(drag_distance - last_drag_distance) > zoom_sensitivity:
