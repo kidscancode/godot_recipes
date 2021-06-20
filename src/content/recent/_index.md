@@ -7,6 +7,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Arcade-style 3D Spaceship](/godot_recipes/3d/spaceship)
 * [Know Your Nodes: YSort](/godot_recipes/kyn/ysort/)
 * [Know Your Nodes: RayCast2D](/godot_recipes/kyn/raycast2d/)
 * [Know Your Nodes: Path2D & PathFollow2D](/godot_recipes/kyn/path2d/)

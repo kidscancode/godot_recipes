@@ -21,3 +21,8 @@ disqusShortname = "kidscancode"
 
 [minify]
   minifyOutput = true
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-tags'></i>&nbsp;Tags"
+url = "/tags"
+weight = 30

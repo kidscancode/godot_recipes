@@ -3,7 +3,9 @@ title: "Arcade-style Spaceship"
 weight: 9
 draft: false
 ghcommentid: 97
+tags: []
 ---
+
 ## Problem
 
 You want to make a 3D spaceship that flies in an arcade/cinematic way. You're not looking for realistic physics, but more of a dog-fighting, "Star Wars"-style of spaceflight.
@@ -13,7 +15,7 @@ You want to make a 3D spaceship that flies in an arcade/cinematic way. You're no
 To accomplish this, we'll use a {{< gd-icon KinematicBody3D >}} `KinematicBody` for the ship. The three axis inputs (*pitch*, *roll*, and *yaw*) will rotate the body's `basis` around the corresponding axis. The direction of motion will always point forward.
 
 {{% notice note %}}
-You can do this with {{< gd-icon RigidBody3D >}} `RigidBody` and get the same results. See the example project, which includes a rigid body version.
+You can do this with {{< gd-icon RigidBody3D >}} `RigidBody` and get the same results. See the example project linked below, which includes a rigid body version as well.
 {{% /notice %}}
 
 ### Assets
