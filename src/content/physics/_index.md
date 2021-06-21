@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-atom fa-fw'></i>&nbsp"
 +++
 
-# <i class="fas fa-atom"></i> Physics
+# <i class="fas fa-atom"></i>&nbsp;Physics
 
 Learn how to use Godot's physics nodes.
 

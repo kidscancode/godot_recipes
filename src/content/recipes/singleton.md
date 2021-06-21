@@ -1,7 +1,7 @@
 ---
 title: "Autoloads/ Singletons"
 weight: 2
-draft: true
+draft: false
 ghcommentid: 98
 tags: []
 ---

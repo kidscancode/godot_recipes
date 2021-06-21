@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-film fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-film'></i> Animation
+# <i class='fas fa-film'></i>&nbsp;Animation
 
 Using Godot's animation system.
 

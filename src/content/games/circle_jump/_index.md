@@ -6,7 +6,7 @@ draft: false
 pre: "<i class='far fa-circle fa-fw'></i>&nbsp"
 ---
 
-# <i class="far fa-circle"></i> Circle Jump
+# <i class="far fa-circle"></i>&nbsp;Circle Jump
 
 ### An end-to-end game development series.
 

@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-cube fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-cube'></i> 3D
+# <i class='fas fa-cube'></i>&nbsp;3D
 
 Tips, tricks, and tutorials on the 3D side of game development.
 

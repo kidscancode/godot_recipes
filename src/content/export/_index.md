@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-file-export fa-fw'></i>&nbsp"
 +++
 
-# <i class="fas fa-file-export"></i> Exporting
+# <i class="fas fa-file-export"></i>&nbsp;Exporting
 
 Building and exporting your project for PC, web, or mobile.
 

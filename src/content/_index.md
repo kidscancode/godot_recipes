@@ -4,7 +4,7 @@ date: 2019-04-09T22:57:31-07:00
 draft: false
 ---
 
-# <i class='fas fa-utensils'></i> Godot Recipes
+# <i class='fas fa-utensils'></i>&nbsp;Godot Recipes
 
 > Godot's nodes are your ingredients. What can you cook up?
 

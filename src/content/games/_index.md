@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-chess-pawn fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-chess-pawn'></i> Games
+# <i class='fas fa-chess-pawn'></i>&nbsp;Games
 
 Demo games and tutorials.
 

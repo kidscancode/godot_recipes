@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-project-diagram fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-project-diagram'></i> AI/Behavior
+# <i class='fas fa-project-diagram'></i>&nbsp;AI/Behavior
 
 Automated behavior and (sometimes) smarter entities.
 

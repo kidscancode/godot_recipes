@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-box-open'></i>&nbsp"
 +++
 
-# <i class="fas fa-box-open"></i> Misc
+# <i class="fas fa-box-open"></i>&nbsp;Misc
 
 Other recipes that just don't fit in anywhere else.
 

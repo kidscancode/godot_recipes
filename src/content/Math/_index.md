@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-rocket fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-rocket'></i> Gamedev Math
+# <i class='fas fa-rocket'></i>&nbsp;Gamedev Math
 
 Math is a big part of game development. Some of it you may remember from school,
 or it may be something you've never encountered before. Here you'll find guides

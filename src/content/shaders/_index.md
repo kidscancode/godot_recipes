@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-draw-polygon fa-fw'></i>&nbsp"
 +++
 
-# <i class='fas fa-draw-polygon'></i> Shaders
+# <i class='fas fa-draw-polygon'></i>&nbsp;Shaders
 
 Deep voodoo. Cool effects.
 

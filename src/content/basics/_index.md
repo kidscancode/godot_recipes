@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='fas fa-toolbox fa-fw'></i>&nbsp"
 +++
 
-# <i class="fas fa-toolbox"></i> Basics
+# <i class="fas fa-toolbox"></i>&nbsp;Basics
 
 Basic Godot tips and tricks that apply to any project.
 

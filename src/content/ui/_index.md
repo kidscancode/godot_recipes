@@ -6,7 +6,7 @@ chapter = true
 pre = "<i class='far fa-window-maximize fa-fw'></i>&nbsp"
 +++
 
-# <i class='far fa-window-maximize'></i> UI
+# <i class='far fa-window-maximize'></i>&nbsp;UI
 
 Building user interfaces.
 
