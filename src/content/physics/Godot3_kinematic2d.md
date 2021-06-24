@@ -1,9 +1,13 @@
 ---
 title: "Using KinematicBody2D"
 weight: 1
-draft: false
+draft: true
 ghcommentid: 68
 ---
+
+{{% notice note %}}
+This tutorial was written prior to Godot Recipes. Its format will eventually be updated to match the rest of the docs on this site.
+{{% /notice %}}
 
 Godot offers a number of collision objects to provide both collision detection and response. Trying to decide which one to use for your project can be confusing. You can avoid problems and simplify development if you understand how each each works and what their pros and cons are. In this tutorial, we'll look at the `KinematicBody2D` node and show some examples of how it can be used.
 

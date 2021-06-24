@@ -1,7 +1,7 @@
 ---
 title: "Using Rigid Bodies"
 weight: 1
-draft: false
+draft: true
 ---
 
 {{% notice note %}}
