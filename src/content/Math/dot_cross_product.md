@@ -56,4 +56,4 @@ Consider this animation, showing how the results of `Vector2.dot()` and `Vector2
 This demonstrates two common applications of these methods. If the red vector is our object's forward direction, and the green shows the direction towards another object:
 
 * Dot product: Using the result, we can tell if the object is in front of (`> 0`) or behind (`< 0`) us.
-* Cross product: Using the result, we can tell if the object is to the left (`< 0`) or right (`> 0`).
+* Cross product: Using the result, we can tell if the object is to the left (`> 0`) or right (`< 0`).
