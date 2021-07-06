@@ -84,6 +84,6 @@ func _process(delta):
 
 - [Top-down Movement](/godot_recipes/2d/topdown_movement/)
 
-<!-- #### Like video?
+#### Like video?
 
-{{< youtube  >}} -->
+{{< youtube gEx_Fmf-MhU >}}
