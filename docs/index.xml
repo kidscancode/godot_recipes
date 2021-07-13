@@ -196,7 +196,11 @@ Place the orbiting sprite in a child node of the main sprite (we&amp;rsquo;re ca
 extends Node2D
 export var rotation_speed = PI
 func _process(delta):
-$Sprite/Pivot.</description></item><item><title>Screen Shake</title><link>https://kidscancode.org/godot_recipes/2d/screen_shake/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/screen_shake/</guid><description>Problem You want to create a &amp;ldquo;screen shake&amp;rdquo; effect.
+$Sprite/Pivot.</description></item><item><title>Rolling Cube</title><link>https://kidscancode.org/godot_recipes/3d/rolling_cube/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/3d/rolling_cube/</guid><description>Problem You want to make a rolling cube in 3D.
+Solution Rolling a cube is trickier than it seems. You can&amp;rsquo;t just rotate the cube around its center:
+Instead, the cube needs to be rotated around its bottom edge.
+Here&amp;rsquo;s the tricky part: which bottom edge? It depends on which direction the cube is rolling.
+In preparing this recipe, I experimented with a few different solutions to this problem:</description></item><item><title>Screen Shake</title><link>https://kidscancode.org/godot_recipes/2d/screen_shake/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/2d/screen_shake/</guid><description>Problem You want to create a &amp;ldquo;screen shake&amp;rdquo; effect.
 Solution The &amp;ldquo;screen shake&amp;rdquo; effect is a popular way to add a dynamic feel to your game. When used well, it adds a lot of appeal. When misused, players hate it. Keep this in mind when adding it to your game and use wisely.
 The effect is quite simple: when an event occurs - an explosion, a heavy object hitting an obstacle, etc.</description></item><item><title>Sound and Colors</title><link>https://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kidscancode.org/godot_recipes/games/circle_jump/circle_jump_06/</guid><description>Settings singleton First, we&amp;rsquo;ll add a new script by choosing File -&amp;gt; New Script in the script tab. Name the script settings.gd.
 In this script we&amp;rsquo;ll place the configuration settings for the game.

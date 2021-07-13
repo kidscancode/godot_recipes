@@ -28,7 +28,7 @@ If you also wanted to add the left mouse button to the same action:
 ```gdscript
 ev = InputEventMouseButton.new()
 ev.button_index = BUTTON_LEFT
-InputMap.action_add_event("jump", ev)
+InputMap.action_add_event("attack", ev)
 ```
 
 {{% notice note %}}
