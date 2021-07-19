@@ -7,6 +7,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Rolling Cube](/godot_recipes/3d/rolling_cube/)
 * [8-Directional Movement/Animation](/godot_recipes/2d/8_direction/)
 * [Know Your Nodes: RigidBody2D](/godot_recipes/kyn/rigidbody2d/)
 * [Arcade-style 3D Spaceship](/godot_recipes/3d/spaceship)
@@ -18,4 +19,3 @@ Here you can find the most recently added recipes:
 * [Interpolated Camera](/godot_recipes/3d/interpolated_camera/)
 * [Custom Resources](/godot_recipes/basics/custom_resources/)
 * [Quick Arcade-style Car](/godot_recipes/3d/3d_sphere_car/)
-* [AI: Context-based Steering](/godot_recipes/ai/context_map)

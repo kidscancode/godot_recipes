@@ -84,14 +84,15 @@ onready var tween = $Tween
 
 
 func _physics_process(_delta):
-    if Input.is_action_pressed("right"):
-        roll(Vector3.RIGHT)
-    if Input.is_action_pressed("left"):
-        roll(Vector3.LEFT)
+    var forward = Vector3.FORWARD
     if Input.is_action_pressed("up"):
-        roll(Vector3.FORWARD)
+        roll(forward)
     if Input.is_action_pressed("down"):
-        roll(Vector3.BACK)
+        roll(-forward)
+    if Input.is_action_pressed("right"):
+        roll(forward.cross(Vector3.UP))
+    if Input.is_action_pressed("left"):
+        roll(-forward.cross(Vector3.UP))
 
 
 func roll(dir):

@@ -1,6 +1,6 @@
 ---
 title: "Noise"
-weight: 3
+weight: 5
 draft: false
 ghcommentid: 66
 ---
