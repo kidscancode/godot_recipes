@@ -189,4 +189,4 @@ Download the project file here: [2d_touch_camera.zip](/godot_recipes/files/2d_to
 
 #### Like video?
 
-{{< youtube -jRMhJSwd-Xw >}}
+{{< youtube jRMhJSwd-Xw >}}
