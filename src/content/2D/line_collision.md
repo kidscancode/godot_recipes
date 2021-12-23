@@ -62,6 +62,10 @@ func _ready():
         s.extents = Vector2(length / 2, 5)
         new_shape.shape = s
 ```
+{{% notice note %}}
+Download the project file here: [2d_line_collision.zip](/godot_recipes/files/2d_line_collision.zip)
+{{% /notice %}}
+
 
 ## Related recipes
 
