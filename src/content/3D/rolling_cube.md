@@ -133,6 +133,10 @@ func _on_Tween_tween_step(_object, _key, _elapsed, _value):
     pivot.transform = pivot.transform.orthonormalized()
 ```
 
+{{% notice note %}}
+Alternatively, you can call `set_disable_scale(true)` on the pivot node).
+{{% /notice %}}
+
 If your cube's texture isn't symmetrical, you may notice that it's resetting after every roll. To preserve the rotation of the mesh, add the following:
 
 In *Step 1*
