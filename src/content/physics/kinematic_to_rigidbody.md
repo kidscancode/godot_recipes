@@ -60,8 +60,8 @@ func _physics_process(delta):
     # after calling move_and_slide()
     for index in get_slide_count():
         var collision = get_slide_collision(index)
-            if collision.collider.is_in_group("bodies"):
-                collision.collider.apply_central_impulse(-collision.normal * push)
+        if collision.collider.is_in_group("bodies"):
+            collision.collider.apply_central_impulse(-collision.normal * push)
 ```
 
 The collision normal points *out* of the rigid body, so we reverse it to point away from the character and apply the `push` factor. Now pushing works again, but it won't force the rigid bodies through walls:

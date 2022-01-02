@@ -17,8 +17,8 @@ You want to have collisions with a {{< gd-icon Line2D >}}`Line2D`.
 Add the following nodes to your scene, and draw your line as desired:
 
 ```
-{{< gd-icon Line2D >}}`Line2D`
-    {{< gd-icon StaticBody2D >}}`StaticBody2D`
+{{< gd-icon Line2D >}} Line2D
+    {{< gd-icon StaticBody2D >}} StaticBody2D
 ```
 
 Don't add a collision shape to the body yet!
