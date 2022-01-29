@@ -58,9 +58,9 @@ By itself, a {{< gd-icon Path2D >}}`Path2D` doesn't have much functionality. In 
 
 Most useful properties:
 
-* `offset` and `unit_offset` - these properties represent the distance along the path relative to the beginning. `offset` is measured in pixels while `unit_offset` is a percentage (eg `0` is the start, `.05` is halfway, `1.0` is the end)
+* `offset` and `unit_offset` - these properties represent the distance along the path relative to the beginning. `offset` is measured in pixels while `unit_offset` is a percentage (eg `0` is the start, `.5` is halfway, `1.0` is the end)
 
-* `rotate` - this boolen determines whether the node should rotate as it moves along the path.
+* `rotate` - this boolean determines whether the node should rotate as it moves along the path.
 
 * `loop` - if this boolean is `true`, then offsets greater than the path length will "wrap around". Use this if you want a repeatable path.
 

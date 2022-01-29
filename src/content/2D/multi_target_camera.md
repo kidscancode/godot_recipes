@@ -51,7 +51,7 @@ These settings will let you adjust the camera's behavior. We'll `lerp()` all cam
 
 Maximum and minimum zoom values will also depend on the size of objects in your game and how close or far you want to get.
 
-Finally, the `margin` property is going to add some extra space around the targets so they're not right on the edge of the viewable area.
+The `margin` property is going to add some extra space around the targets so they're not right on the edge of the viewable area.
 
 Lastly, we have our array of targets and we get the viewport size so that we can properly calculate the scale.
 
@@ -62,7 +62,7 @@ func add_target(t):
 
 func remove_target(t):
     if t in targets:
-        targets.remove(t)
+        targets.erase(t)
 ```
 
 For adding and removing targets, we have two helper functions. You can use these during gameplay to change what targets are being tracked ("Player 3 has entered the game!"). Note that we don't want to have the same target tracked twice, so we reject it if it's already there.
@@ -151,7 +151,7 @@ func add_target(t):
 
 func remove_target(t):
     if t in targets:
-        targets.remove(t)
+        targets.erase(t)
 ```
 
 {{% notice note %}}
