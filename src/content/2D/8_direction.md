@@ -40,7 +40,7 @@ func _process(delta):
 
     var mouse = get_local_mouse_position()
     a = stepify(mouse.angle(), PI/4) / (PI/4)
-    a = wrapi(int(a), 0, 8)
+    a = posmod(int(a), 8)
 
     if Input.is_action_pressed("left_mouse") and mouse.length() > 10:
         current_animation = "run"
@@ -58,19 +58,10 @@ If you're using keyboard controls instead of mouse, you can get the angle of mov
 ```gdscript
 func _process(delta):
     current_animation = "idle"
-    var input_dir = Vector2.ZERO
-    if Input.is_action_pressed("right"):
-        input_dir.x += 1
-    if Input.is_action_pressed("left"):
-        input_dir.x -= 1
-    if Input.is_action_pressed("down"):
-        input_dir.y += 1
-    if Input.is_action_pressed("up"):
-        input_dir.y -= 1
-    input_dir = input_dir.normalized()
+    var input_dir = Input.get_vector("left", "right", "up", "down").normalized()
     if input_dir.length() != 0:
         a = input_dir.angle() / (PI/4)
-        a = wrapi(int(a), 0, 8)
+        a = posmod(int(a), 8)
         current_animation = "run"
     move_and_slide(input_dir * speed)
 
