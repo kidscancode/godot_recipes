@@ -46,7 +46,7 @@ Here's how these nodes will interact: pressing "accelerate" will apply a force o
 
 Here's the car model we'll use:
 
-![alt](/3.x/img/3d_sphere_car_02.png)
+![alt](/godot_recipes/3.x/img/3d_sphere_car_02.png)
 
 {{% notice note %}}
 You can find this and other car models in Kenney's "Car Kit", available here:
@@ -57,7 +57,7 @@ If you use the GLTF models, you shouldn't have adjust anything in the import set
 
 Here's what the node tree looks like when importing the "suv" model:
 
-![alt](/3.x/img/3d_sphere_car_04.png)
+![alt](/godot_recipes/3.x/img/3d_sphere_car_04.png)
 
 Note that the wheels & body are separate meshes. This will make it easy to add some visual appeal - like turning the wheels when steering.
 
@@ -77,7 +77,7 @@ For the demo, we've also added a mesh for debugging purposes. You don't need thi
 
 Finally, add a {{< gd-icon RayCast3D >}}`RayCast` node as a child of the {{< gd-icon MeshInstance3D >}}`CarMesh`. Set its _Cast To_ to `(0, -1, 0)`. As always, don't forget to check the _Enabled_ box.
 
-![alt](/3.x/img/3d_sphere_car_03.png)
+![alt](/godot_recipes/3.x/img/3d_sphere_car_03.png)
 
 We're going to use this for ground detection. When the car's in the air, steering and acceleration won't work. We can also use it to align the car mesh to a slope (if your game's track isn't flat).
 
@@ -177,7 +177,7 @@ You should try playing again at this point. You'll be able to control the car an
 
 #### 1. Align with slopes
 
-If you've tried driving on a slope, you've seen that the car mesh doesn't tilt at all, it always remains level. That looks unnatural, so let's use the process described in [KinematicBody: Align with Surface](/3.x/3d/3d_align_surface/) to fix that.
+If you've tried driving on a slope, you've seen that the car mesh doesn't tilt at all, it always remains level. That looks unnatural, so let's use the process described in [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/) to fix that.
 
 Add this code after rotating the mesh in `_process()`:
 
@@ -214,7 +214,7 @@ And right after getting input, add the following:
     left_wheel.rotation.y = rotate_input
 ```
 
-![alt](/3.x/img/3d_sphere_car_05.gif)
+![alt](/godot_recipes/3.x/img/3d_sphere_car_05.gif)
 
 #### 3. Tilt the body
 
@@ -236,7 +236,7 @@ body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 
 Observe the difference:
 
-![alt](/3.x/img/3d_sphere_car_06.gif)
+![alt](/godot_recipes/3.x/img/3d_sphere_car_06.gif)
 
 #### 4. Smoke
 
@@ -262,7 +262,7 @@ Download the project file here: [https://github.com/kidscancode/3d_car_sphere](h
 ## Related recipes
 
 - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/)
-- [KinematicBody: Align with Surface](/3.x/3d/3d_align_surface/)
+- [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/)
 
 #### Like video?
 

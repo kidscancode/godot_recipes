@@ -11,7 +11,7 @@ You need to add actions to the InputMap at runtime.
 
 ## Solution
 
-Typically, you'll add actions to the InputMap via _Project Settings_, as shown in [Recipe: Input Actions](/3.x/input/input_actions/). However, you may find yourself needing to add one or more actions directly in a script. The [InputMap singleton](https://docs.godotengine.org/en/latest/classes/class_inputmap.html) has methods to help you do this.
+Typically, you'll add actions to the InputMap via _Project Settings_, as shown in [Recipe: Input Actions](/godot_recipes/3.x/input/input_actions/). However, you may find yourself needing to add one or more actions directly in a script. The [InputMap singleton](https://docs.godotengine.org/en/latest/classes/class_inputmap.html) has methods to help you do this.
 
 Here's an example that would add a new action called "attack" using the space key:
 
@@ -37,7 +37,7 @@ InputMap.action_add_event("attack", ev)
 
 ### Practical Example
 
-Let's say you've made the platform character from [Recipe: Platform character](/3.x/2d/platform_character/) and you want to re-use it in another project. If you saved the scene, script, and assets in a single folder, you need only copy that folder to your new project. But you'd still need to edit the Input Map in order for the inputs to work.
+Let's say you've made the platform character from [Recipe: Platform character](/godot_recipes/3.x/2d/platform_character/) and you want to re-use it in another project. If you saved the scene, script, and assets in a single folder, you need only copy that folder to your new project. But you'd still need to edit the Input Map in order for the inputs to work.
 
 Instead, you could add the following code to the player script and be sure that the necessary input actions will be added automatically:
 
@@ -62,8 +62,8 @@ func add_inputs():
 
 ## Related recipes
 
-- [Input Actions](/3.x/input/input_actions/)
-- [Platform Character](/3.x/2d/platform_character/)
+- [Input Actions](/godot_recipes/3.x/input/input_actions/)
+- [Platform Character](/godot_recipes/3.x/2d/platform_character/)
 
 <!-- #### Like video?
  -->

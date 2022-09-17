@@ -20,7 +20,7 @@ var circles_per_level = 5
 
 Add the script as an autoload by opening "Project Settings" and selecting the "Autoloads" tab. Click the folder to load the script and then click "Add".
 
-![alt](/3.x/img/cj_06_01.png)
+![alt](/godot_recipes/3.x/img/cj_06_01.png)
 
 ## Adding sound
 

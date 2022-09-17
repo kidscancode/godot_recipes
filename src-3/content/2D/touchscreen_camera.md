@@ -179,13 +179,13 @@ func _unhandled_input(event):
 ```
 
 {{% notice note %}}
-Download the project file here: [2d_touch_camera.zip](/3.x/files/2d_touch_camera.zip)
+Download the project file here: [2d_touch_camera.zip](/godot_recipes/3.x/files/2d_touch_camera.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Input: Input Actions](/3.x/input/input_actions/)
-- [Drag-select multiple units](/3.x/input/multi_unit_select/)
+- [Input: Input Actions](/godot_recipes/3.x/input/input_actions/)
+- [Drag-select multiple units](/godot_recipes/3.x/input/multi_unit_select/)
 
 #### Like video?
 

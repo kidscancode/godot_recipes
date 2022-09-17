@@ -11,7 +11,7 @@ You need a dynamic camera that moves and zooms to keep multiple objects on scree
 
 An example might be in a 2 player game, keeping both players on-screen as they move farther and closer together, like so:
 
-![alt](/3.x/img/multi_cam_01.gif)
+![alt](/godot_recipes/3.x/img/multi_cam_01.gif)
 
 ## Solution
 
@@ -104,7 +104,7 @@ The key functionality here comes from `Rect2`. We want to find a rectangle that 
 
 Here you can see the rectangle being drawn (press "Tab" in the demo project to enable this drawing):
 
-![alt](/3.x/img/multi_cam_02.gif)
+![alt](/godot_recipes/3.x/img/multi_cam_02.gif)
 
 Then, depending whether the rectangle is wider or taller (relative to the screen's aspect ratio), we find the scale and clamp it in the max/min range we've defined.
 
@@ -155,13 +155,13 @@ func remove_target(t):
 ```
 
 {{% notice note %}}
-Download the project file here: [multitarget_camera2d.zip](/3.x/files/multitarget_camera2d.zip)
+Download the project file here: [multitarget_camera2d.zip](/godot_recipes/3.x/files/multitarget_camera2d.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Touchscreen Camera](/3.x/2d/touchscreen_camera/)
-- [Splitscreen multiplayer](/3.x/2d/splitscreen_demo/)
+- [Touchscreen Camera](/godot_recipes/3.x/2d/touchscreen_camera/)
+- [Splitscreen multiplayer](/godot_recipes/3.x/2d/splitscreen_demo/)
 
 #### Like video?
 

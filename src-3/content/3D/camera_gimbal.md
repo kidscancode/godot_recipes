@@ -149,7 +149,7 @@ func _process(delta):
 
 Using `lerp()` to change the zoom level results in smoother zooming.
 
-![alt](/3.x/img/gimbal_02.gif)
+![alt](/godot_recipes/3.x/img/gimbal_02.gif)
 
 ### Following a target
 
@@ -234,8 +234,8 @@ func _process(delta):
 
 ## Related recipes
 
-- [Capturing the Mouse](/3.x/input/mouse_capture/)
-- [Intro to 3D](/3.x/g101/3d/)
+- [Capturing the Mouse](/godot_recipes/3.x/input/mouse_capture/)
+- [Intro to 3D](/godot_recipes/3.x/g101/3d/)
 
 #### Like video?
 

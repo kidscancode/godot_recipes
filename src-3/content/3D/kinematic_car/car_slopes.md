@@ -7,9 +7,9 @@ ghcommentid: 44
 
 ## Problem
 
-Your [Kinematic Car](/3.x/3d/kinematic_car/car_base/) climbs slopes, but it doesn't look quite right:
+Your [Kinematic Car](/godot_recipes/3.x/3d/kinematic_car/car_base/) climbs slopes, but it doesn't look quite right:
 
-![alt](/3.x/img/3d_car_10.png)
+![alt](/godot_recipes/3.x/img/3d_car_10.png)
 
 ## Solution
 
@@ -17,13 +17,13 @@ Kinematic bodies don't automatically rotate on collision. When the wheels aren't
 
 To begin, we need to detect when the wheel isn't on the ground. Add two {{< gd-icon RayCast3D >}}`RayCast` nodes to the car and align them with the front and rear wheels like so:
 
-![alt](/3.x/img/3d_car_11.png)
+![alt](/godot_recipes/3.x/img/3d_car_11.png)
 
 For both, set the **Cast To** to (0, -0.25, 0) and don't forget to check the "Enabled" box.
 
 ### Aligning a 3D object
 
-We're going to reuse the code from the [KinematicBody: Align with Surface](/3.x/3d/3d_align_surface/) recipe. Add this to `car_base.gd`:
+We're going to reuse the code from the [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/) recipe. Add this to `car_base.gd`:
 
 ```gdscript
 func align_with_y(xform, new_y):
@@ -52,7 +52,7 @@ When neither wheel is on the ground, we don't rotate the car at all.
 
 Otherwise, we're going to use an average of the front and rear rays' results. When the ray is colliding, the collider's surface normal is used. This way, if the two wheels are touching different slopes (like on a curved hill, for example), the result will be to try and get both wheels on the surface, like so:
 
-![alt](/3.x/img/3d_car_12.png)
+![alt](/godot_recipes/3.x/img/3d_car_12.png)
 
 In this image, you can see the car isn't aligned with either surface, but is halfway between.
 
@@ -60,8 +60,8 @@ If the ray is not hitting anything, then we'll assume a horizontal surface. That
 
 ## Related recipes
 
-- [Kinematic Car: Base](/3.x/3d/kinematic_car/car_base/)
-- [KinematicBody: Align with Surface](/3.x/3d/3d_align_surface/)
+- [Kinematic Car: Base](/godot_recipes/3.x/3d/kinematic_car/car_base/)
+- [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/)
 
 #### Like video?
 

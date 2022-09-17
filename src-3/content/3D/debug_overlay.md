@@ -19,7 +19,7 @@ A better solution is to stick with the `CanvasItem` draw methods. To do so, we n
 
 For the display layer, add a {{< gd-icon CanvasLayer >}}`CanvasLayer` containing a {{< gd-icon Control >}}`Control` to your 3D scene and add a script to the `Control`.
 
-![alt](/3.x/img/3d_debug_03.png)
+![alt](/godot_recipes/3.x/img/3d_debug_03.png)
 
 As an example, let's assume this drawing control has a reference to the player node, and we want to draw the node's `velocity` vector. We also have a reference to the {{< gd-icon Camera3D >}}`Camera` node. More about how we'll add those references later.
 
@@ -44,9 +44,9 @@ func draw_triangle(pos, dir, size, color):
 
 We use `unproject_position()` to find the start and end points of the vector we want to draw. `draw_triangle()` is there to give us a nice pointed arrow appearance.
 
-![alt](/3.x/img/3d_debug_01.png)
+![alt](/godot_recipes/3.x/img/3d_debug_01.png)
 
-![alt](/3.x/img/3d_debug_02.png)
+![alt](/godot_recipes/3.x/img/3d_debug_02.png)
 
 ### Easy access from game objects
 
@@ -135,8 +135,8 @@ DebugOverlay.draw.add_vector(self, "velocity", 1, 4, Color(0,1,0, 0.5))
 
 Here's an example of an AI car displaying its raycasts and steering direction:
 
-![alt](/3.x/img/3d_debug_04.gif)
+![alt](/godot_recipes/3.x/img/3d_debug_04.gif)
 
 ## Related recipes
 
-- [UI: Displaying debug data](/3.x/ui/debug_overlay)
+- [UI: Displaying debug data](/godot_recipes/3.x/ui/debug_overlay)

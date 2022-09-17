@@ -23,7 +23,7 @@ void fragment() {
 }
 ```
 
-![alt](/3.x/img/shader_greyscale01.png)
+![alt](/godot_recipes/3.x/img/shader_greyscale01.png)
 
 You can apply this to the whole screen by adding a {{< gd-icon ColorRect >}} `ColorRect` (placed in a {{< gd-icon CanvasLayer >}} `CanvasLayer` to ignore camera movement) and scaling it to cover the screen.
 
@@ -33,8 +33,8 @@ Change the `texture()` function to sample the screen instead of the object's pix
 COLOR = texture(SCREEN_TEXTURE, SCREEN_UV);
 ```
 
-![alt](/3.x/img/shader_greyscale02.png)
+![alt](/godot_recipes/3.x/img/shader_greyscale02.png)
 
 ## Related Recipes
 
-- [Shaders: Intro](/3.x/shaders/intro/)
+- [Shaders: Intro](/godot_recipes/3.x/shaders/intro/)

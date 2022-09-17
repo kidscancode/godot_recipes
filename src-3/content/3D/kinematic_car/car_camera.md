@@ -47,7 +47,7 @@ Move and orient each {{< gd-icon Position3D >}}`Position3D` in a different locat
 
 {{% notice tip %}}
 You may find it helpful to temporarily attach a {{< gd-icon Camera3D >}}`Camera` to the position and use its "Preview" mode to help aim the {{< gd-icon Position3D >}}`Position3D` so that it's pointing directly where you want (you can remove the camera once you're done).
-![alt](/3.x/img/3d_car_09.png)
+![alt](/godot_recipes/3.x/img/3d_car_09.png)
 {{% /notice %}}
 
 To communicate to the camera, we'll emit a signal whenever we want it to change position. Add the following code to the car's script:
@@ -71,7 +71,7 @@ func _input(event):
 
 Add an action in the InputMap for changing the camera. Here, we're using Tab and the right shoulder button:
 
-![alt](/3.x/img/3d_car_07.png)
+![alt](/godot_recipes/3.x/img/3d_car_07.png)
 
 ### Connecting it together
 
@@ -81,14 +81,14 @@ Add a `ChaseCamera` instance to your main scene and set it `Current`. Then conne
 
 Run the game and press the camera change button to try it out:
 
-![alt](/3.x/img/3d_car_08.gif)
+![alt](/godot_recipes/3.x/img/3d_car_08.gif)
 
 ## Related recipes
 
-- [Kinematic Car: Base](/3.x/3d/kinematic_car/car_base/)
-- [2D: Car Steering recipe](/3.x/2d/car_steering)
+- [Kinematic Car: Base](/godot_recipes/3.x/3d/kinematic_car/car_base/)
+- [2D: Car Steering recipe](/godot_recipes/3.x/2d/car_steering)
 - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/)
-- [3D: KinematicBody Movement](/3.x/3d/kinematic_body/)
+- [3D: KinematicBody Movement](/godot_recipes/3.x/3d/kinematic_body/)
 
 #### Like video?
 

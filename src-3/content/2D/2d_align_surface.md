@@ -15,7 +15,7 @@ You need your kinematic body to align with the surface it's standing on.
 As of Godot 3.2, there is a bug preventing {{< gd-icon KinematicBody2D >}} `KinematicBody2D`'s `stop_on_slope` parameter from working correctly. The technique in this recipe can be used as a workaround for this problem. See [GitHub](https://github.com/godotengine/godot/issues) for details and other suggestions regarding this issue.
 {{% /notice %}}
 
-We'll start with a basic kinematic platform character. See the [Platform character](/3.x/2d/platform_character/) recipe for details.
+We'll start with a basic kinematic platform character. See the [Platform character](/godot_recipes/3.x/2d/platform_character/) recipe for details.
 
 We have the following code for movement:
 
@@ -60,7 +60,7 @@ if is_on_floor():
 
 This hasn't changed anything about the movement yet, but it does help us visualize what we need to do. When we're on the slope, our local transform looks like this:
 
-![alt](/3.x/img/2d_align_04.png)
+![alt](/godot_recipes/3.x/img/2d_align_04.png)
 
 Now when we move, we want our `x` velocity to align with our local `x` axis (the red arrow), and gravity/jump to align with local `y` (the green arrow). We can keep our input code the same, and just assume that `velocity` is always calculated in the local coordinate system. The only problem will be that `move_and_slide()` expects the velocity vector to be in *global* coordinates. Let's adjust `move_and_slide_with_snap()` to account for this:
 
@@ -110,6 +110,6 @@ func _physics_process(delta):
 ## Related recipes
 
 - [Platform character](http://kidscancode.org/godot_recipes/2d/platform_character)
-- [Using KinematicBody2D](/3.x/physics/godot3_kinematic2d/)
+- [Using KinematicBody2D](/godot_recipes/3.x/physics/godot3_kinematic2d/)
 
 <!-- #### Like video? -->

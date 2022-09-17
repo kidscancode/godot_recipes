@@ -13,23 +13,23 @@ Before reading this, make sure you have an understanding of vectors and how they
 
 In 2D space, we use the familiar X-Y coordinate plane. Remember that in Godot, as in most computer graphics applications, the **Y** axis points downward:
 
-![alt](/3.x/img/0_2d_coordinate_plane.png?width=250px)
+![alt](/godot_recipes/3.x/img/0_2d_coordinate_plane.png?width=250px)
 
 To begin, let's consider this spaceship floating in space:
 
-![alt](/3.x/img/0_2d_rocket1.png?width=250px)
+![alt](/godot_recipes/3.x/img/0_2d_rocket1.png?width=250px)
 
 The ship is pointing in the same direction as the **X** axis. If we wanted it to move forward, we could add to its **X** coordinate and it would move to the right: `position += Vector2(10, 0)`.
 
 But what happens when the ship rotates?
 
-![alt](/3.x/img/0_2d_rocket2.png?width=250px)
+![alt](/godot_recipes/3.x/img/0_2d_rocket2.png?width=250px)
 
 How do we move the ship forward now? If you remember Trigonometry from school, you might be starting to think about angles, sin and cos and doing something like `position += Vector2(10 * cos(angle), 10 * sin(angle))`. While this would work, there's a much more convenient way: the _Transform_.
 
 Let's look at the rotated ship again, but this time, let's also imagine that the ship has its own **X** and **Y** axes that it carries with it, independent of the global axes:
 
-![alt](/3.x/img/0_2d_rocket3.png?width=250px)
+![alt](/godot_recipes/3.x/img/0_2d_rocket3.png?width=250px)
 
 These "local" axes are a part of the transform called the `basis`.
 
@@ -49,7 +49,7 @@ In addition to the `basis`, the transform also contains a component called the `
 
 In this picture, the blue vector is the `transform.origin`. It is equal to the object's `position` vector.
 
-![alt](/3.x/img/0_2d_rocket4.png?width=250px)
+![alt](/godot_recipes/3.x/img/0_2d_rocket4.png?width=250px)
 
 ### Converting Between Local and Global Space
 
@@ -92,11 +92,11 @@ In 3D space, the concept of transforms applies in the same way as in 2D. In fact
 
 3D nodes inherit from the base node [Spatial]([https://link](https://docs.godotengine.org/en/latest/classes/class_spatial.html)), which contains the transform information. The 3D transform requires more information than the 2D version. Position is still held in the `origin` property, but rotation is in a property called `basis`, which contains three unit vectors representing the body's local **X**, **Y**, and **Z** axes.
 
-![alt](/3.x/img/3d_intro_gizmo.png)
+![alt](/godot_recipes/3.x/img/3d_intro_gizmo.png)
 
 {{% notice note %}}
 In the editor, you can see and manipulate the body's local orientation by clicking the "Local Space Mode" button.
-![alt](/3.x/img/3d_intro_local_space.png)
+![alt](/godot_recipes/3.x/img/3d_intro_local_space.png)
 {{% /notice %}}
 
 As in 2D, we can use the local axes to move an object forward. In Godot's 3D orientation (**Y-up**), this means that by default the body's **-Z** axis is the forward direction:

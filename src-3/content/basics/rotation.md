@@ -13,7 +13,7 @@ You want an object to "orbit" (move in a circle) around another object.
 
 This is a common beginner question, and often comes after a bunch of messy experimenting with trig functions. The answer is much simpler:
 
-![alt](/3.x/img/circle_motion_01.png)
+![alt](/godot_recipes/3.x/img/circle_motion_01.png)
 
 Place the orbiting sprite in a child node of the main sprite (we're calling it "Pivot"). Give it an offset and rotate the `Pivot`.
 
@@ -27,7 +27,7 @@ func _process(delta):
     $Sprite/Pivot.rotation += rotation_speed * delta
 ```
 
-![alt](/3.x/img/circle_motion_02.gif)
+![alt](/godot_recipes/3.x/img/circle_motion_02.gif)
 
 This works just as well in 3D, too:
 
@@ -42,4 +42,4 @@ func _process(delta):
 
 ```
 
-![alt](/3.x/img/circle_motion_03.gif)
+![alt](/godot_recipes/3.x/img/circle_motion_03.gif)

@@ -13,7 +13,7 @@ You want a 2D bullet that travels in an arc, or ballistic curve.
 
 One approach to this problem would be to use a {{< gd-icon RigidBody2D >}}`RigidBody2D` - with its built-in physics, gravity would automatically pull it back to earth after firing it.
 
-However, as mentioned in the [2D shooting recipe](/3.x/2d/2d_shooting/), {{< gd-icon Area2D >}}`Area2D` is a great choice for simple bullets and other projectiles - when you don't need collisions, bouncing, or other physics reactions. Ballistic motion is easy enough to calculate that we won't need the help of the physics engine.
+However, as mentioned in the [2D shooting recipe](/godot_recipes/3.x/2d/2d_shooting/), {{< gd-icon Area2D >}}`Area2D` is a great choice for simple bullets and other projectiles - when you don't need collisions, bouncing, or other physics reactions. Ballistic motion is easy enough to calculate that we won't need the help of the physics engine.
 
 ### Setting up the bullet
 
@@ -43,7 +43,7 @@ func _on_BallisticBullet_body_entered(body):
 
 Using the [standard equations of motion](https://www.khanacademy.org/science/physics/one-dimensional-motion/kinematic-formulas/a/what-are-the-kinematic-formulas) is all we need to do here. The initial value for `velocity` is just for testing. Run the bullet scene:
 
-![alt](/3.x/img/2d_ballistic_01.gif)
+![alt](/godot_recipes/3.x/img/2d_ballistic_01.gif)
 
 Now in your object that's doing the shooting, you can instance the bullet and set its initial properties. Put this in whatever function/input handles shooting:
 
@@ -61,9 +61,9 @@ func shoot():
 
 Here's an example in action:
 
-![alt](/3.x/img/2d_ballistic_02.gif)
+![alt](/godot_recipes/3.x/img/2d_ballistic_02.gif)
 
 ## Related recipes
 
-- [2D shooting recipe](/3.x/2d/2d_shooting/)
-- [2D: Draw trajectory](/3.x/2d/2d_draw_trajectory/)
+- [2D shooting recipe](/godot_recipes/3.x/2d/2d_shooting/)
+- [2D: Draw trajectory](/godot_recipes/3.x/2d/2d_draw_trajectory/)

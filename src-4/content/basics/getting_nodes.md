@@ -23,7 +23,7 @@ The scene tree is made of nodes, which are connected together in parent-child re
 
 As an example, let's take a simple "Player" scene:
 
-![alt](/4.x/img/node_paths_01.png)
+![alt](/godot_recipes/4.x/img/node_paths_01.png)
 
 The script for this scene is on the `Player` node. If the script needs to call `play()` on the `AnimatedSprite` node, it needs a reference to that node:
 
@@ -45,7 +45,7 @@ $AnimatedSprite.play()
 
 Let's look at a more complex scene tree:
 
-![alt](/4.x/img/node_paths_02.png)
+![alt](/godot_recipes/4.x/img/node_paths_02.png)
 
 If the script on `Main` needs to access `ScoreLabel` it can do so with this path:
 
@@ -106,4 +106,4 @@ Once you understand how to use node paths, you'll see how easy it is to referenc
 
 <!-- ## Related Recipes
 
-- [Using KinematicBody2D](/3.x/physics/godot3_kinematic2d/) -->
+- [Using KinematicBody2D](/godot_recipes/3.x/physics/godot3_kinematic2d/) -->

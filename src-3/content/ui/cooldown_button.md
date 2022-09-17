@@ -9,7 +9,7 @@ ghcommentid: 57
 
 You want to make RPG-style ability buttons, including a cooldown effect.
 
-![alt](/3.x/img/cooldown_01.gif)
+![alt](/godot_recipes/3.x/img/cooldown_01.gif)
 
 ## Solution
 
@@ -33,7 +33,7 @@ On the `Sweep` node, choose "Full Rect" from the _Layout_ menu. Set the _Fill Mo
 
 We also want our cooldown "radial wipe" to darken the button, so set the _Modulate_ property to a dark gray with some transparency:
 
-![alt](/3.x/img/cooldown_02.png)
+![alt](/godot_recipes/3.x/img/cooldown_02.png)
 
 The {{< gd-icon Timer >}}`Timer` node should be set to "One Shot".
 
@@ -96,16 +96,16 @@ func _on_Timer_timeout():
 
 And everything is reset when the timer runs out. Put several buttons in an {{< gd-icon HBoxContainer >}}`HBoxContainer` and you've got an action bar:
 
-![alt](/3.x/img/cooldown_03.gif)
+![alt](/godot_recipes/3.x/img/cooldown_03.gif)
 
 {{% notice note %}}
-Download the project file here: [cooldown_button.zip](/3.x/files/cooldown_button.zip)
+Download the project file here: [cooldown_button.zip](/godot_recipes/3.x/files/cooldown_button.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [UI: Labels](/3.x/ui/labels/)
-- [UI: Containers](/3.x/ui/containers/)
+- [UI: Labels](/godot_recipes/3.x/ui/labels/)
+- [UI: Containers](/godot_recipes/3.x/ui/containers/)
 
 <!-- #### Like video?
 

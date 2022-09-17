@@ -35,7 +35,7 @@ Let's make our first script. Remember, any node can have a script attached to it
 
 Open the editor and add a `Sprite` node to empty scene. Right-click on the new node, and choose "Attach Script". You can also click the button next to the search box.
 
-![alt](/3.x/img/gds_01_attach.png?width=250)
+![alt](/godot_recipes/3.x/img/gds_01_attach.png?width=250)
 
 Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it (so unless you've changed anything this script will likely be called "Sprite.gd").
 
@@ -69,11 +69,11 @@ Let's say that when the game starts, we want to make sure the Sprite goes to a p
 
 How do we set the property in code? One way to find the name of the property is by hovering over it in the Inspector.
 
-![alt](/3.x/img/gds_01_01.png)
+![alt](/godot_recipes/3.x/img/gds_01_01.png)
 
 Godot has a great built-in help/reference tool. Click on "Classes" at the top of the Script window and search for Node2D and you'll see a help page showing you all the properties and methods the class has available. Looking down a bit you can see `position` in the "Member Variables" section - that's the one we want. It also tells us the property is of the type "Vector2".
 
-![alt](/3.x/img/gds_01_02.png)
+![alt](/godot_recipes/3.x/img/gds_01_02.png)
 
 Let's go back to the script and use that property:
 
@@ -86,7 +86,7 @@ Notice how the editor is making suggestions as you type. Godot uses vectors for 
 
 Now we have a script that says "When this Sprite starts, set its position to `(100, 150)`". We can try this out by pressing the "Play Scene" button.
 
-![alt](/3.x/img/gds_01_03.png)
+![alt](/godot_recipes/3.x/img/gds_01_03.png)
 
 {{% notice tip %}}
 When first learning to code, beginners often ask "How do you memorize all these commands?" It's not a matter of memorization, it's about practice. As you use things more, the things you do frequently will "stick" and become automatic. Until then, it's a great idea to keep the reference docs handy. Use the search function whenever you see something you don't recognize. If you have multiple monitors, keep a copy of the [web docs](https://docs.godotengine.org/en/latest/) open on the side for quick reference.

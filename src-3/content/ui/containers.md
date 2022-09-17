@@ -45,7 +45,7 @@ Let's look at some of the most commonly used containers:
 
 The way a container handles its children is mainly controlled by their "Size Flags" properties.
 
-![alt](/3.x/img/ui_size_flags.png)
+![alt](/godot_recipes/3.x/img/ui_size_flags.png)
 
 * Fill
 
@@ -69,11 +69,11 @@ The way a container handles its children is mainly controlled by their "Size Fla
 
 A good way to experiment with these settings is to set up a test scene like the following:
 
-![alt](/3.x/img/ui_flags_example01.png)
+![alt](/godot_recipes/3.x/img/ui_flags_example01.png)
 
 Try adjusting the "Size Flags" properties of the different buttons and see how it affects their positioning in the `HBoxContainer`.
 
-![alt](/3.x/img/ui_flags_example02.gif)
+![alt](/godot_recipes/3.x/img/ui_flags_example02.gif)
 
 ### Nesting Containers
 
@@ -82,12 +82,12 @@ For more complex UI setups, you'll need to use containers holding other containe
 All these containers inside containers can cause your scene tree to become quite large and hard to manage, especially if you have a lot of repeated elements, such as buttons and labels. It's recommended that you break your UI into pieces and save each part as a separate scene that you can instance in the larger scene.
 
 <!-- {{% notice note %}}
-Download the project file here: [screen_shake.zip](/3.x/files/screen_shake.zip)
+Download the project file here: [screen_shake.zip](/godot_recipes/3.x/files/screen_shake.zip)
 {{% /notice %}} -->
 
 ## Related recipes
 
-- [Labels](/3.x/ui/labels)
+- [Labels](/godot_recipes/3.x/ui/labels)
 
 
 <!-- #### Like video? -->

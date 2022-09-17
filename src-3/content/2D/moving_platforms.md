@@ -36,7 +36,7 @@ With this code, we'll still get the same behavior with jumping and sliding, but 
 
 The platform scene contains the following nodes:
 
-![alt](/3.x/img/moving_plats_01.png)
+![alt](/godot_recipes/3.x/img/moving_plats_01.png)
 
 The `Node2D` parent is there to act as the "anchor" or start point for the platform. We'll animate the platform's `position` relative to this parent node.
 
@@ -44,14 +44,14 @@ Set up the {{< gd-icon Sprite2D >}}`Sprite`'s *Texture* and the collision shape 
 
 To move the platform, create an animation in the {{< gd-icon AnimationPlayer >}}`AnimationPlayer` that animates the body's `position` property. For example, here's one animating the platform horizontally in a 4 second loop:
 
-![alt](/3.x/img/moving_plats_02.gif)
+![alt](/godot_recipes/3.x/img/moving_plats_02.gif)
 
 You're done! Instance some platforms in your level/world and try them out:
 
 <video controls src="/3.x/img/moving_plats_03.webm"></video>
 
 {{% notice note %}}
-Download the project file here: [moving_platforms.zip](/3.x/files/moving_platforms.zip)
+Download the project file here: [moving_platforms.zip](/godot_recipes/3.x/files/moving_platforms.zip)
 {{% /notice %}}
 
 ## Related recipes

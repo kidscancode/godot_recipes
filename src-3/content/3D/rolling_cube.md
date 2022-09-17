@@ -15,11 +15,11 @@ You want to make a rolling cube in 3D.
 
 Rolling a cube is trickier than it seems. You can't just rotate the cube around its center:
 
-![alt](/3.x/img/cube_001.gif)
+![alt](/godot_recipes/3.x/img/cube_001.gif)
 
 Instead, the cube needs to be rotated around its bottom edge.
 
-![alt](/3.x/img/cube_002.gif)
+![alt](/godot_recipes/3.x/img/cube_002.gif)
 
 Here's the tricky part: which bottom edge? It depends on which direction the cube is rolling.
 
@@ -49,11 +49,11 @@ By default, everything will be centered at `(0, 0, 0)` so the first thing we're 
 
 To do this, move the mesh and collision nodes up to `(0, 1, 0)`, leaving the rest where they are. Now when you select the root node, its position will be the *bottom* of the cube:
 
-![alt](/3.x/img/cube_003.png)
+![alt](/godot_recipes/3.x/img/cube_003.png)
 
 Now when you want to roll the cube, you'll need to move the `Pivot` one unit in the direction you want to move. Since the mesh is attached, move it the opposite amount. For example, to roll to the right (**+X**), you'll end up with this:
 
-![alt](/3.x/img/cube_004.gif)
+![alt](/godot_recipes/3.x/img/cube_004.gif)
 
 Now the pivot node is at the correct edge and rotating it will also rotate the mesh.
 
@@ -120,7 +120,7 @@ func roll(dir):
 
 Try it, and you'll notice there's one problem:
 
-![alt](/3.x/img/cube_006.gif)
+![alt](/godot_recipes/3.x/img/cube_006.gif)
 
 The cube is "squishing" because of the basis interpolation, which is going from 0 to 90 degrees. Since the basis also represents scale, this causes some deformation.
 
@@ -175,7 +175,7 @@ You could also use a {{< gd-icon RayCast3d >}}`RayCast` node. Just remember to c
 
 ## Related recipes
 
-- [Transforms](/3.x/math/transforms/)
+- [Transforms](/godot_recipes/3.x/math/transforms/)
 
 #### Like video?
 

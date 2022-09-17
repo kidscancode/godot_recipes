@@ -28,7 +28,7 @@ velocity = position.direction_to(player.position) * speed
 
 However, this would allow the enemy to chase the player from any distance, even if it's far away. To fix this, we can add an {{< gd-icon Area2D >}}`Area2D` to the enemy, and only chase the player when it's inside this "detect radius".
 
-![alt](/3.x/img/chase_01.png)
+![alt](/godot_recipes/3.x/img/chase_01.png)
 
 Here's some example code:
 
@@ -81,5 +81,5 @@ For more advanced behaviors, see the other recipes in this chapter.
 
 ## Related recipes
 
-- [Top-down character](/3.x/2d/topdown_movement/#option-1-8-way-movement)
-- [Homing missile](/3.x/ai/homing_missile/)
+- [Top-down character](/godot_recipes/3.x/2d/topdown_movement/#option-1-8-way-movement)
+- [Homing missile](/godot_recipes/3.x/ai/homing_missile/)

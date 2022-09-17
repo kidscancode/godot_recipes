@@ -26,7 +26,7 @@ The nodes we'll use:
 
 For the texture, you can use any image you like. Here's an example one:
 
-![alt](/3.x/img/missile.png)
+![alt](/godot_recipes/3.x/img/missile.png)
 
 Set up the nodes and configure the sprite's texture and the collision shape. Make sure to rotate the {{< gd-icon Sprite2D >}}`Sprite` node by `90°` so that it's pointing to the right, ensuring it matches the parent's "forward" direction.
 
@@ -78,7 +78,7 @@ func start(_transform, _target):
 
 To change the missile's direction to move toward the target, it needs to accelerate in that direction (acceleration is change in velocity). The missile "wants" to move straight towards the target, but its current velocity is pointing in a different direction. Using a little vector math, we can find that difference:
 
-![alt](/3.x/img/steering_diagram.png)
+![alt](/godot_recipes/3.x/img/steering_diagram.png)
 
 The green arrow represents the needed change in velocity (i.e. `acceleration`). However, if we turn instantly, that will look unnatural, so the "steering" vector's length needs to be limited. This is the purpose of the `steer_force` variable.
 
@@ -155,14 +155,14 @@ func explode():
 ```
 
 {{% notice note %}}
-Download the project file here: [homing_missiles.zip](/3.x/files/homing_missiles.zip)
+Download the project file here: [homing_missiles.zip](/godot_recipes/3.x/files/homing_missiles.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Spritesheet animation](/3.x/animation/spritesheet_animation/)
-- [Top-down character](/3.x/2d/topdown_movement/#option-2-rotate-and-move)
-- [Transforms](/3.x/math/transforms)
+- [Spritesheet animation](/godot_recipes/3.x/animation/spritesheet_animation/)
+- [Top-down character](/godot_recipes/3.x/2d/topdown_movement/#option-2-rotate-and-move)
+- [Transforms](/godot_recipes/3.x/math/transforms)
 
 #### Like video?
 

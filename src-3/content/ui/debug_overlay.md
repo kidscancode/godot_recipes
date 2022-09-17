@@ -15,7 +15,7 @@ We'll create an overlay that any node can register a property with, and that pro
 
 Here's an example of what we're going for:
 
-![alt](/3.x/img/debug_stats_01.png)
+![alt](/godot_recipes/3.x/img/debug_stats_01.png)
 
 Start by adding a {{< gd-icon MarginContainer >}}`MarginContainer` named `DebugStats` with a {{< gd-icon VBoxContainer >}}`VBoxContainer` child. Set the margins to a comfortable value (I usually use `20`).
 
@@ -105,4 +105,4 @@ DebugOverlay.stats.add_property(self, "transform:origin", "round")
 
 ## Related recipes
 
-- [Drawing Vectors in 3D](/3.x/3d/debug_overlay)
+- [Drawing Vectors in 3D](/godot_recipes/3.x/3d/debug_overlay)

@@ -11,7 +11,7 @@ When moving with WASD-style controls in 3D, it's easy to get disoriented if the 
 
 ## Solution
 
-While this situation can apply to many possible scenarios, we'll use the [Rolling Cube recipe](/3.x/3d/rolling_cube/) as our example.
+While this situation can apply to many possible scenarios, we'll use the [Rolling Cube recipe](/godot_recipes/3.x/3d/rolling_cube/) as our example.
 
 In the script for the cube, we have the following code for movement:
 
@@ -39,7 +39,7 @@ var forward = -camera.transform.basis.z.normalized()
 
 For some setups this might be fine. However, it really doesn't work for the cube:
 
-![alt](/3.x/img/3d_move_camera_01.gif)
+![alt](/godot_recipes/3.x/img/3d_move_camera_01.gif)
 
 The cube needs to only move in the 4 cardinal directions. This means we need to take the camera's forward vector and find which of the axes (**+X**, **-X**, **+Z**, or **-Z**) it's closest to.
 
@@ -68,12 +68,12 @@ func _physics_process(_delta):
 
 In this clip, I'm only pressing "w" to move:
 
-![alt](/3.x/img/3d_move_camera_02.gif)
+![alt](/godot_recipes/3.x/img/3d_move_camera_02.gif)
 
 ## Related recipes
 
-- [Rolling Cube](/3.x/3d/rolling_cube/)
-- [Camera Gimbal](/3.x/3d/camera_gimbal/)
+- [Rolling Cube](/godot_recipes/3.x/3d/rolling_cube/)
+- [Camera Gimbal](/godot_recipes/3.x/3d/camera_gimbal/)
 
 #### Like video?
 

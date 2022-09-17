@@ -19,7 +19,7 @@ Godot is strongly object-oriented, and offers the opportunity to use inheritance
 
 Here's a preview of what we're making:
 
-![alt](/3.x/img/inh_preview.gif?width=350)
+![alt](/godot_recipes/3.x/img/inh_preview.gif?width=350)
 
 The green character is controlled by the player, and the other characters are NPCs, walking around the tile-based map semi-randomly.
 
@@ -65,7 +65,7 @@ down      | 6, 7, 8, 7
 right     | 3, 4, 5, 4
 up        | 0, 1, 2, 1
 
-![alt](/3.x/img/inh_animation_frames.png)
+![alt](/godot_recipes/3.x/img/inh_animation_frames.png)
 
 ### Collision Detection
 
@@ -80,7 +80,7 @@ RayCastUp    | `(0, -32)`
 
 Make sure to set the _Enabled_ property on each one (RayCast2Ds are disabled by default). Your final node setup should look something like this:
 
-![alt](/3.x/img/inh_scene_char.png)
+![alt](/godot_recipes/3.x/img/inh_scene_char.png)
 
 ### Character Script
 
@@ -144,7 +144,7 @@ All we need to do for the `Sprite` is set the texture, so choose a character you
 
 Next, we need a new script for the player, so remove the attached one ("Character.gd") and attach a new one. In the "Attach Node Script" dialog, click the folder icon next to the _Inherits_ option and choose "Character.gd".
 
-![alt](/3.x/img/inh_script.png?width=250)
+![alt](/godot_recipes/3.x/img/inh_script.png?width=250)
 
 Here's our player script (note that it `extends` the character script):
 
@@ -207,11 +207,11 @@ Create a new "Main" scene (I usually like to use a plain `Node` as the root). Ad
 
 Draw some walls as you like, and then add a `Player` instance and a few instances of `NPC`. Remember, the characters won't know anything about the map - they just know if they can move one tile or not. If you want them to line up properly, you need to make sure the characters' starting positions are centered on a tile. This is easy to do if you turn on "Snap to Grid". Click the "Use Snap" button and then open the grid menu by clicking on the three dots next to it:
 
-![alt](/3.x/img/inh_snap2.png)
+![alt](/godot_recipes/3.x/img/inh_snap2.png)
 
 Under "Configure Snap..." set the _Grid Step_ and _Grid Offset_:
 
-![alt](/3.x/img/inh_snap.png)
+![alt](/godot_recipes/3.x/img/inh_snap.png)
 
 Now you can drag the instanced characters around and they'll always snap to the center of a tile.
 

@@ -17,7 +17,7 @@ Use an {{< gd-icon AnimationTree >}}`AnimationTree` to create an animation _stat
 
 For this demo, we'll be using the excellent "Adventurer" sprite by Elthen. You can get this and lots of other great art at [https://elthen.itch.io/](https://elthen.itch.io/).
 
-![alt](/3.x/img/adventurer_sprite_sheet_v1.1.png)
+![alt](/godot_recipes/3.x/img/adventurer_sprite_sheet_v1.1.png)
 
 We'll also assume you've already set up the character's animations using {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. Using the above spritesheet, we have the following animations: "idle", "run", "attack1", "attack2", "hurt", and "die".
 
@@ -25,13 +25,13 @@ We'll also assume you've already set up the character's animations using {{< gd-
 
 Add an {{< gd-icon AnimationTree >}}`AnimationTree` node to the scene. In its _Tree Root_ property, choose "New AnimationNodeStateMachine".
 
-![alt](/3.x/img/animation_tree_01.png)
+![alt](/godot_recipes/3.x/img/animation_tree_01.png)
 
 An {{< gd-icon AnimationTree >}}`AnimationTree` is a node that controls animations created in {{< gd-icon AnimationPlayer >}}`AnimationPlayer`. To let it access the existing animations, click "Assign" in the _Anim Player_ property and select your animation node.
 
 Now we can begin to set up our state machine in the {{< gd-icon AnimationTree >}}`AnimationTree` panel:
 
-![alt](/3.x/img/animation_tree_02.png)
+![alt](/godot_recipes/3.x/img/animation_tree_02.png)
 
 Note the warning. Set the _Active_ property to "On" in the Inspector.
 
@@ -39,7 +39,7 @@ Right-click and choose "Add Animation". Choose "idle", and you'll see a small bo
 
 Now we can add connections. Click the "Connect nodes" button and drag between nodes to connect them.
 
-![alt](/3.x/img/animation_tree_03.png)
+![alt](/godot_recipes/3.x/img/animation_tree_03.png)
 
 When you select an animation, the tree will follow the connected path from the current node to the destination. However, in the configuration above, if you play "attack2" you won't see "attack1" along the way. That's because the default "switch mode" for a connection is "Immediate". Click the "Move/select" button and then click on the connection from "attack1" to "attack2". In the Inspector, change _Switch Mode_ to "AtEnd". Do the same with "attack2" to "idle". The connection icon changes from <i class="fas fa-play"></i> to <i class="fas fa-step-forward"></i>.
 
@@ -47,13 +47,13 @@ Now, with "idle" playing, if you click "attack2", you'll see the two attacks pla
 
 But now the animation stops on "attack2". On its connection, set the _Auto Advance_ property to "On". This will make the tree go back to "idle" after playing both animations. Note that the connection icon turns green to show this.
 
-![alt](/3.x/img/animation_tree_05.gif)
+![alt](/godot_recipes/3.x/img/animation_tree_05.gif)
 
 ### Calling states in code
 
 Here is the full tree for all of the animations:
 
-![alt](/3.x/img/animation_tree_06.png)
+![alt](/godot_recipes/3.x/img/animation_tree_06.png)
 
 We've set the "die" node as the end, so when that one is reached, there will be no further animation. In the bottom-left, we have a double-attack sequence.
 
@@ -117,12 +117,12 @@ func get_input():
 
 Note that we're using `return` after traveling to the attack animations. This is so that we won't instead travel to the "run" or "idle" animations further down in the function.
 
-![alt](/3.x/img/animation_tree_07.gif)
+![alt](/godot_recipes/3.x/img/animation_tree_07.gif)
 
 ## Related recipes
 
-- [Spritesheet animation](/3.x/animation/spritesheet_animation/)
-- [Top-down character](/3.x/2d/topdown_movement/#option-1-8-way-movement)
+- [Spritesheet animation](/godot_recipes/3.x/animation/spritesheet_animation/)
+- [Top-down character](/godot_recipes/3.x/2d/topdown_movement/#option-1-8-way-movement)
 
 #### Like video?
 

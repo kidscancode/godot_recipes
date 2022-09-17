@@ -12,7 +12,7 @@ ghcommentid: 87
 
 Add a {{< gd-icon RayCast2D >}}`RayCast2D` node and take a look at the Inspector:
 
-![alt](/3.x/img/kyn_raycast2d_01.png)
+![alt](/godot_recipes/3.x/img/kyn_raycast2d_01.png)
 
 Here are the main properties you'll need to understand:
 
@@ -60,7 +60,7 @@ Fast-moving projectiles often have the problem of "tunneling" through obstacles 
 
 Here's a player sprite with a raycast attached to the end of the gun. The `cast_to` is set to `(250, 0)`.
 
-![alt](/3.x/img/kyn_raycast2d_02.png)
+![alt](/godot_recipes/3.x/img/kyn_raycast2d_02.png)
 
 When the player shoots, you check to see if the ray is colliding with something:
 
@@ -75,7 +75,7 @@ func _input(event):
 
 Consider a platformer enemy that walks on platforms, but you don't want it to fall off the edges. Add two downward-pointing raycasts to the mob like so:
 
-![alt](/3.x/img/kyn_raycast2d_03.png)
+![alt](/godot_recipes/3.x/img/kyn_raycast2d_03.png)
 
 In the mob's script, check for when the ray *stops* colliding. That means you've found the edge and should turn around:
 
@@ -93,13 +93,13 @@ func _physics_process(delta):
 
 Here's what it looks like in action:
 
-![alt](/3.x/img/kyn_raycast2d_04.gif)
+![alt](/godot_recipes/3.x/img/kyn_raycast2d_04.gif)
 
 <!-- ## Related recipes
 
-- [Interpolated Camera](/3.x/3d/interpolated_camera/)
-- [Inputs: Introduction](/3.x/input/input_intro/)
-- [KinematicBody: Movement](/3.x/3d/kinematic_body/) -->
+- [Interpolated Camera](/godot_recipes/3.x/3d/interpolated_camera/)
+- [Inputs: Introduction](/godot_recipes/3.x/input/input_intro/)
+- [KinematicBody: Movement](/godot_recipes/3.x/3d/kinematic_body/) -->
 
 <!-- #### Like video?
 

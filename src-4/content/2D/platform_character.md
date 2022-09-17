@@ -19,7 +19,7 @@ While it's possible to use {{< gd-icon RigidBody2D >}}`RigidBody2D` to make a pl
 
 Start with a {{< gd-icon CharacterBody2D >}}`CharacterBody2D` node, and add a {{< gd-icon Sprite2D >}}`Sprite2D` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D` to it.
 
-Attach the following script to the root node of the character. Note that we're using input actions we've defined in the InputMap: `"walk_right"`, `"walk_left"`, and `"jump"`. See [InputActions](/4.x/input/input_actions/).
+Attach the following script to the root node of the character. Note that we're using input actions we've defined in the InputMap: `"walk_right"`, `"walk_left"`, and `"jump"`. See [InputActions](/godot_recipes/4.x/input/input_actions/).
 
 ```gdscript
 extends CharacterBody2D
@@ -54,7 +54,7 @@ The above code is a great start, and you can use it as the foundation for a wide
 One way to add this behavior is to use linear interpolation ("lerp"). When moving, we will lerp between the current speed and the max speed and while stopping we'll lerp between the current speed and `0`. Adjusting the lerp amount will give us a variety of movement styles.
 
 {{% notice tip %}}
-For an overview of linear interpolation, see [Gamedev Math: Interpolation](/4.x/math/interpolation/).
+For an overview of linear interpolation, see [Gamedev Math: Interpolation](/godot_recipes/4.x/math/interpolation/).
 {{% /notice %}}
 
 ```gdscript
@@ -82,7 +82,7 @@ func _physics_process(delta):
 
 Try changing the values for `friction` and `acceleration` to see how they affect the game's feel. An ice level, for example, could use very low values, making it harder to maneuver.
 
-![alt](/4.x/img/platformer1.gif)
+![alt](/godot_recipes/4.x/img/platformer1.gif)
 
 ## Conclusion
 
@@ -91,10 +91,10 @@ This code gives you a starting point for building your own platformer controller
 Download an example project using this recipe:
 
 {{% notice note %}}
-Download the project file here: [platform_character.zip](/4.x/files/platform_character4.zip)
+Download the project file here: [platform_character.zip](/godot_recipes/4.x/files/platform_character4.zip)
 {{% /notice %}} -->
 
 ## Related Recipes
 
-<!-- - [Input Intro](/3.x/input/input_intro/)
-- [Kinematic Friction](/3.x/physics/kinematic_friction/) -->
+<!-- - [Input Intro](/godot_recipes/3.x/input/input_intro/)
+- [Kinematic Friction](/godot_recipes/3.x/physics/kinematic_friction/) -->

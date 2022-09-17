@@ -13,23 +13,23 @@ You need a 2D character that has 8-directional movement, including animation.
 
 For our example, we'll use the [Isometric Mini-Crusader](https://remos.itch.io/mini-crusader), which contains 8-directional animations for idle, run, attack, and several other states.
 
-![alt](/3.x/img/8_direction_01.gif)
+![alt](/godot_recipes/3.x/img/8_direction_01.gif)
 
 The animations are organized in folders, with a separate image for each frame. We'll use an {{< gd-icon AnimatedSprite2D >}}`AnimatedSprite` and we'll name each animation based on its direction. For example, `idle0` pointing to the right and going clockwise to `idle7`.
 
 When our character moves, it will pick an animation based on the direction of movement:
 
-![alt](/3.x/img/8_direction_03w.png)
+![alt](/godot_recipes/3.x/img/8_direction_03w.png)
 
 We'll use the mouse to move - the character will always face the mouse and run in that direction when we click the mouse button.
 
 To choose which animation to play, we need to get the mouse direction and map it to this same range of `0-7`. `get_local_mouse_position().angle()` gives us the angle to the mouse (in radians). Using `stepify()` to snap this to the closest multiple of 45° (`PI/4` radians) gives the following result:
 
-![alt](/3.x/img/8_direction_04w.png)
+![alt](/godot_recipes/3.x/img/8_direction_04w.png)
 
 Divide each by 45° (`PI/4` radians), and we have:
 
-![alt](/3.x/img/8_direction_02w.png)
+![alt](/godot_recipes/3.x/img/8_direction_02w.png)
 
 Finally, we need to map the resulting range to `0-7` using the modulus (`%`) operator, and we'll have our correct values. Adding that value to the end of the animation name ("idle", "run", etc) gives us the correct animation:
 
@@ -48,7 +48,7 @@ func _process(delta):
     $AnimatedSprite.animation = current_animation + str(a)
 ```
 
-![alt](/3.x/img/8_direction_05.gif)
+![alt](/godot_recipes/3.x/img/8_direction_05.gif)
 
 ### Keyboard input
 
@@ -81,7 +81,7 @@ func _process(delta):
 
 ## Related recipes
 
-- [Top-down Movement](/3.x/2d/topdown_movement/)
+- [Top-down Movement](/godot_recipes/3.x/2d/topdown_movement/)
 
 #### Like video?
 

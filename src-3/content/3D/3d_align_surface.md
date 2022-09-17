@@ -11,7 +11,7 @@ You need your kinematic body to align with the surface or terrain.
 
 ## Solution
 
-This recipe builds on the basic {{< gd-icon KinematicBody3D >}}`KinematicBody` controller described in the [KinematicBody: Movement](/3.x/3d/kinematic_body/) recipe, so read that one first.
+This recipe builds on the basic {{< gd-icon KinematicBody3D >}}`KinematicBody` controller described in the [KinematicBody: Movement](/godot_recipes/3.x/3d/kinematic_body/) recipe, so read that one first.
 
 First, we've added some terrain to the scene. You can download the terrain from here: [https://fertile-soil-productions.itch.io/modular-terrain-pack](https://fertile-soil-productions.itch.io/modular-terrain-pack). This is low-poly terrain, but you can use or make any terrain you like for this technique.
 
@@ -25,9 +25,9 @@ Instead, we need to rotate the tank so that its treads are aligned with the grou
 
 A *surface normal* is a unit vector ("normal vector" and "unit vector" mean the same thing) perpendicular to a surface. It shows which way the surface is facing. In the case of a mesh, every surface has a normal pointing outward.
 
-![alt](/3.x/img/3d_kinematic_05.png)
+![alt](/godot_recipes/3.x/img/3d_kinematic_05.png)
 
-![alt](/3.x/img/3d_kinematic_06.gif)
+![alt](/godot_recipes/3.x/img/3d_kinematic_06.gif)
 
 In Godot, when a body collides, you can get the normal of the collision. This will be the colliding body's normal *at the point of contact*.
 
@@ -104,9 +104,9 @@ Feel free to experiment with the interpolation amount. We found `0.2` to work we
 
 ## Related recipes
 
-- [KinematicBody: Movement](/3.x/3d/3d_align_surface/)
-- [Math: Interpolation](/3.x/math/interpolation/)
-- [Math: Transforms](/3.x/math/transforms/)
+- [KinematicBody: Movement](/godot_recipes/3.x/3d/3d_align_surface/)
+- [Math: Interpolation](/godot_recipes/3.x/math/interpolation/)
+- [Math: Transforms](/godot_recipes/3.x/math/transforms/)
 
 #### Like video?
 

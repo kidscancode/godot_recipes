@@ -66,10 +66,10 @@ func _ready():
 ```
 
 {{% notice note %}}
-Download an example project here: [2d_line_collision.zip](/3.x/files/2d_line_collision.zip)
+Download an example project here: [2d_line_collision.zip](/godot_recipes/3.x/files/2d_line_collision.zip)
 {{% /notice %}}
 
 
 ## Related recipes
 
-- [Top-down Movement](/3.x/2d/topdown_movement/)
+- [Top-down Movement](/godot_recipes/3.x/2d/topdown_movement/)

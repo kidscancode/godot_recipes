@@ -13,13 +13,13 @@ Add a new scene with a `CanvasLayer` root to be our HUD. Give it two children: a
 
 Your scene tree should look like this:
 
-![alt](/3.x/img/cj_05_01.png)
+![alt](/godot_recipes/3.x/img/cj_05_01.png)
 
 Set the layout of the `ScoreBox` to "Bottom Wide" and the _Custom Constants_ all to `20`. Add an `HBoxContainer` child and under that two `Label` nodes. Name the second label "Score" and put `100` in its _Text_ property. Set the `HBoxContainer`'s _Alignment_ to "End".
 
 Add the same `DynamicFont` resource to both labels, but choose "Make Unique" on the first label and set its size to `32`. Set its _Text_ property to "Score". In its _Size Flags/Vertical, set "Fill". Your layout should look like this:
 
-![alt](/3.x/img/cj_05_02.png)
+![alt](/godot_recipes/3.x/img/cj_05_02.png)
 
 Now for the `Message` node load the font and set _Text_ to "Message" so we'll have something to see. Also choose "Make Unique" on the font resource (you'll see why in the next section). Set _Align_ and _Valign_ to "Center" and _Clip Text_ to "On". For layout, choose "Center Wide". Also, set _Grow Direction/Vertical_ to "Both".
 
@@ -40,11 +40,11 @@ We also want it to fade out as it grows, so keyframe the _Modulate_ alpha value 
 
 Heres' what the animation settings should look like:
 
-![alt](/3.x/img/cj_05_03.png)
+![alt](/godot_recipes/3.x/img/cj_05_03.png)
 
 And the animation when it plays:
 
-![alt](/3.x/img/cj_05_04.gif)
+![alt](/godot_recipes/3.x/img/cj_05_04.gif)
 
 ## HUD Script
 

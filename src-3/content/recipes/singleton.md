@@ -22,13 +22,13 @@ If you autoload a script, Godot will create a {{< gd-icon Node >}} `Node` and at
 
 You can create any number of autoloads in your game by opening **Project Settings** and clicking the "AutoLoad" tab:
 
-![alt](/3.x/img/autoload_01.png)
+![alt](/godot_recipes/3.x/img/autoload_01.png)
 
 Click the folder button to navigate to the file you want to autoload, set an optional "Node Name" (the name it'll have in the scene tree), and click the "Add" button.
 
-For example, as described in the [Audio Manager](/3.x/audio/audio_manager/) recipe, here's the audio manager scene added as an autoload:
+For example, as described in the [Audio Manager](/godot_recipes/3.x/audio/audio_manager/) recipe, here's the audio manager scene added as an autoload:
 
-![alt](/3.x/img/autoload_02.png)
+![alt](/godot_recipes/3.x/img/autoload_02.png)
 
 {{% notice tip %}}
 If you have multiple autoloads they'll be added in the order listed. You can drag-and-drop them to change the order.
@@ -36,7 +36,7 @@ If you have multiple autoloads they'll be added in the order listed. You can dra
 
 And when the game is run, looking at the remote scene tree will show you where the autoload was added, as a direct child of the root viewport:
 
-![alt](/3.x/img/autoload_03.png)
+![alt](/godot_recipes/3.x/img/autoload_03.png)
 
 ### Singleton
 
@@ -58,7 +58,7 @@ Autoloads/singletons are useful in many situations you may encounter. For exampl
 
 ## Related recipes
 
-- [Audio Manager](/3.x/audio/audio_manager/)
+- [Audio Manager](/godot_recipes/3.x/audio/audio_manager/)
 - [Displaying Debug Data](/ui/debug_overlay/)
 
 <!-- #### Like video?

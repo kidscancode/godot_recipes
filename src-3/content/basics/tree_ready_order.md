@@ -17,7 +17,7 @@ Scene tree order is something that can cause a great deal of confusion for Godot
 
 Here's our sample node setup:
 
-![alt](/3.x/img/tree_order_01.png)
+![alt](/godot_recipes/3.x/img/tree_order_01.png)
 
 On each node, we have the following script attached:
 
@@ -103,4 +103,4 @@ Remember this when trying to access other nodes in `_ready()`. If you need to go
 
 ## Related recipes
 
-- [Understanding node paths](/3.x/basics/getting_nodes/)
+- [Understanding node paths](/godot_recipes/3.x/basics/getting_nodes/)

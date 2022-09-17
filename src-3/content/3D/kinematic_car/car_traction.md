@@ -7,7 +7,7 @@ ghcommentid: 42
 
 ## Problem
 
-You've got a [kinematic car](/3.x/3d/kinematic_car/car_base/), but you don't like the "on rails" feeling, especially at high speeds. You'd like to have some "slip" so that you can have drifting and loss of traction.
+You've got a [kinematic car](/godot_recipes/3.x/3d/kinematic_car/car_base/), but you don't like the "on rails" feeling, especially at high speeds. You'd like to have some "slip" so that you can have drifting and loss of traction.
 
 ## Solution
 
@@ -54,7 +54,7 @@ to this:
 velocity = lerp(velocity, new_heading * velocity.length(), traction)
 ```
 
-![alt](/3.x/img/3d_car_06.gif)
+![alt](/godot_recipes/3.x/img/3d_car_06.gif)
 
 ### Wrapping up
 
@@ -68,10 +68,10 @@ If you're looking to add more, here are some of the topics we'll address in foll
 
 ## Related recipes
 
-- [Kinematic Car: Base](/3.x/3d/kinematic_car/car_base/)
-- [2D: Car Steering recipe](/3.x/2d/car_steering)
+- [Kinematic Car: Base](/godot_recipes/3.x/3d/kinematic_car/car_base/)
+- [2D: Car Steering recipe](/godot_recipes/3.x/2d/car_steering)
 - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/)
-- [3D: KinematicBody Movement](/3.x/3d/kinematic_body/)
+- [3D: KinematicBody Movement](/godot_recipes/3.x/3d/kinematic_body/)
 
 #### Like video?
 

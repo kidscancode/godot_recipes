@@ -45,7 +45,7 @@ void fragment() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_01.png)
+![alt](/godot_recipes/3.x/img/shader_intro_01.png)
 
 Every pixel is red. `COLOR` is the output of the fragment shader and is applied to every pixel simultaneously. But what if we want some variation?
 
@@ -63,7 +63,7 @@ void fragment() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_02.png)
+![alt](/godot_recipes/3.x/img/shader_intro_02.png)
 
 Now the red channel ranges from `0` on the left to `1.0` on the right, varying along with the **UV**.
 
@@ -74,7 +74,7 @@ void fragment() {
     COLOR = vec4(UV.x, 1.0 - UV.y, 0.5, 1.0);
 ```
 
-![alt](/3.x/img/shader_intro_02a.png)
+![alt](/godot_recipes/3.x/img/shader_intro_02a.png)
 
 #### Textures
 
@@ -97,7 +97,7 @@ void fragment() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_03.png)
+![alt](/godot_recipes/3.x/img/shader_intro_03.png)
 
 This ramps the alpha channel down, resulting in a fade-out effect.
 
@@ -112,7 +112,7 @@ void fragment() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_04.gif)
+![alt](/godot_recipes/3.x/img/shader_intro_04.gif)
 
 Or this one:
 
@@ -122,7 +122,7 @@ void fragment() {
     COLOR.a = max(0.0, UV.x - abs(sin(TIME)));
 }
 ```
-![alt](/3.x/img/shader_intro_05.gif)
+![alt](/godot_recipes/3.x/img/shader_intro_05.gif)
 
 ### Vertex shader
 
@@ -136,7 +136,7 @@ void vertex() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_06.png)
+![alt](/godot_recipes/3.x/img/shader_intro_06.png)
 
 In this shader, the two left vertices `(0, 0)` and `(0, 1)` are unchanged, but the right vertices become `(10, 0)` and `(10, 1)`.
 
@@ -148,7 +148,7 @@ void vertex() {
 }
 ```
 
-![alt](/3.x/img/shader_intro_07.gif)
+![alt](/godot_recipes/3.x/img/shader_intro_07.gif)
 
 ### Uniforms
 

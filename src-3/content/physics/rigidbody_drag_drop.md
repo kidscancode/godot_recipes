@@ -95,10 +95,10 @@ Lastly, when the mouse is released during dragging, we can perform the reverse a
 <video controls src="/3.x/img/rbody_drag.webm"></video>
 
 {{% notice note %}}
-Download the project file here: [rigidbody_drag_and_drop.zip](/3.x/files/rigidbody_drag_and_drop.zip)
+Download the project file here: [rigidbody_drag_and_drop.zip](/godot_recipes/3.x/files/rigidbody_drag_and_drop.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Using Rigid Bodies](/3.x/physics/godot3_kyn_rigidbody1/)
-- [Kinematic to Rigid Body Interaction](/3.x/physics/kinematic_to_rigidbody/)
+- [Using Rigid Bodies](/godot_recipes/3.x/physics/godot3_kyn_rigidbody1/)
+- [Kinematic to Rigid Body Interaction](/godot_recipes/3.x/physics/kinematic_to_rigidbody/)

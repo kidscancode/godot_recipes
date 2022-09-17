@@ -15,7 +15,7 @@ A common way of displaying the player's health is via a series of icons (typical
 
 In this recipe, we're going to explore three ways of displaying this information, which I'm labeling "simple", "empty", and "partial":
 
-![alt](/3.x/img/heart_bar_02.png)
+![alt](/godot_recipes/3.x/img/heart_bar_02.png)
 
 This image shows what the bar displays when the player has `3` health.
 
@@ -33,7 +33,7 @@ Ideally, your heart bar will be easy to drop into your overall HUD/UI. It theref
 
 Add a {{< gd-icon TextureRect >}}`TextureRect` child. Drag your heart texture into the *Texture* property and set the *Stretch Mode* to "Keep". Name the node "1" and then press "Ctrl-D" to duplicate the node for as many hearts as you need (5 in this example). Your node setup should look like this:
 
-![alt](/3.x/img/heart_bar_03.png)
+![alt](/godot_recipes/3.x/img/heart_bar_03.png)
 
 ### Adding a script
 
@@ -102,16 +102,16 @@ func update_partial(value):
 
 Here's an example using each of the bar modes:
 
-![alt](/3.x/img/heart_bar_04.gif)
+![alt](/godot_recipes/3.x/img/heart_bar_04.gif)
 
 ## Wrapping up
 
 Use this heart bar setup as a basis for your own HUD. This technique can be expanded to support a wide variety of information displays.
 
 {{% notice note %}}
-Download the project file here: [heart_bars.zip](/3.x/files/heart_bars.zip)
+Download the project file here: [heart_bars.zip](/godot_recipes/3.x/files/heart_bars.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [UI: Containers](/3.x/ui/containers/)
+- [UI: Containers](/godot_recipes/3.x/ui/containers/)

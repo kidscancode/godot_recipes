@@ -12,7 +12,7 @@ You're looking to make a 3D driving or racing game and don't know where to start
 ## Solution
 
 {{% notice note %}}
-Even in 3D, cars tend to remain on the ground. For this reason, movement can (mostly) be treated as if it were 2D. Much of the car's movement code will be very much like the [2D: Car Steering recipe](/3.x/2d/car_steering). It's recommended that you review that recipe before proceeding with this one.
+Even in 3D, cars tend to remain on the ground. For this reason, movement can (mostly) be treated as if it were 2D. Much of the car's movement code will be very much like the [2D: Car Steering recipe](/godot_recipes/3.x/2d/car_steering). It's recommended that you review that recipe before proceeding with this one.
 {{% /notice %}}
 
 Godot does provide a {{< gd-icon VehicleBody3D >}}`VehicleBody` node, which is based on {{< gd-icon RigidBody3D >}}`RigidBody` and includes a complex simulation of engine, braking, suspension, etc. However, this introduces a lot of complexity and tends to be overkill for most casual racing/driving games. For that reason, we're going with a KinematicBody based solution here.
@@ -29,7 +29,7 @@ Before we start coding, we need to find a 3D model of a car and import it to God
 
 Here's the car model we'll use for this demonstration:
 
-![alt](/3.x/img/3d_car_01.png)
+![alt](/godot_recipes/3.x/img/3d_car_01.png)
 
 {{% notice note %}}
 You can find this and other car models in Kenney's "Car Kit", available here:
@@ -44,7 +44,7 @@ Select the file in Godot and go to the "Import" tab. Change the _Root Type_ to "
 
 Double-click on the `sedanSports.glb` file and choose "New Inherited". You'll have a new scene that looks like this:
 
-![alt](/3.x/img/3d_car_02.png)
+![alt](/godot_recipes/3.x/img/3d_car_02.png)
 
 Note the individual meshes for each of the car's parts. There's also a stray "tmpParent" {{< gd-icon Node3D >}}`Spatial` node, but we can ignore that.
 
@@ -52,7 +52,7 @@ The {{< gd-icon KinematicBody3D >}}`KinematicBody` has a warning about missing c
 
 Once the shapes are set up they should look something like this:
 
-![alt](/3.x/img/3d_car_03.png)
+![alt](/godot_recipes/3.x/img/3d_car_03.png)
 
 {{% notice tip %}}
 To ensure the front and rear shapes match, just create and size one of them, then duplicate it. It is also a good idea to name the {{< gd-icon CollisionShape3D >}}`CollisionShape` nodes to help keep track of them - `CollisionBody`, `CollisionWheelsFront`, and `CollisionWheelsRear` would be a good example.
@@ -87,7 +87,7 @@ var steer_angle = 0.0  # current wheel angle
 
 * `engine_power` and `braking` will apply for accelerating and decelerating the car.
 
-* `drag` and `friction` are [explained here](/3.x/2d/car_steering/#part-3-frictiondrag).
+* `drag` and `friction` are [explained here](/godot_recipes/3.x/2d/car_steering/#part-3-frictiondrag).
 
 The rest of the script will be very similar to the 2D version, which a few changes to work correctly with {{< gd-icon Node3D >}}`Spatial`s and `Transform`s.
 
@@ -152,7 +152,7 @@ func get_input():
 
 Now we're ready to add some player controls. Here's the InputMap setup:
 
-![alt](/3.x/img/3d_car_04.png)
+![alt](/godot_recipes/3.x/img/3d_car_04.png)
 
 If you have a gamepad with an analog stick, it's highly recommended you use it. With keyboard controls, which can only be pressed or not, you can only turn the "steering wheel" to the maximum value. An analog stick allows for a much better experience. We'll make sure the code works with both.
 
@@ -180,7 +180,7 @@ The next step rotates the wheel meshes to give some visual feedback of the steer
 
 After steering, we check the accelerate/brake inputs to set the car's `acceleration`.
 
-![alt](/3.x/img/3d_car_05.gif)
+![alt](/godot_recipes/3.x/img/3d_car_05.gif)
 
 ### Wrapping up
 
@@ -197,9 +197,9 @@ Download the project file here: [https://github.com/kidscancode/3d_car_tutorial/
 
 ## Related recipes
 
-- [2D: Car Steering recipe](/3.x/2d/car_steering)
+- [2D: Car Steering recipe](/godot_recipes/3.x/2d/car_steering)
 - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/)
-- [3D: KinematicBody Movement](/3.x/3d/kinematic_body/)
+- [3D: KinematicBody Movement](/godot_recipes/3.x/3d/kinematic_body/)
 
 #### Like video?
 

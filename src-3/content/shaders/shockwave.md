@@ -14,5 +14,5 @@ You want a shader to blur an object or the screen.
 
 ## Related Recipes
 
-- [Shaders: Intro](/3.x/shaders/intro/)
-- [Interacting with Shaders](/3.x/shaders/interacting/)
+- [Shaders: Intro](/godot_recipes/3.x/shaders/intro/)
+- [Interacting with Shaders](/godot_recipes/3.x/shaders/interacting/)

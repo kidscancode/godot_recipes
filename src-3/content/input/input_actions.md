@@ -61,4 +61,4 @@ There are several functions you can use for checking input state:
 
 ## Related Recipes
 
-- [Inputs: Introduction](/3.x/input/input_intro/)
+- [Inputs: Introduction](/godot_recipes/3.x/input/input_intro/)

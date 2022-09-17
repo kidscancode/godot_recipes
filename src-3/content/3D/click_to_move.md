@@ -13,11 +13,11 @@ You want to move a 3D object to a clicked position.
 
 We'll start with a flat plane for our world. Our actor will move on this plane.
 
-![alt](/3.x/img/3d_click_01.png)
+![alt](/godot_recipes/3.x/img/3d_click_01.png)
 
 The actor for this demo is a triangular prism mesh:
 
-![alt](/3.x/img/3d_click_02.png)
+![alt](/godot_recipes/3.x/img/3d_click_02.png)
 
 Here is the code for the movement. If given a target, the object will turn and move toward it.
 
@@ -44,7 +44,7 @@ func _physics_process(delta):
 
 We've also added a {{< gd-icon MeshInstance3D >}}`MeshInstance` called "Marker" to the scene. This will be moved to indicate the clicked position.
 
-![alt](/3.x/img/3d_click_03.png)
+![alt](/godot_recipes/3.x/img/3d_click_03.png)
 
 ### Mouse -> 3D
 
@@ -61,20 +61,20 @@ func _on_StaticBody_input_event(camera, event, click_position, click_normal, sha
 
 We set the position of the marker and the Player's target to the clicked position:
 
-![alt](/3.x/img/3d_click_04.gif)
+![alt](/godot_recipes/3.x/img/3d_click_04.gif)
 
 ## Wrapping up
 
 You can use this technique to detect clicks on any objects in your 3D world.
 
 {{% notice note %}}
-Download the project file here: [3d_click_move.zip](/3.x/files/3d_click_move.zip)
+Download the project file here: [3d_click_move.zip](/godot_recipes/3.x/files/3d_click_move.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-<!-- - [UI: Labels](/3.x/ui/labels/)
-- [UI: Object Healthbars](/3.x/ui/unit_healthbar/) -->
+<!-- - [UI: Labels](/godot_recipes/3.x/ui/labels/)
+- [UI: Object Healthbars](/godot_recipes/3.x/ui/unit_healthbar/) -->
 
 #### Like video?
 

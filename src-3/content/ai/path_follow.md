@@ -19,7 +19,7 @@ You can add the {{< gd-icon Path2D >}}`Path2D` as a child of your main scene, yo
 
 After adding the {{< gd-icon Path2D >}}`Path2D` node, you'll see some new buttons appear above the viewport:
 
-![alt](/3.x/img/path2d_buttons.png)
+![alt](/godot_recipes/3.x/img/path2d_buttons.png)
 
 Select the "Add points" button and click to start adding. If you want a closed curve, the "Close curve" button will connect the last point to the first one.
 

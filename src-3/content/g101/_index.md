@@ -8,7 +8,7 @@ pre = "<i class='fas fa-graduation-cap fa-fw'></i>&nbsp"
 
 # <i class='fas fa-graduation-cap'></i>&nbsp;Godot 101
 
-![alt](/3.x/img/godot3_logo.png)
+![alt](/godot_recipes/3.x/img/godot3_logo.png)
 
 Your introduction to the Godot game engine. If you've never used a game engine
 before, or if you’re just new to Godot, this is the place to start.

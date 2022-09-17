@@ -11,7 +11,7 @@ You want to shoot projectiles from your player/mob/etc..
 
 ## Solution
 
-For this example, we'll use the "Mini Tank" that we set up in [KinematicBody: Movement](/3.x/3d/kinematic_body/).
+For this example, we'll use the "Mini Tank" that we set up in [KinematicBody: Movement](/godot_recipes/3.x/3d/kinematic_body/).
 
 ### Setting up the bullet
 
@@ -25,7 +25,7 @@ First, we'll set up a "bullet" object that we can instance. Here are the nodes w
 
 For your mesh, you can use one of Godot's built-in primitive shapes, or something like this:
 
-![alt](/3.x/img/3d_shoot_01.png)
+![alt](/godot_recipes/3.x/img/3d_shoot_01.png)
 
 {{% notice note %}}
 If you'd like to use the bullet model pictured here, you can grab it from [Kenney's "Weapon Pack"](https://kenney.nl/assets/weapon-pack).
@@ -71,7 +71,7 @@ We'll also emit an `exploded` signal, which you can connect up to implement expl
 
 Now in the tank (or whatever object you have doing the shooting), add a {{< gd-icon Position3D >}}`Position3D` child at the point where you want the bullets to appear. In the case of our tank, we're placing it at the end of the cannon barrel:
 
-![alt](/3.x/img/3d_shoot_02.png)
+![alt](/godot_recipes/3.x/img/3d_shoot_02.png)
 
 Now we can add the code to the tank's script. First a way to add the bullet scene we're going to instance:
 
@@ -94,13 +94,13 @@ That's it - run your scene and try it out:
 <video controls src="/3.x/img/3d_shoot_03.webm"></video>
 
 {{% notice note %}}
-Download the project file here: [3d_shooting.zip](/3.x/files/3d_shooting.zip)
+Download the project file here: [3d_shooting.zip](/godot_recipes/3.x/files/3d_shooting.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [KinematicBody: Movement](/3.x/3d/kinematic_body/)
-- [Godot 101: Intro to 3D](/3.x/g101/3d/)
+- [KinematicBody: Movement](/godot_recipes/3.x/3d/kinematic_body/)
+- [Godot 101: Intro to 3D](/godot_recipes/3.x/g101/3d/)
 
 <!-- #### Like video?
 

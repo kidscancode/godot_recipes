@@ -26,7 +26,7 @@ Spaceship models are from this asset pack:
 
 I've chosen the "Executioner" ship model:
 
-![alt](/4.x/img/3d_ship_01.png)
+![alt](/godot_recipes/4.x/img/3d_ship_01.png)
 
 Feel free to choose your favorite design.
 
@@ -67,9 +67,9 @@ func _physics_process(delta):
     move_and_collide(velocity * delta)
 ```
 
-Make a test scene with a {{< gd-icon Camera3D >}} `Camera3D` to try it out. You can use a stationary camera or a [chase camera](/4.x/3d/interpolated_camera/). Check that the ship accelerates and slows before moving on to the next step.
+Make a test scene with a {{< gd-icon Camera3D >}} `Camera3D` to try it out. You can use a stationary camera or a [chase camera](/godot_recipes/4.x/3d/interpolated_camera/). Check that the ship accelerates and slows before moving on to the next step.
 
-![alt](/4.x/img/3d_ship_02.gif)
+![alt](/godot_recipes/4.x/img/3d_ship_02.gif)
 
 ### Rotation
 
@@ -107,7 +107,7 @@ transform.basis = transform.basis.rotated(transform.basis.y,
 transform.basis = transform.basis.orthonormalized()
 ```
 
-![alt](/4.x/img/3d_ship_04.gif)
+![alt](/godot_recipes/4.x/img/3d_ship_04.gif)
 
 ### Improvements
 
@@ -130,7 +130,7 @@ yaw_input = lerp(yaw_input, Input.get_axis("yaw_right", "yaw_left"),
 
 Now when stopping or changing direction, there's a little bit of inertia.
 
-![alt](/4.x/img/3d_ship_03.gif)
+![alt](/godot_recipes/4.x/img/3d_ship_03.gif)
 
 #### Linking roll/yaw
 
@@ -148,7 +148,7 @@ This is another fun place to experiment by changing the roll and yaw speeds. For
 
 That's it, now you can fly! This controller is a great start for whatever space-based game you might have in mind. Add some other ships, and a few effects, and you're ready go:
 
-<video width="500" controls src="/4.x/img/3d_ship_05.webm"></video>
+<video width="500" controls src="/godot_recipes/4.x/img/3d_ship_05.webm"></video>
 
 ### Full script
 
@@ -204,7 +204,7 @@ Download the project file here: [https://github.com/kidscancode/3d_spaceship_dem
 ## Related recipes
 
 <!-- - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/) -->
-- [Interpolated Camera](/3.x/3d/interpolated_camera/)
+- [Interpolated Camera](/godot_recipes/4.x/3d/interpolated_camera/)
 
 
 <!-- #### Like video?

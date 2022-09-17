@@ -41,11 +41,11 @@ func _process(delta):
 
 Run this code and you'll see the sprite takes 5 seconds to cross the screen.
 
-![alt](/3.x/img/delta_01.gif)
+![alt](/godot_recipes/3.x/img/delta_01.gif)
 
 Maybe. The trouble begins if there is something else occupying the computer's time. This is called _lag_ and can come from a variety of sources - the cause could be your code or even other applications running on your computer. If this happens, then the length of a frame might increase. As an extreme example, imagine that the frame rate is halved - each frame took 1/30 instead of 1/60 of a second. Moving at `2` px/frame, it's now going to take twice as long for the sprite to reach the edge.
 
-![alt](/3.x/img/delta_02.gif)
+![alt](/godot_recipes/3.x/img/delta_02.gif)
 
 Even small frame rate fluctuations will result in inconsistent movement speed. If this were a bullet or other fast-moving object, we wouldn't want it slowing down like this. We need the movement to be _frame rate independent_.
 
@@ -81,11 +81,11 @@ func _process(delta):
 
 Now when running at `30` frames per second, the travel time is consistent:
 
-![alt](/3.x/img/delta_03.gif)
+![alt](/godot_recipes/3.x/img/delta_03.gif)
 
 If the frame rate gets _very_ low, the movement is no longer smooth, but the _time_ remains the same.
 
-![alt](/3.x/img/delta_04.gif)
+![alt](/godot_recipes/3.x/img/delta_04.gif)
 
 ### Using delta with motion equations
 
@@ -149,4 +149,4 @@ When using `move_and_slide()` you still need to apply `delta` to any other quant
 
 ## Related Recipes
 
-- [Using KinematicBody2D](/3.x/physics/godot3_kinematic2d/)
+- [Using KinematicBody2D](/godot_recipes/3.x/physics/godot3_kinematic2d/)

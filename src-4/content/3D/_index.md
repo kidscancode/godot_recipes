@@ -10,7 +10,7 @@ pre = "<i class='fas fa-cube fa-fw'></i>&nbsp"
 
 Tips, tricks, and tutorials on the 3D side of game development.
 
-<!-- For a gentle introduction to working in 3D, see: [Intro to 3D](/3.x/g101/3d/) -->
+<!-- For a gentle introduction to working in 3D, see: [Intro to 3D](/godot_recipes/3.x/g101/3d/) -->
 
 #### In this section:
 

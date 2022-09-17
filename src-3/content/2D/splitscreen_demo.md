@@ -11,7 +11,7 @@ two players (one using arrow keys and the other using WASD controls). This is
 not a problem if our game world all fits on one screen, but if the map is large,
 we'll want to have a "split screen" view tracking the two players separately.
 
-![alt](/3.x/img/splitscreen2.gif)
+![alt](/godot_recipes/3.x/img/splitscreen2.gif)
 
 We'll also look at a quick way to set up a minimap display.
 
@@ -43,7 +43,7 @@ appropriate value to `id` for each player.
 
 The two players are added to a "World" scene containing a {{< gd-icon TileMap >}}`TileMap`:
 
-![alt](/3.x/img/splitscreen_map.png)
+![alt](/godot_recipes/3.x/img/splitscreen_map.png)
 
 If you like, you can download the starting project, with the world already set
 up, here:
@@ -204,14 +204,14 @@ $Minimap/Viewport.world_2d = viewport1.world_2d
 Use the "Layout" menu to align the Minimap container at "Center Bottom". Let's
 see what it looks like:
 
-![alt](/3.x/img/splitscreen_minimap1.png?width=400)
+![alt](/godot_recipes/3.x/img/splitscreen_minimap1.png?width=400)
 
 We need to get rid of that grey area around the edges. We could find the precise
 zoom level that matches our desired minimap size, but instead, we'll check the
 _Transparent Bg_ on the {{< gd-icon Viewport >}}`Viewport`. Now our non-map areas aren't visible and the
 minimap appears floating directly on top of the main viewports.
 
-![alt](/3.x/img/splitscreen_minimap2.png?width=400)
+![alt](/godot_recipes/3.x/img/splitscreen_minimap2.png?width=400)
 
 ### Conclusion
 

@@ -53,11 +53,11 @@ describes what layers the body will _scan_ for collisions. If an object isn't in
 
 You can also assign names to layers. In "Project Settings", look for the "Layer Names -> 2D Physics" section:
 
-![alt](/3.x/img/k2d_layer_names.png?width=300)
+![alt](/godot_recipes/3.x/img/k2d_layer_names.png?width=300)
 
 A body's layer properties can be configured via code, or directly in the Inspector:
 
-![alt](/3.x/img/k2d_layer_example.png?width=300)
+![alt](/godot_recipes/3.x/img/k2d_layer_example.png?width=300)
 
 **Example:**
 
@@ -122,7 +122,7 @@ Often the response is to use `move_and_slide()` because it's "simpler", but this
 necessarily the case. One way to think of it is that `move_and_slide()` is a special case,
 and `move_and_collide()` is more general. For example, the following two code snippets result in the same collision response:
 
-![alt](/3.x/img/k2d_compare.gif)
+![alt](/godot_recipes/3.x/img/k2d_compare.gif)
 
 {{< highlight python>}}
 var collision = move_and_collide(velocity * delta)
@@ -276,7 +276,7 @@ If the colliding object (`collider`) has a `hit` method,
 we also call it. In the example project, we've added a flashing color effect to
 the Wall to demonstrate this.
 
-![alt](/3.x/img/k2d_bullet_bounce.gif)
+![alt](/godot_recipes/3.x/img/k2d_bullet_bounce.gif)
 
 ### Platforming with move_and_slide
 
@@ -350,7 +350,7 @@ func _physics_process(delta):
         get_tree().reload_current_scene()
 {{< /highlight >}}
 
-![alt](/3.x/img/k2d_platf_sample.gif?width=300)
+![alt](/godot_recipes/3.x/img/k2d_platf_sample.gif?width=300)
 
 We're using a very rudimentary state machine to handle the transitions between the character's idle, running, and jumping states.
 

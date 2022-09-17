@@ -23,8 +23,8 @@ void fragment() {
 
 For example, to gradually blur the entire screen, such as for a scene transition effect:
 
-![alt](/3.x/img/blur_shader1.png)
-![alt](/3.x/img/blur_shader2.png)
+![alt](/godot_recipes/3.x/img/blur_shader1.png)
+![alt](/godot_recipes/3.x/img/blur_shader2.png)
 
 You can also animate the blurring:
 
@@ -46,5 +46,5 @@ func _process(delta):
 
 ## Related Recipes
 
-- [Shaders: Intro](/3.x/shaders/intro/)
-- [Interacting with Shaders](/3.x/shaders/interacting/)
+- [Shaders: Intro](/godot_recipes/3.x/shaders/intro/)
+- [Interacting with Shaders](/godot_recipes/3.x/shaders/interacting/)

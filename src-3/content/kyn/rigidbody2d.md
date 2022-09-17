@@ -117,7 +117,7 @@ Finally, physics-related functions should be called in `_physics_process()`. Her
 
 Play the scene - you should be able to fly around freely:
 
-![alt](/3.x/img/rigidbody_ship1.gif)
+![alt](/godot_recipes/3.x/img/rigidbody_ship1.gif)
 
 #### The Position Problem
 
@@ -165,7 +165,7 @@ func _integrate_forces(state):
 
 By adjusting the body's `transform` using the physics state, the engine stays happy, and everything works as expected:
 
-![alt](/3.x/img/rigidbody_ship2.gif)
+![alt](/godot_recipes/3.x/img/rigidbody_ship2.gif)
 
 <!-- #### Like video?
 

@@ -65,7 +65,7 @@ Complying with license terms is very important. You can find out what's required
 
 To reach it, we've added a new button on the "Title" screen:
 
-![alt](/3.x/img/cj_12_01.png)
+![alt](/godot_recipes/3.x/img/cj_12_01.png)
 
 The button is setup just like the others - add it to the "buttons" group so that it will get registered. In the `Screens.gd`, add another `match` for this button's name:
 
@@ -76,7 +76,7 @@ The button is setup just like the others - add it to the "buttons" group so that
 
 Here's what the "About" screen looks like:
 
-![alt](/3.x/img/cj_12_02.png)
+![alt](/godot_recipes/3.x/img/cj_12_02.png)
 
 Extending "BaseScreen.tscn", we've added a `TextEdit` and another container for a single "Home" button.
 

@@ -15,7 +15,7 @@ Realtime strategy (RTS) games often require giving orders to many units at once.
 
 Here's an example of what we're going for:
 
-![alt](/3.x/img/multi_unit_01.gif)
+![alt](/godot_recipes/3.x/img/multi_unit_01.gif)
 
 ### Unit setup
 
@@ -100,7 +100,7 @@ Each of those `collider` items is a reference to a unit, so we can use this to n
         item.collider.selected = true
 ```
 
-![alt](/3.x/img/multi_unit_03.gif)
+![alt](/godot_recipes/3.x/img/multi_unit_03.gif)
 
 ### Commanding the units
 
@@ -127,13 +127,13 @@ The `else` clause here triggers if we click the mouse when `selected` is greater
 This technique can be expanded to a wide range of RTS or other game styles. Download the full project below and use it as a base for your own game.
 
 {{% notice note %}}
-Download the project file here: [rts_movement.zip](/3.x/files/rts_movement.zip)
+Download the project file here: [rts_movement.zip](/godot_recipes/3.x/files/rts_movement.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Mouse Input](/3.x/input/mouse_input/)
-- [Inputs: Introduction](/3.x/input/input_intro/)
+- [Mouse Input](/godot_recipes/3.x/input/mouse_input/)
+- [Inputs: Introduction](/godot_recipes/3.x/input/input_intro/)
 
 #### Like video?
 

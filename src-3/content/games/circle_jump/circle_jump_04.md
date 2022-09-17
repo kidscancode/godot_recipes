@@ -50,7 +50,7 @@ Now we can make our three inherited scenes. For each, name the root node, change
 
 Here is what the three scenes should look like, using the indicated button names:
 
-![alt](/3.x/img/cj_04_01.png)
+![alt](/godot_recipes/3.x/img/cj_04_01.png)
 
 Make one more scene with a `Node` root named "Screens" and instance the three screens in it. Add the following script, which will handle scene transitions and state.
 
@@ -100,7 +100,7 @@ The `change_screen()` method handles transition to the selected screen, includin
 
 Run it to test out the screen transitions:
 
-![alt](/3.x/img/cj_04_02.gif)
+![alt](/godot_recipes/3.x/img/cj_04_02.gif)
 
 Instance this scene in Main, then connect its `start_game` signal to the `new_game()` function in main. Don't forget to remove `new_game()` from the `_ready()`. Try running the game and you should be able to start. The last part will be to connect up the game over condition.
 

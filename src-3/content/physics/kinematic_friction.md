@@ -47,7 +47,7 @@ If you run this code, you'll see that the character's **x** velocity changes ins
 lerp(start_value, end_value, amount)
 ```
 
-`lerp()`, aka _linear interpolate_, finds a "blended" value between two given numbers.  See [Interpolation](/3.x/math/interpolation/) for details.
+`lerp()`, aka _linear interpolate_, finds a "blended" value between two given numbers.  See [Interpolation](/godot_recipes/3.x/math/interpolation/) for details.
 
 In the code below, `friction`  represents how quickly the character comes to a stop, while `acceleration` determines how quickly it gets up to full speed. Both are values between `0.0` and `1.0`.
 
@@ -79,8 +79,8 @@ We're using `friction` and `acceleration` as the amount to blend. For accelerati
 Using values of `1.0` would recreate the "instant" movement we started with.
 {{% /notice %}}
 
-![alt](/3.x/img/friction_platformer.gif)
+![alt](/godot_recipes/3.x/img/friction_platformer.gif)
 
 ## Related Recipes
 
-- [Platform Character](/3.x/2d/platform_character/)
+- [Platform Character](/godot_recipes/3.x/2d/platform_character/)

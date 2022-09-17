@@ -13,13 +13,13 @@ You need a player-controlled 3D kinematic body.
 
 For this recipe, we'll be using this adorable tank model:
 
-![alt](/3.x/img/3d_kinematic_01.png)
+![alt](/godot_recipes/3.x/img/3d_kinematic_01.png)
 
 You can grab this model on Itch.io: [https://gtibo.itch.io/mini-tank](https://gtibo.itch.io/mini-tank) or use any other model you'd like. We won't be doing anything that's tank-specific here.
 
 We can add the model to the scene, but we'll need a couple of additional nodes:
 
-![alt](/3.x/img/3d_kinematic_02.png)
+![alt](/godot_recipes/3.x/img/3d_kinematic_02.png)
 
 For the collision shape, we're just going to use a `BoxShape` aligned and sized with the tank's treads. `CamPos` is a {{< gd-icon Position3D >}}`Position3D` we'll use to place our following camera. It's placed behind and above the tank, angled down.
 
@@ -98,13 +98,13 @@ Here's the tank in action. We've made a test scene with a {{< gd-icon StaticBody
 This is the basis of movement for any kind of kinematic character. From here you can add jumping, shooting, AI behavior, etc. See the related recipes for examples that build on this recipe.
 
 <!-- {{% notice note %}}
-Download the project file here: [floating_text.zip](/3.x/files/floating_text.zip)
+Download the project file here: [floating_text.zip](/godot_recipes/3.x/files/floating_text.zip)
 {{% /notice %}} -->
 
 ## Related recipes
 
-- [Intro to 3D](/3.x/g101/3d/)
-- [Input Actions](/3.x/input/input_actions/)
+- [Intro to 3D](/godot_recipes/3.x/g101/3d/)
+- [Input Actions](/godot_recipes/3.x/input/input_actions/)
 
 #### Like video?
 

@@ -19,8 +19,8 @@ node.material.set_shader_param("param_name", value)
 
 You can also get the value with `get_shader_param()`.
 
-For an example of this, see the [Blur Shader](/3.x/shaders/blur/) recipe.
+For an example of this, see the [Blur Shader](/godot_recipes/3.x/shaders/blur/) recipe.
 
 ## Related Recipes
 
-- [Shaders: Intro](/3.x/shaders/intro/)
+- [Shaders: Intro](/godot_recipes/3.x/shaders/intro/)

@@ -109,15 +109,15 @@ func heal(amount):
 
 Once the `PlayerHealth` class is defined, we can make a new instance of it. Click the "New Resource" button at the top of the Inspector:
 
-![alt](/3.x/img/custom_resource_01.png)
+![alt](/godot_recipes/3.x/img/custom_resource_01.png)
 
 In the "Create New Resource" dialog you'll see the long list of resource types. Searching will locate our `PlayerHealth` type.
 
-![alt](/3.x/img/custom_resource_02.png)
+![alt](/godot_recipes/3.x/img/custom_resource_02.png)
 
 Now you can set the desired `max_value` and save the new resource as a `.tres` file.
 
-![alt](/3.x/img/custom_resource_03.png)
+![alt](/godot_recipes/3.x/img/custom_resource_03.png)
 
 #### Using the resource
 
@@ -167,13 +167,13 @@ func _on_player_health_changed(value):
 
 Here's an example of it in action:
 
-![alt](/3.x/img/custom_resource_04.gif)
+![alt](/godot_recipes/3.x/img/custom_resource_04.gif)
 
 {{% notice note %}}
-Download the project file here: [custom_resources.zip](/3.x/files/custom_resources.zip)
+Download the project file here: [custom_resources.zip](/godot_recipes/3.x/files/custom_resources.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Platform character](/3.x/2d/platform_character/)
-- [Object healthbars](/3.x/ui/unit_healthbar/)
+- [Platform character](/godot_recipes/3.x/2d/platform_character/)
+- [Object healthbars](/godot_recipes/3.x/ui/unit_healthbar/)

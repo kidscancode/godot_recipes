@@ -32,7 +32,7 @@ Next, in _Input Devices/Pointing_ enable "Emulate Touch From Mouse". This will l
 To keep things organized, we're going to make a folder to hold the game objects (`objects`) and one for UI (`gui`). The game assets (images, audio, etc.) will go in an `assets` folder. You can download the starting assets here:
 
 {{% notice note %}}
-Download the project file here: [circle_jump_assets.zip](/3.x/files/circle_jump_assets.zip)
+Download the project file here: [circle_jump_assets.zip](/godot_recipes/3.x/files/circle_jump_assets.zip)
 {{% /notice %}}
 
 Once we have the folders and the assets set up, we're ready to start coding!
@@ -56,7 +56,7 @@ Since the art is drawn pointing upwards, set the `Sprite`'s _Rotation_ property 
 
 Select the `CollisionPolygon2D` and add three points to cover the jumper's triangular shape.
 
-![alt](/3.x/img/cj_01_01.png?width=200)
+![alt](/godot_recipes/3.x/img/cj_01_01.png?width=200)
 
 Now let's add a script to the body and start coding its behavior:
 
@@ -107,12 +107,12 @@ func _physics_process(delta):
 ### Color Shader
 
 {{% notice tip %}}
-See the [Shaders](/3.x/shaders) section for help getting started using shaders.
+See the [Shaders](/godot_recipes/3.x/shaders) section for help getting started using shaders.
 {{% /notice %}}
 
 We're going to use a small shader to the `Sprite` so that we can customize its color. Select the `Sprite` and then in the _Material_ property add a new `ShaderMaterial`. Click on that, and in _Shader_ select "New Shader", then click on that. The shader editor panel will open at the bottom.
 
-![alt](/3.x/img/cj_01_02.gif)
+![alt](/godot_recipes/3.x/img/cj_01_02.gif)
 
 Here is the code for our color shader. It uses a `uniform` variable for the color, which allows us to choose a value from the Inspector or from our game script. Then it changes all the visible pixels of the texture into that color, preserving the alpha (transparency) value.
 
@@ -129,7 +129,7 @@ void fragment() {
 
 You'll now see a _Shader Params_ section in the Inspector where you can set a color value:
 
-![alt](/3.x/img/cj_01_03.gif)
+![alt](/godot_recipes/3.x/img/cj_01_03.gif)
 
 We'll want to use this same shader elsewhere, so in the _Shader_ property, choose "Save" and save this as `res://objects/color.shader`.
 

@@ -16,7 +16,7 @@ This recipe applies equally well in both 2D and 3D nodes.
 
 By default, a kinematic body moved with `move_and_slide()` or `move_and_collide()` will push any rigid bodies it collides with. This interaction ignores the rigid body's physics properties due to the kinematic move function's `infinite_inertia` parameter.
 
-![alt](/3.x/img/inf_inertia1.gif)
+![alt](/godot_recipes/3.x/img/inf_inertia1.gif)
 
 In some cases, this might be all you need. However, if you want to avoid "glitches" such as body overlap, tunneling, and other unrealistic behavior, you'll need to add some code for the interactions.
 
@@ -47,7 +47,7 @@ It's that last one that needs to be changed. Since GDScript doesn't have named p
 
 Now if you try to move, you'll see that the kinematic body just stops on collision. It can't push the rigid body at all.
 
-![alt](/3.x/img/inf_inertia2.gif)
+![alt](/godot_recipes/3.x/img/inf_inertia2.gif)
 
 To give the colliding body a "push" we'll need to apply an impulse. An impulse is an instantaneous "kick" - think of a bat hitting a ball. This is as opposed to a force, which is a continuous "push" on an object.
 
@@ -66,7 +66,7 @@ func _physics_process(delta):
 
 The collision normal points *out* of the rigid body, so we reverse it to point away from the character and apply the `push` factor. Now pushing works again, but it won't force the rigid bodies through walls:
 
-![alt](/3.x/img/inf_inertia3.gif)
+![alt](/godot_recipes/3.x/img/inf_inertia3.gif)
 
 You can also scale the force of the impulse based on the character's speed:
 
@@ -79,7 +79,7 @@ collision.collider.apply_central_impulse(-collision.normal * velocity.length() *
 Experiment to find the settings that work for your particular game.
 
 {{% notice note %}}
-Download the project file here: [kinematic_vs_rigid.zip](/3.x/files/kinematic_vs_rigid.zip)
+Download the project file here: [kinematic_vs_rigid.zip](/godot_recipes/3.x/files/kinematic_vs_rigid.zip)
 {{% /notice %}}
 
 ## Related recipes

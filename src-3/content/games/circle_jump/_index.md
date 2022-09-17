@@ -12,7 +12,7 @@ pre: "<i class='far fa-circle fa-fw'></i>&nbsp"
 
 In this series, we build a one-touch mobile game called "Circle Jump". Here's what the game looks like:
 
-![alt](/3.x/img/circle_jump.gif)
+![alt](/godot_recipes/3.x/img/circle_jump.gif)
 
 In each part of the series, we'll add features and fix bugs, explaining the process along the way.
 

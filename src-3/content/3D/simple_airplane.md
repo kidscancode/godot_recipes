@@ -22,7 +22,7 @@ We're going to use a {{< gd-icon KinematicBody3D >}}`KinematicBody` for this. Si
 
 Here's our model setup:
 
-![alt](/3.x/img/kb_plane_01.png)
+![alt](/godot_recipes/3.x/img/kb_plane_01.png)
 
 We're using a cylinder for the collision shape, sized to match the plane's fuselage. This will allow for detecting the ground, which is all we're concerned with for this demo.
 
@@ -62,7 +62,7 @@ var pitch_input = 0
 
 We'll need the following input actions for our controls. We're using a game controller in this demo, but you can add keyboard inputs as well if you like.
 
-![alt](/3.x/img/kb_plane_02.png)
+![alt](/godot_recipes/3.x/img/kb_plane_02.png)
 
 This function captures the inputs and sets the input values. Note that increasing/decreasing throttle changes the `target_speed`, not the actual speed.
 
@@ -100,10 +100,10 @@ func _physics_process(delta):
 To test, add the plane to a test scene (don't forget a {{< gd-icon Camera3D >}} `Camera`). Press the `"throttle_up"` input and you should see the plane accelerate forward.
 
 {{% notice tip %}}
-We're using the [Interpolated Camera](/3.x/3d/interpolated_camera/) recipe in this demo.
+We're using the [Interpolated Camera](/godot_recipes/3.x/3d/interpolated_camera/) recipe in this demo.
 {{% /notice %}}
 
-![alt](/3.x/img/kb_plane_03.gif)
+![alt](/godot_recipes/3.x/img/kb_plane_03.gif)
 
 Next, let's handle changing the pitch of the plane. Add this right after calling `get_input()`:
 
@@ -113,7 +113,7 @@ transform.basis = transform.basis.rotated(transform.basis.x, pitch_input * pitch
 
 Run the scene again and try pitching up and down:
 
-![alt](/3.x/img/kb_plane_04.gif)
+![alt](/godot_recipes/3.x/img/kb_plane_04.gif)
 
 After that, add the following for the turn input:
 
@@ -121,7 +121,7 @@ After that, add the following for the turn input:
 transform.basis = transform.basis.rotated(Vector3.UP, turn_input * turn_speed * delta)
 ```
 
-![alt](/3.x/img/kb_plane_05.gif)
+![alt](/godot_recipes/3.x/img/kb_plane_05.gif)
 
 Notice that while the plane turns, it doesn't really look natural. Airplanes *bank* when they turn, so let's animate that by changing the rotation of the mesh:
 
@@ -129,7 +129,7 @@ Notice that while the plane turns, it doesn't really look natural. Airplanes *ba
 $Mesh/Body.rotation.y = lerp($Mesh/Body.rotation.y, turn_input, level_speed * delta)
 ```
 
-![alt](/3.x/img/kb_plane_06.gif)
+![alt](/godot_recipes/3.x/img/kb_plane_06.gif)
 
 The amount of roll is related to the `turn_input` so a shallow turn banks less. Going straight will "auto" level the plane.
 
@@ -189,7 +189,7 @@ func get_input(delta):
         pitch_input += Input.get_action_strength("pitch_up")
 ```
 
-![alt](/3.x/img/kb_plane_07.gif)
+![alt](/godot_recipes/3.x/img/kb_plane_07.gif)
 
 ### Full script
 
@@ -285,14 +285,14 @@ func get_input(delta):
 You can adapt this technique to a variety of arcade-style flying games. For example, for mouse control, you could use the `relative` property of `InputEventMouseMotion` to set the pitch and turn input.
 
 {{% notice note %}}
-Download the project file here: [airplane_test.zip](/3.x/files/airplane_test.zip)
+Download the project file here: [airplane_test.zip](/godot_recipes/3.x/files/airplane_test.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Interpolated Camera](/3.x/3d/interpolated_camera/)
-- [Inputs: Introduction](/3.x/input/input_intro/)
-- [KinematicBody: Movement](/3.x/3d/kinematic_body/)
+- [Interpolated Camera](/godot_recipes/3.x/3d/interpolated_camera/)
+- [Inputs: Introduction](/godot_recipes/3.x/input/input_intro/)
+- [KinematicBody: Movement](/godot_recipes/3.x/3d/kinematic_body/)
 
 #### Like video?
 

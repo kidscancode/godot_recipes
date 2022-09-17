@@ -16,15 +16,15 @@ Here's an example of what we are going for:
 
 ### Project setup
 
-To illustrate this feature, we'll start with a simplified top-down game using the [Autotile recipe](/3.x/2d/autotile_intro/) and a player based on the [Top-down character recipe](godot_recipes/2d/topdown_movement/#option-2-rotate-and-move). See the linked recipes for details on how these parts work.
+To illustrate this feature, we'll start with a simplified top-down game using the [Autotile recipe](/godot_recipes/3.x/2d/autotile_intro/) and a player based on the [Top-down character recipe](godot_recipes/2d/topdown_movement/#option-2-rotate-and-move). See the linked recipes for details on how these parts work.
 
 {{% notice note %}}
-The art in this project comes from [kenney.nl](https://kenney.nl), which you can download here: [Topdown Shooter](/3.x/files/kenney_topdown_shooter.zip) and [Interface Pack](/3.x/files/kenney_interface_pack.zip).
+The art in this project comes from [kenney.nl](https://kenney.nl), which you can download here: [Topdown Shooter](/godot_recipes/3.x/files/kenney_topdown_shooter.zip) and [Interface Pack](/godot_recipes/3.x/files/kenney_interface_pack.zip).
 {{% /notice %}}
 
 Our main scene setup looks like this:
 
-![alt](/3.x/img/minimap_01.png)
+![alt](/godot_recipes/3.x/img/minimap_01.png)
 
 The `CanvasLayer` node is there to hold our UI, including the minimap/radar we're making in this recipe.
 
@@ -36,17 +36,17 @@ Add a {{< gd-icon MarginContainer >}}`MarginContainer` first. Set its *Custom Co
 
 Next, add a {{< gd-icon NinePatchRect >}}`NinePatchRect` node. This node is similar to a `TextureRect` but handles resizing differently by not stretching the corners/edges. Drop the `panel_woodDetail_blank.png` image from the asset folder into the *Texture* property. This is a `128x128` image and if we scale the root {{< gd-icon MarginContainer >}}`MarginContainer`, the image becomes stretched and ugly:
 
-![alt](/3.x/img/minimap_02.gif)
+![alt](/godot_recipes/3.x/img/minimap_02.gif)
 
 Using the {{< gd-icon NinePatchRect >}}`NinePatchRects`'s properties, we can ensure that the frame remains the same size when stretched. You can define these properties graphically in the "TextureRegion" panel, but it's sometimes easier to enter the values directly. Set all four properties in the *Patch Margin* section to `64` and change the node's name to "Frame".
 
 Now observe what happens when we change the size:
 
-![alt](/3.x/img/minimap_03.gif)
+![alt](/godot_recipes/3.x/img/minimap_03.gif)
 
 Next, we'd like to fill in the inner part of the frame with the grid pattern `pattern_blueprintPaper.png`:
 
-![alt](/3.x/img/pattern_blueprintPaper.png)
+![alt](/godot_recipes/3.x/img/pattern_blueprintPaper.png)
 
 However, we need it to tile automatically no matter what size we make the frame. Also, since this grid area is where our minimap markers will appear, we don't want the grid extending past the edges of the frame.
 
@@ -54,29 +54,29 @@ As a child of the `MiniMap` (and a sibling of the `Frame`), add another {{< gd-i
 
 Try changing the size of your root node to see the effect:
 
-![alt](/3.x/img/minimap_04.gif)
+![alt](/godot_recipes/3.x/img/minimap_04.gif)
 
 For now, let's leave the minimap's size at `(200, 200)` - you can check the root node's *Rect/Size* property to confirm.
 
 At this point, your scene tree should look like the following:
 
-![alt](/3.x/img/minimap_06.png)
+![alt](/godot_recipes/3.x/img/minimap_06.png)
 
 ### Map Markers
 
 As a child of `Grid`, add a {{< gd-icon Sprite2D >}}`Sprite` node named "PlayerMarker" and give it the `minimapIcon_arrowA.png` texture. Note the sprite's *Transform/Position* property: `(0, 0)`, which places it exactly in the top-left corner of the `Grid`:
 
-![alt](/3.x/img/minimap_05.png)
+![alt](/godot_recipes/3.x/img/minimap_05.png)
 
 If our `Grid` size is currently `(150, 150)` (you can check this in its *Rect/Size* property), then its center will be `(75, 75)`. Put the `PlayerMarker`'s *Position* there:
 
-![alt](/3.x/img/minimap_07.png)
+![alt](/godot_recipes/3.x/img/minimap_07.png)
 
 Don't worry, we'll automate this later.
 
 Add two more {{< gd-icon Sprite2D >}}`Sprite` nodes: "MobMarker" and "AlertMarker", using the `minimapIcon_jewelRed.png` and `minimapIcon_exclamationYellow.png` textures.
 
-![alt](/3.x/img/minimap_08.png)
+![alt](/godot_recipes/3.x/img/minimap_08.png)
 
 These will represent two different types of objects in the game world. Click the "Toggle Visibility" button next to each so that they won't appear by default.
 
@@ -166,7 +166,7 @@ for item in markers:
 
 The problem with this is that markers can be placed outside the grid:
 
-![alt](/3.x/img/minimap_09.png)
+![alt](/godot_recipes/3.x/img/minimap_09.png)
 
 To fix this, after calculating `obj_pos`, but before setting the marker's position, clamp it to the grid's rectangle:
 
@@ -175,7 +175,7 @@ obj_pos.x = clamp(obj_pos.x, 0, grid.rect_size.x)
 obj_pos.y = clamp(obj_pos.y, 0, grid.rect_size.y)
 ```
 
-![alt](/3.x/img/minimap_11.png)
+![alt](/godot_recipes/3.x/img/minimap_11.png)
 
 Next, we can decide what to do about markers that are "off-screen" - when they would be outside the grid's rectangle. Choose one of the following options (do this also before using `clamp()`). The first option is to hide them:
 
@@ -195,7 +195,7 @@ else:
     markers[item].scale = Vector2(1, 1)
 ```
 
-![alt](/3.x/img/minimap_12.png)
+![alt](/godot_recipes/3.x/img/minimap_12.png)
 
 ### Removing objects
 
@@ -250,7 +250,7 @@ func _on_MiniMap_gui_input(event):
 
 That's it - observe the effect of scrolling in and out:
 
-![alt](/3.x/img/minimap_10.gif)
+![alt](/godot_recipes/3.x/img/minimap_10.gif)
 
 ## Wrapping up
 
@@ -264,14 +264,14 @@ Some other things you might want to add:
 * Use a picture of your map as the minimap background instead of the grid.
 
 {{% notice note %}}
-Download the project file here: [minimap.zip](/3.x/files/minimap.zip)
+Download the project file here: [minimap.zip](/godot_recipes/3.x/files/minimap.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [UI: Containers](/3.x/ui/containers/)
-- [TileMap: using autotile](/3.x/2d/autotile_intro/)
-- [Top-down character](/3.x/2d/topdown_movement/)
+- [UI: Containers](/godot_recipes/3.x/ui/containers/)
+- [TileMap: using autotile](/godot_recipes/3.x/2d/autotile_intro/)
+- [Top-down character](/godot_recipes/3.x/2d/topdown_movement/)
 
 #### Like video?
 

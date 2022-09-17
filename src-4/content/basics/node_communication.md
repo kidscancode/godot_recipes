@@ -6,7 +6,7 @@ ghcommentid: 10
 ---
 
 {{% notice info %}}
-Many thanks to @TheDuriel on the [Godot Discord](https://discord.gg/zH7NUgz) for the [original diagram](/4.x/img/node_access_theduriel.png) that inspired this article. Save this and keep it handy.
+Many thanks to @TheDuriel on the [Godot Discord](https://discord.gg/zH7NUgz) for the [original diagram](/godot_recipes/4.x/img/node_access_theduriel.png) that inspired this article. Save this and keep it handy.
 {{% /notice %}}
 
 ## Problem
@@ -34,7 +34,7 @@ As a general rule, nodes should manage their children, not the other way around.
 3. Ready order is children-first, parent-last. This means that trying to access a parent's property in a node's `_ready()` can fail because the parent isn't ready yet.
 
 {{% notice tip %}}
-See [Understanding tree order](/4.x/basics/tree_ready_order/) for an explanation of how nodes enter the tree and become ready.
+See [Understanding tree order](/godot_recipes/4.x/basics/tree_ready_order/) for an explanation of how nodes enter the tree and become ready.
 {{% /notice %}}
 
 Generally speaking, a node or scene should be able to be instanced anywhere in your game, and it should make no assumptions about what its parent is going to be.
@@ -56,14 +56,14 @@ Now, let's look at each of these strategies along with some examples.
 `get_node()` traverses the scene tree using a given *path* to find the named node.
 
 {{% notice tip %}}
-See [Understanding node paths](/4.x/basics/getting_nodes/) for a more detailed explanation of node paths.
+See [Understanding node paths](/godot_recipes/4.x/basics/getting_nodes/) for a more detailed explanation of node paths.
 {{% /notice %}}
 
 #### `get_node()` example
 
 Let's consider the following common configuration:
 
-![alt](/4.x/img/node_access_01.png)
+![alt](/godot_recipes/4.x/img/node_access_01.png)
 
 The script in the `Player` node needs to notify the `AnimatedSprite` which animation to play, based on the player's movement. In this situation, `get_node()` works well:
 
@@ -99,7 +99,7 @@ A very common use case for signals is updating your UI. Whenever the player's `h
 
 Here's our example setup:
 
-![alt](/4.x/img/node_access_05.png)
+![alt](/godot_recipes/4.x/img/node_access_05.png)
 
 Note that the UI is an instanced scene, we're just showing the contained nodes. This is where you often see things like `get_node("../UI/VBoxContainer/HBoxContainer/Label).text = str(health)`, which is what we want to avoid.
 
@@ -137,7 +137,7 @@ Let's consider a Galaga-style space shooter where you have a lots of enemies fly
 
 First, add all enemies to an "enemies" group. You can do this in the editor using the "Node" tab:
 
-![alt](/4.x/img/node_access_03.png)
+![alt](/godot_recipes/4.x/img/node_access_03.png)
 
 You can also add nodes to the group in your script:
 
@@ -163,7 +163,7 @@ In a complex UI, you often find yourself with a very deep, nested hierarchy of c
 
 Here's an example setup:
 
-![alt](/4.x/img/node_access_02.png)
+![alt](/godot_recipes/4.x/img/node_access_02.png)
 
 The script on the root `CenterContainer` has the following function, which we want to call whenever any button is pressed:
 
@@ -187,5 +187,5 @@ No matter where you place the buttons in the tree - if you add more containers, 
 
 ## Related recipes
 
-- [Understanding tree order](/4.x/basics/tree_ready_order/)
-- [Understanding node paths](/4.x/basics/getting_nodes/)
+- [Understanding tree order](/godot_recipes/4.x/basics/tree_ready_order/)
+- [Understanding node paths](/godot_recipes/4.x/basics/getting_nodes/)

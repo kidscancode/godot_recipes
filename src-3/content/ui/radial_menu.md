@@ -17,13 +17,13 @@ The specific look-and-feel of your menu should match with your game's esthetic. 
 
 Here's the node setup:
 
-![alt](/3.x/img/ui_radial_menu_01.png)
+![alt](/godot_recipes/3.x/img/ui_radial_menu_01.png)
 
 
 
 We're using a {{< gd-icon TextureButton >}}`TextureButton` as our root node. This is the button you'll click to open/close the menu.
 
-The "Buttons" {{< gd-icon Control >}}`Control` node is the container where you'll place any number of items that you want. For this example, we're using some buttons from our [Cooldown Button](/3.x/ui/cooldown_button/) recipe.
+The "Buttons" {{< gd-icon Control >}}`Control` node is the container where you'll place any number of items that you want. For this example, we're using some buttons from our [Cooldown Button](/godot_recipes/3.x/ui/cooldown_button/) recipe.
 
 Finally, we have a {{< gd-icon Tween >}}`Tween` to handle animating the menu opening/closing.
 
@@ -111,12 +111,12 @@ func hide_menu():
 
 Here's the end result:
 
-![alt](/3.x/img/ui_radial_menu_02.gif)
+![alt](/godot_recipes/3.x/img/ui_radial_menu_02.gif)
 
 {{% notice note %}}
-Download the project file here: [ui_radial_menu.zip](/3.x/files/ui_radial_menu.zip)
+Download the project file here: [ui_radial_menu.zip](/godot_recipes/3.x/files/ui_radial_menu.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [UI: Cooldown Button](/3.x/ui/cooldown_button/)
+- [UI: Cooldown Button](/godot_recipes/3.x/ui/cooldown_button/)

@@ -28,15 +28,15 @@ In 3D space, the concept of transforms applies in the same way as in 2D. In fact
 
 3D nodes inherit from the base node {{< gd-icon Node3D >}}[`Spatial`](https://docs.godotengine.org/en/latest/classes/class_spatial.html), which contains the transform information. You can see the `transform` property in the Inspector for any 3D node:
 
-![alt](/3.x/img/transform3D_01.png)
+![alt](/godot_recipes/3.x/img/transform3D_01.png)
 
 The 3D transform contains more information than the 2D version. Position data is still held in the `origin` property, but rotation is contained in a property called `basis`. The basis contains three unit vectors representing the body's local **X**, **Y**, and **Z** axes.
 
-![alt](/3.x/img/3d_intro_gizmo.png)
+![alt](/godot_recipes/3.x/img/3d_intro_gizmo.png)
 
 {{% notice note %}}
 In the editor, you can see and manipulate the body's local orientation by clicking the "Local Space Mode" button.
-![alt](/3.x/img/3d_intro_local_space.png)
+![alt](/godot_recipes/3.x/img/3d_intro_local_space.png)
 {{% /notice %}}
 
 As in 2D, we can use the local axes to move an object forward. In Godot's 3D orientation (**Y-up**), this means that by default the body's **-Z** axis is the forward direction:

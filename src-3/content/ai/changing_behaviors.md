@@ -15,21 +15,21 @@ For this example, we'll assume an enemy with the following behaviors. See the in
 
 - **Patrol**
 
-    The "Patrol" state moves along a pre-defined path (or stands still if there's no path assigned). See [Recipe: Path following](/3.x/ai/path_follow/) for details.
+    The "Patrol" state moves along a pre-defined path (or stands still if there's no path assigned). See [Recipe: Path following](/godot_recipes/3.x/ai/path_follow/) for details.
 
 - **Chase**
 
-    The "Chase" state moves the enemy towards the player. See [Recipe: Chasing the player](/3.x/ai/chase/) for how to make this behavior.
+    The "Chase" state moves the enemy towards the player. See [Recipe: Chasing the player](/godot_recipes/3.x/ai/chase/) for how to make this behavior.
 
 - **Attack**
 
-    In this state, the player is in range of a melee attack, so the enemy stops moving and executes its attack. See [Recipe: Melee attacks](/3.x/animation/melee_attacks/) for how to make melee attacks.
+    In this state, the player is in range of a melee attack, so the enemy stops moving and executes its attack. See [Recipe: Melee attacks](/godot_recipes/3.x/animation/melee_attacks/) for how to make melee attacks.
 
 These behaviors are states - the enemy can only be in one of these states at a time, and certain events, such as the player getting near, will cause a transition to another state.
 
 To determine the state transitions, we have two {{< gd-icon Area2D >}}`Area2D` nodes on the enemy: an outer one called "DetectRadius" and an inner called "AttackRadius". The player entering or exiting these areas will trigger the related behavior.
 
-![alt](/3.x/img/behaviors_01.png)
+![alt](/godot_recipes/3.x/img/behaviors_01.png)
 
 We've chosen a rectangular shape for `AttackRadius` in this example due to the shape of the enemy's attack. Any shape is fine as long as it's smaller than the `DetectRadius`.
 
@@ -153,8 +153,8 @@ This example is intentionally kept as simplified as possible, while still demons
 
 ## Related recipes
 
-- [Top-down character](/3.x/2d/topdown_movement/#option-1-8-way-movement)
-- [Spritesheet animation](/3.x/animation/spritesheet_animation/)
-- [Controlling animation states](/3.x/animation/animation_state_machine/)
-- [Path following](/3.x/ai/path_follow/)
-- [Chasing the player](/3.x/ai/chase/)
+- [Top-down character](/godot_recipes/3.x/2d/topdown_movement/#option-1-8-way-movement)
+- [Spritesheet animation](/godot_recipes/3.x/animation/spritesheet_animation/)
+- [Controlling animation states](/godot_recipes/3.x/animation/animation_state_machine/)
+- [Path following](/godot_recipes/3.x/ai/path_follow/)
+- [Chasing the player](/godot_recipes/3.x/ai/chase/)

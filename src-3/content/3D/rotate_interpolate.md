@@ -30,7 +30,7 @@ func _process(delta):
 
 This code would make our node (`$Arrow`) always point at the target's position, no matter how it moves.
 
-![alt](/3.x/img/3d_rotate_01.gif)
+![alt](/godot_recipes/3.x/img/3d_rotate_01.gif)
 
 Note that `look_at()` requires 2 parameters: the target position, and an "up vector". Imagine an airplane pointing its nose towards a target - there are an infinite number of ways it could be oriented, because the plane could roll about its axis. This second parameter is how you define what you want the final orientation to be.
 
@@ -49,7 +49,7 @@ func _process(delta):
     $Arrow.transform  = $Arrow.transform.interpolate_with(new_transform, speed * delta)
 ```
 
-![alt](/3.x/img/3d_rotate_02.gif)
+![alt](/godot_recipes/3.x/img/3d_rotate_02.gif)
 
 Note that since `interpolate_with()` operates on the `transform`, it can be used to interpolate both rotation *and* position of an object.
 
@@ -58,14 +58,14 @@ Note that since `interpolate_with()` operates on the `transform`, it can be used
 That's it! Use this handy method to rotate your 3D objects, and stop thinking about angles!
 
 {{% notice note %}}
-Download the project file here: [3d_rotate.zip](/3.x/files/3d_rotate.zip)
+Download the project file here: [3d_rotate.zip](/godot_recipes/3.x/files/3d_rotate.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Gamedev Math: Transforms](/3.x/math/transforms/)
-- [Gamedev Math: Interpolation](/3.x/math/interpolation/)
-- [Camera Gimbal](/3.x/3d/camera_gimbal/)
+- [Gamedev Math: Transforms](/godot_recipes/3.x/math/transforms/)
+- [Gamedev Math: Interpolation](/godot_recipes/3.x/math/interpolation/)
+- [Camera Gimbal](/godot_recipes/3.x/3d/camera_gimbal/)
 
 #### Like video?
 

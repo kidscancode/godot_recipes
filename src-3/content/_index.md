@@ -18,7 +18,7 @@ Because Godot 4 brings a lot of breaking changes, we've got a whole new set of G
 
 Are you ready to learn game development? Whether it's as a hobby or working towards your dream career, there's never been a better time to get started. Modern programming languages and tools have made it easier than ever to build high-quality games and distribute them to the world. One of these tools is the Godot game engine. For beginners, it offers a friendly way to learn gamedev techniques. For experienced developers, it's a powerful, customizable and _open_ tool for bringing your visions to life.
 
-![alt](/3.x/img/godot3_logo.png?width=250)
+![alt](/godot_recipes/3.x/img/godot3_logo.png?width=250)
 
 If you're new to Godot, you can start here: [What is Godot?](/godot_recipes/3.x/basics/start/101_01/).
 

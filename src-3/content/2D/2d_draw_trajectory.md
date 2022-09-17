@@ -15,11 +15,11 @@ You want to draw the trajectory of a ballistic shot, like from a tank.
 
 For this example, we're using the "Ballistic Bullet" from this recipe:
 
-* [Ballistic bullet](/3.x/2d/ballistic_bullet/)
+* [Ballistic bullet](/godot_recipes/3.x/2d/ballistic_bullet/)
 
 and a tank set up like so, with a {{< gd-icon Position2D >}}`Position2D` designating the "muzzle" where the bullet will be spawned:
 
-![alt](/3.x/img/tank_01.png)
+![alt](/godot_recipes/3.x/img/tank_01.png)
 
 In the tank's script, we instance the bullet like so:
 
@@ -38,7 +38,7 @@ This instances the bullet, adds it as a child to the "world" node (the tank's `o
 
 Here's our starting setup in action:
 
-![alt](/3.x/img/tank_02.gif)
+![alt](/godot_recipes/3.x/img/tank_02.gif)
 
 ### Line setup
 
@@ -46,7 +46,7 @@ In the main scene, which contains the tank and the ground, we've added a {{< gd-
 
 To improve the line's appearance, we've set the **Width** to `15` and all of the **Capping** options to "Round". We've also added a `Gradient` in the **Fill** section:
 
-![alt](/3.x/img/2d_tank_03.png)
+![alt](/godot_recipes/3.x/img/2d_tank_03.png)
 
 ### Drawing the line
 
@@ -85,9 +85,9 @@ We've also added a `break` if the path contacts the position of the *top* of the
 
 Finally, we show/hide the line when shooting or not.
 
-![alt](/3.x/img/tank_04.gif)
+![alt](/godot_recipes/3.x/img/tank_04.gif)
 
 ## Related recipes
 
-- [2D shooting recipe](/3.x/2d/2d_shooting/)
-- [2D ballistic bullet](/3.x/2d/ballistic_bullet)
+- [2D shooting recipe](/godot_recipes/3.x/2d/2d_shooting/)
+- [2D ballistic bullet](/godot_recipes/3.x/2d/ballistic_bullet)

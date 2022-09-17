@@ -10,7 +10,7 @@ tags: []
 
 Your game needs a "level select" menu, where the user can choose from a grid of options.
 
-![alt](/3.x/img/level_select_03.gif)
+![alt](/godot_recipes/3.x/img/level_select_03.gif)
 
 
 ## Solution
@@ -32,7 +32,7 @@ The {{< gd-icon TextureRect >}} TextureRect is for displaying the lock icon, and
 
 You can style these as you like, here's an example:
 
-![alt](/3.x/img/level_select_01.gif)
+![alt](/godot_recipes/3.x/img/level_select_01.gif)
 
 Make sure to set the box's *Rect Min Size* in the Inspector. We're using `(110, 110)` in the example, but it depends on what size layout you're going for.
 
@@ -72,7 +72,7 @@ The `print()` statement can help you test that the click is being detected.
 
 Once you have the box scene completed, add a new scene with a {{< gd-icon GridContainer >}}`GridContainer`. Add any number of `LevelBox` instances under it, making sure to set the *Columns* value. Here's one with 6 columns:
 
-![alt](/3.x/img/level_select_02.png)
+![alt](/godot_recipes/3.x/img/level_select_02.png)
 
 In this example *Custom Constants/HSeparation* and *VSeparation* are set to `10`.
 
@@ -84,7 +84,7 @@ Now we can put together the final menu.
 
 Here's the basic layout we're going for:
 
-![alt](/3.x/img/level_select_04.png)
+![alt](/godot_recipes/3.x/img/level_select_04.png)
 
 We'll create it with these nodes:
 
@@ -122,7 +122,7 @@ Make sure to set *Custom Constants/Separation* to `0`.
 
 Your layout should look something like this (we've disabled *Clip Content* in order to show what's happening):
 
-![alt](/3.x/img/level_select_05.png)
+![alt](/godot_recipes/3.x/img/level_select_05.png)
 
 With *Clip Content*, the three grids are all there, but the `ClipControl` only shows one at a time.
 
@@ -189,13 +189,13 @@ Now everything should be working as expected.
 Download the example project to see the whole thing in action, including some tweens for the scrolling action (tweens make everything better).
 
 {{% notice note %}}
-Download the project file here: [level_select.zip](/3.x/files/level_select.zip)
+Download the project file here: [level_select.zip](/godot_recipes/3.x/files/level_select.zip)
 {{% /notice %}}
 
 ## Related recipes
 
-- [Containers](/3.x/ui/containers/)
-- [Know Your Nodes: Label](/3.x/kyn/label/)
+- [Containers](/godot_recipes/3.x/ui/containers/)
+- [Know Your Nodes: Label](/godot_recipes/3.x/kyn/label/)
 
 #### Like video?
 

@@ -25,31 +25,31 @@ For this demo, we'll use a generic "Agent" object. In your game, this might be a
 
 To begin, let's imagine our agent has a number of rays extending in all directions (we'll talk about how many to use later - for now let's use 8).
 
-![alt](/3.x/img/ai_context_01.png)
+![alt](/godot_recipes/3.x/img/ai_context_01.png)
 
 In our agent's script, we'll store an array called `interest`, tracking in which directions the agent wants to go.
 
-![alt](/3.x/img/ai_context_04.png)
+![alt](/godot_recipes/3.x/img/ai_context_04.png)
 
 Of course, if they're all the same, then it can't move - it wants to go in all directions equally! So lets consider that it has a preference - it mostly wants to go forward:
 
-![alt](/3.x/img/ai_context_03.png)
+![alt](/godot_recipes/3.x/img/ai_context_03.png)
 
 In this case, the `interest` array would look like this:
 
-![alt](/3.x/img/ai_context_05.png)
+![alt](/godot_recipes/3.x/img/ai_context_05.png)
 
 The strongest desire is to go forward, but forward-left and forward-right are acceptible as well. But what if an obstacle appears?
 
-![alt](/3.x/img/ai_context_06.png)
+![alt](/godot_recipes/3.x/img/ai_context_06.png)
 
 Now we'll introduce a second array, `danger`, that indicates directions that are not preferred.
 
-![alt](/3.x/img/ai_context_07.png)
+![alt](/godot_recipes/3.x/img/ai_context_07.png)
 
 Combining these two arrays, we can eliminate any `interest` directions that are also contained in `danger`. By summing up the remaining `interest` directions, we're left with a new direction pointing away from the obstacle.
 
-![alt](/3.x/img/ai_context_08.png)
+![alt](/godot_recipes/3.x/img/ai_context_08.png)
 
 To summarize:
 
@@ -122,7 +122,7 @@ Using each ray direction, we take the *dot product* with the given path directio
 
 For example, with 32 rays, the `interest` would look like this:
 
-![alt](/3.x/img/ai_context_09.png)
+![alt](/godot_recipes/3.x/img/ai_context_09.png)
 
 As a safety measure, if there's no owner to tell us a direction, we'll default to trying to go forward.
 
@@ -177,7 +177,7 @@ func choose_direction():
 
 Let's try it out in action! Here, we've created a track using a {{< gd-icon Path2D >}}`Path2D` and some collision polygons.
 
-![alt](/3.x/img/ai_context_11.png)
+![alt](/godot_recipes/3.x/img/ai_context_11.png)
 
 In the script for this scene, we have a `get_path_direction()` function. Given a position, this function finds the closest point on the path and puts the `PathFollow2D` there in order to find the forward direction.
 
@@ -190,7 +190,7 @@ func get_path_direction(pos):
 
 We've randomized the speeds of the agents do get some variety. Notice how the fast one finds ways to dodge around the slow ones.
 
-![alt](/3.x/img/ai_context_10.gif)
+![alt](/godot_recipes/3.x/img/ai_context_10.gif)
 
 ### Wrapping up
 
@@ -208,7 +208,7 @@ Rather than a danger item canceling the interest, it could *add* to the interest
 
 ## Related recipes
 
-- [Vectors: Using Dot and Cross Product](/3.x/math/dot_cross_product/)
+- [Vectors: Using Dot and Cross Product](/godot_recipes/3.x/math/dot_cross_product/)
 
 #### Like video?
 

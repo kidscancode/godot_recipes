@@ -132,7 +132,7 @@ Add these nodes to the jumper:
 
 We're going to use this to make a trail that streams out behind the player. Later we'll make it more visually appealing, but for now, let's stick with a simple gradient. In the _Fill_ add a new Gradient, and go from transparent to a color of your choosing:
 
-![alt](/3.x/img/cj_02_01.png?width=200)
+![alt](/godot_recipes/3.x/img/cj_02_01.png?width=200)
 
 Now in the jumper's script, let's add the following:
 
@@ -162,14 +162,14 @@ Add an `AnimationPlayer` node to the Circle.
 
 Add a new animation called "implode". Set the length to 0.4 and keyframe two properties of the root `Area2D` node: _Scale_ at `(1, 1)` and _Modulate_ at its default (`(1, 1, 1, 1)`). Then move the scrubber all the way to the end and key the values `(0.1, 0.1)` and `(1, 1, 1, 0)` (that's the "alpha" value of the color).
 
-![alt](/3.x/img/cj_02_02.png)
+![alt](/godot_recipes/3.x/img/cj_02_02.png)
 
 ### Capture animation
 
 The capture animation is a little more complex. Duplicate the Sprite and call it `SpriteEffect`. Set its _Visible_ property off. We're going to animate this second ring zooming in on the main circle.
 
-![alt](/3.x/img/cj_02_03.png)
-![alt](/3.x/img/cj_02_04.gif)
+![alt](/godot_recipes/3.x/img/cj_02_03.png)
+![alt](/godot_recipes/3.x/img/cj_02_04.gif)
 
 Here are the functions to add to the circle script:
 
