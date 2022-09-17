@@ -24,26 +24,23 @@ Attach the following script to the root node of the character. Note that we're u
 ```gdscript
 extends CharacterBody2D
 
-export (int) var speed = 1200
-export (int) var jump_speed = -1800
-export (int) var gravity = 4000
+@export var speed = 1200
+@export var jump_speed = -1800
+@export var gravity = 4000
 
-var velocity = Vector2.ZERO
-
-func get_input():
-    velocity.x = 0
-    if Input.is_action_pressed("walk_right"):
-        velocity.x += speed
-    if Input.is_action_pressed("walk_left"):
-        velocity.x -= speed
 
 func _physics_process(delta):
-    get_input()
+    # Add gravity every frame
     velocity.y += gravity * delta
-    velocity = move_and_slide(velocity, Vector2.UP)
-    if Input.is_action_just_pressed("jump"):
-        if is_on_floor():
-            velocity.y = jump_speed
+
+    # Input affects x axis only
+    velocity.x = Input.get_axis("walk_left", "walk_right") * speed
+
+    move_and_slide()
+
+    # Only allow jumping when on the ground
+    if Input.is_action_just_pressed("jump") and is_on_floor():
+        velocity.y = jump_speed
 ```
 
 The values used for `speed`, `gravity`, and `jump_speed` depend greatly on the size of your player sprite. The player's texture in this example is `108x208` pixels. If your sprite is smaller, you'll want to use smaller values. We also want high values so that everything feels fast and responsive. A low gravity results in a floaty-feeling game while a high value means you're soon back on the ground and ready to jump again.
@@ -57,23 +54,30 @@ The above code is a great start, and you can use it as the foundation for a wide
 One way to add this behavior is to use linear interpolation ("lerp"). When moving, we will lerp between the current speed and the max speed and while stopping we'll lerp between the current speed and `0`. Adjusting the lerp amount will give us a variety of movement styles.
 
 {{% notice tip %}}
-For an overview of linear interpolation, see [Gamedev Math: Interpolation](/3.x/math/interpolation/).
+For an overview of linear interpolation, see [Gamedev Math: Interpolation](/4.x/math/interpolation/).
 {{% /notice %}}
 
 ```gdscript
-export (float, 0, 1.0) var friction = 0.1
-export (float, 0, 1.0) var acceleration = 0.25
+extends CharacterBody2D
 
-func get_input():
-    var dir = 0
-    if Input.is_action_pressed("walk_right"):
-        dir += 1
-    if Input.is_action_pressed("walk_left"):
-        dir -= 1
+@export var speed = 1200
+@export var jump_speed = -1800
+@export var gravity = 4000
+@export_range(0.0, 1.0) var friction = 0.1
+@export_range(0.0 , 1.0) var acceleration = 0.25
+
+
+func _physics_process(delta):
+    velocity.y += gravity * delta
+    var dir = Input.get_axis("walk_left", "walk_right")
     if dir != 0:
         velocity.x = lerp(velocity.x, dir * speed, acceleration)
     else:
-        velocity.x = lerp(velocity.x, 0, friction)
+        velocity.x = lerp(velocity.x, 0.0, friction)
+
+    move_and_slide()
+    if Input.is_action_just_pressed("jump") and is_on_floor():
+        velocity.y = jump_speed
 ```
 
 Try changing the values for `friction` and `acceleration` to see how they affect the game's feel. An ice level, for example, could use very low values, making it harder to maneuver.
@@ -83,12 +87,12 @@ Try changing the values for `friction` and `acceleration` to see how they affect
 ## Conclusion
 
 This code gives you a starting point for building your own platformer controller. For more advanced platforming features such as wall jumps, see the other recipes in this section.
-
+<!--
 Download an example project using this recipe:
 
 {{% notice note %}}
 Download the project file here: [platform_character.zip](/4.x/files/platform_character4.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related Recipes
 
