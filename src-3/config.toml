@@ -12,8 +12,8 @@ themesDir = "../themes_shared"
     disableNextPrev = true
     themeVariant = "green"
     disableInlineCopyToClipBoard = true
-    godotVer = "3.X"
-    godotVerToggle = "4.X"
+    godotVer = "3.x"
+    godotVerToggle = "4.x"
 
 [outputs]
     home = [ "HTML", "RSS", "JSON"]

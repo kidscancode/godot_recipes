@@ -17,7 +17,7 @@ New developers are often surprised at how complex a platform character can be to
 While it's possible to use {{< gd-icon RigidBody2D >}}`RigidBody2D` to make a platform character, we'll be focusing on {{< gd-icon KinematicBody2D >}}`KinematicBody2D`. Kinematic bodies are well-suited for platformers, where you are less interested in realistic physics than in responsive, arcade feel.
 {{% /notice %}}
 
-Start with a {{< gd-icon KinematicBody2D >}}`KinematicBody2D` node, and add a {{< gd-icon Sprite2D >}}`Sprite` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D` to it.
+Start with a {{< gd-icon CharacterBody2D >}}`KinematicBody2D` node, and add a {{< gd-icon Sprite2D >}}`Sprite` and {{< gd-icon CollisionShape2D >}}`CollisionShape2D` to it.
 
 Attach the following script to the root node of the character. Note that we're using input actions we've defined in the InputMap: `"walk_right"`, `"walk_left"`, and `"jump"`. See [InputActions](/godot_recipes/3.x/input/input_actions/).
 
