@@ -1,4 +1,4 @@
-baseURL = 'http://godotrecipes.com/3.x/'
+baseURL = 'http://kidscancode.org/godot_recipes/3.x/'
 languageCode = 'en-us'
 publishDir = "../docs/3.x"
 title = 'Godot 3 Recipes'
