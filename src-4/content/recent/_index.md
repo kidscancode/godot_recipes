@@ -7,4 +7,6 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
-*
+* [Arcade-style 3D Spaceship](/godot_recipes/4.x/3d/spaceship)
+* [Interpolated Camera](/godot_recipes/4.x/3d/interpolated_camera/)
+* [Platform Character](/godot_recipes/4.x/2d/platform_character/)
