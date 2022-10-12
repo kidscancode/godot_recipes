@@ -12,7 +12,7 @@ You want a minimap or radar-style UI item showing the locations of objects outsi
 ## Solution
 
 Here's an example of what we are going for:
-<video controls src="/3.x/img/minimap_01.webm"></video>
+<video controls src="/godot_recipes/3.x/img/minimap_01.webm"></video>
 
 ### Project setup
 

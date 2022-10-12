@@ -58,7 +58,7 @@ We've connected the `body_entered` and `body_exited` signals from the {{< gd-ico
 The above assumes that the player is the only body that will enter/exit, which is usually done by setting the appropriate collision layers/masks.
 {{% /notice %}}
 
-<video controls src="/3.x/img/chase_02.webm"></video>
+<video controls src="/godot_recipes/3.x/img/chase_02.webm"></video>
 
 This concept can be extended to other types of games as well. The key is to find the direction vector from the enemy to the player:
 

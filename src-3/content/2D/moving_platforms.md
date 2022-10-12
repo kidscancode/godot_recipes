@@ -48,7 +48,7 @@ To move the platform, create an animation in the {{< gd-icon AnimationPlayer >}}
 
 You're done! Instance some platforms in your level/world and try them out:
 
-<video controls src="/3.x/img/moving_plats_03.webm"></video>
+<video controls src="/godot_recipes/3.x/img/moving_plats_03.webm"></video>
 
 {{% notice note %}}
 Download the project file here: [moving_platforms.zip](/godot_recipes/3.x/files/moving_platforms.zip)

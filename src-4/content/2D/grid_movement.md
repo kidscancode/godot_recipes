@@ -111,7 +111,7 @@ func _unhandled_input(event):
             move(dir)
 ```
 
-We'll ignore any input while the tween is running.
+We'll ignore any input while the tween is running and remove the direct `position` change so that the tween can handle it.
 
 ```gdscript
 func move(dir):
@@ -125,15 +125,8 @@ func move(dir):
         moving = true
 ```
 
-Remove the direct `position` change and call a function to activate the tween:
 
-```gdscript
-func move_tween(dir):
-    tween.interpolate_property(self, "position",
-        position, position + dir * tile_size,
-        1.0/speed, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-    tween.start()
-```
+
 
 ![alt](/godot_recipes/4.x/img/grid_example3.gif)
 

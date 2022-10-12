@@ -92,7 +92,7 @@ func _unhandled_input(event):
 
 Lastly, when the mouse is released during dragging, we can perform the reverse actions. Note the use of `get_last_mouse_speed()` - be careful with this! You may find yourself launching the rigid bodies at high speeds, especially if the bodies have low `mass` values. It's probably a good idea to `clamp()` this to a reasonable value. Experiment to find out what works for you.
 
-<video controls src="/3.x/img/rbody_drag.webm"></video>
+<video controls src="/godot_recipes/3.x/img/rbody_drag.webm"></video>
 
 {{% notice note %}}
 Download the project file here: [rigidbody_drag_and_drop.zip](/godot_recipes/3.x/files/rigidbody_drag_and_drop.zip)

@@ -149,7 +149,7 @@ This is another fun place to experiment by changing the roll and yaw speeds. For
 
 That's it, now you can fly! This controller is a great start for whatever space-based game you might have in mind. Add some other ships, and a few effects, and you're ready go:
 
-<video width="500" controls src="/3.x/img/3d_ship_05.webm"></video>
+<video width="500" controls src="/godot_recipes/3.x/img/3d_ship_05.webm"></video>
 
 ### Full script
 

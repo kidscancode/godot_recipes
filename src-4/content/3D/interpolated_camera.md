@@ -53,4 +53,4 @@ In the `_physics_process()` function we interpolate the camera's position with t
 * `offset`: (0, 7, 5)
 
 
-<video width="500" controls src="/4.x/img/3d_sphere_car_07.webm"></video>
+<video width="500" controls src="/godot_recipes/4.x/img/3d_sphere_car_07.webm"></video>

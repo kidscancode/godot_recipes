@@ -32,7 +32,7 @@ func _physics_process(delta):
             velocity.y = jump_speed
 ```
 
-<video controls src="/3.x/img/2d_align_01.webm"></video>
+<video controls src="/godot_recipes/3.x/img/2d_align_01.webm"></video>
 
 As you can see, there are a couple of problems. First, the character flies off the slope when running. It's also sliding down the slope when there's no input.
 
@@ -43,7 +43,7 @@ snap = Vector2.DOWN * 128 if !is_jumping else Vector2.ZERO
 velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP, true)
 ```
 
-<video controls src="/3.x/img/2d_align_02.webm"></video>
+<video controls src="/godot_recipes/3.x/img/2d_align_02.webm"></video>
 
 Now we have an upward "hop" when we stop on the way up the slope. This is because our `x` velocity is set to `0` by the lack of input, but the `y` is not.
 
@@ -56,7 +56,7 @@ if is_on_floor():
     rotation = get_floor_normal().angle() + PI/2
 ```
 
-<video controls src="/3.x/img/2d_align_03.webm"></video>
+<video controls src="/godot_recipes/3.x/img/2d_align_03.webm"></video>
 
 This hasn't changed anything about the movement yet, but it does help us visualize what we need to do. When we're on the slope, our local transform looks like this:
 
@@ -80,13 +80,13 @@ We've changed a few things here, so let's look at them carefully.
 
 The result:
 
-<video controls src="/3.x/img/2d_align_05.webm"></video>
+<video controls src="/godot_recipes/3.x/img/2d_align_05.webm"></video>
 
 ## Wrapping up
 
 This technique allows for a wide range of possible platformer-style movement schemes. For example, you can do fun things like this:
 
-<video controls src="/3.x/img/2d_align_06.webm"></video>
+<video controls src="/godot_recipes/3.x/img/2d_align_06.webm"></video>
 
 Here's the full script:
 

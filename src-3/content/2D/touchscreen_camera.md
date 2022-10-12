@@ -97,7 +97,7 @@ If there's only one event active, then this must be a one-finger drag, and we ca
 
 Here's an example captured directly from a mobile device. The yellow circle indicates the touch location.
 
-<video controls src="/3.x/img/touch_camera_01.webm"></video>
+<video controls src="/godot_recipes/3.x/img/touch_camera_01.webm"></video>
 
 ### Zoom
 

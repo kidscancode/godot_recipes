@@ -9,7 +9,7 @@ ghcommentid: 82
 
 You want to make an arcade-style car game, so you're looking for simplicity over realistic physics. In this recipe, you'll learn how to make a fun, driveable car using a rolling sphere.
 
-<video width="500" controls src="/3.x/img/3d_sphere_car_01.webm"></video>
+<video width="500" controls src="/godot_recipes/3.x/img/3d_sphere_car_01.webm"></video>
 
 ## Solution
 
@@ -242,7 +242,7 @@ Observe the difference:
 
 Finally, the skid looks much better with a little smoke coming from the tires. Here's an example using a {{< gd-icon GPUParticles3D >}}`Particles` node and sphere shapes:
 
-<video width="500" controls src="/3.x/img/3d_sphere_car_07.webm"></video>
+<video width="500" controls src="/godot_recipes/3.x/img/3d_sphere_car_07.webm"></video>
 
 ## Wrapping up
 

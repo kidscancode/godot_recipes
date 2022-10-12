@@ -73,7 +73,7 @@ When you attach this to a unit, the bar may appear too big. Set the _Scale_ prop
 
 Here's an example of this system in use. You can download the example project for this below.
 
-<video controls src="/3.x/img/tower_def_demo.webm"></video>
+<video controls src="/godot_recipes/3.x/img/tower_def_demo.webm"></video>
 
 {{% notice note %}}
 Download the project file here: [tower_defense_demo.zip](/godot_recipes/3.x/files/tower_defense_demo.zip)

@@ -17,7 +17,7 @@ First, we've added some terrain to the scene. You can download the terrain from 
 
 As you can see, the movement still works with the terrain, but the tank seems to "float" above the slopes because it doesn't change its orientation.
 
-<video controls src="/3.x/img/3d_kinematic_04.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_kinematic_04.webm"></video>
 
 Instead, we need to rotate the tank so that its treads are aligned with the ground, even as the slope changes. To do that, we need to know which way is up.
 
@@ -63,7 +63,7 @@ func _physics_process(delta):
 
 This doesn't work quite as expected:
 
-<video controls src="/3.x/img/3d_kinematic_07.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_kinematic_07.webm"></video>
 
 The problem is that the tank's collision shape could be colliding with more than one of the terrain's faces. Also, `move_and_slide()` can result in more than one collision in a single frame. This leads to the jittering. We need to choose one face and stick with it.
 
@@ -82,7 +82,7 @@ func _physics_process(delta):
 
 This is much better, but because we are instantly snapping to the new alignment every time the tank crosses an edge, it still looks a little jarring:
 
-<video controls src="/3.x/img/3d_kinematic_08.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_kinematic_08.webm"></video>
 
 We can solve this last problem by interpolating to the new transform rather than snapping immediately to it.
 
@@ -98,7 +98,7 @@ func _physics_process(delta):
 
 The result is much smoother and more pleasing:
 
-<video controls src="/3.x/img/3d_kinematic_09.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_kinematic_09.webm"></video>
 
 Feel free to experiment with the interpolation amount. We found `0.2` to work well in this situation, but you might find a higher or lower value works better for you.
 

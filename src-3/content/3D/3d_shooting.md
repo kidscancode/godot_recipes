@@ -91,7 +91,7 @@ if Input.is_action_just_pressed("shoot"):
 
 That's it - run your scene and try it out:
 
-<video controls src="/3.x/img/3d_shoot_03.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_shoot_03.webm"></video>
 
 {{% notice note %}}
 Download the project file here: [3d_shooting.zip](/godot_recipes/3.x/files/3d_shooting.zip)

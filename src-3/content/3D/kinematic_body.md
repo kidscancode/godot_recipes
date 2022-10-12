@@ -91,7 +91,7 @@ For the forward and back movement, we're using `transform.basis.z` so that we'll
 
 Here's the tank in action. We've made a test scene with a {{< gd-icon StaticBody3D >}}`StaticBody` plane for the ground and an {{< gd-icon Camera3D >}}`InterpolatedCamera` with its *Target* set to the tank's `CamPos`.
 
-<video controls src="/3.x/img/3d_kinematic_03.webm"></video>
+<video controls src="/godot_recipes/3.x/img/3d_kinematic_03.webm"></video>
 
 ## Wrapping up
 
