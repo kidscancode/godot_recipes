@@ -15,7 +15,7 @@ On this site you'll find a collection of solutions and examples to help you make
 Godot 4.0 is in _beta_ testing stage. This means there are still bugs and features may change and/or break. Use at your own risk!<br>
 If you're looking to make a game or learn the engine, we recommend you stick with 3.x. Don't worry - what you learn will still apply when the newer version is released!<br>
 This site has lots of learning material for Godot 3 - but not all of it has been updated for version 4 yet. You can click the ribbon in the top-right to toggle the Godot Recipes version, or click the button below:<br>
-{{% button href="/3.x/" style="primary" icon="utensils" %}}Godot 3 Recipes{{% /button %}}
+{{% button href="/godot_recipes/3.x/" style="primary" icon="utensils" %}}Godot 3 Recipes{{% /button %}}
 {{% /notice %}}
 
 Are you ready to learn game development? Whether it's as a hobby or working towards your dream career, there's never been a better time to get started. Modern programming languages and tools have made it easier than ever to build high-quality games and distribute them to the world. One of these tools is the Godot game engine. For beginners, it offers a friendly way to learn gamedev techniques. For experienced developers, it's a powerful, customizable and _open_ tool for bringing your visions to life.
