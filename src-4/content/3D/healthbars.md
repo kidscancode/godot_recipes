@@ -1,7 +1,7 @@
 ---
 title: "3D Unit Healthbars"
 weight: 5
-draft: true
+draft: false
 ghcommentid: 35
 ---
 
