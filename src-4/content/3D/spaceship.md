@@ -210,3 +210,7 @@ Download the project file here: [https://github.com/kidscancode/3d_spaceship_dem
 <!-- #### Like video?
 
 {{< youtube 8oywBn_bLeU >}} -->
+
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/3d_spaceship](https://github.com/godotrecipes/3d_spaceship)

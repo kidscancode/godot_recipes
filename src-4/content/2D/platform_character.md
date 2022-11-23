@@ -43,7 +43,7 @@ func _physics_process(delta):
         velocity.y = jump_speed
 ```
 
-The values used for `speed`, `gravity`, and `jump_speed` depend greatly on the size of your player sprite. The player's texture in this example is `108x208` pixels. If your sprite is smaller, you'll want to use smaller values. We also want high values so that everything feels fast and responsive. A low gravity results in a floaty-feeling game while a high value means you're soon back on the ground and ready to jump again.
+The values used for `speed`, `gravity`, and `jump_speed` depend greatly on the size of your player sprite. The player's texture in this example is `108x208` pixels. If your sprite is smaller, you'll want to use smaller values. We also want high values so that everything feels fast and responsive. A low gravity results in a floaty-feeling game while a high value means you're quickly back on the ground and ready to jump again.
 
 Note that we're checking `is_on_floor()` *after* using `move_and_slide()`. The `move_and_slide()` function sets the value of this method, so it's important not to check it before, or you'll be getting the value from the previous frame.
 
@@ -94,7 +94,11 @@ Download an example project using this recipe:
 Download the project file here: [platform_character.zip](/godot_recipes/4.x/files/platform_character4.zip)
 {{% /notice %}} -->
 
-## Related Recipes
+<!-- ## Related Recipes -->
 
 <!-- - [Input Intro](/godot_recipes/3.x/input/input_intro/)
 - [Kinematic Friction](/godot_recipes/3.x/physics/kinematic_friction/) -->
+
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/2d_platform_basic](https://github.com/godotrecipes/2d_platform_basic)

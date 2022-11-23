@@ -113,9 +113,6 @@ Click on the mobs to see the health bars change.
 
 ![alt](/godot_recipes/4.x/img/3d_bars_05a.gif)
 
-{{% notice note %}}
-Download the project file here: [https://github.com/godotrecipes/3d_object_healthbars](https://github.com/godotrecipes/3d_object_healthbars)
-{{% /notice %}}
 
 ### Wrapping up
 
@@ -125,3 +122,6 @@ You can use this technique to display any other {{< gd-icon Node2D >}}`Node2D` o
 
 - [Object Healthbars (2D)](/godot_recipes/4.x/ui/unit_healthbar/) -->
 
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/3d_object_healthbars](https://github.com/godotrecipes/3d_object_healthbars)

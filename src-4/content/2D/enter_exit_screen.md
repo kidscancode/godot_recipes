@@ -12,7 +12,7 @@ You want to detect when an object enters or exits the screen.
 ## Solution
 
 The engine provides a node for this: {{< gd-icon VisibleOnScreenNotifier2D >}}`VisibleOnScreenNotifier2D`. Attach this node to your object, and you'll be able to use its `screen_entered` and `screen_exited` signals.
-
+*
 #### Example 1
 
 Consider a projectile that travels in a straight line after it's fired. If we continue firing, eventually we'll have a large number of objects for the engine to track, event though they're offscreen, which can cause lag.
