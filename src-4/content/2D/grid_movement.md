@@ -132,7 +132,9 @@ func move(dir):
 
 Experiment with different tween transitions for different movement effects.
 
-You can download a complete project of this example: [grid_based_movement.zip](/godot_recipes/4.x/files/grid_based_movement_4.zip)
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/2d_grid_movement/](https://github.com/godotrecipes/2d_grid_movement/)
 
 <!-- ## Related Recipes
 

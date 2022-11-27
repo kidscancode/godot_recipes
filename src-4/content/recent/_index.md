@@ -1,12 +1,12 @@
 +++
 title = "Fresh Recipes"
-date = 2020-10-31T15:47:11-07:00
 weight = 1
 pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 +++
 
 Here you can find the most recently added recipes:
 
+* [2D Car Steering](/godot_recipes/4.x/2d/car_steering/)
 * [3D Healthbars](/godot_recipes/4.x/3d/healthbars/)
 * [Grid-based Movement](/godot_recipes/4.x/2d/grid_movement)
 * [Arcade-style 3D Spaceship](/godot_recipes/4.x/3d/spaceship)
