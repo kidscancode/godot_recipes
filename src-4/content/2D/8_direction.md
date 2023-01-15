@@ -1,6 +1,6 @@
 ---
 title: "8-Directional Movement/Animation"
-weight: 1
+weight: 4
 draft: false
 ghcommentid: 100
 ---

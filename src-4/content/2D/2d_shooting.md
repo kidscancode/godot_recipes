@@ -1,6 +1,6 @@
 ---
 title: "Shooting projectiles"
-weight: 5
+weight: 2
 draft: false
 ghcommentid: 26
 ---
