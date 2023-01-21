@@ -66,10 +66,6 @@ We set the position of the marker and the Player's target to the clicked positio
 
 You can use this technique to detect clicks on any objects in your 3D world.
 
-{{% notice note %}}
-Download the project file here: [3d_click_move.zip](/godot_recipes/3.x/files/3d_click_move.zip)
-{{% /notice %}}
-
 ## Related recipes
 
 <!-- - [UI: Labels](/godot_recipes/3.x/ui/labels/)
