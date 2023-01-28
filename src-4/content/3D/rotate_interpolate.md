@@ -1,7 +1,7 @@
 ---
 title: "Smooth rotation"
 weight: 12
-draft: false
+draft: true
 ghcommentid: 39
 ---
 
@@ -17,10 +17,10 @@ When you first encounter this problem, you may find yourself thinking in terms o
 If you're interested in the background behind Euler angles and the problems they introduce, like gimbal lock, here's a [video that explains it well](https://www.youtube.com/watch?v=zc8b2Jo7mno).
 {{% /notice %}}
 
-We can avoid using 3D Euler angles in Godot by using the object's `Transform` property. This property represents the body's position *and* orientation in space. It uses a mathematical construct called a _matrix_ to do this, but you don't really need to understand the underlying math in order to make use of it.
+We can avoid using 3D Euler angles in Godot by using the object's `transform` property. This property represents the body's position *and* orientation in space. It uses a mathematical construct called a _matrix_ to do this, but you don't really need to understand the underlying math in order to make use of it.
 
 ### `look_at()`
-Let's say we have a 3D object such as a missile or arrow and you want it to point at its target. You can do this using the {{< gd-icon Node3D >}}`Spatial` method `look_at()`:
+Let's say you have a 3D object such as a missile or arrow and you want it to point at its target.  You can do this using the {{< gd-icon Node3D >}}`Node3D` method `look_at()`:
 
 ```gdscript
 func _process(delta):
@@ -30,7 +30,7 @@ func _process(delta):
 
 This code would make our node (`$Arrow`) always point at the target's position, no matter how it moves.
 
-![alt](/godot_recipes/3.x/img/3d_rotate_01.gif)
+![alt](/godot_recipes/4.x/img/3d_rotate_01.gif)
 
 Note that `look_at()` requires 2 parameters: the target position, and an "up vector". Imagine an airplane pointing its nose towards a target - there are an infinite number of ways it could be oriented, because the plane could roll about its axis. This second parameter is how you define what you want the final orientation to be.
 
@@ -49,7 +49,7 @@ func _process(delta):
     $Arrow.transform  = $Arrow.transform.interpolate_with(new_transform, speed * delta)
 ```
 
-![alt](/godot_recipes/3.x/img/3d_rotate_02.gif)
+![alt](/godot_recipes/4.x/img/3d_rotate_02.gif)
 
 Note that since `interpolate_with()` operates on the `transform`, it can be used to interpolate both rotation *and* position of an object.
 
@@ -57,15 +57,7 @@ Note that since `interpolate_with()` operates on the `transform`, it can be used
 
 That's it! Use this handy method to rotate your 3D objects, and stop thinking about angles!
 
-{{% notice note %}}
-Download the project file here: [3d_rotate.zip](/godot_recipes/3.x/files/3d_rotate.zip)
-{{% /notice %}}
 
 ## Related recipes
 
-- [Gamedev Math: Transforms](/godot_recipes/3.x/math/transforms/)
-- [Gamedev Math: Interpolation](/godot_recipes/3.x/math/interpolation/)
-- [Camera Gimbal](/godot_recipes/3.x/3d/camera_gimbal/)
-
-#### Like video?
 

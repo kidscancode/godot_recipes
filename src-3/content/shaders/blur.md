@@ -42,7 +42,7 @@ func _process(delta):
     blur.material.set_shader_param("blur_amount", blur_amount)
 ```
 
-<video controls src='/3.x/img/blur_shader3.webm'></video>
+<video controls src='/godot_recipes/3.x/img/blur_shader3.webm'></video>
 
 ## Related Recipes
 

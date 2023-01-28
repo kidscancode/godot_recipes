@@ -6,17 +6,21 @@ ghcommentid:
 
 ## {{< gd-icon CharacterBody2D >}}CharacterBody2D
 
-Godot offers a number of collision-related objects to use in your game. Knowing how each of them works will help you
+Godot offers a number of collision-related objects to use in your game. Knowing how each of them works will help you decide which one makes sense for the game object you're making.
+
+{{% notice tip %}}
+Most 3D nodes work in the same way as their 2D counterparts.
+{{% /notice %}}
 
 ### Node properties
 
-* Motion Mode - This property has two options:
+* **Motion Mode** - This property has two options:
 
     * `Floating`
 
     Floating mode is intended for top-down games. In this mode, all collisions are considered to be "walls".
 
-    * `Grounded`
+    * `Grounded` (default)
 
     This is the mode you want for a platformer-style game. When choosing this mode, you specify an `Up Direction` which tells the engine what surfaces to consider a floor, a wall, or a ceiling. The default `Up Direction` is `(0, -1)`.
 
@@ -25,7 +29,7 @@ Godot offers a number of collision-related objects to use in your game. Knowing 
 
 When you move the body, you should not directly set its `position` property (unless you want to teleport it). Instead, you use the provided movement methods, which will detect collisions and allow you to respond to them. See below for examples of using each one.
 
-* `move_and_collide`
+* `move_and_collide()`
 
 This method takes a parameter called `distance`. This is the vector you want the body to move in a given frame. Typically, you'll pass your `velocity` vector multiplied by `delta` (which is, of course, a distance).
 
