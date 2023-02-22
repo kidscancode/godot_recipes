@@ -68,17 +68,17 @@ Let's consider the following common configuration:
 The script in the `Player` node needs to notify the `AnimatedSprite` which animation to play, based on the player's movement. In this situation, `get_node()` works well:
 
 ```gdscript
-extends KinematicBody2D
+extends CharacterBody2D
 
 func _process(delta):
     if speed > 0:
-        get_node("AnimatedSprite").play("run")
+        get_node("AnimatedSprite2D").play("run")
     else:
-        get_node("AnimatedSprite").play("idle")
+        get_node("AnimatedSprite2D").play("idle")
 ```
 
 {{% notice tip %}}
-In GDScript you can use `$` as a shorthand for `get_node()`, writing `$AnimatedSprite` instead.
+In GDScript you can use `$` as a shorthand for `get_node()`, writing `$AnimatedSprite2D` instead.
 {{% /notice %}}
 
 ### 2. Using signals
@@ -87,7 +87,7 @@ Signals should be used to call functions on nodes that are higher in the tree or
 
 You can connect a signal in the editor (most often for nodes that exist before the game starts) or in code (for nodes that you're instancing at runtime). The syntax for connecting a signal is:
 
-> `source_node.connect("<signal_name>", target_node, "<target_function">)`
+> `signal_name.connect(target_node.target_function)`
 
 Looking at this, you may be thinking "Wait, if I'm connecting to a sibling, won't I need a node paths like `../Sibling`?". While you *could* do this, it breaks our rule above. The answer to this puzzle is to make sure that connections are made by the *common parent*.
 
@@ -106,7 +106,7 @@ Note that the UI is an instanced scene, we're just showing the contained nodes. 
 Instead the player emits a `health_changed` signal whenever it adds/loses health. We need to send that signal to the UI's `update_health()` function, which handles setting the `Label` value. In the `Player` script we use this code whenever the player's health is changed:
 
 ```gdscript
-emit_signal("health_changed", health)
+health_changed.emit(health)
 ```
 
 In the `UI` script we have:
@@ -122,7 +122,7 @@ Now we just need to connect the signal to the function. The perfect place to do 
 
 ```gdscript
 func _ready():
-    $Player.connect("health_changed", $UI, "update_health")
+    $Player.health_changed.connect($UI.update_health)
 ```
 
 ### 3. Using groups
@@ -180,7 +180,7 @@ The buttons here are instances of a `Button` scene, representing an object which
 extends Button
 
 func _ready():
-    connect("pressed", owner, "_on_button_pressed", [name])
+    pressed.connect(owner._on_button_pressed.bind(name))
 ```
 
 No matter where you place the buttons in the tree - if you add more containers, for example - the `CenterContainer` remains the `owner`.
