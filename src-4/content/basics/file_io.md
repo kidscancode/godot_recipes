@@ -11,11 +11,10 @@ You need to save and load local data between game sessions.
 
 ## Solution
 
-Godot's file I/O (input/output) system is based around the `File` object. You open a file by creating a new `File` object and calling `open()`.
+Godot's file I/O (input/output) system is based around the `FileAccess` object. You open a file by calling `FileAccess.open()`, which creates a new `FileAccess` object.
 
 ```gdscript
-var file = File.new()
-file.open("user://myfile.name", File.READ)
+var file = FileAccess.open("user://myfile.name", FileAccess.READ)
 ```
 
 {{% notice warning %}}
@@ -24,10 +23,10 @@ User data should only be stored in the `user://` path. While `res://` can be use
 
 The second argument after the file path is the "Mode Flag", which can be one of the following:
 
-* File.READ - Open for reading.
-* File.WRITE - Open for writing. Creates the file if it doesn't exist and truncates if it does.
-* File.READ_WRITE - Open for reading and writing. Doesn't truncate the file.
-* File.WRITE_READ - Open for reading/writing. Creates the file if it doesn't exist and truncates if it does.
+* FileAccess.READ - Open for reading.
+* FileAccess.WRITE - Open for writing. Creates the file if it doesn't exist and truncates if it does.
+* FileAccess.READ_WRITE - Open for reading and writing. Doesn't truncate the file.
+* FileAccess.WRITE_READ - Open for reading/writing. Creates the file if it doesn't exist and truncates if it does.
 
 ### Storing data
 
@@ -39,25 +38,17 @@ Let's start with a small example: saving the player's high score. We can write a
 var score_file = "user://score.save"
 
 func save_score():
-    var file = File.new()
-    file.open(score_file, File.WRITE)
+    var file = FileAccess.open(score_file, File.WRITE)
     file.store_var(highscore)
-    file.close()
 ```
-
-{{% notice tip %}}
-Don't forget to `close()` the file when you're finished accessing it.
-{{% /notice %}}
 
 We're saving our score, but we need to be able to load it when the game starts:
 
 ```gdscript
 func load_score():
-    var file = File.new()
-    if file.file_exists(score_file):
-        file.open(score_file, File.READ)
+    if FileAccess.file_exists(score_file):
+        var file = FileAccess.open(score_file, FileAccess.READ)
         highscore = file.get_var()
-        file.close()
     else:
         highscore = 0
 ```
@@ -85,18 +76,14 @@ var score_file = "user://score.save"
 var c = CustomObject.new()
 
 func save_to_file():
-    var file = File.new()
-    file.open(score_file, File.WRITE)
+    var file = FileAccess.open(score_file, FileAccess.WRITE)
     file.store_var(c, true)
-    file.close()
 
 
 func load_from_file():
-    var file = File.new()
-    if file.file_exists(score_file):
-        file.open(score_file, File.READ)
+    if FileAccess.file_exists(score_file):
+        var file = FileAccess.open(score_file, File.READ)
         c = file.get_var(true)
-        file.close()
 ```
 
 ```gdscript
@@ -121,4 +108,4 @@ Don't waste your time. Using Godot's built-in serialization, you can store nativ
 
 ### Wrapping up
 
-This article just scratches the surface of what you can do with the `File` object. For the full list of available `File` methods, see the [File documentation](https://docs.godotengine.org/en/latest/classes/class_file.html).
+This article just scratches the surface of what you can do with the `FileAccess` object. For the full list of available `FileAccess` methods, see the [FileAccess documentation](https://docs.godotengine.org/en/latest/classes/class_fileaccess.html).
