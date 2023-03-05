@@ -11,11 +11,10 @@ You need to save and load local data between game sessions.
 
 ## Solution
 
-Godot's file I/O (input/output) system is based around the `File` object. You open a file by creating a new `File` object and calling `open()`.
+Godot's file I/O (input/output) system is based around the `FileAccess` object. You open a file by calling `open()`.
 
 ```gdscript
-var file = File.new()
-file.open("user://myfile.name", File.READ)
+var file = FileAccess.open("user://myfile.name", File.READ)
 ```
 
 {{% notice warning %}}
@@ -24,10 +23,10 @@ User data should only be stored in the `user://` path. While `res://` can be use
 
 The second argument after the file path is the "Mode Flag", which can be one of the following:
 
-* File.READ - Open for reading.
-* File.WRITE - Open for writing. Creates the file if it doesn't exist and truncates if it does.
-* File.READ_WRITE - Open for reading and writing. Doesn't truncate the file.
-* File.WRITE_READ - Open for reading/writing. Creates the file if it doesn't exist and truncates if it does.
+* FileAccess.READ - Open for reading.
+* FileAccess.WRITE - Open for writing. Creates the file if it doesn't exist and truncates if it does.
+* FileAccess.READ_WRITE - Open for reading and writing. Doesn't truncate the file.
+* FileAccess.WRITE_READ - Open for reading/writing. Creates the file if it doesn't exist and truncates if it does.
 
 ### Storing data
 
@@ -36,76 +35,64 @@ You can save data using its specific data type (`store_float()`, `store_string()
 Let's start with a small example: saving the player's high score. We can write a function that we can call whenever the score needs to be saved:
 
 ```gdscript
-var score_file = "user://score.save"
+var save_path = "user://score.save"
 
 func save_score():
-    var file = File.new()
-    file.open(score_file, File.WRITE)
+    var file = FileAccess.open(save_path, FileAccess.WRITE)
     file.store_var(highscore)
-    file.close()
 ```
-
-{{% notice tip %}}
-Don't forget to `close()` the file when you're finished accessing it.
-{{% /notice %}}
 
 We're saving our score, but we need to be able to load it when the game starts:
 
 ```gdscript
 func load_score():
-    var file = File.new()
-    if file.file_exists(score_file):
-        file.open(score_file, File.READ)
+    if FileAccess.file_exists(save_path):
+        print("file found")
+        var file = FileAccess.open(save_path, FileAccess.READ)
         highscore = file.get_var()
-        file.close()
     else:
+        print("file not found")
         highscore = 0
 ```
 
 Don't forget to check for the file's existence before attempting to read from it - it may not be there! If that's the case, you can use a default value.
 
-### Saving objects
+You can `store_var()` and `get_var()` as many times as you need for any number of values.
 
-You can save more than just basic data types. Using `store_var()`'s `full_objects` parameter you can save any object, including custom ones. For example, let's say you have a custom object defined:
+### Saving Resources
 
-```gdscript
-extends Node
-class_name CustomObject
+The above technique works great when all you need to save are a few values. For more complex situations, you can save your data in a Resource, just like Godot does. Godot saves all its data Resources as `.tres` files (Animations, TileSets, Shaders, etc.) and you can too!
 
-var a = 10
+To save and load Resources, use the `ResourceSaver` and `ResourceLoader` Godot classes.
 
-func say_hello():
-    print("hello")
+For this example, let's say you have all the data about your character's stats stored in a Resource like this:
+
+```
+extends Resource
+class_name PlayerData
+
+var level = 1
+var experience = 100
+
+var strength = 5
+var intelligence = 3
+var charisma = 2
 ```
 
-And then your save/load code would look like this:
-
-```gdscript
-var score_file = "user://score.save"
-var c = CustomObject.new()
-
-func save_to_file():
-    var file = File.new()
-    file.open(score_file, File.WRITE)
-    file.store_var(c, true)
-    file.close()
+You can then save and load like so:
 
 
-func load_from_file():
-    var file = File.new()
-    if file.file_exists(score_file):
-        file.open(score_file, File.READ)
-        c = file.get_var(true)
-        file.close()
+```
+func load_character_data():
+    if ResourceLoader.exists(save_path):
+        return load(save_path)
+    return null
+
+func save_character_data(data):
+    ResourceSaver.save(save_path, data)
 ```
 
-```gdscript
-var c
-
-func _ready():
-    load_from_file()
-    c.say_hello()
-```
+Resources can contain subresources, so you could have your player's inventory Resource included as well, and so on.
 
 ### What about JSON?
 
@@ -119,6 +106,8 @@ This means JSON has limitations that are negatives for you when it comes to savi
 
 Don't waste your time. Using Godot's built-in serialization, you can store native Godot objects - Nodes, Resources, even Scenes - without any effort, which means less code and fewer errors.
 
+There's a reason that Godot itself doesn't use JSON for saving scenes and resources.
+
 ### Wrapping up
 
-This article just scratches the surface of what you can do with the `File` object. For the full list of available `File` methods, see the [File documentation](https://docs.godotengine.org/en/latest/classes/class_file.html).
+This article just scratches the surface of what you can do with `FileAccess`. For the full list of available `FileAccess` methods, see the [FileAccess documentation](https://docs.godotengine.org/en/stable/classes/class_fileaccess.html).

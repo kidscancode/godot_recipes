@@ -65,7 +65,7 @@ Let's consider the following common configuration:
 
 ![alt](/godot_recipes/4.x/img/node_access_01.png)
 
-The script in the `Player` node needs to notify the `AnimatedSprite` which animation to play, based on the player's movement. In this situation, `get_node()` works well:
+The script in the `Player` node needs to notify the `AnimatedSprite2D` which animation to play, based on the player's movement. In this situation, `get_node()` works well:
 
 ```gdscript
 extends CharacterBody2D
