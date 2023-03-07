@@ -67,7 +67,7 @@ To save and load Resources, use the `ResourceSaver` and `ResourceLoader` Godot c
 
 For this example, let's say you have all the data about your character's stats stored in a Resource like this:
 
-```
+```gdscript
 extends Resource
 class_name PlayerData
 
@@ -82,7 +82,7 @@ var charisma = 2
 You can then save and load like so:
 
 
-```
+```gdscript
 func load_character_data():
     if ResourceLoader.exists(save_path):
         return load(save_path)
