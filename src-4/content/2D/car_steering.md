@@ -75,7 +75,6 @@ Each frame, we need to check for input and calculate steering. Then we pass the 
 
 ```gdscript
 func get_input():
-    var turn = 0
     var turn = Input.get_axis("steer_left", "steer_right")
     steer_direction = turn * deg_to_rad(steering_angle)
     velocity = Vector2.ZERO

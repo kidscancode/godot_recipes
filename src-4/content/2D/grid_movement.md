@@ -96,7 +96,7 @@ Lastly we can interpolate the position between tiles, giving a smooth feel to th
 
 ```gdscript
 
-var speed = 3
+var animation_speed = 3
 var moving = false
 ```
 
@@ -119,10 +119,12 @@ func move(dir):
     ray.force_raycast_update()
     if !ray.is_colliding():
         #position += inputs[dir] * tile_size
-        var tween = get_tree().create_tween()
+        var tween = create_tween()
         tween.tween_property(self, "position",
             position + inputs[dir] *    tile_size, 1.0/animation_speed).set_trans(Tween.TRANS_SINE)
         moving = true
+        await tween.finished
+        moving = false
 ```
 
 
