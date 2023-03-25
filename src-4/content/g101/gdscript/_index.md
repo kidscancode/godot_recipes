@@ -1,5 +1,5 @@
 +++
-title = "GDScript"
+title = "Introduction to GDScript"
 date = 2019-04-09T20:23:50-07:00
 weight = 5
 chapter = true

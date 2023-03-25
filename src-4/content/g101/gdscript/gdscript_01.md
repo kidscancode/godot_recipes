@@ -54,7 +54,11 @@ func _process(delta):
     pass
 ```
 
-Since the script was added to a {{< gd-icon Sprite2D >}}`Sprite2D`, the first line is automatically set to `extends Sprite2D`.  Because this script extends the {{< gd-icon Sprite2D >}}`Sprite2D` class, it will be able to access and manipulate all the properties and functions that a {{< gd-icon Sprite2D >}}`Sprite2D` node provides.
+Since the script was added to a {{< gd-icon Sprite2D >}}`Sprite2D`, the first line is automatically set to `extends Sprite2D`.  Because this script extends the {{< gd-icon Sprite2D >}}`Sprite2D` class, it will be able to access and manipulate all the properties and methods that a {{< gd-icon Sprite2D >}}`Sprite2D` node provides.
+
+{{% notice title="Properties and methods" style="note" %}}
+*Properties* and *methods* are two terms which specifically mean *variables* and *functions* that are defined in an object. Programmers tend to use them interchangeably.
+{{% /notice %}}
 
 After that is where you're going to define all the variables you will use in the script, the "member variables". You define variables with the 'var' keyword - as you can see by the comment examples.
 

@@ -24,7 +24,7 @@ Are you ready to learn game development? Whether it's as a hobby or working towa
 
 On this site you'll find a gentle introduction to the Godot game engine, as well as a wide variety of gamedev tips and techniques. Feel free to browse the categories in the sidebar and see what catches your interest.
 
-If you're new to Godot, start here: [What is Godot?](/godot_recipes/3.x/basics/start/101_01/).
+If you're new to Godot, start here: [What is Godot?](/godot_recipes/4.x/g101/start/101_01/).
 
 ### How to use this site
 

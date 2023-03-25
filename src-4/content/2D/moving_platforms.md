@@ -60,7 +60,7 @@ Using the two exported properties, you can adjust the platform's movement. Set t
 
 Add some platforms in your level/world and try them out:
 
-<video controls src="/godot_recipes/4.x/img/moving_platform4.webm" autoplay></video>
+<video controls src="/godot_recipes/4.x/img/moving_platform4.webm" autoplay="true"></video>
 
 ## <i class="fas fa-code-branch"></i> Download This Project
 

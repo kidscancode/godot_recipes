@@ -14,6 +14,7 @@ themesDir = "../themes_shared"
     disableInlineCopyToClipBoard = true
     godotVer = "4.x"
     godotVerToggle = "3.x"
+    landingPageURL = "/godot_recipes/4.x/"
 
 [outputs]
     home = [ "HTML", "RSS", "JSON"]

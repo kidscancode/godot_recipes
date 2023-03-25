@@ -8,7 +8,7 @@ pre = "<i class='fas fa-feather-alt fa-fw'></i>&nbsp"
 
 ### Getting Started
 
-![alt](/godot_recipes/3.x/img/godot3_logo.png)
+![alt](/godot_recipes/4.x/img/godot3_logo.png?width=250)
 
 Have you downloaded Godot yet? You can get it here: [https://godotengine.org]([https://link](https://godotengine.org))
 
