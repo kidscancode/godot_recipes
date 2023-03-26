@@ -44,13 +44,13 @@ Cube: {{< gd-icon CharacterBody3D >}} CharacterBody3D
 You can do this with {{< gd-icon RigidBody3D >}}`RigidBody3D`, {{< gd-icon CharacterBody3D >}}`CharacterBody3D`, or {{< gd-icon Area3D >}}`Area3D` as your collision node. There will be minor differences in how you handle movement. Which node you choose should depend on what other behavior you want in your game. For this recipe, we're only concerned with the movement.
 {{% /notice %}}
 
-By default, everything will be centered at `(0, 0, 0)` so the first thing we're going to do is offset everything so that the *bottom center* of the cube is the {{< gd-icon CharacterBody3D >}}`CharacterBody3D`'s position.
+By default, everything is centered at `(0, 0, 0)` so the first thing we're going to do is offset everything so that the *bottom center* of the cube is the {{< gd-icon CharacterBody3D >}}`CharacterBody3D`'s position.
 
-To do this, move the mesh and collision nodes up to `(0, 1, 0)`, leaving the rest where they are. Now when you select the root node, its position will be the *bottom* of the cube:
+The default size of a {{< gd-icon BoxMesh3D >}}`BoxMesh3D` is `(1, 1, 1)`, so do this, move the mesh and collision nodes both up to `(0, 0.5, 0)`, leaving the rest where they are. Now when you select the root node, its position will be the *bottom* of the cube:
 
 ![alt](/godot_recipes/4.x/img/cube_003.png)
 
-Now when you want to roll the cube, you'll need to move the `Pivot` one unit in the direction you want to move. Since the mesh is attached, move it the opposite amount. For example, to roll to the right (**+X**), you'll end up with this:
+Now when you want to roll the cube, you'll need to move the `Pivot` `0.5` in the direction you want to move. Since the mesh is attached, you need to move it the opposite amount. For example, to roll to the right (**+X**), you'll end up with this:
 
 ![alt](/godot_recipes/4.x/img/cube_004.gif)
 
@@ -66,23 +66,21 @@ Here we apply the two offsets shown above: shift the `Pivot` in the direction of
 
 #### Step 2
 
-In this step we animate the rotation. We find the axis of rotation using the *cross product* of the direction and the down vector. Then we use a {{< gd-icon Tween >}}`Tween` to animate rotating the pivot's *basis*.
+In this step we animate the rotation. We find the axis of rotation using the *cross product* of the direction and the down vector. Then we use a {{< gd-icon Tween >}}`Tween` to animate rotating the pivot's `transform`.
 
 #### Step 3
 
-Finally, once the animation has finished, we need to reset everything so that it's ready to happen again. In the end, we want to have the cube moved 2 units in the chosen direction (for a cube of size 2) and the pivot and mesh back at their original positions.
+Finally, once the animation has finished, we need to reset everything so that it's ready to happen again. In the end, we want to have the cube moved 1 unit in the chosen direction (for a cube of size 1) and have the pivot and mesh back at their original positions.
 
 ```gdscript
 extends CharacterBody3D
 
 @onready var pivot = $Pivot
-@onready var mesh = $Pivot/Mesh
+@onready var mesh = $Pivot/MeshInstance3D
 
+var cube_size = 1.0
 var speed = 4.0
 var rolling = false
-
-func _ready():
-    pivot.set_disable_scale(true)
 
 func _physics_process(delta):
     var forward = Vector3.FORWARD
@@ -102,50 +100,42 @@ func roll(dir):
     rolling = true
 
     # Step 1: Offset the pivot.
-    pivot.translate(dir)
-    mesh.translate(-dir)
+    pivot.translate(dir * cube_size / 2)
+    mesh.global_translate(-dir * cube_size / 2)
 
     # Step 2: Animate the rotation.
     var axis = dir.cross(Vector3.DOWN)
-    var tween = get_tree().create_tween()
-    tween.tween_property(pivot, "transform:basis",
-            pivot.transform.basis.rotated(axis, PI/2), 1 / speed)
+    var tween = create_tween()
+    tween.tween_property(pivot, "transform",
+            pivot.transform.rotated_local(axis, PI/2), 1 / speed)
     await tween.finished
 
-    # Step 3: Finalize movement and undo the offset.
-    transform.origin += dir * 2
+    # Step 3: Finalize the movement and reset the offset.
+    transform.origin += dir * cube_size
+    var b = mesh.global_transform.basis
     pivot.transform = Transform3D.IDENTITY
-    mesh.transform.origin = Vector3(0, 1, 0)
+    mesh.transform.origin = Vector3(0, cube_size / 2, 0)
+    mesh.global_transform.basis = b
     rolling = false
 ```
 
-Try it, and you'll notice there's one problem:
-
-![alt](/godot_recipes/4.x/img/cube_006.gif)
-
-The cube is "squishing" because of the basis interpolation, which is going from 0 to 90 degrees. Since the basis also represents scale, this causes some deformation.
-
-We could solve this in 2 ways. First, we could break up the rotation into two separate tweens, each doing 45 degrees. However, I find this tricky when we want to play around with the different tween transitions.
-
-Alternatively, you can call `set_disable_scale(true)` on the pivot node.
-
 If your cube's texture isn't symmetrical, you may notice that it's resetting after every roll. To preserve the rotation of the mesh, add the following:
 
-In *Step 1*
+In *Step 1*:
 
 Change `mesh.translate(-dir)` to `mesh.global_translate(-dir)`.
 
-In *Step 3*
+In *Step 3*:
 
 Add two lines to keep the mesh rotation after reset:
 
 ```gdscript
-## Step3: Finalize movement and reverse the offset
-transform.origin += dir * 2
-var b = mesh.global_transform.basis  ## Save the rotation
-pivot.transform = Transform3D.IDENTITY
-mesh.transform.origin = Vector3(0, 1, 0)
-mesh.global_transform.basis = b  ## Apply the rotation
+    # Step 3: Finalize the movement and reset the offset.
+	transform.origin += dir * cube_size
+	var b = mesh.global_transform.basis  # Save the mesh rotation.
+	pivot.transform = Transform3D.IDENTITY
+	mesh.transform.origin = Vector3(0, cube_size / 2, 0)
+	mesh.global_transform.basis = b  # Restore the mesh rotation.
 ```
 
 ### Checking for collisions
@@ -156,7 +146,7 @@ If you plan to have obstacles in your game, you can check for collisions before 
 # Cast a ray before moving to check for obstacles
 var space = get_world_3d().direct_space_state
 var ray = PhysicsRayQueryParameters3D.create(mesh.global_transform.origin,
-        mesh.global_transform.origin + dir * 2.5, 4294967295, [self])
+        mesh.global_transform.origin + dir * cube_size, 4294967295, [self])
 var collision = space.intersect_ray(ray)
 if collision:
     return
@@ -166,10 +156,10 @@ if collision:
 You could also use a {{< gd-icon RayCast3D >}}`RayCast3D` node. Just remember to call `force_raycast_update()` before checking.
 {{% /notice %}}
 
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/rolling_cube](https://github.com/godotrecipes/rolling_cube)
+
 ## Related recipes
 
-- [Transforms](/godot_recipes/3.x/math/transforms/)
-
-#### Like video?
-
-{{< youtube Dq-Jr8boz50 >}}
+- [Transforms](/godot_recipes/4.x/math/transforms/)

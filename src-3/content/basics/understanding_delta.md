@@ -11,7 +11,7 @@ The `delta` or "delta time" parameter is a frequently-misunderstood concept in g
 
 ## Solution
 
-To illustrate the problem, let's consider a `Sprite` node moving across the screen. If our screen is `600` pixels wide and we want the sprite to take `5` seconds to cross the screen, we can use the following calculation to find the necessary speed:
+To illustrate the problem, let's consider a {{< gd-icon Sprite2D >}}`Sprite2D` node moving across the screen. If our screen is `600` pixels wide and we want the sprite to take `5` seconds to cross the screen, we can use the following calculation to find the necessary speed:
 
 ```
 600 pixels / 5 seconds = 120 pixels/second
@@ -36,7 +36,7 @@ extends Node2D
 var movement = Vector2(2, 0)
 
 func _process(delta):
-    $Sprite.position += movement
+    $Sprite2D.position += movement
 ```
 
 Run this code and you'll see the sprite takes 5 seconds to cross the screen.
@@ -76,7 +76,7 @@ extends Node2D
 var movement = Vector2(120, 0)
 
 func _process(delta):
-    $Sprite.position += movement * delta
+    $Sprite2D.position += movement * delta
 ```
 
 Now when running at `30` frames per second, the travel time is consistent:
