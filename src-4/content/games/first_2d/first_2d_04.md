@@ -83,3 +83,7 @@ Do the same thing to connect the `screen_exited` signal of the {{< gd-icon Visib
 func _on_visible_on_screen_notifier_2d_screen_exited():
     queue_free()
 ```
+
+### Next steps
+
+This completes the bullet scene, so now we can go back and add shooting to the player.

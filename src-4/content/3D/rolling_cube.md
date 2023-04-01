@@ -114,7 +114,7 @@ func roll(dir):
     transform.origin += dir * cube_size
     var b = mesh.global_transform.basis
     pivot.transform = Transform3D.IDENTITY
-    mesh.transform.origin = Vector3(0, cube_size / 2, 0)
+    mesh.position = Vector3(0, cube_size / 2, 0)
     mesh.global_transform.basis = b
     rolling = false
 ```
@@ -134,7 +134,7 @@ Add two lines to keep the mesh rotation after reset:
 	transform.origin += dir * cube_size
 	var b = mesh.global_transform.basis  # Save the mesh rotation.
 	pivot.transform = Transform3D.IDENTITY
-	mesh.transform.origin = Vector3(0, cube_size / 2, 0)
+	mesh.position = Vector3(0, cube_size / 2, 0)
 	mesh.global_transform.basis = b  # Restore the mesh rotation.
 ```
 
@@ -145,8 +145,8 @@ If you plan to have obstacles in your game, you can check for collisions before 
 ```gdscript
 # Cast a ray before moving to check for obstacles
 var space = get_world_3d().direct_space_state
-var ray = PhysicsRayQueryParameters3D.create(mesh.global_transform.origin,
-        mesh.global_transform.origin + dir * cube_size, 4294967295, [self])
+var ray = PhysicsRayQueryParameters3D.create(mesh.global_position,
+        mesh.global_position + dir * cube_size, collision_mask, [self])
 var collision = space.intersect_ray(ray)
 if collision:
     return
@@ -155,6 +155,18 @@ if collision:
 {{% notice note %}}
 You could also use a {{< gd-icon RayCast3D >}}`RayCast3D` node. Just remember to call `force_raycast_update()` before checking.
 {{% /notice %}}
+
+### Playing with transitions
+
+You can add a lot of "personality" to the cube's rolling behavior by changing which `TransitionType` you use. The default is `Tween.TRANS_LINEAR`, which results in a constant speed throughout the movement.
+
+By setting a different transition type, you can get a very different feel. For example:
+
+```gdscript
+var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+```
+
+<!-- gif -->
 
 ## <i class="fas fa-code-branch"></i> Download This Project
 
