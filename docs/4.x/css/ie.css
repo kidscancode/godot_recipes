@@ -1,15 +1,225 @@
 @media all and (-ms-high-contrast:none) {
+	/* ----------------------------------------------- */
+	/* turn off LTR support as it is dependend on CSS properties that aren't supported by IE11 */
+	html {
+		direction: ltr !important;
+	}
+	/* nucleus */
+	th {
+		text-align: left;
+	}
+	input[type="checkbox"], input[type="radio"] {
+		margin-right: 0.425rem;
+	}
+	blockquote {
+		padding-left: 0.85rem;
+	}
+	/* theme */
+	#sidebar {
+		left: 0;
+	}
+	.searchbox > :first-child {
+		left: .5rem;
+	}
+	.searchbox span {
+		right: .5rem;
+	}
+	.searchbox input {
+		padding-left: 1.8rem;
+		padding-right: 1.6rem;
+	}
+	#sidebar ul li.visited + span {
+		margin-right: 1rem;
+	}
+	#sidebar ul li .read-icon {
+		right: 1rem;
+	}
+	#sidebar .nav-title {
+		padding-left: 1rem;
+	}
+	#body {
+		margin-left: 18.75rem;
+	}
+	h2, h3, h4, h5, h6 {
+		padding-right: 2rem;
+	}
+	blockquote {
+		border-left: .6rem solid rgba( 134, 134, 134, .4 );
+	}
+	blockquote cite {
+		text-align: right;
+	}
+	div.attachments .box-content {
+		padding-left: 1.75rem;
+	}
+	#body-inner ul.children-h2,
+	#body-inner ul.children-h3,
+	#body-inner ul.children-h4,
+	#body-inner ul.children-h5,
+	#body-inner ul.children-h6 {
+		/* if we display children with style=h2 but without a containerstyle
+		a ul will be used for structuring; we remove default indention for uls
+		in this case */
+		padding-left: 0;
+	}
+	code.copy-to-clipboard-code {
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+		border-right-width: 0;
+	}
+	html[dir="rtl"] .navigation,
+	html[dir="rtl"] #top-print-link,
+	html[dir="rtl"] #top-github-link {
+		float: right;
+	}
+	.nav,
+	.print-link,
+	.github-link {
+		border-left: thin solid rgba( 134, 134, 134, .333 );
+	}
+	html[dir="rtl"] .nav i {
+		transform: scaleX(1);
+	}
+	#toc-menu,
+	#sidebar-toggle-span {
+		border-right: thin solid rgba( 134, 134, 134, .333 );
+	}
+	html[dir="rtl"] #body #breadcrumbs {
+		float: left;
+	}
+	.progress {
+		left: 1rem;
+	}
+	@media screen and (max-width: 48rem) {
+		.progress {
+			left: 4.25rem;
+		}
+	}
+	@media screen and (max-width: 60rem) {
+		#body {
+			margin-left: 14.375rem;
+		}
+	}
+	@media screen and (max-width: 48rem) {
+		.mobile-support #sidebar {
+			left: -14.375rem;
+		}
+		.mobile-support #body {
+			margin-left: 0;
+		}
+		.mobile-support.sidebar-flyout #sidebar {
+			left: 0;
+		}
+		.mobile-support.sidebar-flyout #body {
+			margin-left: 14.375rem;
+		}
+	}
+	.copy-to-clipboard-button {
+		border-top-left-radius: 0;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		border-bottom-left-radius: 0;
+	}
+	span > .copy-to-clipboard-button {
+		border-top-left-radius: 0;
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		border-bottom-left-radius: 0;
+	}
+	pre > .copy-to-clipboard-button {
+		right: 4px;
+	}
+	.disableInlineCopyToClipboard span > code.copy-to-clipboard-code {
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		border-right-width: 1px;
+	}
+	.expand > label {
+		left: 0;
+	}
+	html[dir="rtl"] .expand > .expand-label > i.fa-chevron-right {
+		transform: scaleX(1);
+	}
+	.footline i{
+		margin-left: .5rem;
+	}
+	.footline i:first-child{
+		margin-left: 0;
+	}
+	.anchor {
+		margin-left: .66em;
+	}
+	/* rapi-doc
+	seems not be capable of RTL
+	*/
+	html[dir="rtl"] .select-container i,
+	html[dir="rtl"] .select-container span {
+		float: left;
+	}
+	.footerVisitedLinks > * {
+		text-align: left;
+	}
+	.searchform input {
+		margin-right: .5rem;
+	}
+	.badge > .badge-title {
+		border-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.badge.badge-with-title > .badge-content {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+	article ul > li:has(> input[type="checkbox"]) {
+		margin-left: -1rem;
+	}
+	/* tabs */
+	#body .tab-nav-button {
+		margin-left: 4px;
+	}
+	html[dir="rtl"] #body .tab-nav-button{
+		float: left;
+	}
+	#body .tab-nav-button:first-child {
+		margin-left: 9px;
+	}
+	/* auto-complete */
+	.autocomplete-suggestions {
+		text-align: left;
+	}
+	.autocomplete-suggestion > .context {
+		margin-left: 1em;
+	}
+	/* menu */
+	#sidebar ul ul {
+		padding-left: 1rem;
+	}
+	#sidebar ul.collapsible-menu > li > label {
+		left: 0;
+		padding-left: .125rem;
+	}
+	html[dir="rtl"] #sidebar ul.collapsible-menu > li > label > i.fa-chevron-right {
+		transform: scaleX(1);
+	}
+
+	/* ----------------------------------------------- */
 	/* set default colors as in variant.css for IE11 */
+	html {
+		color-scheme: only light;
+	}
 	body {
 		background-color: #ffffff; /* var(--MAIN-BG-color) */
 		color: #101010; /* var(--MAIN-TEXT-color) */
 		font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; /* var(--MAIN-font) */
 	}
 
+	.footerVisitedLinks > *,
 	a,
 	.anchor,
 	#toc-menu,
-	#body a.highlight:after {
+	#body a.highlight:after,
+	#searchresults .autocomplete-suggestion {
 		color: #486ac9; /* var(--MAIN-LINK-color) */
 	}
 
@@ -37,28 +247,52 @@
 		background-color: #323232; /* var(--MENU-SEARCH-BG-color) */
 	}
 
-	#sidebar .collapsible-menu label:after,
-	#sidebar a {
+	.searchbox input:-ms-input-placeholder {
+		color: #e0e0e0; /* var(--INTERNAL-MENU-SEARCH-color) */
+		opacity: .45;
+	}
+
+	#sidebar .searchbox > :first-child,
+	#sidebar .searchbox button,
+	.searchbox span {
+		color: #e0e0e0; /* var(--INTERNAL-MENU-SEARCH-color) */
+	}
+
+	.searchform input:-ms-input-placeholder {
+		color: rgba( 134, 134, 134 );
+		opacity: .666;
+	}
+
+	#sidebar .collapsible-menu label,
+	#sidebar .select-container,
+	#sidebar a,
+	#sidebar button {
 		color: #bababa; /* var(--MENU-SECTIONS-LINK-color) */
 	}
 
 	#sidebar select:hover,
-	#sidebar .collapsible-menu label:hover:after,
-	#sidebar a:hover {
+	#sidebar .collapsible-menu label:hover,
+	#sidebar .select-container:hover,
+	#sidebar a:hover,
+	#sidebar button:hover {
 		color: #ffffff; /* var(--MENU-SECTIONS-LINK-HOVER-color) */
 	}
 
-	#sidebar ul.topics > li.parent,
-	#sidebar ul.topics > li.active {
+	#sidebar ul.enlarge > li.parent,
+	#sidebar ul.enlarge > li.active {
 		background-color: rgba( 0, 0, 0, .166 ); /* var(--MENU-SECTIONS-ACTIVE-BG-color) */
 	}
 
-	#sidebar ul.topics li.active > a {
-		background-color: #ffffff; /* var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color) */
+	#sidebar li.active > label,
+	#sidebar li.active > a {
 		color: #444444; /* var(--MENU-SECTION-ACTIVE-CATEGORY-color) */
 	}
 
-	#sidebar ul li.visited > a .read-icon {
+	#sidebar li.active > a {
+		background-color: #ffffff; /* var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color) */
+	}
+
+	#sidebar ul li > a .read-icon {
 		color: #486ac9; /* var(--MENU-VISITED-color) */
 	}
 
@@ -74,14 +308,30 @@
 		color: #bababa; /* var(--MENU-SECTIONS-LINK-color) */
 	}
 
+	mark {
+		background-color: #ffff00;
+	}
+
 	h1 {
 		color: #101010; /* var(--MAIN-TEXT-color) */
 		font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; /* var(--MAIN-font) */
 	}
 
-	h2, h3, h4, h5, h6 {
+	h2, h3, .article-subheading, h4, h5, h6 {
 		color: #4a4a4a; /* var(--MAIN-TITLES-TEXT-color) */
 		font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif; /* var(--MAIN-TITLES-TEXT-font) */
+	}
+
+	.expand > label {
+		color: #486ac9; /* var(--MAIN-LINK-color) */
+	}
+
+	.expand > label:hover {
+		color: #202891; /* var(--MAIN-LINK-HOVER-color) */
+	}
+
+	.expand > label:after {
+		color: #202891; /* var(--MAIN-LINK-HOVER-color) */
 	}
 
 	div.box {
@@ -142,6 +392,14 @@
 	}
 
 	div.box.secondary > .box-content {
+		color: #101010; /* var(--INTERNAL-MAIN-TEXT-color) */
+	}
+
+	div.box.accent {
+		background-color: #ff88ff; /* var(--INTERNAL-ACCENT-color) */
+	}
+
+	div.box.accent > .box-content {
 		color: #101010; /* var(--INTERNAL-MAIN-TEXT-color) */
 	}
 
@@ -217,7 +475,11 @@
 		color: #000000; /* var(--CODE-BLOCK-color) */
 	}
 
-	div.featherlight .featherlight-content{
+	table {
+		background-color: #ffffff; /* var(--INTERNAL-MAIN-BG-color) */
+	}
+
+	.lightbox img{
 		background-color: #ffffff /* var(--INTERNAL-MAIN-BG-color); */
 	}
 
@@ -225,7 +487,8 @@
 		background-color: #ffffff; /* var(--MAIN-BG-color) */
 	}
 
-	#body a[aria-disabled="true"] {
+	#body a[aria-disabled="true"],
+	#searchresults .autocomplete-suggestion > .context {
 		color: #101010; /* var(--MAIN-TEXT-color) - inherit is not processed correctly in Chrome */
 	}
 
@@ -258,7 +521,7 @@
 	}
 
 	#homelinks a {
-		color: #323232 /* var(--MENU-HOME-LINK-color) */
+		color: #404040 /* var(--MENU-HOME-LINK-color) */
 	}
 
 	#homelinks a:hover {
@@ -281,14 +544,14 @@
 		background-color: rgba( 128, 128, 128, 1 ); /* var(--BOX-NEUTRAL-color) */
 	}
 
-	.btn a {
+	.btn > * {
 		border-color: rgba( 128, 128, 128, 1 ); /* var(--BOX-NEUTRAL-color) */
 		color: rgba( 255, 255, 255, 1 ); /* var(--BOX-CAPTION-color) */
 	}
 
-	.btn a:hover,
-	.btn a:focus,
-	.btn a:active {
+	.btn > *:hover,
+	.btn > *:focus,
+	.btn > *:active {
 		background-color: rgba( 255, 255, 255, .833 ); /* var(--BOX-BG-color) */
 		color: rgba( 16, 16, 16, 1 ); /* var(--BOX-NEUTRAL-TEXT-color) */
 	}
@@ -297,7 +560,7 @@
 		background-color: rgba( 48, 117, 229, 1 ); /* var(--BOX-INFO-color) */
 	}
 
-	.btn.cstyle.info a {
+	.btn.cstyle.info > * {
 		border-color: rgba( 48, 117, 229, 1 ); /* var(--BOX-INFO-color) */
 	}
 
@@ -305,7 +568,7 @@
 		background-color: rgba( 237, 153, 9, 1 ); /* var(--BOX-NOTE-color) */
 	}
 
-	.btn.cstyle.note a {
+	.btn.cstyle.note > * {
 		border-color: rgba( 237, 153, 9, 1 ); /* var(--BOX-NOTE-color) */
 	}
 
@@ -313,7 +576,7 @@
 		background-color: rgba( 42, 178, 24, 1 ); /* var(--BOX-TIP-color) */
 	}
 
-	.btn.cstyle.tip a {
+	.btn.cstyle.tip > * {
 		border-color: rgba( 42, 178, 24, 1 ); /* var(--BOX-TIP-color) */
 	}
 
@@ -321,7 +584,7 @@
 		background-color: rgba( 224, 62, 62, 1 ); /* var(--BOX-WARNING-color) */
 	}
 
-	.btn.cstyle.warning a {
+	.btn.cstyle.warning > * {
 		border-color: rgba( 224, 62, 62, 1 ); /* var(--BOX-WARNING-color) */
 	}
 
@@ -329,7 +592,7 @@
 		background-color: #7dc903; /* var(--PRIMARY-color) */
 	}
 
-	.btn.cstyle.primary a {
+	.btn.cstyle.primary > * {
 		border-color: #7dc903; /* var(--PRIMARY-color) */
 	}
 
@@ -337,15 +600,23 @@
 		background-color: #486ac9; /* var(--SECONDARY-color) */
 	}
 
-	.btn.cstyle.secondary a {
+	.btn.cstyle.secondary > * {
 		border-color: #486ac9; /* var(--SECONDARY-color) */
+	}
+
+	.btn.cstyle.accent {
+		background-color: #ff88ff; /* var(--ACCENT-color) */
+	}
+
+	.btn.cstyle.accent > * {
+		border-color: #ff88ff; /* var(--ACCENT-color) */
 	}
 
 	.btn.cstyle.blue {
 		background-color: rgba( 48, 117, 229, 1 ); /* var(--BOX-BLUE-color) */
 	}
 
-	.btn.cstyle.blue a {
+	.btn.cstyle.blue > * {
 		border-color: rgba( 48, 117, 229, 1 ); /* var(--BOX-BLUE-color) */
 	}
 
@@ -353,7 +624,7 @@
 		background-color: rgba( 42, 178, 24, 1 ); /* var(--BOX-GREEN-color) */
 	}
 
-	.btn.cstyle.green a {
+	.btn.cstyle.green > * {
 		border-color: rgba( 42, 178, 24, 1 ); /* var(--BOX-GREEN-color) */
 	}
 
@@ -361,7 +632,7 @@
 		background-color: rgba( 128, 128, 128, 1 ); /* var(--BOX-GREY-color) */
 	}
 
-	.btn.cstyle.grey a {
+	.btn.cstyle.grey > * {
 		border-color: rgba( 128, 128, 128, 1 ); /* var(--BOX-GREY-color) */
 	}
 
@@ -369,7 +640,7 @@
 		background-color: rgba( 237, 153, 9, 1 ); /* var(--BOX-ORANGE-color) */
 	}
 
-	.btn.cstyle.orange a {
+	.btn.cstyle.orange > * {
 		border-color: rgba( 237, 153, 9, 1 ); /* var(--BOX-ORANGE-color) */
 	}
 
@@ -377,7 +648,7 @@
 		background-color: rgba( 224, 62, 62, 1 ); /* var(--BOX-RED-color) */
 	}
 
-	.btn.cstyle.red a {
+	.btn.cstyle.red > * {
 		border-color: rgba( 224, 62, 62, 1 ); /* var(--BOX-RED-color) */
 	}
 
@@ -392,13 +663,14 @@
 		background-color: rgba( 128, 128, 128, 1 ); /* var(--BOX-NEUTRAL-color) */
 	}
 
-	.btn.cstyle.transparent a {
+	.btn.cstyle.transparent > * {
 		color: #4a4a4a; /* var(--MAIN-TITLES-TEXT-color) */
 	}
 
 	#body .tags a.tag-link {
 		background-color: #7dc903; /* var(--TAG-BG-color) */
 		color: #ffffff; /* var(--MAIN-BG-color) */
+		margin-right: 16px;
 	}
 
 	#body .tags a.tag-link:before {
@@ -413,9 +685,79 @@
 		background-color: #ffffff !important; /* var(--MAIN-BG-color) */
 		border-bottom-color: #ffffff !important; /* var(--MAIN-BG-color) */
 	}
-}
 
-@media all and (-ms-high-contrast:none) {
+	.badge > * {
+		border-color: rgba( 16, 16, 16, 1 ); /* var(--BOX-TEXT-color) */
+	}
+
+	.badge > .badge-content {
+		background-color: rgba( 128, 128, 128, 1 ); /* var(--INTERNAL-BOX-NEUTRAL-color) */
+		color: rgba( 255, 255, 255, 1 ); /* var(--BOX-CAPTION-color) */
+	}
+
+	.badge.info > .badge-content {
+		background-color: rgba( 48, 117, 229, 1 ); /* var(--INTERNAL-BOX-INFO-color) */
+	}
+
+	.badge.warning > .badge-content {
+		background-color: rgba( 224, 62, 62, 1 ); /* var(--INTERNAL-BOX-WARNING-color) */
+	}
+
+	.badge.note > .badge-content {
+		background-color: rgba( 237, 153, 9, 1 ); /* var(--INTERNAL-BOX-NOTE-color) */
+	}
+
+	.badge.tip > .badge-content {
+		background-color: rgba( 42, 178, 24, 1 ); /* var(--INTERNAL-BOX-TIP-color) */
+	}
+
+	.badge.primary > .badge-content {
+		background-color: #7dc903; /* var(--INTERNAL-PRIMARY-color) */
+	}
+
+	.badge.secondary > .badge-content {
+		background-color: #486ac9; /* var(--INTERNAL-SECONDARY-color) */
+	}
+
+	.badge.accent > .badge-content {
+		background-color: #ff88ff; /* var(--INTERNAL-ACCENT-color) */
+	}
+
+	.badge.blue > .badge-content {
+		background-color: rgba( 48, 117, 229, 1 ); /* var(--INTERNAL-BOX-BLUE-color) */
+	}
+
+	.badge.green > .badge-content {
+		background-color: rgba( 42, 178, 24, 1 ); /* var(--INTERNAL-BOX-GREEN-color) */
+	}
+
+	.badge.grey > .badge-content {
+		background-color: rgba( 128, 128, 128, 1 ); /* var(--INTERNAL-BOX-GREY-color) */
+	}
+
+	.badge.orange > .badge-content {
+		background-color: rgba( 237, 153, 9, 1 ); /* var(--INTERNAL-BOX-ORANGE-color) */
+	}
+
+	.badge.red > .badge-content {
+		background-color: rgba( 224, 62, 62, 1 ); /* var(--INTERNAL-BOX-RED-color) */
+	}
+
+	.badge.transparent > .badge-content {
+		background-color: transparent;
+		color: #4a4a4a; /* var(--MAIN-TITLES-TEXT-color) */
+	}
+
+	article ul > li > input[type="checkbox"] {
+		background-color: #ffffff; /* var(--INTERNAL-MAIN-BG-color); */
+		color: #101010; /* var(--INTERNAL-MAIN-TEXT-color) */
+	}
+
+	article ul > li > input[type="checkbox"]::before {
+		box-shadow: inset 1em 1em #7dc903; /* var(--INTERNAL-PRIMARY-color) */
+	}
+
+	/* ----------------------------------------------- */
 	/* set further styles to fix broken stuff in IE11 */
 
 	/* turn off animiation in IE because this causes the menu
@@ -445,4 +787,17 @@
     .showFooter {
         display: block;
     }
+
+	.select-style select::-ms-expand {
+		/* hide the triangle */
+		display: none;
+	}
+}
+
+@media print and (-ms-high-contrast:none) {
+	code.copy-to-clipboard-code {
+		border-top-right-radius: 2px;
+		border-bottom-right-radius: 2px;
+		border-right-width: 1px;
+	}
 }

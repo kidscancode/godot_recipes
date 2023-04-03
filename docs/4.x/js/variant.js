@@ -15,15 +15,22 @@ if (!String.prototype.startsWith) {
     });
 }
 
+"function"!=typeof Object.assign&&(Object.assign=function(n,t){"use strict";if(null==n)throw new TypeError("Cannot convert undefined or null to object");for(var r=Object(n),e=1;e<arguments.length;e++){var o=arguments[e];if(null!=o)for(var c in o)Object.prototype.hasOwnProperty.call(o,c)&&(r[c]=o[c])}return r});
+
 if(!Array.prototype.find){Array.prototype.find=function(predicate){if(this===null){throw new TypeError('Array.prototype.find called on null or undefined')}if(typeof predicate!=='function'){throw new TypeError('predicate must be a function')}var list=Object(this);var length=list.length>>>0;var thisArg=arguments[1];var value;for(var i=0;i<length;i+=1){value=list[i];if(predicate.call(thisArg,value,i,list)){return value}}return undefined}}
 
 Array.from||(Array.from=function(){var r;try{r=Symbol.iterator?Symbol.iterator:"Symbol(Symbol.iterator)"}catch(t){r="Symbol(Symbol.iterator)"}var t=Object.prototype.toString,n=function(r){return"function"==typeof r||"[object Function]"===t.call(r)},o=Math.pow(2,53)-1,e=function(r){var t=function(r){var t=Number(r);return isNaN(t)?0:0!==t&&isFinite(t)?(t>0?1:-1)*Math.floor(Math.abs(t)):t}(r);return Math.min(Math.max(t,0),o)},a=function(t,n){var o=t&&n[r]();return function(r){return t?o.next():n[r]}},i=function(r,t,n,o,e,a){for(var i=0;i<n||e;){var u=o(i),f=e?u.value:u;if(e&&u.done)return t;t[i]=a?void 0===r?a(f,i):a.call(r,f,i):f,i+=1}if(e)throw new TypeError("Array.from: provided arrayLike or iterator has length more then 2 ** 52 - 1");return t.length=n,t};return function(t){var o=this,u=Object(t),f=n(u[r]);if(null==t&&!f)throw new TypeError("Array.from requires an array-like object or iterator - not null or undefined");var l,c=arguments.length>1?arguments[1]:void 0;if(void 0!==c){if(!n(c))throw new TypeError("Array.from: when provided, the second argument must be a function");arguments.length>2&&(l=arguments[2])}var y=e(u.length),h=n(o)?Object(new o(y)):new Array(y);return i(l,h,y,a(f,u),f,c)}}());
+
+const ElementPrototype=window.Element.prototype;
+if(typeof ElementPrototype.matches!=='function'){ElementPrototype.matches=ElementPrototype.msMatchesSelector||ElementPrototype.mozMatchesSelector||ElementPrototype.webkitMatchesSelector||function matches(selector){let element=this;const elements=(element.document||element.ownerDocument).querySelectorAll(selector);let index=0;while(elements[index]&&elements[index]!==element){index+=1}return Boolean(elements[index])}}if(typeof ElementPrototype.closest!=='function'){ElementPrototype.closest=function closest(selector){let element=this;while(element&&element.nodeType===1){if(element.matches(selector)){return element}element=element.parentNode}return null}}
 
 function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (it) return (it = it.call(o)).next.bind(it); if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function ready(fn) { if (document.readyState == 'complete') { fn(); } else { document.addEventListener('DOMContentLoaded',fn); } }
 
 var variants = {
 	variant: '',
@@ -223,7 +230,7 @@ var variants = {
 		}
 	},
 
-	generator: function( vargenerator, vardownload, varreset ){
+	generator: function( vargenerator ){
 		var graphDefinition = this.generateGraph();
 		var graphs = document.querySelectorAll( vargenerator );
 		graphs.forEach( function( e ){ e.innerHTML = graphDefinition; });
@@ -234,12 +241,6 @@ var variants = {
 				this.styleGraph();
 			}
 		}.bind( this ), 25 );
-
-		var downloads = document.querySelectorAll( vardownload );
-		downloads.forEach( function( e ){ e.addEventListener('click', this.getStylesheet.bind( this )); }.bind( this ) );
-
-		var resets = document.querySelectorAll( varreset );
-		resets.forEach( function( e ){ e.addEventListener('click', this.resetVariant.bind( this )); }.bind( this ) );
 	},
 
 	download: function(data, mimetype, filename){
@@ -326,24 +327,37 @@ var variants = {
 	},
 
 	findLoadedStylesheet: function( id ){
-		var style = null;
 		for( var n = 0; n < document.styleSheets.length; ++n ){
 			if( document.styleSheets[n].ownerNode.id == id ){
 				var s = document.styleSheets[n];
-				for( var m = 0; m < s.rules.length; ++m ){
-					if( s.rules[m].selectorText == ':root' ){
-						style = s.rules[m].style;
-						break;
+				if( s.rules && s.rules.length ){
+					for( var m = 0; m < s.rules.length; ++m ){
+						if( s.rules[m].selectorText == ':root' ){
+							return s.rules[m].style;
+						}
+						if( s.rules[m].cssRules && s.rules[m].cssRules.length ){
+							for( var o = 0; o < s.rules[m].cssRules.length; ++o ){
+								if( s.rules[m].cssRules[o].selectorText == ':root' ){
+									return s.rules[m].cssRules[o].style;
+								}
+							}
+						}
 					}
 				}
 				break;
 			}
 		}
-		return style;
+		return null;
 	},
 
 	changeColor: function( c, without_prompt ){
 		var with_prompt = !(without_prompt || false);
+		if( this.getVariant() == 'auto' ){
+			if( with_prompt ){
+				alert( 'The Auto variant can not be changed. Please select the light/dark variant directly to make changes' );
+			}
+			return;
+		}
 
 		var read_style = this.findLoadedStylesheet( 'custom-variant-style' );
 		var write_style = this.findLoadedStylesheet( 'variant-style' );
@@ -434,6 +448,7 @@ var variants = {
 		}.bind( this ) );
 		this.styleGraphGroup( '#maincontent', 'MAIN-BG-color' );
 		this.styleGraphGroup( '#mainheadings', 'MAIN-BG-color' );
+		this.styleGraphGroup( '#code', 'CODE-BLOCK-BG-color' );
 		this.styleGraphGroup( '#inlinecode', 'CODE-INLINE-BG-color' );
 		this.styleGraphGroup( '#blockcode', 'CODE-BLOCK-BG-color' );
 		this.styleGraphGroup( '#thirdparty', 'MAIN-BG-color' );
@@ -492,13 +507,17 @@ var variants = {
 			'      direction LR\n' +
 					g_groups[ 'headings' ].reduce( function( a, e ){ return a + '      ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
 			'    end\n' +
-			'    subgraph inlinecode["inline code"]\n' +
-			'      direction LR\n' +
-					g_groups[ 'inline code' ].reduce( function( a, e ){ return a + '      ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
-			'    end\n' +
-			'    subgraph blockcode["code blocks"]\n' +
-			'      direction LR\n' +
-					g_groups[ 'code blocks' ].reduce( function( a, e ){ return a + '      ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
+			'    subgraph code["code"]\n' +
+			'      direction TB\n' +
+					g_groups[ 'code' ].reduce( function( a, e ){ return a + '    ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
+			'      subgraph inlinecode["inline code"]\n' +
+			'        direction LR\n' +
+						g_groups[ 'inline code' ].reduce( function( a, e ){ return a + '      ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
+			'      end\n' +
+			'      subgraph blockcode["code blocks"]\n' +
+			'        direction LR\n' +
+						g_groups[ 'code blocks' ].reduce( function( a, e ){ return a + '      ' + this.generateGraphGroupedEdge( e ) + '\n'; }.bind( this ), '' ) +
+			'      end\n' +
 			'    end\n' +
 			'    subgraph thirdparty["3rd party"]\n' +
 			'      direction LR\n' +
@@ -519,14 +538,16 @@ var variants = {
 	variantvariables: [
 		{ name: 'PRIMARY-color',                         group: 'content',       fallback: 'MENU-HEADER-BG-color',        tooltip: 'brand primary color', },
 		{ name: 'SECONDARY-color',                       group: 'content',       fallback: 'MAIN-LINK-color',             tooltip: 'brand secondary color', },
+		{ name: 'ACCENT-color',                          group: 'content',        default: '#ffff00',                     tooltip: 'brand accent color, used for search highlights', },
 
-		{ name: 'MAIN-TEXT-color',                       group: 'content',        default: '#101010',                     tooltip: 'text color of content and h1 titles', },
 		{ name: 'MAIN-LINK-color',                       group: 'content',       fallback: 'SECONDARY-color',             tooltip: 'link color of content', },
 		{ name: 'MAIN-LINK-HOVER-color',                 group: 'content',       fallback: 'MAIN-LINK-color',             tooltip: 'hoverd link color of content', },
 		{ name: 'MAIN-BG-color',                         group: 'content',        default: '#ffffff',                     tooltip: 'background color of content', },
 		{ name: 'TAG-BG-color',                          group: 'content',       fallback: 'PRIMARY-color',               tooltip: 'tag color', },
 
-		{ name: 'MAIN-TITLES-TEXT-color',                group: 'headings',       default: '#4a4a4a',                     tooltip: 'text color of h2-h6 titles and transparent box titles', },
+		{ name: 'MAIN-TEXT-color',                       group: 'content',        default: '#101010',                     tooltip: 'text color of content and h1 titles', },
+
+		{ name: 'MAIN-TITLES-TEXT-color',                group: 'headings',      fallback: 'MAIN-TEXT-color',             tooltip: 'text color of h2-h6 titles and transparent box titles', },
 		{ name: 'MAIN-TITLES-H1-color',                  group: 'headings',      fallback: 'MAIN-TEXT-color',             tooltip: 'text color of h1 titles', },
 		{ name: 'MAIN-TITLES-H2-color',                  group: 'headings',      fallback: 'MAIN-TITLES-TEXT-color',      tooltip: 'text color of h2-h6 titles', },
 		{ name: 'MAIN-TITLES-H3-color',                  group: 'headings',      fallback: 'MAIN-TITLES-H2-color',        tooltip: 'text color of h3-h6 titles', },
@@ -552,8 +573,9 @@ var variants = {
 		{ name: 'CODE-INLINE-BG-color',                  group: 'inline code',    default: '#fffae9',                     tooltip: 'background color of inline code', },
 		{ name: 'CODE-INLINE-BORDER-color',              group: 'inline code',    default: '#fbf0cb',                     tooltip: 'border color of inline code', },
 
-		{ name: 'CODE-font',                             group: 'content',        default: '"Consolas", menlo, monospace', tooltip: 'text font of code', },
+		{ name: 'CODE-font',                             group: 'code',           default: '"Consolas", menlo, monospace', tooltip: 'text font of code', },
 
+		{ name: 'BROWSER-theme',                         group: '3rd party',      default: 'light',                       tooltip: 'name of the theme for browser scrollbars of the main section', },
 		{ name: 'MERMAID-theme',                         group: '3rd party',      default: 'default',                     tooltip: 'name of the default Mermaid theme for this variant, can be overridden in config.toml', },
 		{ name: 'SWAGGER-theme',                         group: '3rd party',      default: 'light',                       tooltip: 'name of the default Swagger theme for this variant, can be overridden in config.toml', },
 
@@ -576,7 +598,7 @@ var variants = {
 
 		{ name: 'BOX-CAPTION-color',                     group: 'colored boxes',  default: 'rgba( 255, 255, 255, 1 )',    tooltip: 'text color of colored box titles', },
 		{ name: 'BOX-BG-color',                          group: 'colored boxes',  default: 'rgba( 255, 255, 255, .833 )', tooltip: 'background color of colored boxes', },
-		{ name: 'BOX-TEXT-color',                        group: 'colored boxes',  default: 'rgba( 16, 16, 16, 1 )',       tooltip: 'text color of colored box content', },
+		{ name: 'BOX-TEXT-color',                        group: 'colored boxes', fallback: 'MAIN-TEXT-color',             tooltip: 'text color of colored box content', },
 
 		{ name: 'BOX-BLUE-color',                        group: 'colored boxes',  default: 'rgba( 48, 117, 229, 1 )',     tooltip: 'background color of blue boxes', },
 		{ name: 'BOX-INFO-color',                        group: 'colored boxes', fallback: 'BOX-BLUE-color',              tooltip: 'background color of info boxes', },

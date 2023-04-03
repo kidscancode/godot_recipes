@@ -1,20 +1,21 @@
-baseURL = 'http://kidscancode.org/godot_recipes/4.x/'
+baseURL = 'https://godotrecipes.com/godot_recipes/4.x/'
 languageCode = 'en-us'
 publishDir = "../docs/4.x"
 title = 'Godot 4 Recipes'
-theme = "hugo-theme-relearn"
-pygmentsStyle = "dracula"
+theme = "hugo-theme-relearn-main"
+pygmentsStyle = "nord"
 pygmentsCodeFences = true
 staticDir = ["static", "../static_shared"]
 themesDir = "../themes_shared"
 
 [params]
     disableNextPrev = true
-    themeVariant = "green"
+    themeVariant = ["auto", "relearn-light", "relearn-dark", "neon"]
     disableInlineCopyToClipBoard = true
     godotVer = "4.x"
     godotVerToggle = "3.x"
     landingPageURL = "/godot_recipes/4.x/"
+    disableLandingPageButton = true
 
 [outputs]
     home = [ "HTML", "RSS", "JSON"]
@@ -26,6 +27,18 @@ themesDir = "../themes_shared"
   minifyOutput = true
 
 [[menu.shortcuts]]
+name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
+identifier = "ds"
+url = "https://github.com/kidscancode/godot_recipes"
+weight = 10
+
+[[menu.shortcuts]]
 name = "<i class='fas fa-tags'></i>&nbsp;Tags"
 url = "/tags"
-weight = 30
+weight = 50
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-fw fa-bookmark'></i> Godot Docs"
+identifier = "godotdocs"
+url = "https://docs.godotengine.org/"
+weight = 40

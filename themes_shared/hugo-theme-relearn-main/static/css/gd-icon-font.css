@@ -1,0 +1,5314 @@
+@font-face {
+  font-family: 'godot_icons';
+  src:  url('../fonts/godot_icons.eot?bndki8');
+  src:  url('../fonts/godot_icons.eot?bndki8#iefix') format('embedded-opentype'),
+    url('../fonts/godot_icons.ttf?bndki8') format('truetype'),
+    url('../fonts/godot_icons.woff?bndki8') format('woff'),
+    url('../fonts/godot_icons.svg?bndki8#godot_icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="gd-"], [class*=" gd-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'godot_icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gd-AABB .path1:before {
+  content: "\e903";
+  color: rgb(238, 86, 119);
+}
+
+.gd-AABB .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.2353;
+}
+
+.gd-AnimatedSprite2D .path1:before {
+  content: "\e919";
+  color: rgb(141, 165, 243);
+  opacity: 0.3922;
+}
+
+.gd-AnimatedSprite2D .path2:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+  opacity: 0.5882;
+}
+
+.gd-AnimatedSprite2D .path3:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+}
+
+.gd-AnimatedSprite3D .path1:before {
+  content: "\e91c";
+  color: rgb(252, 127, 127);
+  opacity: 0.3922;
+}
+
+.gd-AnimatedSprite3D .path2:before {
+  content: "\e91d";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.5882;
+}
+
+.gd-AnimatedSprite3D .path3:before {
+  content: "\e91e";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+}
+
+.gd-AnimationPlayer:before {
+  content: "\e923";
+  color: #c38ef1;
+}
+
+.gd-AnimationTree:before {
+  content: "\e926";
+  color: #c38ef1;
+}
+
+.gd-Area2D:before {
+  content: "\e927";
+  color: #8da5f3;
+}
+
+.gd-Area3D:before {
+  content: "\e928";
+  color: #fc7f7f;
+}
+
+.gd-AspectRatioContainer:before {
+  content: "\e930";
+  color: #8eef97;
+}
+
+.gd-AudioListener2D:before {
+  content: "\e937";
+  color: #8da5f3;
+}
+
+.gd-AudioListener3D:before {
+  content: "\e938";
+  color: #fc7f7f;
+}
+
+.gd-AudioStreamMP3:before {
+  content: "\e93c";
+}
+
+.gd-AudioStreamOggVorbis:before {
+  content: "\e93d";
+}
+
+.gd-AudioStreamPlayer .path1:before {
+  content: "\e93e";
+  color: rgb(224, 224, 224);
+}
+
+.gd-AudioStreamPlayer .path2:before {
+  content: "\e93f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-AudioStreamPlayer2D .path1:before {
+  content: "\e940";
+  color: rgb(141, 165, 243);
+}
+
+.gd-AudioStreamPlayer2D .path2:before {
+  content: "\e941";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-AudioStreamPlayer3D .path1:before {
+  content: "\e942";
+  color: rgb(252, 127, 127);
+}
+
+.gd-AudioStreamPlayer3D .path2:before {
+  content: "\e943";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-AudioStreamRandomizer:before {
+  content: "\e944";
+}
+
+.gd-AudioStreamWAV:before {
+  content: "\e945";
+}
+
+.gd-BackBufferCopy:before {
+  content: "\e94e";
+  color: #8da5f3;
+}
+
+.gd-Bone:before {
+  content: "\e959";
+  color: #e0e0e0;
+}
+
+.gd-Bone2D:before {
+  content: "\e95a";
+  color: #8da5f3;
+}
+
+.gd-BoneAttachment3D:before {
+  content: "\e95b";
+  color: #fc7f7f;
+}
+
+.gd-BoxContainer:before {
+  content: "\e96e";
+  color: #8eef97;
+}
+
+.gd-BoxMesh:before {
+  content: "\e96f";
+  color: #ffca5f;
+}
+
+.gd-BoxOccluder3D .path1:before {
+  content: "\e970";
+  color: rgb(0, 0, 0);
+}
+
+.gd-BoxOccluder3D .path2:before {
+  content: "\e971";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-BoxShape3D .path1:before {
+  content: "\e972";
+  color: rgb(41, 152, 255);
+}
+
+.gd-BoxShape3D .path2:before {
+  content: "\e973";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-BoxShape3D .path3:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-Button:before {
+  content: "\e97c";
+  color: #8eef97;
+}
+
+.gd-Callable:before {
+  content: "\e97e";
+  color: #e0e0e0;
+}
+
+.gd-Camera2D:before {
+  content: "\e97f";
+  color: #8da5f3;
+}
+
+.gd-Camera3D:before {
+  content: "\e980";
+  color: #fc7f7f;
+}
+
+.gd-CameraAttributes .path1:before {
+  content: "\e981";
+  color: rgb(224, 224, 224);
+}
+
+.gd-CameraAttributes .path2:before {
+  content: "\e982";
+  margin-left: -1em;
+  color: rgb(195, 142, 241);
+}
+
+.gd-CameraTexture:before {
+  content: "\e983";
+  color: #e0e0e0;
+}
+
+.gd-CanvasGroup .path1:before {
+  content: "\e984";
+  color: rgb(141, 165, 243);
+  opacity: 0.5882;
+}
+
+.gd-CanvasGroup .path2:before {
+  content: "\e985";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+}
+
+.gd-CanvasItem:before {
+  content: "\e986";
+  color: #e0e0e0;
+}
+
+.gd-CanvasItemMaterial .path1:before {
+  content: "\e987";
+  color: rgb(255, 227, 69);
+}
+
+.gd-CanvasItemMaterial .path2:before {
+  content: "\e988";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-CanvasItemMaterial .path3:before {
+  content: "\e989";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-CanvasItemMaterial .path4:before {
+  content: "\e98a";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-CanvasItemMaterial .path5:before {
+  content: "\e98b";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-CanvasItemMaterial .path6:before {
+  content: "\e98c";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-CanvasItemMaterial .path7:before {
+  content: "\e98d";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-CanvasLayer:before {
+  content: "\e98e";
+  color: #e0e0e0;
+}
+
+.gd-CanvasModulate .path1:before {
+  content: "\e98f";
+  color: rgb(141, 165, 243);
+}
+
+.gd-CanvasModulate .path2:before {
+  content: "\e990";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-CanvasModulate .path3:before {
+  content: "\e991";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-CanvasModulate .path4:before {
+  content: "\e992";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-CapsuleMesh:before {
+  content: "\e993";
+  color: #ffca5f;
+}
+
+.gd-CapsuleShape2D:before {
+  content: "\e994";
+  color: #5fb2ff;
+}
+
+.gd-CapsuleShape3D .path1:before {
+  content: "\e995";
+  color: rgb(95, 178, 255);
+}
+
+.gd-CapsuleShape3D .path2:before {
+  content: "\e996";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-CenterContainer:before {
+  content: "\e997";
+  color: #8eef97;
+}
+
+.gd-CenterView:before {
+  content: "\e998";
+  color: #e0e0e0;
+}
+
+.gd-CharacterBody2D:before {
+  content: "\e999";
+  color: #8da5f3;
+}
+
+.gd-CharacterBody3D:before {
+  content: "\e99a";
+  color: #fc7f7f;
+}
+
+.gd-CheckBox:before {
+  content: "\e99b";
+  color: #8eef97;
+}
+
+.gd-CheckButton:before {
+  content: "\e99c";
+  color: #8eef97;
+}
+
+.gd-Checkerboard .path1:before {
+  content: "\e99d";
+  color: rgb(255, 255, 255);
+  opacity: 0.1961;
+}
+
+.gd-Checkerboard .path2:before {
+  content: "\e99e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-CircleShape2D:before {
+  content: "\e99f";
+  color: #5fb2ff;
+}
+
+.gd-ClassList:before {
+  content: "\e9a0";
+  color: #e0e0e0;
+}
+
+.gd-Clear:before {
+  content: "\e9a1";
+  color: #e0e0e0;
+}
+
+.gd-ClippedCamera3D:before {
+  content: "\e9a2";
+  color: #fc7f7f;
+}
+
+.gd-Close:before {
+  content: "\e9a3";
+  color: #e0e0e0;
+}
+
+.gd-CodeEdit:before {
+  content: "\e9a4";
+  color: #8eef97;
+}
+
+.gd-CollapseTree:before {
+  content: "\e9a8";
+  color: #e0e0e0;
+}
+
+.gd-CollisionPolygon2D:before {
+  content: "\e9a9";
+  color: #8da5f3;
+}
+
+.gd-CollisionPolygon3D:before {
+  content: "\e9aa";
+  color: #fc7f7f;
+}
+
+.gd-CollisionShape2D:before {
+  content: "\e9ab";
+  color: #8da5f3;
+}
+
+.gd-CollisionShape3D:before {
+  content: "\e9ac";
+  color: #fc7f7f;
+}
+
+.gd-Color .path1:before {
+  content: "\e9ad";
+  color: rgb(255, 95, 95);
+}
+
+.gd-Color .path2:before {
+  content: "\e9ae";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-Color .path3:before {
+  content: "\e9af";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-ColorPick:before {
+  content: "\e9b0";
+  color: #e0e0e0;
+}
+
+.gd-ColorPicker:before {
+  content: "\e9b1";
+  color: #8eef97;
+}
+
+.gd-ColorPickerBarArrow:before {
+  content: "\e9b2";
+  color: #e0e0e0;
+}
+
+.gd-ColorPickerButton:before {
+  content: "\e9b3";
+  color: #8eef97;
+}
+
+.gd-ColorRect .path1:before {
+  content: "\e9b4";
+  color: rgb(142, 239, 151);
+}
+
+.gd-ColorRect .path2:before {
+  content: "\e9b5";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ColorRect .path3:before {
+  content: "\e9b6";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-ColorRect .path4:before {
+  content: "\e9b7";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ColorTrackVu:before {
+  content: "\e9b8";
+}
+
+.gd-CombineLines:before {
+  content: "\e9b9";
+  color: #e0e0e0;
+}
+
+.gd-CompressedTexture2D:before {
+  content: "\e9ba";
+  color: #e0e0e0;
+}
+
+.gd-ConcavePolygonShape2D:before {
+  content: "\e9bb";
+  color: #5fb2ff;
+}
+
+.gd-ConcavePolygonShape3D .path1:before {
+  content: "\e9bc";
+  color: rgb(41, 152, 255);
+}
+
+.gd-ConcavePolygonShape3D .path2:before {
+  content: "\e9bd";
+  margin-left: -1em;
+  color: rgb(41, 152, 255);
+}
+
+.gd-ConcavePolygonShape3D .path3:before {
+  content: "\e9be";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-ConcavePolygonShape3D .path4:before {
+  content: "\e9bf";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-ConcavePolygonShape3D .path5:before {
+  content: "\e9c0";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-ConcavePolygonShape3D .path6:before {
+  content: "\e9c1";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-ConcavePolygonShape3D .path7:before {
+  content: "\e9c2";
+  margin-left: -1em;
+  color: rgb(41, 152, 255);
+}
+
+.gd-ConeTwistJoint3D:before {
+  content: "\e9c3";
+  color: #fc7f7f;
+}
+
+.gd-ConfirmationDialog:before {
+  content: "\e9c4";
+  color: #e0e0e0;
+}
+
+.gd-Container:before {
+  content: "\e9c5";
+  color: #8eef97;
+}
+
+.gd-ContainerLayout .path1:before {
+  content: "\e9c6";
+  color: rgb(142, 239, 151);
+}
+
+.gd-ContainerLayout .path2:before {
+  content: "\e9c7";
+  margin-left: -1em;
+  color: rgb(214, 214, 214);
+}
+
+.gd-Control:before {
+  content: "\e9c8";
+  color: #8eef97;
+}
+
+.gd-ControlLayout .path1:before {
+  content: "\e9f9";
+  color: rgb(214, 214, 214);
+}
+
+.gd-ControlLayout .path2:before {
+  content: "\e9fa";
+  margin-left: -1em;
+  color: rgb(142, 239, 151);
+}
+
+.gd-ConvexPolygonShape2D:before {
+  content: "\e9fb";
+  color: #5fb2ff;
+}
+
+.gd-ConvexPolygonShape3D .path1:before {
+  content: "\e9fc";
+  color: rgb(41, 152, 255);
+}
+
+.gd-ConvexPolygonShape3D .path2:before {
+  content: "\e9fd";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-ConvexPolygonShape3D .path3:before {
+  content: "\e9fe";
+  margin-left: -1em;
+  color: rgb(41, 152, 255);
+}
+
+.gd-CopyNodePath:before {
+  content: "\e9ff";
+  color: #e0e0e0;
+}
+
+.gd-CPUParticles2D:before {
+  content: "\ea00";
+  color: #8da5f3;
+}
+
+.gd-CPUParticles3D:before {
+  content: "\ea01";
+  color: #fc7f7f;
+}
+
+.gd-CreateNewSceneFrom .path1:before {
+  content: "\ea02";
+  color: rgb(224, 224, 224);
+}
+
+.gd-CreateNewSceneFrom .path2:before {
+  content: "\ea03";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-CryptoKey:before {
+  content: "\ea04";
+  color: #e0e0e0;
+}
+
+.gd-Cubemap .path1:before {
+  content: "\ea05";
+  color: rgb(95, 255, 151);
+}
+
+.gd-Cubemap .path2:before {
+  content: "\ea06";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-Cubemap .path3:before {
+  content: "\ea07";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-CubemapArray .path1:before {
+  content: "\ea08";
+  color: rgb(95, 255, 151);
+}
+
+.gd-CubemapArray .path2:before {
+  content: "\ea09";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-CubemapArray .path3:before {
+  content: "\ea0a";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-CubemapArray .path4:before {
+  content: "\ea0b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-Curve2D:before {
+  content: "\ea0d";
+  color: #e0e0e0;
+}
+
+.gd-Curve3D:before {
+  content: "\ea0e";
+  color: #e0e0e0;
+}
+
+.gd-CurveTexture:before {
+  content: "\ea24";
+  color: #e0e0e0;
+}
+
+.gd-CylinderMesh:before {
+  content: "\ea25";
+  color: #ffca5f;
+}
+
+.gd-CylinderShape3D .path1:before {
+  content: "\ea26";
+  color: rgb(95, 178, 255);
+}
+
+.gd-CylinderShape3D .path2:before {
+  content: "\ea27";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-CylinderShape3D .path3:before {
+  content: "\ea28";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-DampedSpringJoint2D .path1:before {
+  content: "\ea29";
+  color: rgb(75, 112, 234);
+  opacity: 0.9766;
+}
+
+.gd-DampedSpringJoint2D .path2:before {
+  content: "\ea2a";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+  opacity: 0.9766;
+}
+
+.gd-Debug:before {
+  content: "\ea2b";
+  color: #e0e0e0;
+}
+
+.gd-DebugContinue .path1:before {
+  content: "\ea2c";
+  color: rgb(255, 95, 95);
+}
+
+.gd-DebugContinue .path2:before {
+  content: "\ea2d";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-DebugNext .path1:before {
+  content: "\ea2e";
+  color: rgb(255, 95, 95);
+}
+
+.gd-DebugNext .path2:before {
+  content: "\ea2f";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-DebugSkipBreakpointsOff .path1:before {
+  content: "\ea30";
+  color: rgb(0, 0, 0);
+}
+
+.gd-DebugSkipBreakpointsOff .path2:before {
+  content: "\ea31";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-DebugSkipBreakpointsOff .path3:before {
+  content: "\ea32";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-DebugSkipBreakpointsOn .path1:before {
+  content: "\ea33";
+  color: rgb(0, 0, 0);
+}
+
+.gd-DebugSkipBreakpointsOn .path2:before {
+  content: "\ea34";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-DebugSkipBreakpointsOn .path3:before {
+  content: "\ea35";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-DebugSkipBreakpointsOn .path4:before {
+  content: "\ea36";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-DebugStep .path1:before {
+  content: "\ea37";
+  color: rgb(255, 95, 95);
+}
+
+.gd-DebugStep .path2:before {
+  content: "\ea38";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-Decal .path1:before {
+  content: "\ea39";
+  color: rgb(252, 127, 127);
+}
+
+.gd-Decal .path2:before {
+  content: "\ea3a";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-Decal .path3:before {
+  content: "\ea3b";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.3922;
+}
+
+.gd-DefaultProjectIcon .path1:before {
+  content: "\ea3c";
+  color: rgb(54, 61, 82);
+}
+
+.gd-DefaultProjectIcon .path2:before {
+  content: "\ea3d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.4;
+}
+
+.gd-DefaultProjectIcon .path3:before {
+  content: "\ea3e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-DefaultProjectIcon .path4:before {
+  content: "\ea3f";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-DefaultProjectIcon .path5:before {
+  content: "\ea40";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-DefaultProjectIcon .path6:before {
+  content: "\ea41";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-DefaultProjectIcon .path7:before {
+  content: "\ea42";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-DefaultProjectIcon .path8:before {
+  content: "\ea43";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-DefaultProjectIcon .path9:before {
+  content: "\ea44";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-DefaultProjectIcon .path10:before {
+  content: "\ea45";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-Dictionary:before {
+  content: "\ea46";
+  color: #54ed9e;
+}
+
+.gd-DirectionalLight2D:before {
+  content: "\ea47";
+  color: #8da5f3;
+}
+
+.gd-DirectionalLight3D:before {
+  content: "\ea48";
+  color: #fc7f7f;
+}
+
+.gd-DistractionFree:before {
+  content: "\ea49";
+  color: #e0e0e0;
+}
+
+.gd-Duplicate:before {
+  content: "\ea4a";
+  color: #e0e0e0;
+}
+
+.gd-Edit:before {
+  content: "\ea4b";
+  color: #e0e0e0;
+}
+
+.gd-EditAddRemove:before {
+  content: "\ea4c";
+  color: #e0e0e0;
+}
+
+.gd-EditInternal:before {
+  content: "\ea4e";
+  color: #e0e0e0;
+}
+
+.gd-EditKey:before {
+  content: "\ea4f";
+  color: #e0e0e0;
+}
+
+.gd-Editor3DHandle .path1:before {
+  content: "\ea50";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-Editor3DHandle .path2:before {
+  content: "\ea51";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Editor3DHandle .path3:before {
+  content: "\ea52";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-EditorBoneHandle .path1:before {
+  content: "\ea53";
+  color: rgb(255, 255, 255);
+}
+
+.gd-EditorBoneHandle .path2:before {
+  content: "\ea54";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-EditorControlAnchor .path1:before {
+  content: "\ea55";
+  color: rgb(0, 0, 0);
+  opacity: 0.3922;
+}
+
+.gd-EditorControlAnchor .path2:before {
+  content: "\ea56";
+  margin-left: -1em;
+  color: rgb(142, 239, 151);
+}
+
+.gd-EditorFileDialog:before {
+  content: "\ea58";
+  color: #e0e0e0;
+}
+
+.gd-EditorHandle .path1:before {
+  content: "\ea59";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-EditorHandle .path2:before {
+  content: "\ea5a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-EditorHandle .path3:before {
+  content: "\ea5b";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-EditorHandleAdd .path1:before {
+  content: "\ea5c";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-EditorHandleAdd .path2:before {
+  content: "\ea5d";
+  margin-left: -1em;
+  color: rgb(71, 71, 71);
+}
+
+.gd-EditorHandleAdd .path3:before {
+  content: "\ea5e";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-EditorHandleDisabled:before {
+  content: "\ea5f";
+  color: #fff;
+}
+
+.gd-EditorPivot .path1:before {
+  content: "\ea62";
+  color: rgb(255, 255, 255);
+  opacity: 0.7059;
+}
+
+.gd-EditorPivot .path2:before {
+  content: "\ea63";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-EditorPlugin:before {
+  content: "\ea64";
+  color: #e0e0e0;
+}
+
+.gd-EditorPosition .path1:before {
+  content: "\ea65";
+  color: rgb(255, 255, 255);
+  opacity: 0.7059;
+}
+
+.gd-EditorPosition .path2:before {
+  content: "\ea66";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-EditorPositionPrevious:before {
+  content: "\ea67";
+  color: #5fb2ff;
+}
+
+.gd-EditorPositionUnselected .path1:before {
+  content: "\ea68";
+  color: rgb(0, 0, 0);
+  opacity: 0.4108;
+}
+
+.gd-EditorPositionUnselected .path2:before {
+  content: "\ea69";
+  margin-left: -1em;
+  color: rgb(214, 214, 214);
+}
+
+.gd-EditPivot:before {
+  content: "\ea6a";
+  color: #e0e0e0;
+}
+
+.gd-Enum:before {
+  content: "\ea6b";
+  color: #e0e0e0;
+}
+
+.gd-Eraser:before {
+  content: "\ea6d";
+  color: #e0e0e0;
+}
+
+.gd-Error:before {
+  content: "\ea6e";
+  color: #ff5f5f;
+}
+
+.gd-ErrorWarning .path1:before {
+  content: "\ea6f";
+  color: rgb(255, 95, 95);
+}
+
+.gd-ErrorWarning .path2:before {
+  content: "\ea70";
+  margin-left: -1em;
+  color: rgb(255, 221, 101);
+}
+
+.gd-ExpandBottomDock:before {
+  content: "\ea71";
+  color: #e0e0e0;
+}
+
+.gd-ExpandTree:before {
+  content: "\ea72";
+  color: #e0e0e0;
+}
+
+.gd-ExternalLink:before {
+  content: "\ea73";
+  color: #e0e0e0;
+}
+
+.gd-Favorites:before {
+  content: "\ea74";
+  color: #e0e0e0;
+}
+
+.gd-File:before {
+  content: "\ea75";
+  color: #e0e0e0;
+}
+
+.gd-FileBigThumb:before {
+  content: "\ea76";
+  color: #fff;
+}
+
+.gd-FileBroken:before {
+  content: "\ea77";
+  color: #ff5f5f;
+}
+
+.gd-FileBrokenBigThumb:before {
+  content: "\ea78";
+  color: #ff5f5f;
+}
+
+.gd-FileDead:before {
+  content: "\ea79";
+  color: #ff5f5f;
+}
+
+.gd-FileDeadBigThumb:before {
+  content: "\ea7a";
+  color: #ff5f5f;
+}
+
+.gd-FileDeadMediumThumb:before {
+  content: "\ea7b";
+  color: #ff5f5f;
+}
+
+.gd-FileDialog:before {
+  content: "\ea7c";
+  color: #e0e0e0;
+}
+
+.gd-FileList:before {
+  content: "\ea7d";
+  color: #e0e0e0;
+}
+
+.gd-FileMediumThumb:before {
+  content: "\ea7e";
+  color: #fff;
+}
+
+.gd-Filesystem:before {
+  content: "\ea7f";
+  color: #e0e0e0;
+}
+
+.gd-FileThumbnail:before {
+  content: "\ea80";
+  color: #e0e0e0;
+}
+
+.gd-float:before {
+  content: "\ea81";
+  color: #35d4f4;
+}
+
+.gd-FlowContainer:before {
+  content: "\ea82";
+  color: #8eef97;
+}
+
+.gd-FogMaterial .path1:before {
+  content: "\ea83";
+  color: rgb(69, 215, 255);
+}
+
+.gd-FogMaterial .path2:before {
+  content: "\ea84";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-FogMaterial .path3:before {
+  content: "\ea85";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-FogMaterial .path4:before {
+  content: "\ea86";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-FogMaterial .path5:before {
+  content: "\ea87";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-FogMaterial .path6:before {
+  content: "\ea88";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-FogMaterial .path7:before {
+  content: "\ea89";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-FogMaterial .path8:before {
+  content: "\ea8a";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-FogMaterial .path9:before {
+  content: "\ea8b";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-FogVolume .path1:before {
+  content: "\ea8c";
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-FogVolume .path2:before {
+  content: "\ea8d";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-FogVolume .path3:before {
+  content: "\ea8e";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-FogVolume .path4:before {
+  content: "\ea8f";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-FogVolume .path5:before {
+  content: "\ea90";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-Folder:before {
+  content: "\ea91";
+  color: #e0e0e0;
+}
+
+.gd-FolderBigThumb:before {
+  content: "\ea92";
+  color: #e0e0e0;
+}
+
+.gd-FolderMediumThumb:before {
+  content: "\ea93";
+  color: #e0e0e0;
+}
+
+.gd-Font:before {
+  content: "\ea94";
+  color: #e0e0e0;
+}
+
+.gd-FontFile .path1:before {
+  content: "\ea95";
+  color: rgb(224, 224, 224);
+}
+
+.gd-FontFile .path2:before {
+  content: "\ea96";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-FontSize:before {
+  content: "\ea97";
+  color: #e0e0e0;
+}
+
+.gd-FontVariation .path1:before {
+  content: "\ea98";
+  color: rgb(224, 224, 224);
+}
+
+.gd-FontVariation .path2:before {
+  content: "\ea99";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-Generic6DOFJoint3D:before {
+  content: "\ea9b";
+  color: #fc7f7f;
+}
+
+.gd-GeometryInstance3D:before {
+  content: "\ea9c";
+  color: #fc7f7f;
+}
+
+.gd-Gizmo3DSamplePlayer .path1:before {
+  content: "\ea9d";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-Gizmo3DSamplePlayer .path2:before {
+  content: "\ea9e";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-GizmoAudioListener3D .path1:before {
+  content: "\ea9f";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoAudioListener3D .path2:before {
+  content: "\eaa0";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-GizmoBakedLightmap .path1:before {
+  content: "\eaa1";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoBakedLightmap .path2:before {
+  content: "\eaa2";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-GizmoDirectionalLight .path1:before {
+  content: "\eaa8";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoDirectionalLight .path2:before {
+  content: "\eaa9";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GizmoGPUParticles3D .path1:before {
+  content: "\eaaa";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoGPUParticles3D .path2:before {
+  content: "\eaab";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-GizmoLight .path1:before {
+  content: "\eaac";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoLight .path2:before {
+  content: "\eaad";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GizmoReflectionProbe .path1:before {
+  content: "\eaae";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoReflectionProbe .path2:before {
+  content: "\eaaf";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-GizmoSpotLight .path1:before {
+  content: "\eab0";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoSpotLight .path2:before {
+  content: "\eab1";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GizmoVoxelGI .path1:before {
+  content: "\eab2";
+  color: rgb(0, 0, 0);
+  opacity: 0.2941;
+}
+
+.gd-GizmoVoxelGI .path2:before {
+  content: "\eab3";
+  margin-left: -1em;
+  color: rgb(247, 245, 207);
+}
+
+.gd-Godot .path1:before {
+  content: "\eab4";
+  color: rgb(255, 255, 255);
+}
+
+.gd-Godot .path2:before {
+  content: "\eab5";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-Godot .path3:before {
+  content: "\eab6";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-Godot .path4:before {
+  content: "\eab7";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Godot .path5:before {
+  content: "\eab8";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-Godot .path6:before {
+  content: "\eab9";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Godot .path7:before {
+  content: "\eaba";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Godot .path8:before {
+  content: "\eabb";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-GPUParticles2D:before {
+  content: "\eabc";
+  color: #8da5f3;
+}
+
+.gd-GPUParticles3D:before {
+  content: "\eabd";
+  color: #fc7f7f;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path1:before {
+  content: "\eac0";
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path2:before {
+  content: "\eac1";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path3:before {
+  content: "\eac2";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path4:before {
+  content: "\eac3";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path5:before {
+  content: "\eac4";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesAttractorVectorField3D .path6:before {
+  content: "\eac5";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesCollisionBox3D:before {
+  content: "\eac6";
+  color: #fc7f7f;
+}
+
+.gd-GPUParticlesCollisionHeightField3D:before {
+  content: "\eac7";
+  color: #fc7f7f;
+}
+
+.gd-GPUParticlesCollisionSDF3D .path1:before {
+  content: "\eac8";
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-GPUParticlesCollisionSDF3D .path2:before {
+  content: "\eac9";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesCollisionSDF3D .path3:before {
+  content: "\eaca";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesCollisionSDF3D .path4:before {
+  content: "\eacb";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesCollisionSDF3D .path5:before {
+  content: "\eacc";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.9922;
+}
+
+.gd-GPUParticlesCollisionSphere3D:before {
+  content: "\eacd";
+  color: #fc7f7f;
+}
+
+.gd-Gradient:before {
+  content: "\eace";
+  color: #e0e0e0;
+}
+
+.gd-GradientTexture1D .path1:before {
+  content: "\eacf";
+  color: rgb(224, 224, 224);
+}
+
+.gd-GradientTexture1D .path2:before {
+  content: "\ead0";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-GradientTexture2D .path1:before {
+  content: "\ead1";
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-GradientTexture2D .path2:before {
+  content: "\ead2";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-GraphEdit:before {
+  content: "\ead3";
+  color: #8eef97;
+}
+
+.gd-GraphNode:before {
+  content: "\ead4";
+  color: #8eef97;
+}
+
+.gd-Grid:before {
+  content: "\ead5";
+  color: #e0e0e0;
+}
+
+.gd-GridContainer:before {
+  content: "\ead6";
+  color: #8eef97;
+}
+
+.gd-GridMinimap .path1:before {
+  content: "\ead8";
+  color: rgb(224, 224, 224);
+}
+
+.gd-GridMinimap .path2:before {
+  content: "\ead9";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.6863;
+}
+
+.gd-GrooveJoint2D:before {
+  content: "\eada";
+  color: #8da5f3;
+}
+
+.gd-Group .path1:before {
+  content: "\eadb";
+  color: rgb(224, 224, 224);
+  opacity: 0.3922;
+}
+
+.gd-Group .path2:before {
+  content: "\eadc";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Groups:before {
+  content: "\eadd";
+  color: #e0e0e0;
+}
+
+.gd-GroupViewport .path1:before {
+  content: "\eade";
+  color: rgb(0, 0, 0);
+  opacity: 0.3922;
+}
+
+.gd-GroupViewport .path2:before {
+  content: "\eadf";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-GroupViewport .path3:before {
+  content: "\eae0";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiChecked .path1:before {
+  content: "\eae1";
+  color: rgb(105, 156, 232);
+}
+
+.gd-GuiChecked .path2:before {
+  content: "\eae2";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiCheckedDisabled .path1:before {
+  content: "\eae3";
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiCheckedDisabled .path2:before {
+  content: "\eae4";
+  margin-left: -1em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-GuiClose:before {
+  content: "\eae5";
+  color: #fff;
+}
+
+.gd-GuiCloseCustomizable:before {
+  content: "\eae6";
+  color: #fff;
+}
+
+.gd-GuiEllipsis:before {
+  content: "\eae8";
+  color: #fff;
+}
+
+.gd-GuiGraphNodePort:before {
+  content: "\eae9";
+  color: #fff;
+}
+
+.gd-GuiIndeterminate .path1:before {
+  content: "\eaeb";
+  color: rgb(105, 156, 232);
+}
+
+.gd-GuiIndeterminate .path2:before {
+  content: "\eaec";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiMiniCheckerboard .path1:before {
+  content: "\eaed";
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiMiniCheckerboard .path2:before {
+  content: "\eaee";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiOptionArrow:before {
+  content: "\eaef";
+  color: #fff;
+}
+
+.gd-GuiProgressBar:before {
+  content: "\eaf0";
+  color: #e0e0e0;
+}
+
+.gd-GuiProgressFill:before {
+  content: "\eaf1";
+  color: #e0e0e0;
+}
+
+.gd-GuiRadioChecked .path1:before {
+  content: "\eaf2";
+  color: rgb(105, 156, 232);
+}
+
+.gd-GuiRadioChecked .path2:before {
+  content: "\eaf3";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiRadioCheckedDisabled .path1:before {
+  content: "\eaf4";
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiRadioCheckedDisabled .path2:before {
+  content: "\eaf5";
+  margin-left: -1em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-GuiRadioUnchecked:before {
+  content: "\eaf6";
+  color: #e0e0e0;
+}
+
+.gd-GuiRadioUncheckedDisabled:before {
+  content: "\eaf7";
+  color: #808080;
+}
+
+.gd-GuiResizer:before {
+  content: "\eaf8";
+  color: #fff;
+}
+
+.gd-GuiResizerTopLeft:before {
+  content: "\eaf9";
+  color: #fff;
+}
+
+.gd-GuiScrollArrowLeft:before {
+  content: "\eafa";
+  color: #e0e0e0;
+}
+
+.gd-GuiScrollArrowLeftHl:before {
+  content: "\eafb";
+  color: #e0e0e0;
+}
+
+.gd-GuiScrollArrowRight:before {
+  content: "\eafc";
+  color: #e0e0e0;
+}
+
+.gd-GuiScrollArrowRightHl:before {
+  content: "\eafd";
+  color: #e0e0e0;
+}
+
+.gd-GuiScrollBg:before {
+  content: "\eafe";
+  color: #fff;
+}
+
+.gd-GuiScrollGrabber:before {
+  content: "\eaff";
+  color: #fff;
+}
+
+.gd-GuiScrollGrabberHl:before {
+  content: "\eb00";
+  color: #f9f9f9;
+}
+
+.gd-GuiScrollGrabberPressed:before {
+  content: "\eb01";
+  color: #b3b3b3;
+}
+
+.gd-GuiSliderGrabber .path1:before {
+  content: "\eb02";
+  color: rgb(224, 224, 224);
+  opacity: 0.29;
+}
+
+.gd-GuiSliderGrabber .path2:before {
+  content: "\eb03";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.59;
+}
+
+.gd-GuiSliderGrabber .path3:before {
+  content: "\eb04";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.78;
+}
+
+.gd-GuiSliderGrabberHl .path1:before {
+  content: "\eb05";
+  color: rgb(224, 224, 224);
+}
+
+.gd-GuiSliderGrabberHl .path2:before {
+  content: "\eb06";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.59;
+}
+
+.gd-GuiSliderGrabberHl .path3:before {
+  content: "\eb07";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.78;
+}
+
+.gd-GuiSpace:before {
+  content: "\eb08";
+  color: #fff;
+}
+
+.gd-GuiSpinboxUpdown:before {
+  content: "\eb09";
+  color: #e0e0e0;
+}
+
+.gd-GuiSpinboxUpdownDisabled:before {
+  content: "\eb0a";
+  color: #b3b3b3;
+}
+
+.gd-GuiTab:before {
+  content: "\eb0b";
+  color: #fff;
+}
+
+.gd-GuiTabDropMark:before {
+  content: "\eb0c";
+  color: #fff;
+}
+
+.gd-GuiTabMenu:before {
+  content: "\eb0d";
+  color: #fff;
+}
+
+.gd-GuiTabMenuHl:before {
+  content: "\eb0e";
+  color: #e0e0e0;
+}
+
+.gd-GuiToggleOff .path1:before {
+  content: "\eb0f";
+  color: rgb(224, 224, 224);
+  opacity: 0.1882;
+}
+
+.gd-GuiToggleOff .path2:before {
+  content: "\eb10";
+  margin-left: -2.375em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-GuiToggleOffDisabled .path1:before {
+  content: "\eb11";
+  color: rgb(128, 128, 128);
+  opacity: 0.1882;
+}
+
+.gd-GuiToggleOffDisabled .path2:before {
+  content: "\eb12";
+  margin-left: -2.375em;
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiToggleOffDisabledMirrored .path1:before {
+  content: "\eb13";
+  color: rgb(128, 128, 128);
+  opacity: 0.18;
+}
+
+.gd-GuiToggleOffDisabledMirrored .path2:before {
+  content: "\eb14";
+  margin-left: -2.375em;
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiToggleOffMirrored .path1:before {
+  content: "\eb15";
+  color: rgb(224, 224, 224);
+  opacity: 0.18;
+}
+
+.gd-GuiToggleOffMirrored .path2:before {
+  content: "\eb16";
+  margin-left: -2.375em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-GuiToggleOn .path1:before {
+  content: "\eb17";
+  color: rgb(105, 156, 232);
+}
+
+.gd-GuiToggleOn .path2:before {
+  content: "\eb18";
+  margin-left: -2.375em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiToggleOnDisabled .path1:before {
+  content: "\eb19";
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiToggleOnDisabled .path2:before {
+  content: "\eb1a";
+  margin-left: -2.375em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-GuiToggleOnMirrored .path1:before {
+  content: "\eb1b";
+  color: rgb(105, 156, 232);
+}
+
+.gd-GuiToggleOnMirrored .path2:before {
+  content: "\eb1c";
+  margin-left: -2.375em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-GuiToggleOnMirroredDisabled .path1:before {
+  content: "\eb1d";
+  color: rgb(128, 128, 128);
+}
+
+.gd-GuiToggleOnMirroredDisabled .path2:before {
+  content: "\eb1e";
+  margin-left: -2.375em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-GuiTreeUpdown:before {
+  content: "\eb22";
+  color: #fff;
+}
+
+.gd-GuiUnchecked:before {
+  content: "\eb23";
+  color: #e0e0e0;
+}
+
+.gd-GuiUncheckedDisabled:before {
+  content: "\eb24";
+  color: #808080;
+}
+
+.gd-GuiVisibilityHidden:before {
+  content: "\eb28";
+  color: #e0e0e0;
+}
+
+.gd-GuiVisibilityVisible:before {
+  content: "\eb29";
+  color: #e0e0e0;
+}
+
+.gd-GuiVisibilityXray .path1:before {
+  content: "\eb2a";
+  color: rgb(224, 224, 224);
+  opacity: 0.3922;
+}
+
+.gd-GuiVisibilityXray .path2:before {
+  content: "\eb2b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-HBoxContainer:before {
+  content: "\eb2d";
+  color: #8eef97;
+}
+
+.gd-Heart:before {
+  content: "\eb2e";
+  color: #fc7f7f;
+}
+
+.gd-HeightMapShape3D .path1:before {
+  content: "\eb2f";
+  color: rgb(162, 210, 255);
+}
+
+.gd-HeightMapShape3D .path2:before {
+  content: "\eb30";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-Help:before {
+  content: "\eb31";
+  color: #e0e0e0;
+}
+
+.gd-HelpSearch:before {
+  content: "\eb32";
+  color: #e0e0e0;
+}
+
+.gd-HFlowContainer:before {
+  content: "\eb33";
+  color: #8eef97;
+}
+
+.gd-HingeJoint3D:before {
+  content: "\eb34";
+  color: #fc7f7f;
+}
+
+.gd-History:before {
+  content: "\eb35";
+  color: #e0e0e0;
+}
+
+.gd-HScrollBar:before {
+  content: "\eb36";
+  color: #8eef97;
+}
+
+.gd-HSeparator:before {
+  content: "\eb37";
+  color: #8eef97;
+}
+
+.gd-Hsize:before {
+  content: "\eb38";
+  color: #e0e0e0;
+}
+
+.gd-HSlider:before {
+  content: "\eb39";
+  color: #8eef97;
+}
+
+.gd-HSplitContainer:before {
+  content: "\eb3a";
+  color: #8eef97;
+}
+
+.gd-HTTPRequest:before {
+  content: "\eb3b";
+  color: #e0e0e0;
+}
+
+.gd-Image:before {
+  content: "\eb3c";
+  color: #e0e0e0;
+}
+
+.gd-ImageTexture:before {
+  content: "\eb3d";
+  color: #e0e0e0;
+}
+
+.gd-ImmediateMesh:before {
+  content: "\eb3e";
+  color: #ffca5f;
+}
+
+.gd-ImporterMeshInstance3D:before {
+  content: "\eb40";
+  color: #fc7f7f;
+}
+
+.gd-ImportFail:before {
+  content: "\eb41";
+  color: #ff5f5f;
+}
+
+.gd-InsertAfter .path1:before {
+  content: "\eb42";
+  color: rgb(224, 224, 224);
+}
+
+.gd-InsertAfter .path2:before {
+  content: "\eb43";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-InsertBefore .path1:before {
+  content: "\eb44";
+  color: rgb(224, 224, 224);
+}
+
+.gd-InsertBefore .path2:before {
+  content: "\eb45";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-Instance:before {
+  content: "\eb46";
+  color: #e0e0e0;
+}
+
+.gd-InstanceOptions:before {
+  content: "\eb47";
+  color: #e0e0e0;
+}
+
+.gd-int:before {
+  content: "\eb48";
+  color: #5abbef;
+}
+
+.gd-InterpWrapClamp:before {
+  content: "\eb4e";
+  color: #fc7f7f;
+}
+
+.gd-InterpWrapLoop:before {
+  content: "\eb4f";
+  color: #c38ef1;
+}
+
+.gd-ItemList:before {
+  content: "\eb50";
+  color: #8eef97;
+}
+
+.gd-JoyAxis .path1:before {
+  content: "\eb51";
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-JoyAxis .path2:before {
+  content: "\eb52";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-JoyButton:before {
+  content: "\eb53";
+  color: #e0e0e0;
+}
+
+.gd-Joypad:before {
+  content: "\eb54";
+  color: #e0e0e0;
+}
+
+.gd-Key:before {
+  content: "\eb55";
+  color: #e0e0e0;
+}
+
+.gd-KeyAnimation:before {
+  content: "\eb56";
+  color: #a448f0;
+}
+
+.gd-KeyAudio:before {
+  content: "\eb57";
+  color: #eae440;
+}
+
+.gd-KeyBezier:before {
+  content: "\eb58";
+  color: #2877f6;
+}
+
+.gd-KeyBezierHandle:before {
+  content: "\eb59";
+  color: #e0e0e0;
+}
+
+.gd-KeyBezierPoint:before {
+  content: "\eb5a";
+  color: #e0e0e0;
+}
+
+.gd-KeyBezierSelected:before {
+  content: "\eb5b";
+  color: #5fb2ff;
+}
+
+.gd-KeyBlendShape:before {
+  content: "\eb5c";
+  color: #5ad5c4;
+}
+
+.gd-Keyboard:before {
+  content: "\eb5d";
+  color: #e0e0e0;
+}
+
+.gd-KeyboardPhysical:before {
+  content: "\eb5e";
+  color: #e0e0e0;
+}
+
+.gd-KeyCall:before {
+  content: "\eb5f";
+  color: #3cf34e;
+}
+
+.gd-KeyEasedSelected .path1:before {
+  content: "\eb60";
+  color: rgb(95, 178, 255);
+}
+
+.gd-KeyEasedSelected .path2:before {
+  content: "\eb61";
+  margin-left: -1em;
+  color: rgb(0, 62, 122);
+}
+
+.gd-KeyInvalid:before {
+  content: "\eb62";
+  color: #ff5f5f;
+}
+
+.gd-KeyNext .path1:before {
+  content: "\eb63";
+  color: rgb(95, 255, 151);
+}
+
+.gd-KeyNext .path2:before {
+  content: "\eb64";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-KeyPosition:before {
+  content: "\eb65";
+  color: #e0e0e0;
+}
+
+.gd-KeyRotation:before {
+  content: "\eb66";
+  color: #e0e0e0;
+}
+
+.gd-KeyScale:before {
+  content: "\eb67";
+  color: #e0e0e0;
+}
+
+.gd-KeySelected .path1:before {
+  content: "\eb68";
+  color: rgb(95, 178, 255);
+}
+
+.gd-KeySelected .path2:before {
+  content: "\eb69";
+  margin-left: -1em;
+  color: rgb(0, 62, 122);
+}
+
+.gd-KeyTrackBlendShape:before {
+  content: "\eb6a";
+  color: #5ad5c4;
+}
+
+.gd-KeyTrackPosition:before {
+  content: "\eb6b";
+  color: #ea7940;
+}
+
+.gd-KeyTrackRotation:before {
+  content: "\eb6c";
+  color: #ff2b88;
+}
+
+.gd-KeyTrackScale:before {
+  content: "\eb6d";
+  color: #eac840;
+}
+
+.gd-KeyValue:before {
+  content: "\eb6e";
+  color: #e0e0e0;
+}
+
+.gd-KeyValueEased:before {
+  content: "\eb6f";
+  color: #e0e0e0;
+}
+
+.gd-KeyXform:before {
+  content: "\eb70";
+  color: #ea7940;
+}
+
+.gd-KeyXPosition:before {
+  content: "\eb71";
+  color: #ea7940;
+}
+
+.gd-KeyXRotation:before {
+  content: "\eb72";
+  color: #ff2b88;
+}
+
+.gd-KeyXScale:before {
+  content: "\eb73";
+  color: #eac840;
+}
+
+.gd-Label:before {
+  content: "\eb74";
+  color: #8eef97;
+}
+
+.gd-Label3D:before {
+  content: "\eb75";
+  color: #fc7f7f;
+}
+
+.gd-LabelSettings .path1:before {
+  content: "\eb76";
+  color: rgb(142, 239, 151);
+}
+
+.gd-LabelSettings .path2:before {
+  content: "\eb77";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-LabelSettings .path3:before {
+  content: "\eb78";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-LabelSettings .path4:before {
+  content: "\eb79";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-LabelSettings .path5:before {
+  content: "\eb7a";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-LightmapGI:before {
+  content: "\eb7b";
+  color: #fc7f7f;
+}
+
+.gd-LightmapGIData:before {
+  content: "\eb7c";
+  color: #e0e0e0;
+}
+
+.gd-LightmapProbe:before {
+  content: "\eb7d";
+  color: #fc7f7f;
+}
+
+.gd-LightOccluder2D:before {
+  content: "\eb7e";
+  color: #8da5f3;
+}
+
+.gd-Line2D:before {
+  content: "\eb7f";
+  color: #8da5f3;
+}
+
+.gd-LineEdit:before {
+  content: "\eb80";
+  color: #8eef97;
+}
+
+.gd-LinkButton:before {
+  content: "\eb81";
+  color: #8eef97;
+}
+
+.gd-ListSelect:before {
+  content: "\eb82";
+  color: #e0e0e0;
+}
+
+.gd-Load:before {
+  content: "\eb83";
+  color: #e0e0e0;
+}
+
+.gd-Lock:before {
+  content: "\eb84";
+  color: #e0e0e0;
+}
+
+.gd-LockViewport .path1:before {
+  content: "\eb85";
+  color: rgb(0, 0, 0);
+  opacity: 0.3922;
+}
+
+.gd-LockViewport .path2:before {
+  content: "\eb86";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-Logo .path1:before {
+  content: "\eb87";
+  color: rgb(255, 255, 255);
+}
+
+.gd-Logo .path2:before {
+  content: "\eb88";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-Logo .path3:before {
+  content: "\eb89";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Logo .path4:before {
+  content: "\eb8a";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-Logo .path5:before {
+  content: "\eb8b";
+  margin-left: -1em;
+  color: rgb(71, 140, 191);
+}
+
+.gd-Logo .path6:before {
+  content: "\eb8c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Logo .path7:before {
+  content: "\eb8d";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-Logo .path8:before {
+  content: "\eb8e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Logo .path9:before {
+  content: "\eb8f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-Logo .path10:before {
+  content: "\eb90";
+  margin-left: -1em;
+  color: rgb(65, 64, 66);
+}
+
+.gd-Loop:before {
+  content: "\eb91";
+  color: #e0e0e0;
+}
+
+.gd-MainMovieWrite:before {
+  content: "\eb92";
+  color: #e0e0e0;
+}
+
+.gd-MarginContainer:before {
+  content: "\eb94";
+  color: #8eef97;
+}
+
+.gd-Marker2D:before {
+  content: "\eb95";
+  color: #8da5f3;
+}
+
+.gd-Marker3D:before {
+  content: "\eb96";
+  color: #fc7f7f;
+}
+
+.gd-MatchCase:before {
+  content: "\eb97";
+  color: #e0e0e0;
+}
+
+.gd-MaterialPreviewCube .path1:before {
+  content: "\eb98";
+  color: rgb(214, 214, 214);
+}
+
+.gd-MaterialPreviewCube .path2:before {
+  content: "\eb99";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-MaterialPreviewCube .path3:before {
+  content: "\eb9a";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-MaterialPreviewCube .path4:before {
+  content: "\eb9b";
+  margin-left: -1em;
+  color: rgb(214, 214, 214);
+}
+
+.gd-MaterialPreviewCubeOff .path1:before {
+  content: "\eb9c";
+  color: rgb(214, 214, 214);
+}
+
+.gd-MaterialPreviewCubeOff .path2:before {
+  content: "\eb9d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-MaterialPreviewCubeOff .path3:before {
+  content: "\eb9e";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-MaterialPreviewCubeOff .path4:before {
+  content: "\eb9f";
+  margin-left: -1em;
+  color: rgb(214, 214, 214);
+}
+
+.gd-MaterialPreviewCubeOff .path5:before {
+  content: "\eba0";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.2353;
+}
+
+.gd-MaterialPreviewLight1:before {
+  content: "\eba1";
+  color: #e0e0e0;
+}
+
+.gd-MaterialPreviewLight1Off .path1:before {
+  content: "\eba2";
+  color: rgb(224, 224, 224);
+}
+
+.gd-MaterialPreviewLight1Off .path2:before {
+  content: "\eba3";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.2353;
+}
+
+.gd-MaterialPreviewLight2:before {
+  content: "\eba4";
+  color: #e0e0e0;
+}
+
+.gd-MaterialPreviewLight2Off .path1:before {
+  content: "\eba5";
+  color: rgb(224, 224, 224);
+}
+
+.gd-MaterialPreviewLight2Off .path2:before {
+  content: "\eba6";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.2353;
+}
+
+.gd-MaterialPreviewSphere:before {
+  content: "\eba7";
+  color: #e0e0e0;
+}
+
+.gd-MaterialPreviewSphereOff .path1:before {
+  content: "\eba8";
+  color: rgb(224, 224, 224);
+}
+
+.gd-MaterialPreviewSphereOff .path2:before {
+  content: "\eba9";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+  opacity: 0.2353;
+}
+
+.gd-MemberConstant:before {
+  content: "\ebab";
+  color: #e0e0e0;
+}
+
+.gd-MemberMethod:before {
+  content: "\ebac";
+  color: #e0e0e0;
+}
+
+.gd-MemberProperty:before {
+  content: "\ebad";
+  color: #e0e0e0;
+}
+
+.gd-MemberSignal:before {
+  content: "\ebae";
+  color: #e0e0e0;
+}
+
+.gd-MemberTheme:before {
+  content: "\ebaf";
+  color: #e0e0e0;
+}
+
+.gd-MenuBar:before {
+  content: "\ebb0";
+  color: #8eef97;
+}
+
+.gd-MenuButton:before {
+  content: "\ebb1";
+  color: #8eef97;
+}
+
+.gd-Mesh:before {
+  content: "\ebb2";
+  color: #ffca5f;
+}
+
+.gd-MeshInstance2D:before {
+  content: "\ebb3";
+  color: #8da5f3;
+}
+
+.gd-MeshInstance3D:before {
+  content: "\ebb4";
+  color: #fc7f7f;
+}
+
+.gd-MeshLibrary:before {
+  content: "\ebb5";
+  color: #ffca5f;
+}
+
+.gd-MeshTexture:before {
+  content: "\ebb6";
+  color: #e0e0e0;
+}
+
+.gd-MiniObject:before {
+  content: "\ebb7";
+  color: #55f3e3;
+}
+
+.gd-MirrorY:before {
+  content: "\ebb9";
+  color: #e0e0e0;
+}
+
+.gd-MissingNode:before {
+  content: "\ebba";
+  color: #ff5f5f;
+}
+
+.gd-MissingResource:before {
+  content: "\ebbb";
+  color: #ff5f5f;
+}
+
+.gd-Mouse:before {
+  content: "\ebbc";
+  color: #e0e0e0;
+}
+
+.gd-MoveDown:before {
+  content: "\ebbd";
+  color: #e0e0e0;
+}
+
+.gd-MoveLeft:before {
+  content: "\ebbe";
+  color: #e0e0e0;
+}
+
+.gd-MovePoint .path1:before {
+  content: "\ebbf";
+  color: rgb(255, 255, 255);
+}
+
+.gd-MovePoint .path2:before {
+  content: "\ebc0";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-MovePoint .path3:before {
+  content: "\ebc1";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-MoveRight:before {
+  content: "\ebc2";
+  color: #e0e0e0;
+}
+
+.gd-MoveUp:before {
+  content: "\ebc3";
+  color: #e0e0e0;
+}
+
+.gd-MultiMesh:before {
+  content: "\ebc4";
+  color: #ffca5f;
+}
+
+.gd-MultiMeshInstance2D:before {
+  content: "\ebc5";
+  color: #8da5f3;
+}
+
+.gd-MultiMeshInstance3D:before {
+  content: "\ebc6";
+  color: #fc7f7f;
+}
+
+.gd-Navigation2D:before {
+  content: "\ebcb";
+  color: #8da5f3;
+}
+
+.gd-Navigation3D:before {
+  content: "\ebcc";
+  color: #fc7f7f;
+}
+
+.gd-NavigationAgent2D .path1:before {
+  content: "\ebcd";
+  color: rgb(141, 165, 243);
+  opacity: 0.9882;
+}
+
+.gd-NavigationAgent2D .path2:before {
+  content: "\ebce";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-NavigationAgent3D .path1:before {
+  content: "\ebcf";
+  color: rgb(224, 224, 224);
+  opacity: 0.5020;
+}
+
+.gd-NavigationAgent3D .path2:before {
+  content: "\ebd0";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-NavigationAgent3D .path3:before {
+  content: "\ebd1";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.5020;
+}
+
+.gd-NavigationAgent3D .path4:before {
+  content: "\ebd2";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+}
+
+.gd-NavigationLink2D:before {
+  content: "\ebd3";
+  color: #8ea6f4;
+}
+
+.gd-NavigationLink3D .path1:before {
+  content: "\ebd4";
+  color: rgb(252, 126, 126);
+  opacity: 0.9961;
+}
+
+.gd-NavigationLink3D .path2:before {
+  content: "\ebd5";
+  margin-left: -1em;
+  color: rgb(252, 125, 125);
+  opacity: 0.9961;
+}
+
+.gd-NavigationMesh:before {
+  content: "\ebd6";
+  color: #ffca5f;
+}
+
+.gd-NavigationObstacle2D .path1:before {
+  content: "\ebd7";
+  color: rgb(224, 224, 224);
+}
+
+.gd-NavigationObstacle2D .path2:before {
+  content: "\ebd8";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+  opacity: 0.9882;
+}
+
+.gd-NavigationObstacle3D .path1:before {
+  content: "\ebd9";
+  color: rgb(224, 224, 224);
+  opacity: 0.5020;
+}
+
+.gd-NavigationObstacle3D .path2:before {
+  content: "\ebda";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-NavigationObstacle3D .path3:before {
+  content: "\ebdb";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+  opacity: 0.5020;
+}
+
+.gd-NavigationObstacle3D .path4:before {
+  content: "\ebdc";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+}
+
+.gd-NavigationPolygon:before {
+  content: "\ebdd";
+  color: #e0e0e0;
+}
+
+.gd-NavigationRegion2D:before {
+  content: "\ebde";
+  color: #8da5f3;
+}
+
+.gd-NavigationRegion3D:before {
+  content: "\ebdf";
+  color: #fc7f7f;
+}
+
+.gd-New .path1:before {
+  content: "\ebe0";
+  color: rgb(224, 224, 224);
+}
+
+.gd-New .path2:before {
+  content: "\ebe1";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-NewKey:before {
+  content: "\ebe2";
+  color: #e0e0e0;
+}
+
+.gd-NewRoot .path1:before {
+  content: "\ebe3";
+  color: rgb(224, 224, 224);
+}
+
+.gd-NewRoot .path2:before {
+  content: "\ebe4";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-NewRoot .path3:before {
+  content: "\ebe5";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-Nil:before {
+  content: "\ebe6";
+  color: #e0e0e0;
+}
+
+.gd-NinePatchRect:before {
+  content: "\ebe7";
+  color: #8eef97;
+}
+
+.gd-Node:before {
+  content: "\ebe8";
+  color: #e0e0e0;
+}
+
+.gd-Node2D:before {
+  content: "\ebe9";
+  color: #8da5f3;
+}
+
+.gd-Node3D:before {
+  content: "\ebea";
+  color: #fc7f7f;
+}
+
+.gd-NodeDisabled:before {
+  content: "\ebeb";
+  color: #919191;
+}
+
+.gd-NodeInfo:before {
+  content: "\ebec";
+  color: #fff;
+}
+
+.gd-NodePath:before {
+  content: "\ebed";
+  color: #417aec;
+}
+
+.gd-NodeWarning:before {
+  content: "\ebee";
+  color: #ffdd65;
+}
+
+.gd-NodeWarnings2 .path1:before {
+  content: "\ebef";
+  color: rgb(255, 221, 101);
+}
+
+.gd-NodeWarnings2 .path2:before {
+  content: "\ebf0";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings2 .path3:before {
+  content: "\ebf1";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings3 .path1:before {
+  content: "\ebf2";
+  color: rgb(255, 221, 101);
+}
+
+.gd-NodeWarnings3 .path2:before {
+  content: "\ebf3";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings4Plus .path1:before {
+  content: "\ebf4";
+  color: rgb(255, 221, 101);
+}
+
+.gd-NodeWarnings4Plus .path2:before {
+  content: "\ebf5";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings4Plus .path3:before {
+  content: "\ebf6";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings4Plus .path4:before {
+  content: "\ebf7";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NodeWarnings4Plus .path5:before {
+  content: "\ebf8";
+  margin-left: -1em;
+  color: rgb(249, 82, 82);
+}
+
+.gd-NonFavorite:before {
+  content: "\ebf9";
+  color: #e0e0e0;
+}
+
+.gd-Notification:before {
+  content: "\ebfa";
+  color: #e0e0e0;
+}
+
+.gd-NotificationDisabled:before {
+  content: "\ebfb";
+  color: #e0e0e0;
+}
+
+.gd-Object:before {
+  content: "\ebfc";
+  color: #e0e0e0;
+}
+
+.gd-Occluder3D:before {
+  content: "\ebfd";
+  color: #ffca5f;
+}
+
+.gd-OccluderInstance3D:before {
+  content: "\ebfe";
+  color: #fc7f7f;
+}
+
+.gd-OccluderPolygon2D .path1:before {
+  content: "\ebff";
+  color: rgb(75, 112, 234);
+}
+
+.gd-OccluderPolygon2D .path2:before {
+  content: "\ec00";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+  opacity: 0.9882;
+}
+
+.gd-OmniLight3D:before {
+  content: "\ec01";
+  color: #fc7f7f;
+}
+
+.gd-Onion:before {
+  content: "\ec02";
+  color: #e0e0e0;
+}
+
+.gd-OptionButton:before {
+  content: "\ec03";
+  color: #8eef97;
+}
+
+.gd-ORMMaterial3D .path1:before {
+  content: "\ec04";
+  color: rgb(128, 255, 69);
+}
+
+.gd-ORMMaterial3D .path2:before {
+  content: "\ec05";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-ORMMaterial3D .path3:before {
+  content: "\ec06";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-Override:before {
+  content: "\ec09";
+  color: #e0e0e0;
+}
+
+.gd-PackedByteArray .path1:before {
+  content: "\ec0a";
+  color: rgb(224, 224, 224);
+}
+
+.gd-PackedByteArray .path2:before {
+  content: "\ec0b";
+  margin-left: -1em;
+  color: rgb(95, 255, 151);
+}
+
+.gd-PackedByteArray .path3:before {
+  content: "\ec0c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-PackedColorArray .path1:before {
+  content: "\ec0d";
+  color: rgb(224, 224, 224);
+}
+
+.gd-PackedColorArray .path2:before {
+  content: "\ec0e";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-PackedColorArray .path3:before {
+  content: "\ec0f";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-PackedColorArray .path4:before {
+  content: "\ec10";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-PackedDataContainer:before {
+  content: "\ec11";
+  color: #e0e0e0;
+}
+
+.gd-PackedScene:before {
+  content: "\ec1e";
+  color: #e0e0e0;
+}
+
+.gd-Panel:before {
+  content: "\ec2c";
+  color: #8eef97;
+}
+
+.gd-PanelContainer:before {
+  content: "\ec2d";
+  color: #8eef97;
+}
+
+.gd-PanoramaSkyMaterial .path1:before {
+  content: "\ec34";
+  color: rgb(128, 255, 69);
+}
+
+.gd-PanoramaSkyMaterial .path2:before {
+  content: "\ec35";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-PanoramaSkyMaterial .path3:before {
+  content: "\ec36";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-PanoramaSkyMaterial .path4:before {
+  content: "\ec37";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-PanoramaSkyMaterial .path5:before {
+  content: "\ec38";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-PanoramaSkyMaterial .path6:before {
+  content: "\ec39";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-PanoramaSkyMaterial .path7:before {
+  content: "\ec3a";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-ParallaxBackground:before {
+  content: "\ec3b";
+  color: #e0e0e0;
+}
+
+.gd-ParallaxLayer:before {
+  content: "\ec3c";
+  color: #8da5f3;
+}
+
+.gd-ParticleProcessMaterial .path1:before {
+  content: "\ec3d";
+  color: rgb(255, 69, 69);
+}
+
+.gd-ParticleProcessMaterial .path2:before {
+  content: "\ec3e";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-ParticleProcessMaterial .path3:before {
+  content: "\ec3f";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ParticleProcessMaterial .path4:before {
+  content: "\ec40";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ParticleProcessMaterial .path5:before {
+  content: "\ec41";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ParticleProcessMaterial .path6:before {
+  content: "\ec42";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-ParticleProcessMaterial .path7:before {
+  content: "\ec43";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-Path2D:before {
+  content: "\ec44";
+  color: #8da5f3;
+}
+
+.gd-Path3D:before {
+  content: "\ec45";
+  color: #fc7f7f;
+}
+
+.gd-PathFollow2D:before {
+  content: "\ec46";
+  color: #8da5f3;
+}
+
+.gd-PathFollow3D:before {
+  content: "\ec47";
+  color: #fc7f7f;
+}
+
+.gd-Pause:before {
+  content: "\ec48";
+  color: #e0e0e0;
+}
+
+.gd-PhysicalBone3D:before {
+  content: "\ec49";
+  color: #fc7f7f;
+}
+
+.gd-PhysicalSkyMaterial .path1:before {
+  content: "\ec4a";
+  color: rgb(128, 255, 69);
+}
+
+.gd-PhysicalSkyMaterial .path2:before {
+  content: "\ec4b";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-PhysicalSkyMaterial .path3:before {
+  content: "\ec4c";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-PhysicalSkyMaterial .path4:before {
+  content: "\ec4d";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-PhysicalSkyMaterial .path5:before {
+  content: "\ec4e";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-PickerCursor .path1:before {
+  content: "\ec4f";
+  color: rgb(255, 255, 255);
+}
+
+.gd-PickerCursor .path2:before {
+  content: "\ec50";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-Pin:before {
+  content: "\ec51";
+  color: #e0e0e0;
+}
+
+.gd-PingPongLoop:before {
+  content: "\ec52";
+  color: #e0e0e0;
+}
+
+.gd-PinJoint2D:before {
+  content: "\ec53";
+  color: #8da5f3;
+}
+
+.gd-PinJoint3D:before {
+  content: "\ec54";
+  color: #fc7f7f;
+}
+
+.gd-PinPressed:before {
+  content: "\ec55";
+  color: #e0e0e0;
+}
+
+.gd-Plane:before {
+  content: "\ec56";
+  color: #f74949;
+}
+
+.gd-PlaneMesh:before {
+  content: "\ec57";
+  color: #ffca5f;
+}
+
+.gd-Play:before {
+  content: "\ec58";
+  color: #e0e0e0;
+}
+
+.gd-PlayBackwards:before {
+  content: "\ec59";
+  color: #e0e0e0;
+}
+
+.gd-PlayCustom:before {
+  content: "\ec5a";
+  color: #e0e0e0;
+}
+
+.gd-PlayOverlay .path1:before {
+  content: "\ec5b";
+  color: rgb(105, 156, 232);
+  opacity: 0.75;
+}
+
+.gd-PlayOverlay .path2:before {
+  content: "\ec5c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-PlayScene:before {
+  content: "\ec5d";
+  color: #e0e0e0;
+}
+
+.gd-PlayStart:before {
+  content: "\ec5e";
+  color: #e0e0e0;
+}
+
+.gd-PlayStartBackwards:before {
+  content: "\ec5f";
+  color: #e0e0e0;
+}
+
+.gd-PlayTravel:before {
+  content: "\ec60";
+  color: #e0e0e0;
+}
+
+.gd-PluginScript:before {
+  content: "\ec61";
+  color: #e0e0e0;
+}
+
+.gd-PointLight2D:before {
+  content: "\ec62";
+  color: #8da5f3;
+}
+
+.gd-PointMesh:before {
+  content: "\ec63";
+  color: #ffca5f;
+}
+
+.gd-Polygon2D:before {
+  content: "\ec64";
+  color: #8da5f3;
+}
+
+.gd-PolygonOccluder3D:before {
+  content: "\ec65";
+  color: #ffca5f;
+}
+
+.gd-PolygonPathFinder:before {
+  content: "\ec66";
+  color: #e0e0e0;
+}
+
+.gd-Popup:before {
+  content: "\ec67";
+  color: #e0e0e0;
+}
+
+.gd-PopupMenu:before {
+  content: "\ec68";
+  color: #e0e0e0;
+}
+
+.gd-PopupPanel:before {
+  content: "\ec69";
+  color: #e0e0e0;
+}
+
+.gd-PreviewEnvironment:before {
+  content: "\ec6a";
+  color: #e0e0e0;
+}
+
+.gd-PreviewSun:before {
+  content: "\ec6b";
+  color: #e0e0e0;
+}
+
+.gd-PrismMesh:before {
+  content: "\ec6c";
+  color: #ffca5f;
+}
+
+.gd-ProceduralSkyMaterial .path1:before {
+  content: "\ec6d";
+  color: rgb(128, 69, 255);
+}
+
+.gd-ProceduralSkyMaterial .path2:before {
+  content: "\ec6e";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ProceduralSkyMaterial .path3:before {
+  content: "\ec6f";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ProceduralSkyMaterial .path4:before {
+  content: "\ec70";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ProceduralSkyMaterial .path5:before {
+  content: "\ec71";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-Progress1 .path1:before {
+  content: "\ec72";
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress1 .path2:before {
+  content: "\ec73";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress2 .path1:before {
+  content: "\ec74";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress2 .path2:before {
+  content: "\ec75";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress3 .path1:before {
+  content: "\ec76";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress3 .path2:before {
+  content: "\ec77";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress4 .path1:before {
+  content: "\ec78";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress4 .path2:before {
+  content: "\ec79";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress5 .path1:before {
+  content: "\ec7a";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress5 .path2:before {
+  content: "\ec7b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress6 .path1:before {
+  content: "\ec7c";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress6 .path2:before {
+  content: "\ec7d";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress7 .path1:before {
+  content: "\ec7e";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress7 .path2:before {
+  content: "\ec7f";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Progress8 .path1:before {
+  content: "\ec80";
+  color: rgb(224, 224, 224);
+  opacity: 0.1961;
+}
+
+.gd-Progress8 .path2:before {
+  content: "\ec81";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-ProgressBar:before {
+  content: "\ec82";
+  color: #8eef97;
+}
+
+.gd-ProjectIconLoading:before {
+  content: "\ec83";
+  color: #e0e0e0;
+}
+
+.gd-ProxyTexture:before {
+  content: "\ec84";
+  color: #e0e0e0;
+}
+
+.gd-Quad:before {
+  content: "\ec85";
+  color: #fc7f7f;
+}
+
+.gd-QuadMesh:before {
+  content: "\ec86";
+  color: #ffca5f;
+}
+
+.gd-QuadOccluder3D:before {
+  content: "\ec87";
+  color: #ffca5f;
+}
+
+.gd-Quaternion .path1:before {
+  content: "\ec88";
+  color: rgb(236, 65, 142);
+}
+
+.gd-Quaternion .path2:before {
+  content: "\ec89";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-Quaternion .path3:before {
+  content: "\ec8a";
+  margin-left: -1em;
+  color: rgb(236, 65, 142);
+}
+
+.gd-RandomNumberGenerator:before {
+  content: "\ec8b";
+  color: #fff;
+}
+
+.gd-Range:before {
+  content: "\ec8c";
+  color: #8eef97;
+}
+
+.gd-RayCast2D:before {
+  content: "\ec8d";
+  color: #8da5f3;
+}
+
+.gd-RayCast3D:before {
+  content: "\ec8e";
+  color: #fc7f7f;
+}
+
+.gd-Rect2:before {
+  content: "\ec8f";
+  color: #f1738f;
+}
+
+.gd-Rect2i .path1:before {
+  content: "\ec90";
+  color: rgb(241, 115, 143);
+}
+
+.gd-Rect2i .path2:before {
+  content: "\ec91";
+  margin-left: -1em;
+  color: rgb(90, 187, 239);
+}
+
+.gd-RectangleShape2D:before {
+  content: "\ec93";
+  color: #5fb2ff;
+}
+
+.gd-ReferenceRect:before {
+  content: "\ec94";
+  color: #8eef97;
+}
+
+.gd-ReflectionProbe:before {
+  content: "\ec95";
+  color: #fc7f7f;
+}
+
+.gd-RegionEdit .path1:before {
+  content: "\ec96";
+  color: rgb(224, 224, 224);
+}
+
+.gd-RegionEdit .path2:before {
+  content: "\ec97";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.3255;
+}
+
+.gd-RemoteTransform2D:before {
+  content: "\ec9a";
+  color: #8da5f3;
+}
+
+.gd-RemoteTransform3D:before {
+  content: "\ec9b";
+  color: #fc7f7f;
+}
+
+.gd-ReverseGradient .path1:before {
+  content: "\eca6";
+  color: rgb(0, 0, 0);
+}
+
+.gd-ReverseGradient .path2:before {
+  content: "\eca7";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+
+.gd-ReverseGradient .path3:before {
+  content: "\eca8";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-RibbonTrailMesh:before {
+  content: "\eca9";
+  color: #ffca5f;
+}
+
+.gd-RichTextEffect .path1:before {
+  content: "\ecaa";
+  color: rgb(224, 224, 224);
+}
+
+.gd-RichTextEffect .path2:before {
+  content: "\ecab";
+  margin-left: -1em;
+  color: rgb(195, 142, 241);
+}
+
+.gd-RichTextLabel:before {
+  content: "\ecac";
+  color: #8eef97;
+}
+
+.gd-RID:before {
+  content: "\ecad";
+  color: #41ec80;
+}
+
+.gd-RigidBody2D:before {
+  content: "\ecae";
+  color: #8da5f3;
+}
+
+.gd-RigidBody3D:before {
+  content: "\ecaf";
+  color: #fc7f7f;
+}
+
+.gd-RootMotionView:before {
+  content: "\ecb0";
+}
+
+.gd-SampleLibrary:before {
+  content: "\ecb4";
+  color: #ff5f5f;
+}
+
+.gd-Save:before {
+  content: "\ecb5";
+  color: #e0e0e0;
+}
+
+.gd-ScriptExtend .path1:before {
+  content: "\ecbd";
+  color: rgb(224, 224, 224);
+}
+
+.gd-ScriptExtend .path2:before {
+  content: "\ecbe";
+  margin-left: -1em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-ScriptExtend .path3:before {
+  content: "\ecbf";
+  margin-left: -1em;
+  color: rgb(95, 178, 255);
+}
+
+.gd-ScriptRemove .path1:before {
+  content: "\ecc0";
+  color: rgb(224, 224, 224);
+}
+
+.gd-ScriptRemove .path2:before {
+  content: "\ecc1";
+  margin-left: -1em;
+  color: rgb(179, 179, 179);
+}
+
+.gd-ScriptRemove .path3:before {
+  content: "\ecc2";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-ScrollContainer:before {
+  content: "\ecc3";
+  color: #8eef97;
+}
+
+.gd-Search:before {
+  content: "\ecc4";
+  color: #e0e0e0;
+}
+
+.gd-SegmentShape2D:before {
+  content: "\ecc5";
+  color: #5fb2ff;
+}
+
+.gd-SeparationRayShape2D:before {
+  content: "\ecc6";
+  color: #5fb2ff;
+}
+
+.gd-SeparationRayShape3D .path1:before {
+  content: "\ecc7";
+  color: rgb(162, 210, 255);
+}
+
+.gd-SeparationRayShape3D .path2:before {
+  content: "\ecc8";
+  margin-left: -1em;
+  color: rgb(41, 152, 255);
+}
+
+.gd-Shader .path1:before {
+  content: "\ecc9";
+  color: rgb(224, 224, 224);
+}
+
+.gd-Shader .path2:before {
+  content: "\ecca";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-Shader .path3:before {
+  content: "\eccb";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-Shader .path4:before {
+  content: "\eccc";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-Shader .path5:before {
+  content: "\eccd";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-Shader .path6:before {
+  content: "\ecce";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-Shader .path7:before {
+  content: "\eccf";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-Shader .path8:before {
+  content: "\ecd0";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ShaderGlobalsOverride:before {
+  content: "\ecd1";
+  color: #e0e0e0;
+}
+
+.gd-ShaderMaterial .path1:before {
+  content: "\ecd2";
+  color: rgb(255, 69, 69);
+}
+
+.gd-ShaderMaterial .path2:before {
+  content: "\ecd3";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-ShaderMaterial .path3:before {
+  content: "\ecd4";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ShaderMaterial .path4:before {
+  content: "\ecd5";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ShaderMaterial .path5:before {
+  content: "\ecd6";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ShaderMaterial .path6:before {
+  content: "\ecd7";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-ShaderMaterial .path7:before {
+  content: "\ecd8";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-ShapeCast2D:before {
+  content: "\ecd9";
+  color: #8da5f3;
+}
+
+.gd-ShapeCast3D:before {
+  content: "\ecda";
+  color: #fc7f7f;
+}
+
+.gd-Signal:before {
+  content: "\ecdc";
+  color: #ff5f5f;
+}
+
+.gd-Signals:before {
+  content: "\ecdd";
+  color: #e0e0e0;
+}
+
+.gd-SignalsAndGroups:before {
+  content: "\ecde";
+  color: #e0e0e0;
+}
+
+.gd-Skeleton2D:before {
+  content: "\ecdf";
+  color: #8da5f3;
+}
+
+.gd-Skeleton3D:before {
+  content: "\ece0";
+  color: #fc7f7f;
+}
+
+.gd-SkeletonIK3D .path1:before {
+  content: "\ece1";
+  color: rgb(224, 224, 224);
+}
+
+.gd-SkeletonIK3D .path2:before {
+  content: "\ece2";
+  margin-left: -1em;
+  color: rgb(252, 127, 127);
+}
+
+.gd-SliderJoint3D:before {
+  content: "\ece5";
+  color: #fc7f7f;
+}
+
+.gd-Slot:before {
+  content: "\ece6";
+  color: #5fff97;
+}
+
+.gd-Snap .path1:before {
+  content: "\ece7";
+  color: rgb(224, 224, 224);
+}
+
+.gd-Snap .path2:before {
+  content: "\ece8";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.6863;
+}
+
+.gd-SnapGrid .path1:before {
+  content: "\ece9";
+  color: rgb(224, 224, 224);
+}
+
+.gd-SnapGrid .path2:before {
+  content: "\ecea";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.6863;
+}
+
+.gd-SoftBody3D:before {
+  content: "\eceb";
+  color: #fc7f7f;
+}
+
+.gd-Sort:before {
+  content: "\ecec";
+  color: #e0e0e0;
+}
+
+.gd-SphereMesh:before {
+  content: "\eced";
+  color: #ffca5f;
+}
+
+.gd-SphereOccluder3D:before {
+  content: "\ecee";
+  color: #ffca5f;
+}
+
+.gd-SphereShape3D .path1:before {
+  content: "\ecef";
+  color: rgb(95, 178, 255);
+}
+
+.gd-SphereShape3D .path2:before {
+  content: "\ecf0";
+  margin-left: -1em;
+  color: rgb(162, 210, 255);
+}
+
+.gd-SpinBox:before {
+  content: "\ecf1";
+  color: #8eef97;
+}
+
+.gd-SplitContainer:before {
+  content: "\ecf2";
+  color: #8eef97;
+}
+
+.gd-SpotLight3D:before {
+  content: "\ecf3";
+  color: #fc7f7f;
+}
+
+.gd-Sprite2D:before {
+  content: "\ecf5";
+  color: #8da5f3;
+}
+
+.gd-Sprite3D:before {
+  content: "\ecf6";
+  color: #fc7f7f;
+}
+
+.gd-StandardMaterial3D .path1:before {
+  content: "\ecf9";
+  color: rgb(255, 69, 69);
+}
+
+.gd-StandardMaterial3D .path2:before {
+  content: "\ecfa";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-StandardMaterial3D .path3:before {
+  content: "\ecfb";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-StandardMaterial3D .path4:before {
+  content: "\ecfc";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-StandardMaterial3D .path5:before {
+  content: "\ecfd";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-StandardMaterial3D .path6:before {
+  content: "\ecfe";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-StandardMaterial3D .path7:before {
+  content: "\ecff";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-StaticBody2D:before {
+  content: "\ed00";
+  color: #8da5f3;
+}
+
+.gd-StaticBody3D:before {
+  content: "\ed01";
+  color: #fc7f7f;
+}
+
+.gd-StatusError:before {
+  content: "\ed02";
+  color: #ff5f5f;
+}
+
+.gd-StatusSuccess:before {
+  content: "\ed03";
+  color: #5fff97;
+}
+
+.gd-StatusWarning:before {
+  content: "\ed04";
+  color: #ffdd65;
+}
+
+.gd-String:before {
+  content: "\ed06";
+  color: #4593ec;
+}
+
+.gd-StringName .path1:before {
+  content: "\ed07";
+  color: rgb(69, 147, 236);
+}
+
+.gd-StringName .path2:before {
+  content: "\ed08";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-StyleBoxEmpty .path1:before {
+  content: "\ed09";
+  color: rgb(255, 69, 69);
+}
+
+.gd-StyleBoxEmpty .path2:before {
+  content: "\ed0a";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-StyleBoxEmpty .path3:before {
+  content: "\ed0b";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-StyleBoxEmpty .path4:before {
+  content: "\ed0c";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-StyleBoxEmpty .path5:before {
+  content: "\ed0d";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-StyleBoxEmpty .path6:before {
+  content: "\ed0e";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-StyleBoxFlat .path1:before {
+  content: "\ed0f";
+  color: rgb(255, 69, 69);
+}
+
+.gd-StyleBoxFlat .path2:before {
+  content: "\ed10";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-StyleBoxFlat .path3:before {
+  content: "\ed11";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-StyleBoxFlat .path4:before {
+  content: "\ed12";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-StyleBoxFlat .path5:before {
+  content: "\ed13";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-StyleBoxFlat .path6:before {
+  content: "\ed14";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-StyleBoxFlat .path7:before {
+  content: "\ed15";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-StyleBoxGridInvisible .path1:before {
+  content: "\ed16";
+  color: rgb(0, 0, 0);
+  opacity: 0.7529;
+}
+
+.gd-StyleBoxGridInvisible .path2:before {
+  content: "\ed17";
+  margin-left: -1em;
+  color: rgb(101, 101, 101);
+  opacity: 0.5020;
+}
+
+.gd-StyleBoxGridInvisible .path3:before {
+  content: "\ed18";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.5020;
+}
+
+.gd-StyleBoxGridVisible .path1:before {
+  content: "\ed19";
+  color: rgb(0, 0, 0);
+  opacity: 0.7529;
+}
+
+.gd-StyleBoxGridVisible .path2:before {
+  content: "\ed1a";
+  margin-left: -1em;
+  color: rgb(101, 101, 101);
+}
+
+.gd-StyleBoxGridVisible .path3:before {
+  content: "\ed1b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-StyleBoxLine .path1:before {
+  content: "\ed1c";
+  color: rgb(255, 69, 69);
+}
+
+.gd-StyleBoxLine .path2:before {
+  content: "\ed1d";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-StyleBoxLine .path3:before {
+  content: "\ed1e";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-StyleBoxLine .path4:before {
+  content: "\ed1f";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-StyleBoxLine .path5:before {
+  content: "\ed20";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-StyleBoxLine .path6:before {
+  content: "\ed21";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-StyleBoxLine .path7:before {
+  content: "\ed22";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-StyleBoxTexture .path1:before {
+  content: "\ed23";
+  color: rgb(255, 69, 69);
+}
+
+.gd-StyleBoxTexture .path2:before {
+  content: "\ed24";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-StyleBoxTexture .path3:before {
+  content: "\ed25";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-StyleBoxTexture .path4:before {
+  content: "\ed26";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-StyleBoxTexture .path5:before {
+  content: "\ed27";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-StyleBoxTexture .path6:before {
+  content: "\ed28";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-StyleBoxTexture .path7:before {
+  content: "\ed29";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-SubViewport:before {
+  content: "\ed2a";
+  color: #e0e0e0;
+}
+
+.gd-SubViewportContainer:before {
+  content: "\ed2b";
+  color: #8eef97;
+}
+
+.gd-SystemFont .path1:before {
+  content: "\ed2c";
+  color: rgb(224, 224, 224);
+}
+
+.gd-SystemFont .path2:before {
+  content: "\ed2d";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-TabBar:before {
+  content: "\ed2e";
+  color: #8eef97;
+}
+
+.gd-TabContainer:before {
+  content: "\ed2f";
+  color: #8eef97;
+}
+
+.gd-TerrainConnect:before {
+  content: "\ed30";
+  color: #e0e0e0;
+}
+
+.gd-TerrainMatchCorners .path1:before {
+  content: "\ed31";
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCorners .path2:before {
+  content: "\ed32";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchCorners .path3:before {
+  content: "\ed33";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCorners .path4:before {
+  content: "\ed34";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchCornersAndSides .path1:before {
+  content: "\ed35";
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCornersAndSides .path2:before {
+  content: "\ed36";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchCornersAndSides .path3:before {
+  content: "\ed37";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCornersAndSides .path4:before {
+  content: "\ed38";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCornersAndSides .path5:before {
+  content: "\ed39";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchCornersAndSides .path6:before {
+  content: "\ed3a";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchCornersAndSides .path7:before {
+  content: "\ed3b";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchCornersAndSides .path8:before {
+  content: "\ed3c";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchSides .path1:before {
+  content: "\ed3d";
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchSides .path2:before {
+  content: "\ed3e";
+  margin-left: -1em;
+  color: rgb(119, 206, 87);
+}
+
+.gd-TerrainMatchSides .path3:before {
+  content: "\ed3f";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainMatchSides .path4:before {
+  content: "\ed40";
+  margin-left: -1em;
+  color: rgb(255, 202, 95);
+}
+
+.gd-TerrainPath:before {
+  content: "\ed41";
+  color: #e0e0e0;
+}
+
+.gd-TextEdit:before {
+  content: "\ed42";
+  color: #8eef97;
+}
+
+.gd-TextMesh:before {
+  content: "\ed45";
+  color: #ffca5f;
+}
+
+.gd-Texture2DArray .path1:before {
+  content: "\ed46";
+  color: rgb(224, 224, 224);
+  opacity: 0.9961;
+}
+
+.gd-Texture2DArray .path2:before {
+  content: "\ed47";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9922;
+}
+
+.gd-Texture2DArray .path3:before {
+  content: "\ed48";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9922;
+}
+
+.gd-Texture3D .path1:before {
+  content: "\ed49";
+  color: rgb(224, 224, 224);
+}
+
+.gd-Texture3D .path2:before {
+  content: "\ed4a";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9801;
+}
+
+.gd-Texture3D .path3:before {
+  content: "\ed4b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+  opacity: 0.9801;
+}
+
+.gd-TextureButton:before {
+  content: "\ed4c";
+  color: #8eef97;
+}
+
+.gd-TextureProgressBar:before {
+  content: "\ed4d";
+  color: #8eef97;
+}
+
+.gd-TextureRect:before {
+  content: "\ed4e";
+  color: #8eef97;
+}
+
+.gd-Theme .path1:before {
+  content: "\ed4f";
+  color: rgb(255, 227, 69);
+}
+
+.gd-Theme .path2:before {
+  content: "\ed50";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-Theme .path3:before {
+  content: "\ed51";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-Theme .path4:before {
+  content: "\ed52";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-Theme .path5:before {
+  content: "\ed53";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-Theme .path6:before {
+  content: "\ed54";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-Theme .path7:before {
+  content: "\ed55";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-ThemeDeselectAll:before {
+  content: "\ed56";
+  color: #e0e0e0;
+}
+
+.gd-ThemeRemoveAllItems .path1:before {
+  content: "\ed57";
+  color: rgb(142, 239, 151);
+}
+
+.gd-ThemeRemoveAllItems .path2:before {
+  content: "\ed58";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-ThemeRemoveAllItems .path3:before {
+  content: "\ed59";
+  margin-left: -1em;
+  color: rgb(255, 227, 69);
+}
+
+.gd-ThemeRemoveAllItems .path4:before {
+  content: "\ed5a";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ThemeRemoveAllItems .path5:before {
+  content: "\ed5b";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ThemeRemoveAllItems .path6:before {
+  content: "\ed5c";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ThemeRemoveAllItems .path7:before {
+  content: "\ed5d";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-ThemeRemoveAllItems .path8:before {
+  content: "\ed5e";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-ThemeRemoveCustomItems .path1:before {
+  content: "\ed5f";
+  color: rgb(255, 227, 69);
+}
+
+.gd-ThemeRemoveCustomItems .path2:before {
+  content: "\ed60";
+  margin-left: -1em;
+  color: rgb(128, 255, 69);
+}
+
+.gd-ThemeRemoveCustomItems .path3:before {
+  content: "\ed61";
+  margin-left: -1em;
+  color: rgb(69, 255, 162);
+}
+
+.gd-ThemeRemoveCustomItems .path4:before {
+  content: "\ed62";
+  margin-left: -1em;
+  color: rgb(69, 215, 255);
+}
+
+.gd-ThemeRemoveCustomItems .path5:before {
+  content: "\ed63";
+  margin-left: -1em;
+  color: rgb(255, 69, 150);
+}
+
+.gd-ThemeRemoveCustomItems .path6:before {
+  content: "\ed64";
+  margin-left: -1em;
+  color: rgb(128, 69, 255);
+}
+
+.gd-ThemeRemoveCustomItems .path7:before {
+  content: "\ed65";
+  margin-left: -1em;
+  color: rgb(255, 69, 69);
+}
+
+.gd-ThemeSelectAll .path1:before {
+  content: "\ed66";
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectAll .path2:before {
+  content: "\ed67";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectAll .path3:before {
+  content: "\ed68";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectAll .path4:before {
+  content: "\ed69";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectAll .path5:before {
+  content: "\ed6a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectAll .path6:before {
+  content: "\ed6b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectAll .path7:before {
+  content: "\ed6c";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectAll .path8:before {
+  content: "\ed6d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectAll .path9:before {
+  content: "\ed6e";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path1:before {
+  content: "\ed6f";
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path2:before {
+  content: "\ed70";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path3:before {
+  content: "\ed71";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path4:before {
+  content: "\ed72";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path5:before {
+  content: "\ed73";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path6:before {
+  content: "\ed74";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path7:before {
+  content: "\ed75";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path8:before {
+  content: "\ed76";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path9:before {
+  content: "\ed77";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path10:before {
+  content: "\ed78";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path11:before {
+  content: "\ed79";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path12:before {
+  content: "\ed7a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path13:before {
+  content: "\ed7b";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThemeSelectFull .path14:before {
+  content: "\ed7c";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-ThemeSelectFull .path15:before {
+  content: "\ed7d";
+  margin-left: -1em;
+  color: rgb(224, 224, 224);
+}
+
+.gd-ThumbnailWait:before {
+  content: "\ed7e";
+  color: #e0e0e0;
+}
+
+.gd-TileChecked .path1:before {
+  content: "\ed7f";
+  color: rgb(128, 128, 128);
+}
+
+.gd-TileChecked .path2:before {
+  content: "\ed80";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.gd-TileMap:before {
+  content: "\ed81";
+  color: #8da5f3;
+}
+
+.gd-TorusMesh:before {
+  content: "\ed95";
+  color: #ffca5f;
+}
+
+.gd-TouchScreenButton:before {
+  content: "\ed96";
+  color: #8da5f3;
+}
+
+.gd-TrackTrigger:before {
+  content: "\ed9b";
+  color: #f68f45;
+}
+
+.gd-Transform2D .path1:before {
+  content: "\ed9c";
+  color: rgb(185, 236, 65);
+}
+
+.gd-Transform2D .path2:before {
+  content: "\ed9d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-Transform3D .path1:before {
+  content: "\ed9e";
+  color: rgb(246, 143, 69);
+}
+
+.gd-Transform3D .path2:before {
+  content: "\ed9f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.3922;
+}
+
+.gd-TransitionEnd:before {
+  content: "\eda0";
+  color: #e0e0e0;
+}
+
+.gd-TransitionEndAuto:before {
+  content: "\eda1";
+  color: #77ce57;
+}
+
+.gd-TransitionSync:before {
+  content: "\eda8";
+  color: #e0e0e0;
+}
+
+.gd-TransitionSyncAuto:before {
+  content: "\eda9";
+  color: #77ce57;
+}
+
+.gd-Tree:before {
+  content: "\edae";
+  color: #8eef97;
+}
+
+.gd-TubeTrailMesh:before {
+  content: "\edb0";
+  color: #ffca5f;
+}
+
+.gd-Tween:before {
+  content: "\edb1";
+  color: #c38ef1;
+}
+
+.gd-VBoxContainer:before {
+  content: "\edb8";
+  color: #8eef97;
+}
+
+.gd-VehicleBody3D:before {
+  content: "\edc6";
+  color: #fc7f7f;
+}
+
+.gd-VehicleWheel3D:before {
+  content: "\edc7";
+  color: #fc7f7f;
+}
+
+.gd-VFlowContainer:before {
+  content: "\edc8";
+  color: #8eef97;
+}
+
+.gd-VideoStreamPlayer:before {
+  content: "\edc9";
+  color: #8eef97;
+}
+
+.gd-Viewport:before {
+  content: "\edca";
+  color: #e0e0e0;
+}
+
+.gd-ViewportSpeed .path1:before {
+  content: "\edcb";
+  color: rgb(0, 0, 0);
+}
+
+.gd-ViewportSpeed .path2:before {
+  content: "\edcc";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.9961;
+}
+
+.gd-VisibleOnScreenEnabler2D:before {
+  content: "\edd0";
+  color: #8da5f3;
+}
+
+.gd-VisibleOnScreenEnabler3D:before {
+  content: "\edd1";
+  color: #fc7f7f;
+}
+
+.gd-VisibleOnScreenNotifier2D:before {
+  content: "\edd2";
+  color: #8da5f3;
+}
+
+.gd-VisibleOnScreenNotifier3D:before {
+  content: "\edd3";
+  color: #fc7f7f;
+}
+
+.gd-VisualInstance3D:before {
+  content: "\edd4";
+  color: #fc7f7f;
+}
+
+.gd-VisualShaderGraphTextureUniform:before {
+  content: "\eddf";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeColorConstant .path1:before {
+  content: "\ede1";
+  color: rgb(255, 255, 255);
+  opacity: 0.1538;
+}
+
+.gd-VisualShaderNodeColorConstant .path2:before {
+  content: "\ede2";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+  opacity: 0.1538;
+}
+
+.gd-VisualShaderNodeColorConstant .path3:before {
+  content: "\ede3";
+  margin-left: -1em;
+  color: rgb(255, 0, 0);
+  opacity: 0.1538;
+}
+
+.gd-VisualShaderNodeColorConstant .path4:before {
+  content: "\ede4";
+  margin-left: -1em;
+  color: rgb(0, 0, 255);
+  opacity: 0.1538;
+}
+
+.gd-VisualShaderNodeColorConstant .path5:before {
+  content: "\ede5";
+  margin-left: -1em;
+  color: rgb(0, 255, 0);
+  opacity: 0.1538;
+}
+
+.gd-VisualShaderNodeCubemap:before {
+  content: "\edf3";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeCubemapUniform:before {
+  content: "\edf4";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeExpression:before {
+  content: "\edf7";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeFloatFunc:before {
+  content: "\edf8";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeFloatOp:before {
+  content: "\edf9";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeFloatUniform:before {
+  content: "\edfa";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeGlobalExpression:before {
+  content: "\edfb";
+  color: #35d4f4;
+}
+
+.gd-VisualShaderNodeInput:before {
+  content: "\edfc";
+  color: #f9f9f9;
+}
+
+.gd-VisualShaderNodeIntFunc:before {
+  content: "\edfd";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeIntOp:before {
+  content: "\edfe";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeIntUniform:before {
+  content: "\edff";
+  color: #cf68ea;
+}
+
+.gd-VisualShaderNodeTexture2DArrayUniform:before {
+  content: "\ee00";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeTexture3DUniform:before {
+  content: "\ee01";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeTextureUniform:before {
+  content: "\ee02";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeTextureUniformTriplanar:before {
+  content: "\ee03";
+  color: #eac968;
+}
+
+.gd-VisualShaderNodeTransformUniform:before {
+  content: "\ee06";
+  color: #ea686c;
+}
+
+.gd-VoxelGI:before {
+  content: "\ee0f";
+  color: #fc7f7f;
+}
+
+.gd-VoxelGIData:before {
+  content: "\ee10";
+  color: #e0e0e0;
+}
+
+.gd-VScrollBar:before {
+  content: "\ee11";
+  color: #8eef97;
+}
+
+.gd-VSeparator:before {
+  content: "\ee12";
+  color: #8eef97;
+}
+
+.gd-VSlider:before {
+  content: "\ee13";
+  color: #8eef97;
+}
+
+.gd-VSplitContainer:before {
+  content: "\ee14";
+  color: #8eef97;
+}
+
+.gd-Warning:before {
+  content: "\ee15";
+  color: #ffdd65;
+}
+
+.gd-Window:before {
+  content: "\ee17";
+  color: #e0e0e0;
+}
+
+.gd-World2D:before {
+  content: "\ee18";
+  color: #e0e0e0;
+}
+
+.gd-World3D:before {
+  content: "\ee19";
+  color: #e0e0e0;
+}
+
+.gd-WorldBoundaryShape3D:before {
+  content: "\ee1e";
+  color: #a2d2ff;
+}
+
+.gd-WorldEnvironment .path1:before {
+  content: "\ee1f";
+  color: rgb(252, 127, 127);
+  opacity: 0.9961;
+}
+
+.gd-WorldEnvironment .path2:before {
+  content: "\ee20";
+  margin-left: -1em;
+  color: rgb(141, 165, 243);
+}
+
+.gd-X509Certificate .path1:before {
+  content: "\ee21";
+  color: rgb(224, 224, 224);
+}
+
+.gd-X509Certificate .path2:before {
+  content: "\ee22";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-X509Certificate .path3:before {
+  content: "\ee23";
+  margin-left: -1em;
+  color: rgb(255, 95, 95);
+}
+
+.gd-XRAnchor3D:before {
+  content: "\ee24";
+  color: #fc7f7f;
+}
+
+.gd-XRCamera3D:before {
+  content: "\ee25";
+  color: #fc7f7f;
+}
+
+.gd-XRController3D:before {
+  content: "\ee26";
+  color: #fc7f7f;
+}
+
+.gd-XROrigin3D:before {
+  content: "\ee27";
+  color: #fc7f7f;
+}
+
+.gd-YSort:before {
+  content: "\ee28";
+  color: #8da5f3;
+}
+
+.gd-godotengine:before {
+  content: "\e900";
+}

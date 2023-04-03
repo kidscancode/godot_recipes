@@ -17,7 +17,7 @@ We'll leave all the sizing at the default values, meaning the capsule will be 2 
 
 Next, add a {{< gd-icon Camera3D >}}`Camera3D` as a child of the body and move it up about `1.6` m.
 
-{{% notice note %}}
+{{% notice style="note" title="Where's the body?" %}}
 For this example, we'll leave the character "bodyless" - meaning we're not adding a mesh to display for the player's body. Depending on your setup, you may or may not need to see the player's body.
 {{% /notice %}}
 

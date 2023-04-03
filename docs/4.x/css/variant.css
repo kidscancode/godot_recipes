@@ -3,12 +3,14 @@
     this is only possible because every color variant defines this variable, otherwise we would have been lost */
     --INTERNAL-PRIMARY-color: var(--PRIMARY-color, var(--MENU-HEADER-BG-color, rgba( 0, 0, 0, 0 ))); /* not --INTERNAL-MENU-HEADER-BG-color */
     --INTERNAL-SECONDARY-color: var(--SECONDARY-color, var(--MAIN-LINK-color, #486ac9)); /* not --INTERNAL-MAIN-LINK-color */
+    --INTERNAL-ACCENT-color: var(--ACCENT-color, #ffff00);
 
-    --INTERNAL-MAIN-TEXT-color: var(--MAIN-TEXT-color, #101010);
-    --INTERNAL-MAIN-TITLES-TEXT-color: var(--MAIN-TITLES-TEXT-color, #4a4a4a);
     --INTERNAL-MAIN-LINK-color: var(--MAIN-LINK-color, var(--SECONDARY-color, #486ac9)); /* not --INTERNAL-SECONDARY-color */
     --INTERNAL-MAIN-LINK-HOVER-color: var(--MAIN-LINK-HOVER-color, var(--INTERNAL-MAIN-LINK-color));
     --INTERNAL-MAIN-BG-color: var(--MAIN-BG-color, #ffffff);
+
+    --INTERNAL-MAIN-TEXT-color: var(--MAIN-TEXT-color, #101010);
+    --INTERNAL-MAIN-TITLES-TEXT-color: var(--MAIN-TITLES-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
 
     --INTERNAL-MAIN-TITLES-H1-color: var(--MAIN-TITLES-H1-color, var(--INTERNAL-MAIN-TEXT-color));
     --INTERNAL-MAIN-TITLES-H2-color: var(--MAIN-TITLES-H2-color, var(--INTERNAL-MAIN-TITLES-TEXT-color));
@@ -37,8 +39,9 @@
 
     --INTERNAL-CODE-font: var(--CODE-font, "Consolas", menlo, monospace);
 
-    --INTERNAL-MERMAID-theme: var(--CONFIG-MERMAID-theme, var(--MERMAID-theme, default));
-    --INTERNAL-SWAGGER-theme: var(--CONFIG-SWAGGER-theme, var(--SWAGGER-theme, light));
+    --INTERNAL-BROWSER-theme: var(--BROWSER-theme, light);
+    --INTERNAL-MERMAID-theme: var(--CONFIG-MERMAID-theme, var(--MERMAID-theme, var(--INTERNAL-PRINT-MERMAID-theme)));
+    --INTERNAL-SWAGGER-theme: var(--CONFIG-SWAGGER-theme, var(--SWAGGER-theme, var(--INTERNAL-PRINT-SWAGGER-theme)));
 
     --INTERNAL-TAG-BG-color: var(--TAG-BG-color, var(--INTERNAL-PRIMARY-color));
 
@@ -64,7 +67,7 @@
 
     --INTERNAL-BOX-CAPTION-color: var(--BOX-CAPTION-color, rgba( 255, 255, 255, 1 ));
     --INTERNAL-BOX-BG-color: var(--BOX-BG-color, rgba( 255, 255, 255, .833 ));
-    --INTERNAL-BOX-TEXT-color: var(--BOX-TEXT-color, rgba( 16, 16, 16, 1 ));
+    --INTERNAL-BOX-TEXT-color: var(--BOX-TEXT-color, var(--INTERNAL-MAIN-TEXT-color));
 
     --INTERNAL-BOX-BLUE-color: var(--BOX-BLUE-color, rgba( 48, 117, 229, 1 ));
     --INTERNAL-BOX-GREEN-color: var(--BOX-GREEN-color, rgba( 42, 178, 24, 1 ));
@@ -89,6 +92,19 @@
     --INTERNAL-BOX-NOTE-TEXT-color: var(--BOX-NOTE-TEXT-color, var(--INTERNAL-BOX-ORANGE-TEXT-color));
     --INTERNAL-BOX-TIP-TEXT-color: var(--BOX-TIP-TEXT-color, var(--INTERNAL-BOX-GREEN-TEXT-color));
     --INTERNAL-BOX-WARNING-TEXT-color: var(--BOX-WARNING-TEXT-color, var(--INTERNAL-BOX-RED-TEXT-color));
+
+    /* print style, values taken from relearn-light as it is used as a default print style */
+    --INTERNAL-PRINT-MAIN-BG-color: var(--PRINT-MAIN-BG-color, #ffffff);
+    --INTERNAL-PRINT-CODE-font: var(--PRINT-CODE-font, "Consolas", menlo, monospace);
+    --INTERNAL-PRINT-TAG-BG-color: var(--PRINT-TAG-BG-color, #7dc903);
+    --INTERNAL-PRINT-MAIN-font: var(--PRINT-MAIN-font, "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif);
+    --INTERNAL-PRINT-MAIN-TEXT-color: var(--PRINT-MAIN-TEXT-color, #101010);
+    --INTERNAL-PRINT-MERMAID-theme: var(--PRINT-MERMAID-theme, default);
+    --INTERNAL-PRINT-SWAGGER-theme: var(--PRINT-SWAGGER-theme, light);
+}
+
+html {
+    color-scheme: only var(--INTERNAL-BROWSER-theme);
 }
 
 body {
@@ -97,10 +113,12 @@ body {
     font-family: var(--INTERNAL-MAIN-font);
 }
 
+.footerVisitedLinks > *,
 a,
 .anchor,
 #toc-menu,
-#body a.highlight:after {
+#body a.highlight:after,
+#searchresults .autocomplete-suggestion {
     color: var(--INTERNAL-MAIN-LINK-color);
 }
 
@@ -126,28 +144,47 @@ a:hover,
     background-color: var(--INTERNAL-MENU-SEARCH-BG-color);
 }
 
-#sidebar .collapsible-menu label:after,
-#sidebar a {
+#sidebar .searchbox > :first-child,
+#sidebar .searchbox button,
+.searchbox span {
+    color: var(--INTERNAL-MENU-SEARCH-color);
+}
+
+.searchbox input::-webkit-input-placeholder,
+.searchbox input::placeholder {
+    color: var(--INTERNAL-MENU-SEARCH-color);
+}
+
+#sidebar .collapsible-menu label,
+#sidebar .select-container,
+#sidebar a,
+#sidebar button {
     color: var(--INTERNAL-MENU-SECTIONS-LINK-color);
 }
 
 #sidebar select:hover,
-#sidebar .collapsible-menu label:hover:after,
-#sidebar a:hover {
+#sidebar .collapsible-menu label:hover,
+#sidebar .select-container:hover,
+#sidebar a:hover,
+#sidebar button:hover {
     color: var(--INTERNAL-MENU-SECTIONS-LINK-HOVER-color);
 }
 
-#sidebar ul.topics > li.parent,
-#sidebar ul.topics > li.active {
+#sidebar ul.enlarge > li.parent,
+#sidebar ul.enlarge > li.active {
     background-color: var(--INTERNAL-MENU-SECTIONS-ACTIVE-BG-color);
 }
 
-#sidebar ul.topics li.active > a {
-    background-color: var(--INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+#sidebar li.active > label,
+#sidebar li.active > a {
     color: var(--INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-color);
 }
 
-#sidebar ul li.visited > a .read-icon {
+#sidebar li.active > a {
+    background-color: var(--INTERNAL-MENU-SECTION-ACTIVE-CATEGORY-BG-color);
+}
+
+#sidebar ul li > a .read-icon {
     color: var(--INTERNAL-MENU-VISITED-color);
 }
 
@@ -163,6 +200,10 @@ a:hover,
     color: var(--INTERNAL-MENU-SECTIONS-LINK-color);
 }
 
+mark {
+    background-color: var(--INTERNAL-ACCENT-color);
+}
+
 h1 {
     color: var(--INTERNAL-MAIN-TITLES-H1-color);
     font-family: var(--INTERNAL-MAIN-TITLES-H1-font);
@@ -173,7 +214,7 @@ h2 {
     font-family: var(--INTERNAL-MAIN-TITLES-H2-font);
 }
 
-h3 {
+h3, .article-subheading {
     color: var(--INTERNAL-MAIN-TITLES-H3-color);
     font-family: var(--INTERNAL-MAIN-TITLES-H3-font);
 }
@@ -236,6 +277,11 @@ div.box > .box-content {
     --VARIABLE-BOX-TEXT-color: var(--INTERNAL-MAIN-TEXT-color);
 }
 
+.cstyle.accent {
+    --VARIABLE-BOX-color: var(--INTERNAL-ACCENT-color);
+    --VARIABLE-BOX-TEXT-color: var(--INTERNAL-MAIN-TEXT-color);
+}
+
 .cstyle.blue {
     --VARIABLE-BOX-color: var(--INTERNAL-BOX-BLUE-color);
     --VARIABLE-BOX-TEXT-color: var(--INTERNAL-BOX-BLUE-TEXT-color);
@@ -287,7 +333,11 @@ pre {
     color: var(--INTERNAL-CODE-BLOCK-color);
 }
 
-div.featherlight .featherlight-content{
+table {
+    background-color: var(--INTERNAL-MAIN-BG-color);
+}
+
+.lightbox img{
     background-color: var(--INTERNAL-MAIN-BG-color);
 }
 
@@ -295,7 +345,8 @@ div.featherlight .featherlight-content{
     background-color: var(--INTERNAL-MAIN-BG-color);
 }
 
-#body a[aria-disabled="true"] {
+#body a[aria-disabled="true"],
+#searchresults .autocomplete-suggestion > .context {
     color: var(--INTERNAL-MAIN-TEXT-color);
 }
 
@@ -320,6 +371,18 @@ pre .copy-to-clipboard-button:hover {
     background-color: var(--INTERNAL-MAIN-LINK-color);
     border-color: var(--INTERNAL-MAIN-LINK-color);
     color: var(--INTERNAL-CODE-BLOCK-BG-color);
+}
+
+.expand > label {
+    color: var(--INTERNAL-MAIN-LINK-color);
+}
+
+.expand > label:hover {
+    color: var(--INTERNAL-MAIN-LINK-HOVER-color);
+}
+
+.expand > label:after {
+    background-color: var(--INTERNAL-MAIN-LINK-HOVER-color);
 }
 
 #homelinks {
@@ -351,14 +414,14 @@ pre .copy-to-clipboard-button:hover {
     background-color: var(--VARIABLE-BOX-color);
 }
 
-.btn a {
+.btn > * {
     border-color: var(--VARIABLE-BOX-color);
     color: var(--VARIABLE-BOX-CAPTION-color);
 }
 
-.btn a:hover,
-.btn a:focus,
-.btn a:active {
+.btn > *:hover,
+.btn > *:focus,
+.btn > *:active {
     background-color: var(--VARIABLE-BOX-BG-color);
     color: var(--VARIABLE-BOX-TEXT-color);
 }
@@ -373,7 +436,7 @@ pre .copy-to-clipboard-button:hover {
     background-color: var(--INTERNAL-BOX-NEUTRAL-color);
 }
 
-.btn.cstyle.transparent a {
+.btn.cstyle.transparent > * {
     --VARIABLE-BOX-color: var(--INTERNAL-BOX-NEUTRAL-color);
     --VARIABLE-BOX-TEXT-color: var(--VARIABLE-BOX-CAPTION-color);
 }
@@ -394,4 +457,17 @@ pre .copy-to-clipboard-button:hover {
 #body .tab-nav-button.active {
     background-color: var(--INTERNAL-MAIN-BG-color) !important;
     border-bottom-color: var(--INTERNAL-MAIN-BG-color) !important;
+}
+
+.badge > * {
+    border-color: var(--VARIABLE-BOX-TEXT-color);
+}
+
+.badge > .badge-content {
+    background-color: var(--VARIABLE-BOX-color);
+    color: var(--VARIABLE-BOX-CAPTION-color);
+}
+
+.badge.cstyle.transparent{
+    --VARIABLE-BOX-BG-color: var(--INTERNAL-BOX-BG-color);
 }

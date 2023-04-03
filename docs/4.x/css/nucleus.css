@@ -14,9 +14,10 @@
 @viewport {
   width: device-width; }
 html {
-  font-size: 100%;
+  font-size: 16px;
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%; }
 
 body {
   margin: 0; }
@@ -68,10 +69,6 @@ strong {
 dfn {
   font-style: italic; }
 
-mark {
-  background: #FFFF27;
-  color: #333; }
-
 sub,
 sup {
   font-size: 0.8rem;
@@ -93,7 +90,7 @@ svg:not(:root) {
   overflow: hidden; }
 
 figure {
-  margin: 1em 40px; }
+  margin: 1rem 2.5rem; }
 
 hr {
   height: 0; }
@@ -111,7 +108,8 @@ textarea {
   margin: 0; }
 
 button {
-  overflow: visible; }
+  overflow: visible;
+  padding: 0; }
 
 button,
 select {
@@ -174,33 +172,7 @@ th, td {
   padding: 0.425rem 0; }
 
 th {
-  text-align: left; }
-
-body {
-  font-size: 1rem;
-  line-height: 1.5; }
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.85rem 0 1rem 0;
-  text-rendering: optimizeLegibility; }
-
-h1 {
-  font-size: 3.25rem; }
-
-h2 {
-  font-size: 2.55rem; }
-
-h3 {
-  font-size: 2.15rem; }
-
-h4 {
-  font-size: 1.8rem; }
-
-h5 {
-  font-size: 1.4rem; }
-
-h6 {
-  font-size: 0.9rem; }
+  text-align: start; }
 
 p {
   margin: 1rem 0; }
@@ -214,7 +186,7 @@ ul, ol {
 
 blockquote {
   margin: 1.5rem 0;
-  padding-left: 0.85rem; }
+  padding-inline-start: 0.85rem; }
 
 cite {
   display: block;
@@ -271,7 +243,7 @@ textarea {
 
 input[type="checkbox"], input[type="radio"] {
   display: inline;
-  margin-right: 0.425rem; }
+  margin-inline-end: 0.425rem; }
 
 input[type="file"] {
   width: 100%; }
