@@ -106,7 +106,7 @@ func _physics_process(delta):
 
 Here's an example of the results, with a little extra visual flair such as particle smoke and explosions:
 
-<video controls src='/3.x/img/homing_missiles.webm'></video>
+<video controls src='/godot_recipes/3.x/img/homing_missiles.webm'></video>
 
 Here's the full script, including the above effects. See [related recipes](#related-recipes) for details.
 

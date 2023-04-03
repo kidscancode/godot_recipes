@@ -11,7 +11,7 @@ draft: false
 On this site you'll find a collection of solutions and examples to help you make whatever game system you need.
 
 {{% notice style="tip" title="Godot 4.0"%}}
-**Godot 4.0 is coming!**<br>
+**Godot 4.0 is out!**<br>
 Because Godot 4 brings a lot of breaking changes, we've got a whole new set of Godot Recipes just for the newest version. You can click the ribbon in the top-right to toggle the version, or click the button below:<br>
 {{% button href="/godot_recipes/4.x/" style="primary" icon="utensils" %}}Godot 4 Recipes{{% /button %}}
 {{% /notice %}}

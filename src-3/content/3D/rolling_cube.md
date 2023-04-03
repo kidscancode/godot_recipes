@@ -9,7 +9,7 @@ ghcommentid: 101
 
 You want to make a rolling cube in 3D.
 
-<video width="500" controls src="godot_recipes/3.x/img/rolling_cube.webm"></video>
+<video width="500" controls src="/godot_recipes/3.x/img/rolling_cube.webm"></video>
 
 ## Solution
 
