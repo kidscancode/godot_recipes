@@ -78,9 +78,9 @@ collision.collider.apply_central_impulse(-collision.normal * velocity.length() *
 
 Experiment to find the settings that work for your particular game.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [kinematic_vs_rigid.zip](/godot_recipes/3.x/files/kinematic_vs_rigid.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

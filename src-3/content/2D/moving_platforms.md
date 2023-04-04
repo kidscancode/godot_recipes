@@ -50,9 +50,9 @@ You're done! Instance some platforms in your level/world and try them out:
 
 <video controls src="/godot_recipes/3.x/img/moving_plats_03.webm"></video>
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [moving_platforms.zip](/godot_recipes/3.x/files/moving_platforms.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

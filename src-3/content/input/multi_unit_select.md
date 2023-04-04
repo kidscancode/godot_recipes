@@ -126,9 +126,9 @@ The `else` clause here triggers if we click the mouse when `selected` is greater
 
 This technique can be expanded to a wide range of RTS or other game styles. Download the full project below and use it as a base for your own game.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [rts_movement.zip](/godot_recipes/3.x/files/rts_movement.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

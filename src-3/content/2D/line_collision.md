@@ -65,9 +65,9 @@ func _ready():
         new_shape.shape = rect
 ```
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download an example project here: [2d_line_collision.zip](/godot_recipes/3.x/files/2d_line_collision.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 
 ## Related recipes

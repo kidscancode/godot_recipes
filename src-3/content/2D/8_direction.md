@@ -76,9 +76,6 @@ func _process(delta):
     $AnimatedSprite.animation = current_animation + str(a)
 ```
 
-{{% notice note %}}
-{{% /notice %}}
-
 ## Related recipes
 
 - [Top-down Movement](/godot_recipes/3.x/2d/topdown_movement/)

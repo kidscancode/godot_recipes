@@ -74,10 +74,10 @@ Below you can download an example project showing the use of the audio manager n
 ![alt](/godot_recipes/3.x/img/audio_mgr_02.png)
 
 At the top, you can see the audio manager's live statistics.
-
+<!--
 {{% notice note %}}
 Download the project file here: [audio_manager.zip](/godot_recipes/3.x/files/audio_manager.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

@@ -274,9 +274,9 @@ At this point, we have a large number of settings that control the car's behavio
 
 ![alt](/godot_recipes/3.x/img/car_sliders.png)
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [car_steering.zip](/godot_recipes/3.x/files/car_steering.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

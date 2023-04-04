@@ -57,9 +57,9 @@ Note that since `interpolate_with()` operates on the `transform`, it can be used
 
 That's it! Use this handy method to rotate your 3D objects, and stop thinking about angles!
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [3d_rotate.zip](/godot_recipes/3.x/files/3d_rotate.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

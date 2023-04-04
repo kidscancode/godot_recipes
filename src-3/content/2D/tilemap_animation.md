@@ -48,7 +48,7 @@ Now you can select the tile in your `TileMap` and draw with it just like any oth
 
 ![alt](/godot_recipes/3.x/img/anim_tile_draw.gif)
 
-You can download a complete project of this example: [animated_tiles.zip](/godot_recipes/3.x/files/animated_tiles.zip)
+<!-- You can download a complete project of this example: [animated_tiles.zip](/godot_recipes/3.x/files/animated_tiles.zip) -->
 
 ## Related Recipes
 

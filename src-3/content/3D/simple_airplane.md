@@ -284,9 +284,9 @@ func get_input(delta):
 
 You can adapt this technique to a variety of arcade-style flying games. For example, for mouse control, you could use the `relative` property of `InputEventMouseMotion` to set the pitch and turn input.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [airplane_test.zip](/godot_recipes/3.x/files/airplane_test.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

@@ -93,9 +93,9 @@ That's it - run your scene and try it out:
 
 <video controls src="/godot_recipes/3.x/img/3d_shoot_03.webm"></video>
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [3d_shooting.zip](/godot_recipes/3.x/files/3d_shooting.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

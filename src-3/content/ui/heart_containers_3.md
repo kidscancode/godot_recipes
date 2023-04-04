@@ -108,9 +108,9 @@ Here's an example using each of the bar modes:
 
 Use this heart bar setup as a basis for your own HUD. This technique can be expanded to support a wide variety of information displays.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [heart_bars.zip](/godot_recipes/3.x/files/heart_bars.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

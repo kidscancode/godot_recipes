@@ -98,9 +98,9 @@ And everything is reset when the timer runs out. Put several buttons in an {{< g
 
 ![alt](/godot_recipes/3.x/img/cooldown_03.gif)
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [cooldown_button.zip](/godot_recipes/3.x/files/cooldown_button.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

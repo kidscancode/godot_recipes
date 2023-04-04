@@ -109,9 +109,9 @@ $FCTManager.show_value(dmg, crit)
 
 Optimization: in the case where you have a very large number of enemies/bullets, you may experience some performance impact from repeatedly spawning and freeing floating text. In this case, you can spawn a fixed number of text objects in the manager, and show/hide them rather than freeing them at the end of the animation.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [floating_text.zip](/godot_recipes/3.x/files/floating_text.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 {{% notice note %}}
 Art in this demo by [Luis Zuno](https://www.patreon.com/ansimuz)

@@ -1,6 +1,5 @@
 +++
 title = "Getting Started"
-date = 2019-04-09T20:23:50-07:00
 weight = 1
 chapter = true
 pre = "<i class='fas fa-feather-alt fa-fw'></i>&nbsp"
@@ -12,7 +11,7 @@ pre = "<i class='fas fa-feather-alt fa-fw'></i>&nbsp"
 
 Have you downloaded Godot yet? You can get it here:
 
-[https://godotengine.org]([https://link](https://godotengine.org))
+[https://godotengine.org](https://godotengine.org)
 
 {{% notice style="info" title="Updating to Godot 4.0" %}}
 We're working on a new version of Godot 101 for Godot 4.0. In the meantime, we recommend new learners stick with Godot 3.x, which has a lot more resources and learning materials available.

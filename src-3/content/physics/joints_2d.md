@@ -59,7 +59,7 @@ These properties control the groove's behavior:
 - _Length_: The groove's length. The attached bodies can't move past this maximum distance.
 - _Initial Offset_: Starting "position" along the groove.
 
-You can download an example project to play with these joints here: [physics_joints.zip](/godot_recipes/3.x/files/physics_joints.zip)
+<!-- You can download an example project to play with these joints here: [physics_joints.zip](/godot_recipes/3.x/files/physics_joints.zip) -->
 
 ![alt](/godot_recipes/3.x/img/joints_demo.png)
 

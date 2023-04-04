@@ -263,9 +263,9 @@ Some other things you might want to add:
 * Clicking on a marker to get info about it.
 * Use a picture of your map as the minimap background instead of the grid.
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [minimap.zip](/godot_recipes/3.x/files/minimap.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

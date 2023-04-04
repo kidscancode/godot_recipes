@@ -28,4 +28,4 @@ If you find that you're struggling with the programming side of things, see thes
 
 Download the project code here:
 
-[https://github.com/godotrecipes/8_direction_animation](https://github.com/godotrecipes/classic_shmup)
+[https://github.com/godotrecipes/classic_shmup](https://github.com/godotrecipes/classic_shmup)

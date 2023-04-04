@@ -154,9 +154,9 @@ func remove_target(t):
         targets.erase(t)
 ```
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [multitarget_camera2d.zip](/godot_recipes/3.x/files/multitarget_camera2d.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

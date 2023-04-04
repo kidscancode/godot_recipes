@@ -137,7 +137,7 @@ func move_tween(dir):
 
 Experiment with different tween transitions for different movement effects.
 
-You can download a complete project of this example: [grid_based_movement.zip](/godot_recipes/3.x/files/grid_based_movement.zip)
+<!-- You can download a complete project of this example: [grid_based_movement.zip](/godot_recipes/3.x/files/grid_based_movement.zip) -->
 
 ## Related Recipes
 

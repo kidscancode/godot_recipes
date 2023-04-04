@@ -113,9 +113,9 @@ Here's the end result:
 
 ![alt](/godot_recipes/3.x/img/ui_radial_menu_02.gif)
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [ui_radial_menu.zip](/godot_recipes/3.x/files/ui_radial_menu.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

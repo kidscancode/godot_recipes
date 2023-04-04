@@ -178,9 +178,9 @@ func _unhandled_input(event):
                 last_drag_distance = drag_distance
 ```
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [2d_touch_camera.zip](/godot_recipes/3.x/files/2d_touch_camera.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

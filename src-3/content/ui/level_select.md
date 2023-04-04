@@ -188,9 +188,9 @@ Now everything should be working as expected.
 
 Download the example project to see the whole thing in action, including some tweens for the scrolling action (tweens make everything better).
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [level_select.zip](/godot_recipes/3.x/files/level_select.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

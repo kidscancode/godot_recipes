@@ -86,9 +86,9 @@ This code gives you a starting point for building your own platformer controller
 
 Download an example project using this recipe:
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [platform_character.zip](/godot_recipes/3.x/files/platform_character.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related Recipes
 

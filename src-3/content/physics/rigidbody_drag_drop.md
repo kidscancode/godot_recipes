@@ -94,9 +94,9 @@ Lastly, when the mouse is released during dragging, we can perform the reverse a
 
 <video controls src="/godot_recipes/3.x/img/rbody_drag.webm"></video>
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [rigidbody_drag_and_drop.zip](/godot_recipes/3.x/files/rigidbody_drag_and_drop.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

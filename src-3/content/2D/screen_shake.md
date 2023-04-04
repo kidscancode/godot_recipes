@@ -122,9 +122,9 @@ offset.y = max_offset.y * amount * noise.get_noise_2d(noise.seed*3, noise_y)
 
 ![alt](/godot_recipes/3.x/img/shake_noise01.gif)
 
-{{% notice note %}}
+<!-- {{% notice note %}}
 Download the project file here: [screen_shake.zip](/godot_recipes/3.x/files/screen_shake.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 

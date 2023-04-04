@@ -153,10 +153,10 @@ func explode():
     yield($AnimationPlayer, "animation_finished")
     queue_free()
 ```
-
+<!--
 {{% notice note %}}
 Download the project file here: [homing_missiles.zip](/godot_recipes/3.x/files/homing_missiles.zip)
-{{% /notice %}}
+{{% /notice %}} -->
 
 ## Related recipes
 
