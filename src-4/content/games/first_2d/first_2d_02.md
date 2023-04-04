@@ -1,7 +1,7 @@
 ---
 title: "Designing the Player Scene"
 weight: 2
-draft: true
+draft: false
 pre: "02. "
 ---
 

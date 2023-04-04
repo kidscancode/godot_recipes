@@ -1,7 +1,7 @@
 ---
 title: "Main Scene"
 weight: 6
-draft: true
+draft: false
 pre: "06. "
 ---
 

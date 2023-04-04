@@ -1,7 +1,7 @@
 ---
 title: "Project Setup"
 weight: 1
-draft: true
+draft: false
 pre: "01. "
 ---
 

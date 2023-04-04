@@ -1,7 +1,7 @@
 ---
 title: "Homing missile"
 weight: 4
-draft: true
+draft: false
 ---
 
 ## Problem

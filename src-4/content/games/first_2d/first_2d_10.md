@@ -1,7 +1,7 @@
 ---
 title: "Starting and Ending the Game"
 weight: 10
-draft: true
+draft: false
 pre: "10. "
 ---
 

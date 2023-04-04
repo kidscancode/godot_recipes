@@ -40,7 +40,7 @@ This value multiplies the gravity applied to the body. Total gravity is the sum 
 
 Using this value you can get or set the total force applied to the body.
 
-* Applied Torque ('applied_torque`)
+* Applied Torque (`applied_torque`)
 
 Using this value you can get or set the total torque applied to the body.
 

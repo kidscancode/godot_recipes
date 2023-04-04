@@ -1,7 +1,7 @@
 ---
 title: "Enemies"
 weight: 7
-draft: true
+draft: false
 pre: "07. "
 ---
 

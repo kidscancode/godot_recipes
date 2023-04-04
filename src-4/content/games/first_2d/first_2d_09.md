@@ -1,7 +1,7 @@
 ---
 title: "UI and Score"
 weight: 9
-draft: true
+draft: false
 pre: "09. "
 ---
 

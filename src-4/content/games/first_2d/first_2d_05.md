@@ -1,7 +1,7 @@
 ---
 title: "Shooting"
 weight: 5
-draft: true
+draft: false
 pre: "05. "
 ---
 

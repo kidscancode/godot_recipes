@@ -1,8 +1,8 @@
 ---
 title: "Your First 2D Game"
-weight: 5
+weight: 1
 chapter: true
-draft: true
+draft: false
 pre: "<i class='fa fa-rocket fa-fw'></i>&nbsp"
 ---
 
@@ -14,7 +14,7 @@ In this series, we'll start with the basics and build a classic, old-school spac
 
 Here's a screenshot of the finished game:
 
-![alt](/godot_recipes/3.x/img/circle_jump.gif)
+![alt](/godot_recipes/4.x/img/2d_101_screenshot.png)
 
 In each part of the series, we'll build a piece of the game, adding features and explaining the process along the way.
 
@@ -24,4 +24,8 @@ If you find that you're struggling with the programming side of things, see thes
 * [Godot Official Documentation](https://docs.godotengine.org/en/latest/getting_started/step_by_step/index.html) - official tutorial resources
 {{% /notice %}}
 
-All source code for the game is available on [GitHub](https://github.com/kidscancode/circle_jump).
+## <i class="fas fa-code-branch"></i> Download This Project on <i class='fab fa-github'></i> GitHub
+
+Download the project code here:
+
+[https://github.com/godotrecipes/8_direction_animation](https://github.com/godotrecipes/classic_shmup)

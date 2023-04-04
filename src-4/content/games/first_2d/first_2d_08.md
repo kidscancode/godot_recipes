@@ -1,7 +1,7 @@
 ---
 title: "Enemy Shooting"
 weight: 8
-draft: true
+draft: false
 pre: "08. "
 ---
 

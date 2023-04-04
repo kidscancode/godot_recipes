@@ -1,7 +1,7 @@
 ---
 title: "Bullet Scene"
 weight: 4
-draft: true
+draft: false
 pre: "04. "
 ---
 
