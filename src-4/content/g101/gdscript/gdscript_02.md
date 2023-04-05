@@ -80,6 +80,11 @@ func _ready():
 
 Here, we're first setting `velocity` to point to the right, and then rotating it a random amount. Then we multiply that by another random number to give it a random speed. Try running the scene a couple of times and you'll see the sprite go in different directions.
 
+
+
+
+
+
 ```gdscript
 func _process(delta):
     position += velocity * delta

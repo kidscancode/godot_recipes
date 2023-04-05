@@ -1,7 +1,7 @@
 ---
 title: "Getting started"
 weight: 1
-draft: true
+draft: false
 ghcommentid: 90
 pre: "01. "
 ---
