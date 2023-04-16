@@ -1,5 +1,5 @@
 ---
-title: "Quick Arcade-style Car"
+title: "Arcade-style Car"
 weight: 12
 draft: true
 ghcommentid: 82
@@ -13,7 +13,7 @@ You want to make an arcade-style car game, so you're looking for simplicity over
 
 ## Solution
 
-There are a lot of ways to make a driving game. Different games need different levels of realism. If you're trying to make a light, arcade-style car, you don't need all of the features that Godot's {{< gd-icon VehicleBody3D >}}`VehicleBody` node provides, such as supension, independently modeled wheels, etc.
+There are a lot of ways to make a driving game. Different games need different levels of realism. If you're trying to make a light, arcade-style car, you don't need all of the features that Godot's {{< gd-icon VehicleBody3D >}}`VehicleBody3D` node provides, such as supension, independently modeled wheels, etc.
 
 Instead, we're going to use a single {{< gd-icon RigidBody3D >}}`RigidBody3D` sphere to handle the driving physics. The sphere will be invisible, and the car mesh will be placed at the sphere's location, making it look like it's the car that's driving.
 

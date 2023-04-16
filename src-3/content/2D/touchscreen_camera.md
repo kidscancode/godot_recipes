@@ -124,7 +124,7 @@ if event is InputEventScreenDrag:
 
 Here we handle the case of `2` active drag events. `drag_distance` tells us how far apart they are, and we can compare it with `last_drag_distance` to see if it's larger or smaller. `zoom_speed` is a factor, so we'll be multiplying the zoom by `1.05` (for zooming in) and `0.95` (for zooming out). We can then clamp the resulting zoom so that it doesn't exceed our designated limits, and then assign the new `zoom` level. Finally, we update `last_drag_distance` for the next event.
 
-<video controls src="/godot_recipes/img/touch_camera_02.webm"></video>
+<video controls src="/godot_recipes/3.x/img/touch_camera_02.webm"></video>
 
 ## Wrapping up
 

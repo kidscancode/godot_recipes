@@ -51,6 +51,13 @@ The first thing this function does is check if the player is allowed to shoot. I
 
 If the player is allowed to shoot, then we set the flag to `false`, and start the cooldown timer. Then we create a new bullet and add it to the game, calling its `start()` function to make sure it's placed in the correct position (just above the player's ship).
 
+We can call this function when the player is pressing the key. Add this to the end of the `_process()` function, after the `position.clamp()` line:
+
+```gdscript
+if Input.is_action_pressed("shoot"):
+    shoot()
+```
+
 We'll also need to connect the `timeout` signal of `GunCooldown`.
 
 ```gdscript

@@ -30,7 +30,7 @@ Here's the node setup:
     * {{< gd-icon CollisionShape2D >}}`CollisionShape2D`
     * {{< gd-icon VisibleOnScreenNotifier2D >}}`VisibleOnScreenNotifier2D`
 
-From the asset pack folder, drop the `Player_beam (16 x 16).png` image on the **Texture** of the {{< gd-icon Sprite2D >}}`Sprite2D`.
+From the asset pack folder, drop the `Player_charged_beam (16 x 16).png` image on the **Texture** of the {{< gd-icon Sprite2D >}}`Sprite2D`.
 
 As with the ship image, there are multiple versions here, so set the ***Hframes** to `2` so we'll only see one at a time.
 

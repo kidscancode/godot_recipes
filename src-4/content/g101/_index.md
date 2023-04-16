@@ -15,4 +15,8 @@ before, or if you’re just new to Godot, this is the place to start.
 
 #### In this section:
 
-{{% children  sort="weight" depth="2" %}}
+{{% children  sort="weight" depth="1" %}}
+
+#### See also:
+
+* [Game Tutorials/Your First 2D Game](/godot_recipes/4.x/games/first_2d)

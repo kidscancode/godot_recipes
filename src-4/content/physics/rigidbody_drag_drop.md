@@ -80,7 +80,7 @@ func _ready():
 
 Next,  we have the function we connect the signal to. The connected function sets `held_object` so that we know something is currently being dragged, and calls the body's `pickup()` method.
 
-```
+```gdscript
 func _on_pickable_clicked(object):
     if !held_object:
         object.pickup()

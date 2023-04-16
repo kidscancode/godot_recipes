@@ -1,6 +1,6 @@
 +++
 title = "Introduction to GDScript"
-weight = 5
+weight = 2
 chapter = true
 pre = "<i class='fas fa-scroll fa-fw'></i>&nbsp"
 +++
