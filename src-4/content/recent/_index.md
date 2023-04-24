@@ -6,6 +6,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Migrating from 3.x](/godot_recipes/4.x/basics/migrating/)
 * [Shooting with Raycasts](/godot_recipes/4.x/3d/shooting_raycasts/)
 * [Basic FPS Character](/godot_recipes/4.x/3d/basic_fps/)
 * [RigidBody2D: Drag and Drop](/godot_recipes/4.x/physics/rigidbody_drag_drop/)

@@ -138,7 +138,7 @@ position += velocity * delta
 
 # Kinematic body movement code:
 velocity += gravity * delta
-velocity = move_and_slide(velocity)
+move_and_slide()
 ```
 
 If you don't use `delta` when applying acceleration to your velocity, then your acceleration will be subject to fluctuations in frame rate. This can have a_much more subtle effect on movement - it will be inconsistent, but much more difficult to diagnose.
