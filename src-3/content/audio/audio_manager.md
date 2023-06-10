@@ -63,8 +63,7 @@ AudioStreamManager.play("res://path/to/sound")
 ```
 
 {{% notice note %}}
-This audio manager is adapted with thanks from [SFXPlayer by TheDuriel]
-(https://github.com/TheDuriel/DurielsGodotUtilities).
+This audio manager is adapted with thanks from [SFXPlayer by TheDuriel](https://github.com/TheDuriel/DurielsGodotUtilities).
 {{% /notice %}}
 
 ### Example project
