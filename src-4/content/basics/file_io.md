@@ -89,7 +89,7 @@ func load_character_data():
     return null
 
 func save_character_data(data):
-    ResourceSaver.save(save_path, data)
+    ResourceSaver.save(data, save_path)
 ```
 
 Resources can contain subresources, so you could have your player's inventory Resource included as well, and so on.
