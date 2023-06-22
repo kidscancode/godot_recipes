@@ -1,8 +1,7 @@
 ---
 title: "Arcade-style Car"
 weight: 12
-draft: true
-ghcommentid: 82
+draft: false
 ---
 
 ## Problem
@@ -32,15 +31,15 @@ You can use keyboard input, game controller, or both. However, we recommend goin
 
 ### Node setup
 
-The car is made with two separate nodes: a {{< gd-icon RigidBody3D >}}`RigidBody3D` sphere for the physics, and a {{< gd-icon MeshInstance3D >}}`MeshInstance3D` to display the car body. Here's the scene layout:
+The car is made with two main nodes: a {{< gd-icon RigidBody3D >}}`RigidBody3D` sphere for the physics, and a {{< gd-icon MeshInstance3D >}}`MeshInstance3D` to display the car body. Here's the scene layout:
 
 ```
-Car: {{< gd-icon RigidBody3D >}} RigidBody3D
-    {{< gd-icon CollisionShape3D >}}`CollisionShape3D`
-    {{< gd-icon Meshinstance3D >}} `CarMesh` (Imported model)
+{{< gd-icon RigidBody3D >}} RigidBody3D (Car)
+     {{< gd-icon CollisionShape3D >}} CollisionShape3D (Sphere)
+     {{< gd-icon Node3D >}} CarMesh (Imported model)
 ```
 
-Here's how these nodes will interact: pressing "accelerate" will apply a force on the {{< gd-icon RigidBody3D >}}`Car` in the direction the {{< gd-icon MeshInstance3D >}}`CarMesh` is facing, while the turning inputs will rotate the {{< gd-icon MeshInstance3D >}}`CarMesh`. As the ball rolls, we'll set the mesh's position to align with the sphere (ignoring the ball's rotation).
+Here's how these nodes will interact: pressing "accelerate" will apply a force on the {{< gd-icon RigidBody3D >}}`RigidBody3D` in the direction the {{< gd-icon MeshInstance3D >}}`CarMesh` is facing, while the turning inputs will rotate the {{< gd-icon MeshInstance3D >}}`CarMesh`. As the ball rolls, it will carry the car mesh along with it (we'll ignore the ball's rotation).
 
 #### CarMesh
 
@@ -57,7 +56,7 @@ If you use the GLTF models, you shouldn't have adjust anything in the import set
 
 Here's what the node tree looks like when importing the "suv" model:
 
-![alt](/godot_recipes/4.x/img/3d_sphere_car_04.png)
+![alt](/godot_recipes/4.x/img/3d_sphere_car_04a.png)
 
 Note that the wheels & body are separate meshes. This will make it easy to add some visual appeal - like turning the wheels when steering.
 
@@ -68,14 +67,14 @@ Add a sphere shape to the {{< gd-icon CollisionShape3D >}}`CollisionShape3D`. We
 Here's how to adjust the settings on the body:
 
 - **Angular Damp: `10`** - this property will have a huge effect on the driving feel. A higher value will bring the car to a stop much faster.
-- **Gravity Scale: `5`** - Default gravity in Godot (`9.8`) feels a bit floaty, especially when going for an action feel. This will really matter if you plan to have jumps, hills, etc. in your world. You can set this in the **Project Settings** instead, if you prefer.
+- **Gravity Scale: `5`** - Default gravity in Godot (`9.8`) feels a bit floaty, especially when going for an action feel. This will really matter if you plan to have jumps, hills, etc. in your world. You can set this globally in the **Project Settings** instead, if you prefer.
 - **Physics Material/Bounce: `0.1`** - Playing around with this value can be a lot of fun. Be careful going above 0.5, though!
 
-For the demo, we've also added a mesh to the collision shape for debugging purposes. You don't need this, but it helps when troubleshooting to have a visual of the ball rolling.
+For the demo, we've also added a spherical mesh to the collision shape for debugging purposes. You don't need this, but it helps when troubleshooting to have a visual of the ball rolling.
 
 #### RayCast
 
-Finally, add a {{< gd-icon RayCast3D >}}`RayCast3D` node as a child of the {{< gd-icon MeshInstance3D >}}`CarMesh`. Set its **Target Position** to `(0, -1, 0)`. As always, don't forget to check the _Enabled_ box.
+Finally, add a {{< gd-icon RayCast3D >}}`RayCast3D` node as a child of the {{< gd-icon MeshInstance3D >}}`CarMesh`. Set its **Target Position** to `(0, -1, 0)`.
 
 ![alt](/godot_recipes/4.x/img/3d_sphere_car_03.png)
 
@@ -90,11 +89,11 @@ We'll begin the script with some node references we'll need:
 ```gdscript
 extends RigidBody3D
 
-@onready var car_mesh = $suv
-@onready var body_mesh = $suv/suv2
-@onready var ground_ray = $suv/RayCast3D
-@onready var right_wheel = $suv/suv2/wheel_frontRight
-@onready var left_wheel = $suv/suv2/wheel_frontLeft
+@onready var car_mesh = $CarMesh
+@onready var body_mesh = $CarMesh/suv2
+@onready var ground_ray = $CarMesh/RayCast3D
+@onready var right_wheel = $CarMesh/suv2/wheel_frontRight
+@onready var left_wheel = $CarMesh/suv2/wheel_frontLeft
 ```
 
 Next, some variables configuring the car's behavior. See the comments describing each one's purpose.
@@ -103,7 +102,7 @@ Next, some variables configuring the car's behavior. See the comments describing
 # Where to place the car mesh relative to the sphere
 var sphere_offset = Vector3.DOWN
 # Engine power
-var acceleration = 40.0
+var acceleration = 35.0
 # Turn amount, in degrees
 var steering = 18.0
 # How quickly the car turns
@@ -116,7 +115,7 @@ var speed_input = 0
 var turn_input = 0
 ```
 
-You can `export` these if you'd like to adjust them from the Inspector.
+You can `@export` these if you'd like to adjust them from the Inspector.
 
 In `_physics_process()` we add a force to the body based on the direction the car is pointing, as well as keeping the car mesh positioned at the ball's position:
 
@@ -163,14 +162,17 @@ You should try playing again at this point. You'll be able to control the car an
 
 #### 1. Align with slopes
 
+**FIX THIS**
+
 If you've tried driving on a slope, you've seen that the car mesh doesn't tilt at all, it always remains level. That looks unnatural, so let's use the process described in [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/) to fix that.
 
 Add this code after rotating the mesh in `_process()`:
 
 ```gdscript
+if ground_ray.is_colliding():
     var n = ground_ray.get_collision_normal()
-    var xform = align_with_y(car_mesh.global_transform, n.normalized())
-    car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10 * delta)
+    var xform = align_with_y(car_mesh.global_transform, n)
+    car_mesh.global_transform = car_mesh.global_transform.interpolate_with(xform, 10.0 * delta)
 ```
 
 And the align function (notice how we're using `orthonormalized()` again?):
@@ -180,7 +182,7 @@ func align_with_y(xform, new_y):
     xform.basis.y = new_y
     xform.basis.x = -xform.basis.z.cross(new_y)
     xform.basis = xform.basis.orthonormalized()
-    return xform
+    return xform.orthonormalized()
 ```
 
 #### 2. Turn the wheels
@@ -188,8 +190,8 @@ func align_with_y(xform, new_y):
 It looks nice if the front wheels turn when you steer. Add some references to the front wheel meshes at the top of the script:
 
 ```gdscript
-onready var right_wheel = $CarMesh/tmpParent/suv/wheel_frontRight
-onready var left_wheel = $CarMesh/tmpParent/suv/wheel_frontLeft
+@onready var right_wheel = $CarMesh/suv2/wheel_frontRight
+@onready var left_wheel = $CarMesh/suv2/wheel_frontLeft
 ```
 
 And right after getting input, add the following:
@@ -200,11 +202,11 @@ And right after getting input, add the following:
     left_wheel.rotation.y = rotate_input
 ```
 
-![alt](/godot_recipes/3.x/img/3d_sphere_car_05.gif)
+![alt](/godot_recipes/4.x/img/3d_sphere_car_05.gif)
 
 #### 3. Tilt the body
 
-This one adds a *ton* of visual appeal. We're going to tilt the car's body based on the speed of the turn. Add a variable at the top of the script:
+This one adds lots of visual appeal. We're going to tilt the car's body based on the speed of the turn. Add a variable at the top of the script:
 
 ```gdscript
 var body_tilt = 35
@@ -222,34 +224,19 @@ body_mesh.rotation.z = lerp(body_mesh.rotation.z, t, 10 * delta)
 
 Observe the difference:
 
-![alt](/godot_recipes/3.x/img/3d_sphere_car_06.gif)
-
-#### 4. Smoke
-
-Finally, the skid looks much better with a little smoke coming from the tires. Here's an example using a {{< gd-icon GPUParticles3D >}}`Particles` node and sphere shapes:
-
-<video width="500" controls src="/godot_recipes/3.x/img/3d_sphere_car_07.webm"></video>
-
-## Wrapping up
-
-
-{{% notice note %}}
-Download the project file here: [https://github.com/kidscancode/3d_car_sphere](https://github.com/kidscancode/3d_car_sphere)
-{{% /notice %}}
+![alt](/godot_recipes/4.x/img/3d_sphere_car_06.gif)
 
 ### Credits
 >
 > The demo project seen here uses the following open-source/creative commons assets:
 > - Cars: [Kenney Car Kit](https://kenney.nl/assets/car-kit) by Kenney
 > - Track: [Modular Racekart Track](https://fertile-soil-productions.itch.io/modular-racekart-track-hilly-terrain-theme) by Keith at Fertile Soil Productions
-> - Outline shader: [Godot Post Process Outlines](https://github.com/jocamar/Godot-Post-Process-Outlines) by jocamar
 
+
+## <i class="fas fa-code-branch"></i> Download This Project
+
+Download the project code here: [https://github.com/godotrecipes/3d_car_sphere](https://github.com/godotrecipes/3d_car_sphere)
 
 ## Related recipes
 
 - [Input Actions](http://kidscancode.org/godot_recipes/input/input_actions/)
-- [KinematicBody: Align with Surface](/godot_recipes/3.x/3d/3d_align_surface/)
-
-#### Like video?
-
-{{< youtube LqLchhxMldM >}}
