@@ -6,6 +6,8 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [CharacterBody3D: Align with Surface](/godot_recipes/4.x/3d/3d_align_surface/)
+* [CharacterBody3D: Movement](/godot_recipes/4.x/3d/characterbody3d_examples/)
 * [Arcade-style Car](/godot_recipes/4.x/3d/3d_sphere_car/)
 * [Pathfinding on a 2D Grid](/godot_recipes/4.x/2d/grid_pathfinding/)
 * [Migrating from 3.x](/godot_recipes/4.x/basics/migrating/)
