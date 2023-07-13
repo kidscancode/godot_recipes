@@ -54,7 +54,7 @@ Testing the movement, we see this:
 
 ### Keyboard input
 
-If you're using keyboard controls instead of mouse, you can get the angle of movement based on which keys are being held. The rest of the proecess works in the same way.
+If you're using keyboard controls instead of mouse, you can get the angle of movement based on which keys are being held. The rest of the process works in the same way.
 
 ```gdscript
 func _process(delta):
@@ -66,7 +66,7 @@ func _process(delta):
         current_animation = "run"
     velocity = input_dir * speed
     move_and_slide()
-    $AnimatedSprite.animation = current_animation + str(a)
+    $AnimatedSprite2D.play(current_animation + str(angle))
 ```
 
 

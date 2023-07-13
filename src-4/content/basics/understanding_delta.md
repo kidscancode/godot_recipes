@@ -129,7 +129,7 @@ Note that we're multiplying by our timestep each frame to update both `velocity`
 
 #### Using kinematic functions
 
-In the above examples, we've used a `Sprite` to keep things simple, updating the `position` every frame. If you're using a kinematic body (in 2D or 3D), you'll instead be using one of its movement methods. Specifically in the case of `move_and_slide()`, there tends to be some confusion, because it automatically applies `delta` to the movement vector. This means you won't multiply your velocity by `delta` . But you will still need to apply it on the acceleration. For example:
+In the above examples, we've used a `Sprite` to keep things simple, updating the `position` every frame. If you're using a kinematic body (in 2D or 3D), you'll instead be using one of its movement methods. Specifically in the case of `move_and_slide()`, there tends to be some confusion, because it uses the velocity vector, not the position. This means you won't multiply your velocity by `delta` to find distance - the function does that for you. But you will still need to apply it on any *other* calculations, such as the acceleration. For example:
 
 ```gdscript
 # Sprite movement code:
