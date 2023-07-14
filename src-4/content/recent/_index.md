@@ -6,6 +6,7 @@ pre = "<i class='fas fa-newspaper fa-fw'></i>&nbsp"
 
 Here you can find the most recently added recipes:
 
+* [Multitarget Camera](/godot_recipes/4.x/2d/multitarget_camera/)
 * [Character to Rigid Body Interaction](/godot_recipes/4.x/physics/character_vs_rigid/)
 * [CharacterBody3D: Align with Surface](/godot_recipes/4.x/3d/3d_align_surface/)
 * [CharacterBody3D: Movement](/godot_recipes/4.x/3d/characterbody3d_examples/)
