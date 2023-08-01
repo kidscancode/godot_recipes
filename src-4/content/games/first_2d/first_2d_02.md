@@ -23,7 +23,7 @@ The ship needs to:
 
 * _Display an image_. {{< gd-icon Sprite2D >}}`Sprite2D` is the node for this. Since it's also a {{< gd-icon Node2D >}}`Node2D`, we'd still be able to move it around.
 
-* _Detect getting hit_. The enemies will be shooting and flying around on the screen, so we'll need to know when ship is hit. We don't have a need for solid objects - they're not going to bounce off each other or transfer momentum - we just need to know when they touch. For this, an {{< gd-icon Area2D >}}`Area2D` would be perfect. It can detect touching other objects, has positional properties, but it has no appearance of its own.
+* _Detect getting hit_. The enemies will be shooting and flying around on the screen, so we'll need to know when the ship is hit. We don't have a need for solid objects - they're not going to bounce off each other or transfer momentum - we just need to know when they touch. For this, an {{< gd-icon Area2D >}}`Area2D` would be perfect. It can detect touching other objects, has positional properties, but it has no appearance of its own.
 
 Looking at this list, the {{< gd-icon Area2D >}}`Area2D` provides the main functionality. We can attach a {{< gd-icon Sprite2D >}}`Sprite2D` to display the ship image, and then we'll have everything we need.
 

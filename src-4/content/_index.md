@@ -20,7 +20,7 @@ This site has lots of learning material for Godot 3 - but not all of it has been
 
 Are you ready to learn game development? Whether it's as a hobby or working towards your dream career, there's never been a better time to get started. Modern programming languages and tools have made it easier than ever to build high-quality games and distribute them to the world. One of these tools is the Godot game engine. For beginners, it offers a friendly way to learn gamedev techniques. For experienced developers, it's a powerful, customizable and _open_ tool for bringing your visions to life.
 
-![alt](/godot_recipes/4.x/img/godot3_logo.png?width=250)
+![alt](/godot_recipes/4.x/img/godot3_logo.png?width=400px)
 
 On this site you'll find a gentle introduction to the Godot game engine, as well as a wide variety of gamedev tips and techniques. Feel free to browse the categories in the sidebar and see what catches your interest.
 

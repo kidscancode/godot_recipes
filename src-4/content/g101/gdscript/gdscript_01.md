@@ -21,12 +21,12 @@ You'll often read comments to the effect that "GDScript is based on Python". Tha
 {{% notice warning %}}
 Many tutorials (and Godot in general) assume that you have at least *some* programming experience already. If you've never coded before, you'll likely find learning Godot to be a challenge. Learning a game engine is a large task
 on its own; learning to code at the same time means you're taking on a lot. If
-you find yourself struggling with the code in this section, you may find that working through an introductory Python lesson will help you grasp the basics.
+you find yourself struggling with the code in this section, you may find that working through an introductory programming lesson (Python is a good option) will help you grasp the basics.
 {{% /notice %}}
 
 ## Structure of a script
 
-The first line of any GDScript file must be `extends <Class>`, where `<Class>` is some existing built-in or user-defined class. For example, if you're attaching a script to a `CharacterBody2D` node, then your script would start with `extends CharacterBody2D`. This states that your script is taking all the functionality of the built-in `CharacterBody2D` object and *extending* it with additional functionality created by you.
+The first line of any GDScript file must be `extends <Class>`, where `<Class>` is some existing built-in or user-defined class. For example, if you're attaching a script to a {{< gd-icon CharacterBody2D >}}`CharacterBody2D` node, then your script would start with `extends CharacterBody2D`. This states that your script is taking all the functionality of the built-in `CharacterBody2D` object and *extending* it with additional functionality created by you.
 
 In the rest of the script, you can define any number of variables (aka "class properties") and functions (aka "class methods").
 
@@ -34,11 +34,11 @@ In the rest of the script, you can define any number of variables (aka "class pr
 
 Let's make our first script. Remember, any node can have a script attached to it.
 
-Open the editor and add a `Sprite2D` node to empty scene. Right-click on the new node, and choose "Attach Script". You can also click the button next to the search box.
+Open the editor and add a {{< gd-icon Sprite2D >}}`Sprite2D` node to empty scene. Right-click on the new node, and choose "Attach Script". You can also click the button next to the search box.
 
 ![alt](/godot_recipes/4.x/img/gds_01_attach.png?width=250)
 
-Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it (so unless you've changed anything this script will likely be called "Sprite.gd").
+Next you need to decide where you want the script saved and what to call it. If you've named the node, the script will automatically be named to match it (so unless you've changed anything this script will likely be called "sprite2d.gd").
 
 Now the script editor window opens up, and this is your new, empty sprite script. Godot has automatically included some lines of code, as well as some comments describing what they do.
 
@@ -57,7 +57,7 @@ func _process(delta):
 Since the script was added to a {{< gd-icon Sprite2D >}}`Sprite2D`, the first line is automatically set to `extends Sprite2D`.  Because this script extends the {{< gd-icon Sprite2D >}}`Sprite2D` class, it will be able to access and manipulate all the properties and methods that a {{< gd-icon Sprite2D >}}`Sprite2D` node provides.
 
 {{% notice title="Properties and methods" style="note" %}}
-*Properties* and *methods* are two terms which specifically mean *variables* and *functions* that are defined in an object. Programmers tend to use them interchangeably.
+*Properties* and *methods* are two terms which specifically mean *variables* and *functions* that are defined in an object. Programmers tend to use the terms interchangeably.
 {{% /notice %}}
 
 After that is where you're going to define all the variables you will use in the script, the "member variables". You define variables with the 'var' keyword - as you can see by the comment examples.
@@ -66,7 +66,7 @@ Go ahead and delete the comments and let's talk about this next piece.
 
 Now we see a function called `_ready()`. In GDScript you define a function with the keyword "func". The `_ready()` function is a special one that Godot looks for and runs whenever a node is added to the tree, for example when we hit "Play".
 
-Let's say that when the game starts, we want to make sure the sprite goes to a particular location. In the Inspector, we want to set the _Position_ property. Notice that it's in the section called "Node2D" - that means this is a property that *any* {{< gd-icon Node2D >}}`Node2D` type node will have, not just {{< gd-icon Sprite2D >}}`Sprite2D`s.
+Let's say that when the game starts, we want to make sure the sprite goes to a particular location. In the Inspector, we want to set the **Position** property. Notice that it's in the section called "Node2D" - that means this is a property that *any* {{< gd-icon Node2D >}}`Node2D` type node will have, not just {{< gd-icon Sprite2D >}}`Sprite2D`s.
 
 How do we set the property in code? One way to find the name of the property is by hovering over it in the Inspector.
 
@@ -89,7 +89,7 @@ Now we have a script that says "When this sprite starts, set its position to `(1
 
 ![alt](/godot_recipes/4.x/img/gds_01_03.png)
 
-{{% notice tip %}}
+{{% notice style="tip" title="Learning tip" %}}
 When first learning to code, beginners often ask "How do you memorize all these commands?" Just like any other skill, it's not a matter of memorization, it's about practice. As you use things more, the things you do frequently will "stick" and become automatic. Until then, it's a great idea to keep the reference docs handy. Use the search function whenever you see something you don't recognize. If you have multiple monitors, keep a copy of the [web docs](https://docs.godotengine.org/en/latest/) open on the side for quick reference.
 {{% /notice %}}
 

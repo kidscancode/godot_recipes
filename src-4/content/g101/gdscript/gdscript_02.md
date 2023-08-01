@@ -65,7 +65,7 @@ func _process(delta):
 
 We've taken this quantity and made it a variable. You **declare** a variable by using the keyword `var`, giving the variable a name, and then assigning a value with `=`.
 
-It's often more convenient to set values at the top where they're easy to find. We'll also find it more convenient later, when we start making multiples of this sprite.
+It's often more convenient to declare variables at the top where they're easy to find. We'll also find it more convenient later, when we start making multiples of this sprite.
 
 ## Randomizing the movement
 
@@ -78,8 +78,21 @@ func _ready():
     velocity = velocity * randf_range(100, 400)
 ```
 
-Here, we're first setting `velocity` to point to the right, and then rotating it a random amount. Then we multiply that by another random number to give it a random speed. Try running the scene a couple of times and you'll see the sprite go in different directions.
+That's a lot, so let's break it down:
 
+1. First, we're setting `velocity` to point to the right. `Vector2.RIGHT` is a built-in *constant* that represents the vector `(1, 0)`.
+
+1. Next, we're using `Vector2`'s `rotated()` method to rotate the vector. In the parentheses of `rotated()` it expects an angle.
+
+1. Since we want to rotate a random amount, we use `randf_range()` to get a random number between `0` and `TAU`.
+
+    {{% expand title="About angles" %}}
+    When working with angles, rather than _degrees_, GDScript (like most programming languages) uses _radians_. In radians, a full rotation is equal to `2 * PI` (or `TAU`) - equivalent to `360` degrees.
+    {{% /expand %}}
+
+1. Finally, we multiply `velocity` by another random number to give it a random speed.
+
+Try running the scene a couple of times and you'll see the sprite move in different directions.
 
 
 

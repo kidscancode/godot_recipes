@@ -82,3 +82,6 @@ Download the project's example code here: [https://github.com/godotrecipes/chara
 ## Related recipes
 
 - [Platform character](/godot_recipes/4.x/2d/platform_character/)
+
+## <i class="fas fa-video"></i> Watch Video
+{{< youtube SJuScDavstM >}}

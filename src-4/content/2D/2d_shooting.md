@@ -60,7 +60,7 @@ This will work for any character type, not just the "rotate-and-move" style show
 In the character's script we add a variable to hold the bullet scene for instancing:
 
 ```gdscript
-export var Bullet : PackedScene
+@export var Bullet : PackedScene
 ```
 
 And check for our defined input action:

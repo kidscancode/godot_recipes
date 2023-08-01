@@ -2,7 +2,6 @@
 title: "CharacterBody2D: align with surface"
 weight: 5
 draft: true
-ghcommentid: 24
 ---
 
 ## Problem
@@ -103,7 +102,7 @@ func _physics_process(delta):
 
 ## Related recipes
 
-- [Platform character](http://kidscancode.org/godot_recipes/2d/platform_character)
+- [Platform character](/godot_recipes/4.x/2d/platform_character)
 - [Using KinematicBody2D](/godot_recipes/4.x/physics/godot3_kinematic2d/)
 
 <!-- #### Like video? -->

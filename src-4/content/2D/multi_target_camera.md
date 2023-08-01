@@ -46,7 +46,7 @@ var targets = []  # Array of targets to be tracked.
 @onready var screen_size = get_viewport_rect().size
 ```
 
-These settings will let you adjust the camera's behavior. We'll `lerp()` all camera changes, setting the move/zoom speeds to low values will introduce some delay in the camera "catching up" to sudden changes.
+These settings will let you adjust the camera's behavior. We'll `lerp()` all camera changes, so setting the move/zoom speeds to lower values will introduce some delay in the camera "catching up" to sudden changes.
 
 Maximum and minimum zoom values will also depend on the size of objects in your game and how close or far you want to get. Adjust to suit.
 

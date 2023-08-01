@@ -13,6 +13,7 @@
 {{ partial "logo.html" . }}
         </div>
         <a href="https://www.patreon.com/kidscancode"><img src="{{"images/become_a_patron_button.png" | relURL}}" /></a>
+
         {{- if not .Site.Params.disableSearch }}
 {{ partial "search.html" . }}
         {{- end }}
@@ -42,6 +43,7 @@
         {{- $page := . }}
         {{- $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle }}
         {{- with .Site.Menus.shortcuts }}
+        {{ partial "book-ad.html" . }}
         <div id="shortcuts">
           <div class="nav-title padding">{{ if not $disableShortcutsTitle }}{{ T "Shortcuts-Title" }}{{ end }}</div>
           <ul class="space">
