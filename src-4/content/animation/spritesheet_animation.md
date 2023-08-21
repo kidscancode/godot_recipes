@@ -2,7 +2,6 @@
 title: "Spritesheet animation"
 weight: 1
 draft: false
-ghcommentid: 52
 ---
 
 ## Problem

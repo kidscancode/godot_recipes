@@ -2,7 +2,6 @@
 title: "Moving Platforms"
 weight: 5
 draft: false
-ghcommentid: 25
 ---
 
 ## Problem
@@ -70,7 +69,7 @@ Download the project code here: [https://github.com/godotrecipes/2d_moving_platf
 
 - [Platform character](/godot_recipes/4.x/2d/platform_character/)
 
-#### Like video?
+<!-- #### Like video?
 
 *Coming soon*
-<!-- {{< youtube C-Sn55e5wnk >}} -->
+{{< youtube C-Sn55e5wnk >}} -->
