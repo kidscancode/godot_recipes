@@ -35,6 +35,16 @@ func _ready():
 #	spawn_enemies()
 ```
 
+Now add the `new_game()` function:
+
+```gdscript
+func new_game():
+    score = 0
+    $CanvasLayer/UI.update_score(score)
+    $Player.start()
+    spawn_enemies()
+```
+
 Now the button should show when you run the scene, and pressing it starts the game.
 
 ## Ending the game
