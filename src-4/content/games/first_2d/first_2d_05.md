@@ -71,7 +71,7 @@ Go ahead and run the scene and try pressing the shoot action.
 
 ![alt](/godot_recipes/4.x/img/2d_101_17.gif)
 
-{{% notice style="note" title="Adding instances to the three" %}}
+{{% notice style="note" title="Adding instances to the tree" %}}
 Notice that we've added the new bullets as children of the SceneTree root (`get_tree().root`), and not to the player ship. This is important because if we made the bullets children of the ship, then they would be "attached" to it when it moves.
 {{% /notice %}}
 

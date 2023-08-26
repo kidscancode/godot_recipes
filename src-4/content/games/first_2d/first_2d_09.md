@@ -17,7 +17,7 @@ In the **Inspector** under **Theme Overrides/Constants** set all four **Margin**
 
 ![alt](/godot_recipes/4.x/img/2d_101_21.png)
 
-Next, we'll add an {{< gd-icon HBoxContainer >}}`HBoxContainer`. This type of container organizes its children horizontally. Add a {{< gd-icon TextureProgressBar >}}`TextureProgressBar`, which will represent our ship's shield level. Name it `ShieldBar`.
+Next, we'll add an {{< gd-icon HBoxContainer >}}`HBoxContainer`. This type of container organizes its children horizontally. Under that, add a {{< gd-icon TextureProgressBar >}}`TextureProgressBar`, which will represent our ship's shield level. Name it `ShieldBar`.
 
 Unfortunately, there's not a good image in the art pack to use for a progress bar (there is one, but it isn't formatted in an easy way to work with). Instead, we'll use the two images below. One is a green bar and the other is a white outline. Save them in your project folder.
 
@@ -43,6 +43,14 @@ Name the {{< gd-icon TextureRect >}}`TextureRect` `Digit0`. Under **Texture**, s
 Select the `Digit0` node and press `Ctrl-D` 7 times to create duplicates of the node. The picture below shows what you should see after this step:
 
 ![alt](/godot_recipes/4.x/img/2d_101_23.png)
+
+We now have an issue, though. Even though we've duplicated the {{< gd-icon TextureRect >}}`TextureRect` to create 8 unique copies, they are all using the same `AtlasTexture` in the **Texture** property. This means that when we change the **Region** to show a different digit, it will change on *all* the digits.
+
+This is because `Resource` objects (such as `Texture`) are loaded into memory and then shared - there's really only one texture. While this is very efficient, because you don't waste memory loading the same image multiple times, it means that when we *do* want things to be unique, we have to specify it.
+
+On each of the nodes, click the down arrow next to the `AtlasTexture` and select "Make Unique".
+
+![alt](/godot_recipes/4.x/img/make_unique.png)
 
 Now we'll add a script to `ScoreCounter` that will choose the correct **Region** values for whichever digit it needs to display.
 
@@ -109,7 +117,7 @@ Run the game and see that your score goes up when shooting enemies.
 
 ## Player shield
 
-We can also add the shield to the player's script. Add these new lines at the top of `ship.gd`:
+We can also add the shield to the player's script. Add these new lines at the top of `player.gd`:
 
 ```gdscript
 signal died
@@ -144,7 +152,7 @@ And in the enemy bullet, add some damage to the shield when it hits:
 
 ```gdscript
 func _on_area_entered(area):
-    if area.name == "Ship":
+    if area.name == "Player":
         queue_free()
         area.shield -= 1
 ```

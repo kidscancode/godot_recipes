@@ -49,10 +49,10 @@ Add another reference at the top of the script:
 
 And add `game_over.hide()` to `_ready()`.
 
-Connect the ship's `died` signal in `Main`.
+Connect the player's `died` signal in `Main`.
 
 ```gdscript
-func _on_ship_died():
+func _on_player_died():
     get_tree().call_group("enemies", "queue_free")
     game_over.show()
     await get_tree().create_timer(2).timeout
