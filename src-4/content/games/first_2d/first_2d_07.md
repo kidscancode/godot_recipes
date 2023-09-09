@@ -5,7 +5,7 @@ draft: false
 pre: "07. "
 ---
 
-Now that our enemy can shoot, let's give them something to shoot at.
+Now that our player can shoot, let's give them something to shoot at.
 
 ## Setting up the scene
 
