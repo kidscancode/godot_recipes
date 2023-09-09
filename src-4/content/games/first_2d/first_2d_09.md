@@ -157,6 +157,10 @@ func _on_area_entered(area):
         area.shield -= 1
 ```
 
+Finally, we need to connect the player's `shield_changed` signal to the function in the UI that updates the shield bar. You can do this in the Inspector by selecting the `Player` node in the Main scene. Under the Node tab, double-click the `shield_changed` signal to open the "Connect a Signal" window. In this window, select the `UI` node and type `update_shield` in the **Receiver Method** box.
+
+![alt](/godot_recipes/4.x/img/2d_101_24.png)
+
 Run the game again and check that your shield depletes when you get hit by a bullet or an enemy.
 
 ## Next steps
