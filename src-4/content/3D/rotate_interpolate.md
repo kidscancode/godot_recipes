@@ -1,7 +1,7 @@
 ---
 title: "Smooth rotation"
 weight: 12
-draft: true
+draft: false
 ghcommentid: 39
 ---
 
@@ -19,7 +19,8 @@ If you're interested in the background behind Euler angles and the problems they
 
 We can avoid using 3D Euler angles in Godot by using the object's `transform` property. This property represents the body's position *and* orientation in space. It uses a mathematical construct called a _matrix_ to do this, but you don't really need to understand the underlying math in order to make use of it.
 
-### `look_at()`
+### look_at()
+
 Let's say you have a 3D object such as a missile or arrow and you want it to point at its target.  You can do this using the {{< gd-icon Node3D >}}`Node3D` method `look_at()`:
 
 ```gdscript
@@ -38,7 +39,7 @@ Note that `look_at()` requires 2 parameters: the target position, and an "up vec
 
 The above code works, but it snaps the rotation instantly to the target. This might be fine if you have a very slow-moving target, but looks unnatural. It would look better if we move smoothly, or "interpolated", the rotation smoothly between the starting orientation and the ending.
 
-Godot has us covered here too, because the `Transform` object has a method called `interpolate_with()`, which returns an intermediate transform between a current one and a target one.
+Godot has us covered here too. Rather than `look_at()`, we can use the `Transform` object's `looking_at()` method, which doesn't rotate the node, but returns the transform that *would* be looking at the target. Combine this with the `interpolate_with()` method, which returns an intermediate transform between a current one and a target one, and we can smoothly transition between the current orientation and our desired one.
 
 ```gdscript
 var speed = 5

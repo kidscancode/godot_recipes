@@ -66,10 +66,10 @@ We set the position of the marker and the Player's target to the clicked positio
 
 You can use this technique to detect clicks on any objects in your 3D world.
 
-## Related recipes
+<!-- ## Related recipes -->
 
 <!-- - [UI: Labels](/godot_recipes/3.x/ui/labels/)
 - [UI: Object Healthbars](/godot_recipes/3.x/ui/unit_healthbar/) -->
 
-#### Like video?
+<!-- #### Like video? -->
 
