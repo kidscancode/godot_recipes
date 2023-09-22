@@ -219,7 +219,7 @@ In the `_ready()` of the main script, connect these signals to the minimap:
 ```gdscript
 func _ready():
     for object in get_tree().get_nodes_in_group("minimap_objects"):
-        object_removed.connect(minimap._on_object_removed)
+        object.object_removed.connect(minimap._on_object_removed)
 ```
 
 Now add the receiving function to the minimap script to free the marker and remove the reference:
