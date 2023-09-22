@@ -18,7 +18,7 @@ Here's an example of what we are going for:
 To illustrate this feature, we'll start with a simplified top-down game using the [Autotile recipe](/godot_recipes/4.x/2d/autotile_intro/) and a player based on the [Top-down character recipe](godot_recipes/2d/topdown_movement/#option-2-rotate-and-move). See the linked recipes for details on how these parts work.
 
 {{% notice note %}}
-The art in this project comes from [kenney.nl](https://kenney.nl), which you can download here: [Topdown Shooter](/godot_recipes/4.x/files/kenney_topdown_shooter.zip) and [Interface Pack](/godot_recipes/4.x/files/kenney_interface_pack.zip).
+The art in this project comes from [kenney.nl](https://kenney.nl), which you can download here: [Minimap Assets](/godot_recipes/4.x/files/minimap_assets.zip).
 {{% /notice %}}
 
 Our main scene setup looks like this:
@@ -168,7 +168,7 @@ Next, we'll find each object's position relative to the player and use that to f
 
 ```gdscript
 for item in markers:
-    var obj_pos = (item.position - get_node(player).position) * grid_scale + grid.size / 2
+    var obj_pos = (item.position - player.position) * grid_scale + grid.size / 2
     markers[item].position = obj_pos
 ```
 
@@ -219,7 +219,7 @@ In the `_ready()` of the main script, connect these signals to the minimap:
 ```gdscript
 func _ready():
     for object in get_tree().get_nodes_in_group("minimap_objects"):
-        object.removed.connect(minimap._on_object_removed)
+        object_removed.connect(minimap._on_object_removed)
 ```
 
 Now add the receiving function to the minimap script to free the marker and remove the reference:
