@@ -1,6 +1,6 @@
 ---
 title: "Camera Gimbal"
-weight: 1
+weight: 2
 draft: false
 ---
 
