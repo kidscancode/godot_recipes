@@ -115,3 +115,7 @@ Finally, if you're looking closely, you may notice that the transition from `Jum
 We've now set up our 3D character's animations and they're ready to use. By setting up the {{< gd-icon AnimationTree >}}`AnimationTree`, it will now be much easier to select and transition between animations in the character's movement code.
 
 See the [section description](/godot_recipes/4.x/3d/assets/) for more examples of working in 3D and for example Godot projects you can download.
+
+#### Companion Video
+
+{{< youtube YrNQCB34PAc >}}

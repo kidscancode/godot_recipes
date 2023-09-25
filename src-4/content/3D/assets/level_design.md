@@ -1,6 +1,6 @@
 ---
-title: "Interactable Objects"
-weight: 20
+title: "Designing a Level"
+weight: 15
 draft: true
 ---
 

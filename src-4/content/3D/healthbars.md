@@ -32,7 +32,7 @@ Re-using existing objects can save you a lot of time. Don't re-invent the wheel 
 For our example "mob", we'll start with a {{< gd-icon CharacterBody3D >}}`CharacterBody3D` node. It's programmed to spawn and travel in a straight line. It also has the following code to handle damage:
 
 ```gdscript
-func _on_input_event(camera, event, position, normal, shape_idx):
+func _on_input_event(_camera, event, _position, _normal, _shape_idx):
     if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
         health -= 1
         if health <= 0:
@@ -91,22 +91,22 @@ $HealthBar3D.update(health, max_health)
 Add the following to `HealthBar3D.gd`:
 
 ```gdscript
-func update_health(_value, max_value):
-    $SubViewport/HealthBar2D.update_health(_value)
+func update_health(_value, _max_value):
+    $SubViewport/HealthBar2D.update_health(_value, _max_value)
 ```
 
 This calls the update method that already exists on the 2D bar, setting the progress bar's value and selecting the bar color:
 
 ```gdscript
-func update_health(_value, max_value):
-	value = _value
-	if value < max_value:
-		show()
-	texture_progress = bar_green
-	if value < 0.75 * max_value:
-		texture_progress = bar_yellow
-	if value < 0.45 * max_value:
-		texture_progress = bar_red
+func update_health(_value, _max_value):
+    value = _value
+    if value < _max_value:
+        show()
+    texture_progress = bar_green
+    if value < 0.75 * _max_value:
+        texture_progress = bar_yellow
+    if value < 0.45 * _max_value:
+        texture_progress = bar_red
 ```
 
 Click on the mobs to see the health bars change.
