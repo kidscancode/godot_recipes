@@ -92,3 +92,6 @@ The last node we'll need to complete the player setup is a {{< gd-icon Timer >}}
 ### Next steps
 
 That completes the player scene setup. We've added the nodes to give the player ship the functionality it will need in the game. In the next section, we'll add some code to enable the player to control the ship, make it shoot, and detect when it collides with things.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_01/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_03/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

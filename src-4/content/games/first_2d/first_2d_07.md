@@ -159,3 +159,6 @@ func _on_enemy_died(value):
 We don't have a way to display the score yet, but we'll get to that soon.
 
 Play the scene and you should see a bunch of enemies appear at the top and periodically fall down the screen. Next, we'll make them shoot.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_06/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_08/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

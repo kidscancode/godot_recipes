@@ -78,3 +78,6 @@ Notice that we've added the new bullets as children of the SceneTree root (`get_
 ## Next steps
 
 Shooting's no fun without something to shoot at. We'll start making the enemies soon, but first we need a scene where we can bring the player, enemies, and other game objects together.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_04/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_06/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

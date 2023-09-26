@@ -71,3 +71,6 @@ func _on_player_died():
 ```
 
 This will show the "game over" image for 2 seconds, then switch back to the start button so you can play again. Try it out and see if you can play a few games.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_09/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_end/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

@@ -44,3 +44,6 @@ Now when you press **Play** on the animation, you should see the background slow
 ## Next steps
 
 The main scene is now ready for us to add enemies. In the next step we'll make a single enemy scene, as we did with the bullets, and then instantiate that multiple times.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_05/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_07/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

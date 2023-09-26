@@ -166,3 +166,6 @@ Run the game again and check that your shield depletes when you get hit by a bul
 ## Next steps
 
 We're almost done with the basic functionality. We just need a way to start and end the game.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_08/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_10/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

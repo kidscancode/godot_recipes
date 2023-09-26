@@ -58,3 +58,6 @@ func _on_shoot_timer_timeout():
 ```
 
 Play the `Main` scene again and you should have some random enemy bullets appearing.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_07/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_09/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

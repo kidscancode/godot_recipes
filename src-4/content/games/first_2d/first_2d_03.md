@@ -115,3 +115,6 @@ func _process(delta):
 Once again, play the scene and verify that the images change when moving left/right. Verify that everything works as intended before moving to the next step.
 
 The next step will be to create the `Bullet` scene and let the player shoot.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_02/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_04/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|

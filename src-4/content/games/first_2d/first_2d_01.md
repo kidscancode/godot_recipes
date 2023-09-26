@@ -47,3 +47,6 @@ Feel free to use other keys if you'd rather use a different setup.
 ## Next steps
 
 That takes care of setting up - now we're ready to get started! In the next section, we'll create the player-controlled spaceship.
+
+| {{% button href="/godot_recipes/4.x/games/first_2d/" icon="fas fa-arrow-left" %}}Prev{{% /button %}} | {{% button href="/godot_recipes/4.x/games/first_2d/first_2d_02/" icon="fas fa-arrow-right" icon-position="right" %}}Next{{% /button %}} |
+|------|------:|
