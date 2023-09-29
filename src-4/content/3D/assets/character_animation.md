@@ -1,7 +1,7 @@
 ---
 title: "Character Animation"
 weight: 5
-draft: true
+draft: false
 ---
 
 ## Problem
@@ -119,3 +119,4 @@ See the [section description](/godot_recipes/4.x/3d/assets/) for more examples o
 #### Companion Video
 
 {{< youtube YrNQCB34PAc >}}
+https://youtu.be/YrNQCB34PAc
