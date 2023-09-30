@@ -17,7 +17,7 @@ Godot's built-in `InterpolatedCamera` node is deprecated and will be removed in 
 Attach the script below to a {{< gd-icon Camera3D >}}`Camera3D` node in your scene. The three `export` properties let you choose:
 
 * `lerp_speed` - the camera's movement speed. Lower values result in a "lazier" camera.
-* `target_path` - choose the camera's target node.
+* `target` - choose the camera's target node.
 * `offset` - position of the camera relative to the target.
 
 See below for some examples of the camera in action.
@@ -26,14 +26,8 @@ See below for some examples of the camera in action.
 extends Camera3D
 
 @export var lerp_speed = 3.0
-@export var target_path : NodePath
+@export var target: Node3D
 @export var offset = Vector3.ZERO
-
-var target = null
-
-func _ready():
-    if target_path:
-        target = get_node(target_path)
 
 func _physics_process(delta):
     if !target:
