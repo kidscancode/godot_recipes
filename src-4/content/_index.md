@@ -30,7 +30,7 @@ If you're new to Godot, start here: [What is Godot?](/godot_recipes/4.x/g101/sta
 
 #### Beginners
 
-If you're new to game development, start with the ["Godot 101: Basics"](/godot_recipes/3.x/basics/) section. There you'll find an introduction to the Godot application, and a step-by-step guide to creating your first project. There is a lot of material to absorb here. Don't feel discouraged if you feel you don't get it at first. Repetition is the key to learning complex topics; the more you work with Godot's features, the more familiar and _easy_ they will start to feel.
+If you're new to game development, start with the ["Godot 101: Basics"](/godot_recipes/4.x/basics/) section. There you'll find an introduction to the Godot application, and a step-by-step guide to creating your first project. There is a lot of material to absorb here. Don't feel discouraged if you feel you don't get it at first. Repetition is the key to learning complex topics; the more you work with Godot's features, the more familiar and _easy_ they will start to feel.
 
 {{% notice info %}}
 It's assumed that you have at least some general programming experience. If you're *completely* new to programming, click [here](https://docs.godotengine.org/en/stable/getting_started/step_by_step/index.html) for tips on how to get started.

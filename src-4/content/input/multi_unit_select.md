@@ -79,9 +79,9 @@ We start by recording the location when we released the button, and use that to 
 ```gdscript
     var space = get_world_2d().direct_space_state
     var query = PhysicsShapeQueryParameters2D.new()
-    q.shape = select_rect
-    q.collision_mask = 2  # Units are on collision layer 2
-    q.transform = Transform2D(0, (drag_end + drag_start) / 2)
+    query.shape = select_rect
+    query.collision_mask = 2  # Units are on collision layer 2
+    query.transform = Transform2D(0, (drag_end + drag_start) / 2)
     selected = space.intersect_shape(query)
 ```
 
