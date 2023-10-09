@@ -61,5 +61,5 @@ Feel free to add the other animations yourself. For example, the "jump" animatio
 ## Related recipes
 
 <!-- - [Top-down character](http://kidscancode.org/godot_recipes/2d/topdown_movement/#option-1-8-way-movement) -->
-- [Platform character](http://kidscancode.org/godot_recipes/2d/platform_character/)
+- [Platform character](/godot_recipes/4.x/2d/platform_character/)
 <!-- - [Controlling animation states](http://kidscancode.org/godot_recipes/animation/animation_state_machine/) -->
