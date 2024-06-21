@@ -1,7 +1,7 @@
 ---
 title: "Arcade-stype Airplane"
 weight: 12
-draft: true
+draft: false
 ---
 
 ## Problem
