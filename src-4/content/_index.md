@@ -13,8 +13,7 @@ On this site you'll find a collection of solutions and examples to help you make
 {{% notice style="tip" title="Godot 4.0"%}}
 **Godot 4.0 has been released!**<br>
 Godot 4.0 is the latest stable release version of the engine.<br>
-There is a limited amount of learning material available, so if you're looking to make a game or learn the engine, we recommend you stick with 3.x for now. Don't worry - what you learn will still apply when you're ready to move to the newer version!<br>
-This site has lots of learning material for Godot 3 - but not all of it has been updated for version 4 yet. You can click the ribbon in the top-right to toggle the Godot Recipes version, or click the button below:<br>
+This site also has lots of learning material for Godot 3 - much of it is still useful! You can click the ribbon in the top-right to toggle the Godot Recipes version, or click the button below:<br>
 {{% button href="/godot_recipes/3.x/" style="primary" icon="utensils" %}}Godot 3 Recipes{{% /button %}}
 {{% /notice %}}
 

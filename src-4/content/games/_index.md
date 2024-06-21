@@ -9,9 +9,9 @@ pre = "<i class='fas fa-chess-pawn fa-fw'></i>&nbsp"
 
 Demo games and tutorials.
 
-{{% notice style="info" title="Updating to Godot 4.0" %}}
+<!-- {{% notice style="info" title="Updating to Godot 4.0" %}}
 We're working on new content for Godot 4.0. In the meantime, we recommend new learners stick with Godot 3.x, which has a lot more resources and learning materials available.
-{{% /notice %}}
+{{% /notice %}} -->
 
 #### In this section:
 
