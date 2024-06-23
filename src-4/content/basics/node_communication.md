@@ -51,7 +51,7 @@ If you keep this rule in mind when designing your scene setup, you'll be well on
 
 Now, let's look at each of these strategies along with some examples.
 
-### 1. Using `get_node()`
+## 1. Using `get_node()`
 
 `get_node()` traverses the scene tree using a given *path* to find the named node.
 
@@ -81,7 +81,25 @@ func _process(delta):
 In GDScript you can use `$` as a shorthand for `get_node()`, writing `$AnimatedSprite2D` instead.
 {{% /notice %}}
 
-### 2. Using signals
+#### A better way
+
+The downsides of this approach are that you have to specify the node path, and if that changes later, you'll have to edit the code as well. Instead, you can use the `@export` feature to directly select a node.
+
+```gdscript
+extends CharacterBody2D
+
+@export var animation : AnimatedSprite2D
+
+func _process(delta):
+    if speed > 0:
+        animation.play("run")
+    else:
+        animation.play("idle")
+```
+
+With this method, you can assign the value of the variable directly in the Inspector by choosing the node.
+
+## 2. Using signals
 
 Signals should be used to call functions on nodes that are higher in the tree or at the same level (i.e. "siblings").
 
@@ -93,7 +111,7 @@ Looking at this, you may be thinking "Wait, if I'm connecting to a sibling, won'
 
 Following the rule of calling *down* the tree, a node that's a common parent to the signaling and receiving nodes will by definition know where they are and be ready after both of them.
 
-#### Signal example
+### Signal example
 
 A very common use case for signals is updating your UI. Whenever the player's `health` variable changes, you want to update a `Label` or `ProgressBar` display. However, your UI nodes are completely separated from your player (as they should be). The player knows nothing about where those nodes are and how to find them.
 
@@ -125,13 +143,13 @@ func _ready():
     $Player.health_changed.connect($UI.update_health)
 ```
 
-### 3. Using groups
+## 3. Using groups
 
 Groups are another way to decouple, especially when you have a lot of similar objects that need to do the same thing. A node can be added to any number of groups and membership can be changed dynamically at any time with `add_to_group()` and `remove_from_group()`.
 
 A common misconception about groups is that they are some kind of object or array that "contains" node references. Groups are a *tagging system*. A node is "in" a group if it has that tag assigned from it. The SceneTree keeps track of the tags and has functions like `get_nodes_in_group()` to help you find all nodes with a particular tag.
 
-#### Group example
+### Group example
 
 Let's consider a Galaga-style space shooter where you have a lots of enemies flying around. These enemies may have different types and behaviors. You'd like to add a "smart bomb" upgrade that, when activated, destroys all enemies on the screen. Using groups, you can implement this with a minimal amount of code.
 
@@ -153,11 +171,11 @@ func activate_smart_bomb():
     get_tree().call_group("enemies", "explode")
 ```
 
-### 4. Using `owner`
+## 4. Using `owner`
 
 `owner` is a `Node` property that's set automatically when you save a scene. Every node in that scene will have its `owner` set to the scene's root node. This makes for a convenient way to connect child signals up to the main node.
 
-#### `owner` example
+### `owner` example
 
 In a complex UI, you often find yourself with a very deep, nested hierarchy of containers and controls. Nodes that the user interacts with, such as `Button`, emit signals, and you may want to connect those signals to the script on the UI's root node.
 

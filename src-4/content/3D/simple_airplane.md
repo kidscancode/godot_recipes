@@ -1,5 +1,5 @@
 ---
-title: "Arcade-stype Airplane"
+title: "Arcade-style Airplane"
 weight: 12
 draft: false
 ---
