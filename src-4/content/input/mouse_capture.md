@@ -53,5 +53,5 @@ Once the mouse is released, that leaves the need to re-capture it to continue pl
 Since you may also be using a mouse click to shoot or perform some other action, it's probably a good idea to stop the event from propagating. Add this after setting the mouse mode:
 
 ```gdscript
-get_tree().set_input_as_handled()
+get_viewport().set_input_as_handled()
 ```
