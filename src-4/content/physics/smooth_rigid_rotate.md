@@ -42,3 +42,4 @@ In many cases, this will be a great solution. Remember, the underlying body's or
 ## Related recipes
 
 - [Vectors: Using Dot and Cross Product](/godot_recipes/4.x/math/dot_cross_product/index.html)
+- [RigidBody2D: Move to Target](/godot_recipes/4.x/physics/smooth_rigid_move/)
