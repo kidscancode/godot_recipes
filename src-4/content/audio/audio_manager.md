@@ -13,7 +13,7 @@ You've tried adding an {{< gd-icon AudioStreamPlayer >}}`AudioStreamPlayer` to y
 
 We'll solve this problem with a node that is available from anywhere in the SceneTree. This node manages a set of {{< gd-icon AudioStreamPlayer >}}`AudioStreamPlayer` nodes and a queue of sound streams to play.
 
-Create a new script in the script editor.
+Create a new script in the script editor:
 
 ```gdscript
 extends Node
@@ -28,11 +28,11 @@ var queue = []  # The queue of sounds to play.
 func _ready():
     # Create the pool of AudioStreamPlayer nodes.
     for i in num_players:
-        var p = AudioStreamPlayer.new()
-        add_child(p)
-        available.append(p)
-        p.finished.connect(_on_stream_finished.bind(p))
-        p.bus = bus
+        var player = AudioStreamPlayer.new()
+        add_child(player)
+        available.append(player)
+        player.finished.connect(_on_stream_finished.bind(player))
+        player.bus = bus
 
 
 func _on_stream_finished(stream):
@@ -52,15 +52,17 @@ func _process(delta):
         available.pop_front()
 ```
 
-Set this script as an autoload in Project Settings. Give it an easily recognizable name, such as "AudioStreamManager".
+Set this script as an autoload in Project Settings. Give it an easily recognizable name, such as "AudioManager".
 
 ![alt](/godot_recipes/4.x/img/audio_mgr_01.png)
 
 Anywhere in your project that you want to play a sound, use:
 
 ```gdscript
-AudioStreamManager.play("res://path/to/sound")
+AudioManager.play("res://path/to/sound")
 ```
+
+Remember, you can drag sound files directly into the text editor to paste the file path.
 
 {{% notice note %}}
 This audio manager is adapted with thanks from [SFXPlayer by TheDuriel]

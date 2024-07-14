@@ -117,7 +117,7 @@ Download the project's example code here: [https://github.com/godotrecipes/float
 
 ![alt](/godot_recipes/4.x/img/fct_demo.png)
 
-## Related recipes
+<!-- ## Related recipes
 
-- [UI: Labels](/godot_recipes/3.x/ui/labels/)
-- [UI: Object Healthbars](/godot_recipes/3.x/ui/unit_healthbar/)
+- [UI: Labels](/godot_recipes/.x/ui/labels/)
+- [UI: Object Healthbars](/godot_recipes/3.x/ui/unit_healthbar/) -->
